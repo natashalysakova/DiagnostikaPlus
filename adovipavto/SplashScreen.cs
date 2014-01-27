@@ -16,8 +16,6 @@ namespace adovipavto
         public SplashScreen()
         {
             InitializeComponent();
-            label1.Text = "(с) ООО \"В.И.П.АВТО\" - 2009-" + DateTime.Today.Year;
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -31,8 +29,5 @@ namespace adovipavto
             }
         }
 
-        private void SplashScreen_Load(object sender, EventArgs e)
-        {
-        }
     }
 }

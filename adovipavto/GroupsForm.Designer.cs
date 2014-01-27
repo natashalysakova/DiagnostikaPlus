@@ -229,7 +229,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GroupsForm";
-            this.Load += new System.EventHandler(this.GroupsForm_Load);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();

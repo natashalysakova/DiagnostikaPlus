@@ -211,6 +211,15 @@ namespace adovipavto.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ошибка.
+        /// </summary>
+        internal static string error {
+            get {
+                return ResourceManager.GetString("error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap exit {
@@ -487,6 +496,15 @@ namespace adovipavto.Properties {
             get {
                 object obj = ResourceManager.GetObject("ukraine_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Внимание.
+        /// </summary>
+        internal static string warning {
+            get {
+                return ResourceManager.GetString("warning", resourceCulture);
             }
         }
         

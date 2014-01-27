@@ -163,4 +163,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Оператори</value>
   </data>
+  <data name="cantLock" xml:space="preserve">
+    <value>Неможливо заблокувати останнього адміністратора</value>
+  </data>
+  <data name="lockOperator" xml:space="preserve">
+    <value>Заблокувати оператора?</value>
+  </data>
 </root>

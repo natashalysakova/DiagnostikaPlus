@@ -112,6 +112,7 @@
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "ProtocolReportForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ProtocolReportForm_Load);
             this.Resize += new System.EventHandler(this.ProtocolReportForm_Resize);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);

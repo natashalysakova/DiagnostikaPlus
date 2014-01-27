@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.AddForms;
@@ -13,6 +14,8 @@ namespace adovipavto
 {
     public partial class OperatorsForm : Form
     {
+        ResourceManager rm = new ResourceManager(typeof(OperatorsForm));
+
         public OperatorsForm()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
@@ -45,7 +48,7 @@ namespace adovipavto
         {
             if (dataGridView1.SelectedRows[0] != null)
             {
-                if (MessageBox.Show("Заблокировать оператора?", "Внимание",
+                if (MessageBox.Show(rm.GetString("lockOperator"), Properties.Resources.warning,
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {
@@ -54,7 +57,7 @@ namespace adovipavto
                         (int) dataGridView1.SelectedRows[0].Cells["rightDataGridViewTextBoxColumn"].Value ==
                         (int) Rights.Administrator)
                     {
-                        MessageBox.Show("Невозможно заблокировать единственного администратора.", "Ошибка", MessageBoxButtons.OK,
+                        MessageBox.Show(rm.GetString("cantLock"), Properties.Resources.error, MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
                     else

@@ -60,9 +60,9 @@
             this.label1.ForeColor = System.Drawing.Color.Lavender;
             this.label1.Location = new System.Drawing.Point(12, 425);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(237, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Text = "(с) ООО \"В.И.П.АВТО\" - 2009-2014";
             this.label1.UseWaitCursor = true;
             // 
             // SplashScreen
@@ -80,7 +80,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SplashScreen";
             this.UseWaitCursor = true;
-            this.Load += new System.EventHandler(this.SplashScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

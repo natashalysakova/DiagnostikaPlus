@@ -1,13 +1,18 @@
 ﻿using System;
+using System.Reflection;
 using System.Windows.Forms;
+using System.Resources;
 
 namespace adovipavto
 {
     public partial class Auth : Form
     {
+
+        private ResourceManager LocRM;
         public Auth()
         {
             InitializeComponent();
+            LocRM = new ResourceManager(typeof (Auth));
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -30,12 +35,12 @@ namespace adovipavto
                 }
                 else
                 {
-                    MessageBox.Show(@"Неверный пароль");
+                    MessageBox.Show(LocRM.GetString("wrongPassword"), Properties.Resources.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show(@"Пользователь " + textBox1.Text + @" не найден");
+                MessageBox.Show(LocRM.GetString("isUser") + textBox1.Text + LocRM.GetString("notFound"), Properties.Resources.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

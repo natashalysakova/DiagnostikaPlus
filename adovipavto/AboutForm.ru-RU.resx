@@ -120,4 +120,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>О программе "Диагностика PLUS"</value>
   </data>
+  <data name="version" xml:space="preserve">
+    <value>Версия</value>
+  </data>
 </root>

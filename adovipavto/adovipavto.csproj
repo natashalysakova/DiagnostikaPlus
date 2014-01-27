@@ -259,6 +259,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Auth.uk-UA.resx">
       <DependentUpon>Auth.cs</DependentUpon>
@@ -292,6 +293,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GroupsForm.resx">
       <DependentUpon>GroupsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GroupsForm.uk-UA.resx">
       <DependentUpon>GroupsForm.cs</DependentUpon>
@@ -331,6 +333,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OperatorsForm.resx">
       <DependentUpon>OperatorsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="OperatorsForm.uk-UA.resx">
       <DependentUpon>OperatorsForm.cs</DependentUpon>
@@ -349,6 +352,7 @@
     <EmbeddedResource Include="ProtocolReportForm.uk-UA.resx">
       <DependentUpon>ProtocolReportForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.uk-UA.resx" />
     <EmbeddedResource Include="SelectLanguage.resx">
       <DependentUpon>SelectLanguage.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,7 +368,6 @@
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

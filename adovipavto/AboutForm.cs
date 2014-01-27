@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,12 +17,12 @@ namespace adovipavto
         public AboutForm()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
-
+            ResourceManager rm = new ResourceManager(typeof(AboutForm));
 
             InitializeComponent();
 
             this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Версия {0}", AssemblyVersion);
+            this.labelVersion.Text = String.Format(rm.GetString("version") + " {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
         }

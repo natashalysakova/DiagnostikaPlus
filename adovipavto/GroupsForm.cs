@@ -2,6 +2,7 @@
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.AddForms;
@@ -15,11 +16,13 @@ namespace adovipavto
     {
         private DataRow _selectedRow;
 
+        private ResourceManager rm;
+
         public GroupsForm()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
 
-
+            rm = new ResourceManager(typeof(GroupsForm));
 
 
             InitializeComponent();
@@ -48,7 +51,7 @@ namespace adovipavto
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(@"Удалить группу? Все связанные с ней нормативы и записи будут удалены!", @"Внимание",
+            if (MessageBox.Show(rm.GetString("DeleteGroup"), Properties.Resources.warning,
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 Program.VipAvtoDataSet.RemoveRow(Constants.GroupTableName, _selectedRow);
@@ -89,7 +92,7 @@ namespace adovipavto
 
             if (_selectedRow != null)
             {
-                if (MessageBox.Show(@"Удалить группу? Все связанные с ней нормативы и записи будут удалены!", "Внимание",
+                if (MessageBox.Show(rm.GetString("DeleteGroup"), Properties.Resources.warning,
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {
@@ -101,10 +104,6 @@ namespace adovipavto
                     _selectedRow = null;
                 }
             }
-        }
-
-        private void GroupsForm_Load(object sender, EventArgs e)
-        {
         }
     }
 }
