@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19F055AC-1B01-4905-9521-34859C8F6CF3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>adovipavto</RootNamespace>
+    <AssemblyName>DiagnostikaPlus</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>ru-RU</TargetCulture>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>adovipavto.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\AddMechanicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddMechanicForm.Designer.cs">
+      <DependentUpon>AddMechanicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\AddOperatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddOperatorForm.Designer.cs">
+      <DependentUpon>AddOperatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\AddProtocol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddProtocol.Designer.cs">
+      <DependentUpon>AddProtocol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auth.Designer.cs">
+      <DependentUpon>Auth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Constants.cs" />
+    <Compile Include="Classes\ToolStripMaskedTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\VisualRow.cs" />
+    <Compile Include="EditForms\EditMechanicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditForms\EditMechanicForm.Designer.cs">
+      <DependentUpon>EditMechanicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditForms\EditOperatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditForms\EditOperatorForm.Designer.cs">
+      <DependentUpon>EditOperatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditForms\EditGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditForms\EditGroupForm.Designer.cs">
+      <DependentUpon>EditGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\Category.cs" />
+    <Compile Include="Enums\Engine.cs" />
+    <Compile Include="Enums\Normatives.cs" />
+    <Compile Include="Enums\Rights.cs" />
+    <Compile Include="Enums\State.cs" />
+    <Compile Include="GroupsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupsForm.Designer.cs">
+      <DependentUpon>GroupsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\AddGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddGroupForm.Designer.cs">
+      <DependentUpon>AddGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditForms\EditNormativeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditForms\EditNormativeForm.Designer.cs">
+      <DependentUpon>EditNormativeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForms\AddNormativeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForms\AddNormativeForm.Designer.cs">
+      <DependentUpon>AddNormativeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Operator.cs" />
+    <Compile Include="Mechanics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mechanics.Designer.cs">
+      <DependentUpon>Mechanics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NormativesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NormativesForm.Designer.cs">
+      <DependentUpon>NormativesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperatorsForm.Designer.cs">
+      <DependentUpon>OperatorsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProtocolReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProtocolReportForm.Designer.cs">
+      <DependentUpon>ProtocolReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectLanguage.Designer.cs">
+      <DependentUpon>SelectLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VipAvtoSet.cs">
+      <DependentUpon>VipAvtoSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VipAvtoSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VipAvtoSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutForm.ru-RU.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutForm.uk-UA.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddGroupForm.uk-UA.resx">
+      <DependentUpon>AddGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddMechanicForm.resx">
+      <DependentUpon>AddMechanicForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddMechanicForm.ru-RU.resx">
+      <DependentUpon>AddMechanicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddMechanicForm.uk-UA.resx">
+      <DependentUpon>AddMechanicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddNormativeForm.uk-UA.resx">
+      <DependentUpon>AddNormativeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddOperatorForm.resx">
+      <DependentUpon>AddOperatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddOperatorForm.ru-RU.resx">
+      <DependentUpon>AddOperatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddOperatorForm.uk-UA.resx">
+      <DependentUpon>AddOperatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddProtocol.resx">
+      <DependentUpon>AddProtocol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddProtocol.ru-RU.resx">
+      <DependentUpon>AddProtocol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddProtocol.uk-UA.resx">
+      <DependentUpon>AddProtocol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auth.resx">
+      <DependentUpon>Auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auth.uk-UA.resx">
+      <DependentUpon>Auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\EditGroupForm.uk-UA.resx">
+      <DependentUpon>EditGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\EditMechanicForm.resx">
+      <DependentUpon>EditMechanicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\EditMechanicForm.ru-RU.resx">
+      <DependentUpon>EditMechanicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\EditMechanicForm.uk-UA.resx">
+      <DependentUpon>EditMechanicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\EditNormativeForm.uk-UA.resx">
+      <DependentUpon>EditNormativeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\EditOperatorForm.resx">
+      <DependentUpon>EditOperatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\EditOperatorForm.ru-RU.resx">
+      <DependentUpon>EditOperatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\EditOperatorForm.uk-UA.resx">
+      <DependentUpon>EditOperatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\EditGroupForm.resx">
+      <DependentUpon>EditGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupsForm.resx">
+      <DependentUpon>GroupsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupsForm.uk-UA.resx">
+      <DependentUpon>GroupsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddGroupForm.resx">
+      <DependentUpon>AddGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\EditNormativeForm.resx">
+      <DependentUpon>EditNormativeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForms\AddNormativeForm.resx">
+      <DependentUpon>AddNormativeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.ru-RU.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.uk-UA.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mechanics.resx">
+      <DependentUpon>Mechanics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mechanics.ru-RU.resx">
+      <DependentUpon>Mechanics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mechanics.uk-UA.resx">
+      <DependentUpon>Mechanics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NormativesForm.resx">
+      <DependentUpon>NormativesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NormativesForm.uk-UA.resx">
+      <DependentUpon>NormativesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperatorsForm.resx">
+      <DependentUpon>OperatorsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperatorsForm.uk-UA.resx">
+      <DependentUpon>OperatorsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProtocolReportForm.resx">
+      <DependentUpon>ProtocolReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProtocolReportForm.ru-RU.resx">
+      <DependentUpon>ProtocolReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProtocolReportForm.uk-UA.resx">
+      <DependentUpon>ProtocolReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectLanguage.resx">
+      <DependentUpon>SelectLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForm.ru-RU.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForm.uk-UA.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="VipAvtoSet.xsc">
+      <DependentUpon>VipAvtoSet.xsd</DependentUpon>
+    </None>
+    <None Include="VipAvtoSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VipAvtoSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="VipAvtoSet.xss">
+      <DependentUpon>VipAvtoSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign logoff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mesures.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buttons_0005_Mech.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buttons_0005_PLUSMech.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buttons_0006_FIREMech.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buttons_0007_EDIT-copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buttons_0008_ADDOper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buttons_0009_FIREOper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buttons_0009_Oper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buttons_0010_EDITOper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Russia-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ukraine-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buttons_0005_PLUSMech1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buttons_0007_EDIT-copy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buttons_0007_EDIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buttons_0006_FIREMech1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <None Include="Resources\pass.png" />
+    <None Include="Resources\none.png" />
+    <None Include="Resources\fail.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\print1.png" />
+    <None Include="Resources\preview.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\print.png" />
+    <None Include="Resources\printsetting.png" />
+    <None Include="Resources\openfoto.png" />
+    <None Include="Resources\svet_0002_Ellipse-1.png" />
+    <None Include="Resources\svet_0001_Ellipse-1-copy.png" />
+    <None Include="Resources\svet_0000_Ellipse-1-copy-3.png" />
+    <None Include="Resources\protocol1.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\about.png" />
+    <None Include="Resources\help1.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\protocol.png" />
+    <None Include="Resources\NORMARIVES.png" />
+    <None Include="Resources\GROUP.png" />
+    <None Include="Resources\splashScreen2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

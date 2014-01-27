@@ -1,0 +1,110 @@
+﻿using System;
+using System.Data;
+using System.Drawing;
+using System.Globalization;
+using System.Threading;
+using System.Windows.Forms;
+using adovipavto.AddForms;
+using adovipavto.Classes;
+using adovipavto.EditForms;
+using adovipavto.Properties;
+
+namespace adovipavto
+{
+    public partial class GroupsForm : Form
+    {
+        private DataRow _selectedRow;
+
+        public GroupsForm()
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
+
+
+
+
+            InitializeComponent();
+            dataGridView1.DataSource = Program.VipAvtoDataSet.Tables[Constants.GroupTableName];
+        }
+
+        //readonly DataTable _table;
+
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0 && e.Button == MouseButtons.Right)
+            {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+                Rectangle r = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+
+                _selectedRow = Program.VipAvtoDataSet.GetRowByIndex(Constants.GroupTableName, e.RowIndex);
+                contextMenuStrip1.Show((Control) sender, r.Left + e.X, r.Top + e.Y);
+            }
+        }
+
+        private void нормативыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new NormativesForm(_selectedRow["Title"].ToString()).ShowDialog();
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(@"Удалить группу? Все связанные с ней нормативы и записи будут удалены!", @"Внимание",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                Program.VipAvtoDataSet.RemoveRow(Constants.GroupTableName, _selectedRow);
+                Program.VipAvtoDataSet.Tables[Constants.GroupTableName].WriteXml(Constants.GetFullPath(Settings.Default.Groups));
+                _selectedRow = null;
+            }
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dataGridView1.Rows[e.RowIndex].Selected = true;
+            _selectedRow = Program.VipAvtoDataSet.GetRowByIndex(Constants.GroupTableName, e.RowIndex);
+            new NormativesForm(_selectedRow["Title"].ToString()).ShowDialog();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            new AddGroupForm().ShowDialog();
+            dataGridView1.Refresh();
+        }
+
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            _selectedRow = Program.VipAvtoDataSet.GetRowByIndex(Constants.GroupTableName,
+                dataGridView1.SelectedRows[0].Index);
+
+            if (_selectedRow != null)
+            {
+                new EditGroupForm(_selectedRow).ShowDialog();
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            _selectedRow = Program.VipAvtoDataSet.GetRowByIndex(Constants.GroupTableName,
+                dataGridView1.SelectedRows[0].Index);
+
+            if (_selectedRow != null)
+            {
+                if (MessageBox.Show(@"Удалить группу? Все связанные с ней нормативы и записи будут удалены!", "Внимание",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
+                    DialogResult.Yes)
+                {
+                    Program.VipAvtoDataSet.RemoveRow(Constants.GroupTableName, _selectedRow);
+
+
+                    Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].AcceptChanges();
+                    Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].WriteXml(Constants.GetFullPath(Settings.Default.Normatives));
+                    _selectedRow = null;
+                }
+            }
+        }
+
+        private void GroupsForm_Load(object sender, EventArgs e)
+        {
+        }
+    }
+}
