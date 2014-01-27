@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Globalization;
+using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Enums;
+using Microsoft.ReportingServices.Interfaces;
 
 namespace adovipavto.AddForms
 {
@@ -13,6 +16,9 @@ namespace adovipavto.AddForms
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
             InitializeComponent();
         }
+
+        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+
 
 
         private void NewGroupForm_Load(object sender, EventArgs e)
@@ -25,21 +31,6 @@ namespace adovipavto.AddForms
             }
 
             comboBox3.SelectedItem = DateTime.Now.Year;
-            //}
-            //else
-            //{
-            //    DataRow dataRow = Program.VipAvtoDataSet.GetRowByIndex(Constants.GroupTableName, groupId);
-            //    checkedListBox1.DataSource = Enum.GetValues(typeof(Category));
-            //    checkedListBox1.SelectedItem = (Category)Enum.Parse(typeof(Category), dataRow["Category"].ToString(), true);
-            //    checkedListBox2.DataSource = Enum.GetValues(typeof(Engine));
-            //    checkedListBox2.SelectedItem = (Engine)Enum.Parse(typeof(Engine), dataRow["EngineType"].ToString(), true);
-            //    for (int i = 1920; i <= DateTime.Now.Year; i++)
-            //    {
-            //        comboBox3.Items.Add(i);
-            //    }
-            //    comboBox3.SelectedItem = dataRow["Year"];
-
-            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -63,12 +54,12 @@ namespace adovipavto.AddForms
                 }
                 else
                 {
-                    MessageBox.Show("Должен быть выбран как минимум один вид двигателя.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(rm.GetString("oneEngine"), Properties.Resources.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Должна быть выбрана как минимум одна группа.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(rm.GetString("oneGroup"), Properties.Resources.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

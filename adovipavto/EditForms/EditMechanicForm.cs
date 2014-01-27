@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -45,7 +47,7 @@ namespace adovipavto.EditForms
             }
             else
             {
-                MessageBox.Show("Неверно введены данные");
+                MessageBox.Show(new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly()).GetString("wrongData"));
             }
         }
 

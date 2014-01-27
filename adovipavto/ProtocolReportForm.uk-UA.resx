@@ -117,18 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="printPreviewControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>592, 402</value>
-  </data>
-  <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>592, 402</value>
-  </data>
   <data name="toolStripButton2.Text" xml:space="preserve">
     <value>Друкувати</value>
   </data>
   <data name="toolStripButton1.Text" xml:space="preserve">
     <value>Параметри друку</value>
+  </data>
+  <data name="toolStripLabel1.Text" xml:space="preserve">
+    <value>Масштаб</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Бланк №</value>

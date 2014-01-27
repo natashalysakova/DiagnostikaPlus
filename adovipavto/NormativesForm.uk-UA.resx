@@ -168,4 +168,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Нормативи</value>
   </data>
+  <data name="delete" xml:space="preserve">
+    <value>Видалити норматив?</value>
+  </data>
 </root>

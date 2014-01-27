@@ -117,38 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="printPreviewControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>393, 557</value>
+  <data name="brakeSystem" xml:space="preserve">
+    <value />
   </data>
-  <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>393, 557</value>
+  <data name="check" xml:space="preserve">
+    <value />
   </data>
-  <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 52</value>
+  <data name="data" xml:space="preserve">
+    <value />
   </data>
-  <data name="toolStripButton2.Text" xml:space="preserve">
-    <value>Печать</value>
+  <data name="engineAndItsSystem" xml:space="preserve">
+    <value />
   </data>
-  <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 52</value>
+  <data name="FIO" xml:space="preserve">
+    <value />
   </data>
-  <data name="toolStripButton1.Text" xml:space="preserve">
-    <value>Параметры печати</value>
+  <data name="glass" xml:space="preserve">
+    <value />
   </data>
-  <data name="toolStripLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 15</value>
+  <data name="lightSystem" xml:space="preserve">
+    <value />
   </data>
-  <data name="toolStripLabel1.Text" xml:space="preserve">
-    <value>Масштаб</value>
+  <data name="mechanic" xml:space="preserve">
+    <value />
   </data>
-  <data name="toolStripComboBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 23</value>
+  <data name="noise" xml:space="preserve">
+    <value />
   </data>
-  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 153</value>
+  <data name="norm" xml:space="preserve">
+    <value />
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Бланк №</value>
+  <data name="notCheck" xml:space="preserve">
+    <value />
+  </data>
+  <data name="oboznach" xml:space="preserve">
+    <value />
+  </data>
+  <data name="photo" xml:space="preserve">
+    <value />
+  </data>
+  <data name="results" xml:space="preserve">
+    <value />
+  </data>
+  <data name="results2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="signature" xml:space="preserve">
+    <value />
+  </data>
+  <data name="techphoto" xml:space="preserve">
+    <value />
+  </data>
+  <data name="uncheck" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="visualCheck" xml:space="preserve">
+    <value />
+  </data>
+  <data name="wheelAndTyres" xml:space="preserve">
+    <value />
+  </data>
+  <data name="wheelSystem" xml:space="preserve">
+    <value />
+  </data>
+  <data name="zakluch" xml:space="preserve">
+    <value />
   </data>
 </root>

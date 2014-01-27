@@ -88,6 +88,11 @@ namespace adovipavto
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
                 InitializeComponent();
 
+                dataGridView1.DataSource = Program.VipAvtoDataSet.Tables[Constants.ProtocolsTableName];
+                dataGridView1.Sort(dataGridView1.Columns["Date"], ListSortDirection.Descending);
+
+                UpdateRows();
+
             }
         }
 

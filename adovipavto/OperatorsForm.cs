@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace adovipavto
 {
     public partial class OperatorsForm : Form
     {
-        ResourceManager rm = new ResourceManager(typeof(OperatorsForm));
+        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
         public OperatorsForm()
         {

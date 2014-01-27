@@ -2,6 +2,8 @@
 using System.Data;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
@@ -17,6 +19,8 @@ namespace adovipavto.AddForms
 
             InitializeComponent();
         }
+
+        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
         private void button2_Click(object sender, EventArgs e)
@@ -42,12 +46,12 @@ namespace adovipavto.AddForms
                 }
                 else
                 {
-                    MessageBox.Show("Должна быть выбрана как минимум одна группа.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(rm.GetString("oneGroup"), Properties.Resources.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Неверное значение поля", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(rm.GetString("wrongData"), Properties.Resources.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -65,15 +69,15 @@ namespace adovipavto.AddForms
                 }
                 else
                 {
-                    errorProvider1.SetError(textBox1, "Минимальное значение больше максимального");
-                    errorProvider1.SetError(textBox2, "Минимальное значение больше максимального");
+                    errorProvider1.SetError(textBox1, rm.GetString("minmax"));
+                    errorProvider1.SetError(textBox2, rm.GetString("minmax"));
 
                 }
 
             }
             catch (Exception)
             {
-                errorProvider1.SetError(((TextBox)sender), "try again");
+                errorProvider1.SetError(((TextBox)sender), rm.GetString("wrongData"));
             }
         }
 
@@ -90,7 +94,7 @@ namespace adovipavto.AddForms
 
 
             //comboBox2.DataSource = Program.NormasTitles.Select(item => item.Value).ToList();
-            comboBox2.DataSource = Constants.NormativesTitles;
+            comboBox2.DataSource = new Normatives().NormativesTitle;
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -23,6 +25,8 @@ namespace adovipavto
 
             InitializeComponent();
         }
+
+        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
         private void Mechanics_Load(object sender, EventArgs e)
         {
@@ -92,7 +96,7 @@ namespace adovipavto
         {
             if (dataGridView1.SelectedRows[0] != null)
             {
-                if (MessageBox.Show("Заблокировать механика?", "Внимание",
+                if (MessageBox.Show(rm.GetString("lockmech"), Properties.Resources.warning,
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {

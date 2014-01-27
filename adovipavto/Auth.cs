@@ -12,7 +12,7 @@ namespace adovipavto
         public Auth()
         {
             InitializeComponent();
-            LocRM = new ResourceManager(typeof (Auth));
+            LocRM = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
         }
 
         private void timer1_Tick(object sender, EventArgs e)

@@ -191,12 +191,57 @@ namespace adovipavto.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Частота проблесков указателей поворота (Гц).
+        /// </summary>
+        internal static string CHPUP {
+            get {
+                return ResourceManager.GetString("CHPUP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Частота вращения на минимальных оборотах (об. мин).
+        /// </summary>
+        internal static string CHVNMO {
+            get {
+                return ResourceManager.GetString("CHVNMO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Частота вращения на повышеных оборотах (об. мин).
+        /// </summary>
+        internal static string CHVNPO {
+            get {
+                return ResourceManager.GetString("CHVNPO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap copy {
             get {
                 object obj = ResourceManager.GetObject("copy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дымность в режиме свободных ускорений (м-1).
+        /// </summary>
+        internal static string DVRSUM {
+            get {
+                return ResourceManager.GetString("DVRSUM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дымность в режиме свободных ускорений (%).
+        /// </summary>
+        internal static string DVRSUP {
+            get {
+                return ResourceManager.GetString("DVRSUP", resourceCulture);
             }
         }
         
@@ -280,6 +325,15 @@ namespace adovipavto.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Контрольное усилие на орган управления (1-я ось)(Н).
+        /// </summary>
+        internal static string KUNOU1 {
+            get {
+                return ResourceManager.GetString("KUNOU1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Общая удельная тормозная сила рабочей ТС (доли ед.)
         ///Общая удельная тормозная сила стояночной ТС (доли ед.)
         ///Отн. разность тормозных сил (1-я ось)(доли ед.)
@@ -306,6 +360,15 @@ namespace adovipavto.Properties {
             get {
                 object obj = ResourceManager.GetObject("minus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Максимальное время срабатывания ТС (мс).
+        /// </summary>
+        internal static string MVSTS {
+            get {
+                return ResourceManager.GetString("MVSTS", resourceCulture);
             }
         }
         
@@ -340,6 +403,60 @@ namespace adovipavto.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Отн. разность тормозных сил (1-я ось)(доли ед.).
+        /// </summary>
+        internal static string ORTS1 {
+            get {
+                return ResourceManager.GetString("ORTS1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Отн. разность тормозных сил (2-я ось)(доли ед.).
+        /// </summary>
+        internal static string ORTS2 {
+            get {
+                return ResourceManager.GetString("ORTS2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Отн. разность тормозных сил (3-я ось)(доли ед.).
+        /// </summary>
+        internal static string ORTS3 {
+            get {
+                return ResourceManager.GetString("ORTS3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Общая удельная тормозная сила рабочей ТС (доли ед.).
+        /// </summary>
+        internal static string OUTSRTS {
+            get {
+                return ResourceManager.GetString("OUTSRTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Общая удельная тормозная сила стояночной ТС (доли ед.).
+        /// </summary>
+        internal static string OUTSSTS {
+            get {
+                return ResourceManager.GetString("OUTSSTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Остаточная высота рисунка протектора (мм).
+        /// </summary>
+        internal static string OVRP {
+            get {
+                return ResourceManager.GetString("OVRP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap pass {
@@ -356,6 +473,15 @@ namespace adovipavto.Properties {
             get {
                 object obj = ResourceManager.GetObject("plus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Прозрачность переднего бокового стекла (%).
+        /// </summary>
+        internal static string PPBS {
+            get {
+                return ResourceManager.GetString("PPBS", resourceCulture);
             }
         }
         
@@ -410,6 +536,15 @@ namespace adovipavto.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Прозрачность ветрового стекла (%).
+        /// </summary>
+        internal static string PVS {
+            get {
+                return ResourceManager.GetString("PVS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap red {
@@ -436,6 +571,42 @@ namespace adovipavto.Properties {
             get {
                 object obj = ResourceManager.GetObject("save", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Содержание СН: повышенная частота вращения(ppm).
+        /// </summary>
+        internal static string SCHMACHV {
+            get {
+                return ResourceManager.GetString("SCHMACHV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Содержание СН: минимальная частота вращения (ppm).
+        /// </summary>
+        internal static string SCHMCHV {
+            get {
+                return ResourceManager.GetString("SCHMCHV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Содержание СО: повышенная частота вращения(%).
+        /// </summary>
+        internal static string SCOMACHV {
+            get {
+                return ResourceManager.GetString("SCOMACHV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Содержание СО: минимальная частота вращения (%).
+        /// </summary>
+        internal static string SCOMCHV {
+            get {
+                return ResourceManager.GetString("SCOMCHV", resourceCulture);
             }
         }
         
@@ -470,6 +641,15 @@ namespace adovipavto.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Суммарный люфт (град).
+        /// </summary>
+        internal static string SL {
+            get {
+                return ResourceManager.GetString("SL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap splashScreen {
@@ -490,12 +670,48 @@ namespace adovipavto.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Сила света фар ближнего света (Кд).
+        /// </summary>
+        internal static string SSFBS {
+            get {
+                return ResourceManager.GetString("SSFBS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сила света фар дальнего света (Кд).
+        /// </summary>
+        internal static string SSFDS {
+            get {
+                return ResourceManager.GetString("SSFDS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сила света противотуманных фар (Кд).
+        /// </summary>
+        internal static string SSPF {
+            get {
+                return ResourceManager.GetString("SSPF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ukraine_icon {
             get {
                 object obj = ResourceManager.GetObject("ukraine_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Внешний шум автомобиля (дБА).
+        /// </summary>
+        internal static string VSHA {
+            get {
+                return ResourceManager.GetString("VSHA", resourceCulture);
             }
         }
         

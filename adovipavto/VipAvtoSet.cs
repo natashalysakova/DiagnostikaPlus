@@ -11,9 +11,9 @@ namespace adovipavto
 {
     public partial class VipAvtoSet
     {
-        partial class MesuresDataTable
-        {
-        }
+        //partial class MesuresDataTable
+        //{
+        //}
     
         private Operator _currentOperator;
 
@@ -23,7 +23,7 @@ namespace adovipavto
         {
             DataRow r = Tables[Constants.NormativesTableName].NewRow();
 
-            r["Title"] = Constants.GetNormativeIndex(title);
+            r["Title"] = new Normatives().GetNormativeIndex(title);
             r["MaxValue"] = maxValue;
             r["MinValue"] = minValue;
 

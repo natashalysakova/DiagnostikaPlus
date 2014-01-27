@@ -2,6 +2,7 @@
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.Reflection;
 using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
@@ -22,7 +23,7 @@ namespace adovipavto
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
 
-            rm = new ResourceManager(typeof(GroupsForm));
+            rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
             InitializeComponent();

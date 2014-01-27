@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,6 +24,9 @@ namespace adovipavto.AddForms
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
             InitializeComponent();
         }
+
+        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+
 
         private void AddOperatorForm_Load(object sender, EventArgs e)
         {
@@ -47,7 +52,7 @@ namespace adovipavto.AddForms
             }
             else
             {
-                MessageBox.Show("Неверно введены данные");
+                MessageBox.Show(rm.GetString("wrongData"));
             }
 
         }
@@ -60,7 +65,7 @@ namespace adovipavto.AddForms
         private void nameTxtBx_Validated(object sender, EventArgs e)
         {
             if (((TextBox) sender).Text == "")
-                errorProvider1.SetError(((TextBox) sender), "try again");
+                errorProvider1.SetError(((TextBox) sender), rm.GetString("wrongData"));
             else
                 errorProvider1.SetError(((TextBox) sender), null);
         }

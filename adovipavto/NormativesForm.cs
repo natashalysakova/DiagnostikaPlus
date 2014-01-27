@@ -2,6 +2,8 @@
 using System.Data;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.AddForms;
@@ -16,7 +18,7 @@ namespace adovipavto
         {
         }
 
-
+       ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
         public NormativesForm(string selectedGroup)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
@@ -68,13 +70,13 @@ namespace adovipavto
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                row.Cells["NormTitle"].Value = Constants.NormativesTitles[(int)row.Cells["titleDataGridViewTextBoxColumn"].Value];
+                row.Cells["NormTitle"].Value = new Normatives().NormativesTitle[(int)row.Cells["titleDataGridViewTextBoxColumn"].Value];
             }
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(@"Удалить норматив?", "Внимание",
+            if (MessageBox.Show(rm.GetString("deleteNorm"), Properties.Resources.warning,
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;

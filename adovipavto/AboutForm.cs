@@ -17,7 +17,7 @@ namespace adovipavto
         public AboutForm()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
-            ResourceManager rm = new ResourceManager(typeof(AboutForm));
+            ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
             InitializeComponent();
 

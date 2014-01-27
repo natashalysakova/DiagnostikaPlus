@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -21,6 +23,8 @@ namespace adovipavto.AddForms
             InitializeComponent();
         }
 
+        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+
         private void button2_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
@@ -36,7 +40,7 @@ namespace adovipavto.AddForms
             }
             else
             {
-                MessageBox.Show("Неверно введены данные");
+                MessageBox.Show(rm.GetString("wrongData"));
             }
 
         }
@@ -44,7 +48,7 @@ namespace adovipavto.AddForms
         private void nameTxtBx_Validated(object sender, EventArgs e)
         {
             if(((TextBox)sender).Text == "")
-                errorProvider1.SetError((TextBox)sender, "EmptyField");
+                errorProvider1.SetError((TextBox)sender, rm.GetString("wrongData"));
         }
 
         private void fnTxtBx_TextChanged(object sender, EventArgs e)
