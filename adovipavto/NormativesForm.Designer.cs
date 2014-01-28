@@ -59,34 +59,20 @@
             // 
             // toolStripContainer1
             // 
-            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
-            // 
-            // toolStripContainer1.BottomToolStripPanel
-            // 
-            resources.ApplyResources(this.toolStripContainer1.BottomToolStripPanel, "toolStripContainer1.BottomToolStripPanel");
             // 
             // toolStripContainer1.ContentPanel
             // 
-            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
-            // 
-            // toolStripContainer1.LeftToolStripPanel
-            // 
-            resources.ApplyResources(this.toolStripContainer1.LeftToolStripPanel, "toolStripContainer1.LeftToolStripPanel");
+            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
+            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
             this.toolStripContainer1.Name = "toolStripContainer1";
-            // 
-            // toolStripContainer1.RightToolStripPanel
-            // 
-            resources.ApplyResources(this.toolStripContainer1.RightToolStripPanel, "toolStripContainer1.RightToolStripPanel");
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
-            resources.ApplyResources(this.toolStripContainer1.TopToolStripPanel, "toolStripContainer1.TopToolStripPanel");
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
             // 
             // dataGridView1
             // 
-            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
@@ -102,6 +88,7 @@
             this.iDGroupDataGridViewTextBoxColumn});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView1.DataSource = this.normativesBindingSource;
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -179,32 +166,32 @@
             // 
             // toolStripButton1
             // 
-            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton1.Image = global::adovipavto.Properties.Resources.plus;
+            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
-            resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton2.Image = global::adovipavto.Properties.Resources.edit;
+            resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
-            resources.ApplyResources(this.toolStripButton3, "toolStripButton3");
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton3.Image = global::adovipavto.Properties.Resources.minus;
+            resources.ApplyResources(this.toolStripButton3, "toolStripButton3");
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripSeparator1
             // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // toolStripLabel1
             // 
@@ -213,15 +200,15 @@
             // 
             // groupSelector
             // 
-            resources.ApplyResources(this.groupSelector, "groupSelector");
             this.groupSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.groupSelector, "groupSelector");
             this.groupSelector.Name = "groupSelector";
             this.groupSelector.SelectedIndexChanged += new System.EventHandler(this.groupSelector_SelectedIndexChanged);
             // 
             // toolStripSeparator2
             // 
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // NormativesForm
             // 

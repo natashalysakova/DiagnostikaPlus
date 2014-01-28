@@ -81,6 +81,7 @@ namespace adovipavto
             {
                 var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
                 Program.VipAvtoDataSet.RemoveRowById(Constants.NormativesTableName, id);
+                UpdateRows();
             }
         }
 
