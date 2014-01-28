@@ -234,7 +234,7 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>33</value>
+    <value>35</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
@@ -399,45 +399,6 @@
   <data name="panel1.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label79.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 18pt</value>
-  </data>
-  <data name="label79.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="label79.Size" type="System.Drawing.Size, System.Drawing">
-    <value>416, 37</value>
-  </data>
-  <data name="label79.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="label79.Text" xml:space="preserve">
-    <value>Не все поля заполнены</value>
-  </data>
-  <data name="label79.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;label79.Name" xml:space="preserve">
-    <value>label79</value>
-  </data>
-  <data name="&gt;&gt;label79.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label79.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;label79.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>431, 517</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 39</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
   <data name="&gt;&gt;panel2.Name" xml:space="preserve">
     <value>panel2</value>
   </data>
@@ -449,117 +410,6 @@
   </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;pictureBox28.Name" xml:space="preserve">
-    <value>pictureBox28</value>
-  </data>
-  <data name="&gt;&gt;pictureBox28.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox28.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;pictureBox28.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pictureBox27.Name" xml:space="preserve">
-    <value>pictureBox27</value>
-  </data>
-  <data name="&gt;&gt;pictureBox27.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox27.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;pictureBox27.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label76.Name" xml:space="preserve">
-    <value>label76</value>
-  </data>
-  <data name="&gt;&gt;label76.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label76.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;label76.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label75.Name" xml:space="preserve">
-    <value>label75</value>
-  </data>
-  <data name="&gt;&gt;label75.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label75.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;label75.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label70.Name" xml:space="preserve">
-    <value>label70</value>
-  </data>
-  <data name="&gt;&gt;label70.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label70.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;label70.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;dateTimePicker1.Name" xml:space="preserve">
-    <value>dateTimePicker1</value>
-  </data>
-  <data name="&gt;&gt;dateTimePicker1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dateTimePicker1.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;dateTimePicker1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;comboBox2.Name" xml:space="preserve">
-    <value>comboBox2</value>
-  </data>
-  <data name="&gt;&gt;comboBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBox2.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;comboBox2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;label69.Name" xml:space="preserve">
-    <value>label69</value>
-  </data>
-  <data name="&gt;&gt;label69.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label69.Parent" xml:space="preserve">
-    <value>groupBox11</value>
-  </data>
-  <data name="&gt;&gt;label69.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="groupBox11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt, style=Bold</value>
-  </data>
-  <data name="groupBox11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>857, 374</value>
-  </data>
-  <data name="groupBox11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>363, 181</value>
-  </data>
-  <data name="groupBox11.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="groupBox11.Text" xml:space="preserve">
-    <value>Информация</value>
   </data>
   <data name="&gt;&gt;groupBox11.Name" xml:space="preserve">
     <value>groupBox11</value>
@@ -573,57 +423,6 @@
   <data name="&gt;&gt;groupBox11.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;radioButton5.Name" xml:space="preserve">
-    <value>radioButton5</value>
-  </data>
-  <data name="&gt;&gt;radioButton5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton5.Parent" xml:space="preserve">
-    <value>groupBox10</value>
-  </data>
-  <data name="&gt;&gt;radioButton5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;radioButton3.Name" xml:space="preserve">
-    <value>radioButton3</value>
-  </data>
-  <data name="&gt;&gt;radioButton3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton3.Parent" xml:space="preserve">
-    <value>groupBox10</value>
-  </data>
-  <data name="&gt;&gt;radioButton3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;radioButton4.Name" xml:space="preserve">
-    <value>radioButton4</value>
-  </data>
-  <data name="&gt;&gt;radioButton4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton4.Parent" xml:space="preserve">
-    <value>groupBox10</value>
-  </data>
-  <data name="&gt;&gt;radioButton4.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="groupBox10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt, style=Bold</value>
-  </data>
-  <data name="groupBox10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>857, 304</value>
-  </data>
-  <data name="groupBox10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>366, 61</value>
-  </data>
-  <data name="groupBox10.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="groupBox10.Text" xml:space="preserve">
-    <value>Срок действия протокола</value>
-  </data>
   <data name="&gt;&gt;groupBox10.Name" xml:space="preserve">
     <value>groupBox10</value>
   </data>
@@ -635,42 +434,6 @@
   </data>
   <data name="&gt;&gt;groupBox10.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;radioButton2.Name" xml:space="preserve">
-    <value>radioButton2</value>
-  </data>
-  <data name="&gt;&gt;radioButton2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton2.Parent" xml:space="preserve">
-    <value>visualChrck</value>
-  </data>
-  <data name="&gt;&gt;radioButton2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;radioButton1.Name" xml:space="preserve">
-    <value>radioButton1</value>
-  </data>
-  <data name="&gt;&gt;radioButton1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton1.Parent" xml:space="preserve">
-    <value>visualChrck</value>
-  </data>
-  <data name="&gt;&gt;radioButton1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="visualChrck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>857, 234</value>
-  </data>
-  <data name="visualChrck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 61</value>
-  </data>
-  <data name="visualChrck.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="visualChrck.Text" xml:space="preserve">
-    <value>Визуальная проверка на соответсвие ГОСТ, ДСТУ</value>
   </data>
   <data name="&gt;&gt;visualChrck.Name" xml:space="preserve">
     <value>visualChrck</value>
@@ -684,39 +447,6 @@
   <data name="&gt;&gt;visualChrck.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="glass.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="glass.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel7.Name" xml:space="preserve">
-    <value>tableLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel7.Parent" xml:space="preserve">
-    <value>glass</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel7.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel7.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textBox25" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="PPBS" Row="2" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="PVS" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox26" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label73" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label74" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label77" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label78" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,55,Percent,100,Absolute,55" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="glass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>431, 399</value>
-  </data>
-  <data name="glass.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 114</value>
-  </data>
-  <data name="glass.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="glass.Text" xml:space="preserve">
-    <value>Светопропускание стекла</value>
-  </data>
   <data name="&gt;&gt;glass.Name" xml:space="preserve">
     <value>glass</value>
   </data>
@@ -728,39 +458,6 @@
   </data>
   <data name="&gt;&gt;glass.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="wheelAndTyres.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="wheelAndTyres.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel6.Name" xml:space="preserve">
-    <value>tableLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel6.Parent" xml:space="preserve">
-    <value>wheelAndTyres</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel6.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel6.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="OVRP" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox22" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label67" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label68" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,55,Percent,100,Absolute,55" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="wheelAndTyres.Location" type="System.Drawing.Point, System.Drawing">
-    <value>857, 157</value>
-  </data>
-  <data name="wheelAndTyres.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 68</value>
-  </data>
-  <data name="wheelAndTyres.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="wheelAndTyres.Text" xml:space="preserve">
-    <value>Колёса и шины</value>
   </data>
   <data name="&gt;&gt;wheelAndTyres.Name" xml:space="preserve">
     <value>wheelAndTyres</value>
@@ -774,39 +471,6 @@
   <data name="&gt;&gt;wheelAndTyres.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="wheelSystem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="wheelSystem.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Name" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.Parent" xml:space="preserve">
-    <value>wheelSystem</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="SL" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox14" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label31" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label38" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,55,Percent,100,Absolute,55" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="wheelSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>857, 3</value>
-  </data>
-  <data name="wheelSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 68</value>
-  </data>
-  <data name="wheelSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="wheelSystem.Text" xml:space="preserve">
-    <value>Рулевое управление</value>
-  </data>
   <data name="&gt;&gt;wheelSystem.Name" xml:space="preserve">
     <value>wheelSystem</value>
   </data>
@@ -818,39 +482,6 @@
   </data>
   <data name="&gt;&gt;wheelSystem.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="noise.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="noise.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel5.Name" xml:space="preserve">
-    <value>tableLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel5.Parent" xml:space="preserve">
-    <value>noise</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel5.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="VSHA" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox21" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label64" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label65" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,55,Percent,100,Absolute,55" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="noise.Location" type="System.Drawing.Point, System.Drawing">
-    <value>857, 80</value>
-  </data>
-  <data name="noise.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 68</value>
-  </data>
-  <data name="noise.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="noise.Text" xml:space="preserve">
-    <value>Внешний шум АТС</value>
   </data>
   <data name="&gt;&gt;noise.Name" xml:space="preserve">
     <value>noise</value>
@@ -864,39 +495,6 @@
   <data name="&gt;&gt;noise.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="engineAndItsSystem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="engineAndItsSystem.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel4.Name" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel4.Parent" xml:space="preserve">
-    <value>engineAndItsSystem</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label62" Row="15" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label61" Row="15" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="textBox8" Row="13" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox9" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox10" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox16" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox17" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox18" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="CHVNMO" Row="12" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="DVRSUP" Row="10" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="DVRSUM" Row="8" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="SCHMACHV" Row="6" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="SCHVCHV" Row="4" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="SCOMACHV" Row="2" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="SCOMCHV" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox19" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label46" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label47" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label48" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label49" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label50" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label51" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label52" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label53" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label54" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label55" Row="5" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label56" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label57" Row="9" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label58" Row="11" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label59" Row="13" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="CHVNPO" Row="14" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox20" Row="15" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,55,Percent,100,Absolute,55" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="engineAndItsSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>431, 3</value>
-  </data>
-  <data name="engineAndItsSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 390</value>
-  </data>
-  <data name="engineAndItsSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="engineAndItsSystem.Text" xml:space="preserve">
-    <value>Двигатель и его системы</value>
-  </data>
   <data name="&gt;&gt;engineAndItsSystem.Name" xml:space="preserve">
     <value>engineAndItsSystem</value>
   </data>
@@ -909,39 +507,6 @@
   <data name="&gt;&gt;engineAndItsSystem.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="lightSystem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lightSystem.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.Name" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.Parent" xml:space="preserve">
-    <value>lightSystem</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textBox11" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox12" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox13" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="CHPUP" Row="6" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="SSPF" Row="4" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="SSFDS" Row="2" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="SSFBS" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox15" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label33" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label34" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label35" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label36" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label41" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label42" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label43" Row="5" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label44" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,55,Percent,100,Absolute,55" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="lightSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 350</value>
-  </data>
-  <data name="lightSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 206</value>
-  </data>
-  <data name="lightSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lightSystem.Text" xml:space="preserve">
-    <value>Внешние световые приборы</value>
-  </data>
   <data name="&gt;&gt;lightSystem.Name" xml:space="preserve">
     <value>lightSystem</value>
   </data>
@@ -953,39 +518,6 @@
   </data>
   <data name="&gt;&gt;lightSystem.ZOrder" xml:space="preserve">
     <value>9</value>
-  </data>
-  <data name="brakesystem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="brakesystem.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>brakesystem</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textBox7" Row="13" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox6" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox5" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox4" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox3" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox2" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="KUNOU1" Row="12" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="MVSTS" Row="10" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="ORTS3" Row="8" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="ORTS2" Row="6" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="ORTS1" Row="4" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="OUTSSTS" Row="2" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox1" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label10" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label14" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label15" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label16" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label17" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label18" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label19" Row="5" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label20" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label21" Row="9" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label22" Row="11" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label23" Row="13" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="OUTSRTS" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,55,Percent,100,Absolute,55" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="brakesystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="brakesystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>422, 344</value>
-  </data>
-  <data name="brakesystem.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="brakesystem.Text" xml:space="preserve">
-    <value>Стенд анализа тормозных систем</value>
   </data>
   <data name="&gt;&gt;brakesystem.Name" xml:space="preserve">
     <value>brakesystem</value>
@@ -1061,6 +593,51 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="brakesystem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="brakesystem.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>brakesystem</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textBox7" Row="13" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox6" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox5" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox4" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox3" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox2" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="KUNOU1" Row="12" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="MVSTS" Row="10" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="ORTS3" Row="8" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="ORTS2" Row="6" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="ORTS1" Row="4" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="OUTSSTS" Row="2" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox1" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label10" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label12" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label13" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label14" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label15" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label16" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label17" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label18" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label19" Row="5" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label20" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label21" Row="9" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label22" Row="11" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label23" Row="13" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="OUTSRTS" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,55,Percent,100,Absolute,55" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="brakesystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="brakesystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>422, 344</value>
+  </data>
+  <data name="brakesystem.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="brakesystem.Text" xml:space="preserve">
+    <value>Стенд анализа тормозных систем</value>
+  </data>
+  <data name="&gt;&gt;brakesystem.Name" xml:space="preserve">
+    <value>brakesystem</value>
+  </data>
+  <data name="&gt;&gt;brakesystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;brakesystem.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;brakesystem.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="tableLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2340,6 +1917,192 @@
   <data name="&gt;&gt;OUTSRTS.ZOrder" xml:space="preserve">
     <value>27</value>
   </data>
+  <data name="&gt;&gt;label79.Name" xml:space="preserve">
+    <value>label79</value>
+  </data>
+  <data name="&gt;&gt;label79.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label79.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;label79.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>431, 517</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>420, 39</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label79.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 18pt</value>
+  </data>
+  <data name="label79.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="label79.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 37</value>
+  </data>
+  <data name="label79.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label79.Text" xml:space="preserve">
+    <value>Не все поля заполнены</value>
+  </data>
+  <data name="label79.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label79.Name" xml:space="preserve">
+    <value>label79</value>
+  </data>
+  <data name="&gt;&gt;label79.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label79.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;label79.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pictureBox28.Name" xml:space="preserve">
+    <value>pictureBox28</value>
+  </data>
+  <data name="&gt;&gt;pictureBox28.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox28.Parent" xml:space="preserve">
+    <value>groupBox11</value>
+  </data>
+  <data name="&gt;&gt;pictureBox28.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pictureBox27.Name" xml:space="preserve">
+    <value>pictureBox27</value>
+  </data>
+  <data name="&gt;&gt;pictureBox27.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox27.Parent" xml:space="preserve">
+    <value>groupBox11</value>
+  </data>
+  <data name="&gt;&gt;pictureBox27.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label76.Name" xml:space="preserve">
+    <value>label76</value>
+  </data>
+  <data name="&gt;&gt;label76.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label76.Parent" xml:space="preserve">
+    <value>groupBox11</value>
+  </data>
+  <data name="&gt;&gt;label76.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label75.Name" xml:space="preserve">
+    <value>label75</value>
+  </data>
+  <data name="&gt;&gt;label75.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label75.Parent" xml:space="preserve">
+    <value>groupBox11</value>
+  </data>
+  <data name="&gt;&gt;label75.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label70.Name" xml:space="preserve">
+    <value>label70</value>
+  </data>
+  <data name="&gt;&gt;label70.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label70.Parent" xml:space="preserve">
+    <value>groupBox11</value>
+  </data>
+  <data name="&gt;&gt;label70.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;dateTimePicker1.Name" xml:space="preserve">
+    <value>dateTimePicker1</value>
+  </data>
+  <data name="&gt;&gt;dateTimePicker1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dateTimePicker1.Parent" xml:space="preserve">
+    <value>groupBox11</value>
+  </data>
+  <data name="&gt;&gt;dateTimePicker1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;comboBox2.Name" xml:space="preserve">
+    <value>comboBox2</value>
+  </data>
+  <data name="&gt;&gt;comboBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox2.Parent" xml:space="preserve">
+    <value>groupBox11</value>
+  </data>
+  <data name="&gt;&gt;comboBox2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label69.Name" xml:space="preserve">
+    <value>label69</value>
+  </data>
+  <data name="&gt;&gt;label69.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label69.Parent" xml:space="preserve">
+    <value>groupBox11</value>
+  </data>
+  <data name="&gt;&gt;label69.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="groupBox11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt, style=Bold</value>
+  </data>
+  <data name="groupBox11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>857, 374</value>
+  </data>
+  <data name="groupBox11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>363, 181</value>
+  </data>
+  <data name="groupBox11.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="&gt;&gt;groupBox11.Name" xml:space="preserve">
+    <value>groupBox11</value>
+  </data>
+  <data name="&gt;&gt;groupBox11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox11.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox11.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="pictureBox28.Location" type="System.Drawing.Point, System.Drawing">
     <value>186, 110</value>
   </data>
@@ -2538,6 +2301,69 @@
   <data name="&gt;&gt;label69.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="&gt;&gt;radioButton5.Name" xml:space="preserve">
+    <value>radioButton5</value>
+  </data>
+  <data name="&gt;&gt;radioButton5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton5.Parent" xml:space="preserve">
+    <value>groupBox10</value>
+  </data>
+  <data name="&gt;&gt;radioButton5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;radioButton3.Name" xml:space="preserve">
+    <value>radioButton3</value>
+  </data>
+  <data name="&gt;&gt;radioButton3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton3.Parent" xml:space="preserve">
+    <value>groupBox10</value>
+  </data>
+  <data name="&gt;&gt;radioButton3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;radioButton4.Name" xml:space="preserve">
+    <value>radioButton4</value>
+  </data>
+  <data name="&gt;&gt;radioButton4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton4.Parent" xml:space="preserve">
+    <value>groupBox10</value>
+  </data>
+  <data name="&gt;&gt;radioButton4.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBox10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt, style=Bold</value>
+  </data>
+  <data name="groupBox10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>857, 304</value>
+  </data>
+  <data name="groupBox10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>366, 61</value>
+  </data>
+  <data name="groupBox10.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Срок действия протокола</value>
+  </data>
+  <data name="&gt;&gt;groupBox10.Name" xml:space="preserve">
+    <value>groupBox10</value>
+  </data>
+  <data name="&gt;&gt;groupBox10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox10.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox10.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="radioButton5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2619,6 +2445,54 @@
   <data name="&gt;&gt;radioButton4.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;radioButton2.Name" xml:space="preserve">
+    <value>radioButton2</value>
+  </data>
+  <data name="&gt;&gt;radioButton2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton2.Parent" xml:space="preserve">
+    <value>visualChrck</value>
+  </data>
+  <data name="&gt;&gt;radioButton2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;radioButton1.Name" xml:space="preserve">
+    <value>radioButton1</value>
+  </data>
+  <data name="&gt;&gt;radioButton1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton1.Parent" xml:space="preserve">
+    <value>visualChrck</value>
+  </data>
+  <data name="&gt;&gt;radioButton1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="visualChrck.Location" type="System.Drawing.Point, System.Drawing">
+    <value>857, 234</value>
+  </data>
+  <data name="visualChrck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>365, 61</value>
+  </data>
+  <data name="visualChrck.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="visualChrck.Text" xml:space="preserve">
+    <value>Визуальная проверка на соответсвие ГОСТ, ДСТУ</value>
+  </data>
+  <data name="&gt;&gt;visualChrck.Name" xml:space="preserve">
+    <value>visualChrck</value>
+  </data>
+  <data name="&gt;&gt;visualChrck.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;visualChrck.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;visualChrck.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="radioButton2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2672,6 +2546,51 @@
   </data>
   <data name="&gt;&gt;radioButton1.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="glass.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="glass.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel7.Name" xml:space="preserve">
+    <value>tableLayoutPanel7</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel7.Parent" xml:space="preserve">
+    <value>glass</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel7.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textBox25" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="PPBS" Row="2" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="PVS" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox26" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label73" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label74" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label77" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label78" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,55,Percent,100,Absolute,55" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="glass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>431, 399</value>
+  </data>
+  <data name="glass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>420, 114</value>
+  </data>
+  <data name="glass.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="glass.Text" xml:space="preserve">
+    <value>Светопропускание стекла</value>
+  </data>
+  <data name="&gt;&gt;glass.Name" xml:space="preserve">
+    <value>glass</value>
+  </data>
+  <data name="&gt;&gt;glass.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;glass.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;glass.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="tableLayoutPanel7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3054,6 +2973,51 @@
   <data name="&gt;&gt;label78.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="wheelAndTyres.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="wheelAndTyres.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel6.Name" xml:space="preserve">
+    <value>tableLayoutPanel6</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel6.Parent" xml:space="preserve">
+    <value>wheelAndTyres</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel6.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="OVRP" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox22" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label67" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label68" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,55,Percent,100,Absolute,55" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="wheelAndTyres.Location" type="System.Drawing.Point, System.Drawing">
+    <value>857, 157</value>
+  </data>
+  <data name="wheelAndTyres.Size" type="System.Drawing.Size, System.Drawing">
+    <value>365, 68</value>
+  </data>
+  <data name="wheelAndTyres.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="wheelAndTyres.Text" xml:space="preserve">
+    <value>Колёса и шины</value>
+  </data>
+  <data name="&gt;&gt;wheelAndTyres.Name" xml:space="preserve">
+    <value>wheelAndTyres</value>
+  </data>
+  <data name="&gt;&gt;wheelAndTyres.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wheelAndTyres.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;wheelAndTyres.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="tableLayoutPanel6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3263,6 +3227,51 @@
   </data>
   <data name="&gt;&gt;label68.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="wheelSystem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="wheelSystem.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Name" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Parent" xml:space="preserve">
+    <value>wheelSystem</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="SL" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox14" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label31" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label38" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,55,Percent,100,Absolute,55" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="wheelSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>857, 3</value>
+  </data>
+  <data name="wheelSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>365, 68</value>
+  </data>
+  <data name="wheelSystem.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="wheelSystem.Text" xml:space="preserve">
+    <value>Рулевое управление</value>
+  </data>
+  <data name="&gt;&gt;wheelSystem.Name" xml:space="preserve">
+    <value>wheelSystem</value>
+  </data>
+  <data name="&gt;&gt;wheelSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wheelSystem.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;wheelSystem.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="tableLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3474,6 +3483,51 @@
   <data name="&gt;&gt;label38.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="noise.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="noise.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel5.Name" xml:space="preserve">
+    <value>tableLayoutPanel5</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel5.Parent" xml:space="preserve">
+    <value>noise</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel5.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="VSHA" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox21" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label64" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label65" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,55,Percent,100,Absolute,55" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="noise.Location" type="System.Drawing.Point, System.Drawing">
+    <value>857, 80</value>
+  </data>
+  <data name="noise.Size" type="System.Drawing.Size, System.Drawing">
+    <value>365, 68</value>
+  </data>
+  <data name="noise.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="noise.Text" xml:space="preserve">
+    <value>Внешний шум АТС</value>
+  </data>
+  <data name="&gt;&gt;noise.Name" xml:space="preserve">
+    <value>noise</value>
+  </data>
+  <data name="&gt;&gt;noise.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;noise.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;noise.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="tableLayoutPanel5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3683,6 +3737,51 @@
   </data>
   <data name="&gt;&gt;label65.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="engineAndItsSystem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="engineAndItsSystem.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.Name" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.Parent" xml:space="preserve">
+    <value>engineAndItsSystem</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label62" Row="15" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label61" Row="15" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="textBox8" Row="13" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox9" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox10" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox16" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox17" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox18" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="CHVNMO" Row="12" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="DVRSUP" Row="10" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="DVRSUM" Row="8" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="SCHMACHV" Row="6" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="SCHVCHV" Row="4" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="SCOMACHV" Row="2" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="SCOMCHV" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox19" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label46" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label47" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label48" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label49" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label50" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label51" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label52" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label53" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label54" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label55" Row="5" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label56" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label57" Row="9" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label58" Row="11" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label59" Row="13" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="CHVNPO" Row="14" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox20" Row="15" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,55,Percent,100,Absolute,55" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="engineAndItsSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>431, 3</value>
+  </data>
+  <data name="engineAndItsSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>420, 390</value>
+  </data>
+  <data name="engineAndItsSystem.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="engineAndItsSystem.Text" xml:space="preserve">
+    <value>Двигатель и его системы</value>
+  </data>
+  <data name="&gt;&gt;engineAndItsSystem.Name" xml:space="preserve">
+    <value>engineAndItsSystem</value>
+  </data>
+  <data name="&gt;&gt;engineAndItsSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;engineAndItsSystem.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;engineAndItsSystem.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="tableLayoutPanel4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5090,6 +5189,51 @@
   </data>
   <data name="&gt;&gt;textBox20.ZOrder" xml:space="preserve">
     <value>31</value>
+  </data>
+  <data name="lightSystem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lightSystem.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel3.Name" xml:space="preserve">
+    <value>tableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel3.Parent" xml:space="preserve">
+    <value>lightSystem</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textBox11" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox12" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBox13" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="CHPUP" Row="6" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="SSPF" Row="4" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="SSFDS" Row="2" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="SSFBS" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="textBox15" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label33" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label34" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label35" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label36" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label41" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label42" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label43" Row="5" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="label44" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,55,Percent,100,Absolute,55" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="lightSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 350</value>
+  </data>
+  <data name="lightSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>420, 206</value>
+  </data>
+  <data name="lightSystem.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lightSystem.Text" xml:space="preserve">
+    <value>Внешние световые приборы</value>
+  </data>
+  <data name="&gt;&gt;lightSystem.Name" xml:space="preserve">
+    <value>lightSystem</value>
+  </data>
+  <data name="&gt;&gt;lightSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lightSystem.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;lightSystem.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="tableLayoutPanel3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
