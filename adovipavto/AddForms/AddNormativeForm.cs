@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
@@ -37,11 +39,32 @@ namespace adovipavto.AddForms
                     double min = Convert.ToDouble(textBox1.Text);
                     double max = Convert.ToDouble(textBox2.Text);
 
+                    List<String> groupsList = new List<string>();
                     foreach (object item in checkedListBox1.CheckedItems)
                     {
-                        Program.VipAvtoDataSet.AddNormative(item.ToString(), comboBox2.SelectedItem.ToString(), min, max);
+                        if (!Program.VipAvtoDataSet.GroupContainsNormative(item.ToString(),
+                                comboBox2.SelectedItem.ToString()))
+                        {
+                            Program.VipAvtoDataSet.AddNormative(item.ToString(), comboBox2.SelectedItem.ToString(), min, max);
+                        }
+                        else
+                        {
+                            groupsList.Add(item.ToString());
+                        }
                     }
 
+                    if (groupsList.Count != 0)
+                    {
+                        StringBuilder sb = new StringBuilder();
+
+                        foreach (string s in groupsList)
+                        {
+                            sb.Append(s + "\n");
+                        }
+
+                        MessageBox.Show(rm.GetString("groupContaintsNormative") + "\n" + sb.ToString(), rm.GetString("error"),
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                     DialogResult = DialogResult.OK;
                 }
                 else
@@ -90,7 +113,7 @@ namespace adovipavto.AddForms
         {
             checkedListBox1.DataSource =
                 (from DataRow item in Program.VipAvtoDataSet.Tables[Constants.GroupTableName].Rows
-                select item["Title"].ToString()).ToList();
+                 select item["Title"].ToString()).ToList();
 
 
             //comboBox2.DataSource = Program.NormasTitles.Select(item => item.Value).ToList();

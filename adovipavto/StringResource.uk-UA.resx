@@ -315,4 +315,7 @@
   <data name="notAllFields" xml:space="preserve">
     <value>Не всі поля заповнені</value>
   </data>
+  <data name="groupContaintsNormative" xml:space="preserve">
+    <value>Наступні группи вже мають даний норматив. Нові значення добавлені не будуть</value>
+  </data>
 </root>

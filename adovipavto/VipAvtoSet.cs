@@ -64,13 +64,19 @@ namespace adovipavto
             return norms;
         }
 
-        public int GetNormativeId(string title)
+        public int GetNormativeTag(string title)
         {
-            foreach (DataRow row in Tables[Constants.NormativesTableName].Rows)
+            var norm = new Normatives();
+
+            for (int i = 0; i < norm.NormativesTitle.Length; i++)
             {
-                if (row["Title"].ToString() == title)
-                    return Convert.ToInt32(row["NormativeID"]);
+                string s = norm.NormativesTitle[i];
+                if (s == title)
+                {
+                    return i;
+                }
             }
+
 
             return -1;
         }
@@ -434,6 +440,22 @@ namespace adovipavto
             
             Tables[Constants.LogsTableName].AcceptChanges();
             Tables[Constants.LogsTableName].WriteXml(Settings.Default.Logs);
+        }
+
+        internal bool GroupContainsNormative(string groupname, string normativename)
+        {
+                        int groupId = GetGroupId(groupname);
+
+            int normtag = GetNormativeTag(normativename);
+
+            var mesures = (from DataRow item in Tables[Constants.NormativesTableName].Rows
+                           where (int)item["Title"] == normtag && (int)item["IDGroup"] == groupId
+                           select item).ToList();
+
+            if (mesures.Count == 0)
+                return false;
+
+            return true;
         }
     }
 }
