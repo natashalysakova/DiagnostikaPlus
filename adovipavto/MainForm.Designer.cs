@@ -63,6 +63,9 @@ namespace adovipavto
             this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.просмотрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.печатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -71,6 +74,7 @@ namespace adovipavto
             ((System.ComponentModel.ISupportInitialize)(this.protocolsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vipAvtoSet)).BeginInit();
             this.toolStrip2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -122,6 +126,7 @@ namespace adovipavto
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
             // 
@@ -347,6 +352,26 @@ namespace adovipavto
             this.toolStripButton18.Name = "toolStripButton18";
             this.toolStripButton18.Click += new System.EventHandler(this.toolStripButton18_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.просмотрToolStripMenuItem,
+            this.печатьToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
+            // 
+            // просмотрToolStripMenuItem
+            // 
+            resources.ApplyResources(this.просмотрToolStripMenuItem, "просмотрToolStripMenuItem");
+            this.просмотрToolStripMenuItem.Name = "просмотрToolStripMenuItem";
+            this.просмотрToolStripMenuItem.Click += new System.EventHandler(this.просмотрToolStripMenuItem_Click);
+            // 
+            // печатьToolStripMenuItem
+            // 
+            this.печатьToolStripMenuItem.Name = "печатьToolStripMenuItem";
+            resources.ApplyResources(this.печатьToolStripMenuItem, "печатьToolStripMenuItem");
+            this.печатьToolStripMenuItem.Click += new System.EventHandler(this.печатьToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -368,6 +393,7 @@ namespace adovipavto
             ((System.ComponentModel.ISupportInitialize)(this.vipAvtoSet)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -405,5 +431,8 @@ namespace adovipavto
         private DataGridViewComboBoxColumn iDMechanicDataGridViewTextBoxColumn;
         private DataGridViewComboBoxColumn iDGroupDataGridViewTextBoxColumn;
         private DataGridViewComboBoxColumn iDOperatorDataGridViewTextBoxColumn;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem просмотрToolStripMenuItem;
+        private ToolStripMenuItem печатьToolStripMenuItem;
     }
 }
