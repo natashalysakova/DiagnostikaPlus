@@ -42,8 +42,8 @@ namespace adovipavto
 
         void ProtocolReportForm_ResizeEnd(object sender, EventArgs e)
         {
-            double widthZoom = (double)printPreviewControl1.Width / printPreviewControl1.Document.DefaultPageSettings.PaperSize.Width - 0.05;
-            double heightZoom = (double)printPreviewControl1.Height / printPreviewControl1.Document.DefaultPageSettings.PaperSize.Height - 0.05;
+            double widthZoom = (double)printPreviewControl1.Width / printPreviewControl1.Document.DefaultPageSettings.PaperSize.Width;
+            double heightZoom = (double)printPreviewControl1.Height / printPreviewControl1.Document.DefaultPageSettings.PaperSize.Height;
             printPreviewControl1.Zoom = widthZoom < heightZoom ? widthZoom : heightZoom;
 
 
@@ -62,9 +62,10 @@ namespace adovipavto
 
             printDocument1.DefaultPageSettings.PaperSize.RawKind = 9;
                 /*A4 - http://msdn.microsoft.com/en-us/library/system.drawing.printing.papersize.rawkind(v=vs.110).aspx */
-            printDocument1.DefaultPageSettings.Margins = new Margins(3, 3, 3, 3);
 
             toolStripComboBox1.SelectedIndex = 2;
+
+            printDocument1.DefaultPageSettings.Margins = new Margins(30,30,30,30);
         }
 
         void printPreviewControl1_MouseWheel(object sender, MouseEventArgs e)
