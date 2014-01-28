@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
@@ -92,6 +93,58 @@ namespace adovipavto
             DataRow row = Program.VipAvtoDataSet.GetRowById(Constants.NormativesTableName, id);
             if( new EditNormativeForm(row).ShowDialog() == DialogResult.OK)
                 UpdateRows();
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dataGridView1.Rows[e.RowIndex].Selected = true;
+
+            var id = (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
+
+            DataRow row = Program.VipAvtoDataSet.GetRowById(Constants.NormativesTableName, id);
+            if (new EditNormativeForm(row).ShowDialog() == DialogResult.OK)
+                UpdateRows();
+
+        }
+
+        private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (new AddNormativeForm().ShowDialog() == DialogResult.OK)
+                UpdateRows();
+
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0 && e.Button == MouseButtons.Right)
+            {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+                Rectangle r = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+
+                contextMenuStrip1.Show((Control)sender, r.Left + e.X, r.Top + e.Y);
+            }
+
+    }
+
+        private void изменитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+
+            DataRow row = Program.VipAvtoDataSet.GetRowById(Constants.NormativesTableName, id);
+            if (new EditNormativeForm(row).ShowDialog() == DialogResult.OK)
+                UpdateRows();
+
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(rm.GetString("deleteNorm"), rm.GetString("warning"),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                var id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+                Program.VipAvtoDataSet.RemoveRowById(Constants.NormativesTableName, id);
+                UpdateRows();
+            }
         }
     }
 }
