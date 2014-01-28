@@ -81,7 +81,7 @@ namespace adovipavto.EditForms
                 }
             }
 
-            mesureTextBox.Text = selected["Title"].ToString();
+            mesureTextBox.Text = new Normatives().NormativesTitle[(int)selected["Title"]];
 
             groupTextBox.Text =
                 Program.VipAvtoDataSet.GetRowById(Constants.GroupTableName, (int) selected["IDGroup"])["Title"].ToString

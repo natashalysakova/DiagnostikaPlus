@@ -2,7 +2,7 @@
 
 namespace adovipavto.Enums
 {
-    internal enum Rights
+    public enum Rights
     {
         [Description("Администратор")]
         Administrator,

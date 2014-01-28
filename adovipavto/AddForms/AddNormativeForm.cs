@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
@@ -9,20 +11,24 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
+using adovipavto.Properties;
+
+#endregion
 
 namespace adovipavto.AddForms
 {
     public partial class AddNormativeForm : Form
     {
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
         public AddNormativeForm()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
 
             InitializeComponent();
         }
-
-        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
         private void button2_Click(object sender, EventArgs e)
@@ -39,13 +45,14 @@ namespace adovipavto.AddForms
                     double min = Convert.ToDouble(textBox1.Text);
                     double max = Convert.ToDouble(textBox2.Text);
 
-                    List<String> groupsList = new List<string>();
+                    var groupsList = new List<string>();
                     foreach (object item in checkedListBox1.CheckedItems)
                     {
                         if (!Program.VipAvtoDataSet.GroupContainsNormative(item.ToString(),
-                                comboBox2.SelectedItem.ToString()))
+                            comboBox2.SelectedItem.ToString()))
                         {
-                            Program.VipAvtoDataSet.AddNormative(item.ToString(), comboBox2.SelectedItem.ToString(), min, max);
+                            Program.VipAvtoDataSet.AddNormative(item.ToString(), comboBox2.SelectedItem.ToString(), min,
+                                max);
                         }
                         else
                         {
@@ -55,26 +62,29 @@ namespace adovipavto.AddForms
 
                     if (groupsList.Count != 0)
                     {
-                        StringBuilder sb = new StringBuilder();
+                        var sb = new StringBuilder();
 
                         foreach (string s in groupsList)
                         {
                             sb.Append(s + "\n");
                         }
 
-                        MessageBox.Show(rm.GetString("groupContaintsNormative") + "\n" + sb.ToString(), rm.GetString("error"),
+                        MessageBox.Show(_rm.GetString("groupContaintsNormative") + Environment.NewLine + sb,
+                            _rm.GetString("error"),
                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    MessageBox.Show(rm.GetString("oneGroup"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(_rm.GetString("oneGroup"), _rm.GetString("error"), MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show(rm.GetString("wrongData"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(_rm.GetString("wrongData"), _rm.GetString("error"), MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -92,15 +102,13 @@ namespace adovipavto.AddForms
                 }
                 else
                 {
-                    errorProvider1.SetError(textBox1, rm.GetString("minmax"));
-                    errorProvider1.SetError(textBox2, rm.GetString("minmax"));
-
+                    errorProvider1.SetError(textBox1, _rm.GetString("minmax"));
+                    errorProvider1.SetError(textBox2, _rm.GetString("minmax"));
                 }
-
             }
             catch (Exception)
             {
-                errorProvider1.SetError(((TextBox)sender), rm.GetString("wrongData"));
+                errorProvider1.SetError(((TextBox) sender), _rm.GetString("wrongData"));
             }
         }
 
@@ -113,7 +121,7 @@ namespace adovipavto.AddForms
         {
             checkedListBox1.DataSource =
                 (from DataRow item in Program.VipAvtoDataSet.Tables[Constants.GroupTableName].Rows
-                 select item["Title"].ToString()).ToList();
+                    select item["Title"].ToString()).ToList();
 
 
             //comboBox2.DataSource = Program.NormasTitles.Select(item => item.Value).ToList();
