@@ -147,5 +147,10 @@ namespace adovipavto
             new ProtocolReportForm(protocol, mesures).ShowDialog();
 
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.VipAvtoDataSet.OperatorExit();
+        }
     }
 }

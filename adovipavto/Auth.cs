@@ -30,6 +30,7 @@ namespace adovipavto
                 if (maskedTextBox1.Text == password)
                 {
                     Program.VipAvtoDataSet.SetCurrentOperator(textBox1.Text);
+
                     timer1.Enabled = false;
                     DialogResult = DialogResult.OK;
                 }

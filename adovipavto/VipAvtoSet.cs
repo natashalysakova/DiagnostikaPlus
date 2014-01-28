@@ -168,15 +168,17 @@ namespace adovipavto
 
         #region LogMethods
 
-        internal void AddEnterLog()
+        internal int AddEnterLog(int id)
         {
             DataRow r = Program.VipAvtoDataSet.Tables[Constants.LogsTableName].NewRow();
             r["Type"] = "Enter";
             r["DateTime"] = DateTime.Now;
-            r["IDOperator"] = _currentOperator.Id;
+            r["IDOperator"] = id;
             Tables[Constants.LogsTableName].Rows.Add(r);
             AcceptChanges();
             Tables[Constants.LogsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Logs));
+
+            return (int) r["LogItemID"];
         }
 
         #endregion
@@ -207,9 +209,6 @@ namespace adovipavto
                 string lastname = operatorRow[0]["LastName"].ToString();
                 int id = Convert.ToInt32(operatorRow[0]["OperatorId"]);
                 var rights = (Rights)operatorRow[0]["Right"];
-
-                _currentOperator = new Operator(rights, id, name, lastname);
-                AddEnterLog();
                 return operatorRow[0]["Password"].ToString();
             }
 
@@ -357,9 +356,10 @@ namespace adovipavto
             Tables[Constants.ProtocolsTableName].AcceptChanges();
             Tables[Constants.ProtocolsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Protocols));
 
-            return (from DataRow item in Tables[Constants.ProtocolsTableName].Rows
-                where item["BlankNumber"].ToString() == p1 && (DateTime)item["Date"] == dateTime
-                select (int) item["ProtocolID"]).ToArray()[0];
+            //return (from DataRow item in Tables[Constants.ProtocolsTableName].Rows
+            //        where item["BlankNumber"].ToString() == p1 && (DateTime)item["Date"] == dateTime
+            //        select (int)item["ProtocolID"]).ToArray()[0];
+            return (int)r["ProtocolID"];
         }
 
         private int GetMechanicIdByShortName(string p2)
@@ -374,7 +374,9 @@ namespace adovipavto
         {
             DataRow r = GetUserByLogin(name);
 
-            _currentOperator = new Operator((Rights)r["Right"], (int)r["OperatorId"], r["Name"].ToString(), r["LastName"].ToString());
+            _currentOperator = new Operator((Rights)r["Right"], (int)r["OperatorId"], r["Name"].ToString(), r["LastName"].ToString(), AddEnterLog((int)r["OperatorId"]));
+
+
         }
 
         private DataRow GetUserByLogin(string name)
@@ -422,6 +424,16 @@ namespace adovipavto
                 where (int) item["IDProtocol"] == newProtocolId
                 select item).ToArray();
 
+        }
+
+        internal void OperatorExit()
+        {
+            DataRow r = GetRowById(Constants.LogsTableName, _currentOperator.SessionId);
+
+            r["ExitDateTime"] = DateTime.Now;
+            
+            Tables[Constants.LogsTableName].AcceptChanges();
+            Tables[Constants.LogsTableName].WriteXml(Settings.Default.Logs);
         }
     }
 }
