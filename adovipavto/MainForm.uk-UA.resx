@@ -172,6 +172,21 @@
     <value>Вихід</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="просмотрToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 22</value>
+  </data>
+  <data name="просмотрToolStripMenuItem.Text" xml:space="preserve">
+    <value>Просмотр</value>
+  </data>
+  <data name="печатьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 22</value>
+  </data>
+  <data name="печатьToolStripMenuItem.Text" xml:space="preserve">
+    <value>Друкувати</value>
+  </data>
+  <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 48</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAkAICAQAAEABADoAgAAlgAAABAQEAABAAQAKAEAAH4DAAAwMAAAAQAIAKgOAACmBAAAICAAAAEA

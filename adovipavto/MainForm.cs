@@ -155,14 +155,6 @@ namespace adovipavto
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //dataGridView1.Rows[e.RowIndex].Selected = true;
-
-            //int newProtocolId = (int)dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
-            //DataRow protocol = Program.VipAvtoDataSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
-            //DataRow[] mesures = Program.VipAvtoDataSet.GetMesuresFromProtocol(newProtocolId);
-
-            //new ProtocolReportForm(protocol, mesures).ShowDialog();
-
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0 && e.Button == MouseButtons.Right)
             {
                 Rectangle r = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
