@@ -8,11 +8,11 @@ namespace adovipavto
     public partial class Auth : Form
     {
 
-        private ResourceManager LocRM;
+        private ResourceManager rm;
         public Auth()
         {
             InitializeComponent();
-            LocRM = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+            rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -35,12 +35,12 @@ namespace adovipavto
                 }
                 else
                 {
-                    MessageBox.Show(LocRM.GetString("wrongPassword"), Properties.Resources.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(rm.GetString("wrongPassword"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show(LocRM.GetString("isUser") + textBox1.Text + LocRM.GetString("notFound"), Properties.Resources.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(rm.GetString("isUser") + textBox1.Text + rm.GetString("notFound"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

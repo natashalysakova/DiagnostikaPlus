@@ -49,7 +49,7 @@ namespace adovipavto
         {
             if (dataGridView1.SelectedRows[0] != null)
             {
-                if (MessageBox.Show(rm.GetString("lockOperator"), Properties.Resources.warning,
+                if (MessageBox.Show(rm.GetString("lockOperator"), rm.GetString("warning"),
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {
@@ -58,7 +58,7 @@ namespace adovipavto
                         (int) dataGridView1.SelectedRows[0].Cells["rightDataGridViewTextBoxColumn"].Value ==
                         (int) Rights.Administrator)
                     {
-                        MessageBox.Show(rm.GetString("cantLock"), Properties.Resources.error, MessageBoxButtons.OK,
+                        MessageBox.Show(rm.GetString("cantLock"), rm.GetString("error"), MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
                     else

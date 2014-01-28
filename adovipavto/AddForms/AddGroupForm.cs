@@ -54,12 +54,12 @@ namespace adovipavto.AddForms
                 }
                 else
                 {
-                    MessageBox.Show(rm.GetString("oneEngine"), Properties.Resources.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(rm.GetString("oneEngine"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show(rm.GetString("oneGroup"), Properties.Resources.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(rm.GetString("oneGroup"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

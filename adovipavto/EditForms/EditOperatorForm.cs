@@ -51,7 +51,7 @@ namespace adovipavto.AddForms
             }
             else
             {
-                MessageBox.Show(rm.GetString("wrongData"), Properties.Resources.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(rm.GetString("wrongData"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

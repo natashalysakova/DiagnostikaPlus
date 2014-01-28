@@ -117,4 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 25</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Група</value>
+  </data>
+  <data name="label69.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 17</value>
+  </data>
+  <data name="label69.Text" xml:space="preserve">
+    <value>Механік</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Информація</value>
+  </data>
+  <data name="radioButton5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 21</value>
+  </data>
+  <data name="radioButton5.Text" xml:space="preserve">
+    <value>2 роки</value>
+  </data>
+  <data name="radioButton3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 21</value>
+  </data>
+  <data name="radioButton3.Text" xml:space="preserve">
+    <value>1 рік</value>
+  </data>
+  <data name="radioButton4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 21</value>
+  </data>
+  <data name="radioButton4.Text" xml:space="preserve">
+    <value>6 місяців</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Строк дії протоколу</value>
+  </data>
 </root>

@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,6 +20,7 @@ namespace adovipavto.AddForms
     {
         private List<VisualRow> rows;
 
+        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
         public AddProtocol(MainForm mainForm)
         {
@@ -32,6 +35,9 @@ namespace adovipavto.AddForms
 
         private void AddProtocol_Load(object sender, EventArgs e)
         {
+            CleanFields();
+            UpdateFormLables();
+
             object[] groups = (
                 from DataRow item in Program.VipAvtoDataSet.Tables[Constants.GroupTableName].Rows
                 select item["Title"]).ToArray();
@@ -48,8 +54,8 @@ namespace adovipavto.AddForms
                 ).ToArray();
             if (mechanics.Length == 0)
             {
-                MessageBox.Show("В базе отсутсвуют механики. Добавте механиков прежде чем создавать протоколы.",
-                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(rm.GetString("nomech"),
+                    rm.GetString("warning"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Close();
             }
             comboBox2.DataSource = mechanics;
@@ -58,6 +64,55 @@ namespace adovipavto.AddForms
             maskedTextBox1.SelectionStart = 6;
             maskedTextBox1.SelectionLength = 2;
 
+        }
+
+        private void UpdateFormLables()
+        {
+            brakesystem.Text = rm.GetString("brakeSystem");
+            OUTSRTS.Text = rm.GetString("OUTSRTS");
+            OUTSSTS.Text = rm.GetString("OUTSSTS");
+            ORTS1.Text = rm.GetString("ORTS1");
+            ORTS2.Text = rm.GetString("ORTS2");
+            ORTS3.Text = rm.GetString("ORTS3");
+            MVSTS.Text = rm.GetString("MVSTS");
+            KUNOU1.Text = rm.GetString("KUNOU1");
+
+
+            lightSystem.Text = rm.GetString("lightSystem");
+            SSFBS.Text = rm.GetString("SSFBS");
+            SSFDS.Text = rm.GetString("SSFDS");
+            SSPF.Text = rm.GetString("SSPF");
+            CHPUP.Text = rm.GetString("CHPUP");
+
+            engineAndItsSystem.Text = rm.GetString("engineAndItsSystem");
+            SCOMCHV.Text = rm.GetString("SCOMCHV");
+            SCOMACHV.Text = rm.GetString("SCOMACHV");
+            SCHVCHV.Text = rm.GetString("SCHMCHV");
+            SCHMACHV.Text = rm.GetString("SCHMACHV");
+            DVRSUM.Text = rm.GetString("DVRSUM");
+            DVRSUP.Text = rm.GetString("DVRSUP");
+            CHVNMO.Text = rm.GetString("CHVNMO");
+            CHVNPO.Text = rm.GetString("CHVNPO");
+
+            glass.Text = rm.GetString("glass");
+            PVS.Text = rm.GetString("PVS");
+            PPBS.Text = rm.GetString("PPBS");
+
+            wheelSystem.Text = rm.GetString("wheelSystem");
+            SL.Text = rm.GetString("SL");
+
+
+            noise.Text = rm.GetString("noise");
+            VSHA.Text = rm.GetString("VSHA");
+
+            wheelAndTyres.Text = rm.GetString("wheelAndTyres");
+            OVRP.Text = rm.GetString("OVRP");
+            visualChrck.Text = rm.GetString("visualCheck");
+
+            radioButton1.Text = rm.GetString("check");
+            radioButton2.Text = rm.GetString("uncheck");
+
+            label79.Text = rm.GetString("notAllFields");
         }
 
         private DataRow[] normatives;
@@ -75,6 +130,9 @@ namespace adovipavto.AddForms
             if (!maskedTextBox1.MaskCompleted) return;
 
             panel1.Enabled = true;
+            rows = new List<VisualRow>();
+
+            CleanFields();
 
 
             int id = Program.VipAvtoDataSet.GetGroupId(comboBox1.SelectedItem.ToString());
@@ -84,6 +142,7 @@ namespace adovipavto.AddForms
                 where (int)item["IDGroup"] == id
                 select item
                 ).ToArray();
+
 
             foreach (DataRow normative in normatives)
             {
@@ -135,12 +194,40 @@ namespace adovipavto.AddForms
 
                 rows.Add(row);
 
-                groupBox9.BackColor = Color.LightGoldenrodYellow;
+                visualChrck.BackColor = Color.LightGoldenrodYellow;
                 groupBox10.BackColor = Color.LightGoldenrodYellow;
 
                 panel2.BackColor = Color.LightGoldenrodYellow;
 
                 timer1.Start();
+            }
+        }
+
+        private void CleanFields()
+        {
+            foreach (Control control in panel1.Controls)
+            {
+                if (control is GroupBox)
+                {
+                    foreach (Control control2 in ((GroupBox) control).Controls)
+                    {
+                        if (control2 is TableLayoutPanel)
+                        {
+                            foreach (Control control3 in ((TableLayoutPanel) control2).Controls)
+                            {
+                                if (control3 is TextBox)
+                                {
+                                    control3.Text = "";
+                                    control3.BackColor = Color.White;
+                                }
+                                if (control3 is Label && control3.Tag != null)
+                                {
+                                    control3.Text = "0";
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -153,7 +240,7 @@ namespace adovipavto.AddForms
         {
             if (!SaveProtocolToDB())
             {
-                MessageBox.Show("Заполните все требуемые поля!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(rm.GetString("fillFields"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -168,7 +255,7 @@ namespace adovipavto.AddForms
             }
             else
             {
-                MessageBox.Show("Невозможно отобразить пртокол, т.к он не находится в базе данных", "Ошибка",
+                MessageBox.Show(rm.GetString("noprotocol"), rm.GetString("error"),
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -226,10 +313,10 @@ namespace adovipavto.AddForms
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton1.Checked)
-                groupBox9.BackColor = Color.LightGreen;
+                visualChrck.BackColor = Color.LightGreen;
             else
             {
-                groupBox9.BackColor = Color.LightPink;
+                visualChrck.BackColor = Color.LightPink;
             }
         }
 
@@ -250,18 +337,20 @@ namespace adovipavto.AddForms
             if (SomeRequred())
             {
                 panel2.BackColor = Color.LightGoldenrodYellow;
-                label79.Text = "Не все поля заполнены";
+                label79.Text = rm.GetString("notAllFields");
             }
             else if (AllValide())
             {
                 panel2.BackColor = Color.LightGreen;
-                label79.Text = "ПРОЙДЕНО";
+                string s = rm.GetString("sucess");
+                if (s != null) label79.Text = s.ToUpper();
             }
             else
             {
                 {
                     panel2.BackColor = Color.LightPink;
-                    label79.Text = "НЕ ПРОЙДЕНО";
+                    string s = rm.GetString("fail");
+                    if (s != null) label79.Text = s.ToUpper();
                 }
             }
 
@@ -278,7 +367,7 @@ namespace adovipavto.AddForms
             }
 
 
-            if (groupBox9.BackColor == Color.LightGoldenrodYellow)
+            if (visualChrck.BackColor == Color.LightGoldenrodYellow)
                 result = true;
 
             if (groupBox10.BackColor == Color.LightGoldenrodYellow)
@@ -300,7 +389,7 @@ namespace adovipavto.AddForms
                     result = false;
             }
 
-            if (groupBox9.BackColor == Color.LightPink)
+            if (visualChrck.BackColor == Color.LightPink)
                 result = false;
 
             return result;
@@ -336,7 +425,7 @@ namespace adovipavto.AddForms
         {
             if (!SaveProtocolToDB())
             {
-                MessageBox.Show("Заполните все требуемые поля!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(rm.GetString("fillFields"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -355,7 +444,7 @@ namespace adovipavto.AddForms
             }
             else
             {
-                MessageBox.Show("Невозможно отобразить пртокол, т.к он не находится в базе данных", "Ошибка",
+                MessageBox.Show(rm.GetString("noprotocol"), rm.GetString("error"),
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -364,7 +453,7 @@ namespace adovipavto.AddForms
         {
             if (!SaveProtocolToDB())
             {
-                MessageBox.Show("Заполните все требуемые поля!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(rm.GetString("fillFields"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -376,7 +465,7 @@ namespace adovipavto.AddForms
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                ((PictureBox) sender).Tag = openFileDialog1.FileName;
+                ((PictureBox)sender).Tag = openFileDialog1.FileName;
                 ((PictureBox)sender).Image = Image.FromFile(openFileDialog1.FileName);
             }
         }

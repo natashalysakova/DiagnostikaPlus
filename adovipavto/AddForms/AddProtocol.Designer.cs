@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.brakesystem = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -43,12 +43,12 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.KUNOU1 = new System.Windows.Forms.Label();
+            this.MVSTS = new System.Windows.Forms.Label();
+            this.ORTS3 = new System.Windows.Forms.Label();
+            this.ORTS2 = new System.Windows.Forms.Label();
+            this.ORTS1 = new System.Windows.Forms.Label();
+            this.OUTSSTS = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.OUTSRTS = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label79 = new System.Windows.Forms.Label();
@@ -81,38 +81,38 @@
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.visualChrck = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.glass = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox25 = new System.Windows.Forms.TextBox();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
+            this.PPBS = new System.Windows.Forms.Label();
+            this.PVS = new System.Windows.Forms.Label();
             this.textBox26 = new System.Windows.Forms.TextBox();
             this.label73 = new System.Windows.Forms.Label();
             this.label74 = new System.Windows.Forms.Label();
             this.label77 = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.wheelAndTyres = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label66 = new System.Windows.Forms.Label();
+            this.OVRP = new System.Windows.Forms.Label();
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.label67 = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.wheelSystem = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label30 = new System.Windows.Forms.Label();
+            this.SL = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.noise = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label63 = new System.Windows.Forms.Label();
+            this.VSHA = new System.Windows.Forms.Label();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.label64 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.engineAndItsSystem = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label62 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
@@ -122,13 +122,13 @@
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
+            this.CHVNMO = new System.Windows.Forms.Label();
+            this.DVRSUP = new System.Windows.Forms.Label();
+            this.DVRSUM = new System.Windows.Forms.Label();
+            this.SCHMACHV = new System.Windows.Forms.Label();
+            this.SCHVCHV = new System.Windows.Forms.Label();
+            this.SCOMACHV = new System.Windows.Forms.Label();
+            this.SCOMCHV = new System.Windows.Forms.Label();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
@@ -144,17 +144,17 @@
             this.label57 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
+            this.CHVNPO = new System.Windows.Forms.Label();
             this.textBox20 = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lightSystem = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
+            this.CHPUP = new System.Windows.Forms.Label();
+            this.SSPF = new System.Windows.Forms.Label();
+            this.SSFDS = new System.Windows.Forms.Label();
+            this.SSFBS = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -168,11 +168,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label80 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button3 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.brakesystem.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -180,18 +180,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             this.groupBox10.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox8.SuspendLayout();
+            this.visualChrck.SuspendLayout();
+            this.glass.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            this.groupBox7.SuspendLayout();
+            this.wheelAndTyres.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.wheelSystem.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            this.noise.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.engineAndItsSystem.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.lightSystem.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -226,12 +226,12 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // groupBox2
+            // brakesystem
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
+            resources.ApplyResources(this.brakesystem, "brakesystem");
+            this.brakesystem.Controls.Add(this.tableLayoutPanel1);
+            this.brakesystem.Name = "brakesystem";
+            this.brakesystem.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -242,12 +242,12 @@
             this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 12);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.KUNOU1, 0, 12);
+            this.tableLayoutPanel1.Controls.Add(this.MVSTS, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.ORTS3, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.ORTS2, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.ORTS1, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.OUTSSTS, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label11, 0, 3);
@@ -263,7 +263,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label21, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.label22, 2, 11);
             this.tableLayoutPanel1.Controls.Add(this.label23, 2, 13);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.OUTSRTS, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // textBox7
@@ -302,41 +302,41 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Tag = "1";
             // 
-            // label9
+            // KUNOU1
             // 
-            resources.ApplyResources(this.label9, "label9");
-            this.tableLayoutPanel1.SetColumnSpan(this.label9, 3);
-            this.label9.Name = "label9";
+            resources.ApplyResources(this.KUNOU1, "KUNOU1");
+            this.tableLayoutPanel1.SetColumnSpan(this.KUNOU1, 3);
+            this.KUNOU1.Name = "KUNOU1";
             // 
-            // label8
+            // MVSTS
             // 
-            resources.ApplyResources(this.label8, "label8");
-            this.tableLayoutPanel1.SetColumnSpan(this.label8, 3);
-            this.label8.Name = "label8";
+            resources.ApplyResources(this.MVSTS, "MVSTS");
+            this.tableLayoutPanel1.SetColumnSpan(this.MVSTS, 3);
+            this.MVSTS.Name = "MVSTS";
             // 
-            // label7
+            // ORTS3
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.tableLayoutPanel1.SetColumnSpan(this.label7, 3);
-            this.label7.Name = "label7";
+            resources.ApplyResources(this.ORTS3, "ORTS3");
+            this.tableLayoutPanel1.SetColumnSpan(this.ORTS3, 3);
+            this.ORTS3.Name = "ORTS3";
             // 
-            // label6
+            // ORTS2
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.tableLayoutPanel1.SetColumnSpan(this.label6, 3);
-            this.label6.Name = "label6";
+            resources.ApplyResources(this.ORTS2, "ORTS2");
+            this.tableLayoutPanel1.SetColumnSpan(this.ORTS2, 3);
+            this.ORTS2.Name = "ORTS2";
             // 
-            // label5
+            // ORTS1
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.tableLayoutPanel1.SetColumnSpan(this.label5, 3);
-            this.label5.Name = "label5";
+            resources.ApplyResources(this.ORTS1, "ORTS1");
+            this.tableLayoutPanel1.SetColumnSpan(this.ORTS1, 3);
+            this.ORTS1.Name = "ORTS1";
             // 
-            // label4
+            // OUTSSTS
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.tableLayoutPanel1.SetColumnSpan(this.label4, 3);
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.OUTSSTS, "OUTSSTS");
+            this.tableLayoutPanel1.SetColumnSpan(this.OUTSSTS, 3);
+            this.OUTSSTS.Name = "OUTSSTS";
             // 
             // textBox1
             // 
@@ -456,11 +456,11 @@
             this.label23.Name = "label23";
             this.label23.Tag = "6";
             // 
-            // label3
+            // OUTSRTS
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.tableLayoutPanel1.SetColumnSpan(this.label3, 3);
-            this.label3.Name = "label3";
+            resources.ApplyResources(this.OUTSRTS, "OUTSRTS");
+            this.tableLayoutPanel1.SetColumnSpan(this.OUTSRTS, 3);
+            this.OUTSRTS.Name = "OUTSRTS";
             // 
             // panel1
             // 
@@ -468,14 +468,14 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.groupBox11);
             this.panel1.Controls.Add(this.groupBox10);
-            this.panel1.Controls.Add(this.groupBox9);
-            this.panel1.Controls.Add(this.groupBox8);
-            this.panel1.Controls.Add(this.groupBox7);
-            this.panel1.Controls.Add(this.groupBox3);
-            this.panel1.Controls.Add(this.groupBox6);
-            this.panel1.Controls.Add(this.groupBox5);
-            this.panel1.Controls.Add(this.groupBox4);
-            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.visualChrck);
+            this.panel1.Controls.Add(this.glass);
+            this.panel1.Controls.Add(this.wheelAndTyres);
+            this.panel1.Controls.Add(this.wheelSystem);
+            this.panel1.Controls.Add(this.noise);
+            this.panel1.Controls.Add(this.engineAndItsSystem);
+            this.panel1.Controls.Add(this.lightSystem);
+            this.panel1.Controls.Add(this.brakesystem);
             this.panel1.Name = "panel1";
             // 
             // panel2
@@ -508,7 +508,7 @@
             // 
             // pictureBox28
             // 
-            this.pictureBox28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox28.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox28.Image = global::adovipavto.Properties.Resources.openfoto;
             resources.ApplyResources(this.pictureBox28, "pictureBox28");
             this.pictureBox28.Name = "pictureBox28";
@@ -517,7 +517,7 @@
             // 
             // pictureBox27
             // 
-            this.pictureBox27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox27.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox27.Image = global::adovipavto.Properties.Resources.openfoto;
             resources.ApplyResources(this.pictureBox27, "pictureBox27");
             this.pictureBox27.Name = "pictureBox27";
@@ -592,13 +592,13 @@
             this.radioButton4.UseVisualStyleBackColor = true;
             this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
-            // groupBox9
+            // visualChrck
             // 
-            this.groupBox9.Controls.Add(this.radioButton2);
-            this.groupBox9.Controls.Add(this.radioButton1);
-            resources.ApplyResources(this.groupBox9, "groupBox9");
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.TabStop = false;
+            this.visualChrck.Controls.Add(this.radioButton2);
+            this.visualChrck.Controls.Add(this.radioButton1);
+            resources.ApplyResources(this.visualChrck, "visualChrck");
+            this.visualChrck.Name = "visualChrck";
+            this.visualChrck.TabStop = false;
             // 
             // radioButton2
             // 
@@ -616,19 +616,19 @@
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // groupBox8
+            // glass
             // 
-            resources.ApplyResources(this.groupBox8, "groupBox8");
-            this.groupBox8.Controls.Add(this.tableLayoutPanel7);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.TabStop = false;
+            resources.ApplyResources(this.glass, "glass");
+            this.glass.Controls.Add(this.tableLayoutPanel7);
+            this.glass.Name = "glass";
+            this.glass.TabStop = false;
             // 
             // tableLayoutPanel7
             // 
             resources.ApplyResources(this.tableLayoutPanel7, "tableLayoutPanel7");
             this.tableLayoutPanel7.Controls.Add(this.textBox25, 1, 3);
-            this.tableLayoutPanel7.Controls.Add(this.label71, 0, 2);
-            this.tableLayoutPanel7.Controls.Add(this.label72, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.PPBS, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.PVS, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.textBox26, 1, 1);
             this.tableLayoutPanel7.Controls.Add(this.label73, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.label74, 0, 3);
@@ -642,17 +642,17 @@
             this.textBox25.Name = "textBox25";
             this.textBox25.Tag = "22";
             // 
-            // label71
+            // PPBS
             // 
-            resources.ApplyResources(this.label71, "label71");
-            this.tableLayoutPanel7.SetColumnSpan(this.label71, 3);
-            this.label71.Name = "label71";
+            resources.ApplyResources(this.PPBS, "PPBS");
+            this.tableLayoutPanel7.SetColumnSpan(this.PPBS, 3);
+            this.PPBS.Name = "PPBS";
             // 
-            // label72
+            // PVS
             // 
-            resources.ApplyResources(this.label72, "label72");
-            this.tableLayoutPanel7.SetColumnSpan(this.label72, 3);
-            this.label72.Name = "label72";
+            resources.ApplyResources(this.PVS, "PVS");
+            this.tableLayoutPanel7.SetColumnSpan(this.PVS, 3);
+            this.PVS.Name = "PVS";
             // 
             // textBox26
             // 
@@ -692,27 +692,27 @@
             this.label78.Name = "label78";
             this.label78.Tag = "22";
             // 
-            // groupBox7
+            // wheelAndTyres
             // 
-            resources.ApplyResources(this.groupBox7, "groupBox7");
-            this.groupBox7.Controls.Add(this.tableLayoutPanel6);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.TabStop = false;
+            resources.ApplyResources(this.wheelAndTyres, "wheelAndTyres");
+            this.wheelAndTyres.Controls.Add(this.tableLayoutPanel6);
+            this.wheelAndTyres.Name = "wheelAndTyres";
+            this.wheelAndTyres.TabStop = false;
             // 
             // tableLayoutPanel6
             // 
             resources.ApplyResources(this.tableLayoutPanel6, "tableLayoutPanel6");
-            this.tableLayoutPanel6.Controls.Add(this.label66, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.OVRP, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.textBox22, 1, 1);
             this.tableLayoutPanel6.Controls.Add(this.label67, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label68, 2, 1);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             // 
-            // label66
+            // OVRP
             // 
-            resources.ApplyResources(this.label66, "label66");
-            this.tableLayoutPanel6.SetColumnSpan(this.label66, 3);
-            this.label66.Name = "label66";
+            resources.ApplyResources(this.OVRP, "OVRP");
+            this.tableLayoutPanel6.SetColumnSpan(this.OVRP, 3);
+            this.OVRP.Name = "OVRP";
             // 
             // textBox22
             // 
@@ -736,27 +736,27 @@
             this.label68.Name = "label68";
             this.label68.Tag = "12";
             // 
-            // groupBox3
+            // wheelSystem
             // 
-            resources.ApplyResources(this.groupBox3, "groupBox3");
-            this.groupBox3.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.TabStop = false;
+            resources.ApplyResources(this.wheelSystem, "wheelSystem");
+            this.wheelSystem.Controls.Add(this.tableLayoutPanel2);
+            this.wheelSystem.Name = "wheelSystem";
+            this.wheelSystem.TabStop = false;
             // 
             // tableLayoutPanel2
             // 
             resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
-            this.tableLayoutPanel2.Controls.Add(this.label30, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.SL, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBox14, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label31, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label38, 2, 1);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
-            // label30
+            // SL
             // 
-            resources.ApplyResources(this.label30, "label30");
-            this.tableLayoutPanel2.SetColumnSpan(this.label30, 3);
-            this.label30.Name = "label30";
+            resources.ApplyResources(this.SL, "SL");
+            this.tableLayoutPanel2.SetColumnSpan(this.SL, 3);
+            this.SL.Name = "SL";
             // 
             // textBox14
             // 
@@ -780,27 +780,27 @@
             this.label38.Name = "label38";
             this.label38.Tag = "7";
             // 
-            // groupBox6
+            // noise
             // 
-            resources.ApplyResources(this.groupBox6, "groupBox6");
-            this.groupBox6.Controls.Add(this.tableLayoutPanel5);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.TabStop = false;
+            resources.ApplyResources(this.noise, "noise");
+            this.noise.Controls.Add(this.tableLayoutPanel5);
+            this.noise.Name = "noise";
+            this.noise.TabStop = false;
             // 
             // tableLayoutPanel5
             // 
             resources.ApplyResources(this.tableLayoutPanel5, "tableLayoutPanel5");
-            this.tableLayoutPanel5.Controls.Add(this.label63, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.VSHA, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.textBox21, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.label64, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.label65, 2, 1);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             // 
-            // label63
+            // VSHA
             // 
-            resources.ApplyResources(this.label63, "label63");
-            this.tableLayoutPanel5.SetColumnSpan(this.label63, 3);
-            this.label63.Name = "label63";
+            resources.ApplyResources(this.VSHA, "VSHA");
+            this.tableLayoutPanel5.SetColumnSpan(this.VSHA, 3);
+            this.VSHA.Name = "VSHA";
             // 
             // textBox21
             // 
@@ -824,12 +824,12 @@
             this.label65.Name = "label65";
             this.label65.Tag = "23";
             // 
-            // groupBox5
+            // engineAndItsSystem
             // 
-            resources.ApplyResources(this.groupBox5, "groupBox5");
-            this.groupBox5.Controls.Add(this.tableLayoutPanel4);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.TabStop = false;
+            resources.ApplyResources(this.engineAndItsSystem, "engineAndItsSystem");
+            this.engineAndItsSystem.Controls.Add(this.tableLayoutPanel4);
+            this.engineAndItsSystem.Name = "engineAndItsSystem";
+            this.engineAndItsSystem.TabStop = false;
             // 
             // tableLayoutPanel4
             // 
@@ -842,13 +842,13 @@
             this.tableLayoutPanel4.Controls.Add(this.textBox16, 1, 7);
             this.tableLayoutPanel4.Controls.Add(this.textBox17, 1, 5);
             this.tableLayoutPanel4.Controls.Add(this.textBox18, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(this.label24, 0, 12);
-            this.tableLayoutPanel4.Controls.Add(this.label25, 0, 10);
-            this.tableLayoutPanel4.Controls.Add(this.label26, 0, 8);
-            this.tableLayoutPanel4.Controls.Add(this.label37, 0, 6);
-            this.tableLayoutPanel4.Controls.Add(this.label39, 0, 4);
-            this.tableLayoutPanel4.Controls.Add(this.label40, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.label45, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.CHVNMO, 0, 12);
+            this.tableLayoutPanel4.Controls.Add(this.DVRSUP, 0, 10);
+            this.tableLayoutPanel4.Controls.Add(this.DVRSUM, 0, 8);
+            this.tableLayoutPanel4.Controls.Add(this.SCHMACHV, 0, 6);
+            this.tableLayoutPanel4.Controls.Add(this.SCHVCHV, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.SCOMACHV, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.SCOMCHV, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.textBox19, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label46, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.label47, 0, 3);
@@ -864,7 +864,7 @@
             this.tableLayoutPanel4.Controls.Add(this.label57, 2, 9);
             this.tableLayoutPanel4.Controls.Add(this.label58, 2, 11);
             this.tableLayoutPanel4.Controls.Add(this.label59, 2, 13);
-            this.tableLayoutPanel4.Controls.Add(this.label60, 0, 14);
+            this.tableLayoutPanel4.Controls.Add(this.CHVNPO, 0, 14);
             this.tableLayoutPanel4.Controls.Add(this.textBox20, 1, 15);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             // 
@@ -920,47 +920,47 @@
             this.textBox18.Name = "textBox18";
             this.textBox18.Tag = "14";
             // 
-            // label24
+            // CHVNMO
             // 
-            resources.ApplyResources(this.label24, "label24");
-            this.tableLayoutPanel4.SetColumnSpan(this.label24, 3);
-            this.label24.Name = "label24";
+            resources.ApplyResources(this.CHVNMO, "CHVNMO");
+            this.tableLayoutPanel4.SetColumnSpan(this.CHVNMO, 3);
+            this.CHVNMO.Name = "CHVNMO";
             // 
-            // label25
+            // DVRSUP
             // 
-            resources.ApplyResources(this.label25, "label25");
-            this.tableLayoutPanel4.SetColumnSpan(this.label25, 3);
-            this.label25.Name = "label25";
+            resources.ApplyResources(this.DVRSUP, "DVRSUP");
+            this.tableLayoutPanel4.SetColumnSpan(this.DVRSUP, 3);
+            this.DVRSUP.Name = "DVRSUP";
             // 
-            // label26
+            // DVRSUM
             // 
-            resources.ApplyResources(this.label26, "label26");
-            this.tableLayoutPanel4.SetColumnSpan(this.label26, 3);
-            this.label26.Name = "label26";
+            resources.ApplyResources(this.DVRSUM, "DVRSUM");
+            this.tableLayoutPanel4.SetColumnSpan(this.DVRSUM, 3);
+            this.DVRSUM.Name = "DVRSUM";
             // 
-            // label37
+            // SCHMACHV
             // 
-            resources.ApplyResources(this.label37, "label37");
-            this.tableLayoutPanel4.SetColumnSpan(this.label37, 3);
-            this.label37.Name = "label37";
+            resources.ApplyResources(this.SCHMACHV, "SCHMACHV");
+            this.tableLayoutPanel4.SetColumnSpan(this.SCHMACHV, 3);
+            this.SCHMACHV.Name = "SCHMACHV";
             // 
-            // label39
+            // SCHVCHV
             // 
-            resources.ApplyResources(this.label39, "label39");
-            this.tableLayoutPanel4.SetColumnSpan(this.label39, 3);
-            this.label39.Name = "label39";
+            resources.ApplyResources(this.SCHVCHV, "SCHVCHV");
+            this.tableLayoutPanel4.SetColumnSpan(this.SCHVCHV, 3);
+            this.SCHVCHV.Name = "SCHVCHV";
             // 
-            // label40
+            // SCOMACHV
             // 
-            resources.ApplyResources(this.label40, "label40");
-            this.tableLayoutPanel4.SetColumnSpan(this.label40, 3);
-            this.label40.Name = "label40";
+            resources.ApplyResources(this.SCOMACHV, "SCOMACHV");
+            this.tableLayoutPanel4.SetColumnSpan(this.SCOMACHV, 3);
+            this.SCOMACHV.Name = "SCOMACHV";
             // 
-            // label45
+            // SCOMCHV
             // 
-            resources.ApplyResources(this.label45, "label45");
-            this.tableLayoutPanel4.SetColumnSpan(this.label45, 3);
-            this.label45.Name = "label45";
+            resources.ApplyResources(this.SCOMCHV, "SCOMCHV");
+            this.tableLayoutPanel4.SetColumnSpan(this.SCOMCHV, 3);
+            this.SCOMCHV.Name = "SCOMCHV";
             // 
             // textBox19
             // 
@@ -1080,11 +1080,11 @@
             this.label59.Name = "label59";
             this.label59.Tag = "19";
             // 
-            // label60
+            // CHVNPO
             // 
-            resources.ApplyResources(this.label60, "label60");
-            this.tableLayoutPanel4.SetColumnSpan(this.label60, 3);
-            this.label60.Name = "label60";
+            resources.ApplyResources(this.CHVNPO, "CHVNPO");
+            this.tableLayoutPanel4.SetColumnSpan(this.CHVNPO, 3);
+            this.CHVNPO.Name = "CHVNPO";
             // 
             // textBox20
             // 
@@ -1092,12 +1092,12 @@
             this.textBox20.Name = "textBox20";
             this.textBox20.Tag = "20";
             // 
-            // groupBox4
+            // lightSystem
             // 
-            resources.ApplyResources(this.groupBox4, "groupBox4");
-            this.groupBox4.Controls.Add(this.tableLayoutPanel3);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.TabStop = false;
+            resources.ApplyResources(this.lightSystem, "lightSystem");
+            this.lightSystem.Controls.Add(this.tableLayoutPanel3);
+            this.lightSystem.Name = "lightSystem";
+            this.lightSystem.TabStop = false;
             // 
             // tableLayoutPanel3
             // 
@@ -1105,10 +1105,10 @@
             this.tableLayoutPanel3.Controls.Add(this.textBox11, 1, 7);
             this.tableLayoutPanel3.Controls.Add(this.textBox12, 1, 5);
             this.tableLayoutPanel3.Controls.Add(this.textBox13, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.label27, 0, 6);
-            this.tableLayoutPanel3.Controls.Add(this.label28, 0, 4);
-            this.tableLayoutPanel3.Controls.Add(this.label29, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.label32, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.CHPUP, 0, 6);
+            this.tableLayoutPanel3.Controls.Add(this.SSPF, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.SSFDS, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.SSFBS, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.textBox15, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label33, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label34, 0, 3);
@@ -1138,29 +1138,29 @@
             this.textBox13.Name = "textBox13";
             this.textBox13.Tag = "9";
             // 
-            // label27
+            // CHPUP
             // 
-            resources.ApplyResources(this.label27, "label27");
-            this.tableLayoutPanel3.SetColumnSpan(this.label27, 3);
-            this.label27.Name = "label27";
+            resources.ApplyResources(this.CHPUP, "CHPUP");
+            this.tableLayoutPanel3.SetColumnSpan(this.CHPUP, 3);
+            this.CHPUP.Name = "CHPUP";
             // 
-            // label28
+            // SSPF
             // 
-            resources.ApplyResources(this.label28, "label28");
-            this.tableLayoutPanel3.SetColumnSpan(this.label28, 3);
-            this.label28.Name = "label28";
+            resources.ApplyResources(this.SSPF, "SSPF");
+            this.tableLayoutPanel3.SetColumnSpan(this.SSPF, 3);
+            this.SSPF.Name = "SSPF";
             // 
-            // label29
+            // SSFDS
             // 
-            resources.ApplyResources(this.label29, "label29");
-            this.tableLayoutPanel3.SetColumnSpan(this.label29, 3);
-            this.label29.Name = "label29";
+            resources.ApplyResources(this.SSFDS, "SSFDS");
+            this.tableLayoutPanel3.SetColumnSpan(this.SSFDS, 3);
+            this.SSFDS.Name = "SSFDS";
             // 
-            // label32
+            // SSFBS
             // 
-            resources.ApplyResources(this.label32, "label32");
-            this.tableLayoutPanel3.SetColumnSpan(this.label32, 3);
-            this.label32.Name = "label32";
+            resources.ApplyResources(this.SSFBS, "SSFBS");
+            this.tableLayoutPanel3.SetColumnSpan(this.SSFBS, 3);
+            this.SSFBS.Name = "SSFBS";
             // 
             // textBox15
             // 
@@ -1261,10 +1261,6 @@
             resources.ApplyResources(this.label80, "label80");
             this.label80.Name = "label80";
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // button3
             // 
             resources.ApplyResources(this.button3, "button3");
@@ -1272,6 +1268,10 @@
             this.button3.Name = "button3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // openFileDialog1
             // 
@@ -1297,8 +1297,8 @@
             this.Name = "AddProtocol";
             this.Load += new System.EventHandler(this.AddProtocol_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.brakesystem.ResumeLayout(false);
+            this.brakesystem.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -1310,30 +1310,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
+            this.visualChrck.ResumeLayout(false);
+            this.visualChrck.PerformLayout();
+            this.glass.ResumeLayout(false);
+            this.glass.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            this.wheelAndTyres.ResumeLayout(false);
+            this.wheelAndTyres.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.wheelSystem.ResumeLayout(false);
+            this.wheelSystem.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.noise.ResumeLayout(false);
+            this.noise.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.engineAndItsSystem.ResumeLayout(false);
+            this.engineAndItsSystem.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.lightSystem.ResumeLayout(false);
+            this.lightSystem.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
@@ -1348,32 +1348,32 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox brakesystem;
+        private System.Windows.Forms.Label OUTSRTS;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox glass;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label PPBS;
+        private System.Windows.Forms.Label PVS;
         private System.Windows.Forms.TextBox textBox26;
         private System.Windows.Forms.Label label73;
         private System.Windows.Forms.Label label74;
         private System.Windows.Forms.Label label77;
         private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox wheelAndTyres;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label OVRP;
         private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox noise;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label VSHA;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox engineAndItsSystem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
@@ -1381,13 +1381,13 @@
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label CHVNMO;
+        private System.Windows.Forms.Label DVRSUP;
+        private System.Windows.Forms.Label DVRSUM;
+        private System.Windows.Forms.Label SCHMACHV;
+        private System.Windows.Forms.Label SCHVCHV;
+        private System.Windows.Forms.Label SCOMACHV;
+        private System.Windows.Forms.Label SCOMCHV;
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label47;
@@ -1403,16 +1403,16 @@
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label CHVNPO;
+        private System.Windows.Forms.GroupBox lightSystem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label CHPUP;
+        private System.Windows.Forms.Label SSPF;
+        private System.Windows.Forms.Label SSFDS;
+        private System.Windows.Forms.Label SSFBS;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
@@ -1422,9 +1422,9 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox wheelSystem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label SL;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label38;
@@ -1435,12 +1435,12 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label KUNOU1;
+        private System.Windows.Forms.Label MVSTS;
+        private System.Windows.Forms.Label ORTS3;
+        private System.Windows.Forms.Label ORTS2;
+        private System.Windows.Forms.Label ORTS1;
+        private System.Windows.Forms.Label OUTSSTS;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -1459,7 +1459,7 @@
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.GroupBox visualChrck;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.GroupBox groupBox11;

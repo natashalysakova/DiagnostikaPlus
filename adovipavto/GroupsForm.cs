@@ -52,7 +52,7 @@ namespace adovipavto
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(rm.GetString("DeleteGroup"), Properties.Resources.warning,
+            if (MessageBox.Show(rm.GetString("DeleteGroup"), rm.GetString("warning"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 Program.VipAvtoDataSet.RemoveRow(Constants.GroupTableName, _selectedRow);
@@ -93,7 +93,7 @@ namespace adovipavto
 
             if (_selectedRow != null)
             {
-                if (MessageBox.Show(rm.GetString("DeleteGroup"), Properties.Resources.warning,
+                if (MessageBox.Show(rm.GetString("DeleteGroup"), rm.GetString("warning"),
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {

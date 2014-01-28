@@ -356,7 +356,6 @@
     <EmbeddedResource Include="ProtocolReportForm.uk-UA.resx">
       <DependentUpon>ProtocolReportForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.uk-UA.resx" />
     <EmbeddedResource Include="SelectLanguage.resx">
       <DependentUpon>SelectLanguage.cs</DependentUpon>
     </EmbeddedResource>

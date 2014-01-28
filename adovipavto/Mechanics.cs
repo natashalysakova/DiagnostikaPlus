@@ -96,7 +96,7 @@ namespace adovipavto
         {
             if (dataGridView1.SelectedRows[0] != null)
             {
-                if (MessageBox.Show(rm.GetString("lockmech"), Properties.Resources.warning,
+                if (MessageBox.Show(rm.GetString("lockmech"), rm.GetString("warning"),
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {

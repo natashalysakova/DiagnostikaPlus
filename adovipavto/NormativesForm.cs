@@ -76,7 +76,7 @@ namespace adovipavto
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(rm.GetString("deleteNorm"), Properties.Resources.warning,
+            if (MessageBox.Show(rm.GetString("deleteNorm"), rm.GetString("warning"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;

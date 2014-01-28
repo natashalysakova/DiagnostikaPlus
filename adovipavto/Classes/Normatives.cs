@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,33 +18,34 @@ namespace adovipavto.Classes
         public Normatives()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
+            ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
             normas = new[]
             {
-                /*0*/Resources.OUTSRTS,
-                /*1*/Resources.OUTSSTS,
-                /*2*/Resources.ORTS1,
-                /*3*/Resources.ORTS2,
-                /*4*/Resources.ORTS3,
-                /*5*/Resources.MVSTS,
-                /*6*/Resources.KUNOU1,
-                /*7*/Resources.SL,
-                /*8*/Resources.SSFBS,
-                /*9*/Resources.SSFDS,
-                /*10*/Resources.SSPF,
-                /*11*/Resources.CHPUP,
-                /*12*/Resources.OVRP,
-                /*13*/Resources.SCOMCHV,
-                /*14*/Resources.SCOMACHV,
-                /*15*/Resources.SCHMCHV,
-                /*16*/Resources.SCHMACHV,
-                /*17*/Resources.DVRSUM,
-                /*18*/Resources.DVRSUP,
-                /*19*/Resources.CHVNMO,
-                /*20*/Resources.CHVNPO,
-                /*21*/Resources.PVS,
-                /*22*/Resources.PPBS,
-                /*23*/Resources.VSHA
+                /*0*/rm.GetString("OUTSRTS"),
+                /*1*/rm.GetString("OUTSSTS"),
+                /*2*/rm.GetString("ORTS1"),
+                /*3*/rm.GetString("ORTS2"),
+                /*4*/rm.GetString("ORTS3"),
+                /*5*/rm.GetString("MVSTS"),
+                /*6*/rm.GetString("KUNOU1"),
+                /*7*/rm.GetString("SL"),
+                /*8*/rm.GetString("SSFBS"),
+                /*9*/rm.GetString("SSFDS"),
+                /*10*/rm.GetString("SSPF"),
+                /*11*/rm.GetString("CHPUP"),
+                /*12*/rm.GetString("OVRP"),
+                /*13*/rm.GetString("SCOMCHV"),
+                /*14*/rm.GetString("SCOMACHV"),
+                /*15*/rm.GetString("SCHMCHV"),
+                /*16*/rm.GetString("SCHMACHV"),
+                /*17*/rm.GetString("DVRSUM"),
+                /*18*/rm.GetString("DVRSUP"),
+                /*19*/rm.GetString("CHVNMO"),
+                /*20*/rm.GetString("CHVNPO"),
+                /*21*/rm.GetString("PVS"),
+                /*22*/rm.GetString("PPBS"),
+                /*23*/rm.GetString("VSHA")
             };
         }
 
