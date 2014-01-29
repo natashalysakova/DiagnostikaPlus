@@ -34,7 +34,18 @@ namespace adovipavto.Classes
 
         void textbox_TextChanged(object sender, EventArgs e)
         {
-            try
+            double value;
+            bool val = double.TryParse(textbox.Text, out value);
+
+            if (val)
+            {
+                    Value = value;
+                    if (minval <= Value && Value < maxval)
+                        SetGreen();
+                    else
+                        SetRed();
+            }
+            else
             {
                 if (textbox.Text == "")
                 {
@@ -43,18 +54,12 @@ namespace adovipavto.Classes
                 }
                 else
                 {
-                    Value = Convert.ToDouble(textbox.Text);
-                    if (minval <= Value && Value < maxval)
-                        SetGreen();
-                    else
-                        SetRed();
+
+                    SetRed();
                 }
             }
-            catch
-            {
-                SetRed();
 
-            }
+
         }
 
         private Label minvallable;
@@ -94,7 +99,7 @@ namespace adovipavto.Classes
 
         public VisualRow(DataRow norma)
         {
-            Id = (int)norma["Title"];
+            Id = (int)norma["Tag"];
             minval = (double)norma["MinValue"];
             maxval = (double)norma["MaxValue"];
 
