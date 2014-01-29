@@ -324,4 +324,16 @@
   <data name="groupContaintsNormative" xml:space="preserve">
     <value>Следующие группы уже содержат данный норматив. Новые значения добавлены не будут</value>
   </data>
+  <data name="after" xml:space="preserve">
+    <value>После</value>
+  </data>
+  <data name="before" xml:space="preserve">
+    <value>До</value>
+  </data>
+  <data name="diesel" xml:space="preserve">
+    <value>Дизельный</value>
+  </data>
+  <data name="gas" xml:space="preserve">
+    <value>Бензиновый</value>
+  </data>
 </root>

@@ -47,7 +47,7 @@ namespace adovipavto
 
         private void нормативыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new NormativesForm(_selectedRow["Title"].ToString()).ShowDialog();
+            new NormativesForm((int)_selectedRow["GroupID"]).ShowDialog();
         }
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,13 +65,25 @@ namespace adovipavto
         {
             dataGridView1.Rows[e.RowIndex].Selected = true;
             _selectedRow = Program.VipAvtoDataSet.GetRowByIndex(Constants.GroupTableName, e.RowIndex);
-            new NormativesForm(_selectedRow["Title"].ToString()).ShowDialog();
+            new NormativesForm((int)_selectedRow["GroupID"]).ShowDialog();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            new AddGroupForm().ShowDialog();
-            dataGridView1.Refresh();
+            if (new AddGroupForm().ShowDialog() == DialogResult.OK)
+                UpdateRows();
+
+        }
+
+        private void UpdateRows()
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Cells["Title"].Value =
+    Program.VipAvtoDataSet.CreateGroupTitle((int)row.Cells["groupIDDataGridViewTextBoxColumn"].Value);
+
+
+            }
         }
 
 
@@ -82,7 +94,8 @@ namespace adovipavto
 
             if (_selectedRow != null)
             {
-                new EditGroupForm(_selectedRow).ShowDialog();
+                if(new EditGroupForm(_selectedRow).ShowDialog() == DialogResult.OK)
+                    UpdateRows();
             }
         }
 
@@ -103,8 +116,15 @@ namespace adovipavto
                     Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].AcceptChanges();
                     Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].WriteXml(Constants.GetFullPath(Settings.Default.Normatives));
                     _selectedRow = null;
+
+                    UpdateRows();
                 }
             }
+        }
+
+        private void GroupsForm_Load(object sender, EventArgs e)
+        {
+            UpdateRows();
         }
     }
 }

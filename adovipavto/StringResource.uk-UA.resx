@@ -318,4 +318,22 @@
   <data name="groupContaintsNormative" xml:space="preserve">
     <value>Наступні группи вже мають даний норматив. Нові значення добавлені не будуть</value>
   </data>
+  <data name="after" xml:space="preserve">
+    <value>Після</value>
+  </data>
+  <data name="before" xml:space="preserve">
+    <value>До</value>
+  </data>
+  <data name="diesel" xml:space="preserve">
+    <value>Дізельний</value>
+  </data>
+  <data name="gas" xml:space="preserve">
+    <value>Бензиновий</value>
+  </data>
+  <data name="fillFields" xml:space="preserve">
+    <value>Заповніть усі поля</value>
+  </data>
+  <data name="nomech" xml:space="preserve">
+    <value>В базі відсуні механіки. Додайте механіків перед створенням протоколів.</value>
+  </data>
 </root>

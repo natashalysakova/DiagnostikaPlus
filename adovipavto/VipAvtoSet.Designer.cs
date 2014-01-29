@@ -1947,8 +1947,6 @@ namespace adovipavto {
             
             private global::System.Data.DataColumn columnEngineType;
             
-            private global::System.Data.DataColumn columnTitle;
-            
             private global::System.Data.DataColumn columnBefore;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2018,14 +2016,6 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TitleColumn {
-                get {
-                    return this.columnTitle;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn BeforeColumn {
                 get {
                     return this.columnBefore;
@@ -2069,14 +2059,13 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CarGroupRow AddCarGroupRow(int Year, string Category, string EngineType, string Title, bool Before) {
+            public CarGroupRow AddCarGroupRow(int Year, string Category, int EngineType, bool Before) {
                 CarGroupRow rowCarGroupRow = ((CarGroupRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Year,
                         Category,
                         EngineType,
-                        Title,
                         Before};
                 rowCarGroupRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCarGroupRow);
@@ -2104,7 +2093,6 @@ namespace adovipavto {
                 this.columnYear = base.Columns["Year"];
                 this.columnCategory = base.Columns["Category"];
                 this.columnEngineType = base.Columns["EngineType"];
-                this.columnTitle = base.Columns["Title"];
                 this.columnBefore = base.Columns["Before"];
             }
             
@@ -2117,10 +2105,8 @@ namespace adovipavto {
                 base.Columns.Add(this.columnYear);
                 this.columnCategory = new global::System.Data.DataColumn("Category", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCategory);
-                this.columnEngineType = new global::System.Data.DataColumn("EngineType", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnEngineType = new global::System.Data.DataColumn("EngineType", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEngineType);
-                this.columnTitle = new global::System.Data.DataColumn("Title", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTitle);
                 this.columnBefore = new global::System.Data.DataColumn("Before", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBefore);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -2263,7 +2249,7 @@ namespace adovipavto {
             
             private global::System.Data.DataColumn columnNormativeID;
             
-            private global::System.Data.DataColumn columnTitle;
+            private global::System.Data.DataColumn columnTag;
             
             private global::System.Data.DataColumn columnMaxValue;
             
@@ -2314,9 +2300,9 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TitleColumn {
+            public global::System.Data.DataColumn TagColumn {
                 get {
-                    return this.columnTitle;
+                    return this.columnTag;
                 }
             }
             
@@ -2381,11 +2367,11 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NormativesRow AddNormativesRow(int Title, double MaxValue, double MinValue, CarGroupRow parentCarGroupRowByFK_CarGroup_Normatives) {
+            public NormativesRow AddNormativesRow(int Tag, double MaxValue, double MinValue, CarGroupRow parentCarGroupRowByFK_CarGroup_Normatives) {
                 NormativesRow rowNormativesRow = ((NormativesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Title,
+                        Tag,
                         MaxValue,
                         MinValue,
                         null};
@@ -2415,7 +2401,7 @@ namespace adovipavto {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnNormativeID = base.Columns["NormativeID"];
-                this.columnTitle = base.Columns["Title"];
+                this.columnTag = base.Columns["Tag"];
                 this.columnMaxValue = base.Columns["MaxValue"];
                 this.columnMinValue = base.Columns["MinValue"];
                 this.columnIDGroup = base.Columns["IDGroup"];
@@ -2426,8 +2412,8 @@ namespace adovipavto {
             private void InitClass() {
                 this.columnNormativeID = new global::System.Data.DataColumn("NormativeID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNormativeID);
-                this.columnTitle = new global::System.Data.DataColumn("Title", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTitle);
+                this.columnTag = new global::System.Data.DataColumn("Tag", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTag);
                 this.columnMaxValue = new global::System.Data.DataColumn("MaxValue", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMaxValue);
                 this.columnMinValue = new global::System.Data.DataColumn("MinValue", typeof(double), null, global::System.Data.MappingType.Element);
@@ -3796,10 +3782,10 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string EngineType {
+            public int EngineType {
                 get {
                     try {
-                        return ((string)(this[this.tableCarGroup.EngineTypeColumn]));
+                        return ((int)(this[this.tableCarGroup.EngineTypeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'EngineType\' in table \'CarGroup\' is DBNull.", e);
@@ -3807,22 +3793,6 @@ namespace adovipavto {
                 }
                 set {
                     this[this.tableCarGroup.EngineTypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Title {
-                get {
-                    try {
-                        return ((string)(this[this.tableCarGroup.TitleColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Title\' in table \'CarGroup\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCarGroup.TitleColumn] = value;
                 }
             }
             
@@ -3892,18 +3862,6 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTitleNull() {
-                return this.IsNull(this.tableCarGroup.TitleColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTitleNull() {
-                this[this.tableCarGroup.TitleColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsBeforeNull() {
                 return this.IsNull(this.tableCarGroup.BeforeColumn);
             }
@@ -3969,17 +3927,17 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Title {
+            public int Tag {
                 get {
                     try {
-                        return ((int)(this[this.tableNormatives.TitleColumn]));
+                        return ((int)(this[this.tableNormatives.TagColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Title\' in table \'Normatives\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Tag\' in table \'Normatives\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableNormatives.TitleColumn] = value;
+                    this[this.tableNormatives.TagColumn] = value;
                 }
             }
             
@@ -4056,14 +4014,14 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTitleNull() {
-                return this.IsNull(this.tableNormatives.TitleColumn);
+            public bool IsTagNull() {
+                return this.IsNull(this.tableNormatives.TagColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTitleNull() {
-                this[this.tableNormatives.TitleColumn] = global::System.Convert.DBNull;
+            public void SetTagNull() {
+                this[this.tableNormatives.TagColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -3,6 +3,7 @@ using System.Data;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
+using adovipavto.Classes;
 using adovipavto.Enums;
 
 namespace adovipavto.EditForms
@@ -27,15 +28,15 @@ namespace adovipavto.EditForms
 
         private void EditGroupForm_Load(object sender, EventArgs e)
         {
-            textBox1.Text = selectedRow["Title"].ToString();
+            textBox1.Text = Program.VipAvtoDataSet.CreateGroupTitle((int)selectedRow["GroupID"]);
 
 
             categoryComboBox.DataSource = Enum.GetValues(typeof (Category));
             categoryComboBox.Text = selectedRow["Category"].ToString();
 
 
-            engineComboBox.DataSource = Enum.GetValues(typeof (Engine));
-            engineComboBox.Text = selectedRow["EngineType"].ToString();
+            engineComboBox.DataSource = new Engines().EnginesTitle;
+            engineComboBox.Text = new Engines().EnginesTitle[(int)selectedRow["EngineType"]];
 
 
             for (int i = 1920; i <= DateTime.Now.Year; i++)
@@ -52,7 +53,7 @@ namespace adovipavto.EditForms
         {
             Program.VipAvtoDataSet.EditGroup(Convert.ToInt32(selectedRow["GroupID"]),
                 Convert.ToInt32(yearComboBox.SelectedItem), categoryComboBox.SelectedItem.ToString(),
-                engineComboBox.SelectedItem.ToString(), radioButton1.Checked);
+                new Engines().GetEngineIndex(engineComboBox.SelectedItem.ToString()), radioButton1.Checked);
 
             DialogResult = DialogResult.OK;
         }

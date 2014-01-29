@@ -40,7 +40,7 @@ namespace adovipavto.AddForms
 
             object[] groups = (
                 from DataRow item in Program.VipAvtoDataSet.Tables[Constants.GroupTableName].Rows
-                select item["Title"]).ToArray();
+                select Program.VipAvtoDataSet.CreateGroupTitle((int)item["GroupID"])).ToArray();
 
             comboBox1.Items.AddRange(groups);
 

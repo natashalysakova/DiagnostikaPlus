@@ -93,8 +93,7 @@
               <xs:element name="GroupID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnGroupID" msprop:Generator_ColumnPropNameInRow="GroupID" msprop:Generator_ColumnPropNameInTable="GroupIDColumn" msprop:Generator_UserColumnName="GroupID" type="xs:int" minOccurs="0" />
               <xs:element name="Year" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnPropNameInTable="YearColumn" msprop:Generator_UserColumnName="Year" type="xs:int" minOccurs="0" />
               <xs:element name="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_UserColumnName="Category" type="xs:string" minOccurs="0" />
-              <xs:element name="EngineType" msprop:Generator_ColumnVarNameInTable="columnEngineType" msprop:Generator_ColumnPropNameInRow="EngineType" msprop:Generator_ColumnPropNameInTable="EngineTypeColumn" msprop:Generator_UserColumnName="EngineType" type="xs:string" minOccurs="0" />
-              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" type="xs:string" minOccurs="0" />
+              <xs:element name="EngineType" msprop:Generator_ColumnVarNameInTable="columnEngineType" msprop:Generator_ColumnPropNameInRow="EngineType" msprop:Generator_ColumnPropNameInTable="EngineTypeColumn" msprop:Generator_UserColumnName="EngineType" type="xs:int" minOccurs="0" />
               <xs:element name="Before" msprop:Generator_ColumnVarNameInTable="columnBefore" msprop:Generator_ColumnPropNameInRow="Before" msprop:Generator_ColumnPropNameInTable="BeforeColumn" msprop:Generator_UserColumnName="Before" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -103,7 +102,7 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NormativeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnNormativeID" msprop:Generator_ColumnPropNameInRow="NormativeID" msprop:Generator_ColumnPropNameInTable="NormativeIDColumn" msprop:Generator_UserColumnName="NormativeID" type="xs:int" minOccurs="0" />
-              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" type="xs:int" minOccurs="0" />
+              <xs:element name="Tag" msprop:Generator_ColumnVarNameInTable="columnTag" msprop:Generator_ColumnPropNameInRow="Tag" msprop:Generator_ColumnPropNameInTable="TagColumn" msprop:Generator_UserColumnName="Tag" type="xs:int" minOccurs="0" />
               <xs:element name="MaxValue" msprop:Generator_ColumnVarNameInTable="columnMaxValue" msprop:Generator_ColumnPropNameInRow="MaxValue" msprop:Generator_ColumnPropNameInTable="MaxValueColumn" msprop:Generator_UserColumnName="MaxValue" type="xs:double" minOccurs="0" />
               <xs:element name="MinValue" msprop:Generator_ColumnVarNameInTable="columnMinValue" msprop:Generator_ColumnPropNameInRow="MinValue" msprop:Generator_ColumnPropNameInTable="MinValueColumn" msprop:Generator_UserColumnName="MinValue" type="xs:double" minOccurs="0" />
               <xs:element name="IDGroup" msprop:Generator_ColumnVarNameInTable="columnIDGroup" msprop:Generator_ColumnPropNameInRow="IDGroup" msprop:Generator_ColumnPropNameInTable="IDGroupColumn" msprop:Generator_UserColumnName="IDGroup" type="xs:int" minOccurs="0" />

@@ -15,12 +15,12 @@ namespace adovipavto
 {
     public partial class NormativesForm : Form
     {
-        public NormativesForm() : this("")
+        public NormativesForm() : this(0)
         {
         }
 
        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
-        public NormativesForm(string selectedGroup)
+        public NormativesForm(int selectedGroup)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
 
@@ -31,12 +31,12 @@ namespace adovipavto
 
             object[] groups =
                 (from DataRow item in Program.VipAvtoDataSet.Tables[Constants.GroupTableName].Rows
-                    select item["Title"]).ToArray();
+                    select Program.VipAvtoDataSet.CreateGroupTitle((int)item["GroupID"])).ToArray();
 
             groupSelector.Items.AddRange(groups);
 
-            if (selectedGroup != "" || groupSelector.Items.Count == 0)
-                groupSelector.Text = selectedGroup;
+            if (Program.VipAvtoDataSet.CreateGroupTitle(selectedGroup) != "" || groupSelector.Items.Count == 0)
+                groupSelector.Text = Program.VipAvtoDataSet.CreateGroupTitle(selectedGroup);
             else
             {
                 groupSelector.SelectedIndex = 0;
@@ -71,7 +71,7 @@ namespace adovipavto
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                row.Cells["NormTitle"].Value = new Normatives().NormativesTitle[(int)row.Cells["titleDataGridViewTextBoxColumn"].Value];
+                row.Cells["NormTitle"].Value = new Normatives().NormativesTitle[(int)row.Cells["Tag"].Value];
             }
         }
 

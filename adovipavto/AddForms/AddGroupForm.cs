@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
+using adovipavto.Classes;
 using adovipavto.Enums;
 using Microsoft.ReportingServices.Interfaces;
 
@@ -24,7 +25,7 @@ namespace adovipavto.AddForms
         private void NewGroupForm_Load(object sender, EventArgs e)
         {
             checkedListBox1.DataSource = Enum.GetValues(typeof(Category));
-            checkedListBox2.DataSource = Enum.GetValues(typeof(Engine));
+            checkedListBox2.DataSource = new Engines().EnginesTitle;
             for (int i = 1920; i <= DateTime.Now.Year; i++)
             {
                 comboBox3.Items.Add(i);
@@ -45,7 +46,7 @@ namespace adovipavto.AddForms
                         {
                             Program.VipAvtoDataSet.AddGroup(Convert.ToInt32(comboBox3.SelectedItem.ToString()),
                                 item.ToString(),
-                                item2.ToString(), radioButton1.Checked);
+                                new Engines().GetEngineIndex(item2.ToString()), radioButton1.Checked);
                         }
 
                         DialogResult = DialogResult.OK;

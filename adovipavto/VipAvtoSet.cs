@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using adovipavto.Classes;
 using adovipavto.Enums;
 using adovipavto.Properties;
@@ -14,7 +16,9 @@ namespace adovipavto
         //partial class MesuresDataTable
         //{
         //}
-    
+
+        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+
         private Operator _currentOperator;
 
         #region NormativesMetods
@@ -23,7 +27,7 @@ namespace adovipavto
         {
             DataRow r = Tables[Constants.NormativesTableName].NewRow();
 
-            r["Title"] = new Normatives().GetNormativeIndex(title);
+            r["Tag"] = new Normatives().GetNormativeIndex(title);
             r["MaxValue"] = maxValue;
             r["MinValue"] = minValue;
 
@@ -39,7 +43,7 @@ namespace adovipavto
         {
             DataRow r = GetRowById(Constants.NormativesTableName, id);
 
-            r["Title"] = title;
+            r["Tag"] = new Normatives().GetNormativeIndex(title);
             r["MaxValue"] = maxValue;
             r["MinValue"] = minValue;
 
@@ -55,7 +59,7 @@ namespace adovipavto
             var groupId = (int)(
                 from DataRow items
                     in Tables[Constants.GroupTableName].Rows
-                where items["Title"].ToString() == groupTitle
+                where Program.VipAvtoDataSet.CreateGroupTitle((int)items["GroupID"]) == groupTitle
                 select items["GroupID"]).ToList()[0];
 
             DataRow[] group = Tables[Constants.GroupTableName].Select(string.Format("GroupID = {0}", groupId));
@@ -91,7 +95,7 @@ namespace adovipavto
                 .ToList();
         }
 
-        public void AddGroup(int year, string categoty, string engine, bool before)
+        public void AddGroup(int year, string categoty, int engine, bool before)
         {
             DataRow r = Tables[Constants.GroupTableName].NewRow();
             r["Year"] = year;
@@ -99,14 +103,12 @@ namespace adovipavto
             r["EngineType"] = engine;
             r["Before"] = before;
 
-            string s = (bool)r["Before"] ? "До" : "После";
-            r["Title"] = categoty + " " + s + " " + year + " " + engine;
             Tables[Constants.GroupTableName].Rows.Add(r);
             Tables[Constants.GroupTableName].AcceptChanges();
             Tables[Constants.GroupTableName].WriteXml(Constants.GetFullPath(Settings.Default.Groups));
         }
 
-        public void EditGroup(int id, int year, string categoty, string engine, bool before)
+        public void EditGroup(int id, int year, string categoty, int engine, bool before)
         {
             DataRow r = GetRowById(Constants.GroupTableName, id);
             r["Year"] = year;
@@ -114,22 +116,36 @@ namespace adovipavto
             r["EngineType"] = engine;
             r["Before"] = before;
 
-            string s = (bool)r["Before"] ? "До" : "После";
-            r["Title"] = categoty + " " + s + " " + year + " " + engine;
-
             Tables[Constants.GroupTableName].AcceptChanges();
             Tables[Constants.GroupTableName].WriteXml(Constants.GetFullPath(Settings.Default.Groups));
         }
 
         public int GetGroupId(string title)
         {
+            string[] splitTitle = title.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+
             foreach (DataRow row in Tables[Constants.GroupTableName].Rows)
             {
-                if (row["Title"].ToString() == title)
+                string cat = row["Category"].ToString();
+                string bef = (bool)row["Before"] ? rm.GetString("before") : rm.GetString("after");
+                string year = row["Year"].ToString();
+                int engine = (int)row["EngineType"];
+
+                if (cat == splitTitle[0] && bef == splitTitle[1] && year == splitTitle[2] && new Engines().EnginesTitle[engine] == splitTitle[3] )
                     return Convert.ToInt32(row["GroupID"]);
             }
 
             return -1;
+        }
+
+        public string CreateGroupTitle(int id)
+        {
+            DataRow groupRow = GetRowById(Constants.GroupTableName, id);
+
+            string s = (bool) groupRow["Before"] ? rm.GetString("before") : rm.GetString("after");
+
+
+            return groupRow["Category"] + " " + s + " " + groupRow["Year"] + " " + new Engines().EnginesTitle[(int)groupRow["EngineType"]];
         }
 
         #endregion
@@ -449,7 +465,7 @@ namespace adovipavto
             int normtag = GetNormativeTag(normativename);
 
             var mesures = (from DataRow item in Tables[Constants.NormativesTableName].Rows
-                           where (int)item["Title"] == normtag && (int)item["IDGroup"] == groupId
+                           where (int)item["Tag"] == normtag && (int)item["IDGroup"] == groupId
                            select item).ToList();
 
             if (mesures.Count == 0)
