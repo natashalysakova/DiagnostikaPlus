@@ -355,7 +355,7 @@ namespace adovipavto
         }
 
 
-        internal int  AddProtocol(string p1, string p2, DateTime dateTime, string photo, string techpass, string p3, bool result, DateTime nexDateTime, bool visChck)
+        internal int  AddProtocol(string p1, string p2, DateTime dateTime, string techpass, string p3, bool result, DateTime nexDateTime, bool visChck)
         {
             DataRow r = Tables[Constants.ProtocolsTableName].NewRow();
 
@@ -364,8 +364,6 @@ namespace adovipavto
             r["IDMechanic"] = GetMechanicIdByShortName(p2);
             r["Date"] = dateTime;
 
-            if (photo != "")
-                r["CarPhoto"] = photo;
             if (techpass != "")
                 r["TechPhoto"] = techpass;
 

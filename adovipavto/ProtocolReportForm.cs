@@ -162,12 +162,22 @@ namespace adovipavto
             g.DrawString(rm.GetString("engineAndItsSystem"), boldFont, Brushes.Black, new PointF(40F, 19 * LineHeight));
             DrawHeader(g, normalFont, 19 * LineHeight);
 
-            for (int i = 13; i < 21; i++)
+            for (int i = 13; i < 19; i++)
             {
                 g.DrawString(norm.NormativesTitle[i], normalFont, Brushes.Black, new PointF(20F, (i + 7) * LineHeight));
                 DrawPictorgam(i, g, (i + 7) * LineHeight, normalFont);
 
             }
+
+
+            g.DrawString(rm.GetString("GBO"), boldFont, Brushes.Black, new PointF(40F, 26 * LineHeight));
+            DrawHeader(g, normalFont, 26 * LineHeight);
+
+
+                g.DrawString(norm.NormativesTitle[24], normalFont, Brushes.Black, new PointF(20F, (20 + 7) * LineHeight));
+                DrawPictorgam(20, g, (20 + 7) * LineHeight, normalFont);
+
+
 
             g.DrawString(rm.GetString("glass"), boldFont, Brushes.Black, new PointF(40F, 28 * LineHeight));
             DrawHeader(g, normalFont, 28 * LineHeight);
@@ -189,13 +199,13 @@ namespace adovipavto
             g.DrawString(rm.GetString("visualCheck"), boldFont, Brushes.Black, new PointF(40F, 33 * LineHeight));
 
             string vslChk = (bool) _protocolRow["VisualCheck"] ? rm.GetString("check") : rm.GetString("uncheck");
-            g.DrawString(vslChk, boldFont, Brushes.Black, new PointF(600F, 33 * LineHeight), new StringFormat(){Alignment = StringAlignment.Center});
-
+            g.DrawString(vslChk, boldFont, Brushes.Black, new PointF(660F, 33 * LineHeight), new StringFormat(){Alignment = StringAlignment.Center});
+            g.DrawString(rm.GetString("visualCheck2"), smallFont, Brushes.Black, new PointF(40F,34*LineHeight));
 
             g.DrawLine(Pens.Black, 15, (2*LineHeight)-3, 15, (34*LineHeight)-3);
             g.DrawLine(Pens.Black, 750, (2 * LineHeight)-3, 750, (34 * LineHeight)-3);
-            g.DrawLine(Pens.Black, 450, (2 * LineHeight) - 3, 450, (34 * LineHeight) - 3);
-            g.DrawLine(Pens.Black, 530, (2 * LineHeight) - 3, 530, (33 * LineHeight) - 3);
+            g.DrawLine(Pens.Black, 450, (2 * LineHeight) - 3, 450, (33 * LineHeight) - 3);
+            g.DrawLine(Pens.Black, 570, (2 * LineHeight) - 3, 570, (34 * LineHeight) - 3);
             g.DrawLine(Pens.Black, 650, (2 * LineHeight) - 3, 650, (33 * LineHeight) - 3);
 
             for (int i = 2; i < 35; i++)
@@ -211,7 +221,11 @@ namespace adovipavto
                 var s1 = rm.GetString("results2");
 
                 if (s1 != null)
-                    g.DrawString(s1.ToUpper() +" "+ s.ToUpper(), bigFont, Brushes.Black, new PointF(375, 37 * LineHeight), sf);
+                {
+                    g.DrawString(s1.ToUpper(), bigFont, Brushes.Black, new PointF(200, 36.5f * LineHeight), sf);
+                    g.DrawString(s.ToUpper(), bigFont, Brushes.Black, new PointF(200, 38.5f * LineHeight), sf);
+                    g.DrawRectangle(Pens.Black, 20, 35.5f*LineHeight, 370, 4*LineHeight);
+                }
             }
 
             g.DrawString(rm.GetString("mechanic"), boldFont, Brushes.Black, new PointF(30, 40 * LineHeight));
@@ -230,19 +244,9 @@ namespace adovipavto
             g.DrawLine(Pens.Black, 20, 49 * LineHeight, 350, 49 * LineHeight);
             g.DrawString(rm.GetString("data"), smallFont, Brushes.Black, new PointF(165, (50 * LineHeight) - 5), sf);
 
-            var photorect = new Rectangle(380, 40*LineHeight, 160, LineHeight*10);
-            g.DrawRectangle(Pens.Black, photorect);
-            g.DrawString(rm.GetString("photo"), smallFont, Brushes.Black, photorect , sf);
-
-            if (_protocolRow["CarPhoto"] != null)
-            {
-                string path = _protocolRow["CarPhoto"].ToString();
-                if(File.Exists(path))
-                    g.DrawImage(new Bitmap(path), photorect);
-            }
 
 
-            var techrect = new Rectangle(560, 40*LineHeight, 160, LineHeight*10);
+            var techrect = new Rectangle(420, (35*LineHeight) + LineHeight/2, 320, LineHeight*15);
             g.DrawRectangle(Pens.Black, techrect);
             g.DrawString(rm.GetString("techphoto"), smallFont, Brushes.Black, techrect, sf);
             if (_protocolRow["TechPhoto"] != null)
@@ -254,7 +258,7 @@ namespace adovipavto
 
 
 
-            g.DrawLine(Pens.Black, 10, 51 * LineHeight, 810, 51 * LineHeight);
+            g.DrawLine(Pens.Black, 10, 51 * LineHeight, 750, 51 * LineHeight);
 
 
             g.DrawString(rm.GetString("oboznach"), smallFont, Brushes.Black, new PointF(75, 52 * LineHeight));
@@ -272,9 +276,9 @@ namespace adovipavto
         {
             StringFormat sf = new StringFormat() { Alignment = StringAlignment.Center };
 
-            g.DrawString(rm.GetString("value"), normalFont, Brushes.Black, new PointF(490F, lineHeight), sf);
-            g.DrawString(rm.GetString("norm"), normalFont, Brushes.Black, new PointF(590F, lineHeight), sf);
+            g.DrawString(rm.GetString("value"), normalFont, Brushes.Black, new PointF(610F, lineHeight), sf);
             g.DrawString(rm.GetString("zakluch"), normalFont, Brushes.Black, new PointF(700F, lineHeight), sf);
+            g.DrawString(rm.GetString("norm"), normalFont, Brushes.Black, new PointF(510F, lineHeight), sf);
 
             
         }
@@ -288,33 +292,33 @@ namespace adovipavto
                     .ToArray();
             if (value.Length == 0)
             {
-                g.DrawImage(Properties.Resources.none, 700, height+2, 15, 15);
+                g.DrawImage(Properties.Resources.none, 690, height, 15, 15);
             }
             else
             {
-                g.DrawString(value[0].ToString(), normalFont, Brushes.Black, new PointF(490F, height),sf);
+                g.DrawString(value[0].ToString(), normalFont, Brushes.Black, new PointF(610F, height),sf);
 
                 double minval =
                     (double) (from DataRow item in Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].Rows
                         where (int) item["IDGroup"] == (int) _protocolRow["IDGroup"] &&
-                              (int) item["Title"] == i
+                              (int) item["Tag"] == i
                         select item["MinValue"]).ToArray()[0];
                 double maxval =
                     (double) (from DataRow item in Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].Rows
                         where (int) item["IDGroup"] == (int) _protocolRow["IDGroup"] &&
-                              (int) item["Title"] == i
+                              (int) item["Tag"] == i
                         select item["MaxValue"]).ToArray()[0];
 
-                g.DrawString(String.Format("[{0};{1}]", minval,maxval), normalFont, Brushes.Black, new PointF(590F, height), sf);
+                g.DrawString(String.Format("[{0};{1}]", minval,maxval), normalFont, Brushes.Black, new PointF(510F, height), sf);
 
 
                 if (minval <= value[0] && value[0] < maxval)
                 {
-                    g.DrawImage(Properties.Resources.pass, 700, height + 2, 15, 15);
+                    g.DrawImage(Properties.Resources.pass, 690, height, 15, 15);
                 }
                 else
                 {
-                    g.DrawImage(Properties.Resources.fail, 700, height + 2, 15, 15);
+                    g.DrawImage(Properties.Resources.fail, 690, height, 15, 15);
                 }
             }
         }

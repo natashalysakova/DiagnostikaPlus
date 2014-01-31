@@ -40,11 +40,11 @@ namespace adovipavto {
         
         private global::System.Data.DataRelation relationFK_Operators_Logs;
         
-        private global::System.Data.DataRelation relationFK_CarGroup_Protocols;
+        private global::System.Data.DataRelation relationFK_Operators_Protocols;
         
         private global::System.Data.DataRelation relationFK_Mechanics_Protocols;
         
-        private global::System.Data.DataRelation relationFK_Operators_Protocols;
+        private global::System.Data.DataRelation relationFK_CarGroup_Protocols;
         
         private global::System.Data.DataRelation relationFK_CarGroup_Normatives;
         
@@ -351,9 +351,9 @@ namespace adovipavto {
                 }
             }
             this.relationFK_Operators_Logs = this.Relations["FK_Operators_Logs"];
-            this.relationFK_CarGroup_Protocols = this.Relations["FK_CarGroup_Protocols"];
-            this.relationFK_Mechanics_Protocols = this.Relations["FK_Mechanics_Protocols"];
             this.relationFK_Operators_Protocols = this.Relations["FK_Operators_Protocols"];
+            this.relationFK_Mechanics_Protocols = this.Relations["FK_Mechanics_Protocols"];
+            this.relationFK_CarGroup_Protocols = this.Relations["FK_CarGroup_Protocols"];
             this.relationFK_CarGroup_Normatives = this.Relations["FK_CarGroup_Normatives"];
             this.relationFK_Protocols_Mesures = this.Relations["FK_Protocols_Mesures"];
         }
@@ -388,9 +388,9 @@ namespace adovipavto {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_CarGroup_Protocols", new global::System.Data.DataColumn[] {
-                        this.tableCarGroup.GroupIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableProtocols.IDGroupColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Operators_Protocols", new global::System.Data.DataColumn[] {
+                        this.tableOperators.OperatorIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableProtocols.IDOperatorColumn});
             this.tableProtocols.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
@@ -402,9 +402,9 @@ namespace adovipavto {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Operators_Protocols", new global::System.Data.DataColumn[] {
-                        this.tableOperators.OperatorIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableProtocols.IDOperatorColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_CarGroup_Protocols", new global::System.Data.DataColumn[] {
+                        this.tableCarGroup.GroupIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableProtocols.IDGroupColumn});
             this.tableProtocols.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
@@ -427,18 +427,18 @@ namespace adovipavto {
                         this.tableOperators.OperatorIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableLogs.IDOperatorColumn}, false);
             this.Relations.Add(this.relationFK_Operators_Logs);
-            this.relationFK_CarGroup_Protocols = new global::System.Data.DataRelation("FK_CarGroup_Protocols", new global::System.Data.DataColumn[] {
-                        this.tableCarGroup.GroupIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableProtocols.IDGroupColumn}, false);
-            this.Relations.Add(this.relationFK_CarGroup_Protocols);
-            this.relationFK_Mechanics_Protocols = new global::System.Data.DataRelation("FK_Mechanics_Protocols", new global::System.Data.DataColumn[] {
-                        this.tableMechanics.MechanicIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableProtocols.IDMechanicColumn}, false);
-            this.Relations.Add(this.relationFK_Mechanics_Protocols);
             this.relationFK_Operators_Protocols = new global::System.Data.DataRelation("FK_Operators_Protocols", new global::System.Data.DataColumn[] {
                         this.tableOperators.OperatorIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableProtocols.IDOperatorColumn}, false);
             this.Relations.Add(this.relationFK_Operators_Protocols);
+            this.relationFK_Mechanics_Protocols = new global::System.Data.DataRelation("FK_Mechanics_Protocols", new global::System.Data.DataColumn[] {
+                        this.tableMechanics.MechanicIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableProtocols.IDMechanicColumn}, false);
+            this.Relations.Add(this.relationFK_Mechanics_Protocols);
+            this.relationFK_CarGroup_Protocols = new global::System.Data.DataRelation("FK_CarGroup_Protocols", new global::System.Data.DataColumn[] {
+                        this.tableCarGroup.GroupIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableProtocols.IDGroupColumn}, false);
+            this.Relations.Add(this.relationFK_CarGroup_Protocols);
             this.relationFK_CarGroup_Normatives = new global::System.Data.DataRelation("FK_CarGroup_Normatives", new global::System.Data.DataColumn[] {
                         this.tableCarGroup.GroupIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableNormatives.IDGroupColumn}, false);
@@ -1240,8 +1240,6 @@ namespace adovipavto {
             
             private global::System.Data.DataColumn columnDate;
             
-            private global::System.Data.DataColumn columnCarPhoto;
-            
             private global::System.Data.DataColumn columnTechPhoto;
             
             private global::System.Data.DataColumn columnIDGroup;
@@ -1327,14 +1325,6 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CarPhotoColumn {
-                get {
-                    return this.columnCarPhoto;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn TechPhotoColumn {
                 get {
                     return this.columnTechPhoto;
@@ -1410,7 +1400,7 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProtocolsRow AddProtocolsRow(string BlankNumber, OperatorsRow parentOperatorsRowByFK_Operators_Protocols, MechanicsRow parentMechanicsRowByFK_Mechanics_Protocols, System.DateTime Date, string CarPhoto, string TechPhoto, CarGroupRow parentCarGroupRowByFK_CarGroup_Protocols, bool Result, System.DateTime NextData, bool VisualCheck) {
+            public ProtocolsRow AddProtocolsRow(string BlankNumber, OperatorsRow parentOperatorsRowByFK_Operators_Protocols, MechanicsRow parentMechanicsRowByFK_Mechanics_Protocols, System.DateTime Date, string TechPhoto, CarGroupRow parentCarGroupRowByFK_CarGroup_Protocols, bool Result, System.DateTime NextData, bool VisualCheck) {
                 ProtocolsRow rowProtocolsRow = ((ProtocolsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1418,7 +1408,6 @@ namespace adovipavto {
                         null,
                         null,
                         Date,
-                        CarPhoto,
                         TechPhoto,
                         null,
                         Result,
@@ -1431,7 +1420,7 @@ namespace adovipavto {
                     columnValuesArray[3] = parentMechanicsRowByFK_Mechanics_Protocols[0];
                 }
                 if ((parentCarGroupRowByFK_CarGroup_Protocols != null)) {
-                    columnValuesArray[7] = parentCarGroupRowByFK_CarGroup_Protocols[0];
+                    columnValuesArray[6] = parentCarGroupRowByFK_CarGroup_Protocols[0];
                 }
                 rowProtocolsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProtocolsRow);
@@ -1460,7 +1449,6 @@ namespace adovipavto {
                 this.columnIDOperator = base.Columns["IDOperator"];
                 this.columnIDMechanic = base.Columns["IDMechanic"];
                 this.columnDate = base.Columns["Date"];
-                this.columnCarPhoto = base.Columns["CarPhoto"];
                 this.columnTechPhoto = base.Columns["TechPhoto"];
                 this.columnIDGroup = base.Columns["IDGroup"];
                 this.columnResult = base.Columns["Result"];
@@ -1481,8 +1469,6 @@ namespace adovipavto {
                 base.Columns.Add(this.columnIDMechanic);
                 this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDate);
-                this.columnCarPhoto = new global::System.Data.DataColumn("CarPhoto", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCarPhoto);
                 this.columnTechPhoto = new global::System.Data.DataColumn("TechPhoto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTechPhoto);
                 this.columnIDGroup = new global::System.Data.DataColumn("IDGroup", typeof(int), null, global::System.Data.MappingType.Element);
@@ -3281,22 +3267,6 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CarPhoto {
-                get {
-                    try {
-                        return ((string)(this[this.tableProtocols.CarPhotoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CarPhoto\' in table \'Protocols\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableProtocols.CarPhotoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TechPhoto {
                 get {
                     try {
@@ -3377,12 +3347,12 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CarGroupRow CarGroupRow {
+            public OperatorsRow OperatorsRow {
                 get {
-                    return ((CarGroupRow)(this.GetParentRow(this.Table.ParentRelations["FK_CarGroup_Protocols"])));
+                    return ((OperatorsRow)(this.GetParentRow(this.Table.ParentRelations["FK_Operators_Protocols"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_CarGroup_Protocols"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Operators_Protocols"]);
                 }
             }
             
@@ -3399,12 +3369,12 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public OperatorsRow OperatorsRow {
+            public CarGroupRow CarGroupRow {
                 get {
-                    return ((OperatorsRow)(this.GetParentRow(this.Table.ParentRelations["FK_Operators_Protocols"])));
+                    return ((CarGroupRow)(this.GetParentRow(this.Table.ParentRelations["FK_CarGroup_Protocols"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Operators_Protocols"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_CarGroup_Protocols"]);
                 }
             }
             
@@ -3466,18 +3436,6 @@ namespace adovipavto {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDateNull() {
                 this[this.tableProtocols.DateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCarPhotoNull() {
-                return this.IsNull(this.tableProtocols.CarPhotoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCarPhotoNull() {
-                this[this.tableProtocols.CarPhotoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -91,8 +91,11 @@ namespace adovipavto.AddForms
             SCHMACHV.Text = rm.GetString("SCHMACHV");
             DVRSUM.Text = rm.GetString("DVRSUM");
             DVRSUP.Text = rm.GetString("DVRSUP");
-            CHVNMO.Text = rm.GetString("CHVNMO");
-            CHVNPO.Text = rm.GetString("CHVNPO");
+            //CHVNMO.Text = rm.GetString("CHVNMO");
+            //CHVNPO.Text = rm.GetString("CHVNPO");
+
+            GBO.Text = rm.GetString("GBO");
+            GBBS.Text = rm.GetString("GBBS");
 
             glass.Text = rm.GetString("glass");
             PVS.Text = rm.GetString("PVS");
@@ -272,8 +275,6 @@ namespace adovipavto.AddForms
 
 
             string photo = "", techpass = "";
-            if (pictureBox27.Tag != null)
-                photo = pictureBox27.Tag.ToString();
             if (pictureBox28.Tag != null)
                 techpass = pictureBox28.Tag.ToString();
 
@@ -300,7 +301,7 @@ namespace adovipavto.AddForms
 
             _newProtocolId = Program.VipAvtoDataSet.AddProtocol(label80.Text + maskedTextBox1.Text,
                 comboBox2.SelectedItem.ToString(),
-                dateTimePicker1.Value, photo, techpass, comboBox1.SelectedItem.ToString(), result, nexDateTime, radioButton1.Checked);
+                dateTimePicker1.Value, techpass, comboBox1.SelectedItem.ToString(), result, nexDateTime, radioButton1.Checked);
 
             foreach (VisualRow row in rows)
             {

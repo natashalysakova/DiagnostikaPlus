@@ -157,7 +157,7 @@
     <value>Фото</value>
   </data>
   <data name="results" xml:space="preserve">
-    <value>Результати вимірювань для бланку №</value>
+    <value>Результати контролю №</value>
   </data>
   <data name="results2" xml:space="preserve">
     <value>Результат перевірки: </value>
@@ -175,7 +175,7 @@
     <value>Значення</value>
   </data>
   <data name="visualCheck" xml:space="preserve">
-    <value>Візуальні перевірки на відповідність ГОСТ, ДСТУ</value>
+    <value>Органолептичний контроль на відповідність ГОСТ, ДСТУ</value>
   </data>
   <data name="wheelAndTyres" xml:space="preserve">
     <value>Колеса та шини</value>
@@ -226,7 +226,7 @@
     <value>Невірний пароль</value>
   </data>
   <data name="CHPUP" xml:space="preserve">
-    <value>Частота проблисків покажчиків повороту (Гц)</value>
+    <value>Частота проблисків покажчиків повороту (раз/хв)</value>
   </data>
   <data name="CHVNMO" xml:space="preserve">
     <value>Частота обертання на мінімальних обертах (об. хв)</value>
@@ -235,10 +235,10 @@
     <value>Частота обертання на підвищених обертах (об. хв)</value>
   </data>
   <data name="DVRSUM" xml:space="preserve">
-    <value>Димність в режимі вільних прискорень (м-1)</value>
+    <value>Димність в режимі вільних прискорень % (м-1) (мін.об)</value>
   </data>
   <data name="DVRSUP" xml:space="preserve">
-    <value>Димність в режимі вільних прискорень (%)</value>
+    <value>Димність в режимі вільних прискорень % (м-1) (підв.об)</value>
   </data>
   <data name="error" xml:space="preserve">
     <value>Помилка</value>
@@ -247,22 +247,22 @@
     <value>Не пройдено</value>
   </data>
   <data name="KUNOU1" xml:space="preserve">
-    <value>Контрольне зусилля на орган управління (1-я вісь) (Н)</value>
+    <value>Контрольне зусилля на орган управління (РТС) (Н)</value>
   </data>
   <data name="MVSTS" xml:space="preserve">
-    <value>Максимальний час спрацьовування ТЗ (мс)</value>
+    <value>Час спрацьовування ТЗ (мс)</value>
   </data>
   <data name="noprotocol" xml:space="preserve">
     <value>Неможливо відобразити пртокол, т.я він не знаходиться в базі даних</value>
   </data>
   <data name="ORTS1" xml:space="preserve">
-    <value>Від. різниця гальмівних сил (1-я вісь) (частки од.)</value>
+    <value>Від. різниця гальмівних сил (1-я вісь) (%)</value>
   </data>
   <data name="ORTS2" xml:space="preserve">
-    <value>Від. різниця гальмівних сил (2-я вісь) (частки од.)</value>
+    <value>Від. різниця гальмівних сил (2-я вісь) (%)</value>
   </data>
   <data name="ORTS3" xml:space="preserve">
-    <value>Від. різниця гальмівних сил (3-я вісь) (частки од.)</value>
+    <value>Від. різниця гальмівних сил (3-я вісь) (%)</value>
   </data>
   <data name="OUTSRTS" xml:space="preserve">
     <value>Загальна питома гальмівна сила робочої ТС (частки од.)</value>
@@ -274,7 +274,7 @@
     <value>Залишкова висота малюнка протектора (мм)</value>
   </data>
   <data name="PPBS" xml:space="preserve">
-    <value>Прозорість переднього бокового скла (%)</value>
+    <value>Прозорість передніх бокових скол (%)</value>
   </data>
   <data name="PVS" xml:space="preserve">
     <value>Прозорість вітрового скла (%)</value>
@@ -335,5 +335,14 @@
   </data>
   <data name="nomech" xml:space="preserve">
     <value>В базі відсуні механіки. Додайте механіків перед створенням протоколів.</value>
+  </data>
+  <data name="visualCheck2" xml:space="preserve">
+    <value>(Постанова КМУ №137 и №1166, Наказ Міністерства інфраструктури №710)</value>
+  </data>
+  <data name="GGBS" xml:space="preserve">
+    <value>Герметичність газобалонної системи</value>
+  </data>
+  <data name="GBO" xml:space="preserve">
+    <value>Газобалонне обладнання</value>
   </data>
 </root>

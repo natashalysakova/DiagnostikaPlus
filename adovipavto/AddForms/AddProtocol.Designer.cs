@@ -70,9 +70,7 @@
             this.label79 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.label76 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -114,8 +112,6 @@
             this.label65 = new System.Windows.Forms.Label();
             this.engineAndItsSystem = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -144,8 +140,6 @@
             this.label57 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
-            this.CHVNPO = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
             this.lightSystem = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -171,6 +165,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.GBO = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.GBBS = new System.Windows.Forms.Label();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.brakesystem.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -178,7 +178,6 @@
             this.panel2.SuspendLayout();
             this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             this.groupBox10.SuspendLayout();
             this.visualChrck.SuspendLayout();
             this.glass.SuspendLayout();
@@ -193,6 +192,8 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.lightSystem.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.GBO.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -465,6 +466,7 @@
             // panel1
             // 
             resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Controls.Add(this.GBO);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.groupBox11);
             this.panel1.Controls.Add(this.groupBox10);
@@ -495,9 +497,7 @@
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.pictureBox28);
-            this.groupBox11.Controls.Add(this.pictureBox27);
             this.groupBox11.Controls.Add(this.label76);
-            this.groupBox11.Controls.Add(this.label75);
             this.groupBox11.Controls.Add(this.label70);
             this.groupBox11.Controls.Add(this.dateTimePicker1);
             this.groupBox11.Controls.Add(this.comboBox2);
@@ -515,24 +515,10 @@
             this.pictureBox28.TabStop = false;
             this.pictureBox28.Click += new System.EventHandler(this.pictureBox27_Click);
             // 
-            // pictureBox27
-            // 
-            this.pictureBox27.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox27.Image = global::adovipavto.Properties.Resources.openfoto;
-            resources.ApplyResources(this.pictureBox27, "pictureBox27");
-            this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.TabStop = false;
-            this.pictureBox27.Click += new System.EventHandler(this.pictureBox27_Click);
-            // 
             // label76
             // 
             resources.ApplyResources(this.label76, "label76");
             this.label76.Name = "label76";
-            // 
-            // label75
-            // 
-            resources.ApplyResources(this.label75, "label75");
-            this.label75.Name = "label75";
             // 
             // label70
             // 
@@ -834,8 +820,6 @@
             // tableLayoutPanel4
             // 
             resources.ApplyResources(this.tableLayoutPanel4, "tableLayoutPanel4");
-            this.tableLayoutPanel4.Controls.Add(this.label62, 2, 15);
-            this.tableLayoutPanel4.Controls.Add(this.label61, 0, 15);
             this.tableLayoutPanel4.Controls.Add(this.textBox8, 1, 13);
             this.tableLayoutPanel4.Controls.Add(this.textBox9, 1, 11);
             this.tableLayoutPanel4.Controls.Add(this.textBox10, 1, 9);
@@ -864,25 +848,7 @@
             this.tableLayoutPanel4.Controls.Add(this.label57, 2, 9);
             this.tableLayoutPanel4.Controls.Add(this.label58, 2, 11);
             this.tableLayoutPanel4.Controls.Add(this.label59, 2, 13);
-            this.tableLayoutPanel4.Controls.Add(this.CHVNPO, 0, 14);
-            this.tableLayoutPanel4.Controls.Add(this.textBox20, 1, 15);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            // 
-            // label62
-            // 
-            resources.ApplyResources(this.label62, "label62");
-            this.label62.BackColor = System.Drawing.SystemColors.Control;
-            this.label62.ForeColor = System.Drawing.Color.Silver;
-            this.label62.Name = "label62";
-            this.label62.Tag = "20";
-            // 
-            // label61
-            // 
-            resources.ApplyResources(this.label61, "label61");
-            this.label61.BackColor = System.Drawing.SystemColors.Control;
-            this.label61.ForeColor = System.Drawing.Color.Silver;
-            this.label61.Name = "label61";
-            this.label61.Tag = "20";
             // 
             // textBox8
             // 
@@ -1080,18 +1046,6 @@
             this.label59.Name = "label59";
             this.label59.Tag = "19";
             // 
-            // CHVNPO
-            // 
-            resources.ApplyResources(this.CHVNPO, "CHVNPO");
-            this.tableLayoutPanel4.SetColumnSpan(this.CHVNPO, 3);
-            this.CHVNPO.Name = "CHVNPO";
-            // 
-            // textBox20
-            // 
-            resources.ApplyResources(this.textBox20, "textBox20");
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Tag = "20";
-            // 
             // lightSystem
             // 
             resources.ApplyResources(this.lightSystem, "lightSystem");
@@ -1278,6 +1232,50 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
+            // GBO
+            // 
+            resources.ApplyResources(this.GBO, "GBO");
+            this.GBO.Controls.Add(this.tableLayoutPanel8);
+            this.GBO.Name = "GBO";
+            this.GBO.TabStop = false;
+            // 
+            // tableLayoutPanel8
+            // 
+            resources.ApplyResources(this.tableLayoutPanel8, "tableLayoutPanel8");
+            this.tableLayoutPanel8.Controls.Add(this.GBBS, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.textBox23, 1, 1);
+            this.tableLayoutPanel8.Controls.Add(this.label5, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.label7, 2, 1);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            // 
+            // GBBS
+            // 
+            resources.ApplyResources(this.GBBS, "GBBS");
+            this.tableLayoutPanel8.SetColumnSpan(this.GBBS, 3);
+            this.GBBS.Name = "GBBS";
+            // 
+            // textBox23
+            // 
+            resources.ApplyResources(this.textBox23, "textBox23");
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Tag = "20";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.ForeColor = System.Drawing.Color.Silver;
+            this.label5.Name = "label5";
+            this.label5.Tag = "20";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.BackColor = System.Drawing.SystemColors.Control;
+            this.label7.ForeColor = System.Drawing.Color.Silver;
+            this.label7.Name = "label7";
+            this.label7.Tag = "20";
+            // 
             // AddProtocol
             // 
             resources.ApplyResources(this, "$this");
@@ -1307,7 +1305,6 @@
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.visualChrck.ResumeLayout(false);
@@ -1336,6 +1333,10 @@
             this.lightSystem.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.GBO.ResumeLayout(false);
+            this.GBO.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1403,7 +1404,6 @@
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Label CHVNPO;
         private System.Windows.Forms.GroupBox lightSystem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox textBox11;
@@ -1464,18 +1464,13 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.PictureBox pictureBox28;
-        private System.Windows.Forms.PictureBox pictureBox27;
         private System.Windows.Forms.Label label76;
-        private System.Windows.Forms.Label label75;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.Button Create;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.Timer timer1;
@@ -1484,5 +1479,11 @@
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.GroupBox GBO;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.Label GBBS;
+        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
     }
 }

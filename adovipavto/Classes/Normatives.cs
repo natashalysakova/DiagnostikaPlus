@@ -45,7 +45,8 @@ namespace adovipavto.Classes
                 /*20*/rm.GetString("CHVNPO"),
                 /*21*/rm.GetString("PVS"),
                 /*22*/rm.GetString("PPBS"),
-                /*23*/rm.GetString("VSHA")
+                /*23*/rm.GetString("VSHA"),
+                /*24*/rm.GetString("GGBS")
             };
         }
 

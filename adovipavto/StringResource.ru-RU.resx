@@ -157,7 +157,7 @@
     <value>Фото</value>
   </data>
   <data name="results" xml:space="preserve">
-    <value>Результаты измерений для бланка №</value>
+    <value>Результаты  контроля №</value>
   </data>
   <data name="results2" xml:space="preserve">
     <value>Результат проверки: </value>
@@ -175,7 +175,7 @@
     <value>Значение</value>
   </data>
   <data name="visualCheck" xml:space="preserve">
-    <value>Визуальные проверки на соответствие ГОСТ, ДСТУ</value>
+    <value>Органолептический контроль на соотсетсвие ГОСТ, ДСТУ</value>
   </data>
   <data name="wheelAndTyres" xml:space="preserve">
     <value>Колёса и шины</value>
@@ -226,7 +226,7 @@
     <value>Неверный пароль</value>
   </data>
   <data name="CHPUP" xml:space="preserve">
-    <value>Частота проблесков указателей поворота (Гц)</value>
+    <value>Частота проблесков указателей поворота (раз/мин)</value>
   </data>
   <data name="CHVNMO" xml:space="preserve">
     <value>Частота вращения на минимальных оборотах (об. мин)</value>
@@ -235,10 +235,10 @@
     <value>Частота вращения на повышеных оборотах (об. мин)</value>
   </data>
   <data name="DVRSUM" xml:space="preserve">
-    <value>Дымность в режиме свободных ускорений (м-1)</value>
+    <value>Дымность в режиме свободных ускорений % (м-1)(мин.об)</value>
   </data>
   <data name="DVRSUP" xml:space="preserve">
-    <value>Дымность в режиме свободных ускорений (%)</value>
+    <value>Дымность в режиме свободных ускорений % (м-1)(пов.об)</value>
   </data>
   <data name="error" xml:space="preserve">
     <value>Ошибка</value>
@@ -250,10 +250,10 @@
     <value>Заполните все требуемые поля</value>
   </data>
   <data name="KUNOU1" xml:space="preserve">
-    <value>Контрольное усилие на орган управления (1-я ось)(Н)</value>
+    <value>Контрольное усилие на орган управления (РТС)(Н)</value>
   </data>
   <data name="MVSTS" xml:space="preserve">
-    <value>Максимальное время срабатывания ТС (мс)</value>
+    <value>Время срабатывания ТС (мс)</value>
   </data>
   <data name="nomech" xml:space="preserve">
     <value>В базе отсутсвуют механики. Добавте механиков прежде чем создавать протоколы.</value>
@@ -262,13 +262,13 @@
     <value>Невозможно отобразить пртокол, т.к он не находится в базе данных</value>
   </data>
   <data name="ORTS1" xml:space="preserve">
-    <value>Отн. разность тормозных сил (1-я ось)(доли ед.)</value>
+    <value>Отн. разность тормозных сил (1-я ось)(%)</value>
   </data>
   <data name="ORTS2" xml:space="preserve">
-    <value>Отн. разность тормозных сил (2-я ось)(доли ед.)</value>
+    <value>Отн. разность тормозных сил (2-я ось)(%)</value>
   </data>
   <data name="ORTS3" xml:space="preserve">
-    <value>Отн. разность тормозных сил (3-я ось)(доли ед.)</value>
+    <value>Отн. разность тормозных сил (3-я ось)(%)</value>
   </data>
   <data name="OUTSRTS" xml:space="preserve">
     <value>Общая удельная тормозная сила рабочей ТС (доли ед.)</value>
@@ -280,7 +280,7 @@
     <value>Остаточная высота рисунка протектора (мм)</value>
   </data>
   <data name="PPBS" xml:space="preserve">
-    <value>Прозрачность переднего бокового стекла (%)</value>
+    <value>Прозрачность передних боковых стёкол (%)</value>
   </data>
   <data name="PVS" xml:space="preserve">
     <value>Прозрачность ветрового стекла (%)</value>
@@ -335,5 +335,14 @@
   </data>
   <data name="gas" xml:space="preserve">
     <value>Бензиновый</value>
+  </data>
+  <data name="visualCheck2" xml:space="preserve">
+    <value>(Постановление КМУ №137 и №1166, Приказ Министерства инфраструктуры №710)</value>
+  </data>
+  <data name="GGBS" xml:space="preserve">
+    <value>Герметичность газобалонной системы</value>
+  </data>
+  <data name="GBO" xml:space="preserve">
+    <value>Газобалонное оборудование</value>
   </data>
 </root>
