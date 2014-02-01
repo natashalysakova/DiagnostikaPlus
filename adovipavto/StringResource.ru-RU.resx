@@ -345,4 +345,7 @@
   <data name="GBO" xml:space="preserve">
     <value>Газобалонное оборудование</value>
   </data>
+  <data name="ORTSSS" xml:space="preserve">
+    <value>Отн. разность тормозных сил (стояночной ТС)(%)</value>
+  </data>
 </root>

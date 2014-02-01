@@ -13,14 +13,14 @@ namespace adovipavto.Classes
 {
     class Normatives
     {
-        private string[] normas;
+        private List<string> normas;
 
         public Normatives()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
             ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-            normas = new[]
+            normas = new List<string>()
             {
                 /*0*/rm.GetString("OUTSRTS"),
                 /*1*/rm.GetString("OUTSSTS"),
@@ -41,23 +41,22 @@ namespace adovipavto.Classes
                 /*16*/rm.GetString("SCHMACHV"),
                 /*17*/rm.GetString("DVRSUM"),
                 /*18*/rm.GetString("DVRSUP"),
-                /*19*/rm.GetString("CHVNMO"),
-                /*20*/rm.GetString("CHVNPO"),
+                /*19*/rm.GetString("GGBS"),
+                /*20*/rm.GetString("ORTSSS"),
                 /*21*/rm.GetString("PVS"),
                 /*22*/rm.GetString("PPBS"),
                 /*23*/rm.GetString("VSHA"),
-                /*24*/rm.GetString("GGBS")
             };
         }
 
-        public string[] NormativesTitle
+        public List<string> NormativesTitle
         {
             get { return normas; }
         }
 
         public int GetNormativeIndex(string title)
         {
-            for (int i = 0; i < NormativesTitle.Length; i++)
+            for (int i = 0; i < NormativesTitle.Count; i++)
             {
                 if (NormativesTitle[i] == title)
                     return i;

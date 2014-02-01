@@ -81,11 +81,10 @@ namespace adovipavto.EditForms
                 }
             }
 
-            mesureTextBox.Text = new Normatives().NormativesTitle[(int)selected["Title"]];
+            mesureTextBox.Text = new Normatives().NormativesTitle[(int)selected["Tag"]];
 
             groupTextBox.Text =
-                Program.VipAvtoDataSet.GetRowById(Constants.GroupTableName, (int) selected["IDGroup"])["Title"].ToString
-                    ();
+                Program.VipAvtoDataSet.CreateGroupTitle((int) selected["IDGroup"]);
         }
     }
 }

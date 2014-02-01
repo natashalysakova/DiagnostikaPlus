@@ -74,6 +74,7 @@ namespace adovipavto.AddForms
             ORTS1.Text = rm.GetString("ORTS1");
             ORTS2.Text = rm.GetString("ORTS2");
             ORTS3.Text = rm.GetString("ORTS3");
+            ORTSS.Text = rm.GetString("ORTSSS");
             MVSTS.Text = rm.GetString("MVSTS");
             KUNOU1.Text = rm.GetString("KUNOU1");
 
@@ -95,7 +96,7 @@ namespace adovipavto.AddForms
             //CHVNPO.Text = rm.GetString("CHVNPO");
 
             GBO.Text = rm.GetString("GBO");
-            GBBS.Text = rm.GetString("GBBS");
+            GBBS.Text = rm.GetString("GGBS");
 
             glass.Text = rm.GetString("glass");
             PVS.Text = rm.GetString("PVS");
@@ -110,7 +111,7 @@ namespace adovipavto.AddForms
 
             wheelAndTyres.Text = rm.GetString("wheelAndTyres");
             OVRP.Text = rm.GetString("OVRP");
-            visualChrck.Text = rm.GetString("visualCheck");
+            visualCheck.Text = rm.GetString("visualCheck");
 
             radioButton1.Text = rm.GetString("check");
             radioButton2.Text = rm.GetString("uncheck");
@@ -133,6 +134,10 @@ namespace adovipavto.AddForms
             if (!maskedTextBox1.MaskCompleted) return;
 
             panel1.Enabled = true;
+            PreviewBtn.Enabled = true;
+            SaveBtn.Enabled = true;
+            PrintBtn.Enabled = true;
+
             rows = new List<VisualRow>();
 
             CleanFields();
@@ -197,7 +202,7 @@ namespace adovipavto.AddForms
 
                 rows.Add(row);
 
-                visualChrck.BackColor = Color.LightGoldenrodYellow;
+                visualCheck.BackColor = Color.LightGoldenrodYellow;
                 groupBox10.BackColor = Color.LightGoldenrodYellow;
 
                 panel2.BackColor = Color.LightGoldenrodYellow;
@@ -274,7 +279,7 @@ namespace adovipavto.AddForms
             Properties.Settings.Default.Save();
 
 
-            string photo = "", techpass = "";
+            string techpass = "";
             if (pictureBox28.Tag != null)
                 techpass = pictureBox28.Tag.ToString();
 
@@ -314,10 +319,10 @@ namespace adovipavto.AddForms
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton1.Checked)
-                visualChrck.BackColor = Color.LightGreen;
+                visualCheck.BackColor = Color.LightGreen;
             else
             {
-                visualChrck.BackColor = Color.LightPink;
+                visualCheck.BackColor = Color.LightPink;
             }
         }
 
@@ -368,7 +373,7 @@ namespace adovipavto.AddForms
             }
 
 
-            if (visualChrck.BackColor == Color.LightGoldenrodYellow)
+            if (visualCheck.BackColor == Color.LightGoldenrodYellow)
                 result = true;
 
             if (groupBox10.BackColor == Color.LightGoldenrodYellow)
@@ -390,7 +395,7 @@ namespace adovipavto.AddForms
                     result = false;
             }
 
-            if (visualChrck.BackColor == Color.LightPink)
+            if (visualCheck.BackColor == Color.LightPink)
                 result = false;
 
             return result;

@@ -265,10 +265,10 @@
     <value>Від. різниця гальмівних сил (3-я вісь) (%)</value>
   </data>
   <data name="OUTSRTS" xml:space="preserve">
-    <value>Загальна питома гальмівна сила робочої ТС (частки од.)</value>
+    <value>Загальна питома гальмівна сила робочої ГС (частки од.)</value>
   </data>
   <data name="OUTSSTS" xml:space="preserve">
-    <value>Загальна питома гальмівна сила стоянкової ТС (частки од.)</value>
+    <value>Загальна питома гальмівна сила стоянкової ГС (частки од.)</value>
   </data>
   <data name="OVRP" xml:space="preserve">
     <value>Залишкова висота малюнка протектора (мм)</value>
@@ -344,5 +344,8 @@
   </data>
   <data name="GBO" xml:space="preserve">
     <value>Газобалонне обладнання</value>
+  </data>
+  <data name="ORTSSS" xml:space="preserve">
+    <value>Від. різниця гальмівних сил (стояночної ГС) (%)</value>
   </data>
 </root>

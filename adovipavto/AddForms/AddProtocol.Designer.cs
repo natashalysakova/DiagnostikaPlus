@@ -37,6 +37,10 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.brakesystem = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ORTSS = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -66,6 +70,12 @@
             this.label23 = new System.Windows.Forms.Label();
             this.OUTSRTS = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.GBO = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.GBBS = new System.Windows.Forms.Label();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label79 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
@@ -79,7 +89,7 @@
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.visualChrck = new System.Windows.Forms.GroupBox();
+            this.visualCheck = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.glass = new System.Windows.Forms.GroupBox();
@@ -158,28 +168,24 @@
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
-            this.Create = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.PrintBtn = new System.Windows.Forms.Button();
+            this.PreviewBtn = new System.Windows.Forms.Button();
+            this.CloseBtn = new System.Windows.Forms.Button();
             this.label80 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.GBO = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.GBBS = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.brakesystem.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.GBO.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             this.groupBox10.SuspendLayout();
-            this.visualChrck.SuspendLayout();
+            this.visualCheck.SuspendLayout();
             this.glass.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.wheelAndTyres.SuspendLayout();
@@ -192,8 +198,6 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.lightSystem.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.GBO.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -237,14 +241,18 @@
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.textBox7, 1, 13);
-            this.tableLayoutPanel1.Controls.Add(this.textBox6, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 11);
+            this.tableLayoutPanel1.Controls.Add(this.textBox20, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.ORTSS, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.textBox7, 1, 15);
+            this.tableLayoutPanel1.Controls.Add(this.textBox6, 1, 13);
             this.tableLayoutPanel1.Controls.Add(this.textBox5, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.KUNOU1, 0, 12);
-            this.tableLayoutPanel1.Controls.Add(this.MVSTS, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.KUNOU1, 0, 14);
+            this.tableLayoutPanel1.Controls.Add(this.MVSTS, 0, 12);
             this.tableLayoutPanel1.Controls.Add(this.ORTS3, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.ORTS2, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.ORTS1, 0, 4);
@@ -255,17 +263,45 @@
             this.tableLayoutPanel1.Controls.Add(this.label12, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.label13, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label14, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 11);
-            this.tableLayoutPanel1.Controls.Add(this.label16, 0, 13);
+            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 13);
+            this.tableLayoutPanel1.Controls.Add(this.label16, 0, 15);
             this.tableLayoutPanel1.Controls.Add(this.label17, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label18, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.label19, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.label20, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.label21, 2, 9);
-            this.tableLayoutPanel1.Controls.Add(this.label22, 2, 11);
-            this.tableLayoutPanel1.Controls.Add(this.label23, 2, 13);
+            this.tableLayoutPanel1.Controls.Add(this.label22, 2, 13);
+            this.tableLayoutPanel1.Controls.Add(this.label23, 2, 15);
             this.tableLayoutPanel1.Controls.Add(this.OUTSRTS, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.BackColor = System.Drawing.SystemColors.Control;
+            this.label6.ForeColor = System.Drawing.Color.Silver;
+            this.label6.Name = "label6";
+            this.label6.Tag = "20";
+            // 
+            // textBox20
+            // 
+            resources.ApplyResources(this.textBox20, "textBox20");
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Tag = "20";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.ForeColor = System.Drawing.Color.Silver;
+            this.label4.Name = "label4";
+            this.label4.Tag = "20";
+            // 
+            // ORTSS
+            // 
+            resources.ApplyResources(this.ORTSS, "ORTSS");
+            this.tableLayoutPanel1.SetColumnSpan(this.ORTSS, 3);
+            this.ORTSS.Name = "ORTSS";
             // 
             // textBox7
             // 
@@ -470,7 +506,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.groupBox11);
             this.panel1.Controls.Add(this.groupBox10);
-            this.panel1.Controls.Add(this.visualChrck);
+            this.panel1.Controls.Add(this.visualCheck);
             this.panel1.Controls.Add(this.glass);
             this.panel1.Controls.Add(this.wheelAndTyres);
             this.panel1.Controls.Add(this.wheelSystem);
@@ -479,6 +515,50 @@
             this.panel1.Controls.Add(this.lightSystem);
             this.panel1.Controls.Add(this.brakesystem);
             this.panel1.Name = "panel1";
+            // 
+            // GBO
+            // 
+            resources.ApplyResources(this.GBO, "GBO");
+            this.GBO.Controls.Add(this.tableLayoutPanel8);
+            this.GBO.Name = "GBO";
+            this.GBO.TabStop = false;
+            // 
+            // tableLayoutPanel8
+            // 
+            resources.ApplyResources(this.tableLayoutPanel8, "tableLayoutPanel8");
+            this.tableLayoutPanel8.Controls.Add(this.GBBS, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.textBox23, 1, 1);
+            this.tableLayoutPanel8.Controls.Add(this.label5, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.label7, 2, 1);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            // 
+            // GBBS
+            // 
+            resources.ApplyResources(this.GBBS, "GBBS");
+            this.tableLayoutPanel8.SetColumnSpan(this.GBBS, 3);
+            this.GBBS.Name = "GBBS";
+            // 
+            // textBox23
+            // 
+            resources.ApplyResources(this.textBox23, "textBox23");
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Tag = "19";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.ForeColor = System.Drawing.Color.Silver;
+            this.label5.Name = "label5";
+            this.label5.Tag = "19";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.BackColor = System.Drawing.SystemColors.Control;
+            this.label7.ForeColor = System.Drawing.Color.Silver;
+            this.label7.Name = "label7";
+            this.label7.Tag = "19";
             // 
             // panel2
             // 
@@ -578,13 +658,13 @@
             this.radioButton4.UseVisualStyleBackColor = true;
             this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
-            // visualChrck
+            // visualCheck
             // 
-            this.visualChrck.Controls.Add(this.radioButton2);
-            this.visualChrck.Controls.Add(this.radioButton1);
-            resources.ApplyResources(this.visualChrck, "visualChrck");
-            this.visualChrck.Name = "visualChrck";
-            this.visualChrck.TabStop = false;
+            this.visualCheck.Controls.Add(this.radioButton2);
+            this.visualCheck.Controls.Add(this.radioButton1);
+            resources.ApplyResources(this.visualCheck, "visualCheck");
+            this.visualCheck.Name = "visualCheck";
+            this.visualCheck.TabStop = false;
             // 
             // radioButton2
             // 
@@ -1186,42 +1266,41 @@
             this.label44.Name = "label44";
             this.label44.Tag = "11";
             // 
-            // Create
+            // PrintBtn
             // 
-            resources.ApplyResources(this.Create, "Create");
-            this.Create.Image = global::adovipavto.Properties.Resources.print1;
-            this.Create.Name = "Create";
-            this.Create.UseVisualStyleBackColor = true;
-            this.Create.Click += new System.EventHandler(this.button1_Click);
+            resources.ApplyResources(this.PrintBtn, "PrintBtn");
+            this.PrintBtn.BackgroundImage = global::adovipavto.Properties.Resources.print;
+            this.PrintBtn.Name = "PrintBtn";
+            this.PrintBtn.UseVisualStyleBackColor = true;
+            this.PrintBtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
+            // PreviewBtn
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Image = global::adovipavto.Properties.Resources.preview;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            resources.ApplyResources(this.PreviewBtn, "PreviewBtn");
+            this.PreviewBtn.BackgroundImage = global::adovipavto.Properties.Resources.preview;
+            this.PreviewBtn.Name = "PreviewBtn";
+            this.PreviewBtn.UseVisualStyleBackColor = true;
+            this.PreviewBtn.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button2
+            // CloseBtn
             // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Image = global::adovipavto.Properties.Resources.cancel;
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            resources.ApplyResources(this.CloseBtn, "CloseBtn");
+            this.CloseBtn.BackgroundImage = global::adovipavto.Properties.Resources.cancel;
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.button2_Click);
             // 
             // label80
             // 
             resources.ApplyResources(this.label80, "label80");
             this.label80.Name = "label80";
             // 
-            // button3
+            // SaveBtn
             // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Image = global::adovipavto.Properties.Resources.save;
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            resources.ApplyResources(this.SaveBtn, "SaveBtn");
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.button3_Click);
             // 
             // timer1
             // 
@@ -1232,62 +1311,18 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
-            // GBO
-            // 
-            resources.ApplyResources(this.GBO, "GBO");
-            this.GBO.Controls.Add(this.tableLayoutPanel8);
-            this.GBO.Name = "GBO";
-            this.GBO.TabStop = false;
-            // 
-            // tableLayoutPanel8
-            // 
-            resources.ApplyResources(this.tableLayoutPanel8, "tableLayoutPanel8");
-            this.tableLayoutPanel8.Controls.Add(this.GBBS, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.textBox23, 1, 1);
-            this.tableLayoutPanel8.Controls.Add(this.label5, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.label7, 2, 1);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            // 
-            // GBBS
-            // 
-            resources.ApplyResources(this.GBBS, "GBBS");
-            this.tableLayoutPanel8.SetColumnSpan(this.GBBS, 3);
-            this.GBBS.Name = "GBBS";
-            // 
-            // textBox23
-            // 
-            resources.ApplyResources(this.textBox23, "textBox23");
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Tag = "20";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.BackColor = System.Drawing.SystemColors.Control;
-            this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Name = "label5";
-            this.label5.Tag = "20";
-            // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.BackColor = System.Drawing.SystemColors.Control;
-            this.label7.ForeColor = System.Drawing.Color.Silver;
-            this.label7.Name = "label7";
-            this.label7.Tag = "20";
-            // 
             // AddProtocol
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label80);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CloseBtn);
+            this.Controls.Add(this.PreviewBtn);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.Create);
+            this.Controls.Add(this.PrintBtn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1301,14 +1336,18 @@
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.GBO.ResumeLayout(false);
+            this.GBO.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            this.visualChrck.ResumeLayout(false);
-            this.visualChrck.PerformLayout();
+            this.visualCheck.ResumeLayout(false);
+            this.visualCheck.PerformLayout();
             this.glass.ResumeLayout(false);
             this.glass.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
@@ -1333,10 +1372,6 @@
             this.lightSystem.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.GBO.ResumeLayout(false);
-            this.GBO.PerformLayout();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1435,7 +1470,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label KUNOU1;
         private System.Windows.Forms.Label MVSTS;
         private System.Windows.Forms.Label ORTS3;
         private System.Windows.Forms.Label ORTS2;
@@ -1448,7 +1482,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
@@ -1459,7 +1492,7 @@
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.GroupBox visualChrck;
+        private System.Windows.Forms.GroupBox visualCheck;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.GroupBox groupBox11;
@@ -1470,14 +1503,14 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.Button Create;
+        private System.Windows.Forms.Button PrintBtn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CloseBtn;
+        private System.Windows.Forms.Button PreviewBtn;
         private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.GroupBox GBO;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
@@ -1485,5 +1518,11 @@
         private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label ORTSS;
+        private System.Windows.Forms.Label KUNOU1;
+        private System.Windows.Forms.Label label16;
     }
 }

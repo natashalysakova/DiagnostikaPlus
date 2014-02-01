@@ -202,6 +202,21 @@
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="StringResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StringResource.ru-RU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringResource.ru-RU.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StringResource.uk-UA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringResource.uk-UA.resx</DependentUpon>
+    </Compile>
     <Compile Include="VipAvtoSet.cs">
       <DependentUpon>VipAvtoSet.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -369,9 +384,18 @@
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StringResource.resx" />
-    <EmbeddedResource Include="StringResource.ru-RU.resx" />
-    <EmbeddedResource Include="StringResource.uk-UA.resx" />
+    <EmbeddedResource Include="StringResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringResource.ru-RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResource.ru-RU.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringResource.uk-UA.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResource.uk-UA.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
