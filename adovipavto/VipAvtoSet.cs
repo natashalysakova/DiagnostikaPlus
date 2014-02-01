@@ -448,12 +448,16 @@ namespace adovipavto
 
         internal void OperatorExit()
         {
-            DataRow r = GetRowById(Constants.LogsTableName, _currentOperator.SessionId);
+            if (_currentOperator != null)
+            {
+                DataRow r = GetRowById(Constants.LogsTableName, _currentOperator.SessionId);
 
-            r["ExitDateTime"] = DateTime.Now;
 
-            Tables[Constants.LogsTableName].AcceptChanges();
-            Tables[Constants.LogsTableName].WriteXml(Settings.Default.Logs);
+                r["ExitDateTime"] = DateTime.Now;
+
+                Tables[Constants.LogsTableName].AcceptChanges();
+                Tables[Constants.LogsTableName].WriteXml(Settings.Default.Logs);
+            }
         }
 
         internal bool GroupContainsNormative(string groupname, string normativename)
