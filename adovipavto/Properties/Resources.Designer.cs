@@ -463,26 +463,6 @@ namespace adovipavto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap splashScreen {
-            get {
-                object obj = ResourceManager.GetObject("splashScreen", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap splashScreen2 {
-            get {
-                object obj = ResourceManager.GetObject("splashScreen2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ukraine_icon {
             get {
                 object obj = ResourceManager.GetObject("ukraine_icon", resourceCulture);

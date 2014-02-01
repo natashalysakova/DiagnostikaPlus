@@ -25,6 +25,8 @@ namespace adovipavto
             this.labelVersion.Text = String.Format(rm.GetString("version") + " {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
+            logoPictureBox.Image = (Image)rm.GetObject("splashScreen2");
+            
         }
 
         #region Assembly Attribute Accessors

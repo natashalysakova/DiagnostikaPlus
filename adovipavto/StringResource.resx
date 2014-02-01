@@ -117,73 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="brakeSystem" xml:space="preserve">
-    <value />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="splashScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\splashScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="check" xml:space="preserve">
-    <value />
-  </data>
-  <data name="data" xml:space="preserve">
-    <value />
-  </data>
-  <data name="engineAndItsSystem" xml:space="preserve">
-    <value />
-  </data>
-  <data name="FIO" xml:space="preserve">
-    <value />
-  </data>
-  <data name="glass" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lightSystem" xml:space="preserve">
-    <value />
-  </data>
-  <data name="mechanic" xml:space="preserve">
-    <value />
-  </data>
-  <data name="noise" xml:space="preserve">
-    <value />
-  </data>
-  <data name="norm" xml:space="preserve">
-    <value />
-  </data>
-  <data name="notCheck" xml:space="preserve">
-    <value />
-  </data>
-  <data name="oboznach" xml:space="preserve">
-    <value />
-  </data>
-  <data name="photo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="results" xml:space="preserve">
-    <value />
-  </data>
-  <data name="results2" xml:space="preserve">
-    <value />
-  </data>
-  <data name="signature" xml:space="preserve">
-    <value />
-  </data>
-  <data name="techphoto" xml:space="preserve">
-    <value />
-  </data>
-  <data name="uncheck" xml:space="preserve">
-    <value />
-  </data>
-  <data name="value" xml:space="preserve">
-    <value />
-  </data>
-  <data name="visualCheck" xml:space="preserve">
-    <value />
-  </data>
-  <data name="wheelAndTyres" xml:space="preserve">
-    <value />
-  </data>
-  <data name="wheelSystem" xml:space="preserve">
-    <value />
-  </data>
-  <data name="zakluch" xml:space="preserve">
-    <value />
+  <data name="splashScreen2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\splashScreen2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

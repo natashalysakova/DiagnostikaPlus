@@ -61,209 +61,22 @@ namespace adovipavto {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static string brakeSystem {
+        internal static System.Drawing.Bitmap splashScreen {
             get {
-                return ResourceManager.GetString("brakeSystem", resourceCulture);
+                object obj = ResourceManager.GetObject("splashScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static string check {
+        internal static System.Drawing.Bitmap splashScreen2 {
             get {
-                return ResourceManager.GetString("check", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string data {
-            get {
-                return ResourceManager.GetString("data", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string engineAndItsSystem {
-            get {
-                return ResourceManager.GetString("engineAndItsSystem", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string FIO {
-            get {
-                return ResourceManager.GetString("FIO", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string glass {
-            get {
-                return ResourceManager.GetString("glass", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string lightSystem {
-            get {
-                return ResourceManager.GetString("lightSystem", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string mechanic {
-            get {
-                return ResourceManager.GetString("mechanic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string noise {
-            get {
-                return ResourceManager.GetString("noise", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string norm {
-            get {
-                return ResourceManager.GetString("norm", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string notCheck {
-            get {
-                return ResourceManager.GetString("notCheck", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string oboznach {
-            get {
-                return ResourceManager.GetString("oboznach", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string photo {
-            get {
-                return ResourceManager.GetString("photo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string results {
-            get {
-                return ResourceManager.GetString("results", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string results2 {
-            get {
-                return ResourceManager.GetString("results2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string signature {
-            get {
-                return ResourceManager.GetString("signature", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string techphoto {
-            get {
-                return ResourceManager.GetString("techphoto", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string uncheck {
-            get {
-                return ResourceManager.GetString("uncheck", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string value {
-            get {
-                return ResourceManager.GetString("value", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string visualCheck {
-            get {
-                return ResourceManager.GetString("visualCheck", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string wheelAndTyres {
-            get {
-                return ResourceManager.GetString("wheelAndTyres", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string wheelSystem {
-            get {
-                return ResourceManager.GetString("wheelSystem", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string zakluch {
-            get {
-                return ResourceManager.GetString("zakluch", resourceCulture);
+                object obj = ResourceManager.GetObject("splashScreen2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

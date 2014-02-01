@@ -41,7 +41,6 @@
             // 
             // logoPictureBox
             // 
-            this.logoPictureBox.Image = global::adovipavto.Properties.Resources.splashScreen2;
             resources.ApplyResources(this.logoPictureBox, "logoPictureBox");
             this.logoPictureBox.Name = "logoPictureBox";
             this.logoPictureBox.TabStop = false;

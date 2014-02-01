@@ -492,13 +492,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\splashScreen.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\setting.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\splashScreen2.png" />
+    <None Include="Resources\splashScreen.png" />
+    <None Include="Resources\splashScreenUA.png" />
+    <None Include="Resources\splashScreen2UA.png" />
     <None Include="Resources\pass.png" />
     <None Include="Resources\none.png" />
     <None Include="Resources\fail.png" />
@@ -521,7 +522,6 @@
     <None Include="Resources\protocol.png" />
     <None Include="Resources\NORMARIVES.png" />
     <None Include="Resources\GROUP.png" />
-    <None Include="Resources\splashScreen2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
