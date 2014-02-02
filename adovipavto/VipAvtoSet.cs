@@ -296,7 +296,18 @@ namespace adovipavto
         private Rights GetRightByString(string p5)
         {
             Rights r;
-            Enum.TryParse(p5, false, out r);
+            switch (p5)
+            {
+                case "Администратор": r = Rights.Administrator;
+                    break;
+                case "Оператор": r = Rights.Operator;
+                    break;
+                case "Уволен": r = Rights.Locked;
+                    break;
+                default: r = Rights.Operator;
+                    break;
+            }
+
             return r;
         }
 
@@ -515,6 +526,11 @@ namespace adovipavto
 
             return true;
 
+        }
+
+        internal Rights GetOperatorRight()
+        {
+            throw new NotImplementedException();
         }
     }
 }
