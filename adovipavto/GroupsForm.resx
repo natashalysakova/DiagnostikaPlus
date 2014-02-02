@@ -129,11 +129,48 @@
   <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="groupIDDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>GroupID</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupIDDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="yearDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="yearDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="categoryDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="categoryDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="engineTypeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>EngineType</value>
+  </data>
+  <data name="engineTypeDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="beforeDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
+    <value>Before</value>
+  </data>
+  <data name="beforeDataGridViewCheckBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <metadata name="Title.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="Title.HeaderText" xml:space="preserve">
+    <value>title</value>
+  </data>
   <metadata name="carGroupBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>463, 17</value>
+  </metadata>
+  <metadata name="vipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -150,9 +187,8 @@
     <value>Vertical</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>284, 606</value>
+    <value>284, 618</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -172,7 +208,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>284, 606</value>
+    <value>284, 618</value>
   </data>
   <data name="&gt;&gt;toolStripContainer1.ContentPanel.Name" xml:space="preserve">
     <value>toolStripContainer1.ContentPanel</value>
@@ -234,11 +270,63 @@
   <data name="toolStrip1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="toolStripButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 40</value>
+  </data>
+  <data name="toolStripButton1.Text" xml:space="preserve">
+    <value>Добавить группу</value>
+  </data>
+  <data name="toolStripButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARoSURBVGhD7Zl9TBtlHMcfbDsQ2vEOgSAwYU6Zkm5DomES
+        NAxknSaEQYYwlcEC23hLNqwTpZscItkmKFAtMGADhlCQl4EoODpksMIIONhEiHOJ8Y3FyDTTMSZ8/V09
+        /9DoX/7Ra9JP8s299J7L59fnues9V2bFihVxUasu4To0pU7CpmVh1Oq59tcr0VdSXTOu7dwg7LYMjBV6
+        bqr6LK41GzBT24uh0qbTw9rWLcLH4ma47Aw3WdWFG53jwNA1/Nh9CZe17bc+LWt+jy/CoDFIhUPFR3Fe
+        PmcobcTCB2NYGZzH8iezpsx1GVYmdT1fj1a2HB95p+3BCZ1OJjQRETbuXF56DgYqGvFDxxiWB2Zxh+Rv
+        9181ZaFzDNN1vfNGbZvmYnWXp0FTZye0ND9FCYyzV7jiIWUkuENHMFrVjm/0F7A08Dl+H5zDHSrm149m
+        qDAjrtT2fjVY2ljcrtF6CM3Ni/Eo4959nmFnkC1cfDyxOSwGBTn5GKp4H9/pR01F4PyXWDHM4+65OXzR
+        0I9azRurreo3HYVTmA9e/nIhw+whhu4DDKoIGdzdPLF1mwqFBwsw+HYTbrQbaThREcPXcbN3CpPVXdAf
+        KT8lnMJ8/CX/EwXVDAsdDM0ZDBH3SeDm543I7Ttw/DXO1BOLHZfocyM+O9mDCV3HCeEU5uNv8jrKIKWP
+        4WeOoSGXITSAwUHhhW3PqFBedAx9J+rpt6ARI1q9COXPUc5S3qJQL/DFtCQyhPgwSOSuiFZth3p/LnqK
+        dOKUX+2mnKD1RsoQpYlSxTBQzBDsxmDv4IiUF1LELb/aQOGHUR2lnNLPsNTCcIp6gpqKXJ6+eV5+9STt
+        L6XQcPqlleHqKwzDmZYkX0ah/YtnGGYOM0xmW6D8TZKffpnBuN8q//+wypsLq7y5sMqbi/FCC5a/Usy4
+        6SILlY/dzLiLBQy3j1mgPGMy7unge1CfTM8tJSRooPQI8sJTpYjl2QGZnQK+3s5IeFiCj4/SEGojUf4p
+        sln88t5SqfTbwMAH4OX/CBztHREXZYOhbIblGhI/T9L14pXnSVirUCAmMhLRkdHw8NkEqZ0cz9L89UIl
+        SVMPmCYjH5I8rYtNXkKp2RAQgOS4OKQ9l4jE2Dj43x9CMyY5ntrCYNhL8r10XdBMip+MiEmex1MikVx/
+        MiwMmSkpyNidjNy0VOxNSoJyUxgVoUAE9UQ33VKn1AwTYphJ/YOdLs7OS6m7duFgejpezc5G1p49eGnf
+        PuyOj0fYY09QEVI8TkWMZIhP/l5KlXLjRuRlZKBIrUZ+VhbySD4pNhZRERHYGhT0m1yugKtMfPI862Uy
+        2fdR4eHISU3F4czM1XiVCgnR0Yvr162Dn5/fsK2t7YxcvlaU8ozk/F2cnO4+qlRiR2joUkhwMAJ9fec8
+        XFx6bGxsWunaiKLD0v48WpxIPN3dCx0cHG55e3mdpu1++zVrYmgZT+FfcYvwz4Z/gYbRi7QIpyhNO+j+
+        KSwtCvO/k7dixcp/wNgfTD9npYdeFsAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="toolStripButton3.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 40</value>
+  </data>
+  <data name="toolStripButton3.Text" xml:space="preserve">
+    <value>Редактировать группу</value>
+  </data>
+  <data name="toolStripButton2.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 40</value>
+  </data>
+  <data name="toolStripButton2.Text" xml:space="preserve">
+    <value>Удалить группу</value>
+  </data>
   <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 55</value>
+    <value>123, 43</value>
   </data>
   <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -282,79 +370,9 @@
   <data name="&gt;&gt;toolStripContainer1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="carGroupBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>463, 17</value>
-  </metadata>
-  <metadata name="vipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="vipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="toolStripButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 52</value>
-  </data>
-  <data name="toolStripButton1.Text" xml:space="preserve">
-    <value>Добавить группу</value>
-  </data>
-  <data name="toolStripButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARpSURBVGhD7ZltTFtVGMcPth0I7XiHQBCYMKdMSbch0TAJ
-        GgayThPCIEOYymCBbbwlG9aJ0k0uYWTDMoFqgQEbMISCvAxEwdEhgxVGwMEmgs4lxjcWI9NMx5jw92m9
-        ftDoJz/0Nukv+ee+9J6b39Nz7u09t8yKFSvColZZwnWo1E78pmVh0Oi49jcr0VdSXTOu6dzA77YMDBU6
-        bqr6HK436zFT24shddOZYU3rFv5jYTNcdpabrOrCzc5xYOg6fuy+jCua9tuflDW/ayxCr9KL+UOFR3Fe
-        PqdXN2Lh/TGsDM5j+eNZU77o0q9Manu+Hq1sOTHydtvDE1qthG8iIGzcubz0HAxUNOKHjjEsD8ziLsnf
-        6b9mykLnGKbreucNmjbVpeouT72qzo5vaX6KEhhnL3PFI/JIcIeOYLSqHd/oLmJp4DP8PjiHu1TMrx/O
-        UGEGXK3t/WpQ3VjcrtJ48M3Ni+Eo4955kWFnkC1cfDyxOSwGBTn5GKp4D9/pRk1F4MKXWNHP4975OXze
-        0I961bHVVuUxR/4U5sMof6WQYfYQQ/cBBkWEBO5unti6TYHCgwUYPNmEm+0GGk5UxPAN3OqdwmR1F3RH
-        yk/zpzAff8n/REE1w0IHQ3MGQ8QDIrj5eSNy+w6ceIMz9cRix2X63IBPT/VgQttRyp/CfPxNXksZpPQx
-        /MwxNOQyhAYwOMi8sO05BcqLjqOvtJ5+CxoxotEJUP485RzlLQr1grGYlkSGEB8GkdQV0YrtUO7PRU+R
-        Vpjyq92UUlpvpAxRmihVDAPFDMFuDPYOjkh5KUXY8qsNFOMwqqOUU/oZlloYTlNPUFOBy9M3b5RfPUX7
-        1RQaTr+0Mlx7jWE405Lkyyi0f/Esw8xhhslsC5S/RfLTrzIY9lvl/x9WeXNhlTcXVnlzMV5owfJXixk3
-        XWSh8rGbGXepgOHOcQuUZ0zCPRt8H+qT6bmlhAT1lB5enn+qFLA8OyCxk8HX2xkJj4rw0VEaQm0kanyK
-        bBa+vLdYLP42MPAhePk/Bkd7R8RF2WAom2G5hsQvkHS9cOWNJKyVyRATGYnoyGh4+GyC2E6K52n+erGS
-        pKkHTJORD0ie1oUmL6LUbAgIQHJcHNJeSERibBz8HwyhGZMUz2xh0O8l+V66LmgmZZyMCEneiKdIJLrx
-        dFgYMlNSkLE7GblpqdiblAT5pjAqQoYI6oluuqVOKRkmhDCT+gc7XZydl1J37cLB9HS8np2NrD178Mq+
-        fdgdH4+wJ56iIsR4kooYyRCe/P2UKvnGjcjLyECRUon8rCzkkXxSbCyiIiKwNSjoN6lUBleJ8OSNrJdI
-        JN9HhYcjJzUVhzMzV+MVCiRERy+uX7cOfn5+w7a2tjNS6VpByjOS83dxcrr3uFyOHaGhSyHBwQj09Z3z
-        cHHpsbGxaaVrI4oOS/vzaGEi8nR3L3RwcLjt7eV1hrb77desiaFlPMX4iluAfzb8CzSMXqZFOEVu2kH3
-        T35pUZj/nbwVK1b+A8b+APRJZ6u2nhZ+AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="toolStripButton3.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButton3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 52</value>
-  </data>
-  <data name="toolStripButton3.Text" xml:space="preserve">
-    <value>Редактировать группу</value>
-  </data>
-  <data name="toolStripButton2.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 52</value>
-  </data>
-  <data name="toolStripButton2.Text" xml:space="preserve">
-    <value>Удалить группу</value>
-  </data>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>308, 17</value>
   </metadata>
-  <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 70</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStrip1.Name" xml:space="preserve">
-    <value>contextMenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="нормативыToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt, style=Bold</value>
   </data>
@@ -375,6 +393,15 @@
   </data>
   <data name="удалитьToolStripMenuItem.Text" xml:space="preserve">
     <value>Удалить</value>
+  </data>
+  <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 70</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStrip1.Name" xml:space="preserve">
+    <value>contextMenuStrip1</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -405,42 +432,6 @@
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="groupIDDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>GroupID</value>
-  </data>
-  <data name="groupIDDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="yearDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Year</value>
-  </data>
-  <data name="yearDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="categoryDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Category</value>
-  </data>
-  <data name="categoryDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="engineTypeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>EngineType</value>
-  </data>
-  <data name="engineTypeDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="beforeDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
-    <value>Before</value>
-  </data>
-  <data name="beforeDataGridViewCheckBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <metadata name="Title.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Title.HeaderText" xml:space="preserve">
-    <value>title</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1830,6 +1821,42 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Группы</value>
   </data>
+  <data name="&gt;&gt;groupIDDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>groupIDDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;groupIDDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;yearDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>yearDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;yearDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;categoryDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>categoryDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;categoryDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;engineTypeDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>engineTypeDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;engineTypeDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;beforeDataGridViewCheckBoxColumn.Name" xml:space="preserve">
+    <value>beforeDataGridViewCheckBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;beforeDataGridViewCheckBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Title.Name" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="&gt;&gt;Title.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;carGroupBindingSource.Name" xml:space="preserve">
     <value>carGroupBindingSource</value>
   </data>
@@ -1878,52 +1905,10 @@
   <data name="&gt;&gt;удалитьToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupIDDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>groupIDDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;groupIDDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;yearDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>yearDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;yearDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;categoryDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>categoryDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;categoryDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;engineTypeDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>engineTypeDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;engineTypeDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;beforeDataGridViewCheckBoxColumn.Name" xml:space="preserve">
-    <value>beforeDataGridViewCheckBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;beforeDataGridViewCheckBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Title.Name" xml:space="preserve">
-    <value>Title</value>
-  </data>
-  <data name="&gt;&gt;Title.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>GroupsForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DeleteGroup" xml:space="preserve">
-    <value>DeleteGroup</value>
-  </data>
-  <data name="warning" xml:space="preserve">
-    <value>warning</value>
   </data>
 </root>

@@ -32,6 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroupsForm));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.engineTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.beforeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carGroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vipAvtoSet = new adovipavto.VipAvtoSet();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -43,12 +49,6 @@
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.engineTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.beforeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -101,6 +101,47 @@
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
+            // groupIDDataGridViewTextBoxColumn
+            // 
+            this.groupIDDataGridViewTextBoxColumn.DataPropertyName = "GroupID";
+            resources.ApplyResources(this.groupIDDataGridViewTextBoxColumn, "groupIDDataGridViewTextBoxColumn");
+            this.groupIDDataGridViewTextBoxColumn.Name = "groupIDDataGridViewTextBoxColumn";
+            this.groupIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // yearDataGridViewTextBoxColumn
+            // 
+            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
+            resources.ApplyResources(this.yearDataGridViewTextBoxColumn, "yearDataGridViewTextBoxColumn");
+            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
+            this.yearDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
+            resources.ApplyResources(this.categoryDataGridViewTextBoxColumn, "categoryDataGridViewTextBoxColumn");
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // engineTypeDataGridViewTextBoxColumn
+            // 
+            this.engineTypeDataGridViewTextBoxColumn.DataPropertyName = "EngineType";
+            resources.ApplyResources(this.engineTypeDataGridViewTextBoxColumn, "engineTypeDataGridViewTextBoxColumn");
+            this.engineTypeDataGridViewTextBoxColumn.Name = "engineTypeDataGridViewTextBoxColumn";
+            this.engineTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // beforeDataGridViewCheckBoxColumn
+            // 
+            this.beforeDataGridViewCheckBoxColumn.DataPropertyName = "Before";
+            resources.ApplyResources(this.beforeDataGridViewCheckBoxColumn, "beforeDataGridViewCheckBoxColumn");
+            this.beforeDataGridViewCheckBoxColumn.Name = "beforeDataGridViewCheckBoxColumn";
+            this.beforeDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // Title
+            // 
+            resources.ApplyResources(this.Title, "Title");
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            // 
             // carGroupBindingSource
             // 
             this.carGroupBindingSource.DataMember = "CarGroup";
@@ -115,7 +156,7 @@
             // 
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(48, 48);
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(36, 36);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton3,
@@ -176,47 +217,6 @@
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            // 
-            // groupIDDataGridViewTextBoxColumn
-            // 
-            this.groupIDDataGridViewTextBoxColumn.DataPropertyName = "GroupID";
-            resources.ApplyResources(this.groupIDDataGridViewTextBoxColumn, "groupIDDataGridViewTextBoxColumn");
-            this.groupIDDataGridViewTextBoxColumn.Name = "groupIDDataGridViewTextBoxColumn";
-            this.groupIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // yearDataGridViewTextBoxColumn
-            // 
-            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
-            resources.ApplyResources(this.yearDataGridViewTextBoxColumn, "yearDataGridViewTextBoxColumn");
-            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
-            this.yearDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "Category";
-            resources.ApplyResources(this.categoryDataGridViewTextBoxColumn, "categoryDataGridViewTextBoxColumn");
-            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // engineTypeDataGridViewTextBoxColumn
-            // 
-            this.engineTypeDataGridViewTextBoxColumn.DataPropertyName = "EngineType";
-            resources.ApplyResources(this.engineTypeDataGridViewTextBoxColumn, "engineTypeDataGridViewTextBoxColumn");
-            this.engineTypeDataGridViewTextBoxColumn.Name = "engineTypeDataGridViewTextBoxColumn";
-            this.engineTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // beforeDataGridViewCheckBoxColumn
-            // 
-            this.beforeDataGridViewCheckBoxColumn.DataPropertyName = "Before";
-            resources.ApplyResources(this.beforeDataGridViewCheckBoxColumn, "beforeDataGridViewCheckBoxColumn");
-            this.beforeDataGridViewCheckBoxColumn.Name = "beforeDataGridViewCheckBoxColumn";
-            this.beforeDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // Title
-            // 
-            resources.ApplyResources(this.Title, "Title");
-            this.Title.Name = "Title";
-            this.Title.ReadOnly = true;
             // 
             // GroupsForm
             // 

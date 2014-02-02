@@ -233,9 +233,9 @@
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </data>
+  </metadata>
   <data name="maskedTextBox1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 18pt</value>
   </data>
@@ -345,9 +345,9 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -371,17 +371,5 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="wrongPassword" xml:space="preserve">
-    <value>wrongPassword</value>
-  </data>
-  <data name="error" xml:space="preserve">
-    <value>error</value>
-  </data>
-  <data name="isUser" xml:space="preserve">
-    <value>isUser</value>
-  </data>
-  <data name="notFound" xml:space="preserve">
-    <value>notFound</value>
   </data>
 </root>

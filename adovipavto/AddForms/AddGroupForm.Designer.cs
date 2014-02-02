@@ -63,11 +63,11 @@
             // 
             // comboBox3
             // 
-            resources.ApplyResources(this.comboBox3, "comboBox3");
             this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox3, "comboBox3");
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Sorted = true;
             // 
@@ -87,16 +87,16 @@
             // 
             // checkedListBox1
             // 
-            resources.ApplyResources(this.checkedListBox1, "checkedListBox1");
             this.checkedListBox1.CheckOnClick = true;
+            resources.ApplyResources(this.checkedListBox1, "checkedListBox1");
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.MultiColumn = true;
             this.checkedListBox1.Name = "checkedListBox1";
             // 
             // checkedListBox2
             // 
-            resources.ApplyResources(this.checkedListBox2, "checkedListBox2");
             this.checkedListBox2.CheckOnClick = true;
+            resources.ApplyResources(this.checkedListBox2, "checkedListBox2");
             this.checkedListBox2.FormattingEnabled = true;
             this.checkedListBox2.Name = "checkedListBox2";
             // 
