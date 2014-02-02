@@ -500,5 +500,21 @@ namespace adovipavto
             }
 
         }
+
+        internal bool GroupExist(int p1, string p2, int p3, bool p4)
+        {
+
+            var rows = (from DataRow item in Tables[Constants.GroupTableName].Rows
+                where
+                    (int) item["Year"] == p1 && item["Category"].ToString() == p2 && (int) item["EngineType"] == p3 &&
+                    (bool) item["Before"] == p4
+                select item).ToList();
+
+            if (rows.Count == 0)
+                return false;
+
+            return true;
+
+        }
     }
 }

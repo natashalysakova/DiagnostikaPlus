@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
@@ -40,18 +42,45 @@ namespace adovipavto.AddForms
             {
                 if (checkedListBox2.CheckedItems.Count != 0)
                 {
+                    var groupsList = new List<string>();
+
+
                     foreach (object item in checkedListBox1.CheckedItems)
                     {
                         foreach (object item2 in checkedListBox2.CheckedItems)
                         {
-                            Program.VipAvtoDataSet.AddGroup(Convert.ToInt32(comboBox3.SelectedItem.ToString()),
-                                item.ToString(),
-                                new Engines().GetEngineIndex(item2.ToString()), radioButton1.Checked);
+                            if (!Program.VipAvtoDataSet.GroupExist(Convert.ToInt32(comboBox3.SelectedItem.ToString()),
+                                    item.ToString(),
+                                    new Engines().GetEngineIndex(item2.ToString()), radioButton1.Checked))
+                            {
+                                Program.VipAvtoDataSet.AddGroup(Convert.ToInt32(comboBox3.SelectedItem.ToString()),
+                                    item.ToString(),
+                                    new Engines().GetEngineIndex(item2.ToString()), radioButton1.Checked);
+                            }
+
+                            else
+                            {
+                                groupsList.Add(item.ToString());
+                            }
+                        }
+                    }
+
+                    if (groupsList.Count != 0)
+                    {
+                        var sb = new StringBuilder();
+
+                        foreach (string s in groupsList)
+                        {
+                            sb.Append(s + "\n");
                         }
 
-                        DialogResult = DialogResult.OK;
-
+                        MessageBox.Show(rm.GetString("groupExist") + Environment.NewLine + sb,
+                            rm.GetString("error"),
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
+
+
+                    DialogResult = DialogResult.OK;
                 }
                 else
                 {
