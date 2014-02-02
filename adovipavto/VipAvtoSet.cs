@@ -530,7 +530,7 @@ namespace adovipavto
 
         internal Rights GetOperatorRight()
         {
-            throw new NotImplementedException();
+            return _currentOperator.Rights;
         }
     }
 }
