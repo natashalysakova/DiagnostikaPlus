@@ -358,4 +358,7 @@
   <data name="groupExist" xml:space="preserve">
     <value>Наступні групи вже існують: </value>
   </data>
+  <data name="noPermission" xml:space="preserve">
+    <value>У доступі до системи відмовлено</value>
+  </data>
 </root>

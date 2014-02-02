@@ -3,16 +3,22 @@ using System.ComponentModel;
 using System.Data;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.AddForms;
 using adovipavto.Classes;
 using System.Drawing;
+using adovipavto.Enums;
 
 namespace adovipavto
 {
     public partial class MainForm : Form
     {
+
+        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+
         public MainForm()
         {
             if (Properties.Settings.Default.Language == "")
@@ -25,15 +31,63 @@ namespace adovipavto
         private void MainForm_Load(object sender, EventArgs e)
         {
             if (new Auth().ShowDialog() == DialogResult.Cancel)
+            {
+
                 Close();
+            }
             else
             {
-                dataGridView1.DataSource = Program.VipAvtoDataSet.Tables[Constants.ProtocolsTableName];
-                dataGridView1.Sort(dataGridView1.Columns["Date"], ListSortDirection.Descending);
+                if (SetUserRights())
+                {
+                    dataGridView1.DataSource = Program.VipAvtoDataSet.Tables[Constants.ProtocolsTableName];
+                    dataGridView1.Sort(dataGridView1.Columns["Date"], ListSortDirection.Descending);
 
-                UpdateRows();
+                    UpdateRows();
+                }
+                else
+                {
+                    MessageBox.Show(rm.GetString("noPermission"));
+                }
 
             }
+        }
+
+        private bool SetUserRights()
+        {
+            Rights right = Program.VipAvtoDataSet.GetOperatorRight();
+            if (right == Rights.Administrator)
+            {
+                toolStripSeparator3.Enabled = true;
+                toolStripButton11.Enabled = true;
+                toolStripButton12.Enabled = true;
+                toolStripButton13.Enabled = true;
+                toolStripButton14.Enabled = true;
+                dataGridView1.Enabled = false;
+
+                toolStripButton10.Enabled = false;
+                cpyBtn.Enabled = false;
+                srchBtn.Enabled = false;
+
+                return true;
+            }
+            if (right == Rights.Operator)
+            {
+                toolStripSeparator3.Enabled = false;
+                toolStripButton11.Enabled = false;
+                toolStripButton12.Enabled = false;
+                toolStripButton13.Enabled = false;
+                toolStripButton14.Enabled = false;
+                dataGridView1.Enabled = true;
+
+                toolStripButton10.Enabled = true;
+                cpyBtn.Enabled = true;
+                srchBtn.Enabled = true;
+
+
+                return true;
+            }
+
+            return false;
         }
 
 
@@ -101,7 +155,7 @@ namespace adovipavto
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 row.Cells["Group"].Value =
-                    Program.VipAvtoDataSet.CreateGroupTitle((int) row.Cells["iDGroupDataGridViewTextBoxColumn"].Value);
+                    Program.VipAvtoDataSet.CreateGroupTitle((int)row.Cells["iDGroupDataGridViewTextBoxColumn"].Value);
 
 
 
@@ -145,7 +199,7 @@ namespace adovipavto
 
 
                 int newProtocolId =
-                    (int) dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
+                    (int)dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
                 DataRow protocol = Program.VipAvtoDataSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
                 DataRow[] mesures = Program.VipAvtoDataSet.GetMesuresFromProtocol(newProtocolId);
 
