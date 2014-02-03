@@ -142,9 +142,11 @@ namespace adovipavto
         {
             DataRow groupRow = GetRowById(Constants.GroupTableName, id);
 
+            if (groupRow == null)
+                return "";
+
+
             string s = (bool)groupRow["Before"] ? rm.GetString("before") : rm.GetString("after");
-
-
             return groupRow["Category"] + " " + s + " " + groupRow["Year"] + " " + new Engines().EnginesTitle[(int)groupRow["EngineType"]];
         }
 
