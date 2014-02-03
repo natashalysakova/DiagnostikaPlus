@@ -361,4 +361,7 @@
   <data name="noPermission" xml:space="preserve">
     <value>В доступе к системе отказано</value>
   </data>
+  <data name="reboot" xml:space="preserve">
+    <value>Авторизованный пользователь удален. Программа будет перезапущена</value>
+  </data>
 </root>

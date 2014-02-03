@@ -54,6 +54,7 @@ namespace adovipavto
                     DialogResult.Yes)
                 {
                     int id = (int) dataGridView1.SelectedRows[0].Cells["operatorIdDataGridViewTextBoxColumn"].Value;
+                    
                     if (AdministratorsCount() == 1 &&
                         (int) dataGridView1.SelectedRows[0].Cells["rightDataGridViewTextBoxColumn"].Value ==
                         (int) Rights.Administrator)
@@ -64,6 +65,13 @@ namespace adovipavto
                     else
                     {
                         Program.VipAvtoDataSet.LockOperator(id);
+                        if (id == Program.VipAvtoDataSet.GetOperatorId())
+                        {
+                            MessageBox.Show(rm.GetString("reboot"), rm.GetString("warning"), MessageBoxButtons.OK,
+    MessageBoxIcon.Warning);
+
+                            Application.Restart();
+                        }
                         UpdateRoles();
                     }
                 }

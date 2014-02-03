@@ -361,4 +361,7 @@
   <data name="noPermission" xml:space="preserve">
     <value>У доступі до системи відмовлено</value>
   </data>
+  <data name="reboot" xml:space="preserve">
+    <value>Авторизований користувач видален. Програма буде перезавантажена</value>
+  </data>
 </root>
