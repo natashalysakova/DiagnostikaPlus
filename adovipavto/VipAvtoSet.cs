@@ -224,15 +224,13 @@ namespace adovipavto
 
         internal string GetUserPasswors(string username)
         {
-            string filter = "Login = '" + username + "'";
+            DataRow[] operatorRow =
+                (from DataRow item in Tables[Constants.OperatorsTableName].Rows
+                    where item["Login"].ToString() == username
+                    select item).ToArray();
 
-            DataRow[] operatorRow = Tables[Constants.OperatorsTableName].Select(filter);
             if (operatorRow.Length != 0)
             {
-                string name = operatorRow[0]["Name"].ToString();
-                string lastname = operatorRow[0]["LastName"].ToString();
-                int id = Convert.ToInt32(operatorRow[0]["OperatorId"]);
-                var rights = (Rights)operatorRow[0]["Right"];
                 return operatorRow[0]["Password"].ToString();
             }
 
