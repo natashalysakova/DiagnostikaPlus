@@ -25,6 +25,7 @@ namespace adovipavto
             {
                 new SelectLanguage().ShowDialog();
             }
+            Application.EnableVisualStyles();
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
             InitializeComponent();
         }

@@ -30,7 +30,7 @@ namespace adovipavto
             LoadData();
 
 
-            Application.EnableVisualStyles();
+            //Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);            
             
             t.Join();

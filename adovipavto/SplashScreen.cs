@@ -19,6 +19,8 @@ namespace adovipavto
     {
         public SplashScreen()
         {
+            
+
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
             InitializeComponent();
             ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
