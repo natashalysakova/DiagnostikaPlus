@@ -62,6 +62,7 @@ namespace adovipavto
             this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.просмотрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -246,6 +247,7 @@ namespace adovipavto
             this.toolStripButton16,
             this.toolStripButton17,
             this.toolStripSeparator1,
+            this.toolStripButton1,
             this.toolStripButton18});
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Stretch = true;
@@ -344,6 +346,14 @@ namespace adovipavto
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::adovipavto.Properties.Resources.switchUserBtn;
+            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // toolStripButton18
             // 
             this.toolStripButton18.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -434,5 +444,6 @@ namespace adovipavto
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem просмотрToolStripMenuItem;
         private ToolStripMenuItem печатьToolStripMenuItem;
+        private ToolStripButton toolStripButton1;
     }
 }

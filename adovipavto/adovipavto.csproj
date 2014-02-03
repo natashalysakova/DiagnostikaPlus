@@ -497,6 +497,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\switchUserBtn.png" />
     <None Include="Resources\splashScreen2.png" />
     <None Include="Resources\splashScreen.png" />
     <None Include="Resources\splashScreenUA.png" />

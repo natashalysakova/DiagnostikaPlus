@@ -244,5 +244,18 @@ namespace adovipavto
             new ProtocolReportForm(protocol, mesures, true).ShowDialog();
 
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            do
+            {
+                if (new Auth().ShowDialog() == DialogResult.Cancel)
+                {
+                    Close();
+                    return;
+                }
+
+            } while (!SetUserRights());
+        }
     }
 }
