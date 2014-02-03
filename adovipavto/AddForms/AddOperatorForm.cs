@@ -64,10 +64,10 @@ namespace adovipavto.AddForms
 
         private void nameTxtBx_Validated(object sender, EventArgs e)
         {
-            if (((TextBox) sender).Text == "")
-                errorProvider1.SetError(((TextBox) sender), rm.GetString("wrongData"));
+            if (((MaskedTextBox)sender).Text == "")
+                errorProvider1.SetError(((MaskedTextBox)sender), rm.GetString("wrongData"));
             else
-                errorProvider1.SetError(((TextBox) sender), null);
+                errorProvider1.SetError(((MaskedTextBox)sender), null);
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -35,8 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.nameTxtBx = new System.Windows.Forms.TextBox();
-            this.lnTxtBx = new System.Windows.Forms.TextBox();
+            this.nameTxtBx = new System.Windows.Forms.MaskedTextBox();
+            this.lnTxtBx = new System.Windows.Forms.MaskedTextBox();
             this.loginTxtBx = new System.Windows.Forms.TextBox();
             this.roleCmbBx = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -73,6 +73,7 @@
             // 
             // nameTxtBx
             // 
+            this.nameTxtBx.AllowPromptAsInput = false;
             this.errorProvider1.SetError(this.nameTxtBx, resources.GetString("nameTxtBx.Error"));
             resources.ApplyResources(this.nameTxtBx, "nameTxtBx");
             this.nameTxtBx.Name = "nameTxtBx";
@@ -81,6 +82,7 @@
             // 
             // lnTxtBx
             // 
+            this.lnTxtBx.AllowPromptAsInput = false;
             this.errorProvider1.SetError(this.lnTxtBx, resources.GetString("lnTxtBx.Error"));
             resources.ApplyResources(this.lnTxtBx, "lnTxtBx");
             this.lnTxtBx.Name = "lnTxtBx";
@@ -160,8 +162,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox nameTxtBx;
-        private System.Windows.Forms.TextBox lnTxtBx;
+        private System.Windows.Forms.MaskedTextBox nameTxtBx;
+        private System.Windows.Forms.MaskedTextBox lnTxtBx;
         private System.Windows.Forms.TextBox loginTxtBx;
         private System.Windows.Forms.ComboBox roleCmbBx;
         private System.Windows.Forms.Button button1;

@@ -414,6 +414,12 @@
   <data name="lnTxtBx.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
+  <data name="lnTxtBx.Mask" xml:space="preserve">
+    <value>L???????????????????????????????????</value>
+  </data>
+  <data name="lnTxtBx.PromptChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value> </value>
+  </data>
   <data name="lnTxtBx.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 23</value>
   </data>
@@ -424,7 +430,7 @@
     <value>lnTxtBx</value>
   </data>
   <data name="&gt;&gt;lnTxtBx.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lnTxtBx.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1605,6 +1611,12 @@
   <data name="nameTxtBx.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
+  <data name="nameTxtBx.Mask" xml:space="preserve">
+    <value>L???????????????????????????????????</value>
+  </data>
+  <data name="nameTxtBx.PromptChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value> </value>
+  </data>
   <data name="nameTxtBx.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 23</value>
   </data>
@@ -1615,7 +1627,7 @@
     <value>nameTxtBx</value>
   </data>
   <data name="&gt;&gt;nameTxtBx.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nameTxtBx.Parent" xml:space="preserve">
     <value>$this</value>

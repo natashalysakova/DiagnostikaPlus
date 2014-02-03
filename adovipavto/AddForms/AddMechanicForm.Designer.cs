@@ -33,10 +33,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.nameTxtBx = new System.Windows.Forms.TextBox();
+            this.nameTxtBx = new System.Windows.Forms.MaskedTextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lnTxtBx = new System.Windows.Forms.TextBox();
-            this.fnTxtBx = new System.Windows.Forms.TextBox();
+            this.lnTxtBx = new System.Windows.Forms.MaskedTextBox();
+            this.fnTxtBx = new System.Windows.Forms.MaskedTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -128,10 +128,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox nameTxtBx;
+        private System.Windows.Forms.MaskedTextBox nameTxtBx;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.TextBox fnTxtBx;
-        private System.Windows.Forms.TextBox lnTxtBx;
+        private System.Windows.Forms.MaskedTextBox fnTxtBx;
+        private System.Windows.Forms.MaskedTextBox lnTxtBx;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
     }
