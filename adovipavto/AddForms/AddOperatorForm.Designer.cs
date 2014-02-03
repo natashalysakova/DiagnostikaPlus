@@ -37,11 +37,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.nameTxtBx = new System.Windows.Forms.MaskedTextBox();
             this.lnTxtBx = new System.Windows.Forms.MaskedTextBox();
-            this.loginTxtBx = new System.Windows.Forms.TextBox();
+            this.loginTxtBx = new System.Windows.Forms.MaskedTextBox();
             this.roleCmbBx = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.passTxtBx = new System.Windows.Forms.TextBox();
+            this.passTxtBx = new System.Windows.Forms.MaskedTextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -164,11 +164,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MaskedTextBox nameTxtBx;
         private System.Windows.Forms.MaskedTextBox lnTxtBx;
-        private System.Windows.Forms.TextBox loginTxtBx;
+        private System.Windows.Forms.MaskedTextBox loginTxtBx;
         private System.Windows.Forms.ComboBox roleCmbBx;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox passTxtBx;
+        private System.Windows.Forms.MaskedTextBox passTxtBx;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
