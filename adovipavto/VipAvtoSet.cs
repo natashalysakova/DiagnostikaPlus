@@ -498,8 +498,8 @@ namespace adovipavto
             var tmp2 = (
                 from DataRow item in Tables[Constants.NormativesTableName].Rows
                 where
-                    (int) item["IDGroup"] == groupId &&
-                    (int) item["Tag"] == new Normatives().NormativesTitle.IndexOf(rm.GetString("DVRSUP"))
+                    (int)item["IDGroup"] == groupId &&
+                    (int)item["Tag"] == new Normatives().NormativesTitle.IndexOf(rm.GetString("DVRSUP"))
                 select item["MaxValue"]).ToArray();
             if (tmp1.Length == 1 && tmp2.Length == 1)
             {
@@ -518,10 +518,10 @@ namespace adovipavto
         {
 
             var rows = (from DataRow item in Tables[Constants.GroupTableName].Rows
-                where
-                    (int) item["Year"] == p1 && item["Category"].ToString() == p2 && (int) item["EngineType"] == p3 &&
-                    (bool) item["Before"] == p4
-                select item).ToList();
+                        where
+                            (int)item["Year"] == p1 && item["Category"].ToString() == p2 && (int)item["EngineType"] == p3 &&
+                            (bool)item["Before"] == p4
+                        select item).ToList();
 
             if (rows.Count == 0)
                 return false;
@@ -538,6 +538,42 @@ namespace adovipavto
         internal int GetOperatorId()
         {
             return _currentOperator.Id;
+        }
+
+        internal void RemoveGroup(DataRow selectedRow)
+        {
+            int groipId = (int)selectedRow["GroupID"];
+
+            var normatives = (from DataRow row in Tables[Constants.NormativesTableName].Rows
+                              where (int)row["IDGroup"] == groipId
+                              select (int)row["NormativeID"]).ToList();
+            var protocols = (from DataRow row in Tables[Constants.ProtocolsTableName].Rows
+                             where (int)row["IDGroup"] == groipId
+                             select (int)row["ProtocolID"]).ToList();
+
+            List<int> mesures = new List<int>();
+            foreach (int i in protocols)
+            {
+                mesures.AddRange((from DataRow row in Tables[Constants.MesuresTableName].Rows
+                                  where (int)row["IDProtocol"] == i
+                                  select (int)row["MesureID"]).ToList());
+            }
+
+            foreach (int mesure in mesures)
+            {
+                RemoveRowById(Constants.MesuresTableName, mesure);
+            }
+           
+            foreach (int protocol in protocols)
+            {
+                RemoveRowById(Constants.ProtocolsTableName, protocol);
+            }
+            foreach (int normative in normatives)
+            {
+                RemoveRowById(Constants.NormativesTableName, normative);
+            }
+
+            RemoveRowById(Constants.GroupTableName, groipId);
         }
     }
 }
