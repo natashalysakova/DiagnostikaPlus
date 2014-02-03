@@ -22,34 +22,33 @@ namespace adovipavto
         public MainForm()
         {
             if (Properties.Settings.Default.Language == "")
+            {
                 new SelectLanguage().ShowDialog();
 
+
+
+            }
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
             InitializeComponent();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            if (new Auth().ShowDialog() == DialogResult.Cancel)
-            {
 
-                Close();
-            }
-            else
+            do
             {
-                if (SetUserRights())
+                if (new Auth().ShowDialog() == DialogResult.Cancel)
                 {
-                    dataGridView1.DataSource = Program.VipAvtoDataSet.Tables[Constants.ProtocolsTableName];
-                    dataGridView1.Sort(dataGridView1.Columns["Date"], ListSortDirection.Descending);
-
-                    UpdateRows();
-                }
-                else
-                {
-                    MessageBox.Show(rm.GetString("noPermission"));
+                    Close();
+                    return;
                 }
 
-            }
+            } while (!SetUserRights());
+
+            dataGridView1.DataSource = Program.VipAvtoDataSet.Tables[Constants.ProtocolsTableName];
+            dataGridView1.Sort(dataGridView1.Columns["Date"], ListSortDirection.Descending);
+
+            UpdateRows();
         }
 
         private bool SetUserRights()
@@ -87,6 +86,7 @@ namespace adovipavto
                 return true;
             }
 
+            MessageBox.Show(rm.GetString("noPermission"));
             return false;
         }
 

@@ -41,7 +41,7 @@ namespace adovipavto
             }
             else
             {
-                MessageBox.Show(rm.GetString("isUser") + textBox1.Text + rm.GetString("notFound"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(rm.GetString("isUser") + @" " + textBox1.Text + rm.GetString("notFound"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

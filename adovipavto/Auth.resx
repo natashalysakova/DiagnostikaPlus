@@ -161,9 +161,6 @@
   <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="textBox1.Text" xml:space="preserve">
-    <value>admin</value>
-  </data>
   <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
     <value>textBox1</value>
   </data>
@@ -248,9 +245,6 @@
   <data name="maskedTextBox1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="maskedTextBox1.Text" xml:space="preserve">
-    <value>admin</value>
-  </data>
   <data name="&gt;&gt;maskedTextBox1.Name" xml:space="preserve">
     <value>maskedTextBox1</value>
   </data>
@@ -322,7 +316,7 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 187</value>
+    <value>98, 191</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 20</value>
@@ -371,5 +365,17 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wrongPassword" xml:space="preserve">
+    <value>wrongPassword</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>error</value>
+  </data>
+  <data name="isUser" xml:space="preserve">
+    <value>isUser</value>
+  </data>
+  <data name="notFound" xml:space="preserve">
+    <value>notFound</value>
   </data>
 </root>

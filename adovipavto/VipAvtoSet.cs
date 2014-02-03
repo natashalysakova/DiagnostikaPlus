@@ -534,5 +534,10 @@ namespace adovipavto
         {
             return _currentOperator.Rights;
         }
+
+        internal int GetOperatorId()
+        {
+            return _currentOperator.Id;
+        }
     }
 }
