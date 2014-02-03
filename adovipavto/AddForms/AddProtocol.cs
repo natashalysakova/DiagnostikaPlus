@@ -42,6 +42,13 @@ namespace adovipavto.AddForms
                 from DataRow item in Program.VipAvtoDataSet.Tables[Constants.GroupTableName].Rows
                 select Program.VipAvtoDataSet.CreateGroupTitle((int)item["GroupID"])).ToArray();
 
+            if (groups.Length == 0)
+            {
+                MessageBox.Show(rm.GetString("nogroup"),
+                    rm.GetString("warning"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
             comboBox1.Items.AddRange(groups);
 
             dateTimePicker1.Value = DateTime.Now;
