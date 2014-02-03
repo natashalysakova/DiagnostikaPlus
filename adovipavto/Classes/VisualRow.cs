@@ -13,7 +13,7 @@ namespace adovipavto.Classes
     {
         public int Id { private set; get; }
 
-        public PictureBox PictureBox { get; set; }
+        //public PictureBox PictureBox { get; set; }
 
         public double Value { get; set; }
 
@@ -26,6 +26,7 @@ namespace adovipavto.Classes
             set
             {
                 textbox = value;
+                textbox.Enabled = true;
                 SetYellow();
                 textbox.Validated += TextBox_Validated;
                 textbox.TextChanged += textbox_TextChanged;

@@ -180,11 +180,7 @@ namespace adovipavto.AddForms
 
                             if (control.Tag.ToString() != row.Id.ToString()) continue;
 
-                            if (control is PictureBox)
-                            {
-                                row.PictureBox = (control as PictureBox);
-                            }
-                            else if (control is TextBox)
+                            if (control is TextBox)
                             {
                                 row.TextBox = (control as TextBox);
                             }
@@ -234,6 +230,7 @@ namespace adovipavto.AddForms
                                 {
                                     control3.Text = "";
                                     control3.BackColor = Color.White;
+                                    control3.Enabled = false;
                                 }
                                 if (control3 is Label && control3.Tag != null)
                                 {
