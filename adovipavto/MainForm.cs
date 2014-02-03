@@ -138,9 +138,12 @@ namespace adovipavto
             {
                 if (Properties.Settings.Default.tmpLanguage != Properties.Settings.Default.Language)
                 {
-                    MessageBox.Show(rm.GetString("lng"), rm.GetString("warning"), MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-
+                    if (MessageBox.Show(rm.GetString("lng"), rm.GetString("warning"), MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        Application.Restart();
+                    }
+                    
                 }
             }
         }
