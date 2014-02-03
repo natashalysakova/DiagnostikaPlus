@@ -24,9 +24,6 @@ namespace adovipavto
             if (Properties.Settings.Default.Language == "")
             {
                 new SelectLanguage().ShowDialog();
-
-
-
             }
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
             InitializeComponent();
@@ -139,14 +136,12 @@ namespace adovipavto
         {
             if (new SettingForm().ShowDialog() == DialogResult.OK)
             {
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
-                InitializeComponent();
+                if (Properties.Settings.Default.tmpLanguage != Properties.Settings.Default.Language)
+                {
+                    MessageBox.Show(rm.GetString("lng"), rm.GetString("warning"), MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
 
-                dataGridView1.DataSource = Program.VipAvtoDataSet.Tables[Constants.ProtocolsTableName];
-                dataGridView1.Sort(dataGridView1.Columns["Date"], ListSortDirection.Descending);
-
-                UpdateRows();
-
+                }
             }
         }
 
@@ -210,6 +205,8 @@ namespace adovipavto
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Program.VipAvtoDataSet.OperatorExit();
+            Properties.Settings.Default.Language = Properties.Settings.Default.tmpLanguage;
+            Properties.Settings.Default.Save();
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

@@ -166,5 +166,17 @@ namespace adovipavto.Properties {
                 this["LastUsedMechanic"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string tmpLanguage {
+            get {
+                return ((string)(this["tmpLanguage"]));
+            }
+            set {
+                this["tmpLanguage"] = value;
+            }
+        }
     }
 }
