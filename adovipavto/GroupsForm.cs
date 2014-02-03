@@ -110,11 +110,13 @@ namespace adovipavto
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {
-                    Program.VipAvtoDataSet.RemoveRow(Constants.GroupTableName, _selectedRow);
+                    //TODO: 
+                    Program.VipAvtoDataSet.RemoveGroup(_selectedRow);
+                    //Program.VipAvtoDataSet.RemoveRow(Constants.GroupTableName, _selectedRow);
 
 
-                    Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].AcceptChanges();
-                    Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].WriteXml(Constants.GetFullPath(Settings.Default.Normatives));
+                    //Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].AcceptChanges();
+                    //Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].WriteXml(Constants.GetFullPath(Settings.Default.Normatives));
                     _selectedRow = null;
 
                     UpdateRows();

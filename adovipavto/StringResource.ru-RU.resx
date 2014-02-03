@@ -364,4 +364,10 @@
   <data name="reboot" xml:space="preserve">
     <value>Авторизованный пользователь удален. Программа будет перезапущена</value>
   </data>
+  <data name="nogroup" xml:space="preserve">
+    <value>В базе отсутсвуют группы. Добавте группы прежде чем создавать протоколы.</value>
+  </data>
+  <data name="lng" xml:space="preserve">
+    <value>Смена языка произойдет после переапуска программы</value>
+  </data>
 </root>
