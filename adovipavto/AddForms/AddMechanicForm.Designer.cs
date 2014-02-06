@@ -33,10 +33,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.nameTxtBx = new System.Windows.Forms.MaskedTextBox();
+            this.nameTxtBx = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lnTxtBx = new System.Windows.Forms.MaskedTextBox();
-            this.fnTxtBx = new System.Windows.Forms.MaskedTextBox();
+            this.lnTxtBx = new System.Windows.Forms.TextBox();
+            this.fnTxtBx = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -63,6 +63,7 @@
             resources.ApplyResources(this.nameTxtBx, "nameTxtBx");
             this.nameTxtBx.Name = "nameTxtBx";
             this.nameTxtBx.TextChanged += new System.EventHandler(this.fnTxtBx_TextChanged);
+            this.nameTxtBx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTxtBx_KeyPress);
             this.nameTxtBx.Validated += new System.EventHandler(this.nameTxtBx_Validated);
             // 
             // errorProvider1
@@ -76,6 +77,7 @@
             resources.ApplyResources(this.lnTxtBx, "lnTxtBx");
             this.lnTxtBx.Name = "lnTxtBx";
             this.lnTxtBx.TextChanged += new System.EventHandler(this.fnTxtBx_TextChanged);
+            this.lnTxtBx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTxtBx_KeyPress);
             this.lnTxtBx.Validated += new System.EventHandler(this.nameTxtBx_Validated);
             // 
             // fnTxtBx
@@ -84,6 +86,7 @@
             resources.ApplyResources(this.fnTxtBx, "fnTxtBx");
             this.fnTxtBx.Name = "fnTxtBx";
             this.fnTxtBx.TextChanged += new System.EventHandler(this.fnTxtBx_TextChanged);
+            this.fnTxtBx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTxtBx_KeyPress);
             this.fnTxtBx.Validated += new System.EventHandler(this.nameTxtBx_Validated);
             // 
             // button1
@@ -128,10 +131,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox nameTxtBx;
+        private System.Windows.Forms.TextBox nameTxtBx;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.MaskedTextBox fnTxtBx;
-        private System.Windows.Forms.MaskedTextBox lnTxtBx;
+        private System.Windows.Forms.TextBox fnTxtBx;
+        private System.Windows.Forms.TextBox lnTxtBx;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
     }

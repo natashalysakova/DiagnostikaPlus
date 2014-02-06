@@ -47,18 +47,26 @@ namespace adovipavto.AddForms
 
         private void nameTxtBx_Validated(object sender, EventArgs e)
         {
-            if (((MaskedTextBox)sender).Text == "")
-                errorProvider1.SetError((MaskedTextBox)sender, rm.GetString("wrongData"));
+            if (((TextBox)sender).Text == "")
+                errorProvider1.SetError((TextBox)sender, rm.GetString("wrongData"));
         }
 
         private void fnTxtBx_TextChanged(object sender, EventArgs e)
         {
-            if (((MaskedTextBox)sender).Text != "")
-                errorProvider1.SetError(((MaskedTextBox)sender), null);
+            if (((TextBox)sender).Text != "")
+                errorProvider1.SetError(((TextBox)sender), null);
         }
 
         private void AddMechanicForm_Load(object sender, EventArgs e)
         {
+        }
+
+        private void nameTxtBx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -75,5 +75,21 @@ namespace adovipavto.AddForms
             DialogResult = DialogResult.Cancel;
             
         }
+
+        private void nameTxtBx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void loginTxtBx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
