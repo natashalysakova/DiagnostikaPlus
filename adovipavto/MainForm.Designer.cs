@@ -274,6 +274,7 @@ namespace adovipavto
             this.srchBtn.Image = global::adovipavto.Properties.Resources.search;
             resources.ApplyResources(this.srchBtn, "srchBtn");
             this.srchBtn.Name = "srchBtn";
+            this.srchBtn.Click += new System.EventHandler(this.srchBtn_Click);
             // 
             // toolStripSeparator3
             // 

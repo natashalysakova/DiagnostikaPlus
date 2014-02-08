@@ -144,7 +144,7 @@ namespace adovipavto
                     {
                         Application.Restart();
                     }
-                    
+
                 }
             }
         }
@@ -200,7 +200,7 @@ namespace adovipavto
                 int newProtocolId =
                     (int)dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
                 DataRow protocol = Program.VipAvtoDataSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
-                DataRow[] mesures = Program.VipAvtoDataSet.GetMesuresFromProtocol(newProtocolId);
+                DataRow[] mesures = Program.VipAvtoDataSet.GetMesuresFromProtocol(protocol);
 
                 new ProtocolReportForm(protocol, mesures).ShowDialog();
             }
@@ -230,7 +230,7 @@ namespace adovipavto
 
             int newProtocolId = (int)dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
             DataRow protocol = Program.VipAvtoDataSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
-            DataRow[] mesures = Program.VipAvtoDataSet.GetMesuresFromProtocol(newProtocolId);
+            DataRow[] mesures = Program.VipAvtoDataSet.GetMesuresFromProtocol(protocol);
 
             new ProtocolReportForm(protocol, mesures).ShowDialog();
 
@@ -240,7 +240,7 @@ namespace adovipavto
         {
             int newProtocolId = (int)dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
             DataRow protocol = Program.VipAvtoDataSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
-            DataRow[] mesures = Program.VipAvtoDataSet.GetMesuresFromProtocol(newProtocolId);
+            DataRow[] mesures = Program.VipAvtoDataSet.GetMesuresFromProtocol(protocol);
 
             new ProtocolReportForm(protocol, mesures, true).ShowDialog();
 
@@ -257,6 +257,12 @@ namespace adovipavto
                 }
 
             } while (!SetUserRights());
+        }
+
+        private void srchBtn_Click(object sender, EventArgs e)
+        {
+            new Search().ShowDialog();
+
         }
     }
 }

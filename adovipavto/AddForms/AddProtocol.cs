@@ -259,7 +259,7 @@ namespace adovipavto.AddForms
             if (_newProtocolId != -1)
             {
                 DataRow protocol = Program.VipAvtoDataSet.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
-                DataRow[] mesures = Program.VipAvtoDataSet.GetMesuresFromProtocol(_newProtocolId);
+                DataRow[] mesures = Program.VipAvtoDataSet.GetMesuresFromProtocol(protocol);
 
                 new ProtocolReportForm(protocol, mesures, true).ShowDialog();
 
@@ -446,7 +446,7 @@ namespace adovipavto.AddForms
             if (_newProtocolId != -1)
             {
                 DataRow protocol = Program.VipAvtoDataSet.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
-                DataRow[] mesures = Program.VipAvtoDataSet.GetMesuresFromProtocol(_newProtocolId);
+                DataRow[] mesures = Program.VipAvtoDataSet.GetMesuresFromProtocol(protocol);
 
                 new ProtocolReportForm(protocol, mesures).ShowDialog();
                 DialogResult = DialogResult.OK;

@@ -1,4 +1,6 @@
-﻿namespace adovipavto
+﻿using adovipavto.Classes;
+
+namespace adovipavto
 {
     partial class ProtocolReportForm
     {
@@ -31,7 +33,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProtocolReportForm));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.printPreviewControl1 = new System.Windows.Forms.PrintPreviewControl();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -65,17 +66,10 @@
             // 
             this.printPreviewControl1.AutoZoom = false;
             resources.ApplyResources(this.printPreviewControl1, "printPreviewControl1");
-            this.printPreviewControl1.Document = this.printDocument1;
             this.printPreviewControl1.Name = "printPreviewControl1";
             this.printPreviewControl1.UseAntiAlias = true;
             this.printPreviewControl1.Zoom = 1D;
             this.printPreviewControl1.Click += new System.EventHandler(this.printPreviewControl1_Click);
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.DocumentName = "Протокол";
-            this.printDocument1.OriginAtMargins = true;
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // toolStrip1
             // 
@@ -128,7 +122,6 @@
             // 
             // printDialog1
             // 
-            this.printDialog1.Document = this.printDocument1;
             this.printDialog1.ShowNetwork = false;
             this.printDialog1.UseEXDialog = true;
             // 
@@ -155,7 +148,6 @@
 
         #endregion
 
-        private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewControl printPreviewControl1;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.ToolStrip toolStrip1;

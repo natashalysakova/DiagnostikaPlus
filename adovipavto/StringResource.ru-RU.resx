@@ -370,4 +370,7 @@
   <data name="lng" xml:space="preserve">
     <value>Смена языка произойдет после переапуска программы. Перезапустить сейчас?</value>
   </data>
+  <data name="protocol" xml:space="preserve">
+    <value>Протокол</value>
+  </data>
 </root>

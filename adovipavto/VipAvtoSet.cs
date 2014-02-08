@@ -1,7 +1,8 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
@@ -9,17 +10,21 @@ using adovipavto.Classes;
 using adovipavto.Enums;
 using adovipavto.Properties;
 
+#endregion
+
 namespace adovipavto
 {
     public partial class VipAvtoSet
     {
+        partial class ProtocolsDataTable
+        {
+        }
         //partial class MesuresDataTable
         //{
         //}
 
-        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
-
         private Operator _currentOperator;
+        private ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
         #region NormativesMetods
 
@@ -56,10 +61,10 @@ namespace adovipavto
 
         public DataRow[] GetNormativesFromGroup(string groupTitle)
         {
-            var groupId = (int)(
+            var groupId = (int) (
                 from DataRow items
                     in Tables[Constants.GroupTableName].Rows
-                where Program.VipAvtoDataSet.CreateGroupTitle((int)items["GroupID"]) == groupTitle
+                where Program.VipAvtoDataSet.CreateGroupTitle((int) items["GroupID"]) == groupTitle
                 select items["GroupID"]).ToList()[0];
 
             DataRow[] group = Tables[Constants.GroupTableName].Select(string.Format("GroupID = {0}", groupId));
@@ -122,16 +127,17 @@ namespace adovipavto
 
         public int GetGroupId(string title)
         {
-            string[] splitTitle = title.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] splitTitle = title.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
 
             foreach (DataRow row in Tables[Constants.GroupTableName].Rows)
             {
                 string cat = row["Category"].ToString();
-                string bef = (bool)row["Before"] ? rm.GetString("before") : rm.GetString("after");
+                string bef = (bool) row["Before"] ? _rm.GetString("before") : _rm.GetString("after");
                 string year = row["Year"].ToString();
-                int engine = (int)row["EngineType"];
+                int engine = (int) row["EngineType"];
 
-                if (cat == splitTitle[0] && bef == splitTitle[1] && year == splitTitle[2] && new Engines().EnginesTitle[engine] == splitTitle[3])
+                if (cat == splitTitle[0] && bef == splitTitle[1] && year == splitTitle[2] &&
+                    new Engines().EnginesTitle[engine] == splitTitle[3])
                     return Convert.ToInt32(row["GroupID"]);
             }
 
@@ -146,8 +152,9 @@ namespace adovipavto
                 return "";
 
 
-            string s = (bool)groupRow["Before"] ? rm.GetString("before") : rm.GetString("after");
-            return groupRow["Category"] + " " + s + " " + groupRow["Year"] + " " + new Engines().EnginesTitle[(int)groupRow["EngineType"]];
+            string s = (bool) groupRow["Before"] ? _rm.GetString("before") : _rm.GetString("after");
+            return groupRow["Category"] + " " + s + " " + groupRow["Year"] + " " +
+                   new Engines().EnginesTitle[(int) groupRow["EngineType"]];
         }
 
         #endregion
@@ -162,7 +169,9 @@ namespace adovipavto
         internal DataRow GetRowById(string tableName, int rowId)
         {
             string idheader = Program.VipAvtoDataSet.Tables[tableName].Columns[0].ColumnName;
-            return Program.VipAvtoDataSet.Tables[tableName].Rows.Cast<DataRow>().FirstOrDefault(item => Convert.ToInt32(item[idheader]) == rowId);
+            return
+                Program.VipAvtoDataSet.Tables[tableName].Rows.Cast<DataRow>()
+                    .FirstOrDefault(item => Convert.ToInt32(item[idheader]) == rowId);
         }
 
         internal void RemoveRow(string tableName, DataRow selectedRow)
@@ -176,7 +185,7 @@ namespace adovipavto
         {
             for (int i = 0; i < Tables[tableName].Rows.Count; i++)
             {
-                if ((int)Tables[tableName].Rows[i][0] == id)
+                if ((int) Tables[tableName].Rows[i][0] == id)
                 {
                     Tables[tableName].Rows.RemoveAt(i);
                     break;
@@ -185,7 +194,6 @@ namespace adovipavto
 
             Tables[tableName].AcceptChanges();
             Tables[tableName].WriteXml(GetFileNameByTableName(tableName));
-
         }
 
         #endregion
@@ -202,7 +210,7 @@ namespace adovipavto
             AcceptChanges();
             Tables[Constants.LogsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Logs));
 
-            return (int)r["LogItemID"];
+            return (int) r["LogItemID"];
         }
 
         #endregion
@@ -239,8 +247,6 @@ namespace adovipavto
 
         #endregion
 
-
-
         private string GetFileNameByTableName(string tableName)
         {
             switch (tableName)
@@ -271,7 +277,6 @@ namespace adovipavto
             Tables[Constants.OperatorsTableName].AcceptChanges();
             Tables[Constants.OperatorsTableName].WriteXml(
                 Constants.GetFullPath(Settings.Default.Operators));
-
         }
 
         internal void AddOperator(string p1, string p2, string p3, string p4, string p5)
@@ -286,11 +291,9 @@ namespace adovipavto
             row["Right"] = GetRightByString(p5);
 
 
-
             Tables[Constants.OperatorsTableName].Rows.Add(row);
             Tables[Constants.OperatorsTableName].AcceptChanges();
             Tables[Constants.OperatorsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Operators));
-
         }
 
         private Rights GetRightByString(string p5)
@@ -298,13 +301,17 @@ namespace adovipavto
             Rights r;
             switch (p5)
             {
-                case "Администратор": r = Rights.Administrator;
+                case "Администратор":
+                    r = Rights.Administrator;
                     break;
-                case "Оператор": r = Rights.Operator;
+                case "Оператор":
+                    r = Rights.Operator;
                     break;
-                case "Уволен": r = Rights.Locked;
+                case "Уволен":
+                    r = Rights.Locked;
                     break;
-                default: r = Rights.Operator;
+                default:
+                    r = Rights.Operator;
                     break;
             }
 
@@ -321,7 +328,6 @@ namespace adovipavto
 
             Tables[Constants.OperatorsTableName].AcceptChanges();
             Tables[Constants.OperatorsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Operators));
-
         }
 
         internal void AddMechanic(string p1, string p2, string p3)
@@ -332,12 +338,11 @@ namespace adovipavto
             r["LastName"] = p2;
             r["FatherName"] = p3;
 
-            r["State"] = (int)State.Employed;
+            r["State"] = (int) State.Employed;
 
             Tables[Constants.MechanicsTableName].Rows.Add(r);
             Tables[Constants.MechanicsTableName].AcceptChanges();
             Tables[Constants.MechanicsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Mechanics));
-
         }
 
 
@@ -351,22 +356,21 @@ namespace adovipavto
 
             Tables[Constants.MechanicsTableName].AcceptChanges();
             Tables[Constants.MechanicsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Mechanics));
-
         }
 
         internal void LockMechanic(int id)
         {
             DataRow r = GetRowById(Constants.MechanicsTableName, id);
-            r["State"] = (int)State.Unemployed;
+            r["State"] = (int) State.Unemployed;
 
             Tables[Constants.MechanicsTableName].AcceptChanges();
             Tables[Constants.MechanicsTableName].WriteXml(
                 Constants.GetFullPath(Settings.Default.Mechanics));
-
         }
 
 
-        internal int AddProtocol(string p1, string p2, DateTime dateTime, string techpass, string p3, bool result, DateTime nexDateTime, bool visChck)
+        internal int AddProtocol(string p1, string p2, DateTime dateTime, string techpass, string p3, bool result,
+            DateTime nexDateTime, bool visChck)
         {
             DataRow r = Tables[Constants.ProtocolsTableName].NewRow();
 
@@ -390,30 +394,31 @@ namespace adovipavto
             //return (from DataRow item in Tables[Constants.ProtocolsTableName].Rows
             //        where item["BlankNumber"].ToString() == p1 && (DateTime)item["Date"] == dateTime
             //        select (int)item["ProtocolID"]).ToArray()[0];
-            return (int)r["ProtocolID"];
+            return (int) r["ProtocolID"];
         }
 
         private int GetMechanicIdByShortName(string p2)
         {
             return (from DataRow item in Tables[Constants.MechanicsTableName].Rows
-                    where
-                        GetShortMechanicName((int)item["MechanicID"]) == p2
-                    select (int)item["MechanicID"]).ToArray()[0];
+                where
+                    GetShortMechanicName((int) item["MechanicID"]) == p2
+                select (int) item["MechanicID"]).ToArray()[0];
         }
 
         internal void SetCurrentOperator(string name)
         {
             DataRow r = GetUserByLogin(name);
 
-            _currentOperator = new Operator((Rights)r["Right"], (int)r["OperatorId"], r["Name"].ToString(), r["LastName"].ToString(), AddEnterLog((int)r["OperatorId"]));
-
-
+            _currentOperator = new Operator((Rights) r["Right"], (int) r["OperatorId"], r["Name"].ToString(),
+                r["LastName"].ToString(), AddEnterLog((int) r["OperatorId"]));
         }
 
         private DataRow GetUserByLogin(string name)
         {
             return
-                (from DataRow r in Tables[Constants.OperatorsTableName].Rows where r["Login"].ToString() == name select r).ToArray()
+                (from DataRow r in Tables[Constants.OperatorsTableName].Rows
+                    where r["Login"].ToString() == name
+                    select r).ToArray()
                     [0];
         }
 
@@ -428,33 +433,29 @@ namespace adovipavto
             Tables[Constants.MesuresTableName].Rows.Add(item);
             Tables[Constants.MesuresTableName].AcceptChanges();
             Tables[Constants.MesuresTableName].WriteXml(Constants.GetFullPath(Settings.Default.Mesure));
-
         }
 
         internal string GetShortMechanicName(int p)
         {
             return (from DataRow item in Tables[Constants.MechanicsTableName].Rows
-                    where (int)item["MechanicID"] == p
-                    select
-                        item["LastName"] + " " + item["Name"].ToString()[0] + ". " + item["FatherName"].ToString()[0] + ".")
+                    where (int)item["MechanicID"] == p && (int)item["State"] == (int)State.Employed
+                select
+                    item["LastName"] + " " + item["Name"].ToString()[0] + ". " + item["FatherName"].ToString()[0] + ".")
                 .ToArray()[0];
         }
 
         internal string GetShortOperatorName(int p)
         {
             return (from DataRow item in Tables[Constants.OperatorsTableName].Rows
-                    where (int)item["OperatorId"] == p
-                    select
-                        item["LastName"] + " " + item["Name"].ToString()[0] + ".")
+                where (int) item["OperatorId"] == p
+                select
+                    item["LastName"] + " " + item["Name"].ToString()[0] + ".")
                 .ToArray()[0];
         }
 
-        internal DataRow[] GetMesuresFromProtocol(int newProtocolId)
+        internal DataRow[] GetMesuresFromProtocol(DataRow row)
         {
-            return (from DataRow item in Tables[Constants.MesuresTableName].Rows
-                    where (int)item["IDProtocol"] == newProtocolId
-                    select item).ToArray();
-
+            return row.GetChildRows(relationFK_Protocols_Mesures);
         }
 
         internal void OperatorExit()
@@ -478,8 +479,8 @@ namespace adovipavto
             int normtag = GetNormativeTag(normativename);
 
             var mesures = (from DataRow item in Tables[Constants.NormativesTableName].Rows
-                           where (int)item["Tag"] == normtag && (int)item["IDGroup"] == groupId
-                           select item).ToList();
+                where (int) item["Tag"] == normtag && (int) item["IDGroup"] == groupId
+                select item).ToList();
 
             if (mesures.Count == 0)
                 return false;
@@ -491,41 +492,40 @@ namespace adovipavto
         {
             var tmp1 = (
                 from DataRow item in Tables[Constants.NormativesTableName].Rows
-                where (int)item["IDGroup"] == groupId && (int)item["Tag"] == new Normatives().NormativesTitle.IndexOf(rm.GetString("DVRSUM"))
+                where
+                    (int) item["IDGroup"] == groupId &&
+                    (int) item["Tag"] == new Normatives().NormativesTitle.IndexOf(_rm.GetString("DVRSUM"))
                 select item["MaxValue"]).ToArray();
             var tmp2 = (
                 from DataRow item in Tables[Constants.NormativesTableName].Rows
                 where
-                    (int)item["IDGroup"] == groupId &&
-                    (int)item["Tag"] == new Normatives().NormativesTitle.IndexOf(rm.GetString("DVRSUP"))
+                    (int) item["IDGroup"] == groupId &&
+                    (int) item["Tag"] == new Normatives().NormativesTitle.IndexOf(_rm.GetString("DVRSUP"))
                 select item["MaxValue"]).ToArray();
             if (tmp1.Length == 1 && tmp2.Length == 1)
             {
-                minObSmokeVal = (double)tmp1[0];
-                maxObSmokeVal = (double)tmp2[0];
+                minObSmokeVal = (double) tmp1[0];
+                maxObSmokeVal = (double) tmp2[0];
             }
             else
             {
                 minObSmokeVal = 0;
                 maxObSmokeVal = 0;
             }
-
         }
 
         internal bool GroupExist(int p1, string p2, int p3, bool p4)
         {
-
             var rows = (from DataRow item in Tables[Constants.GroupTableName].Rows
-                        where
-                            (int)item["Year"] == p1 && item["Category"].ToString() == p2 && (int)item["EngineType"] == p3 &&
-                            (bool)item["Before"] == p4
-                        select item).ToList();
+                where
+                    (int) item["Year"] == p1 && item["Category"].ToString() == p2 && (int) item["EngineType"] == p3 &&
+                    (bool) item["Before"] == p4
+                select item).ToList();
 
             if (rows.Count == 0)
                 return false;
 
             return true;
-
         }
 
         internal Rights GetOperatorRight()
@@ -540,28 +540,28 @@ namespace adovipavto
 
         internal void RemoveGroup(DataRow selectedRow)
         {
-            int groipId = (int)selectedRow["GroupID"];
+            int groipId = (int) selectedRow["GroupID"];
 
             var normatives = (from DataRow row in Tables[Constants.NormativesTableName].Rows
-                              where (int)row["IDGroup"] == groipId
-                              select (int)row["NormativeID"]).ToList();
+                where (int) row["IDGroup"] == groipId
+                select (int) row["NormativeID"]).ToList();
             var protocols = (from DataRow row in Tables[Constants.ProtocolsTableName].Rows
-                             where (int)row["IDGroup"] == groipId
-                             select (int)row["ProtocolID"]).ToList();
+                where (int) row["IDGroup"] == groipId
+                select (int) row["ProtocolID"]).ToList();
 
             List<int> mesures = new List<int>();
             foreach (int i in protocols)
             {
                 mesures.AddRange((from DataRow row in Tables[Constants.MesuresTableName].Rows
-                                  where (int)row["IDProtocol"] == i
-                                  select (int)row["MesureID"]).ToList());
+                    where (int) row["IDProtocol"] == i
+                    select (int) row["MesureID"]).ToList());
             }
 
             foreach (int mesure in mesures)
             {
                 RemoveRowById(Constants.MesuresTableName, mesure);
             }
-           
+
             foreach (int protocol in protocols)
             {
                 RemoveRowById(Constants.ProtocolsTableName, protocol);
@@ -572,6 +572,18 @@ namespace adovipavto
             }
 
             RemoveRowById(Constants.GroupTableName, groipId);
+        }
+
+        internal DataRow GetProtocolByBlankId(string blank)
+        {
+            var rows = (from DataRow item in Tables[Constants.ProtocolsTableName].Rows
+                where item["BlankNumber"].ToString() == blank
+                select item).ToArray();
+            
+            if(rows.Length == 0)
+                return null;
+
+            return rows[0];
         }
     }
 }
