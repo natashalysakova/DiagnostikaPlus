@@ -41,7 +41,7 @@
             this.roleCmbBx = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.passTxtBx = new System.Windows.Forms.MaskedTextBox();
+            this.passTxtBx = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -125,7 +125,6 @@
             resources.ApplyResources(this.passTxtBx, "passTxtBx");
             this.passTxtBx.Name = "passTxtBx";
             this.passTxtBx.TextChanged += new System.EventHandler(this.nameTxtBx_TextChanged);
-            this.passTxtBx.Validated += new System.EventHandler(this.nameTxtBx_Validated);
             // 
             // errorProvider1
             // 
@@ -169,7 +168,7 @@
         private System.Windows.Forms.ComboBox roleCmbBx;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.MaskedTextBox passTxtBx;
+        private System.Windows.Forms.TextBox passTxtBx;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

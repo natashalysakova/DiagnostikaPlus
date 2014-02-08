@@ -64,10 +64,10 @@ namespace adovipavto.AddForms
 
         private void nameTxtBx_Validated(object sender, EventArgs e)
         {
-            if (((MaskedTextBox)sender).Text == "")
-                errorProvider1.SetError(((MaskedTextBox)sender), rm.GetString("wrongData"));
+            if (((TextBox)sender).Text == "")
+                errorProvider1.SetError(((TextBox)sender), rm.GetString("wrongData"));
             else
-                errorProvider1.SetError(((MaskedTextBox)sender), null);
+                errorProvider1.SetError(((TextBox)sender), null);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace adovipavto.AddForms
 
         private void nameTxtBx_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsLetter(e.KeyChar))
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar) && !Char.IsWhiteSpace(e.KeyChar) && e.KeyChar != '-')
             {
                 e.Handled = true;
             }
@@ -91,5 +91,6 @@ namespace adovipavto.AddForms
                 e.Handled = true;
             }
         }
+
     }
 }

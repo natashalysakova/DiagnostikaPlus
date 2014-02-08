@@ -46,7 +46,7 @@ namespace adovipavto.AddForms
             {
                 MessageBox.Show(rm.GetString("nogroup"),
                     rm.GetString("warning"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                Close();
             }
             
             comboBox1.Items.AddRange(groups);

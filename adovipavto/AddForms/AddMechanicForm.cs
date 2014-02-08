@@ -32,9 +32,8 @@ namespace adovipavto.AddForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (ValidateChildren())
+            if (errorProvider1.GetError(nameTxtBx) == "" && errorProvider1.GetError(lnTxtBx) == "" && errorProvider1.GetError(fnTxtBx) == "")
             {
-
                 Program.VipAvtoDataSet.AddMechanic(nameTxtBx.Text, lnTxtBx.Text, fnTxtBx.Text);
                 DialogResult = DialogResult.OK;
             }
@@ -45,25 +44,20 @@ namespace adovipavto.AddForms
 
         }
 
-        private void nameTxtBx_Validated(object sender, EventArgs e)
+        private void fnTxtBx_TextChanged(object sender, EventArgs e)
         {
             if (((TextBox)sender).Text == "")
                 errorProvider1.SetError((TextBox)sender, rm.GetString("wrongData"));
+            else
+            {
+                errorProvider1.SetError((TextBox)sender, null);
+            }
         }
 
-        private void fnTxtBx_TextChanged(object sender, EventArgs e)
-        {
-            if (((TextBox)sender).Text != "")
-                errorProvider1.SetError(((TextBox)sender), null);
-        }
-
-        private void AddMechanicForm_Load(object sender, EventArgs e)
-        {
-        }
 
         private void nameTxtBx_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsLetter(e.KeyChar))
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar) && !Char.IsWhiteSpace(e.KeyChar) && e.KeyChar != '-')
             {
                 e.Handled = true;
             }

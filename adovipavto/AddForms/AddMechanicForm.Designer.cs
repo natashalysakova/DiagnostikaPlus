@@ -64,7 +64,6 @@
             this.nameTxtBx.Name = "nameTxtBx";
             this.nameTxtBx.TextChanged += new System.EventHandler(this.fnTxtBx_TextChanged);
             this.nameTxtBx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTxtBx_KeyPress);
-            this.nameTxtBx.Validated += new System.EventHandler(this.nameTxtBx_Validated);
             // 
             // errorProvider1
             // 
@@ -78,7 +77,6 @@
             this.lnTxtBx.Name = "lnTxtBx";
             this.lnTxtBx.TextChanged += new System.EventHandler(this.fnTxtBx_TextChanged);
             this.lnTxtBx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTxtBx_KeyPress);
-            this.lnTxtBx.Validated += new System.EventHandler(this.nameTxtBx_Validated);
             // 
             // fnTxtBx
             // 
@@ -87,7 +85,6 @@
             this.fnTxtBx.Name = "fnTxtBx";
             this.fnTxtBx.TextChanged += new System.EventHandler(this.fnTxtBx_TextChanged);
             this.fnTxtBx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTxtBx_KeyPress);
-            this.fnTxtBx.Validated += new System.EventHandler(this.nameTxtBx_Validated);
             // 
             // button1
             // 
@@ -119,7 +116,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddMechanicForm";
-            this.Load += new System.EventHandler(this.AddMechanicForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
