@@ -262,7 +262,6 @@ namespace adovipavto
         private void srchBtn_Click(object sender, EventArgs e)
         {
             new Search().ShowDialog();
-
         }
     }
 }

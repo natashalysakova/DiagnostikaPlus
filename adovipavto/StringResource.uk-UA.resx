@@ -256,13 +256,13 @@
     <value>Неможливо відобразити пртокол, т.я він не знаходиться в базі даних</value>
   </data>
   <data name="ORTS1" xml:space="preserve">
-    <value>Від. різниця гальмівних сил (1-я вісь) (%)</value>
+    <value>Від. різниця гальмівних сил 1-я вісь (%)</value>
   </data>
   <data name="ORTS2" xml:space="preserve">
-    <value>Від. різниця гальмівних сил (2-я вісь) (%)</value>
+    <value>Від. різниця гальмівних сил 2-я вісь (%)</value>
   </data>
   <data name="ORTS3" xml:space="preserve">
-    <value>Від. різниця гальмівних сил (3-я вісь) (%)</value>
+    <value>Від. різниця гальмівних сил 3-я вісь (%)</value>
   </data>
   <data name="OUTSRTS" xml:space="preserve">
     <value>Загальна питома гальмівна сила робочої ГС (частки од.)</value>
@@ -307,7 +307,7 @@
     <value>Пройдено</value>
   </data>
   <data name="VSHA" xml:space="preserve">
-    <value>Зовнішній шум транспортного засобу (дБА)</value>
+    <value>Зовнішній шум транспортного засобу (дБ)</value>
   </data>
   <data name="warning" xml:space="preserve">
     <value>Увага</value>
@@ -346,7 +346,7 @@
     <value>Газобалонне обладнання</value>
   </data>
   <data name="ORTSSS" xml:space="preserve">
-    <value>Від. різниця гальмівних сил (стояночної ГС) (%)</value>
+    <value>Від. різниця гальмівних сил стояночної ГС (%)</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="splashScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
