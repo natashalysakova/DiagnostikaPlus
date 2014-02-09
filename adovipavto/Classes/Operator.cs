@@ -6,13 +6,12 @@ namespace adovipavto.Classes
 {
     public class Operator
     {
-        public Operator(Rights rights, int id, string name, string lastName, int sessionId)
+        public Operator(Rights rights, int id, string name, string lastName)
         {
             Rights = rights;
             Id = id;
             Name = name;
             LastName = lastName;
-            SessionId = sessionId;
         }
 
         public Rights Rights { get; private set; }

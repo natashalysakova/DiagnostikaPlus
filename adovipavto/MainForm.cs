@@ -208,7 +208,6 @@ namespace adovipavto
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Program.VipAvtoDataSet.OperatorExit();
             Properties.Settings.Default.Language = Properties.Settings.Default.tmpLanguage;
             Properties.Settings.Default.Save();
         }

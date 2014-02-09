@@ -26,8 +26,6 @@ namespace adovipavto {
         
         private OperatorsDataTable tableOperators;
         
-        private LogsDataTable tableLogs;
-        
         private ProtocolsDataTable tableProtocols;
         
         private MechanicsDataTable tableMechanics;
@@ -38,13 +36,11 @@ namespace adovipavto {
         
         private MesuresDataTable tableMesures;
         
-        private global::System.Data.DataRelation relationFK_Operators_Logs;
-        
-        private global::System.Data.DataRelation relationFK_Operators_Protocols;
+        private global::System.Data.DataRelation relationFK_CarGroup_Protocols;
         
         private global::System.Data.DataRelation relationFK_Mechanics_Protocols;
         
-        private global::System.Data.DataRelation relationFK_CarGroup_Protocols;
+        private global::System.Data.DataRelation relationFK_Operators_Protocols;
         
         private global::System.Data.DataRelation relationFK_CarGroup_Normatives;
         
@@ -80,9 +76,6 @@ namespace adovipavto {
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
                 if ((ds.Tables["Operators"] != null)) {
                     base.Tables.Add(new OperatorsDataTable(ds.Tables["Operators"]));
-                }
-                if ((ds.Tables["Logs"] != null)) {
-                    base.Tables.Add(new LogsDataTable(ds.Tables["Logs"]));
                 }
                 if ((ds.Tables["Protocols"] != null)) {
                     base.Tables.Add(new ProtocolsDataTable(ds.Tables["Protocols"]));
@@ -124,16 +117,6 @@ namespace adovipavto {
         public OperatorsDataTable Operators {
             get {
                 return this.tableOperators;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public LogsDataTable Logs {
-            get {
-                return this.tableLogs;
             }
         }
         
@@ -257,9 +240,6 @@ namespace adovipavto {
                 if ((ds.Tables["Operators"] != null)) {
                     base.Tables.Add(new OperatorsDataTable(ds.Tables["Operators"]));
                 }
-                if ((ds.Tables["Logs"] != null)) {
-                    base.Tables.Add(new LogsDataTable(ds.Tables["Logs"]));
-                }
                 if ((ds.Tables["Protocols"] != null)) {
                     base.Tables.Add(new ProtocolsDataTable(ds.Tables["Protocols"]));
                 }
@@ -314,12 +294,6 @@ namespace adovipavto {
                     this.tableOperators.InitVars();
                 }
             }
-            this.tableLogs = ((LogsDataTable)(base.Tables["Logs"]));
-            if ((initTable == true)) {
-                if ((this.tableLogs != null)) {
-                    this.tableLogs.InitVars();
-                }
-            }
             this.tableProtocols = ((ProtocolsDataTable)(base.Tables["Protocols"]));
             if ((initTable == true)) {
                 if ((this.tableProtocols != null)) {
@@ -350,10 +324,9 @@ namespace adovipavto {
                     this.tableMesures.InitVars();
                 }
             }
-            this.relationFK_Operators_Logs = this.Relations["FK_Operators_Logs"];
-            this.relationFK_Operators_Protocols = this.Relations["FK_Operators_Protocols"];
-            this.relationFK_Mechanics_Protocols = this.Relations["FK_Mechanics_Protocols"];
             this.relationFK_CarGroup_Protocols = this.Relations["FK_CarGroup_Protocols"];
+            this.relationFK_Mechanics_Protocols = this.Relations["FK_Mechanics_Protocols"];
+            this.relationFK_Operators_Protocols = this.Relations["FK_Operators_Protocols"];
             this.relationFK_CarGroup_Normatives = this.Relations["FK_CarGroup_Normatives"];
             this.relationFK_Protocols_Mesures = this.Relations["FK_Protocols_Mesures"];
         }
@@ -368,8 +341,6 @@ namespace adovipavto {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableOperators = new OperatorsDataTable();
             base.Tables.Add(this.tableOperators);
-            this.tableLogs = new LogsDataTable();
-            base.Tables.Add(this.tableLogs);
             this.tableProtocols = new ProtocolsDataTable();
             base.Tables.Add(this.tableProtocols);
             this.tableMechanics = new MechanicsDataTable();
@@ -381,16 +352,9 @@ namespace adovipavto {
             this.tableMesures = new MesuresDataTable();
             base.Tables.Add(this.tableMesures);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Operators_Logs", new global::System.Data.DataColumn[] {
-                        this.tableOperators.OperatorIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLogs.IDOperatorColumn});
-            this.tableLogs.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Operators_Protocols", new global::System.Data.DataColumn[] {
-                        this.tableOperators.OperatorIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableProtocols.IDOperatorColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_CarGroup_Protocols", new global::System.Data.DataColumn[] {
+                        this.tableCarGroup.GroupIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableProtocols.IDGroupColumn});
             this.tableProtocols.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
@@ -402,9 +366,9 @@ namespace adovipavto {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_CarGroup_Protocols", new global::System.Data.DataColumn[] {
-                        this.tableCarGroup.GroupIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableProtocols.IDGroupColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Operators_Protocols", new global::System.Data.DataColumn[] {
+                        this.tableOperators.OperatorIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableProtocols.IDOperatorColumn});
             this.tableProtocols.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
@@ -423,22 +387,18 @@ namespace adovipavto {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationFK_Operators_Logs = new global::System.Data.DataRelation("FK_Operators_Logs", new global::System.Data.DataColumn[] {
-                        this.tableOperators.OperatorIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLogs.IDOperatorColumn}, false);
-            this.Relations.Add(this.relationFK_Operators_Logs);
-            this.relationFK_Operators_Protocols = new global::System.Data.DataRelation("FK_Operators_Protocols", new global::System.Data.DataColumn[] {
-                        this.tableOperators.OperatorIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableProtocols.IDOperatorColumn}, false);
-            this.Relations.Add(this.relationFK_Operators_Protocols);
-            this.relationFK_Mechanics_Protocols = new global::System.Data.DataRelation("FK_Mechanics_Protocols", new global::System.Data.DataColumn[] {
-                        this.tableMechanics.MechanicIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableProtocols.IDMechanicColumn}, false);
-            this.Relations.Add(this.relationFK_Mechanics_Protocols);
             this.relationFK_CarGroup_Protocols = new global::System.Data.DataRelation("FK_CarGroup_Protocols", new global::System.Data.DataColumn[] {
                         this.tableCarGroup.GroupIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableProtocols.IDGroupColumn}, false);
             this.Relations.Add(this.relationFK_CarGroup_Protocols);
+            this.relationFK_Mechanics_Protocols = new global::System.Data.DataRelation("FK_Mechanics_Protocols", new global::System.Data.DataColumn[] {
+                        this.tableMechanics.MechanicIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableProtocols.IDMechanicColumn}, false);
+            this.Relations.Add(this.relationFK_Mechanics_Protocols);
+            this.relationFK_Operators_Protocols = new global::System.Data.DataRelation("FK_Operators_Protocols", new global::System.Data.DataColumn[] {
+                        this.tableOperators.OperatorIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableProtocols.IDOperatorColumn}, false);
+            this.Relations.Add(this.relationFK_Operators_Protocols);
             this.relationFK_CarGroup_Normatives = new global::System.Data.DataRelation("FK_CarGroup_Normatives", new global::System.Data.DataColumn[] {
                         this.tableCarGroup.GroupIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableNormatives.IDGroupColumn}, false);
@@ -452,12 +412,6 @@ namespace adovipavto {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeOperators() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeLogs() {
             return false;
         }
         
@@ -548,9 +502,6 @@ namespace adovipavto {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void OperatorsRowChangeEventHandler(object sender, OperatorsRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void LogsRowChangeEventHandler(object sender, LogsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void ProtocolsRowChangeEventHandler(object sender, ProtocolsRowChangeEvent e);
@@ -864,325 +815,6 @@ namespace adovipavto {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "OperatorsDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class LogsDataTable : global::System.Data.TypedTableBase<LogsRow> {
-            
-            private global::System.Data.DataColumn columnLogItemID;
-            
-            private global::System.Data.DataColumn columnType;
-            
-            private global::System.Data.DataColumn columnDateTime;
-            
-            private global::System.Data.DataColumn columnIDOperator;
-            
-            private global::System.Data.DataColumn columnExitDateTime;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LogsDataTable() {
-                this.TableName = "Logs";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal LogsDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected LogsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LogItemIDColumn {
-                get {
-                    return this.columnLogItemID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TypeColumn {
-                get {
-                    return this.columnType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DateTimeColumn {
-                get {
-                    return this.columnDateTime;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDOperatorColumn {
-                get {
-                    return this.columnIDOperator;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ExitDateTimeColumn {
-                get {
-                    return this.columnExitDateTime;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LogsRow this[int index] {
-                get {
-                    return ((LogsRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event LogsRowChangeEventHandler LogsRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event LogsRowChangeEventHandler LogsRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event LogsRowChangeEventHandler LogsRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event LogsRowChangeEventHandler LogsRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddLogsRow(LogsRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LogsRow AddLogsRow(string Type, System.DateTime DateTime, OperatorsRow parentOperatorsRowByFK_Operators_Logs, System.DateTime ExitDateTime) {
-                LogsRow rowLogsRow = ((LogsRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        Type,
-                        DateTime,
-                        null,
-                        ExitDateTime};
-                if ((parentOperatorsRowByFK_Operators_Logs != null)) {
-                    columnValuesArray[3] = parentOperatorsRowByFK_Operators_Logs[0];
-                }
-                rowLogsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowLogsRow);
-                return rowLogsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LogsRow FindByLogItemID(int LogItemID) {
-                return ((LogsRow)(this.Rows.Find(new object[] {
-                            LogItemID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                LogsDataTable cln = ((LogsDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new LogsDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnLogItemID = base.Columns["LogItemID"];
-                this.columnType = base.Columns["Type"];
-                this.columnDateTime = base.Columns["DateTime"];
-                this.columnIDOperator = base.Columns["IDOperator"];
-                this.columnExitDateTime = base.Columns["ExitDateTime"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnLogItemID = new global::System.Data.DataColumn("LogItemID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLogItemID);
-                this.columnType = new global::System.Data.DataColumn("Type", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnType);
-                this.columnDateTime = new global::System.Data.DataColumn("DateTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDateTime);
-                this.columnIDOperator = new global::System.Data.DataColumn("IDOperator", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIDOperator);
-                this.columnExitDateTime = new global::System.Data.DataColumn("ExitDateTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExitDateTime);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("LogsKey1", new global::System.Data.DataColumn[] {
-                                this.columnLogItemID}, true));
-                this.columnLogItemID.AutoIncrement = true;
-                this.columnLogItemID.AllowDBNull = false;
-                this.columnLogItemID.ReadOnly = true;
-                this.columnLogItemID.Unique = true;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LogsRow NewLogsRow() {
-                return ((LogsRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new LogsRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(LogsRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.LogsRowChanged != null)) {
-                    this.LogsRowChanged(this, new LogsRowChangeEvent(((LogsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.LogsRowChanging != null)) {
-                    this.LogsRowChanging(this, new LogsRowChangeEvent(((LogsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.LogsRowDeleted != null)) {
-                    this.LogsRowDeleted(this, new LogsRowChangeEvent(((LogsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.LogsRowDeleting != null)) {
-                    this.LogsRowDeleting(this, new LogsRowChangeEvent(((LogsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveLogsRow(LogsRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                VipAvtoSet ds = new VipAvtoSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "LogsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3009,166 +2641,6 @@ namespace adovipavto {
                     return ((ProtocolsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Operators_Protocols"])));
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LogsRow[] GetLogsRows() {
-                if ((this.Table.ChildRelations["FK_Operators_Logs"] == null)) {
-                    return new LogsRow[0];
-                }
-                else {
-                    return ((LogsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Operators_Logs"])));
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class LogsRow : global::System.Data.DataRow {
-            
-            private LogsDataTable tableLogs;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal LogsRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableLogs = ((LogsDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int LogItemID {
-                get {
-                    return ((int)(this[this.tableLogs.LogItemIDColumn]));
-                }
-                set {
-                    this[this.tableLogs.LogItemIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Type {
-                get {
-                    try {
-                        return ((string)(this[this.tableLogs.TypeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Type\' in table \'Logs\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableLogs.TypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DateTime {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableLogs.DateTimeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DateTime\' in table \'Logs\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableLogs.DateTimeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int IDOperator {
-                get {
-                    try {
-                        return ((int)(this[this.tableLogs.IDOperatorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'IDOperator\' in table \'Logs\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableLogs.IDOperatorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime ExitDateTime {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableLogs.ExitDateTimeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ExitDateTime\' in table \'Logs\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableLogs.ExitDateTimeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public OperatorsRow OperatorsRow {
-                get {
-                    return ((OperatorsRow)(this.GetParentRow(this.Table.ParentRelations["FK_Operators_Logs"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Operators_Logs"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTypeNull() {
-                return this.IsNull(this.tableLogs.TypeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTypeNull() {
-                this[this.tableLogs.TypeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDateTimeNull() {
-                return this.IsNull(this.tableLogs.DateTimeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDateTimeNull() {
-                this[this.tableLogs.DateTimeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsIDOperatorNull() {
-                return this.IsNull(this.tableLogs.IDOperatorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetIDOperatorNull() {
-                this[this.tableLogs.IDOperatorColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExitDateTimeNull() {
-                return this.IsNull(this.tableLogs.ExitDateTimeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExitDateTimeNull() {
-                this[this.tableLogs.ExitDateTimeColumn] = global::System.Convert.DBNull;
-            }
         }
         
         /// <summary>
@@ -3347,12 +2819,12 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public OperatorsRow OperatorsRow {
+            public CarGroupRow CarGroupRow {
                 get {
-                    return ((OperatorsRow)(this.GetParentRow(this.Table.ParentRelations["FK_Operators_Protocols"])));
+                    return ((CarGroupRow)(this.GetParentRow(this.Table.ParentRelations["FK_CarGroup_Protocols"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Operators_Protocols"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_CarGroup_Protocols"]);
                 }
             }
             
@@ -3369,12 +2841,12 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CarGroupRow CarGroupRow {
+            public OperatorsRow OperatorsRow {
                 get {
-                    return ((CarGroupRow)(this.GetParentRow(this.Table.ParentRelations["FK_CarGroup_Protocols"])));
+                    return ((OperatorsRow)(this.GetParentRow(this.Table.ParentRelations["FK_Operators_Protocols"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_CarGroup_Protocols"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Operators_Protocols"]);
                 }
             }
             
@@ -4177,40 +3649,6 @@ namespace adovipavto {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public OperatorsRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class LogsRowChangeEvent : global::System.EventArgs {
-            
-            private LogsRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LogsRowChangeEvent(LogsRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public LogsRow Row {
                 get {
                     return this.eventRow;
                 }

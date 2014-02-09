@@ -70,13 +70,6 @@ namespace adovipavto
                 VipAvtoDataSet.Tables[Constants.GroupTableName].WriteXml(path);
 
 
-            path = Constants.GetFullPath(Settings.Default.Logs);
-
-            if (File.Exists(path))
-                VipAvtoDataSet.Tables[Constants.LogsTableName].ReadXml(path);
-            else
-                VipAvtoDataSet.Tables[Constants.LogsTableName].WriteXml(path);
-
 
             path = Constants.GetFullPath(Settings.Default.Normatives);
 

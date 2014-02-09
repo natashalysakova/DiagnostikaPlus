@@ -8,9 +8,6 @@
     <Setting Name="Groups" Type="System.String" Scope="User">
       <Value Profile="(Default)">groups.xml</Value>
     </Setting>
-    <Setting Name="Logs" Type="System.String" Scope="User">
-      <Value Profile="(Default)">logs.xml</Value>
-    </Setting>
     <Setting Name="Normatives" Type="System.String" Scope="User">
       <Value Profile="(Default)">norms.xml</Value>
     </Setting>

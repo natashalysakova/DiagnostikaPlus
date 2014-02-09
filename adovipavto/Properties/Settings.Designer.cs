@@ -49,18 +49,6 @@ namespace adovipavto.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("logs.xml")]
-        public string Logs {
-            get {
-                return ((string)(this["Logs"]));
-            }
-            set {
-                this["Logs"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("norms.xml")]
         public string Normatives {
             get {

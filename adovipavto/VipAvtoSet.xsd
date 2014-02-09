@@ -12,7 +12,7 @@
   <xs:element name="VipAvtoSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="VipAvtoSet" msprop:Generator_UserDSName="VipAvtoSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Operators" msprop:Generator_TableClassName="OperatorsDataTable" msprop:Generator_TableVarName="tableOperators" msprop:Generator_TablePropName="Operators" msprop:Generator_RowDeletingName="OperatorsRowDeleting" msprop:Generator_RowChangingName="OperatorsRowChanging" msprop:Generator_RowEvHandlerName="OperatorsRowChangeEventHandler" msprop:Generator_RowDeletedName="OperatorsRowDeleted" msprop:Generator_UserTableName="Operators" msprop:Generator_RowChangedName="OperatorsRowChanged" msprop:Generator_RowEvArgName="OperatorsRowChangeEvent" msprop:Generator_RowClassName="OperatorsRow">
+        <xs:element name="Operators" msprop:Generator_TableClassName="OperatorsDataTable" msprop:Generator_TableVarName="tableOperators" msprop:Generator_RowChangedName="OperatorsRowChanged" msprop:Generator_TablePropName="Operators" msprop:Generator_RowDeletingName="OperatorsRowDeleting" msprop:Generator_RowChangingName="OperatorsRowChanging" msprop:Generator_RowEvHandlerName="OperatorsRowChangeEventHandler" msprop:Generator_RowDeletedName="OperatorsRowDeleted" msprop:Generator_RowClassName="OperatorsRow" msprop:Generator_UserTableName="Operators" msprop:Generator_RowEvArgName="OperatorsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OperatorId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnOperatorId" msprop:Generator_ColumnPropNameInRow="OperatorId" msprop:Generator_ColumnPropNameInTable="OperatorIdColumn" msprop:Generator_UserColumnName="OperatorId" type="xs:int" />
@@ -48,18 +48,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Logs" msprop:Generator_TableClassName="LogsDataTable" msprop:Generator_TableVarName="tableLogs" msprop:Generator_TablePropName="Logs" msprop:Generator_RowDeletingName="LogsRowDeleting" msprop:Generator_RowChangingName="LogsRowChanging" msprop:Generator_RowEvHandlerName="LogsRowChangeEventHandler" msprop:Generator_RowDeletedName="LogsRowDeleted" msprop:Generator_UserTableName="Logs" msprop:Generator_RowChangedName="LogsRowChanged" msprop:Generator_RowEvArgName="LogsRowChangeEvent" msprop:Generator_RowClassName="LogsRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="LogItemID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnLogItemID" msprop:Generator_ColumnPropNameInRow="LogItemID" msprop:Generator_ColumnPropNameInTable="LogItemIDColumn" msprop:Generator_UserColumnName="LogItemID" type="xs:int" />
-              <xs:element name="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" type="xs:string" minOccurs="0" />
-              <xs:element name="DateTime" msprop:Generator_ColumnVarNameInTable="columnDateTime" msprop:Generator_ColumnPropNameInRow="DateTime" msprop:Generator_ColumnPropNameInTable="DateTimeColumn" msprop:Generator_UserColumnName="DateTime" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="IDOperator" msprop:Generator_ColumnVarNameInTable="columnIDOperator" msprop:Generator_ColumnPropNameInRow="IDOperator" msprop:Generator_ColumnPropNameInTable="IDOperatorColumn" msprop:Generator_UserColumnName="IDOperator" type="xs:int" minOccurs="0" />
-              <xs:element name="ExitDateTime" msprop:Generator_ColumnVarNameInTable="columnExitDateTime" msprop:Generator_ColumnPropNameInRow="ExitDateTime" msprop:Generator_ColumnPropNameInTable="ExitDateTimeColumn" msprop:Generator_UserColumnName="ExitDateTime" type="xs:dateTime" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Protocols" msprop:Generator_TableClassName="ProtocolsDataTable" msprop:Generator_TableVarName="tableProtocols" msprop:Generator_RowChangedName="ProtocolsRowChanged" msprop:Generator_TablePropName="Protocols" msprop:Generator_RowDeletingName="ProtocolsRowDeleting" msprop:Generator_RowChangingName="ProtocolsRowChanging" msprop:Generator_RowEvHandlerName="ProtocolsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProtocolsRowDeleted" msprop:Generator_RowClassName="ProtocolsRow" msprop:Generator_UserTableName="Protocols" msprop:Generator_RowEvArgName="ProtocolsRowChangeEvent">
+        <xs:element name="Protocols" msprop:Generator_TableClassName="ProtocolsDataTable" msprop:Generator_TableVarName="tableProtocols" msprop:Generator_TablePropName="Protocols" msprop:Generator_RowDeletingName="ProtocolsRowDeleting" msprop:Generator_RowChangingName="ProtocolsRowChanging" msprop:Generator_RowEvHandlerName="ProtocolsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProtocolsRowDeleted" msprop:Generator_UserTableName="Protocols" msprop:Generator_RowChangedName="ProtocolsRowChanged" msprop:Generator_RowEvArgName="ProtocolsRowChangeEvent" msprop:Generator_RowClassName="ProtocolsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ProtocolID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnProtocolID" msprop:Generator_ColumnPropNameInRow="ProtocolID" msprop:Generator_ColumnPropNameInTable="ProtocolIDColumn" msprop:Generator_UserColumnName="ProtocolID" type="xs:int" minOccurs="0" />
@@ -75,7 +64,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Mechanics" msprop:Generator_TableClassName="MechanicsDataTable" msprop:Generator_TableVarName="tableMechanics" msprop:Generator_RowChangedName="MechanicsRowChanged" msprop:Generator_TablePropName="Mechanics" msprop:Generator_RowDeletingName="MechanicsRowDeleting" msprop:Generator_RowChangingName="MechanicsRowChanging" msprop:Generator_RowEvHandlerName="MechanicsRowChangeEventHandler" msprop:Generator_RowDeletedName="MechanicsRowDeleted" msprop:Generator_RowClassName="MechanicsRow" msprop:Generator_UserTableName="Mechanics" msprop:Generator_RowEvArgName="MechanicsRowChangeEvent">
+        <xs:element name="Mechanics" msprop:Generator_TableClassName="MechanicsDataTable" msprop:Generator_TableVarName="tableMechanics" msprop:Generator_TablePropName="Mechanics" msprop:Generator_RowDeletingName="MechanicsRowDeleting" msprop:Generator_RowChangingName="MechanicsRowChanging" msprop:Generator_RowEvHandlerName="MechanicsRowChangeEventHandler" msprop:Generator_RowDeletedName="MechanicsRowDeleted" msprop:Generator_UserTableName="Mechanics" msprop:Generator_RowChangedName="MechanicsRowChanged" msprop:Generator_RowEvArgName="MechanicsRowChangeEvent" msprop:Generator_RowClassName="MechanicsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MechanicID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnMechanicID" msprop:Generator_ColumnPropNameInRow="MechanicID" msprop:Generator_ColumnPropNameInTable="MechanicIDColumn" msprop:Generator_UserColumnName="MechanicID" type="xs:int" minOccurs="0" />
@@ -86,7 +75,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CarGroup" msprop:Generator_TableClassName="CarGroupDataTable" msprop:Generator_TableVarName="tableCarGroup" msprop:Generator_RowChangedName="CarGroupRowChanged" msprop:Generator_TablePropName="CarGroup" msprop:Generator_RowDeletingName="CarGroupRowDeleting" msprop:Generator_RowChangingName="CarGroupRowChanging" msprop:Generator_RowEvHandlerName="CarGroupRowChangeEventHandler" msprop:Generator_RowDeletedName="CarGroupRowDeleted" msprop:Generator_RowClassName="CarGroupRow" msprop:Generator_UserTableName="CarGroup" msprop:Generator_RowEvArgName="CarGroupRowChangeEvent">
+        <xs:element name="CarGroup" msprop:Generator_TableClassName="CarGroupDataTable" msprop:Generator_TableVarName="tableCarGroup" msprop:Generator_TablePropName="CarGroup" msprop:Generator_RowDeletingName="CarGroupRowDeleting" msprop:Generator_RowChangingName="CarGroupRowChanging" msprop:Generator_RowEvHandlerName="CarGroupRowChangeEventHandler" msprop:Generator_RowDeletedName="CarGroupRowDeleted" msprop:Generator_UserTableName="CarGroup" msprop:Generator_RowChangedName="CarGroupRowChanged" msprop:Generator_RowEvArgName="CarGroupRowChangeEvent" msprop:Generator_RowClassName="CarGroupRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="GroupID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnGroupID" msprop:Generator_ColumnPropNameInRow="GroupID" msprop:Generator_ColumnPropNameInTable="GroupIDColumn" msprop:Generator_UserColumnName="GroupID" type="xs:int" minOccurs="0" />
@@ -97,7 +86,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Normatives" msprop:Generator_TableClassName="NormativesDataTable" msprop:Generator_TableVarName="tableNormatives" msprop:Generator_RowChangedName="NormativesRowChanged" msprop:Generator_TablePropName="Normatives" msprop:Generator_RowDeletingName="NormativesRowDeleting" msprop:Generator_RowChangingName="NormativesRowChanging" msprop:Generator_RowEvHandlerName="NormativesRowChangeEventHandler" msprop:Generator_RowDeletedName="NormativesRowDeleted" msprop:Generator_RowClassName="NormativesRow" msprop:Generator_UserTableName="Normatives" msprop:Generator_RowEvArgName="NormativesRowChangeEvent">
+        <xs:element name="Normatives" msprop:Generator_TableClassName="NormativesDataTable" msprop:Generator_TableVarName="tableNormatives" msprop:Generator_TablePropName="Normatives" msprop:Generator_RowDeletingName="NormativesRowDeleting" msprop:Generator_RowChangingName="NormativesRowChanging" msprop:Generator_RowEvHandlerName="NormativesRowChangeEventHandler" msprop:Generator_RowDeletedName="NormativesRowDeleted" msprop:Generator_UserTableName="Normatives" msprop:Generator_RowChangedName="NormativesRowChanged" msprop:Generator_RowEvArgName="NormativesRowChangeEvent" msprop:Generator_RowClassName="NormativesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NormativeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnNormativeID" msprop:Generator_ColumnPropNameInRow="NormativeID" msprop:Generator_ColumnPropNameInTable="NormativeIDColumn" msprop:Generator_UserColumnName="NormativeID" type="xs:int" minOccurs="0" />
@@ -108,7 +97,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Mesures" msprop:Generator_TableClassName="MesuresDataTable" msprop:Generator_TableVarName="tableMesures" msprop:Generator_TablePropName="Mesures" msprop:Generator_RowDeletingName="MesuresRowDeleting" msprop:Generator_RowChangingName="MesuresRowChanging" msprop:Generator_RowEvHandlerName="MesuresRowChangeEventHandler" msprop:Generator_RowDeletedName="MesuresRowDeleted" msprop:Generator_UserTableName="Mesures" msprop:Generator_RowChangedName="MesuresRowChanged" msprop:Generator_RowEvArgName="MesuresRowChangeEvent" msprop:Generator_RowClassName="MesuresRow">
+        <xs:element name="Mesures" msprop:Generator_TableClassName="MesuresDataTable" msprop:Generator_TableVarName="tableMesures" msprop:Generator_RowChangedName="MesuresRowChanged" msprop:Generator_TablePropName="Mesures" msprop:Generator_RowDeletingName="MesuresRowDeleting" msprop:Generator_RowChangingName="MesuresRowChanging" msprop:Generator_RowEvHandlerName="MesuresRowChangeEventHandler" msprop:Generator_RowDeletedName="MesuresRowDeleted" msprop:Generator_RowClassName="MesuresRow" msprop:Generator_UserTableName="Mesures" msprop:Generator_RowEvArgName="MesuresRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MesureID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnMesureID" msprop:Generator_ColumnPropNameInRow="MesureID" msprop:Generator_ColumnPropNameInTable="MesureIDColumn" msprop:Generator_UserColumnName="MesureID" type="xs:int" minOccurs="0" />
@@ -127,10 +116,6 @@
     <xs:unique name="Constraint1">
       <xs:selector xpath=".//mstns:Operators" />
       <xs:field xpath="mstns:Login" />
-    </xs:unique>
-    <xs:unique name="LogsKey1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Logs" />
-      <xs:field xpath="mstns:LogItemID" />
     </xs:unique>
     <xs:unique name="Protocols_Constraint1" msdata:ConstraintName="Constraint1">
       <xs:selector xpath=".//mstns:Protocols" />
@@ -152,28 +137,24 @@
       <xs:selector xpath=".//mstns:Mesures" />
       <xs:field xpath="mstns:MesureID" />
     </xs:unique>
-    <xs:keyref name="FK_Protocols_Mesures" refer="Protocols_Constraint1" msprop:rel_Generator_UserChildTable="Mesures" msprop:rel_Generator_ChildPropName="GetMesuresRows" msprop:rel_Generator_UserRelationName="FK_Protocols_Mesures" msprop:rel_Generator_ParentPropName="ProtocolsRow" msprop:rel_Generator_RelationVarName="relationFK_Protocols_Mesures" msprop:rel_Generator_UserParentTable="Protocols">
+    <xs:keyref name="FK_Protocols_Mesures" refer="Protocols_Constraint1" msprop:rel_Generator_UserChildTable="Mesures" msprop:rel_Generator_ChildPropName="GetMesuresRows" msprop:rel_Generator_UserRelationName="FK_Protocols_Mesures" msprop:rel_Generator_RelationVarName="relationFK_Protocols_Mesures" msprop:rel_Generator_UserParentTable="Protocols" msprop:rel_Generator_ParentPropName="ProtocolsRow">
       <xs:selector xpath=".//mstns:Mesures" />
       <xs:field xpath="mstns:IDProtocol" />
     </xs:keyref>
-    <xs:keyref name="FK_CarGroup_Normatives" refer="CarGroup_Constraint1" msprop:rel_Generator_UserChildTable="Normatives" msprop:rel_Generator_ChildPropName="GetNormativesRows" msprop:rel_Generator_UserRelationName="FK_CarGroup_Normatives" msprop:rel_Generator_ParentPropName="CarGroupRow" msprop:rel_Generator_RelationVarName="relationFK_CarGroup_Normatives" msprop:rel_Generator_UserParentTable="CarGroup" msdata:AcceptRejectRule="Cascade">
+    <xs:keyref name="FK_CarGroup_Normatives" refer="CarGroup_Constraint1" msprop:rel_Generator_UserChildTable="Normatives" msprop:rel_Generator_ChildPropName="GetNormativesRows" msprop:rel_Generator_UserRelationName="FK_CarGroup_Normatives" msprop:rel_Generator_RelationVarName="relationFK_CarGroup_Normatives" msprop:rel_Generator_UserParentTable="CarGroup" msprop:rel_Generator_ParentPropName="CarGroupRow" msdata:AcceptRejectRule="Cascade">
       <xs:selector xpath=".//mstns:Normatives" />
       <xs:field xpath="mstns:IDGroup" />
     </xs:keyref>
-    <xs:keyref name="FK_Operators_Protocols" refer="OperatorsKey1" msprop:rel_Generator_UserChildTable="Protocols" msprop:rel_Generator_ChildPropName="GetProtocolsRows" msprop:rel_Generator_UserRelationName="FK_Operators_Protocols" msprop:rel_Generator_RelationVarName="relationFK_Operators_Protocols" msprop:rel_Generator_UserParentTable="Operators" msprop:rel_Generator_ParentPropName="OperatorsRow">
-      <xs:selector xpath=".//mstns:Protocols" />
-      <xs:field xpath="mstns:IDOperator" />
-    </xs:keyref>
-    <xs:keyref name="FK_Mechanics_Protocols" refer="Mechanics_Constraint1" msprop:rel_Generator_UserChildTable="Protocols" msprop:rel_Generator_ChildPropName="GetProtocolsRows" msprop:rel_Generator_UserRelationName="FK_Mechanics_Protocols" msprop:rel_Generator_ParentPropName="MechanicsRow" msprop:rel_Generator_RelationVarName="relationFK_Mechanics_Protocols" msprop:rel_Generator_UserParentTable="Mechanics">
-      <xs:selector xpath=".//mstns:Protocols" />
-      <xs:field xpath="mstns:IDMechanic" />
-    </xs:keyref>
-    <xs:keyref name="FK_CarGroup_Protocols" refer="CarGroup_Constraint1" msprop:rel_Generator_UserChildTable="Protocols" msprop:rel_Generator_ChildPropName="GetProtocolsRows" msprop:rel_Generator_UserRelationName="FK_CarGroup_Protocols" msprop:rel_Generator_ParentPropName="CarGroupRow" msprop:rel_Generator_RelationVarName="relationFK_CarGroup_Protocols" msprop:rel_Generator_UserParentTable="CarGroup">
+    <xs:keyref name="FK_CarGroup_Protocols" refer="CarGroup_Constraint1" msprop:rel_Generator_UserChildTable="Protocols" msprop:rel_Generator_ChildPropName="GetProtocolsRows" msprop:rel_Generator_UserRelationName="FK_CarGroup_Protocols" msprop:rel_Generator_RelationVarName="relationFK_CarGroup_Protocols" msprop:rel_Generator_UserParentTable="CarGroup" msprop:rel_Generator_ParentPropName="CarGroupRow">
       <xs:selector xpath=".//mstns:Protocols" />
       <xs:field xpath="mstns:IDGroup" />
     </xs:keyref>
-    <xs:keyref name="FK_Operators_Logs" refer="OperatorsKey1" msprop:rel_Generator_UserChildTable="Logs" msprop:rel_Generator_ChildPropName="GetLogsRows" msprop:rel_Generator_UserRelationName="FK_Operators_Logs" msprop:rel_Generator_ParentPropName="OperatorsRow" msprop:rel_Generator_RelationVarName="relationFK_Operators_Logs" msprop:rel_Generator_UserParentTable="Operators">
-      <xs:selector xpath=".//mstns:Logs" />
+    <xs:keyref name="FK_Mechanics_Protocols" refer="Mechanics_Constraint1" msprop:rel_Generator_UserChildTable="Protocols" msprop:rel_Generator_ChildPropName="GetProtocolsRows" msprop:rel_Generator_UserRelationName="FK_Mechanics_Protocols" msprop:rel_Generator_RelationVarName="relationFK_Mechanics_Protocols" msprop:rel_Generator_UserParentTable="Mechanics" msprop:rel_Generator_ParentPropName="MechanicsRow">
+      <xs:selector xpath=".//mstns:Protocols" />
+      <xs:field xpath="mstns:IDMechanic" />
+    </xs:keyref>
+    <xs:keyref name="FK_Operators_Protocols" refer="OperatorsKey1" msprop:rel_Generator_UserChildTable="Protocols" msprop:rel_Generator_ChildPropName="GetProtocolsRows" msprop:rel_Generator_UserRelationName="FK_Operators_Protocols" msprop:rel_Generator_ParentPropName="OperatorsRow" msprop:rel_Generator_RelationVarName="relationFK_Operators_Protocols" msprop:rel_Generator_UserParentTable="Operators">
+      <xs:selector xpath=".//mstns:Protocols" />
       <xs:field xpath="mstns:IDOperator" />
     </xs:keyref>
   </xs:element>

@@ -16,7 +16,6 @@ namespace adovipavto.Classes
         public const string ProtocolsTableName = "Protocols";
         public const string MechanicsTableName = "Mechanics";
         public const string OperatorsTableName = "Operators";
-        public const string LogsTableName = "Logs";
         public const string MesuresTableName = "Mesures";
 
 

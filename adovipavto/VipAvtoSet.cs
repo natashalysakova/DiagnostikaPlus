@@ -191,23 +191,6 @@ namespace adovipavto
 
         #endregion
 
-        #region LogMethods
-
-        internal int AddEnterLog(int id)
-        {
-            DataRow r = Program.VipAvtoDataSet.Tables[Constants.LogsTableName].NewRow();
-            r["Type"] = "Enter";
-            r["DateTime"] = DateTime.Now;
-            r["IDOperator"] = id;
-            Tables[Constants.LogsTableName].Rows.Add(r);
-            AcceptChanges();
-            Tables[Constants.LogsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Logs));
-
-            return (int) r["LogItemID"];
-        }
-
-        #endregion
-
         #region OperatorMethods
 
         internal void CreateAdministratorUser()
@@ -246,8 +229,6 @@ namespace adovipavto
             {
                 case Constants.GroupTableName:
                     return Constants.GetFullPath(Settings.Default.Groups);
-                case Constants.LogsTableName:
-                    return Constants.GetFullPath(Settings.Default.Logs);
                 case Constants.MechanicsTableName:
                     return Constants.GetFullPath(Settings.Default.Mechanics);
                 case Constants.NormativesTableName:
@@ -403,7 +384,7 @@ namespace adovipavto
             DataRow r = GetUserByLogin(name);
 
             _currentOperator = new Operator((Rights) r["Right"], (int) r["OperatorId"], r["Name"].ToString(),
-                r["LastName"].ToString(), AddEnterLog((int) r["OperatorId"]));
+                r["LastName"].ToString());
         }
 
         private DataRow GetUserByLogin(string name)
@@ -451,19 +432,6 @@ namespace adovipavto
             return row.GetChildRows(relationFK_Protocols_Mesures);
         }
 
-        internal void OperatorExit()
-        {
-            if (_currentOperator != null)
-            {
-                DataRow r = GetRowById(Constants.LogsTableName, _currentOperator.SessionId);
-
-
-                r["ExitDateTime"] = DateTime.Now;
-
-                Tables[Constants.LogsTableName].AcceptChanges();
-                Tables[Constants.LogsTableName].WriteXml(Settings.Default.Logs);
-            }
-        }
 
         internal bool GroupContainsNormative(string groupname, string normativename)
         {
