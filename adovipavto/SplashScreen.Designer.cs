@@ -1,6 +1,6 @@
 ﻿namespace adovipavto
 {
-    partial class SplashScreen
+    sealed partial class SplashScreen
     {
         /// <summary>
         /// Required designer variable.

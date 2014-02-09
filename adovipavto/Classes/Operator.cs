@@ -1,6 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization;
-using adovipavto.Enums;
+﻿using adovipavto.Enums;
 
 namespace adovipavto.Classes
 {
@@ -18,7 +16,5 @@ namespace adovipavto.Classes
         public int Id { get; private set; }
         public string Name { get; private set; }
         public string LastName { get; private set; }
-        public int SessionId { get; private set; }
     }
-
 }

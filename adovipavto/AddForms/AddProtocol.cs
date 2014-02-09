@@ -1,36 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using adovipavto.Classes;
 using adovipavto.Enums;
+using adovipavto.Properties;
 
 namespace adovipavto.AddForms
 {
     public partial class AddProtocol : Form
     {
-        private List<VisualRow> rows;
+        private readonly MainForm _mainForm;
 
-        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
+        private int _newProtocolId;
+        private DataRow[] _normatives;
+        private List<VisualRow> _rows;
 
         public AddProtocol(MainForm mainForm)
         {
             _mainForm = mainForm;
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             InitializeComponent();
 
 
-            rows = new List<VisualRow>();
+            _rows = new List<VisualRow>();
         }
 
         private void AddProtocol_Load(object sender, EventArgs e)
@@ -38,100 +41,95 @@ namespace adovipavto.AddForms
             CleanFields();
             UpdateFormLables();
 
-            object[] groups = (
+            string[] groups = (
                 from DataRow item in Program.VipAvtoDataSet.Tables[Constants.GroupTableName].Rows
-                select Program.VipAvtoDataSet.CreateGroupTitle((int)item["GroupID"])).ToArray();
+                select Program.VipAvtoDataSet.CreateGroupTitle((int) item["GroupID"])).ToArray();
 
             if (groups.Length == 0)
             {
-                MessageBox.Show(rm.GetString("nogroup"),
-                    rm.GetString("warning"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(_rm.GetString("nogroup"),
+                    _rm.GetString("warning"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Close();
             }
 
+// ReSharper disable once CoVariantArrayConversion
             comboBox1.Items.AddRange(groups);
 
             dateTimePicker1.Value = DateTime.Now;
 
-            var mechanics = (
+            string[] mechanics = (
                 from DataRow item in Program.VipAvtoDataSet.Tables[Constants.MechanicsTableName].Rows
-                where (int)item["State"] != (int)State.Unemployed
+                where (int) item["State"] != (int) State.Unemployed
                 select
-                    Program.VipAvtoDataSet.GetShortMechanicName((int)item["MechanicID"])
+                    Program.VipAvtoDataSet.GetShortMechanicName((int) item["MechanicID"])
                 ).ToArray();
             if (mechanics.Length == 0)
             {
-                MessageBox.Show(rm.GetString("nomech"),
-                    rm.GetString("warning"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(_rm.GetString("nomech"),
+                    _rm.GetString("warning"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Close();
             }
             comboBox2.DataSource = mechanics;
-            comboBox2.Text = Properties.Settings.Default.LastUsedMechanic;
+            comboBox2.Text = Settings.Default.LastUsedMechanic;
 
             maskedTextBox1.SelectionStart = 6;
             maskedTextBox1.SelectionLength = 2;
-
         }
 
         private void UpdateFormLables()
         {
-            brakesystem.Text = rm.GetString("brakeSystem");
-            OUTSRTS.Text = rm.GetString("OUTSRTS");
-            OUTSSTS.Text = rm.GetString("OUTSSTS");
-            ORTS1.Text = rm.GetString("ORTS1");
-            ORTS2.Text = rm.GetString("ORTS2");
-            ORTS3.Text = rm.GetString("ORTS3");
-            ORTSS.Text = rm.GetString("ORTSSS");
-            MVSTS.Text = rm.GetString("MVSTS");
-            KUNOU1.Text = rm.GetString("KUNOU1");
+            brakesystem.Text = _rm.GetString("brakeSystem");
+            OUTSRTS.Text = _rm.GetString("OUTSRTS");
+            OUTSSTS.Text = _rm.GetString("OUTSSTS");
+            ORTS1.Text = _rm.GetString("ORTS1");
+            ORTS2.Text = _rm.GetString("ORTS2");
+            ORTS3.Text = _rm.GetString("ORTS3");
+            ORTSS.Text = _rm.GetString("ORTSSS");
+            MVSTS.Text = _rm.GetString("MVSTS");
+            KUNOU1.Text = _rm.GetString("KUNOU1");
 
 
-            lightSystem.Text = rm.GetString("lightSystem");
-            SSFBS.Text = rm.GetString("SSFBS");
-            SSFDS.Text = rm.GetString("SSFDS");
-            SSPF.Text = rm.GetString("SSPF");
-            CHPUP.Text = rm.GetString("CHPUP");
+            lightSystem.Text = _rm.GetString("lightSystem");
+            SSFBS.Text = _rm.GetString("SSFBS");
+            SSFDS.Text = _rm.GetString("SSFDS");
+            SSPF.Text = _rm.GetString("SSPF");
+            CHPUP.Text = _rm.GetString("CHPUP");
 
-            engineAndItsSystem.Text = rm.GetString("engineAndItsSystem");
-            SCOMCHV.Text = rm.GetString("SCOMCHV");
-            SCOMACHV.Text = rm.GetString("SCOMACHV");
-            SCHVCHV.Text = rm.GetString("SCHMCHV");
-            SCHMACHV.Text = rm.GetString("SCHMACHV");
-            DVRSUM.Text = rm.GetString("DVRSUM");
-            DVRSUP.Text = rm.GetString("DVRSUP");
+            engineAndItsSystem.Text = _rm.GetString("engineAndItsSystem");
+            SCOMCHV.Text = _rm.GetString("SCOMCHV");
+            SCOMACHV.Text = _rm.GetString("SCOMACHV");
+            SCHVCHV.Text = _rm.GetString("SCHMCHV");
+            SCHMACHV.Text = _rm.GetString("SCHMACHV");
+            DVRSUM.Text = _rm.GetString("DVRSUM");
+            DVRSUP.Text = _rm.GetString("DVRSUP");
             //CHVNMO.Text = rm.GetString("CHVNMO");
             //CHVNPO.Text = rm.GetString("CHVNPO");
 
-            GBO.Text = rm.GetString("GGBS");
-            radioButton6.Text = rm.GetString("germ");
-            radioButton7.Text = rm.GetString("nogerm");
+            GBO.Text = _rm.GetString("GGBS");
+            radioButton6.Text = _rm.GetString("germ");
+            radioButton7.Text = _rm.GetString("nogerm");
 
-            glass.Text = rm.GetString("glass");
-            PVS.Text = rm.GetString("PVS");
-            PPBS.Text = rm.GetString("PPBS");
+            glass.Text = _rm.GetString("glass");
+            PVS.Text = _rm.GetString("PVS");
+            PPBS.Text = _rm.GetString("PPBS");
 
-            wheelSystem.Text = rm.GetString("wheelSystem");
-            SL.Text = rm.GetString("SL");
-
-
-            noise.Text = rm.GetString("noise");
-            VSHA.Text = rm.GetString("VSHA");
-
-            wheelAndTyres.Text = rm.GetString("wheelAndTyres");
-            OVRP.Text = rm.GetString("OVRP");
-            visualCheck.Text = rm.GetString("visualCheck");
-
-            radioButton1.Text = rm.GetString("check");
-            radioButton2.Text = rm.GetString("uncheck");
+            wheelSystem.Text = _rm.GetString("wheelSystem");
+            SL.Text = _rm.GetString("SL");
 
 
+            noise.Text = _rm.GetString("noise");
+            VSHA.Text = _rm.GetString("VSHA");
 
-            label79.Text = rm.GetString("notAllFields");
+            wheelAndTyres.Text = _rm.GetString("wheelAndTyres");
+            OVRP.Text = _rm.GetString("OVRP");
+            visualCheck.Text = _rm.GetString("visualCheck");
+
+            radioButton1.Text = _rm.GetString("check");
+            radioButton2.Text = _rm.GetString("uncheck");
+
+
+            label79.Text = _rm.GetString("notAllFields");
         }
-
-        private DataRow[] normatives;
-        private int _newProtocolId;
-        private MainForm _mainForm;
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -146,12 +144,11 @@ namespace adovipavto.AddForms
             panel1.Enabled = true;
             if (Program.VipAvtoDataSet.GroupWithGasEngine(comboBox1.SelectedItem.ToString()))
             {
-                if (MessageBox.Show(rm.GetString("IsGBOActive"), rm.GetString("warning"), MessageBoxButtons.YesNo,
+                if (MessageBox.Show(_rm.GetString("IsGBOActive"), _rm.GetString("warning"), MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     GBO.Enabled = true;
                     GBO.BackColor = Color.LightGoldenrodYellow;
-
                 }
                 else
                 {
@@ -171,25 +168,25 @@ namespace adovipavto.AddForms
             PrintBtn.Enabled = true;
 
 
-            rows = new List<VisualRow>();
+            _rows = new List<VisualRow>();
 
             CleanFields();
 
 
             int id = Program.VipAvtoDataSet.GetGroupId(comboBox1.SelectedItem.ToString());
 
-            normatives = (
+            _normatives = (
                 from DataRow item in Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].Rows
-                where (int)item["IDGroup"] == id
+                where (int) item["IDGroup"] == id
                 select item
                 ).ToArray();
 
 
-            foreach (DataRow normative in normatives)
+            foreach (DataRow normative in _normatives)
             {
-                VisualRow row = new VisualRow(normative);
+                var row = new VisualRow(normative);
 
-                List<Label> lables = new List<Label>();
+                var lables = new List<Label>();
 
 
                 foreach (Control control2 in panel1.Controls)
@@ -229,7 +226,7 @@ namespace adovipavto.AddForms
                     row.MinLabel = lables[0];
                 }
 
-                rows.Add(row);
+                _rows.Add(row);
 
                 visualCheck.BackColor = Color.LightGoldenrodYellow;
                 groupBox10.BackColor = Color.LightGoldenrodYellow;
@@ -247,11 +244,11 @@ namespace adovipavto.AddForms
             {
                 if (control is GroupBox)
                 {
-                    foreach (Control control2 in ((GroupBox)control).Controls)
+                    foreach (Control control2 in control.Controls)
                     {
                         if (control2 is TableLayoutPanel)
                         {
-                            foreach (Control control3 in ((TableLayoutPanel)control2).Controls)
+                            foreach (Control control3 in ((TableLayoutPanel) control2).Controls)
                             {
                                 if (control3 is TextBox)
                                 {
@@ -261,7 +258,7 @@ namespace adovipavto.AddForms
                                 }
                                 if (control3 is Label && control3.Tag != null)
                                 {
-                                    control3.Text = "0";
+                                    control3.Text = @"0";
                                 }
                             }
                         }
@@ -276,19 +273,18 @@ namespace adovipavto.AddForms
             radioButton5.Checked = false;
             radioButton6.Checked = false;
             radioButton7.Checked = false;
-
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!SaveProtocolToDB())
+            if (!SaveProtocolToDb())
             {
-                MessageBox.Show(rm.GetString("fillFields"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(_rm.GetString("fillFields"), _rm.GetString("error"), MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
@@ -303,20 +299,19 @@ namespace adovipavto.AddForms
             }
             else
             {
-                MessageBox.Show(rm.GetString("noprotocol"), rm.GetString("error"),
+                MessageBox.Show(_rm.GetString("noprotocol"), _rm.GetString("error"),
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
-        private bool SaveProtocolToDB()
+        private bool SaveProtocolToDb()
         {
             if (panel2.BackColor == Color.LightGoldenrodYellow)
                 return false;
 
 
-            Properties.Settings.Default.LastUsedMechanic = comboBox2.SelectedItem.ToString();
-            Properties.Settings.Default.Save();
+            Settings.Default.LastUsedMechanic = comboBox2.SelectedItem.ToString();
+            Settings.Default.Save();
 
 
             string techpass = "";
@@ -331,7 +326,7 @@ namespace adovipavto.AddForms
                 result = false;
             }
 
-            DateTime nexDateTime = dateTimePicker1.Value;
+            DateTime nexDateTime;
 
             if (radioButton4.Checked)
                 nexDateTime = dateTimePicker1.Value.AddMonths(6);
@@ -346,27 +341,27 @@ namespace adovipavto.AddForms
 
             if (GBO.Enabled == false)
             {
-                gbo = (int)Gbo.NotChecked;
+                gbo = (int) Gbo.NotChecked;
             }
             else
             {
                 if (radioButton6.Checked)
-                    gbo = (int)Gbo.Germetical;
+                    gbo = (int) Gbo.Germetical;
                 else
                 {
-                    gbo = (int)Gbo.NotGermrtical;
+                    gbo = (int) Gbo.NotGermrtical;
                 }
             }
 
 
             _newProtocolId = Program.VipAvtoDataSet.AddProtocol(label80.Text + maskedTextBox1.Text,
-comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, techpass, comboBox1.SelectedItem.ToString(), result, nexDateTime, radioButton1.Checked, gbo);
+                comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, techpass, comboBox1.SelectedItem.ToString(),
+                result, nexDateTime, radioButton1.Checked, gbo);
 
-            foreach (VisualRow row in rows)
+            foreach (VisualRow row in _rows)
             {
                 Program.VipAvtoDataSet.AddMesure(row.Id, row.Value, _newProtocolId);
             }
-
 
 
             return true;
@@ -399,30 +394,29 @@ comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, techpass, comboBox1.Se
             if (SomeRequred())
             {
                 panel2.BackColor = Color.LightGoldenrodYellow;
-                label79.Text = rm.GetString("notAllFields");
+                label79.Text = _rm.GetString("notAllFields");
             }
             else if (AllValide())
             {
                 panel2.BackColor = Color.LightGreen;
-                string s = rm.GetString("sucess");
+                string s = _rm.GetString("sucess");
                 if (s != null) label79.Text = s.ToUpper();
             }
             else
             {
                 {
                     panel2.BackColor = Color.LightPink;
-                    string s = rm.GetString("fail");
+                    string s = _rm.GetString("fail");
                     if (s != null) label79.Text = s.ToUpper();
                 }
             }
-
         }
 
         private bool SomeRequred()
         {
             bool result = false;
 
-            foreach (VisualRow row in rows)
+            foreach (VisualRow row in _rows)
             {
                 if (row.Requred())
                     result = true;
@@ -443,16 +437,13 @@ comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, techpass, comboBox1.Se
 
 
             return result;
-
-
-
         }
 
         private bool AllValide()
         {
             bool result = true;
 
-            foreach (VisualRow row in rows)
+            foreach (VisualRow row in _rows)
             {
                 if (!row.IsValid())
                     result = false;
@@ -482,7 +473,6 @@ comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, techpass, comboBox1.Se
                 maskedTextBox1.BackColor = Color.LightGreen;
 
                 UnlockFields();
-
             }
             else
             {
@@ -493,17 +483,16 @@ comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, techpass, comboBox1.Se
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (!SaveProtocolToDB())
+            if (!SaveProtocolToDb())
             {
-                MessageBox.Show(rm.GetString("fillFields"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(_rm.GetString("fillFields"), _rm.GetString("error"), MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
-
 
 
             _mainForm.UpdateRows();
@@ -515,33 +504,32 @@ comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, techpass, comboBox1.Se
 
                 new ProtocolReportForm(protocol, mesures).ShowDialog();
                 DialogResult = DialogResult.OK;
-
             }
             else
             {
-                MessageBox.Show(rm.GetString("noprotocol"), rm.GetString("error"),
+                MessageBox.Show(_rm.GetString("noprotocol"), _rm.GetString("error"),
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (!SaveProtocolToDB())
+            if (!SaveProtocolToDb())
             {
-                MessageBox.Show(rm.GetString("fillFields"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(_rm.GetString("fillFields"), _rm.GetString("error"), MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
             DialogResult = DialogResult.OK;
-
         }
 
         private void pictureBox27_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                ((PictureBox)sender).Tag = openFileDialog1.FileName;
-                ((PictureBox)sender).Image = Image.FromFile(openFileDialog1.FileName);
+                ((PictureBox) sender).Tag = openFileDialog1.FileName;
+                ((PictureBox) sender).Image = Image.FromFile(openFileDialog1.FileName);
             }
         }
 

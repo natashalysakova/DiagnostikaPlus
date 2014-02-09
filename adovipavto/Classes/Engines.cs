@@ -1,35 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
+﻿using System.Globalization;
 using System.Reflection;
 using System.Resources;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using adovipavto.Properties;
 
 namespace adovipavto.Classes
 {
-    class Engines
+    internal class Engines
     {
-        private string[] engines;
+        private readonly string[] _engines;
 
         public Engines()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
-            ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            var rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-            engines = new[]
+            _engines = new[]
             {
                 /*0*/rm.GetString("gas"),
-                /*1*/rm.GetString("diesel"),
+                /*1*/rm.GetString("diesel")
             };
         }
 
         public string[] EnginesTitle
         {
-            get { return engines; }
+            get { return _engines; }
         }
 
         public int GetEngineIndex(string title)

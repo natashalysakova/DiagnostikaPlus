@@ -2,32 +2,34 @@
 using System.Data;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.AddForms;
 using adovipavto.Classes;
+using adovipavto.EditForms;
 using adovipavto.Enums;
+using adovipavto.Properties;
 
 namespace adovipavto
 {
     public partial class OperatorsForm : Form
     {
-        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
 
         public OperatorsForm()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             InitializeComponent();
             dataGridView1.DataSource = Program.VipAvtoDataSet.Tables[Constants.OperatorsTableName];
             //dataGridView1.DataSource = (
-                //from DataRow r in Program.VipAvtoDataSet.Tables[Constants.OperatorsTableName].Rows )
+            //from DataRow r in Program.VipAvtoDataSet.Tables[Constants.OperatorsTableName].Rows )
         }
 
-        private void OperatorsForm_Load(object sender, System.EventArgs e)
+        private void OperatorsForm_Load(object sender, EventArgs e)
         {
             UpdateRoles();
         }
@@ -36,7 +38,8 @@ namespace adovipavto
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                row.Cells["RightsString"].Value = Constants.GetEnumDescription((Rights)row.Cells["rightDataGridViewTextBoxColumn"].Value);
+                row.Cells["RightsString"].Value =
+                    Constants.GetEnumDescription((Rights) row.Cells["rightDataGridViewTextBoxColumn"].Value);
             }
         }
 
@@ -49,17 +52,17 @@ namespace adovipavto
         {
             if (dataGridView1.SelectedRows[0] != null)
             {
-                if (MessageBox.Show(rm.GetString("lockOperator"), rm.GetString("warning"),
+                if (MessageBox.Show(_rm.GetString("lockOperator"), _rm.GetString("warning"),
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {
-                    int id = (int) dataGridView1.SelectedRows[0].Cells["operatorIdDataGridViewTextBoxColumn"].Value;
-                    
+                    var id = (int) dataGridView1.SelectedRows[0].Cells["operatorIdDataGridViewTextBoxColumn"].Value;
+
                     if (AdministratorsCount() == 1 &&
                         (int) dataGridView1.SelectedRows[0].Cells["rightDataGridViewTextBoxColumn"].Value ==
                         (int) Rights.Administrator)
                     {
-                        MessageBox.Show(rm.GetString("cantLock"), rm.GetString("error"), MessageBoxButtons.OK,
+                        MessageBox.Show(_rm.GetString("cantLock"), _rm.GetString("error"), MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
                     else
@@ -67,8 +70,8 @@ namespace adovipavto
                         Program.VipAvtoDataSet.LockOperator(id);
                         if (id == Program.VipAvtoDataSet.GetOperatorId())
                         {
-                            MessageBox.Show(rm.GetString("reboot"), rm.GetString("warning"), MessageBoxButtons.OK,
-    MessageBoxIcon.Warning);
+                            MessageBox.Show(_rm.GetString("reboot"), _rm.GetString("warning"), MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
 
                             Application.Restart();
                         }
@@ -82,7 +85,7 @@ namespace adovipavto
         {
             return
                 Program.VipAvtoDataSet.Tables[Constants.OperatorsTableName].Select(string.Format("Right = {0}",
-                    (int)Rights.Administrator)).Length;
+                    (int) Rights.Administrator)).Length;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -119,7 +122,7 @@ namespace adovipavto
 
         private void dataGridView1_Sorted(object sender, EventArgs e)
         {
-            this.dataGridView1.FirstDisplayedCell = this.dataGridView1.CurrentCell;
+            dataGridView1.FirstDisplayedCell = dataGridView1.CurrentCell;
 
             UpdateRoles();
         }
@@ -146,9 +149,8 @@ namespace adovipavto
                 dataGridView1.Rows[e.RowIndex].Selected = true;
                 Rectangle r = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
 
-                contextMenuStrip1.Show((Control)sender, r.Left + e.X, r.Top + e.Y);
+                contextMenuStrip1.Show((Control) sender, r.Left + e.X, r.Top + e.Y);
             }
-
         }
     }
 }

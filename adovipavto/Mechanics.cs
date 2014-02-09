@@ -1,32 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Reflection;
 using System.Resources;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using adovipavto.AddForms;
 using adovipavto.Classes;
 using adovipavto.EditForms;
+using adovipavto.Enums;
+using adovipavto.Properties;
 
 namespace adovipavto
 {
     public partial class Mechanics : Form
     {
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
         public Mechanics()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             InitializeComponent();
         }
-
-        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
         private void Mechanics_Load(object sender, EventArgs e)
         {
@@ -41,12 +39,12 @@ namespace adovipavto
 
         private void Edit()
         {
-            var id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+            var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
             DataRow row = Program.VipAvtoDataSet.GetRowById(Constants.MechanicsTableName, id);
 
 
-            if(new EditMechanicForm(row).ShowDialog() == DialogResult.OK)
+            if (new EditMechanicForm(row).ShowDialog() == DialogResult.OK)
                 UpdateRoles();
         }
 
@@ -57,7 +55,7 @@ namespace adovipavto
                 dataGridView1.Rows[e.RowIndex].Selected = true;
                 Rectangle r = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
 
-                contextMenuStrip1.Show((Control)sender, r.Left + e.X, r.Top + e.Y);
+                contextMenuStrip1.Show((Control) sender, r.Left + e.X, r.Top + e.Y);
             }
         }
 
@@ -96,11 +94,11 @@ namespace adovipavto
         {
             if (dataGridView1.SelectedRows[0] != null)
             {
-                if (MessageBox.Show(rm.GetString("lockmech"), rm.GetString("warning"),
+                if (MessageBox.Show(_rm.GetString("lockmech"), _rm.GetString("warning"),
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {
-                    int id = (int)dataGridView1.SelectedRows[0].Cells["mechanicIDDataGridViewTextBoxColumn"].Value;
+                    var id = (int) dataGridView1.SelectedRows[0].Cells["mechanicIDDataGridViewTextBoxColumn"].Value;
 
                     Program.VipAvtoDataSet.LockMechanic(id);
                     UpdateRoles();
@@ -118,8 +116,7 @@ namespace adovipavto
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                
-                row.Cells["StateString"].Value = Constants.GetEnumDescription((Enums.State)row.Cells["State"].Value);
+                row.Cells["StateString"].Value = Constants.GetEnumDescription((State) row.Cells["State"].Value);
             }
         }
 

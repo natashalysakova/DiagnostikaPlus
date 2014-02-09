@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Reflection;
-using System.Windows.Forms;
 using System.Resources;
+using System.Windows.Forms;
 
 namespace adovipavto
 {
     public partial class Auth : Form
     {
+        private readonly ResourceManager rm;
 
-        private ResourceManager rm;
         public Auth()
         {
             InitializeComponent();
@@ -26,7 +26,6 @@ namespace adovipavto
 
             if (password != "")
             {
-
                 if (maskedTextBox1.Text == password)
                 {
                     Program.VipAvtoDataSet.SetCurrentOperator(textBox1.Text);
@@ -36,12 +35,14 @@ namespace adovipavto
                 }
                 else
                 {
-                    MessageBox.Show(rm.GetString("wrongPassword"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(rm.GetString("wrongPassword"), rm.GetString("error"), MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show(rm.GetString("isUser") + " \"" + textBox1.Text + "\" " + rm.GetString("notFound"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(rm.GetString("isUser") + @" """ + textBox1.Text + @""" " + rm.GetString("notFound"),
+                    rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -54,8 +55,8 @@ namespace adovipavto
         private void Auth_Load(object sender, EventArgs e)
         {
 #if DEBUG
-            textBox1.Text = "1";
-            maskedTextBox1.Text = "1";
+            textBox1.Text = @"1";
+            maskedTextBox1.Text = @"1";
 #endif
         }
     }

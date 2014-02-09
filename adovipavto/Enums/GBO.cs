@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace adovipavto.Enums
+﻿namespace adovipavto.Enums
 {
-    enum Gbo
+    internal enum Gbo
     {
         NotChecked,
         Germetical,

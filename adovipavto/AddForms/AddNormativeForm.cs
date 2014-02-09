@@ -121,7 +121,7 @@ namespace adovipavto.AddForms
         {
             checkedListBox1.DataSource =
                 (from DataRow item in Program.VipAvtoDataSet.Tables[Constants.GroupTableName].Rows
-                 select Program.VipAvtoDataSet.CreateGroupTitle((int)item["GroupID"])).ToList();
+                    select Program.VipAvtoDataSet.CreateGroupTitle((int) item["GroupID"])).ToList();
 
 
             //comboBox2.DataSource = Program.NormasTitles.Select(item => item.Value).ToList();

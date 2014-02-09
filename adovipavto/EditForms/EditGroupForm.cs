@@ -7,22 +7,25 @@ using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
 using adovipavto.Enums;
+using adovipavto.Properties;
 
 namespace adovipavto.EditForms
 {
     public partial class EditGroupForm : Form
     {
-        private readonly DataRow selectedRow;
-        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
+        private readonly DataRow _selectedRow;
 
 
         public EditGroupForm(DataRow select)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
 
             InitializeComponent();
-            selectedRow = select;
+            _selectedRow = select;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -32,48 +35,45 @@ namespace adovipavto.EditForms
 
         private void EditGroupForm_Load(object sender, EventArgs e)
         {
-            textBox1.Text = Program.VipAvtoDataSet.CreateGroupTitle((int)selectedRow["GroupID"]);
+            textBox1.Text = Program.VipAvtoDataSet.CreateGroupTitle((int) _selectedRow["GroupID"]);
 
 
             categoryComboBox.DataSource = Enum.GetValues(typeof (Category));
-            categoryComboBox.Text = selectedRow["Category"].ToString();
+            categoryComboBox.Text = _selectedRow["Category"].ToString();
 
 
             engineComboBox.DataSource = new Engines().EnginesTitle;
-            engineComboBox.Text = new Engines().EnginesTitle[(int)selectedRow["EngineType"]];
+            engineComboBox.Text = new Engines().EnginesTitle[(int) _selectedRow["EngineType"]];
 
 
             for (int i = 1920; i <= DateTime.Now.Year; i++)
             {
                 yearComboBox.Items.Add(i);
             }
-            yearComboBox.Text = selectedRow["Year"].ToString();
+            yearComboBox.Text = _selectedRow["Year"].ToString();
 
-            if ((bool) selectedRow["Before"] == false)
+            if ((bool) _selectedRow["Before"] == false)
                 radioButton2.Checked = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             if (!Program.VipAvtoDataSet.GroupExist(Convert.ToInt32(yearComboBox.SelectedItem.ToString()),
                 categoryComboBox.SelectedItem.ToString(),
                 new Engines().GetEngineIndex(engineComboBox.SelectedItem.ToString()), radioButton1.Checked))
             {
-                Program.VipAvtoDataSet.EditGroup(Convert.ToInt32(selectedRow["GroupID"]),
-    Convert.ToInt32(yearComboBox.SelectedItem), categoryComboBox.SelectedItem.ToString(),
-    new Engines().GetEngineIndex(engineComboBox.SelectedItem.ToString()), radioButton1.Checked);
+                Program.VipAvtoDataSet.EditGroup(Convert.ToInt32(_selectedRow["GroupID"]),
+                    Convert.ToInt32(yearComboBox.SelectedItem), categoryComboBox.SelectedItem.ToString(),
+                    new Engines().GetEngineIndex(engineComboBox.SelectedItem.ToString()), radioButton1.Checked);
 
                 DialogResult = DialogResult.OK;
             }
             else
             {
-                MessageBox.Show(rm.GetString("groupExist2"),
-    rm.GetString("error"),
-    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                MessageBox.Show(_rm.GetString("groupExist2"),
+                    _rm.GetString("error"),
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
     }
 }

@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
-using System.Windows;
 using adovipavto.Classes;
-using adovipavto.Enums;
 using adovipavto.Properties;
 
 namespace adovipavto
@@ -21,7 +18,7 @@ namespace adovipavto
         [STAThread]
         private static void Main()
         {
-            Thread t = new Thread(SplashScreen);
+            var t = new Thread(SplashScreen);
 
             t.Start();
 
@@ -31,8 +28,8 @@ namespace adovipavto
 
 
             //Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);            
-            
+            Application.SetCompatibleTextRenderingDefault(false);
+
             t.Join();
             t.Abort();
 
@@ -68,7 +65,6 @@ namespace adovipavto
                 VipAvtoDataSet.Tables[Constants.GroupTableName].ReadXml(path);
             else
                 VipAvtoDataSet.Tables[Constants.GroupTableName].WriteXml(path);
-
 
 
             path = Constants.GetFullPath(Settings.Default.Normatives);

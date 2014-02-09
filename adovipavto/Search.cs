@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using adovipavto.Classes;
 
@@ -23,7 +19,7 @@ namespace adovipavto
 
         private void maskedTextBox1_TextChanged(object sender, EventArgs e)
         {
-            if (maskedTextBox1.Text != "     -")
+            if (maskedTextBox1.Text != @"     -")
             {
                 string blank = label80.Text + maskedTextBox1.Text;
 
@@ -45,13 +41,10 @@ namespace adovipavto
                     {
                         _document = null;
                         printPreviewControl1.Document = null;
-
                     }
                     maskedTextBox1.BackColor = Color.LightPink;
                     button1.Enabled = false;
                 }
-
-
             }
             else
             {
@@ -74,27 +67,26 @@ namespace adovipavto
         private void printPreviewControl1_MouseWheel(object sender, MouseEventArgs e)
         {
             if (e.Delta > 0)
-                if (((PrintPreviewControl)sender).Zoom < 2.85)
-                    ((PrintPreviewControl)sender).Zoom += 0.15;
+                if (((PrintPreviewControl) sender).Zoom < 2.85)
+                    ((PrintPreviewControl) sender).Zoom += 0.15;
                 else
                 {
-                    ((PrintPreviewControl)sender).Zoom = 3;
+                    ((PrintPreviewControl) sender).Zoom = 3;
                 }
             else
             {
-                if (((PrintPreviewControl)sender).Zoom > 0.15)
-                    ((PrintPreviewControl)sender).Zoom -= 0.15;
+                if (((PrintPreviewControl) sender).Zoom > 0.15)
+                    ((PrintPreviewControl) sender).Zoom -= 0.15;
                 else
                 {
-                    ((PrintPreviewControl)sender).Zoom = 0.1;
+                    ((PrintPreviewControl) sender).Zoom = 0.1;
                 }
             }
-
         }
 
         private void printPreviewControl1_Click(object sender, EventArgs e)
         {
-            ((PrintPreviewControl)sender).Focus();
+            ((PrintPreviewControl) sender).Focus();
         }
 
 
@@ -107,8 +99,8 @@ namespace adovipavto
 
         private void firstDate_ValueChanged(object sender, EventArgs e)
         {
-            ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = String.Format("Date > '{0}' AND Date <= '{1}'", firstDate.Value, secondDate.Value);
-
+            ((DataTable) dataGridView1.DataSource).DefaultView.RowFilter =
+                String.Format("Date > '{0}' AND Date <= '{1}'", firstDate.Value, secondDate.Value);
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -123,7 +115,6 @@ namespace adovipavto
             DisableDatetimePickers();
             firstDate.Value = DateTime.Now.AddMonths(-1);
             secondDate.Value = DateTime.Now;
-
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
@@ -137,14 +128,12 @@ namespace adovipavto
         {
             firstDate.Enabled = true;
             secondDate.Enabled = true;
-
         }
 
-        void DisableDatetimePickers()
+        private void DisableDatetimePickers()
         {
             firstDate.Enabled = false;
             secondDate.Enabled = false;
-
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -154,14 +143,13 @@ namespace adovipavto
                 dataGridView1.Rows[e.RowIndex].Selected = true;
 
 
-                int newProtocolId =
-                    (int)dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
+                var newProtocolId =
+                    (int) dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
                 DataRow protocol = Program.VipAvtoDataSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
                 DataRow[] mesures = Program.VipAvtoDataSet.GetMesuresFromProtocol(protocol);
 
                 _document2 = new PrintProtocolDocument(protocol, mesures);
                 printPreviewControl2.Document = _document2;
-
             }
         }
 
@@ -172,8 +160,8 @@ namespace adovipavto
                 dataGridView1.Rows[e.RowIndex].Selected = true;
 
 
-                int newProtocolId =
-                    (int)dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
+                var newProtocolId =
+                    (int) dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
                 DataRow protocol = Program.VipAvtoDataSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
                 DataRow[] mesures = Program.VipAvtoDataSet.GetMesuresFromProtocol(protocol);
 
@@ -187,7 +175,6 @@ namespace adovipavto
             DataRow[] mesures = Program.VipAvtoDataSet.GetMesuresFromProtocol(protocol);
 
             new ProtocolReportForm(protocol, mesures).ShowDialog();
-
         }
     }
 }

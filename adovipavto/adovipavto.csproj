@@ -107,7 +107,6 @@
     <Compile Include="Classes\PrintProtocolDocument.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Classes\Resume.cs" />
     <Compile Include="Classes\VisualRow.cs" />
     <Compile Include="EditForms\EditMechanicForm.cs">
       <SubType>Form</SubType>
@@ -181,7 +180,6 @@
       <DependentUpon>OperatorsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

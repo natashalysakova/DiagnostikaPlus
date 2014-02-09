@@ -8,25 +8,25 @@ using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
 using adovipavto.Enums;
-using Microsoft.ReportingServices.Interfaces;
+using adovipavto.Properties;
 
 namespace adovipavto.AddForms
 {
     public partial class AddGroupForm : Form
     {
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
         public AddGroupForm()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
             InitializeComponent();
         }
-
-        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
-
 
 
         private void NewGroupForm_Load(object sender, EventArgs e)
         {
-            checkedListBox1.DataSource = Enum.GetValues(typeof(Category));
+            checkedListBox1.DataSource = Enum.GetValues(typeof (Category));
             checkedListBox2.DataSource = new Engines().EnginesTitle;
             for (int i = 1920; i <= DateTime.Now.Year; i++)
             {
@@ -50,8 +50,8 @@ namespace adovipavto.AddForms
                         foreach (object item2 in checkedListBox2.CheckedItems)
                         {
                             if (!Program.VipAvtoDataSet.GroupExist(Convert.ToInt32(comboBox3.SelectedItem.ToString()),
-                                    item.ToString(),
-                                    new Engines().GetEngineIndex(item2.ToString()), radioButton1.Checked))
+                                item.ToString(),
+                                new Engines().GetEngineIndex(item2.ToString()), radioButton1.Checked))
                             {
                                 Program.VipAvtoDataSet.AddGroup(Convert.ToInt32(comboBox3.SelectedItem.ToString()),
                                     item.ToString(),
@@ -74,8 +74,8 @@ namespace adovipavto.AddForms
                             sb.Append(s + "\n");
                         }
 
-                        MessageBox.Show(rm.GetString("groupExist") + Environment.NewLine + sb,
-                            rm.GetString("error"),
+                        MessageBox.Show(_rm.GetString("groupExist") + Environment.NewLine + sb,
+                            _rm.GetString("error"),
                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
@@ -84,12 +84,14 @@ namespace adovipavto.AddForms
                 }
                 else
                 {
-                    MessageBox.Show(rm.GetString("oneEngine"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(_rm.GetString("oneEngine"), _rm.GetString("error"), MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show(rm.GetString("oneGroup"), rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(_rm.GetString("oneGroup"), _rm.GetString("error"), MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 

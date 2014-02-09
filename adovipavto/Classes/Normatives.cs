@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Reflection;
 using System.Resources;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using adovipavto.Properties;
 
 namespace adovipavto.Classes
 {
-    class Normatives
+    internal class Normatives
     {
-        private List<string> normas;
-        private List<int> decimals;
+        private readonly List<int> _decimals;
+        private readonly List<string> _normas;
 
         public Normatives()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
-            ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            var rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-            normas = new List<string>()
+            _normas = new List<string>
             {
                 /*0*/rm.GetString("OUTSRTS"),
                 /*1*/rm.GetString("OUTSSTS"),
@@ -48,7 +44,7 @@ namespace adovipavto.Classes
                 /*22*/rm.GetString("VSHA"),
             };
 
-            decimals = new List<int>
+            _decimals = new List<int>
             {
                 /*0*/2,
                 /*1*/2,
@@ -74,17 +70,16 @@ namespace adovipavto.Classes
                 /*21*/0,
                 /*22*/0,
             };
-
         }
 
         public List<string> NormativesTitle
         {
-            get { return normas; }
+            get { return _normas; }
         }
 
         public List<int> DecimalPoints
         {
-            get { return decimals; }
+            get { return _decimals; }
         }
 
         public int GetNormativeIndex(string title)

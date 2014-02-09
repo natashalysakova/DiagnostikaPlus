@@ -1,4 +1,4 @@
-﻿namespace adovipavto.AddForms
+﻿namespace adovipavto.EditForms
 {
     partial class EditOperatorForm
     {

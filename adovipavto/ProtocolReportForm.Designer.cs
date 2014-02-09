@@ -2,7 +2,7 @@
 
 namespace adovipavto
 {
-    partial class ProtocolReportForm
+    sealed partial class ProtocolReportForm
     {
         /// <summary>
         /// Required designer variable.

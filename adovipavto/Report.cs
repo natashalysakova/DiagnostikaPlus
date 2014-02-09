@@ -24,22 +24,21 @@ namespace adovipavto
         private void printPreviewControl1_MouseWheel(object sender, MouseEventArgs e)
         {
             if (e.Delta > 0)
-                if (((PrintPreviewControl)sender).Zoom < 2.85)
-                    ((PrintPreviewControl)sender).Zoom += 0.15;
+                if (((PrintPreviewControl) sender).Zoom < 2.85)
+                    ((PrintPreviewControl) sender).Zoom += 0.15;
                 else
                 {
-                    ((PrintPreviewControl)sender).Zoom = 3;
+                    ((PrintPreviewControl) sender).Zoom = 3;
                 }
             else
             {
-                if (((PrintPreviewControl)sender).Zoom > 0.15)
-                    ((PrintPreviewControl)sender).Zoom -= 0.15;
+                if (((PrintPreviewControl) sender).Zoom > 0.15)
+                    ((PrintPreviewControl) sender).Zoom -= 0.15;
                 else
                 {
-                    ((PrintPreviewControl)sender).Zoom = 0.1;
+                    ((PrintPreviewControl) sender).Zoom = 0.1;
                 }
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -61,7 +60,6 @@ namespace adovipavto
             DisableDatetimePickers();
             firstDate.Value = DateTime.Today;
             secondDate.Value = DateTime.Now;
-
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -69,7 +67,6 @@ namespace adovipavto
             DisableDatetimePickers();
             firstDate.Value = DateTime.Now.AddDays(-7);
             secondDate.Value = DateTime.Now;
-
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
@@ -77,7 +74,6 @@ namespace adovipavto
             DisableDatetimePickers();
             firstDate.Value = DateTime.Now.AddMonths(-1);
             secondDate.Value = DateTime.Now;
-
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
@@ -85,7 +81,6 @@ namespace adovipavto
             DisableDatetimePickers();
             firstDate.Value = DateTime.Now.AddYears(-1);
             secondDate.Value = DateTime.Now;
-
         }
 
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
@@ -94,10 +89,9 @@ namespace adovipavto
             secondDate.Enabled = true;
             label1.Enabled = true;
             label2.Enabled = true;
-
         }
 
-        void DisableDatetimePickers()
+        private void DisableDatetimePickers()
         {
             firstDate.Enabled = false;
             secondDate.Enabled = false;
@@ -113,12 +107,6 @@ namespace adovipavto
             printPreviewControl1.Document = _document;
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            printPreviewDialog1.Document = _document;
-            printPreviewDialog1.ShowDialog();
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             printPreviewControl1.StartPage++;
@@ -126,17 +114,13 @@ namespace adovipavto
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if(printPreviewControl1.StartPage > 0)
+            if (printPreviewControl1.StartPage > 0)
                 printPreviewControl1.StartPage--;
         }
 
         private void printPreviewControl1_Click(object sender, EventArgs e)
         {
-            ((PrintPreviewControl)sender).Focus();
-
+            ((PrintPreviewControl) sender).Focus();
         }
-
-
-
     }
 }

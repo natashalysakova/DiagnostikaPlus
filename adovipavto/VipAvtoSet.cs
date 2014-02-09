@@ -127,7 +127,7 @@ namespace adovipavto
                 string cat = row["Category"].ToString();
                 string bef = (bool) row["Before"] ? _rm.GetString("before") : _rm.GetString("after");
                 string year = row["Year"].ToString();
-                int engine = (int) row["EngineType"];
+                var engine = (int) row["EngineType"];
 
                 if (cat == splitTitle[0] && bef == splitTitle[1] && year == splitTitle[2] &&
                     new Engines().EnginesTitle[engine] == splitTitle[3])
@@ -253,16 +253,16 @@ namespace adovipavto
                 Constants.GetFullPath(Settings.Default.Operators));
         }
 
-        internal void AddOperator(string p1, string p2, string p3, string p4, string p5)
+        internal void AddOperator(string name, string lastName, string login, string password, string rights)
         {
             DataRow row = Tables[Constants.OperatorsTableName].NewRow();
 
-            row["Name"] = p1;
-            row["LastName"] = p2;
-            row["Login"] = p3;
-            row["Password"] = p4;
+            row["Name"] = name;
+            row["LastName"] = lastName;
+            row["Login"] = login;
+            row["Password"] = password;
 
-            row["Right"] = GetRightByString(p5);
+            row["Right"] = GetRightByString(rights);
 
 
             Tables[Constants.OperatorsTableName].Rows.Add(row);
@@ -270,10 +270,10 @@ namespace adovipavto
             Tables[Constants.OperatorsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Operators));
         }
 
-        private Rights GetRightByString(string p5)
+        private Rights GetRightByString(string rightTitle)
         {
             Rights r;
-            switch (p5)
+            switch (rightTitle)
             {
                 case "Администратор":
                     r = Rights.Administrator;
@@ -304,13 +304,13 @@ namespace adovipavto
             Tables[Constants.OperatorsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Operators));
         }
 
-        internal void AddMechanic(string p1, string p2, string p3)
+        internal void AddMechanic(string name, string lastName, string fatherName)
         {
             DataRow r = Tables[Constants.MechanicsTableName].NewRow();
 
-            r["Name"] = p1;
-            r["LastName"] = p2;
-            r["FatherName"] = p3;
+            r["Name"] = name;
+            r["LastName"] = lastName;
+            r["FatherName"] = fatherName;
 
             r["State"] = (int) State.Employed;
 
@@ -320,13 +320,13 @@ namespace adovipavto
         }
 
 
-        internal void EditMechanic(int id, string p1, string p2, string p3)
+        internal void EditMechanic(int id, string name, string lastName, string fatherName)
         {
             DataRow r = GetRowById(Constants.MechanicsTableName, id);
 
-            r["Name"] = p1;
-            r["LastName"] = p2;
-            r["FatherName"] = p3;
+            r["Name"] = name;
+            r["LastName"] = lastName;
+            r["FatherName"] = fatherName;
 
             Tables[Constants.MechanicsTableName].AcceptChanges();
             Tables[Constants.MechanicsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Mechanics));
@@ -343,20 +343,21 @@ namespace adovipavto
         }
 
 
-        internal int AddProtocol(string p1, string p2, DateTime dateTime, string techpass, string p3, bool result,
+        internal int AddProtocol(string blankNumber, string mechanicName, DateTime dateTime, string techpass,
+            string groupTitle, bool result,
             DateTime nexDateTime, bool visChck, int gbo)
         {
             DataRow r = Tables[Constants.ProtocolsTableName].NewRow();
 
-            r["BlankNumber"] = p1;
+            r["BlankNumber"] = blankNumber;
             r["IDOperator"] = _currentOperator.Id;
-            r["IDMechanic"] = GetMechanicIdByShortName(p2);
+            r["IDMechanic"] = GetMechanicIdByShortName(mechanicName);
             r["Date"] = dateTime;
 
             if (techpass != "")
                 r["TechPhoto"] = techpass;
 
-            r["IDGroup"] = GetGroupId(p3);
+            r["IDGroup"] = GetGroupId(groupTitle);
             r["Result"] = result;
             r["NextData"] = nexDateTime.Date;
             r["VisualCheck"] = visChck;
@@ -366,17 +367,14 @@ namespace adovipavto
             Tables[Constants.ProtocolsTableName].AcceptChanges();
             Tables[Constants.ProtocolsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Protocols));
 
-            //return (from DataRow item in Tables[Constants.ProtocolsTableName].Rows
-            //        where item["BlankNumber"].ToString() == p1 && (DateTime)item["Date"] == dateTime
-            //        select (int)item["ProtocolID"]).ToArray()[0];
             return (int) r["ProtocolID"];
         }
 
-        private int GetMechanicIdByShortName(string p2)
+        private int GetMechanicIdByShortName(string mechanicShortName)
         {
             return (from DataRow item in Tables[Constants.MechanicsTableName].Rows
                 where
-                    GetShortMechanicName((int) item["MechanicID"]) == p2
+                    GetShortMechanicName((int) item["MechanicID"]) == mechanicShortName
                 select (int) item["MechanicID"]).ToArray()[0];
         }
 
@@ -397,12 +395,12 @@ namespace adovipavto
                     [0];
         }
 
-        internal void AddMesure(int p1, double p2, int newProtocolId)
+        internal void AddMesure(int normativeId, double value, int newProtocolId)
         {
             DataRow item = Tables[Constants.MesuresTableName].NewRow();
 
-            item["NormativeID"] = p1;
-            item["Value"] = p2;
+            item["NormativeID"] = normativeId;
+            item["Value"] = value;
             item["IDProtocol"] = newProtocolId;
 
             Tables[Constants.MesuresTableName].Rows.Add(item);
@@ -410,19 +408,19 @@ namespace adovipavto
             Tables[Constants.MesuresTableName].WriteXml(Constants.GetFullPath(Settings.Default.Mesure));
         }
 
-        internal string GetShortMechanicName(int p)
+        internal string GetShortMechanicName(int mechanicId)
         {
             return (from DataRow item in Tables[Constants.MechanicsTableName].Rows
-                    where (int)item["MechanicID"] == p
+                where (int) item["MechanicID"] == mechanicId
                 select
                     item["LastName"] + " " + item["Name"].ToString()[0] + ". " + item["FatherName"].ToString()[0] + ".")
                 .ToArray()[0];
         }
 
-        internal string GetShortOperatorName(int p)
+        internal string GetShortOperatorName(int operatorId)
         {
             return (from DataRow item in Tables[Constants.OperatorsTableName].Rows
-                where (int) item["OperatorId"] == p
+                where (int) item["OperatorId"] == operatorId
                 select
                     item["LastName"] + " " + item["Name"].ToString()[0] + ".")
                 .ToArray()[0];
@@ -440,7 +438,7 @@ namespace adovipavto
 
             int normtag = GetNormativeTag(normativename);
 
-            var mesures = (from DataRow item in Tables[Constants.NormativesTableName].Rows
+            List<DataRow> mesures = (from DataRow item in Tables[Constants.NormativesTableName].Rows
                 where (int) item["Tag"] == normtag && (int) item["IDGroup"] == groupId
                 select item).ToList();
 
@@ -452,13 +450,13 @@ namespace adovipavto
 
         internal void GetMaxSmokeValue(int groupId, out double minObSmokeVal, out double maxObSmokeVal)
         {
-            var tmp1 = (
+            object[] tmp1 = (
                 from DataRow item in Tables[Constants.NormativesTableName].Rows
                 where
                     (int) item["IDGroup"] == groupId &&
                     (int) item["Tag"] == new Normatives().NormativesTitle.IndexOf(_rm.GetString("DVRSUM"))
                 select item["MaxValue"]).ToArray();
-            var tmp2 = (
+            object[] tmp2 = (
                 from DataRow item in Tables[Constants.NormativesTableName].Rows
                 where
                     (int) item["IDGroup"] == groupId &&
@@ -478,9 +476,10 @@ namespace adovipavto
 
         internal bool GroupExist(int year, string category, int engine, bool before)
         {
-            var rows = (from DataRow item in Tables[Constants.GroupTableName].Rows
+            List<DataRow> rows = (from DataRow item in Tables[Constants.GroupTableName].Rows
                 where
-                    (int) item["Year"] == year && item["Category"].ToString() == category && (int) item["EngineType"] == engine &&
+                    (int) item["Year"] == year && item["Category"].ToString() == category &&
+                    (int) item["EngineType"] == engine &&
                     (bool) item["Before"] == before
                 select item).ToList();
 
@@ -502,16 +501,16 @@ namespace adovipavto
 
         internal void RemoveGroup(DataRow selectedRow)
         {
-            int groipId = (int) selectedRow["GroupID"];
+            var groipId = (int) selectedRow["GroupID"];
 
-            var normatives = (from DataRow row in Tables[Constants.NormativesTableName].Rows
+            List<int> normatives = (from DataRow row in Tables[Constants.NormativesTableName].Rows
                 where (int) row["IDGroup"] == groipId
                 select (int) row["NormativeID"]).ToList();
-            var protocols = (from DataRow row in Tables[Constants.ProtocolsTableName].Rows
+            List<int> protocols = (from DataRow row in Tables[Constants.ProtocolsTableName].Rows
                 where (int) row["IDGroup"] == groipId
                 select (int) row["ProtocolID"]).ToList();
 
-            List<int> mesures = new List<int>();
+            var mesures = new List<int>();
             foreach (int i in protocols)
             {
                 mesures.AddRange((from DataRow row in Tables[Constants.MesuresTableName].Rows
@@ -538,11 +537,11 @@ namespace adovipavto
 
         internal DataRow GetProtocolByBlankId(string blank)
         {
-            var rows = (from DataRow item in Tables[Constants.ProtocolsTableName].Rows
+            DataRow[] rows = (from DataRow item in Tables[Constants.ProtocolsTableName].Rows
                 where item["BlankNumber"].ToString() == blank
                 select item).ToArray();
-            
-            if(rows.Length == 0)
+
+            if (rows.Length == 0)
                 return null;
 
             return rows[0];
@@ -557,9 +556,9 @@ namespace adovipavto
                 select item).ToArray();
         }
 
-        internal bool GroupWithGasEngine(string p)
+        internal bool GroupWithGasEngine(string groupTitle)
         {
-            int id = GetGroupId(p);
+            int id = GetGroupId(groupTitle);
 
             DataRow r = GetRowById(Constants.GroupTableName, id);
 

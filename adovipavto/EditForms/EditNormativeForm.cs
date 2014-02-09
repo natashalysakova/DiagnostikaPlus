@@ -6,20 +6,23 @@ using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
+using adovipavto.Properties;
 
 namespace adovipavto.EditForms
 {
     public partial class EditNormativeForm : Form
     {
-        private readonly DataRow selected;
-        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
+        private readonly DataRow _selected;
 
         public EditNormativeForm(DataRow selected)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             InitializeComponent();
-            this.selected = selected;
+            _selected = selected;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -31,7 +34,7 @@ namespace adovipavto.EditForms
         {
             if (errorProvider1.GetError(minTextBox) == "" & errorProvider1.GetError(maxTextBox) == "")
             {
-                Program.VipAvtoDataSet.EditNormative((int) selected["NormativeID"], groupTextBox.Text,
+                Program.VipAvtoDataSet.EditNormative((int) _selected["NormativeID"], groupTextBox.Text,
                     mesureTextBox.Text, Convert.ToDouble(minTextBox.Text), Convert.ToDouble(maxTextBox.Text));
                 DialogResult = DialogResult.OK;
             }
@@ -51,15 +54,13 @@ namespace adovipavto.EditForms
                 }
                 else
                 {
-                    errorProvider1.SetError(minTextBox, rm.GetString("minmax"));
-                    errorProvider1.SetError(maxTextBox, rm.GetString("minmax"));
-
+                    errorProvider1.SetError(minTextBox, _rm.GetString("minmax"));
+                    errorProvider1.SetError(maxTextBox, _rm.GetString("minmax"));
                 }
-
             }
             catch (Exception)
             {
-                errorProvider1.SetError(((TextBox)sender), rm.GetString("wrongData"));
+                errorProvider1.SetError(((TextBox) sender), _rm.GetString("wrongData"));
             }
         }
 
@@ -70,7 +71,7 @@ namespace adovipavto.EditForms
 
         private void EditNormativeForm_Load(object sender, EventArgs e)
         {
-            var id = (int) selected["NormativeID"];
+            var id = (int) _selected["NormativeID"];
 
             foreach (DataRow item in Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].Rows)
             {
@@ -81,10 +82,10 @@ namespace adovipavto.EditForms
                 }
             }
 
-            mesureTextBox.Text = new Normatives().NormativesTitle[(int)selected["Tag"]];
+            mesureTextBox.Text = new Normatives().NormativesTitle[(int) _selected["Tag"]];
 
             groupTextBox.Text =
-                Program.VipAvtoDataSet.CreateGroupTitle((int) selected["IDGroup"]);
+                Program.VipAvtoDataSet.CreateGroupTitle((int) _selected["IDGroup"]);
         }
     }
 }

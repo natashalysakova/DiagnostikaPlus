@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Globalization;
 using System.Reflection;
-using System.Threading;
-using adovipavto.Enums;
 using adovipavto.Properties;
 
 namespace adovipavto.Classes
@@ -19,26 +15,23 @@ namespace adovipavto.Classes
         public const string MesuresTableName = "Mesures";
 
 
-
         public static string GetEnumDescription(Enum value)
         {
             FieldInfo fi = value.GetType().GetField(value.ToString());
 
-            DescriptionAttribute[] attributes =
-                (DescriptionAttribute[])fi.GetCustomAttributes(
-                typeof(DescriptionAttribute),
-                false);
+            var attributes =
+                (DescriptionAttribute[]) fi.GetCustomAttributes(
+                    typeof (DescriptionAttribute),
+                    false);
 
-            if (attributes != null && attributes.Length > 0)
+            if (attributes.Length > 0)
                 return attributes[0].Description;
-            else
-                return value.ToString();
+            return value.ToString();
         }
 
         public static string GetFullPath(string part)
         {
-            return Properties.Settings.Default.FilesDirectory + part;
+            return Settings.Default.FilesDirectory + part;
         }
-
     }
 }

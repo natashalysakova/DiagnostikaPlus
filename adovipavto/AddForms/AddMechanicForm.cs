@@ -1,29 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Reflection;
 using System.Resources;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using adovipavto.Properties;
 
 namespace adovipavto.AddForms
 {
     public partial class AddMechanicForm : Form
     {
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
         public AddMechanicForm()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             InitializeComponent();
         }
-
-        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -32,32 +27,33 @@ namespace adovipavto.AddForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (errorProvider1.GetError(nameTxtBx) == "" && errorProvider1.GetError(lnTxtBx) == "" && errorProvider1.GetError(fnTxtBx) == "")
+            if (errorProvider1.GetError(nameTxtBx) == "" && errorProvider1.GetError(lnTxtBx) == "" &&
+                errorProvider1.GetError(fnTxtBx) == "")
             {
                 Program.VipAvtoDataSet.AddMechanic(nameTxtBx.Text, lnTxtBx.Text, fnTxtBx.Text);
                 DialogResult = DialogResult.OK;
             }
             else
             {
-                MessageBox.Show(rm.GetString("wrongData"));
+                MessageBox.Show(_rm.GetString("wrongData"));
             }
-
         }
 
         private void fnTxtBx_TextChanged(object sender, EventArgs e)
         {
-            if (((TextBox)sender).Text == "")
-                errorProvider1.SetError((TextBox)sender, rm.GetString("wrongData"));
+            if (((TextBox) sender).Text == "")
+                errorProvider1.SetError((TextBox) sender, _rm.GetString("wrongData"));
             else
             {
-                errorProvider1.SetError((TextBox)sender, null);
+                errorProvider1.SetError((TextBox) sender, null);
             }
         }
 
 
         private void nameTxtBx_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar) && !Char.IsWhiteSpace(e.KeyChar) && e.KeyChar != '-')
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar) && !Char.IsWhiteSpace(e.KeyChar) &&
+                e.KeyChar != '-')
             {
                 e.Handled = true;
             }

@@ -15,15 +15,14 @@ namespace adovipavto
 {
     public partial class GroupsForm : Form
     {
+        private readonly ResourceManager _rm;
         private DataRow _selectedRow;
-
-        private ResourceManager rm;
 
         public GroupsForm()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
-            rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+            _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
             InitializeComponent();
@@ -47,16 +46,17 @@ namespace adovipavto
 
         private void нормативыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new NormativesForm((int)_selectedRow["GroupID"]).ShowDialog();
+            new NormativesForm((int) _selectedRow["GroupID"]).ShowDialog();
         }
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(rm.GetString("DeleteGroup"), rm.GetString("warning"),
+            if (MessageBox.Show(_rm.GetString("DeleteGroup"), _rm.GetString("warning"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 Program.VipAvtoDataSet.RemoveRow(Constants.GroupTableName, _selectedRow);
-                Program.VipAvtoDataSet.Tables[Constants.GroupTableName].WriteXml(Constants.GetFullPath(Settings.Default.Groups));
+                Program.VipAvtoDataSet.Tables[Constants.GroupTableName].WriteXml(
+                    Constants.GetFullPath(Settings.Default.Groups));
                 _selectedRow = null;
             }
         }
@@ -65,14 +65,13 @@ namespace adovipavto
         {
             dataGridView1.Rows[e.RowIndex].Selected = true;
             _selectedRow = Program.VipAvtoDataSet.GetRowByIndex(Constants.GroupTableName, e.RowIndex);
-            new NormativesForm((int)_selectedRow["GroupID"]).ShowDialog();
+            new NormativesForm((int) _selectedRow["GroupID"]).ShowDialog();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             if (new AddGroupForm().ShowDialog() == DialogResult.OK)
                 UpdateRows();
-
         }
 
         private void UpdateRows()
@@ -80,9 +79,7 @@ namespace adovipavto
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 row.Cells["Title"].Value =
-    Program.VipAvtoDataSet.CreateGroupTitle((int)row.Cells["groupIDDataGridViewTextBoxColumn"].Value);
-
-
+                    Program.VipAvtoDataSet.CreateGroupTitle((int) row.Cells["groupIDDataGridViewTextBoxColumn"].Value);
             }
         }
 
@@ -94,7 +91,7 @@ namespace adovipavto
 
             if (_selectedRow != null)
             {
-                if(new EditGroupForm(_selectedRow).ShowDialog() == DialogResult.OK)
+                if (new EditGroupForm(_selectedRow).ShowDialog() == DialogResult.OK)
                     UpdateRows();
             }
         }
@@ -106,17 +103,11 @@ namespace adovipavto
 
             if (_selectedRow != null)
             {
-                if (MessageBox.Show(rm.GetString("DeleteGroup"), rm.GetString("warning"),
+                if (MessageBox.Show(_rm.GetString("DeleteGroup"), _rm.GetString("warning"),
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {
-                    //TODO: 
                     Program.VipAvtoDataSet.RemoveGroup(_selectedRow);
-                    //Program.VipAvtoDataSet.RemoveRow(Constants.GroupTableName, _selectedRow);
-
-
-                    //Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].AcceptChanges();
-                    //Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].WriteXml(Constants.GetFullPath(Settings.Default.Normatives));
                     _selectedRow = null;
 
                     UpdateRows();
