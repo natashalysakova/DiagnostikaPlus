@@ -298,7 +298,7 @@
     <value>passTxtBx</value>
   </data>
   <data name="&gt;&gt;passTxtBx.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;passTxtBx.Parent" xml:space="preserve">
     <value>$this</value>

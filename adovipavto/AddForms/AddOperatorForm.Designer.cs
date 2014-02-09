@@ -125,6 +125,7 @@
             resources.ApplyResources(this.passTxtBx, "passTxtBx");
             this.passTxtBx.Name = "passTxtBx";
             this.passTxtBx.TextChanged += new System.EventHandler(this.nameTxtBx_TextChanged);
+            this.passTxtBx.Validated += new System.EventHandler(this.nameTxtBx_Validated);
             // 
             // errorProvider1
             // 
