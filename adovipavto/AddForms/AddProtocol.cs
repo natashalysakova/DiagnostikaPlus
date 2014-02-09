@@ -48,7 +48,7 @@ namespace adovipavto.AddForms
                     rm.GetString("warning"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Close();
             }
-            
+
             comboBox1.Items.AddRange(groups);
 
             dateTimePicker1.Value = DateTime.Now;
@@ -220,11 +220,11 @@ namespace adovipavto.AddForms
             {
                 if (control is GroupBox)
                 {
-                    foreach (Control control2 in ((GroupBox) control).Controls)
+                    foreach (Control control2 in ((GroupBox)control).Controls)
                     {
                         if (control2 is TableLayoutPanel)
                         {
-                            foreach (Control control3 in ((TableLayoutPanel) control2).Controls)
+                            foreach (Control control3 in ((TableLayoutPanel)control2).Controls)
                             {
                                 if (control3 is TextBox)
                                 {
@@ -307,15 +307,15 @@ namespace adovipavto.AddForms
             }
 
 
-
             _newProtocolId = Program.VipAvtoDataSet.AddProtocol(label80.Text + maskedTextBox1.Text,
-                comboBox2.SelectedItem.ToString(),
-                dateTimePicker1.Value, techpass, comboBox1.SelectedItem.ToString(), result, nexDateTime, radioButton1.Checked);
+comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, techpass, comboBox1.SelectedItem.ToString(), result, nexDateTime, radioButton1.Checked);
 
             foreach (VisualRow row in rows)
             {
                 Program.VipAvtoDataSet.AddMesure(row.Id, row.Value, _newProtocolId);
             }
+
+
 
             return true;
         }

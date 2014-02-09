@@ -567,9 +567,6 @@
   <data name="&gt;&gt;radioButton3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="groupBox4.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>246, 16</value>
   </data>
