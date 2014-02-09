@@ -50,7 +50,7 @@ namespace adovipavto.Classes
             _from = from;
             _to = to;
             OriginAtMargins = true;
-            DefaultPageSettings.Margins = new Margins(60, 30, 30, 30);
+            DefaultPageSettings.Margins = new Margins(40, 30, 30, 30);
             DocumentName = rm.GetString("protocol");
             PrintPage += PrintProtocolDocument_PrintPage2;
             DefaultPageSettings.PaperSize.RawKind = 9;
@@ -181,17 +181,17 @@ namespace adovipavto.Classes
             {
                 g.DrawString(norm.NormativesTitle[i], normalFont, Brushes.Black, new PointF(20F, (i + 3) * LineHeight));
 
-                DrawPictorgam(i, g, (i + 3) * LineHeight, normalFont);
+                DrawPictorgam(i, g, (i + 3) * LineHeight, normalFont,i);
             }
 
             g.DrawString(norm.NormativesTitle[20], normalFont, Brushes.Black, new PointF(20F, 8 * LineHeight));
-            DrawPictorgam(20, g, 8 * LineHeight, normalFont);
+            DrawPictorgam(20, g, 8 * LineHeight, normalFont,20);
 
             for (int i = 5; i < 7; i++)
             {
                 g.DrawString(norm.NormativesTitle[i], normalFont, Brushes.Black, new PointF(20F, (i + 4) * LineHeight));
 
-                DrawPictorgam(i, g, (i + 4) * LineHeight, normalFont);
+                DrawPictorgam(i, g, (i + 4) * LineHeight, normalFont,i);
             }
 
 
@@ -199,7 +199,7 @@ namespace adovipavto.Classes
             DrawHeader(g, normalFont, 11 * LineHeight);
 
             g.DrawString(norm.NormativesTitle[7], normalFont, Brushes.Black, new PointF(20F, 12 * LineHeight));
-            DrawPictorgam(7, g, 12 * LineHeight, normalFont);
+            DrawPictorgam(7, g, 12 * LineHeight, normalFont,7);
 
 
             g.DrawString(rm.GetString("lightSystem"), boldFont, Brushes.Black, new PointF(40F, 13 * LineHeight));
@@ -208,7 +208,7 @@ namespace adovipavto.Classes
             for (int i = 8; i < 12; i++)
             {
                 g.DrawString(norm.NormativesTitle[i], normalFont, Brushes.Black, new PointF(20F, (i + 6) * LineHeight));
-                DrawPictorgam(i, g, (i + 6) * LineHeight, normalFont);
+                DrawPictorgam(i, g, (i + 6) * LineHeight, normalFont,i);
 
             }
 
@@ -216,7 +216,7 @@ namespace adovipavto.Classes
             DrawHeader(g, normalFont, 18 * LineHeight);
 
             g.DrawString(norm.NormativesTitle[12], normalFont, Brushes.Black, new PointF(20F, 19 * LineHeight));
-            DrawPictorgam(12, g, 19 * LineHeight, normalFont);
+            DrawPictorgam(12, g, 19 * LineHeight, normalFont,12);
 
 
             g.DrawString(rm.GetString("engineAndItsSystem"), boldFont, Brushes.Black, new PointF(40F, 20 * LineHeight));
@@ -225,16 +225,16 @@ namespace adovipavto.Classes
             for (int i = 13; i < 17; i++)
             {
                 g.DrawString(norm.NormativesTitle[i], normalFont, Brushes.Black, new PointF(20F, (i + 8) * LineHeight));
-                DrawPictorgam(i, g, (i + 8) * LineHeight, normalFont);
+                DrawPictorgam(i, g, (i + 8) * LineHeight, normalFont,i);
 
             }
 
 
             g.DrawString(norm.NormativesTitle[17], normalFont, Brushes.Black, new PointF(20F, 25 * LineHeight));
-            DrawPictorgam(17, g, 25 * LineHeight, normalFont, true);
+            DrawPictorgam(17, g, 25 * LineHeight, normalFont,17, true);
 
             g.DrawString(norm.NormativesTitle[18], normalFont, Brushes.Black, new PointF(20F, 26 * LineHeight));
-            DrawPictorgam(18, g, 26 * LineHeight, normalFont, true);
+            DrawPictorgam(18, g, 26 * LineHeight, normalFont,18, true);
 
 
 
@@ -243,7 +243,7 @@ namespace adovipavto.Classes
 
 
             g.DrawString(norm.NormativesTitle[19], normalFont, Brushes.Black, new PointF(20F, 28 * LineHeight));
-            DrawPictorgam(19, g, 28 * LineHeight, normalFont);
+            DrawPictorgam(19, g, 28 * LineHeight, normalFont, 19);
 
 
 
@@ -253,7 +253,7 @@ namespace adovipavto.Classes
             for (int i = 21; i < 23; i++)
             {
                 g.DrawString(norm.NormativesTitle[i], normalFont, Brushes.Black, new PointF(20F, (i + 9) * LineHeight));
-                DrawPictorgam(i, g, (i + 9) * LineHeight, normalFont);
+                DrawPictorgam(i, g, (i + 9) * LineHeight, normalFont,i);
 
             }
 
@@ -261,7 +261,7 @@ namespace adovipavto.Classes
             DrawHeader(g, normalFont, 32 * LineHeight);
 
             g.DrawString(norm.NormativesTitle[23], normalFont, Brushes.Black, new PointF(20F, 33 * LineHeight));
-            DrawPictorgam(23, g, 33 * LineHeight, normalFont);
+            DrawPictorgam(23, g, 33 * LineHeight, normalFont,23);
 
 
             g.DrawString(rm.GetString("visualCheck"), boldFont, Brushes.Black, new PointF(40F, 34 * LineHeight));
@@ -341,7 +341,7 @@ namespace adovipavto.Classes
 
         }
 
-        private void DrawPictorgam(int i, Graphics graphics, int height, Font normalFont, bool mode = false)
+        private void DrawPictorgam(int i, Graphics graphics, int height, Font normalFont,int ind, bool mode = false)
         {
             StringFormat sf = new StringFormat() { Alignment = StringAlignment.Center };
 
@@ -355,7 +355,7 @@ namespace adovipavto.Classes
             else
             {
                 if (mode)
-                    graphics.DrawString(value[0].ToString() + " (" + GetSmokeVal(value[0]) + ")", normalFont, Brushes.Black, new PointF(610F, height), sf);
+                    graphics.DrawString(value[0].ToString() + " (" + Math.Round(GetSmokeVal(value[0]),new Normatives().DecimalPoints[ind])  + ")", normalFont, Brushes.Black, new PointF(610F, height), sf);
                 else
                 {
                     graphics.DrawString(value[0].ToString(), normalFont, Brushes.Black, new PointF(610F, height), sf);
@@ -374,7 +374,7 @@ namespace adovipavto.Classes
 
                 if (mode)
                     graphics.DrawString(
-                        String.Format("[{0};{1}] ({2};{3})", minval, maxval, GetSmokeVal(minval), GetSmokeVal(maxval)),
+                        String.Format("[{0};{1}] ({2};{3})", minval, maxval, Math.Round(GetSmokeVal(minval), new Normatives().DecimalPoints[ind]), Math.Round(GetSmokeVal(maxval), new Normatives().DecimalPoints[ind])),
                         normalFont, Brushes.Black, new PointF(510F, height), sf);
                 else
                 {

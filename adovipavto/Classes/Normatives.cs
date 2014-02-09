@@ -14,6 +14,7 @@ namespace adovipavto.Classes
     class Normatives
     {
         private List<string> normas;
+        private List<int> decimals;
 
         public Normatives()
         {
@@ -47,11 +48,45 @@ namespace adovipavto.Classes
                 /*22*/rm.GetString("PPBS"),
                 /*23*/rm.GetString("VSHA"),
             };
+
+            decimals = new List<int>
+            {
+                /*0*/2,
+                /*1*/2,
+                /*2*/0,
+                /*3*/0,
+                /*4*/0,
+                /*5*/0,
+                /*6*/0,
+                /*7*/0,
+                /*8*/0,
+                /*9*/0,
+                /*10*/0,
+                /*11*/0,
+                /*12*/1,
+                /*13*/2,
+                /*14*/2,
+                /*15*/0,
+                /*16*/0,
+                /*17*/2,
+                /*18*/2,
+                /*19*/3,/**********************/
+                /*20*/0,
+                /*21*/0,
+                /*22*/0,
+                /*23*/0,
+            };
+
         }
 
         public List<string> NormativesTitle
         {
             get { return normas; }
+        }
+
+        public List<int> DecimalPoints
+        {
+            get { return decimals; }
         }
 
         public int GetNormativeIndex(string title)
