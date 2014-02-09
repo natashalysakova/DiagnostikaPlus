@@ -50,5 +50,13 @@ namespace adovipavto
             DialogResult = DialogResult.Cancel;
             Close();
         }
+
+        private void Auth_Load(object sender, EventArgs e)
+        {
+#if DEBUG
+            textBox1.Text = "1";
+            maskedTextBox1.Text = "1";
+#endif
+        }
     }
 }

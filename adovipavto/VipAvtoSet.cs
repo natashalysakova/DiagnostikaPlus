@@ -16,13 +16,6 @@ namespace adovipavto
 {
     public partial class VipAvtoSet
     {
-        partial class ProtocolsDataTable
-        {
-        }
-        //partial class MesuresDataTable
-        //{
-        //}
-
         private Operator _currentOperator;
         private ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
@@ -438,7 +431,7 @@ namespace adovipavto
         internal string GetShortMechanicName(int p)
         {
             return (from DataRow item in Tables[Constants.MechanicsTableName].Rows
-                    where (int)item["MechanicID"] == p && (int)item["State"] == (int)State.Employed
+                    where (int)item["MechanicID"] == p
                 select
                     item["LastName"] + " " + item["Name"].ToString()[0] + ". " + item["FatherName"].ToString()[0] + ".")
                 .ToArray()[0];
@@ -584,6 +577,15 @@ namespace adovipavto
                 return null;
 
             return rows[0];
+        }
+
+        internal DataRow[] GetProtocolsBetweenDates(DateTime dateTime1, DateTime dateTime2)
+        {
+            return (from DataRow item in Protocols.Rows
+                where
+                    (DateTime) item[Protocols.DateColumn] > dateTime1 &&
+                    (DateTime) item[Protocols.DateColumn] <= dateTime2
+                select item).ToArray();
         }
     }
 }

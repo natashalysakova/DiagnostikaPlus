@@ -190,6 +190,12 @@
     <Compile Include="ProtocolReportForm.Designer.cs">
       <DependentUpon>ProtocolReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -380,6 +386,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProtocolReportForm.uk-UA.resx">
       <DependentUpon>ProtocolReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.ru-RU.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.uk-UA.resx">
+      <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search.resx">
       <DependentUpon>Search.cs</DependentUpon>

@@ -16,6 +16,9 @@ namespace adovipavto.Classes
 {
     class PrintProtocolDocument : PrintDocument
     {
+        private readonly DataRow[] _rows;
+        private readonly DateTime _from;
+        private readonly DateTime _to;
         public DataRow Protocol { get; set; }
         private readonly ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
@@ -31,12 +34,116 @@ namespace adovipavto.Classes
             OriginAtMargins = true;
             DefaultPageSettings.Margins = new Margins(60, 30, 30, 30);
             DocumentName = rm.GetString("protocol");
-            PrintPage+=PrintProtocolDocument_PrintPage;
-            
+            PrintPage += PrintProtocolDocument_PrintPage;
+
             DefaultPageSettings.PaperSize.RawKind = 9;
             /*A4 - http://msdn.microsoft.com/en-us/library/system.drawing.printing.papersize.rawkind(v=vs.110).aspx */
 
         }
+
+        public PrintProtocolDocument(DataRow[] rows, DateTime from, DateTime to)
+        {
+
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Properties.Settings.Default.Language);
+
+            _rows = rows;
+            _from = from;
+            _to = to;
+            OriginAtMargins = true;
+            DefaultPageSettings.Margins = new Margins(60, 30, 30, 30);
+            DocumentName = rm.GetString("protocol");
+            PrintPage += PrintProtocolDocument_PrintPage2;
+            DefaultPageSettings.PaperSize.RawKind = 9;
+            /*A4 - http://msdn.microsoft.com/en-us/library/system.drawing.printing.papersize.rawkind(v=vs.110).aspx */
+
+        }
+
+        private void PrintProtocolDocument_PrintPage2(object sender, PrintPageEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            g.SmoothingMode = SmoothingMode.HighQuality;
+
+            Font titleFont = new Font(FontFamily.GenericSansSerif, 18F, FontStyle.Bold);
+            Font boldFont = new Font(FontFamily.GenericSansSerif, 11F, FontStyle.Bold);
+            Font normalFont = new Font(FontFamily.GenericSansSerif, 10F, FontStyle.Regular);
+            Font bigFont = new Font(FontFamily.GenericSansSerif, 18F, FontStyle.Bold);
+            Font smallFont = new Font(FontFamily.GenericSansSerif, 7F, FontStyle.Regular);
+            int LineHeight = 21;
+            float cenerPoint = e.PageBounds.Width / 2.0f;
+
+            var sf = new StringFormat
+            {
+                Alignment = StringAlignment.Center
+            };
+
+            if (_from.ToShortDateString() == _to.ToShortDateString())
+            {
+                g.DrawString(rm.GetString("journal") + " " + _from.ToShortDateString(), titleFont, Brushes.Black, new PointF(cenerPoint, LineHeight),sf);
+            }
+            else
+            {
+                g.DrawString(rm.GetString("journalFrom") + " " + _from.ToShortDateString() + " " + rm.GetString("to") + " " + _to.ToShortDateString(), titleFont, Brushes.Black, new PointF(cenerPoint, LineHeight), sf);
+            }
+
+
+            g.DrawLine(Pens.Black, 15, (3 * LineHeight), 750, (3 * LineHeight));
+
+            int k = 3 * LineHeight;
+            int i = 0;
+
+            for (int j = index; j < _rows.Length; j++)
+            {
+                if (i > 49)
+                {
+                    index = j;
+                    e.HasMorePages = true;
+                    return;
+                }
+
+
+                g.DrawString((j + 1).ToString(), normalFont, Brushes.Black,
+                    new PointF(20, LineHeight * (i + 3) + 3));
+                g.DrawString(_rows[j]["BlankNumber"].ToString(), normalFont, Brushes.Black, new PointF(65, LineHeight * (i + 3) + 3));
+
+                g.DrawString(Program.VipAvtoDataSet.CreateGroupTitle((int)_rows[j]["IDGroup"]), normalFont, Brushes.Black, new PointF(185, LineHeight * (i + 3) + 3));
+
+                g.DrawString(((DateTime)_rows[j]["Date"]).ToShortDateString(), normalFont, Brushes.Black, new PointF(370, LineHeight * (i + 3) + 3));
+                string s = (bool)_rows[j]["Result"] ? rm.GetString("check") : rm.GetString("uncheck");
+                g.DrawString(s, normalFont, Brushes.Black, new PointF(450, LineHeight * (i + 3) + 3));
+                g.DrawString(Program.VipAvtoDataSet.GetShortMechanicName((int)_rows[j]["IDMechanic"]), normalFont, Brushes.Black, new PointF(575, LineHeight * (i + 3) + 3));
+                
+                
+                g.DrawLine(Pens.Black, 15, ((i + 4) * LineHeight), 750, ((i + 4) * LineHeight));
+                g.DrawLine(Pens.Black, 15, (i + 3) * LineHeight, 15, (i + 4) * LineHeight);
+                g.DrawLine(Pens.Black, 60, (i + 3) * LineHeight, 60, (i + 4) * LineHeight);
+                g.DrawLine(Pens.Black, 180, (i + 3) * LineHeight, 180, (i + 4) * LineHeight);
+                g.DrawLine(Pens.Black, 365, (i + 3) * LineHeight, 365, (i + 4) * LineHeight);
+                g.DrawLine(Pens.Black, 445, (i + 3) * LineHeight, 445, (i + 4) * LineHeight);
+                g.DrawLine(Pens.Black, 570, (i + 3) * LineHeight, 570, (i + 4) * LineHeight);
+                g.DrawLine(Pens.Black, 750, (i + 3) * LineHeight, 750, (i + 4) * LineHeight);
+
+
+
+
+                k += LineHeight;
+                i++;
+            }
+
+            g.DrawLine(Pens.Black, 15, ((i + 4) * LineHeight), 750, ((i + 4) * LineHeight));
+            //some statistics
+            int check = (from dataRow in _rows
+                where (bool) dataRow["Result"] == true
+                select dataRow).ToArray().Length;
+            int uncheck = _rows.Length - check;
+            g.DrawString(rm.GetString("check")+": " + check, normalFont, Brushes.Black, new PointF(50, LineHeight * (i + 5) + 3));
+            g.DrawString(rm.GetString("uncheck") + ": " + uncheck, normalFont, Brushes.Black, new PointF(200, LineHeight * (i + 5) + 3));
+            g.DrawString(rm.GetString("total") + ": " + (check+uncheck), normalFont, Brushes.Black, new PointF(350, LineHeight * (i + 5) + 3));
+
+
+        }
+
+        private int index = 0;
+
 
         private void PrintProtocolDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {

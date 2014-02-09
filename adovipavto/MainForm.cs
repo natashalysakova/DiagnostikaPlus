@@ -187,7 +187,7 @@ namespace adovipavto
 
         private void cpyBtn_Click(object sender, EventArgs e)
         {
-
+            new Report().ShowDialog();
         }
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -257,6 +257,7 @@ namespace adovipavto
                 }
 
             } while (!SetUserRights());
+            UpdateRows();
         }
 
         private void srchBtn_Click(object sender, EventArgs e)

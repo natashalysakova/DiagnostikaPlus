@@ -373,4 +373,16 @@
   <data name="protocol" xml:space="preserve">
     <value>Протокол</value>
   </data>
+  <data name="journal" xml:space="preserve">
+    <value>Журнал протоколов за</value>
+  </data>
+  <data name="journalFrom" xml:space="preserve">
+    <value>Журнал протоколов с</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>по</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>Всего</value>
+  </data>
 </root>
