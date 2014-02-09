@@ -122,13 +122,11 @@
             this.label65 = new System.Windows.Forms.Label();
             this.engineAndItsSystem = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
-            this.CHVNMO = new System.Windows.Forms.Label();
             this.DVRSUP = new System.Windows.Forms.Label();
             this.DVRSUM = new System.Windows.Forms.Label();
             this.SCHMACHV = new System.Windows.Forms.Label();
@@ -142,14 +140,12 @@
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
             this.lightSystem = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -900,13 +896,11 @@
             // tableLayoutPanel4
             // 
             resources.ApplyResources(this.tableLayoutPanel4, "tableLayoutPanel4");
-            this.tableLayoutPanel4.Controls.Add(this.textBox8, 1, 13);
             this.tableLayoutPanel4.Controls.Add(this.textBox9, 1, 11);
             this.tableLayoutPanel4.Controls.Add(this.textBox10, 1, 9);
             this.tableLayoutPanel4.Controls.Add(this.textBox16, 1, 7);
             this.tableLayoutPanel4.Controls.Add(this.textBox17, 1, 5);
             this.tableLayoutPanel4.Controls.Add(this.textBox18, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(this.CHVNMO, 0, 12);
             this.tableLayoutPanel4.Controls.Add(this.DVRSUP, 0, 10);
             this.tableLayoutPanel4.Controls.Add(this.DVRSUM, 0, 8);
             this.tableLayoutPanel4.Controls.Add(this.SCHMACHV, 0, 6);
@@ -920,21 +914,13 @@
             this.tableLayoutPanel4.Controls.Add(this.label49, 0, 7);
             this.tableLayoutPanel4.Controls.Add(this.label50, 0, 9);
             this.tableLayoutPanel4.Controls.Add(this.label51, 0, 11);
-            this.tableLayoutPanel4.Controls.Add(this.label52, 0, 13);
             this.tableLayoutPanel4.Controls.Add(this.label53, 2, 1);
             this.tableLayoutPanel4.Controls.Add(this.label54, 2, 3);
             this.tableLayoutPanel4.Controls.Add(this.label55, 2, 5);
             this.tableLayoutPanel4.Controls.Add(this.label56, 2, 7);
             this.tableLayoutPanel4.Controls.Add(this.label57, 2, 9);
             this.tableLayoutPanel4.Controls.Add(this.label58, 2, 11);
-            this.tableLayoutPanel4.Controls.Add(this.label59, 2, 13);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            // 
-            // textBox8
-            // 
-            resources.ApplyResources(this.textBox8, "textBox8");
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Tag = "19";
             // 
             // textBox9
             // 
@@ -965,12 +951,6 @@
             resources.ApplyResources(this.textBox18, "textBox18");
             this.textBox18.Name = "textBox18";
             this.textBox18.Tag = "14";
-            // 
-            // CHVNMO
-            // 
-            resources.ApplyResources(this.CHVNMO, "CHVNMO");
-            this.tableLayoutPanel4.SetColumnSpan(this.CHVNMO, 3);
-            this.CHVNMO.Name = "CHVNMO";
             // 
             // DVRSUP
             // 
@@ -1062,14 +1042,6 @@
             this.label51.Name = "label51";
             this.label51.Tag = "18";
             // 
-            // label52
-            // 
-            resources.ApplyResources(this.label52, "label52");
-            this.label52.BackColor = System.Drawing.SystemColors.Control;
-            this.label52.ForeColor = System.Drawing.Color.Silver;
-            this.label52.Name = "label52";
-            this.label52.Tag = "19";
-            // 
             // label53
             // 
             resources.ApplyResources(this.label53, "label53");
@@ -1117,14 +1089,6 @@
             this.label58.ForeColor = System.Drawing.Color.Silver;
             this.label58.Name = "label58";
             this.label58.Tag = "18";
-            // 
-            // label59
-            // 
-            resources.ApplyResources(this.label59, "label59");
-            this.label59.BackColor = System.Drawing.SystemColors.Control;
-            this.label59.ForeColor = System.Drawing.Color.Silver;
-            this.label59.Name = "label59";
-            this.label59.Tag = "19";
             // 
             // lightSystem
             // 
@@ -1411,13 +1375,11 @@
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.GroupBox engineAndItsSystem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.Label CHVNMO;
         private System.Windows.Forms.Label DVRSUP;
         private System.Windows.Forms.Label DVRSUM;
         private System.Windows.Forms.Label SCHMACHV;
@@ -1431,14 +1393,12 @@
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label59;
         private System.Windows.Forms.GroupBox lightSystem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox textBox11;
