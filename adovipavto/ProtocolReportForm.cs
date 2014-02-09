@@ -91,6 +91,7 @@ namespace adovipavto
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            printDialog1.Document = document;
             if (printDialog1.ShowDialog() == DialogResult.OK)
             {
                 document.Print();

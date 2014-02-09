@@ -133,9 +133,6 @@
   <data name="printPreviewControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <metadata name="printDocument1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="printPreviewControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -187,7 +184,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 52</value>
+    <value>101, 52</value>
   </data>
   <data name="toolStripButton2.Text" xml:space="preserve">
     <value>toolStripButton2</value>
@@ -196,7 +193,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 52</value>
+    <value>101, 52</value>
   </data>
   <data name="toolStripButton1.Text" xml:space="preserve">
     <value>toolStripButton1</value>
@@ -205,7 +202,7 @@
     <value>Segoe UI, 10pt</value>
   </data>
   <data name="toolStripLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 19</value>
+    <value>101, 19</value>
   </data>
   <data name="toolStripLabel1.Text" xml:space="preserve">
     <value>toolStripLabel1</value>
@@ -235,13 +232,13 @@
     <value>7</value>
   </data>
   <data name="toolStripComboBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 23</value>
+    <value>99, 23</value>
   </data>
   <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 3</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 176</value>
+    <value>103, 180</value>
   </data>
   <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -338,12 +335,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ProtocolReportForm</value>
-  </data>
-  <data name="&gt;&gt;printDocument1.Name" xml:space="preserve">
-    <value>printDocument1</value>
-  </data>
-  <data name="&gt;&gt;printDocument1.Type" xml:space="preserve">
-    <value>System.Drawing.Printing.PrintDocument, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;toolStripButton2.Name" xml:space="preserve">
     <value>toolStripButton2</value>

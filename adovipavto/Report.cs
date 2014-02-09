@@ -49,6 +49,7 @@ namespace adovipavto
 
         private void button2_Click(object sender, EventArgs e)
         {
+            printDialog1.Document = _document;
             if (printDialog1.ShowDialog() == DialogResult.OK)
             {
                 _document.Print();
