@@ -344,7 +344,7 @@ namespace adovipavto
 
 
         internal int AddProtocol(string p1, string p2, DateTime dateTime, string techpass, string p3, bool result,
-            DateTime nexDateTime, bool visChck)
+            DateTime nexDateTime, bool visChck, int gbo)
         {
             DataRow r = Tables[Constants.ProtocolsTableName].NewRow();
 
@@ -360,6 +360,7 @@ namespace adovipavto
             r["Result"] = result;
             r["NextData"] = nexDateTime.Date;
             r["VisualCheck"] = visChck;
+            r["GBO"] = gbo;
 
             Tables[Constants.ProtocolsTableName].Rows.Add(r);
             Tables[Constants.ProtocolsTableName].AcceptChanges();
@@ -475,12 +476,12 @@ namespace adovipavto
             }
         }
 
-        internal bool GroupExist(int p1, string p2, int p3, bool p4)
+        internal bool GroupExist(int year, string category, int engine, bool before)
         {
             var rows = (from DataRow item in Tables[Constants.GroupTableName].Rows
                 where
-                    (int) item["Year"] == p1 && item["Category"].ToString() == p2 && (int) item["EngineType"] == p3 &&
-                    (bool) item["Before"] == p4
+                    (int) item["Year"] == year && item["Category"].ToString() == category && (int) item["EngineType"] == engine &&
+                    (bool) item["Before"] == before
                 select item).ToList();
 
             if (rows.Count == 0)
@@ -554,6 +555,18 @@ namespace adovipavto
                     (DateTime) item[Protocols.DateColumn] > dateTime1 &&
                     (DateTime) item[Protocols.DateColumn] <= dateTime2
                 select item).ToArray();
+        }
+
+        internal bool GroupWithGasEngine(string p)
+        {
+            int id = GetGroupId(p);
+
+            DataRow r = GetRowById(Constants.GroupTableName, id);
+
+            if ((int) r["EngineType"] == 0)
+                return true;
+
+            return false;
         }
     }
 }

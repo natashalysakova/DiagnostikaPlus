@@ -102,8 +102,9 @@ namespace adovipavto.AddForms
             //CHVNMO.Text = rm.GetString("CHVNMO");
             //CHVNPO.Text = rm.GetString("CHVNPO");
 
-            GBO.Text = rm.GetString("GBO");
-            GBBS.Text = rm.GetString("GGBS");
+            GBO.Text = rm.GetString("GGBS");
+            radioButton6.Text = rm.GetString("germ");
+            radioButton7.Text = rm.GetString("nogerm");
 
             glass.Text = rm.GetString("glass");
             PVS.Text = rm.GetString("PVS");
@@ -123,6 +124,8 @@ namespace adovipavto.AddForms
             radioButton1.Text = rm.GetString("check");
             radioButton2.Text = rm.GetString("uncheck");
 
+
+
             label79.Text = rm.GetString("notAllFields");
         }
 
@@ -141,9 +144,32 @@ namespace adovipavto.AddForms
             if (!maskedTextBox1.MaskCompleted) return;
 
             panel1.Enabled = true;
+            if (Program.VipAvtoDataSet.GroupWithGasEngine(comboBox1.SelectedItem.ToString()))
+            {
+                if (MessageBox.Show(rm.GetString("IsGBOActive"), rm.GetString("warning"), MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    GBO.Enabled = true;
+                    GBO.BackColor = Color.LightGoldenrodYellow;
+
+                }
+                else
+                {
+                    GBO.Enabled = false;
+                    GBO.BackColor = SystemColors.Control;
+                }
+            }
+            else
+            {
+                GBO.Enabled = false;
+                GBO.BackColor = SystemColors.Control;
+            }
+
+
             PreviewBtn.Enabled = true;
             SaveBtn.Enabled = true;
             PrintBtn.Enabled = true;
+
 
             rows = new List<VisualRow>();
 
@@ -208,6 +234,7 @@ namespace adovipavto.AddForms
                 visualCheck.BackColor = Color.LightGoldenrodYellow;
                 groupBox10.BackColor = Color.LightGoldenrodYellow;
 
+
                 panel2.BackColor = Color.LightGoldenrodYellow;
 
                 timer1.Start();
@@ -241,6 +268,15 @@ namespace adovipavto.AddForms
                     }
                 }
             }
+
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
+            radioButton4.Checked = false;
+            radioButton5.Checked = false;
+            radioButton6.Checked = false;
+            radioButton7.Checked = false;
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -306,9 +342,25 @@ namespace adovipavto.AddForms
                 nexDateTime = dateTimePicker1.Value.AddYears(2);
             }
 
+            int gbo;
+
+            if (GBO.Enabled == false)
+            {
+                gbo = (int)Gbo.NotChecked;
+            }
+            else
+            {
+                if (radioButton6.Checked)
+                    gbo = (int)Gbo.Germetical;
+                else
+                {
+                    gbo = (int)Gbo.NotGermrtical;
+                }
+            }
+
 
             _newProtocolId = Program.VipAvtoDataSet.AddProtocol(label80.Text + maskedTextBox1.Text,
-comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, techpass, comboBox1.SelectedItem.ToString(), result, nexDateTime, radioButton1.Checked);
+comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, techpass, comboBox1.SelectedItem.ToString(), result, nexDateTime, radioButton1.Checked, gbo);
 
             foreach (VisualRow row in rows)
             {
@@ -383,6 +435,13 @@ comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, techpass, comboBox1.Se
             if (groupBox10.BackColor == Color.LightGoldenrodYellow)
                 result = true;
 
+            if (GBO.Enabled)
+            {
+                if (GBO.BackColor == Color.LightGoldenrodYellow)
+                    result = true;
+            }
+
+
             return result;
 
 
@@ -401,6 +460,12 @@ comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, techpass, comboBox1.Se
 
             if (visualCheck.BackColor == Color.LightPink)
                 result = false;
+
+            if (GBO.Enabled)
+            {
+                if (GBO.BackColor == Color.LightPink)
+                    result = false;
+            }
 
             return result;
         }
@@ -477,6 +542,16 @@ comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, techpass, comboBox1.Se
             {
                 ((PictureBox)sender).Tag = openFileDialog1.FileName;
                 ((PictureBox)sender).Image = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton6.Checked)
+                GBO.BackColor = Color.LightGreen;
+            else
+            {
+                GBO.BackColor = Color.LightPink;
             }
         }
     }

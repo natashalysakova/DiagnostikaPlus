@@ -71,11 +71,6 @@
             this.OUTSRTS = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.GBO = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.GBBS = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label79 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
@@ -108,12 +103,6 @@
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.label67 = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
-            this.wheelSystem = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.SL = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
             this.noise = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.VSHA = new System.Windows.Forms.Label();
@@ -171,12 +160,19 @@
             this.SaveBtn = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.wheelSystem = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.SL = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.brakesystem.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.GBO.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
@@ -186,14 +182,14 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.wheelAndTyres.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.wheelSystem.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.noise.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.engineAndItsSystem.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.lightSystem.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.wheelSystem.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -277,13 +273,13 @@
             this.label6.BackColor = System.Drawing.SystemColors.Control;
             this.label6.ForeColor = System.Drawing.Color.Silver;
             this.label6.Name = "label6";
-            this.label6.Tag = "20";
+            this.label6.Tag = "19";
             // 
             // textBox20
             // 
             resources.ApplyResources(this.textBox20, "textBox20");
             this.textBox20.Name = "textBox20";
-            this.textBox20.Tag = "20";
+            this.textBox20.Tag = "19";
             // 
             // label4
             // 
@@ -291,7 +287,7 @@
             this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.ForeColor = System.Drawing.Color.Silver;
             this.label4.Name = "label4";
-            this.label4.Tag = "20";
+            this.label4.Tag = "19";
             // 
             // ORTSS
             // 
@@ -498,6 +494,7 @@
             // panel1
             // 
             resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Controls.Add(this.wheelSystem);
             this.panel1.Controls.Add(this.GBO);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.groupBox11);
@@ -505,7 +502,6 @@
             this.panel1.Controls.Add(this.visualCheck);
             this.panel1.Controls.Add(this.glass);
             this.panel1.Controls.Add(this.wheelAndTyres);
-            this.panel1.Controls.Add(this.wheelSystem);
             this.panel1.Controls.Add(this.noise);
             this.panel1.Controls.Add(this.engineAndItsSystem);
             this.panel1.Controls.Add(this.lightSystem);
@@ -515,46 +511,10 @@
             // GBO
             // 
             resources.ApplyResources(this.GBO, "GBO");
-            this.GBO.Controls.Add(this.tableLayoutPanel8);
+            this.GBO.Controls.Add(this.radioButton7);
+            this.GBO.Controls.Add(this.radioButton6);
             this.GBO.Name = "GBO";
             this.GBO.TabStop = false;
-            // 
-            // tableLayoutPanel8
-            // 
-            resources.ApplyResources(this.tableLayoutPanel8, "tableLayoutPanel8");
-            this.tableLayoutPanel8.Controls.Add(this.GBBS, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.textBox23, 1, 1);
-            this.tableLayoutPanel8.Controls.Add(this.label5, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.label7, 2, 1);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            // 
-            // GBBS
-            // 
-            resources.ApplyResources(this.GBBS, "GBBS");
-            this.tableLayoutPanel8.SetColumnSpan(this.GBBS, 3);
-            this.GBBS.Name = "GBBS";
-            // 
-            // textBox23
-            // 
-            resources.ApplyResources(this.textBox23, "textBox23");
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Tag = "19";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.BackColor = System.Drawing.SystemColors.Control;
-            this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Name = "label5";
-            this.label5.Tag = "19";
-            // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.BackColor = System.Drawing.SystemColors.Control;
-            this.label7.ForeColor = System.Drawing.Color.Silver;
-            this.label7.Name = "label7";
-            this.label7.Tag = "19";
             // 
             // panel2
             // 
@@ -702,7 +662,7 @@
             // 
             resources.ApplyResources(this.textBox25, "textBox25");
             this.textBox25.Name = "textBox25";
-            this.textBox25.Tag = "22";
+            this.textBox25.Tag = "21";
             // 
             // PPBS
             // 
@@ -720,7 +680,7 @@
             // 
             resources.ApplyResources(this.textBox26, "textBox26");
             this.textBox26.Name = "textBox26";
-            this.textBox26.Tag = "21";
+            this.textBox26.Tag = "20";
             // 
             // label73
             // 
@@ -728,7 +688,7 @@
             this.label73.BackColor = System.Drawing.SystemColors.Control;
             this.label73.ForeColor = System.Drawing.Color.Silver;
             this.label73.Name = "label73";
-            this.label73.Tag = "21";
+            this.label73.Tag = "20";
             // 
             // label74
             // 
@@ -736,7 +696,7 @@
             this.label74.BackColor = System.Drawing.SystemColors.Control;
             this.label74.ForeColor = System.Drawing.Color.Silver;
             this.label74.Name = "label74";
-            this.label74.Tag = "22";
+            this.label74.Tag = "21";
             // 
             // label77
             // 
@@ -744,7 +704,7 @@
             this.label77.BackColor = System.Drawing.SystemColors.Control;
             this.label77.ForeColor = System.Drawing.Color.Silver;
             this.label77.Name = "label77";
-            this.label77.Tag = "21";
+            this.label77.Tag = "20";
             // 
             // label78
             // 
@@ -752,7 +712,7 @@
             this.label78.BackColor = System.Drawing.SystemColors.Control;
             this.label78.ForeColor = System.Drawing.Color.Silver;
             this.label78.Name = "label78";
-            this.label78.Tag = "22";
+            this.label78.Tag = "21";
             // 
             // wheelAndTyres
             // 
@@ -798,50 +758,6 @@
             this.label68.Name = "label68";
             this.label68.Tag = "12";
             // 
-            // wheelSystem
-            // 
-            resources.ApplyResources(this.wheelSystem, "wheelSystem");
-            this.wheelSystem.Controls.Add(this.tableLayoutPanel2);
-            this.wheelSystem.Name = "wheelSystem";
-            this.wheelSystem.TabStop = false;
-            // 
-            // tableLayoutPanel2
-            // 
-            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
-            this.tableLayoutPanel2.Controls.Add(this.SL, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox14, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label31, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label38, 2, 1);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            // 
-            // SL
-            // 
-            resources.ApplyResources(this.SL, "SL");
-            this.tableLayoutPanel2.SetColumnSpan(this.SL, 3);
-            this.SL.Name = "SL";
-            // 
-            // textBox14
-            // 
-            resources.ApplyResources(this.textBox14, "textBox14");
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Tag = "7";
-            // 
-            // label31
-            // 
-            resources.ApplyResources(this.label31, "label31");
-            this.label31.BackColor = System.Drawing.SystemColors.Control;
-            this.label31.ForeColor = System.Drawing.Color.Silver;
-            this.label31.Name = "label31";
-            this.label31.Tag = "7";
-            // 
-            // label38
-            // 
-            resources.ApplyResources(this.label38, "label38");
-            this.label38.BackColor = System.Drawing.SystemColors.Control;
-            this.label38.ForeColor = System.Drawing.Color.Silver;
-            this.label38.Name = "label38";
-            this.label38.Tag = "7";
-            // 
             // noise
             // 
             resources.ApplyResources(this.noise, "noise");
@@ -868,7 +784,7 @@
             // 
             resources.ApplyResources(this.textBox21, "textBox21");
             this.textBox21.Name = "textBox21";
-            this.textBox21.Tag = "23";
+            this.textBox21.Tag = "22";
             // 
             // label64
             // 
@@ -876,7 +792,7 @@
             this.label64.BackColor = System.Drawing.SystemColors.Control;
             this.label64.ForeColor = System.Drawing.Color.Silver;
             this.label64.Name = "label64";
-            this.label64.Tag = "23";
+            this.label64.Tag = "22";
             // 
             // label65
             // 
@@ -884,7 +800,7 @@
             this.label65.BackColor = System.Drawing.SystemColors.Control;
             this.label65.ForeColor = System.Drawing.Color.Silver;
             this.label65.Name = "label65";
-            this.label65.Tag = "23";
+            this.label65.Tag = "22";
             // 
             // engineAndItsSystem
             // 
@@ -1275,6 +1191,66 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
+            // wheelSystem
+            // 
+            resources.ApplyResources(this.wheelSystem, "wheelSystem");
+            this.wheelSystem.Controls.Add(this.tableLayoutPanel2);
+            this.wheelSystem.Name = "wheelSystem";
+            this.wheelSystem.TabStop = false;
+            // 
+            // tableLayoutPanel2
+            // 
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.SL, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.textBox14, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label31, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label38, 2, 1);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // SL
+            // 
+            resources.ApplyResources(this.SL, "SL");
+            this.tableLayoutPanel2.SetColumnSpan(this.SL, 3);
+            this.SL.Name = "SL";
+            // 
+            // textBox14
+            // 
+            resources.ApplyResources(this.textBox14, "textBox14");
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Tag = "7";
+            // 
+            // label31
+            // 
+            resources.ApplyResources(this.label31, "label31");
+            this.label31.BackColor = System.Drawing.SystemColors.Control;
+            this.label31.ForeColor = System.Drawing.Color.Silver;
+            this.label31.Name = "label31";
+            this.label31.Tag = "7";
+            // 
+            // label38
+            // 
+            resources.ApplyResources(this.label38, "label38");
+            this.label38.BackColor = System.Drawing.SystemColors.Control;
+            this.label38.ForeColor = System.Drawing.Color.Silver;
+            this.label38.Name = "label38";
+            this.label38.Tag = "7";
+            // 
+            // radioButton6
+            // 
+            resources.ApplyResources(this.radioButton6, "radioButton6");
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.TabStop = true;
+            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            // 
+            // radioButton7
+            // 
+            resources.ApplyResources(this.radioButton7, "radioButton7");
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.TabStop = true;
+            this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton7.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            // 
             // AddProtocol
             // 
             resources.ApplyResources(this, "$this");
@@ -1302,8 +1278,6 @@
             this.panel1.PerformLayout();
             this.GBO.ResumeLayout(false);
             this.GBO.PerformLayout();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
@@ -1320,10 +1294,6 @@
             this.wheelAndTyres.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            this.wheelSystem.ResumeLayout(false);
-            this.wheelSystem.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.noise.ResumeLayout(false);
             this.noise.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -1336,6 +1306,10 @@
             this.lightSystem.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.wheelSystem.ResumeLayout(false);
+            this.wheelSystem.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1417,12 +1391,6 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.GroupBox wheelSystem;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label SL;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label38;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
@@ -1473,16 +1441,19 @@
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.GroupBox GBO;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.Label GBBS;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label ORTSS;
         private System.Windows.Forms.Label KUNOU1;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.GroupBox wheelSystem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label SL;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.RadioButton radioButton6;
     }
 }

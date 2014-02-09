@@ -882,6 +882,8 @@ namespace adovipavto {
             
             private global::System.Data.DataColumn columnVisualCheck;
             
+            private global::System.Data.DataColumn columnGBO;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ProtocolsDataTable() {
@@ -997,6 +999,14 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GBOColumn {
+                get {
+                    return this.columnGBO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1032,7 +1042,7 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProtocolsRow AddProtocolsRow(string BlankNumber, OperatorsRow parentOperatorsRowByFK_Operators_Protocols, MechanicsRow parentMechanicsRowByFK_Mechanics_Protocols, System.DateTime Date, string TechPhoto, CarGroupRow parentCarGroupRowByFK_CarGroup_Protocols, bool Result, System.DateTime NextData, bool VisualCheck) {
+            public ProtocolsRow AddProtocolsRow(string BlankNumber, OperatorsRow parentOperatorsRowByFK_Operators_Protocols, MechanicsRow parentMechanicsRowByFK_Mechanics_Protocols, System.DateTime Date, string TechPhoto, CarGroupRow parentCarGroupRowByFK_CarGroup_Protocols, bool Result, System.DateTime NextData, bool VisualCheck, int GBO) {
                 ProtocolsRow rowProtocolsRow = ((ProtocolsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1044,7 +1054,8 @@ namespace adovipavto {
                         null,
                         Result,
                         NextData,
-                        VisualCheck};
+                        VisualCheck,
+                        GBO};
                 if ((parentOperatorsRowByFK_Operators_Protocols != null)) {
                     columnValuesArray[2] = parentOperatorsRowByFK_Operators_Protocols[0];
                 }
@@ -1086,6 +1097,7 @@ namespace adovipavto {
                 this.columnResult = base.Columns["Result"];
                 this.columnNextData = base.Columns["NextData"];
                 this.columnVisualCheck = base.Columns["VisualCheck"];
+                this.columnGBO = base.Columns["GBO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1111,6 +1123,8 @@ namespace adovipavto {
                 base.Columns.Add(this.columnNextData);
                 this.columnVisualCheck = new global::System.Data.DataColumn("VisualCheck", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVisualCheck);
+                this.columnGBO = new global::System.Data.DataColumn("GBO", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGBO);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnProtocolID}, false));
                 this.columnProtocolID.AutoIncrement = true;
@@ -2819,6 +2833,22 @@ namespace adovipavto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int GBO {
+                get {
+                    try {
+                        return ((int)(this[this.tableProtocols.GBOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GBO\' in table \'Protocols\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProtocols.GBOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CarGroupRow CarGroupRow {
                 get {
                     return ((CarGroupRow)(this.GetParentRow(this.Table.ParentRelations["FK_CarGroup_Protocols"])));
@@ -2968,6 +2998,18 @@ namespace adovipavto {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetVisualCheckNull() {
                 this[this.tableProtocols.VisualCheckColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGBONull() {
+                return this.IsNull(this.tableProtocols.GBOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGBONull() {
+                this[this.tableProtocols.GBOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

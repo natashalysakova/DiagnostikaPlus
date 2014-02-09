@@ -61,6 +61,7 @@
               <xs:element name="Result" msprop:Generator_ColumnVarNameInTable="columnResult" msprop:Generator_ColumnPropNameInRow="Result" msprop:Generator_ColumnPropNameInTable="ResultColumn" msprop:Generator_UserColumnName="Result" type="xs:boolean" minOccurs="0" />
               <xs:element name="NextData" msprop:Generator_ColumnVarNameInTable="columnNextData" msprop:Generator_ColumnPropNameInRow="NextData" msprop:Generator_ColumnPropNameInTable="NextDataColumn" msprop:Generator_UserColumnName="NextData" type="xs:dateTime" minOccurs="0" />
               <xs:element name="VisualCheck" msprop:Generator_ColumnVarNameInTable="columnVisualCheck" msprop:Generator_ColumnPropNameInRow="VisualCheck" msprop:Generator_ColumnPropNameInTable="VisualCheckColumn" msprop:Generator_UserColumnName="VisualCheck" type="xs:boolean" minOccurs="0" />
+              <xs:element name="GBO" msprop:Generator_ColumnVarNameInTable="columnGBO" msprop:Generator_ColumnPropNameInRow="GBO" msprop:Generator_ColumnPropNameInTable="GBOColumn" msprop:Generator_UserColumnName="GBO" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

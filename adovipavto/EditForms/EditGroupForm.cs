@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Globalization;
+using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
@@ -11,6 +13,8 @@ namespace adovipavto.EditForms
     public partial class EditGroupForm : Form
     {
         private readonly DataRow selectedRow;
+        ResourceManager rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+
 
         public EditGroupForm(DataRow select)
         {
@@ -51,11 +55,25 @@ namespace adovipavto.EditForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Program.VipAvtoDataSet.EditGroup(Convert.ToInt32(selectedRow["GroupID"]),
-                Convert.ToInt32(yearComboBox.SelectedItem), categoryComboBox.SelectedItem.ToString(),
-                new Engines().GetEngineIndex(engineComboBox.SelectedItem.ToString()), radioButton1.Checked);
 
-            DialogResult = DialogResult.OK;
+            if (!Program.VipAvtoDataSet.GroupExist(Convert.ToInt32(yearComboBox.SelectedItem.ToString()),
+                categoryComboBox.SelectedItem.ToString(),
+                new Engines().GetEngineIndex(engineComboBox.SelectedItem.ToString()), radioButton1.Checked))
+            {
+                Program.VipAvtoDataSet.EditGroup(Convert.ToInt32(selectedRow["GroupID"]),
+    Convert.ToInt32(yearComboBox.SelectedItem), categoryComboBox.SelectedItem.ToString(),
+    new Engines().GetEngineIndex(engineComboBox.SelectedItem.ToString()), radioButton1.Checked);
+
+                DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show(rm.GetString("groupExist2"),
+    rm.GetString("error"),
+    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
         }
     }
 }

@@ -385,4 +385,16 @@
   <data name="total" xml:space="preserve">
     <value>Всего</value>
   </data>
+  <data name="germ" xml:space="preserve">
+    <value>Герметична</value>
+  </data>
+  <data name="nogerm" xml:space="preserve">
+    <value>Не герметична</value>
+  </data>
+  <data name="groupExist2" xml:space="preserve">
+    <value>Группа с такими параметрами уже существует</value>
+  </data>
+  <data name="IsGBOActive" xml:space="preserve">
+    <value>На транспортном средстве установлено газобалонное оборудование?</value>
+  </data>
 </root>

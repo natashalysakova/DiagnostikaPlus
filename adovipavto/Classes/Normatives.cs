@@ -42,11 +42,10 @@ namespace adovipavto.Classes
                 /*16*/rm.GetString("SCHMACHV"),
                 /*17*/rm.GetString("DVRSUM"),
                 /*18*/rm.GetString("DVRSUP"),
-                /*19*/rm.GetString("GGBS"),
-                /*20*/rm.GetString("ORTSSS"),
-                /*21*/rm.GetString("PVS"),
-                /*22*/rm.GetString("PPBS"),
-                /*23*/rm.GetString("VSHA"),
+                /*19*/rm.GetString("ORTSSS"),
+                /*20*/rm.GetString("PVS"),
+                /*21*/rm.GetString("PPBS"),
+                /*22*/rm.GetString("VSHA"),
             };
 
             decimals = new List<int>
@@ -70,11 +69,10 @@ namespace adovipavto.Classes
                 /*16*/0,
                 /*17*/2,
                 /*18*/2,
-                /*19*/3,/**********************/
+                /*19*/0,
                 /*20*/0,
                 /*21*/0,
                 /*22*/0,
-                /*23*/0,
             };
 
         }
