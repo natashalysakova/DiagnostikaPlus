@@ -125,7 +125,7 @@ namespace adovipavto.AddForms
 
 
             //comboBox2.DataSource = Program.NormasTitles.Select(item => item.Value).ToList();
-            comboBox2.DataSource = new Normatives().NormativesTitle;
+            comboBox2.DataSource = new Normatives().GetAllNormatives();
         }
 
         private void button3_Click(object sender, EventArgs e)

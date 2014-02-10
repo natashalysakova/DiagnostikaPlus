@@ -27,7 +27,7 @@ namespace adovipavto.AddForms
         private void NewGroupForm_Load(object sender, EventArgs e)
         {
             checkedListBox1.DataSource = Enum.GetValues(typeof (Category));
-            checkedListBox2.DataSource = new Engines().EnginesTitle;
+            checkedListBox2.DataSource = new Engines().GetAllEngines();
             for (int i = 1920; i <= DateTime.Now.Year; i++)
             {
                 comboBox3.Items.Add(i);

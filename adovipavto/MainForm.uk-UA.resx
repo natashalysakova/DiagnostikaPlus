@@ -168,6 +168,9 @@
   <data name="toolStripButton17.Text" xml:space="preserve">
     <value>Про програму</value>
   </data>
+  <data name="toolStripButton1.Text" xml:space="preserve">
+    <value>Змінити користувача</value>
+  </data>
   <data name="toolStripButton18.Text" xml:space="preserve">
     <value>Вихід</value>
   </data>

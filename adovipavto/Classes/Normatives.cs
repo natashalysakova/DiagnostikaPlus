@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
@@ -7,7 +8,7 @@ using adovipavto.Properties;
 
 namespace adovipavto.Classes
 {
-    internal class Normatives
+    internal class Normatives : IEnumerable
     {
         private readonly List<int> _decimals;
         private readonly List<string> _normas;
@@ -72,10 +73,6 @@ namespace adovipavto.Classes
             };
         }
 
-        public List<string> NormativesTitle
-        {
-            get { return _normas; }
-        }
 
         public List<int> DecimalPoints
         {
@@ -84,13 +81,38 @@ namespace adovipavto.Classes
 
         public int GetNormativeIndex(string title)
         {
-            for (int i = 0; i < NormativesTitle.Count; i++)
+            for (int i = 0; i < _normas.Count; i++)
             {
-                if (NormativesTitle[i] == title)
+                if (_normas[i] == title)
                     return i;
             }
 
             return -1;
+        }
+
+        public string this[int i]
+        {
+            get { return _normas[i]; }
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return _normas.GetEnumerator();
+        }
+
+        public int Count
+        {
+            get { return _normas.Count; }
+        }
+
+        internal int IndexOf(string p)
+        {
+            return _normas.IndexOf(p);
+        }
+
+        internal List<string> GetAllNormatives()
+        {
+            return _normas;
         }
     }
 }

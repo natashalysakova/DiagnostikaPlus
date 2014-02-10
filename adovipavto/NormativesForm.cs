@@ -73,7 +73,7 @@ namespace adovipavto
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                row.Cells["NormTitle"].Value = new Normatives().NormativesTitle[(int) row.Cells["Tag"].Value];
+                row.Cells["NormTitle"].Value = new Normatives()[(int) row.Cells["Tag"].Value];
             }
         }
 

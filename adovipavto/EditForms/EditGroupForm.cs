@@ -42,8 +42,8 @@ namespace adovipavto.EditForms
             categoryComboBox.Text = _selectedRow["Category"].ToString();
 
 
-            engineComboBox.DataSource = new Engines().EnginesTitle;
-            engineComboBox.Text = new Engines().EnginesTitle[(int) _selectedRow["EngineType"]];
+            engineComboBox.DataSource = new Engines().GetAllEngines();
+            engineComboBox.Text = new Engines()[(int) _selectedRow["EngineType"]];
 
 
             for (int i = 1920; i <= DateTime.Now.Year; i++)

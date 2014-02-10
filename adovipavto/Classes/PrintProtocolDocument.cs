@@ -180,17 +180,17 @@ namespace adovipavto.Classes
 
             for (int i = 0; i < 5; i++)
             {
-                g.DrawString(norm.NormativesTitle[i], normalFont, Brushes.Black, new PointF(20F, (i + 3)*LineHeight));
+                g.DrawString(norm[i], normalFont, Brushes.Black, new PointF(20F, (i + 3)*LineHeight));
 
                 DrawPictorgam(i, g, (i + 3)*LineHeight, normalFont, i);
             }
 
-            g.DrawString(norm.NormativesTitle[20], normalFont, Brushes.Black, new PointF(20F, 8*LineHeight));
+            g.DrawString(norm[20], normalFont, Brushes.Black, new PointF(20F, 8*LineHeight));
             DrawPictorgam(20, g, 8*LineHeight, normalFont, 20);
 
             for (int i = 5; i < 7; i++)
             {
-                g.DrawString(norm.NormativesTitle[i], normalFont, Brushes.Black, new PointF(20F, (i + 4)*LineHeight));
+                g.DrawString(norm[i], normalFont, Brushes.Black, new PointF(20F, (i + 4)*LineHeight));
 
                 DrawPictorgam(i, g, (i + 4)*LineHeight, normalFont, i);
             }
@@ -199,7 +199,7 @@ namespace adovipavto.Classes
             g.DrawString(_rm.GetString("wheelSystem"), boldFont, Brushes.Black, new PointF(40F, 11*LineHeight));
             DrawHeader(g, normalFont, 11*LineHeight);
 
-            g.DrawString(norm.NormativesTitle[7], normalFont, Brushes.Black, new PointF(20F, 12*LineHeight));
+            g.DrawString(norm[7], normalFont, Brushes.Black, new PointF(20F, 12*LineHeight));
             DrawPictorgam(7, g, 12*LineHeight, normalFont, 7);
 
 
@@ -208,14 +208,14 @@ namespace adovipavto.Classes
 
             for (int i = 8; i < 12; i++)
             {
-                g.DrawString(norm.NormativesTitle[i], normalFont, Brushes.Black, new PointF(20F, (i + 6)*LineHeight));
+                g.DrawString(norm[i], normalFont, Brushes.Black, new PointF(20F, (i + 6)*LineHeight));
                 DrawPictorgam(i, g, (i + 6)*LineHeight, normalFont, i);
             }
 
             g.DrawString(_rm.GetString("wheelAndTyres"), boldFont, Brushes.Black, new PointF(40F, 18*LineHeight));
             DrawHeader(g, normalFont, 18*LineHeight);
 
-            g.DrawString(norm.NormativesTitle[12], normalFont, Brushes.Black, new PointF(20F, 19*LineHeight));
+            g.DrawString(norm[12], normalFont, Brushes.Black, new PointF(20F, 19*LineHeight));
             DrawPictorgam(12, g, 19*LineHeight, normalFont, 12);
 
 
@@ -224,15 +224,15 @@ namespace adovipavto.Classes
 
             for (int i = 13; i < 17; i++)
             {
-                g.DrawString(norm.NormativesTitle[i], normalFont, Brushes.Black, new PointF(20F, (i + 8)*LineHeight));
+                g.DrawString(norm[i], normalFont, Brushes.Black, new PointF(20F, (i + 8)*LineHeight));
                 DrawPictorgam(i, g, (i + 8)*LineHeight, normalFont, i);
             }
 
 
-            g.DrawString(norm.NormativesTitle[17], normalFont, Brushes.Black, new PointF(20F, 25*LineHeight));
+            g.DrawString(norm[17], normalFont, Brushes.Black, new PointF(20F, 25*LineHeight));
             DrawPictorgam(17, g, 25*LineHeight, normalFont, 17, true);
 
-            g.DrawString(norm.NormativesTitle[18], normalFont, Brushes.Black, new PointF(20F, 26*LineHeight));
+            g.DrawString(norm[18], normalFont, Brushes.Black, new PointF(20F, 26*LineHeight));
             DrawPictorgam(18, g, 26*LineHeight, normalFont, 18, true);
 
 
@@ -249,14 +249,14 @@ namespace adovipavto.Classes
 
             for (int i = 20; i < 22; i++)
             {
-                g.DrawString(norm.NormativesTitle[i], normalFont, Brushes.Black, new PointF(20F, (i + 8)*LineHeight));
+                g.DrawString(norm[i], normalFont, Brushes.Black, new PointF(20F, (i + 8)*LineHeight));
                 DrawPictorgam(i, g, (i + 8)*LineHeight, normalFont, i);
             }
 
             g.DrawString(_rm.GetString("noise"), boldFont, Brushes.Black, new PointF(40F, 30*LineHeight));
             DrawHeader(g, normalFont, 30*LineHeight);
 
-            g.DrawString(norm.NormativesTitle[22], normalFont, Brushes.Black, new PointF(20F, 31*LineHeight));
+            g.DrawString(norm[22], normalFont, Brushes.Black, new PointF(20F, 31*LineHeight));
             DrawPictorgam(22, g, 31*LineHeight, normalFont, 23);
 
 

@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Reflection;
 using System.Resources;
 using System.Threading;
@@ -6,7 +8,7 @@ using adovipavto.Properties;
 
 namespace adovipavto.Classes
 {
-    internal class Engines
+    internal class Engines  : IEnumerable
     {
         private readonly string[] _engines;
 
@@ -22,20 +24,31 @@ namespace adovipavto.Classes
             };
         }
 
-        public string[] EnginesTitle
-        {
-            get { return _engines; }
-        }
 
         public int GetEngineIndex(string title)
         {
-            for (int i = 0; i < EnginesTitle.Length; i++)
+            for (int i = 0; i < _engines.Length; i++)
             {
-                if (EnginesTitle[i] == title)
+                if (_engines[i] == title)
                     return i;
             }
 
             return -1;
+        }
+
+        public string this[int i]
+        {
+            get { return _engines[i]; }
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return _engines.GetEnumerator();
+        }
+
+        internal string[] GetAllEngines()
+        {
+            return _engines;
         }
     }
 }

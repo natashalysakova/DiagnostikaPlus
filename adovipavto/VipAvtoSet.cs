@@ -70,9 +70,9 @@ namespace adovipavto
         {
             var norm = new Normatives();
 
-            for (int i = 0; i < norm.NormativesTitle.Count; i++)
+            for (int i = 0; i < norm.Count; i++)
             {
-                string s = norm.NormativesTitle[i];
+                string s = norm[i];
                 if (s == title)
                 {
                     return i;
@@ -130,7 +130,7 @@ namespace adovipavto
                 var engine = (int) row["EngineType"];
 
                 if (cat == splitTitle[0] && bef == splitTitle[1] && year == splitTitle[2] &&
-                    new Engines().EnginesTitle[engine] == splitTitle[3])
+                    new Engines()[engine] == splitTitle[3])
                     return Convert.ToInt32(row["GroupID"]);
             }
 
@@ -147,7 +147,7 @@ namespace adovipavto
 
             string s = (bool) groupRow["Before"] ? _rm.GetString("before") : _rm.GetString("after");
             return groupRow["Category"] + " " + s + " " + groupRow["Year"] + " " +
-                   new Engines().EnginesTitle[(int) groupRow["EngineType"]];
+                   new Engines()[(int) groupRow["EngineType"]];
         }
 
         #endregion
@@ -454,13 +454,13 @@ namespace adovipavto
                 from DataRow item in Tables[Constants.NormativesTableName].Rows
                 where
                     (int) item["IDGroup"] == groupId &&
-                    (int) item["Tag"] == new Normatives().NormativesTitle.IndexOf(_rm.GetString("DVRSUM"))
+                    (int) item["Tag"] == new Normatives().IndexOf(_rm.GetString("DVRSUM"))
                 select item["MaxValue"]).ToArray();
             object[] tmp2 = (
                 from DataRow item in Tables[Constants.NormativesTableName].Rows
                 where
                     (int) item["IDGroup"] == groupId &&
-                    (int) item["Tag"] == new Normatives().NormativesTitle.IndexOf(_rm.GetString("DVRSUP"))
+                    (int) item["Tag"] == new Normatives().IndexOf(_rm.GetString("DVRSUP"))
                 select item["MaxValue"]).ToArray();
             if (tmp1.Length == 1 && tmp2.Length == 1)
             {
