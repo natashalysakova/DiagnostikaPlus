@@ -18,12 +18,27 @@ namespace adovipavto
         [STAThread]
         private static void Main()
         {
+            if (Settings.Default.FilesDirectory == String.Empty)
+            {
+                string path = Path.GetPathRoot(Environment.SystemDirectory) + @"DiagnostikaData\";
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+                Settings.Default.FilesDirectory = path;
+
+                Settings.Default.Save();
+            }
+
             var t = new Thread(SplashScreen);
 
             t.Start();
 
             VipAvtoDataSet = new VipAvtoSet();
             //NormasTitles = new Dictionary<Normatives, string>();
+
+
+
             LoadData();
 
 
