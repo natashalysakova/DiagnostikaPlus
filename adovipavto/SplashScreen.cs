@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
-using adovipavto.Properties;
+using adovipavto.Classes;
 
 namespace adovipavto
 {
@@ -13,7 +13,7 @@ namespace adovipavto
     {
         public SplashScreen()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
             InitializeComponent();
             var rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
             BackgroundImage = (Image) rm.GetObject("splashScreen2");

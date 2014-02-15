@@ -11,7 +11,6 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
-using adovipavto.Properties;
 
 #endregion
 
@@ -24,7 +23,7 @@ namespace adovipavto.AddForms
 
         public AddNormativeForm()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
 
             InitializeComponent();

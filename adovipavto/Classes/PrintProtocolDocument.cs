@@ -29,7 +29,7 @@ namespace adovipavto.Classes
 
         public PrintProtocolDocument(DataRow protocol, DataRow[] mesures)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             _protocolRow = protocol;
             _mesures = mesures;
@@ -44,7 +44,7 @@ namespace adovipavto.Classes
 
         public PrintProtocolDocument(DataRow[] rows, DateTime from, DateTime to)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             _rows = rows;
             _from = from;

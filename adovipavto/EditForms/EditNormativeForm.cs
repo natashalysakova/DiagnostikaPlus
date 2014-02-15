@@ -6,7 +6,6 @@ using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
-using adovipavto.Properties;
 
 namespace adovipavto.EditForms
 {
@@ -19,7 +18,7 @@ namespace adovipavto.EditForms
 
         public EditNormativeForm(DataRow selected)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             InitializeComponent();
             _selected = selected;

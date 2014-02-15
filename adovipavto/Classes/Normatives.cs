@@ -15,7 +15,7 @@ namespace adovipavto.Classes
 
         public Normatives()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
             var rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
             _normas = new List<string>

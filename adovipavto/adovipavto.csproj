@@ -129,6 +129,7 @@
     <Compile Include="Classes\PrintProtocolDocument.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Classes\Settings.cs" />
     <Compile Include="Classes\VisualRow.cs" />
     <Compile Include="EditForms\EditMechanicForm.cs">
       <SubType>Form</SubType>
@@ -572,6 +573,9 @@
     <None Include="Resources\setting.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Help\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="icon.ico" />
     <None Include="Resources\switchUserBtn.png" />
     <None Include="Resources\splashScreen2.png" />

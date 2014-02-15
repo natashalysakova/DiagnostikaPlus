@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
-using adovipavto.Properties;
+using adovipavto.Classes;
 
 namespace adovipavto.AddForms
 {
@@ -15,7 +15,7 @@ namespace adovipavto.AddForms
 
         public AddMechanicForm()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             InitializeComponent();
         }

@@ -4,7 +4,6 @@ using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
-using adovipavto.Properties;
 
 namespace adovipavto
 {
@@ -17,7 +16,7 @@ namespace adovipavto
         {
             _printNow = printNow;
 
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             InitializeComponent();
 

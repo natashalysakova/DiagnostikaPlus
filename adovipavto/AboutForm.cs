@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
-using adovipavto.Properties;
+using adovipavto.Classes;
 
 namespace adovipavto
 {
@@ -14,7 +14,7 @@ namespace adovipavto
     {
         public AboutForm()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
             var rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
             InitializeComponent();

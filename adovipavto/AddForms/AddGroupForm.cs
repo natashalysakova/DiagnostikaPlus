@@ -8,7 +8,6 @@ using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
 using adovipavto.Enums;
-using adovipavto.Properties;
 
 namespace adovipavto.AddForms
 {
@@ -19,7 +18,7 @@ namespace adovipavto.AddForms
 
         public AddGroupForm()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
             InitializeComponent();
         }
 

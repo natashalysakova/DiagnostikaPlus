@@ -10,7 +10,6 @@ using adovipavto.AddForms;
 using adovipavto.Classes;
 using adovipavto.EditForms;
 using adovipavto.Enums;
-using adovipavto.Properties;
 
 namespace adovipavto
 {
@@ -21,7 +20,7 @@ namespace adovipavto
 
         public OperatorsForm()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             InitializeComponent();
             dataGridView1.DataSource = Program.VipAvtoDataSet.Tables[Constants.OperatorsTableName];

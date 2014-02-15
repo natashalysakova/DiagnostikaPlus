@@ -31,7 +31,7 @@ namespace adovipavto.Classes
 
         public static string GetFullPath(string part)
         {
-            return Settings.Default.FilesDirectory + part;
+            return Settings.Instance.FilesDirectory + part;
         }
     }
 }

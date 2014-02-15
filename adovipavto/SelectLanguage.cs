@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Windows.Forms;
-using adovipavto.Properties;
+using adovipavto.Classes;
 
 namespace adovipavto
 {
@@ -15,12 +15,12 @@ namespace adovipavto
         private void button1_Click(object sender, EventArgs e)
         {
             if (radioButton1.Checked)
-                Settings.Default.Language = "ru-RU";
+                Settings.Instance.Language = "ru-RU";
             else
             {
-                Settings.Default.Language = "uk-UA";
+                Settings.Instance.Language = "uk-UA";
             }
-            Settings.Default.Save();
+            Settings.Instance.Save();
 
             DialogResult = DialogResult.OK;
         }

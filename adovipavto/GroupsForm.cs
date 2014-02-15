@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using adovipavto.AddForms;
 using adovipavto.Classes;
 using adovipavto.EditForms;
-using adovipavto.Properties;
 
 namespace adovipavto
 {
@@ -20,7 +19,7 @@ namespace adovipavto
 
         public GroupsForm()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
@@ -56,7 +55,7 @@ namespace adovipavto
             {
                 Program.VipAvtoDataSet.RemoveRow(Constants.GroupTableName, _selectedRow);
                 Program.VipAvtoDataSet.Tables[Constants.GroupTableName].WriteXml(
-                    Constants.GetFullPath(Settings.Default.Groups));
+                    Constants.GetFullPath(Settings.Instance.Groups));
                 _selectedRow = null;
             }
         }

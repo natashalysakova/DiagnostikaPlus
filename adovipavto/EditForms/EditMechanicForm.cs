@@ -7,7 +7,6 @@ using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
 using adovipavto.Enums;
-using adovipavto.Properties;
 
 namespace adovipavto.EditForms
 {
@@ -17,7 +16,7 @@ namespace adovipavto.EditForms
 
         public EditMechanicForm(DataRow row)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
 
             InitializeComponent();

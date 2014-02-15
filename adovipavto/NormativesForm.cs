@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using adovipavto.AddForms;
 using adovipavto.Classes;
 using adovipavto.EditForms;
-using adovipavto.Properties;
 
 namespace adovipavto
 {
@@ -25,7 +24,7 @@ namespace adovipavto
 
         public NormativesForm(int selectedGroup)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
 
             InitializeComponent();

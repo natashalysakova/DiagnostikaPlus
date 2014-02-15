@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
-using adovipavto.Properties;
+using adovipavto.Classes;
 
 namespace adovipavto.EditForms
 {
@@ -18,7 +18,7 @@ namespace adovipavto.EditForms
 
         public EditOperatorForm(DataRow selected)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             _selected = selected;
             InitializeComponent();

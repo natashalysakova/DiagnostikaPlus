@@ -3,12 +3,12 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
 using adovipavto.Classes;
 using adovipavto.Enums;
-using adovipavto.Properties;
 
 #endregion
 
@@ -18,6 +18,57 @@ namespace adovipavto
     {
         private Operator _currentOperator;
         private ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+
+        public void LoadData()
+        {
+            string path = Constants.GetFullPath(Settings.Instance.Operators);
+
+            if (File.Exists(path))
+                Tables[Constants.OperatorsTableName].ReadXml(path);
+            else
+                CreateAdministratorUser();
+
+
+            path = Constants.GetFullPath(Settings.Instance.Mechanics);
+
+            if (File.Exists(path))
+                Tables[Constants.MechanicsTableName].ReadXml(path);
+            else
+                Tables[Constants.MechanicsTableName].WriteXml(path);
+
+
+            path = Constants.GetFullPath(Settings.Instance.Groups);
+
+            if (File.Exists(path))
+                Tables[Constants.GroupTableName].ReadXml(path);
+            else
+                Tables[Constants.GroupTableName].WriteXml(path);
+
+
+            path = Constants.GetFullPath(Settings.Instance.Normatives);
+
+            if (File.Exists(path))
+                Tables[Constants.NormativesTableName].ReadXml(path);
+            else
+                Tables[Constants.NormativesTableName].WriteXml(path);
+
+
+            path = Constants.GetFullPath(Settings.Instance.Protocols);
+
+            if (File.Exists(path))
+                Tables[Constants.ProtocolsTableName].ReadXml(path);
+            else
+               Tables[Constants.ProtocolsTableName].WriteXml(path);
+
+
+            path = Constants.GetFullPath(Settings.Instance.Mesure);
+
+            if (File.Exists(path))
+                Tables[Constants.MesuresTableName].ReadXml(path);
+            else
+                Tables[Constants.MesuresTableName].WriteXml(path);
+        }
+
 
         #region NormativesMetods
 
@@ -34,7 +85,7 @@ namespace adovipavto
 
             Tables[Constants.NormativesTableName].Rows.Add(r);
             Tables[Constants.NormativesTableName].AcceptChanges();
-            Tables[Constants.NormativesTableName].WriteXml(Constants.GetFullPath(Settings.Default.Normatives));
+            Tables[Constants.NormativesTableName].WriteXml(Constants.GetFullPath(Settings.Instance.Normatives));
         }
 
         public void EditNormative(int id, string group, string title, double minValue, double maxValue)
@@ -49,7 +100,7 @@ namespace adovipavto
             r["IDGroup"] = GetGroupId(group);
 
             Tables[Constants.NormativesTableName].AcceptChanges();
-            Tables[Constants.NormativesTableName].WriteXml(Constants.GetFullPath(Settings.Default.Normatives));
+            Tables[Constants.NormativesTableName].WriteXml(Constants.GetFullPath(Settings.Instance.Normatives));
         }
 
         public DataRow[] GetNormativesFromGroup(string groupTitle)
@@ -103,7 +154,7 @@ namespace adovipavto
 
             Tables[Constants.GroupTableName].Rows.Add(r);
             Tables[Constants.GroupTableName].AcceptChanges();
-            Tables[Constants.GroupTableName].WriteXml(Constants.GetFullPath(Settings.Default.Groups));
+            Tables[Constants.GroupTableName].WriteXml(Constants.GetFullPath(Settings.Instance.Groups));
         }
 
         public void EditGroup(int id, int year, string categoty, int engine, bool before)
@@ -115,7 +166,7 @@ namespace adovipavto
             r["Before"] = before;
 
             Tables[Constants.GroupTableName].AcceptChanges();
-            Tables[Constants.GroupTableName].WriteXml(Constants.GetFullPath(Settings.Default.Groups));
+            Tables[Constants.GroupTableName].WriteXml(Constants.GetFullPath(Settings.Instance.Groups));
         }
 
         public int GetGroupId(string title)
@@ -203,7 +254,7 @@ namespace adovipavto
             admin["Right"] = Rights.Administrator;
             Tables[Constants.OperatorsTableName].Rows.Add(admin);
             AcceptChanges();
-            WriteXml(Constants.GetFullPath(Settings.Default.Operators));
+            WriteXml(Constants.GetFullPath(Settings.Instance.Operators));
         }
 
         internal string GetUserPasswors(string username)
@@ -228,17 +279,17 @@ namespace adovipavto
             switch (tableName)
             {
                 case Constants.GroupTableName:
-                    return Constants.GetFullPath(Settings.Default.Groups);
+                    return Constants.GetFullPath(Settings.Instance.Groups);
                 case Constants.MechanicsTableName:
-                    return Constants.GetFullPath(Settings.Default.Mechanics);
+                    return Constants.GetFullPath(Settings.Instance.Mechanics);
                 case Constants.NormativesTableName:
-                    return Constants.GetFullPath(Settings.Default.Normatives);
+                    return Constants.GetFullPath(Settings.Instance.Normatives);
                 case Constants.OperatorsTableName:
-                    return Constants.GetFullPath(Settings.Default.Operators);
+                    return Constants.GetFullPath(Settings.Instance.Operators);
                 case Constants.ProtocolsTableName:
-                    return Constants.GetFullPath(Settings.Default.Protocols);
+                    return Constants.GetFullPath(Settings.Instance.Protocols);
                 case Constants.MesuresTableName:
-                    return Constants.GetFullPath(Settings.Default.Mesure);
+                    return Constants.GetFullPath(Settings.Instance.Mesure);
             }
             return "Error.txt";
         }
@@ -250,7 +301,7 @@ namespace adovipavto
 
             Tables[Constants.OperatorsTableName].AcceptChanges();
             Tables[Constants.OperatorsTableName].WriteXml(
-                Constants.GetFullPath(Settings.Default.Operators));
+                Constants.GetFullPath(Settings.Instance.Operators));
         }
 
         internal void AddOperator(string name, string lastName, string login, string password, string rights)
@@ -267,7 +318,7 @@ namespace adovipavto
 
             Tables[Constants.OperatorsTableName].Rows.Add(row);
             Tables[Constants.OperatorsTableName].AcceptChanges();
-            Tables[Constants.OperatorsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Operators));
+            Tables[Constants.OperatorsTableName].WriteXml(Constants.GetFullPath(Settings.Instance.Operators));
         }
 
         private Rights GetRightByString(string rightTitle)
@@ -301,7 +352,7 @@ namespace adovipavto
             r["Password"] = pass;
 
             Tables[Constants.OperatorsTableName].AcceptChanges();
-            Tables[Constants.OperatorsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Operators));
+            Tables[Constants.OperatorsTableName].WriteXml(Constants.GetFullPath(Settings.Instance.Operators));
         }
 
         internal void AddMechanic(string name, string lastName, string fatherName)
@@ -316,7 +367,7 @@ namespace adovipavto
 
             Tables[Constants.MechanicsTableName].Rows.Add(r);
             Tables[Constants.MechanicsTableName].AcceptChanges();
-            Tables[Constants.MechanicsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Mechanics));
+            Tables[Constants.MechanicsTableName].WriteXml(Constants.GetFullPath(Settings.Instance.Mechanics));
         }
 
 
@@ -329,7 +380,7 @@ namespace adovipavto
             r["FatherName"] = fatherName;
 
             Tables[Constants.MechanicsTableName].AcceptChanges();
-            Tables[Constants.MechanicsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Mechanics));
+            Tables[Constants.MechanicsTableName].WriteXml(Constants.GetFullPath(Settings.Instance.Mechanics));
         }
 
         internal void LockMechanic(int id)
@@ -339,7 +390,7 @@ namespace adovipavto
 
             Tables[Constants.MechanicsTableName].AcceptChanges();
             Tables[Constants.MechanicsTableName].WriteXml(
-                Constants.GetFullPath(Settings.Default.Mechanics));
+                Constants.GetFullPath(Settings.Instance.Mechanics));
         }
 
 
@@ -365,7 +416,7 @@ namespace adovipavto
 
             Tables[Constants.ProtocolsTableName].Rows.Add(r);
             Tables[Constants.ProtocolsTableName].AcceptChanges();
-            Tables[Constants.ProtocolsTableName].WriteXml(Constants.GetFullPath(Settings.Default.Protocols));
+            Tables[Constants.ProtocolsTableName].WriteXml(Constants.GetFullPath(Settings.Instance.Protocols));
 
             return (int) r["ProtocolID"];
         }
@@ -405,7 +456,7 @@ namespace adovipavto
 
             Tables[Constants.MesuresTableName].Rows.Add(item);
             Tables[Constants.MesuresTableName].AcceptChanges();
-            Tables[Constants.MesuresTableName].WriteXml(Constants.GetFullPath(Settings.Default.Mesure));
+            Tables[Constants.MesuresTableName].WriteXml(Constants.GetFullPath(Settings.Instance.Mesure));
         }
 
         internal string GetShortMechanicName(int mechanicId)

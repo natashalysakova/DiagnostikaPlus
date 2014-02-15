@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using adovipavto.AddForms;
 using adovipavto.Classes;
 using adovipavto.Enums;
-using adovipavto.Properties;
+
 
 namespace adovipavto
 {
@@ -21,12 +21,14 @@ namespace adovipavto
 
         public MainForm()
         {
-            if (Settings.Default.Language == "")
+
+            Application.EnableVisualStyles();
+
+            if (Settings.Instance.Language == "")
             {
                 new SelectLanguage().ShowDialog();
             }
-            Application.EnableVisualStyles();
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
             InitializeComponent();
         }
 
@@ -107,6 +109,7 @@ namespace adovipavto
 
         private void toolStripButton16_Click(object sender, EventArgs e)
         {
+            new Help().Show();
         }
 
         private void toolStripButton17_Click(object sender, EventArgs e)
@@ -135,7 +138,7 @@ namespace adovipavto
         {
             if (new SettingForm().ShowDialog() == DialogResult.OK)
             {
-                if (Settings.Default.tmpLanguage != Settings.Default.Language)
+                if (Settings.Instance.TmpLanguage != Settings.Instance.Language)
                 {
                     if (MessageBox.Show(_rm.GetString("lng"), _rm.GetString("warning"), MessageBoxButtons.YesNo,
                         MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -202,8 +205,8 @@ namespace adovipavto
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Settings.Default.Language = Settings.Default.tmpLanguage;
-            Settings.Default.Save();
+            Settings.Instance.Language = Settings.Instance.TmpLanguage;
+            Settings.Instance.Save();
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

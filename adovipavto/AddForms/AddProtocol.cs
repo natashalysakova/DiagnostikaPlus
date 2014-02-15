@@ -10,7 +10,6 @@ using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
 using adovipavto.Enums;
-using adovipavto.Properties;
 
 namespace adovipavto.AddForms
 {
@@ -28,7 +27,7 @@ namespace adovipavto.AddForms
         public AddProtocol(MainForm mainForm)
         {
             _mainForm = mainForm;
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             InitializeComponent();
 
@@ -70,7 +69,7 @@ namespace adovipavto.AddForms
                 Close();
             }
             comboBox2.DataSource = mechanics;
-            comboBox2.Text = Settings.Default.LastUsedMechanic;
+            comboBox2.Text = Settings.Instance.LastUsedMechanic;
 
             maskedTextBox1.SelectionStart = 6;
             maskedTextBox1.SelectionLength = 2;
@@ -310,8 +309,8 @@ namespace adovipavto.AddForms
                 return false;
 
 
-            Settings.Default.LastUsedMechanic = comboBox2.SelectedItem.ToString();
-            Settings.Default.Save();
+            Settings.Instance.LastUsedMechanic = comboBox2.SelectedItem.ToString();
+            Settings.Instance.Save();
 
 
             string techpass = "";
