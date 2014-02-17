@@ -70,7 +70,15 @@
             this.label23 = new System.Windows.Forms.Label();
             this.OUTSRTS = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.wheelSystem = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.SL = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
             this.GBO = new System.Windows.Forms.GroupBox();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label79 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
@@ -160,18 +168,12 @@
             this.SaveBtn = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.wheelSystem = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.SL = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.brakesystem.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.wheelSystem.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.GBO.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -188,8 +190,6 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.lightSystem.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.wheelSystem.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -508,6 +508,50 @@
             this.panel1.Controls.Add(this.brakesystem);
             this.panel1.Name = "panel1";
             // 
+            // wheelSystem
+            // 
+            resources.ApplyResources(this.wheelSystem, "wheelSystem");
+            this.wheelSystem.Controls.Add(this.tableLayoutPanel2);
+            this.wheelSystem.Name = "wheelSystem";
+            this.wheelSystem.TabStop = false;
+            // 
+            // tableLayoutPanel2
+            // 
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.SL, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.textBox14, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label31, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label38, 2, 1);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // SL
+            // 
+            resources.ApplyResources(this.SL, "SL");
+            this.tableLayoutPanel2.SetColumnSpan(this.SL, 3);
+            this.SL.Name = "SL";
+            // 
+            // textBox14
+            // 
+            resources.ApplyResources(this.textBox14, "textBox14");
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Tag = "7";
+            // 
+            // label31
+            // 
+            resources.ApplyResources(this.label31, "label31");
+            this.label31.BackColor = System.Drawing.SystemColors.Control;
+            this.label31.ForeColor = System.Drawing.Color.Silver;
+            this.label31.Name = "label31";
+            this.label31.Tag = "7";
+            // 
+            // label38
+            // 
+            resources.ApplyResources(this.label38, "label38");
+            this.label38.BackColor = System.Drawing.SystemColors.Control;
+            this.label38.ForeColor = System.Drawing.Color.Silver;
+            this.label38.Name = "label38";
+            this.label38.Tag = "7";
+            // 
             // GBO
             // 
             resources.ApplyResources(this.GBO, "GBO");
@@ -515,6 +559,22 @@
             this.GBO.Controls.Add(this.radioButton6);
             this.GBO.Name = "GBO";
             this.GBO.TabStop = false;
+            // 
+            // radioButton7
+            // 
+            resources.ApplyResources(this.radioButton7, "radioButton7");
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.TabStop = true;
+            this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton7.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            // 
+            // radioButton6
+            // 
+            resources.ApplyResources(this.radioButton6, "radioButton6");
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.TabStop = true;
+            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
             // 
             // panel2
             // 
@@ -1166,6 +1226,7 @@
             // 
             resources.ApplyResources(this.CloseBtn, "CloseBtn");
             this.CloseBtn.BackgroundImage = global::adovipavto.Properties.Resources.cancel;
+            this.CloseBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CloseBtn.Name = "CloseBtn";
             this.CloseBtn.UseVisualStyleBackColor = true;
             this.CloseBtn.Click += new System.EventHandler(this.button2_Click);
@@ -1191,70 +1252,12 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
-            // wheelSystem
-            // 
-            resources.ApplyResources(this.wheelSystem, "wheelSystem");
-            this.wheelSystem.Controls.Add(this.tableLayoutPanel2);
-            this.wheelSystem.Name = "wheelSystem";
-            this.wheelSystem.TabStop = false;
-            // 
-            // tableLayoutPanel2
-            // 
-            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
-            this.tableLayoutPanel2.Controls.Add(this.SL, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox14, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label31, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label38, 2, 1);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            // 
-            // SL
-            // 
-            resources.ApplyResources(this.SL, "SL");
-            this.tableLayoutPanel2.SetColumnSpan(this.SL, 3);
-            this.SL.Name = "SL";
-            // 
-            // textBox14
-            // 
-            resources.ApplyResources(this.textBox14, "textBox14");
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Tag = "7";
-            // 
-            // label31
-            // 
-            resources.ApplyResources(this.label31, "label31");
-            this.label31.BackColor = System.Drawing.SystemColors.Control;
-            this.label31.ForeColor = System.Drawing.Color.Silver;
-            this.label31.Name = "label31";
-            this.label31.Tag = "7";
-            // 
-            // label38
-            // 
-            resources.ApplyResources(this.label38, "label38");
-            this.label38.BackColor = System.Drawing.SystemColors.Control;
-            this.label38.ForeColor = System.Drawing.Color.Silver;
-            this.label38.Name = "label38";
-            this.label38.Tag = "7";
-            // 
-            // radioButton6
-            // 
-            resources.ApplyResources(this.radioButton6, "radioButton6");
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.TabStop = true;
-            this.radioButton6.UseVisualStyleBackColor = true;
-            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
-            // 
-            // radioButton7
-            // 
-            resources.ApplyResources(this.radioButton7, "radioButton7");
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.TabStop = true;
-            this.radioButton7.UseVisualStyleBackColor = true;
-            this.radioButton7.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
-            // 
             // AddProtocol
             // 
+            this.AcceptButton = this.PreviewBtn;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CloseBtn;
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label80);
@@ -1276,6 +1279,10 @@
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.wheelSystem.ResumeLayout(false);
+            this.wheelSystem.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.GBO.ResumeLayout(false);
             this.GBO.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1306,10 +1313,6 @@
             this.lightSystem.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.wheelSystem.ResumeLayout(false);
-            this.wheelSystem.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -184,7 +184,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 52</value>
+    <value>100, 52</value>
   </data>
   <data name="toolStripButton2.Text" xml:space="preserve">
     <value>toolStripButton2</value>
@@ -193,7 +193,7 @@
     <value>Magenta</value>
   </data>
   <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 52</value>
+    <value>100, 52</value>
   </data>
   <data name="toolStripButton1.Text" xml:space="preserve">
     <value>toolStripButton1</value>
@@ -202,10 +202,10 @@
     <value>Segoe UI, 10pt</value>
   </data>
   <data name="toolStripLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 19</value>
+    <value>100, 19</value>
   </data>
   <data name="toolStripLabel1.Text" xml:space="preserve">
-    <value>toolStripLabel1</value>
+    <value>scale</value>
   </data>
   <data name="toolStripComboBox1.IntegralHeight" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -232,13 +232,13 @@
     <value>7</value>
   </data>
   <data name="toolStripComboBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 23</value>
+    <value>98, 23</value>
   </data>
   <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 3</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 180</value>
+    <value>102, 157</value>
   </data>
   <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

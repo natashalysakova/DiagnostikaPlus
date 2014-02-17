@@ -114,6 +114,7 @@
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.button2, "button2");
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = true;
@@ -121,8 +122,10 @@
             // 
             // EditGroupForm
             // 
+            this.AcceptButton = this.button1;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button2;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.yearComboBox);
             this.Controls.Add(this.radioButton2);
