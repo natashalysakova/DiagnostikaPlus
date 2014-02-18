@@ -78,7 +78,7 @@ namespace adovipavto.AddForms
 
         private void loginTxtBx_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsLetterOrDigit(e.KeyChar))
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
