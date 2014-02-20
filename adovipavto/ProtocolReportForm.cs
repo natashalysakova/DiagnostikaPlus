@@ -69,7 +69,7 @@ namespace adovipavto
                 }
             else
             {
-                if (printPreviewControl1.Zoom > 0.15)
+                if (printPreviewControl1.Zoom > 0.25)
                     printPreviewControl1.Zoom -= 0.15;
                 else
                 {
