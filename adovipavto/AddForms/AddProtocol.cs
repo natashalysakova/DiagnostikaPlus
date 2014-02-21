@@ -143,6 +143,7 @@ namespace adovipavto.AddForms
             panel1.Enabled = true;
             CleanFields();
 
+            visualCheck.BackColor = SystemColors.Control;
 
 
             if (Program.VipAvtoDataSet.GroupWithGasEngine(comboBox1.SelectedItem.ToString()))
