@@ -143,5 +143,11 @@ namespace adovipavto
                 UpdateRows();
             }
         }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            var id = (int) Program.VipAvtoDataSet.GetGroupId(groupSelector.SelectedItem.ToString());
+            Program.VipAvtoDataSet.RemoveAllNormatives(id);
+        }
     }
 }

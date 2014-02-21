@@ -618,5 +618,18 @@ namespace adovipavto
 
             return false;
         }
+
+        internal void RemoveAllNormatives(int id)
+        {
+            var rows =
+                (from DataRow row in Normatives.Rows where (int) row[Normatives.IDGroupColumn] == id select row).ToArray
+                    ();
+            foreach (DataRow dataRow in rows)
+            {
+                RemoveRowById(Constants.NormativesTableName, (int)dataRow[Normatives.IDGroupColumn]);
+            }
+
+
+        }
     }
 }
