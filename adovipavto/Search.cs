@@ -14,6 +14,7 @@ namespace adovipavto
         public Search()
         {
             InitializeComponent();
+
         }
 
 
@@ -57,10 +58,11 @@ namespace adovipavto
         {
             printPreviewControl1.MouseWheel += printPreviewControl1_MouseWheel;
             printPreviewControl2.MouseWheel += printPreviewControl1_MouseWheel;
-            radioButton1.Checked = true;
 
             dataGridView1.DataSource = Program.VipAvtoDataSet.Tables[Constants.ProtocolsTableName].Copy();
 
+
+            radioButton1.Checked = true;
             maskedTextBox1.Focus();
         }
 
@@ -101,6 +103,10 @@ namespace adovipavto
         {
             ((DataTable) dataGridView1.DataSource).DefaultView.RowFilter =
                 String.Format("Date > '{0}' AND Date <= '{1}'", firstDate.Value, secondDate.Value);
+
+            var column = dataGridView1.Columns["protocolIDDataGridViewTextBoxColumn"];
+            if (column != null)
+                column.Visible = false;
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
