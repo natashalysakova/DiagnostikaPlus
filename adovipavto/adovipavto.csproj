@@ -80,6 +80,7 @@
   <ItemGroup>
     <Reference Include="DRandom">
       <HintPath>..\..\..\..\..\Projects\raznoe\DRandom\DRandom\bin\Release\DRandom.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />

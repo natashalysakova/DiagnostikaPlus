@@ -8,6 +8,8 @@ namespace adovipavto
 {
     internal static class Program
     {
+
+
         public static VipAvtoSet VipAvtoDataSet;
         //public static Dictionary<Normatives, string> NormasTitles;
 
@@ -17,6 +19,12 @@ namespace adovipavto
         [STAThread]
         private static void Main()
         {
+            if (!File.Exists("DRandom.dll"))
+            {
+                MessageBox.Show("The *dll is missing! Contact the system administrator.");
+                Application.Exit();
+            }
+
             Settings.Instance.Load();
 
             var t = new Thread(SplashScreen);
