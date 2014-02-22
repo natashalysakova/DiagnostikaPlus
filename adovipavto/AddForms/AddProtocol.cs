@@ -4,8 +4,6 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Reflection;
-using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
@@ -17,8 +15,7 @@ namespace adovipavto.AddForms
     {
         private readonly MainForm _mainForm;
 
-        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
-            Assembly.GetExecutingAssembly());
+
 
         private int _newProtocolId;
         private DataRow[] _normatives;
@@ -46,8 +43,8 @@ namespace adovipavto.AddForms
 
             if (groups.Length == 0)
             {
-                MessageBox.Show(_rm.GetString("nogroup"),
-                    _rm.GetString("warning"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(StringResource.nogroup,
+                    StringResource.warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Close();
             }
 
@@ -64,8 +61,8 @@ namespace adovipavto.AddForms
                 ).ToArray();
             if (mechanics.Length == 0)
             {
-                MessageBox.Show(_rm.GetString("nomech"),
-                    _rm.GetString("warning"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(StringResource.nomech,
+                    StringResource.warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Close();
             }
             comboBox2.DataSource = mechanics;
@@ -77,57 +74,57 @@ namespace adovipavto.AddForms
 
         private void UpdateFormLables()
         {
-            brakesystem.Text = _rm.GetString("brakeSystem");
-            OUTSRTS.Text = _rm.GetString("OUTSRTS");
-            OUTSSTS.Text = _rm.GetString("OUTSSTS");
-            ORTS1.Text = _rm.GetString("ORTS1");
-            ORTS2.Text = _rm.GetString("ORTS2");
-            ORTS3.Text = _rm.GetString("ORTS3");
-            ORTSS.Text = _rm.GetString("ORTSSS");
-            MVSTS.Text = _rm.GetString("MVSTS");
-            KUNOU1.Text = _rm.GetString("KUNOU1");
+            brakesystem.Text = StringResource.brakeSystem;
+            OUTSRTS.Text = StringResource.OUTSRTS;
+            OUTSSTS.Text = StringResource.OUTSSTS;
+            ORTS1.Text = StringResource.ORTS1;
+            ORTS2.Text = StringResource.ORTS2;
+            ORTS3.Text = StringResource.ORTS3;
+            ORTSS.Text = StringResource.ORTSSS;
+            MVSTS.Text = StringResource.MVSTS;
+            KUNOU1.Text = StringResource.KUNOU1;
 
 
-            lightSystem.Text = _rm.GetString("lightSystem");
-            SSFBS.Text = _rm.GetString("SSFBS");
-            SSFDS.Text = _rm.GetString("SSFDS");
-            SSPF.Text = _rm.GetString("SSPF");
-            CHPUP.Text = _rm.GetString("CHPUP");
+            lightSystem.Text = StringResource.lightSystem;
+            SSFBS.Text = StringResource.SSFBS;
+            SSFDS.Text = StringResource.SSFDS;
+            SSPF.Text = StringResource.SSPF;
+            CHPUP.Text = StringResource.CHPUP;
 
-            engineAndItsSystem.Text = _rm.GetString("engineAndItsSystem");
-            SCOMCHV.Text = _rm.GetString("SCOMCHV");
-            SCOMACHV.Text = _rm.GetString("SCOMACHV");
-            SCHVCHV.Text = _rm.GetString("SCHMCHV");
-            SCHMACHV.Text = _rm.GetString("SCHMACHV");
-            DVRSUM.Text = _rm.GetString("DVRSUM");
-            DVRSUP.Text = _rm.GetString("DVRSUP");
+            engineAndItsSystem.Text = StringResource.engineAndItsSystem;
+            SCOMCHV.Text = StringResource.SCOMCHV;
+            SCOMACHV.Text = StringResource.SCOMACHV;
+            SCHVCHV.Text = StringResource.SCHMCHV;
+            SCHMACHV.Text = StringResource.SCHMACHV;
+            DVRSUM.Text = StringResource.DVRSUM;
+            DVRSUP.Text = StringResource.DVRSUP;
             //CHVNMO.Text = rm.GetString("CHVNMO");
             //CHVNPO.Text = rm.GetString("CHVNPO");
 
-            GBO.Text = _rm.GetString("GGBS");
-            radioButton6.Text = _rm.GetString("germ");
-            radioButton7.Text = _rm.GetString("nogerm");
+            GBO.Text = StringResource.GGBS;
+            radioButton6.Text = StringResource.germ;
+            radioButton7.Text = StringResource.nogerm;
 
-            glass.Text = _rm.GetString("glass");
-            PVS.Text = _rm.GetString("PVS");
-            PPBS.Text = _rm.GetString("PPBS");
+            glass.Text = StringResource.glass;
+            PVS.Text = StringResource.PVS;
+            PPBS.Text = StringResource.PPBS;
 
-            wheelSystem.Text = _rm.GetString("wheelSystem");
-            SL.Text = _rm.GetString("SL");
-
-
-            noise.Text = _rm.GetString("noise");
-            VSHA.Text = _rm.GetString("VSHA");
-
-            wheelAndTyres.Text = _rm.GetString("wheelAndTyres");
-            OVRP.Text = _rm.GetString("OVRP");
-            visualCheck.Text = _rm.GetString("visualCheck");
-
-            radioButton1.Text = _rm.GetString("check");
-            radioButton2.Text = _rm.GetString("uncheck");
+            wheelSystem.Text = StringResource.wheelSystem;
+            SL.Text = StringResource.SL;
 
 
-            label79.Text = _rm.GetString("notAllFields");
+            noise.Text = StringResource.noise;
+            VSHA.Text = StringResource.VSHA;
+
+            wheelAndTyres.Text = StringResource.wheelAndTyres;
+            OVRP.Text = StringResource.OVRP;
+            visualCheck.Text = StringResource.visualCheck;
+
+            radioButton1.Text = StringResource.check;
+            radioButton2.Text = StringResource.uncheck;
+
+
+            label79.Text = StringResource.notAllFields;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,7 +145,7 @@ namespace adovipavto.AddForms
 
             if (Program.VipAvtoDataSet.GroupWithGasEngine(comboBox1.SelectedItem.ToString()))
             {
-                if (MessageBox.Show(_rm.GetString("IsGBOActive"), _rm.GetString("warning"), MessageBoxButtons.YesNo,
+                if (MessageBox.Show(StringResource.IsGBOActive, StringResource.warning, MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     GBO.Enabled = true;
@@ -306,7 +303,7 @@ namespace adovipavto.AddForms
         {
             if (!SaveProtocolToDb())
             {
-                MessageBox.Show(_rm.GetString("fillFields"), _rm.GetString("error"), MessageBoxButtons.OK,
+                MessageBox.Show(StringResource.fillFields, StringResource.error, MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }
@@ -322,7 +319,7 @@ namespace adovipavto.AddForms
             }
             else
             {
-                MessageBox.Show(_rm.GetString("noprotocol"), _rm.GetString("error"),
+                MessageBox.Show(StringResource.noprotocol, StringResource.error,
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -417,19 +414,19 @@ namespace adovipavto.AddForms
             if (SomeRequred())
             {
                 panel2.BackColor = Color.LightGoldenrodYellow;
-                label79.Text = _rm.GetString("notAllFields");
+                label79.Text = StringResource.notAllFields;
             }
             else if (AllValide())
             {
                 panel2.BackColor = Color.LightGreen;
-                string s = _rm.GetString("sucess");
+                string s = StringResource.sucess;
                 if (s != null) label79.Text = s.ToUpper();
             }
             else
             {
                 {
                     panel2.BackColor = Color.LightPink;
-                    string s = _rm.GetString("fail");
+                    string s = StringResource.fail;
                     if (s != null) label79.Text = s.ToUpper();
                 }
             }
@@ -512,7 +509,7 @@ namespace adovipavto.AddForms
         {
             if (!SaveProtocolToDb())
             {
-                MessageBox.Show(_rm.GetString("fillFields"), _rm.GetString("error"), MessageBoxButtons.OK,
+                MessageBox.Show(StringResource.fillFields, StringResource.error, MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }
@@ -530,7 +527,7 @@ namespace adovipavto.AddForms
             }
             else
             {
-                MessageBox.Show(_rm.GetString("noprotocol"), _rm.GetString("error"),
+                MessageBox.Show(StringResource.noprotocol, StringResource.error,
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -539,7 +536,7 @@ namespace adovipavto.AddForms
         {
             if (!SaveProtocolToDb())
             {
-                MessageBox.Show(_rm.GetString("fillFields"), _rm.GetString("error"), MessageBoxButtons.OK,
+                MessageBox.Show(StringResource.fillFields, StringResource.error, MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }

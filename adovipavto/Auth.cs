@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Reflection;
-using System.Resources;
-using System.Security.Cryptography;
-using System.Text;
 using System.Windows.Forms;
 
 namespace adovipavto
 {
     public partial class Auth : Form
     {
-        private readonly ResourceManager rm;
-
         public Auth()
         {
             InitializeComponent();
-            rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -38,14 +31,14 @@ namespace adovipavto
                 }
                 else
                 {
-                    MessageBox.Show(rm.GetString("wrongPassword"), rm.GetString("error"), MessageBoxButtons.OK,
+                    MessageBox.Show(StringResource.wrongPassword, StringResource.error, MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show(rm.GetString("isUser") + @" """ + textBox1.Text + @""" " + rm.GetString("notFound"),
-                    rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(StringResource.isUser + @" """ + textBox1.Text + @""" " + StringResource.notFound,
+                    StringResource.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -53,14 +46,6 @@ namespace adovipavto
         {
             DialogResult = DialogResult.Cancel;
             Close();
-        }
-
-        private void Auth_Load(object sender, EventArgs e)
-        {
-#if DEBUG
-            textBox1.Text = @"авто";
-            maskedTextBox1.Text = @"авто";
-#endif
         }
     }
 }

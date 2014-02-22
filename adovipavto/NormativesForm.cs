@@ -3,8 +3,6 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Reflection;
-using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.AddForms;
@@ -15,9 +13,6 @@ namespace adovipavto
 {
     public partial class NormativesForm : Form
     {
-        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
-            Assembly.GetExecutingAssembly());
-
         public NormativesForm() : this(0)
         {
         }
@@ -78,7 +73,7 @@ namespace adovipavto
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(_rm.GetString("deleteNorm"), _rm.GetString("warning"),
+            if (MessageBox.Show(StringResource.deleteNorm, StringResource.warning,
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
@@ -135,7 +130,7 @@ namespace adovipavto
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(_rm.GetString("deleteNorm"), _rm.GetString("warning"),
+            if (MessageBox.Show(StringResource.deleteNorm, StringResource.warning,
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
@@ -146,7 +141,7 @@ namespace adovipavto
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            var id = (int) Program.VipAvtoDataSet.GetGroupId(groupSelector.SelectedItem.ToString());
+            var id = Program.VipAvtoDataSet.GetGroupId(groupSelector.SelectedItem.ToString());
             Program.VipAvtoDataSet.RemoveAllNormatives(id);
         }
     }

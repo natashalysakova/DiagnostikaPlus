@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Globalization;
-using System.Reflection;
-using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
@@ -12,11 +10,8 @@ namespace adovipavto.EditForms
 {
     public partial class EditGroupForm : Form
     {
-        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
-            Assembly.GetExecutingAssembly());
 
         private readonly DataRow _selectedRow;
-
 
         public EditGroupForm(DataRow select)
         {
@@ -69,8 +64,8 @@ namespace adovipavto.EditForms
             }
             else
             {
-                MessageBox.Show(_rm.GetString("groupExist2"),
-                    _rm.GetString("error"),
+                MessageBox.Show(StringResource.groupExist2,
+                    StringResource.error,
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }

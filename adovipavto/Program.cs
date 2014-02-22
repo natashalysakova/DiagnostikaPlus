@@ -21,7 +21,7 @@ namespace adovipavto
         {
             if (!File.Exists("DRandom.dll"))
             {
-                MessageBox.Show("The *dll is missing! Contact the system administrator.");
+                MessageBox.Show(StringResource.dllIsMissing);
                 Application.Exit();
             }
 

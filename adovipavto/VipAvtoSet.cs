@@ -201,7 +201,7 @@ namespace adovipavto
             foreach (DataRow row in Tables[Constants.GroupTableName].Rows)
             {
                 string cat = row["Category"].ToString();
-                string bef = (bool)row["Before"] ? _rm.GetString("before") : _rm.GetString("after");
+                string bef = (bool)row["Before"] ? StringResource.before : StringResource.after;
                 string year = row["Year"].ToString();
                 var engine = (int)row["EngineType"];
                 if (splitTitle.Length == 4)
@@ -231,7 +231,7 @@ namespace adovipavto
                 return "";
 
 
-            string s = (bool)groupRow["Before"] ? _rm.GetString("before") : _rm.GetString("after");
+            string s = (bool)groupRow["Before"] ? StringResource.before : StringResource.after;
             return groupRow["Category"] + " " + s + " " + groupRow["Year"] + " " +
                    new Engines()[(int)groupRow["EngineType"]];
         }
@@ -553,13 +553,13 @@ namespace adovipavto
                 from DataRow item in Tables[Constants.NormativesTableName].Rows
                 where
                     (int)item["IDGroup"] == groupId &&
-                    (int)item["Tag"] == new Normatives().IndexOf(_rm.GetString("DVRSUM"))
+                    (int)item["Tag"] == new Normatives().IndexOf(StringResource.DVRSUM)
                 select item["MaxValue"]).ToArray();
             object[] tmp2 = (
                 from DataRow item in Tables[Constants.NormativesTableName].Rows
                 where
                     (int)item["IDGroup"] == groupId &&
-                    (int)item["Tag"] == new Normatives().IndexOf(_rm.GetString("DVRSUP"))
+                    (int)item["Tag"] == new Normatives().IndexOf(StringResource.DVRSUP)
                 select item["MaxValue"]).ToArray();
             if (tmp1.Length == 1 && tmp2.Length == 1)
             {

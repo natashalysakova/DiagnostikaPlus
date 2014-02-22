@@ -397,4 +397,7 @@
   <data name="IsGBOActive" xml:space="preserve">
     <value>На транспортном средстве установлено газобалонное оборудование?</value>
   </data>
+  <data name="dllIsMissing" xml:space="preserve">
+    <value>Библиотиеки отсутствуют. Обратитесь к системному администратору</value>
+  </data>
 </root>

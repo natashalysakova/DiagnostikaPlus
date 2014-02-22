@@ -2,8 +2,6 @@
 using System.Data;
 using System.Drawing;
 using System.Globalization;
-using System.Reflection;
-using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.AddForms;
@@ -15,17 +13,12 @@ namespace adovipavto
 {
     public partial class OperatorsForm : Form
     {
-        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
-            Assembly.GetExecutingAssembly());
-
         public OperatorsForm()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             InitializeComponent();
             dataGridView1.DataSource = Program.VipAvtoDataSet.Tables[Constants.OperatorsTableName];
-            //dataGridView1.DataSource = (
-            //from DataRow r in Program.VipAvtoDataSet.Tables[Constants.OperatorsTableName].Rows )
         }
 
         private void OperatorsForm_Load(object sender, EventArgs e)
@@ -51,7 +44,7 @@ namespace adovipavto
         {
             if (dataGridView1.SelectedRows[0] != null)
             {
-                if (MessageBox.Show(_rm.GetString("lockOperator"), _rm.GetString("warning"),
+                if (MessageBox.Show(StringResource.lockOperator, StringResource.warning,
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {
@@ -61,7 +54,7 @@ namespace adovipavto
                         (int) dataGridView1.SelectedRows[0].Cells["rightDataGridViewTextBoxColumn"].Value ==
                         (int) Rights.Administrator)
                     {
-                        MessageBox.Show(_rm.GetString("cantLock"), _rm.GetString("error"), MessageBoxButtons.OK,
+                        MessageBox.Show(StringResource.cantLock, StringResource.error, MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
                     else
@@ -69,7 +62,7 @@ namespace adovipavto
                         Program.VipAvtoDataSet.LockOperator(id);
                         if (id == Program.VipAvtoDataSet.GetOperatorId())
                         {
-                            MessageBox.Show(_rm.GetString("reboot"), _rm.GetString("warning"), MessageBoxButtons.OK,
+                            MessageBox.Show(StringResource.reboot, StringResource.warning, MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
 
                             Application.Restart();

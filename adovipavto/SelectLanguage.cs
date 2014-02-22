@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using System.Windows.Forms;
 using adovipavto.Classes;
 
@@ -17,9 +16,8 @@ namespace adovipavto
             if (radioButton1.Checked)
                 Settings.Instance.Language = "ru-RU";
             else
-            {
                 Settings.Instance.Language = "uk-UA";
-            }
+            
             Settings.Instance.Save();
 
             DialogResult = DialogResult.OK;

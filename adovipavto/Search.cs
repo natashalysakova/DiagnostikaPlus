@@ -14,9 +14,7 @@ namespace adovipavto
         public Search()
         {
             InitializeComponent();
-
         }
-
 
         private void maskedTextBox1_TextChanged(object sender, EventArgs e)
         {

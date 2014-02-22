@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Reflection;
-using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -13,8 +11,6 @@ namespace adovipavto.AddForms
 {
     public partial class AddGroupForm : Form
     {
-        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
-            Assembly.GetExecutingAssembly());
 
         public AddGroupForm()
         {
@@ -73,8 +69,8 @@ namespace adovipavto.AddForms
                             sb.Append(s + "\n");
                         }
 
-                        MessageBox.Show(_rm.GetString("groupExist") + Environment.NewLine + sb,
-                            _rm.GetString("error"),
+                        MessageBox.Show(StringResource.groupExist + Environment.NewLine + sb,
+                            StringResource.error,
                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
@@ -83,13 +79,13 @@ namespace adovipavto.AddForms
                 }
                 else
                 {
-                    MessageBox.Show(_rm.GetString("oneEngine"), _rm.GetString("error"), MessageBoxButtons.OK,
+                    MessageBox.Show(StringResource.oneEngine, StringResource.error, MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show(_rm.GetString("oneGroup"), _rm.GetString("error"), MessageBoxButtons.OK,
+                MessageBox.Show(StringResource.oneGroup, StringResource.error, MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
