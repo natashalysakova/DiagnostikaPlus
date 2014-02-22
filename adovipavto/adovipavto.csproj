@@ -584,6 +584,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="icon.ico" />
+    <None Include="Resources\removeAllGroup.png" />
+    <None Include="Resources\removeAllNorm.png" />
     <None Include="Resources\switchUserBtn.png" />
     <None Include="Resources\splashScreen2.png" />
     <None Include="Resources\splashScreen.png" />
