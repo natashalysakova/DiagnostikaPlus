@@ -679,5 +679,13 @@ namespace adovipavto
 
 
         }
+
+        internal void RemoveAllGroup()
+        {
+            foreach (DataRow row in CarGroup.Rows)
+            {
+                RemoveGroup(row);
+            }
+        }
     }
 }

@@ -129,48 +129,11 @@
   <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="groupIDDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>GroupID</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="groupIDDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="yearDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Year</value>
-  </data>
-  <data name="yearDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="categoryDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Category</value>
-  </data>
-  <data name="categoryDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="engineTypeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>EngineType</value>
-  </data>
-  <data name="engineTypeDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="beforeDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
-    <value>Before</value>
-  </data>
-  <data name="beforeDataGridViewCheckBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <metadata name="Title.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="Title.HeaderText" xml:space="preserve">
-    <value>title</value>
-  </data>
   <metadata name="carGroupBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>463, 17</value>
-  </metadata>
-  <metadata name="vipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -189,6 +152,7 @@
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
     <value>284, 618</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -282,26 +246,26 @@
   <data name="toolStripButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="toolStripButton3.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -322,11 +286,35 @@
   <data name="toolStripButton2.Text" xml:space="preserve">
     <value>Удалить группу</value>
   </data>
+  <data name="toolStripButton4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
+        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
+        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
+        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
+        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
+        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
+        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
+        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
+        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripButton4.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 40</value>
+  </data>
+  <data name="toolStripButton4.Text" xml:space="preserve">
+    <value>toolStripButton4</value>
+  </data>
   <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 43</value>
+    <value>194, 43</value>
   </data>
   <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -370,9 +358,63 @@
   <data name="&gt;&gt;toolStripContainer1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="groupIDDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>GroupID</value>
+  </data>
+  <data name="groupIDDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="yearDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="yearDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="categoryDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="categoryDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="engineTypeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>EngineType</value>
+  </data>
+  <data name="engineTypeDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="beforeDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
+    <value>Before</value>
+  </data>
+  <data name="beforeDataGridViewCheckBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="Title.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Title.HeaderText" xml:space="preserve">
+    <value>title</value>
+  </data>
+  <metadata name="carGroupBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>463, 17</value>
+  </metadata>
+  <metadata name="vipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="vipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>308, 17</value>
   </metadata>
+  <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 70</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStrip1.Name" xml:space="preserve">
+    <value>contextMenuStrip1</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="нормативыToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt, style=Bold</value>
   </data>
@@ -393,15 +435,6 @@
   </data>
   <data name="удалитьToolStripMenuItem.Text" xml:space="preserve">
     <value>Удалить</value>
-  </data>
-  <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 70</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStrip1.Name" xml:space="preserve">
-    <value>contextMenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1905,16 +1938,16 @@
   <data name="&gt;&gt;удалитьToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripButton4.Name" xml:space="preserve">
+    <value>toolStripButton4</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>GroupsForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="DeleteGroup" xml:space="preserve">
-    <value>DeleteGroup</value>
-  </data>
-  <data name="warning" xml:space="preserve">
-    <value>warning</value>
   </data>
 </root>
