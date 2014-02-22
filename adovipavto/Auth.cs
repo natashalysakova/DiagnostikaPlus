@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Reflection;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace adovipavto
 {
     public partial class Auth : Form
     {
+        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+
         public Auth()
         {
             InitializeComponent();
@@ -31,14 +35,14 @@ namespace adovipavto
                 }
                 else
                 {
-                    MessageBox.Show(StringResource.wrongPassword, StringResource.error, MessageBoxButtons.OK,
+                    MessageBox.Show(_rm.GetString("wrongPassword"), _rm.GetString("error"), MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show(StringResource.isUser + @" """ + textBox1.Text + @""" " + StringResource.notFound,
-                    StringResource.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(_rm.GetString("isUser") + @" """ + textBox1.Text + @""" " + _rm.GetString("notFound"),
+                    _rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

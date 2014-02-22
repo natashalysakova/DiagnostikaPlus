@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
@@ -8,6 +10,7 @@ namespace adovipavto
 {
     internal static class Program
     {
+        static readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
         public static VipAvtoSet VipAvtoDataSet;
@@ -21,7 +24,7 @@ namespace adovipavto
         {
             if (!File.Exists("DRandom.dll"))
             {
-                MessageBox.Show(StringResource.dllIsMissing);
+                MessageBox.Show(_rm.GetString("dllIsMissing"));
                 Application.Exit();
             }
 

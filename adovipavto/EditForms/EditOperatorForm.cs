@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Globalization;
+using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
@@ -10,6 +12,7 @@ namespace adovipavto.EditForms
     public partial class EditOperatorForm : Form
     {
         private readonly DataRow _selected;
+        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
 
@@ -42,7 +45,7 @@ namespace adovipavto.EditForms
             }
             else
             {
-                MessageBox.Show(StringResource.wrongData, StringResource.error, MessageBoxButtons.OK,
+                MessageBox.Show(_rm.GetString("wrongData"), _rm.GetString("error"), MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
@@ -55,7 +58,7 @@ namespace adovipavto.EditForms
         private void nameTxtBx_Validated(object sender, EventArgs e)
         {
             if (((TextBox) sender).Text == "")
-                errorProvider1.SetError(((TextBox) sender), StringResource.wrongData);
+                errorProvider1.SetError(((TextBox)sender), _rm.GetString("wrongData"));
             else
                 errorProvider1.SetError(((TextBox) sender), null);
         }

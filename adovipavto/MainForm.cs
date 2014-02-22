@@ -3,6 +3,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.AddForms;
@@ -14,6 +16,8 @@ namespace adovipavto
 {
     public partial class MainForm : Form
     {
+        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+
         public MainForm()
         {
             Application.EnableVisualStyles();
@@ -79,7 +83,7 @@ namespace adovipavto
                 return true;
             }
 
-            MessageBox.Show(StringResource.noPermission);
+            MessageBox.Show(_rm.GetString("noPermission"));
             return false;
         }
 
@@ -134,7 +138,7 @@ namespace adovipavto
             {
                 if (Settings.Instance.TmpLanguage != Settings.Instance.Language)
                 {
-                    if (MessageBox.Show(StringResource.lng, StringResource.warning, MessageBoxButtons.YesNo,
+                    if (MessageBox.Show(_rm.GetString("lng"), _rm.GetString("warning"), MessageBoxButtons.YesNo,
                         MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         Application.Restart();

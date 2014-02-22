@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
@@ -10,6 +12,7 @@ namespace adovipavto.AddForms
 {
     public partial class AddOperatorForm : Form
     {
+        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
         public AddOperatorForm()
@@ -42,7 +45,7 @@ namespace adovipavto.AddForms
             }
             else
             {
-                MessageBox.Show(StringResource.wrongData);
+                MessageBox.Show(_rm.GetString("wrongData"));
             }
         }
 
@@ -54,7 +57,7 @@ namespace adovipavto.AddForms
         private void nameTxtBx_Validated(object sender, EventArgs e)
         {
             if (((TextBox) sender).Text == "")
-                errorProvider1.SetError(((TextBox) sender), StringResource.wrongData);
+                errorProvider1.SetError(((TextBox) sender), _rm.GetString("wrongData"));
             else
                 errorProvider1.SetError(((TextBox) sender), null);
         }

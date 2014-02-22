@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -15,6 +17,7 @@ namespace adovipavto.AddForms
 {
     public partial class AddNormativeForm : Form
     {
+        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
         public AddNormativeForm()
         {
@@ -63,21 +66,21 @@ namespace adovipavto.AddForms
                             sb.Append(s + "\n");
                         }
 
-                        MessageBox.Show(StringResource.groupContaintsNormative + Environment.NewLine + sb,
-                            StringResource.error,
+                        MessageBox.Show(_rm.GetString("groupContaintsNormative") + Environment.NewLine + sb,
+                            _rm.GetString("error"),
                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    MessageBox.Show(StringResource.oneGroup, StringResource.error, MessageBoxButtons.OK,
+                    MessageBox.Show(_rm.GetString("oneGroup"), _rm.GetString("error"), MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show(StringResource.wrongData, StringResource.error, MessageBoxButtons.OK,
+                MessageBox.Show(_rm.GetString("wrongData"), _rm.GetString("error"), MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
@@ -96,13 +99,13 @@ namespace adovipavto.AddForms
                 }
                 else
                 {
-                    errorProvider1.SetError(textBox1, StringResource.minmax);
-                    errorProvider1.SetError(textBox2, StringResource.minmax);
+                    errorProvider1.SetError(textBox1, _rm.GetString("minmax"));
+                    errorProvider1.SetError(textBox2, _rm.GetString("minmax"));
                 }
             }
             catch (Exception)
             {
-                errorProvider1.SetError(((TextBox) sender), StringResource.wrongData);
+                errorProvider1.SetError(((TextBox) sender), _rm.GetString("wrongData"));
             }
         }
 

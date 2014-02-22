@@ -3,6 +3,8 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.AddForms;
@@ -13,6 +15,8 @@ namespace adovipavto
 {
     public partial class NormativesForm : Form
     {
+        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+
         public NormativesForm() : this(0)
         {
         }
@@ -73,7 +77,7 @@ namespace adovipavto
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(StringResource.deleteNorm, StringResource.warning,
+            if (MessageBox.Show(_rm.GetString("deleteNorm"), _rm.GetString("warning"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
@@ -130,7 +134,7 @@ namespace adovipavto
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(StringResource.deleteNorm, StringResource.warning,
+            if (MessageBox.Show(_rm.GetString("deleteNorm"), _rm.GetString("warning"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;

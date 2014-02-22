@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Globalization;
+using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
@@ -8,6 +10,7 @@ namespace adovipavto.AddForms
 {
     public partial class AddMechanicForm : Form
     {
+        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
         public AddMechanicForm()
         {
@@ -31,14 +34,14 @@ namespace adovipavto.AddForms
             }
             else
             {
-                MessageBox.Show(StringResource.wrongData);
+                MessageBox.Show(_rm.GetString("wrongData"));
             }
         }
 
         private void fnTxtBx_TextChanged(object sender, EventArgs e)
         {
             if (((TextBox) sender).Text == "")
-                errorProvider1.SetError((TextBox)sender, StringResource.wrongData);
+                errorProvider1.SetError((TextBox)sender, _rm.GetString("wrongData"));
             else
             {
                 errorProvider1.SetError((TextBox) sender, null);

@@ -2,6 +2,8 @@
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.AddForms;
@@ -13,6 +15,8 @@ namespace adovipavto
 {
     public partial class OperatorsForm : Form
     {
+        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+
         public OperatorsForm()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
@@ -44,7 +48,7 @@ namespace adovipavto
         {
             if (dataGridView1.SelectedRows[0] != null)
             {
-                if (MessageBox.Show(StringResource.lockOperator, StringResource.warning,
+                if (MessageBox.Show(_rm.GetString("lockOperator"), _rm.GetString("warning"),
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {
@@ -54,7 +58,7 @@ namespace adovipavto
                         (int) dataGridView1.SelectedRows[0].Cells["rightDataGridViewTextBoxColumn"].Value ==
                         (int) Rights.Administrator)
                     {
-                        MessageBox.Show(StringResource.cantLock, StringResource.error, MessageBoxButtons.OK,
+                        MessageBox.Show(_rm.GetString("cantLock"), _rm.GetString("error"), MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
                     else
@@ -62,7 +66,7 @@ namespace adovipavto
                         Program.VipAvtoDataSet.LockOperator(id);
                         if (id == Program.VipAvtoDataSet.GetOperatorId())
                         {
-                            MessageBox.Show(StringResource.reboot, StringResource.warning, MessageBoxButtons.OK,
+                            MessageBox.Show(_rm.GetString("reboot"), _rm.GetString("warning"), MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
 
                             Application.Restart();

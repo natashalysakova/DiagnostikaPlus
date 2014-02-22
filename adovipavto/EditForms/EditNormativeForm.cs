@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Globalization;
+using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
@@ -10,6 +12,7 @@ namespace adovipavto.EditForms
     public partial class EditNormativeForm : Form
     {
         private readonly DataRow _selected;
+        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
         public EditNormativeForm(DataRow selected)
         {
@@ -48,13 +51,13 @@ namespace adovipavto.EditForms
                 }
                 else
                 {
-                    errorProvider1.SetError(minTextBox, StringResource.minmax);
-                    errorProvider1.SetError(maxTextBox, StringResource.minmax);
+                    errorProvider1.SetError(minTextBox, _rm.GetString("minmax"));
+                    errorProvider1.SetError(maxTextBox, _rm.GetString("minmax"));
                 }
             }
             catch (Exception)
             {
-                errorProvider1.SetError(((TextBox) sender), StringResource.wrongData);
+                errorProvider1.SetError(((TextBox)sender), _rm.GetString("wrongData"));
             }
         }
 

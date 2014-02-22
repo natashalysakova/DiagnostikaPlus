@@ -2,6 +2,8 @@
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.AddForms;
@@ -13,6 +15,9 @@ namespace adovipavto
 {
     public partial class Mechanics : Form
     {
+
+        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+
         public Mechanics()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
@@ -88,7 +93,7 @@ namespace adovipavto
         {
             if (dataGridView1.SelectedRows[0] != null)
             {
-                if (MessageBox.Show(StringResource.lockmech, StringResource.warning,
+                if (MessageBox.Show(_rm.GetString("lockmech"), _rm.GetString("warning"),
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {

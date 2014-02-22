@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
@@ -10,6 +12,8 @@ namespace adovipavto
 {
     partial class AboutForm : Form
     {
+        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+
         public AboutForm()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
@@ -17,10 +21,10 @@ namespace adovipavto
             InitializeComponent();
 
             labelProductName.Text = AssemblyProduct;
-            labelVersion.Text = String.Format(StringResource.version + " {0}", AssemblyVersion);
+            labelVersion.Text = String.Format(_rm.GetString("version") + " {0}", AssemblyVersion);
             labelCopyright.Text = AssemblyCopyright;
             labelCompanyName.Text = AssemblyCompany;
-            logoPictureBox.Image = StringResource.splashScreen2;
+            logoPictureBox.Image = (Image)_rm.GetObject("splashScreen2");
         }
 
         #region Assembly Attribute Accessors
