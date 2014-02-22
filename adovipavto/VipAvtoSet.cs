@@ -7,6 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
+using System.Security.Cryptography;
+using System.Text;
 using adovipavto.Classes;
 using adovipavto.Enums;
 
@@ -18,6 +20,7 @@ namespace adovipavto
     {
         private Operator _currentOperator;
         private ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+
 
         public void LoadData()
         {
@@ -282,7 +285,7 @@ namespace adovipavto
             admin["Name"] = "admin";
             admin["LastName"] = "admin";
             admin["Login"] = "admin";
-            admin["Password"] = "admin";
+            admin["Password"] = GetHash("admin");
             admin["Right"] = Rights.Administrator;
             Tables[Constants.OperatorsTableName].Rows.Add(admin);
             AcceptChanges();
@@ -343,7 +346,7 @@ namespace adovipavto
             row["Name"] = name;
             row["LastName"] = lastName;
             row["Login"] = login;
-            row["Password"] = password;
+            row["Password"] = GetHash(password);
 
             row["Right"] = GetRightByString(rights);
 
@@ -351,6 +354,19 @@ namespace adovipavto
             Tables[Constants.OperatorsTableName].Rows.Add(row);
             Tables[Constants.OperatorsTableName].AcceptChanges();
             Tables[Constants.OperatorsTableName].WriteXml(Constants.GetFullPath(Settings.Instance.Operators));
+        }
+
+        public static string GetHash(string password)
+        {
+            var md5 = new MD5CryptoServiceProvider();
+            byte[] bytes = Encoding.Unicode.GetBytes(password);
+            var byteHash = md5.ComputeHash(bytes);
+
+            string hash = string.Empty;
+            //формируем одну цельную строку из массива  
+            foreach (byte b in byteHash)
+                hash += string.Format("{0:x2}", b);
+            return hash;
         }
 
         private Rights GetRightByString(string rightTitle)

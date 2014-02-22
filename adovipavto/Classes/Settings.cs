@@ -80,18 +80,13 @@ namespace adovipavto.Classes
                 LastUsedMechanic = "";
                 TmpLanguage = "";
 
-
             }
-
-
-
         }
-
 
         public void Load()
         {
-            var serializer = new XmlSerializer(typeof(Settings));
-            using (var reader = new StreamReader(FilesDirectory+_fileSettingPath))
+                var serializer = new XmlSerializer(this.GetType());
+            using (var reader = new StreamReader(FilesDirectory + _fileSettingPath))
             {
                 var tmp = (Settings) serializer.Deserialize(reader);
 
@@ -107,9 +102,10 @@ namespace adovipavto.Classes
                 Operators = tmp.Operators;
                 Protocols = tmp.Protocols;
                 TmpLanguage = tmp.TmpLanguage;
-
             }
+
         }
+
 
         public void Save()
         {

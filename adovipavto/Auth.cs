@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Reflection;
 using System.Resources;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 namespace adovipavto
@@ -26,7 +28,8 @@ namespace adovipavto
 
             if (password != "")
             {
-                if (maskedTextBox1.Text == password)
+
+                if (VipAvtoSet.GetHash(maskedTextBox1.Text) == password)
                 {
                     Program.VipAvtoDataSet.SetCurrentOperator(textBox1.Text);
 
