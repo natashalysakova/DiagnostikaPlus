@@ -19,7 +19,8 @@ namespace adovipavto.Classes
             _engines = new[]
             {
                 /*0*/rm.GetString("gas"),
-                /*1*/rm.GetString("diesel")
+                /*1*/rm.GetString("diesel"),
+                /*2*/""
             };
         }
 

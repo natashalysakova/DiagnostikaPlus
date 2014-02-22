@@ -574,6 +574,12 @@
     <None Include="Resources\setting.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BackupNormatives\groups.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BackupNormatives\normatives.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Help\index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
