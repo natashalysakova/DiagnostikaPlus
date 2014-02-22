@@ -694,5 +694,16 @@ namespace adovipavto
                 RemoveGroup(row);
             }
         }
+
+        internal bool UniqProtocolNumber(string p)
+        {
+            var prot =
+                (from DataRow rows in Protocols.Rows where rows[Protocols.BlankNumberColumn].ToString() == p select rows)
+                    .ToArray();
+            if (prot.Length == 0)
+                return true;
+
+            return false;
+        }
     }
 }

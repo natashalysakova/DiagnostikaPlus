@@ -403,4 +403,7 @@
   <data name="loginBisy" xml:space="preserve">
     <value>Вибраний логін вже зайнят. Спробуйте інший</value>
   </data>
+  <data name="notUniqNumber" xml:space="preserve">
+    <value>Номер не унікальний</value>
+  </data>
 </root>

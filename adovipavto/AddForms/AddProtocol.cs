@@ -329,7 +329,7 @@ namespace adovipavto.AddForms
 
         private bool SaveProtocolToDb()
         {
-            if (panel2.BackColor == Color.LightGoldenrodYellow)
+            if (panel2.BackColor == Color.LightGoldenrodYellow || panel2.BackColor == Color.DarkOrange)
                 return false;
 
 
@@ -414,7 +414,13 @@ namespace adovipavto.AddForms
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (SomeRequred())
+            if (maskedTextBox1.BackColor == Color.DarkOrange)
+            {
+                panel2.BackColor = Color.DarkOrange;
+
+                label79.Text = _rm.GetString("notUniqNumber");
+            }
+            else if (SomeRequred())
             {
                 panel2.BackColor = Color.LightGoldenrodYellow;
                 label79.Text = _rm.GetString("notAllFields");
@@ -491,11 +497,18 @@ namespace adovipavto.AddForms
 
         private void maskedTextBox1_TextChanged(object sender, EventArgs e)
         {
-            if (maskedTextBox1.MaskCompleted)
+            if (maskedTextBox1.MaskCompleted )
             {
-                maskedTextBox1.BackColor = Color.LightGreen;
+                if (Program.VipAvtoDataSet.UniqProtocolNumber(label80.Text + maskedTextBox1.Text))
+                {
+                    maskedTextBox1.BackColor = Color.LightGreen;
+                    UnlockFields();
+                }
+                else
+                {
+                    maskedTextBox1.BackColor = Color.DarkOrange;
+                }
 
-                UnlockFields();
             }
             else
             {
