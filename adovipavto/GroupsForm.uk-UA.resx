@@ -117,36 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>544, 1511</value>
-  </data>
   <data name="toolStripButton1.Text" xml:space="preserve">
     <value>Додати групу</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAABGhJREFUaEPtmWtMW2UYx19sOxDacYdAEJgwp0xJtyHRMAkaBrJOE8IgQ5jKYIFt
-        3JIN60TpJocg2RAUqBYYl1GGUJDLQBQcHTJYYQQcbCJkc4nxxmJkmukYE/4+rccPGv3kh54m/SX/nEvP
-        e/J7+r7n9LynzIoVK8KiTlnCdarKnPhNy8Kg1nEdb1ahv6SmdkLdtYnfbRkYKnXcdM1ZXG/RY7auD8Nl
-        zadH1G3b+I+FzUj5GW6quhs3uyaA4ev4secSLqs7bn9W3vK+sQi9Si/mDxUexXn5nL5Mi8UPx7E6tICV
-        T+dMudatX53S9H49VtV6cvTd9ocnNRoJ30RA2Lhzeek5GKzU4ofOcawMzuEuyd8ZuGrKYtc4Zur7Fgzq
-        dtXFmm5Pvarejm9pfooSGGcvc8Uj8khwR45hrLoD3+guYHnwC/w+NI+7VMyvH89SYQZcqev7aqhMW9yh
-        Unvwzc2L4Tjj3nuRYXeQLVx8PLE1LAYFOfkYrvwA3+nGTEXg/DWs6hdw79w8vmwaQKOqZK1N+ZYjfwrz
-        YZS/XMgwd4Sh5xCDIkICdzdPbN+hQOHhAgy904ybHQYaTlTEyA3c6pvGVE03dMcqGvlTmI+/5H+ioIZh
-        sZOhJYMh4gER3Py8EblzF06+wZl6YqnzEn1uwOenejGp6SzlT2E+/iavoQxR+hl+5hiachlCAxgcZF7Y
-        8ZwCFUUn0F/aQL8FWoyqdQKUP0c5S3mbQr1gLKY1kSHEh0EkdUW0YieUB3PRW6QRpvxaD6WU1rWUYUoz
-        pZphsJgh2I3B3sERKS+lCFt+rYliHEb1lArKAMNyK0Mj9QQ1Fbg8ffNG+bVTtL+MQsPplzaGq68xjGRa
-        knw5hfYvnWGYPcowlW2B8rdIfuZVBsNBq/z/wypvLqzy5sIqby4mCi1Y/kox42aKLFQ+divjLhYw3Dlh
-        gfKMSbhng+9DQzI9t5SQoJ7Sy8vzT5UClmeHJHYy+Ho7I+FRET45TkOonUSNT5Etwpf3FovF3wYGPgQv
-        /8fgaO+IuCgbDGczrNSS+HmSbhCuvJGE9TIZYiIjER0ZDQ+fLRDbSfE8zV8vVJE09YBpMvIRydO60ORF
-        lNpNAQFIjotD2guJSIyNg/+DITRjkuKZbQz6/STfR9cFzaSMkxEhyRvxFIlEN54OC0NmSgoy9iYjNy0V
-        +5OSIN8SRkXIEEE90UO31Gklw6QQZlL/YLeLs/Ny6p49OJyejtezs5G1bx9eOXAAe+PjEfbEU1SEGE9S
-        EaMZwpO/n1It37wZeRkZKFIqkZ+VhTyST4qNRVREBLYHBf0mlcrgKhGevJGNEonk+6jwcOSkpuJoZuZa
-        vEKBhOjopY0bNsDPz2/E1tZ2VipdL0h5RnL+Lk5O9x6Xy7ErNHQ5JDgYgb6+8x4uLr02NjZtdG1E0WFp
-        fx4tTESe7u6FDg4Ot729vE7T9oD9unUxtIynGF9xC/DPhn+BhtHLtAinyE076P7JLy0K87+Tt2LFyn/A
-        2B9IXWeu/FyDnwAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARoSURBVGhD7Zl9TBtlHMcfbDsQ2vEOgSBswpwyJd2GRMMk
+        aBjIOk0IgwxhKoMFtvGWbFgnSjc5gmRDmEC1wIANGEJBXgai4OiQwQoj4GATIc4lxjcWI9NMx5jw9Xf1
+        /EOjf/lHr0k/yTf30nsun1+f5673XJkVK1bERa26mOvQlDoJm5aFUavn2t+sRF9xdc24tnOjsNsyMFbo
+        uanqc7jebMBMbS+GSpvODGtbtwofi5vhsrPcZFUXbnaOA0PX8WP3ZVzRtt/+tKz5Pb4Ig8YgFQ4VH0W5
+        eZyhtBELH4xhZXAey5/MmjLfZViZ1PV8PVrZcmLknbaHJ3Q6mdBERNi4c7lp2RioaMQPHWNYHpjFXZK/
+        03/NlIXOMUzX9c4btW2aS9VdngZNnZ3Q0vwUxjPOXuGKR5QR4A4fxWhVO77RX8TSwOf4fXAOd6mYXz+a
+        ocKMuFrb+9VgaWNRu0brITQ3L8ZjjHv3RYZdgbZw8fHEltBo5GfnYajifXynHzUVgQtfYsUwj3vn5/BF
+        Qz/qNEWrreq3HIVTmA9e/koBw+xhhu6DDKpwGdzdPLFtuwoFh/IxeLIJN9uNNJyoiOEbuNU7hcnqLuiP
+        lp8WTmE+/pL/iYJqhoUOhuZ0hvAHJHDz80bEjp048QZn6onFjsv0uRGfnerBhK6jRDiF+fibvI4ySOlj
+        +JljaMhhCPFncFB4YftzKpQXHkdfST39FjRiRKsXofx5yjnK2xTqBb6YlgSGYB8GidwVUaodUB/IQU+h
+        Tpzyq92UElpvpAxRmihVDANFDEFuDPYOjkh+KVnc8qsNFH4Y1VHKKf0MSy0Mp6knqKnI5emb5+VXT9H+
+        UgoNp19aGa69xjCcYUnyZRTav3iWYeYIw2SWBcrfIvnpVxmMB6zy/w+rvLmwypsLq7y5GC+wYPmrRYyb
+        LrRQ+ZgtjLuUz3DnuAXKMybjng26D/VJ9NxSTIIGSo8gLzxVilieHZTZKeDr7Yz4RyX4+BgNoTYS5Z8i
+        m8Uv7y2VSr8NCHgIXuseg6O9I2IjbTCUxbBcQ+IXSLpevPI88WsVCkRHRCAqIgoePpshtZPjeZq/Xqwk
+        aeoB02TkQ5KndbHJSyg1G/39kRQbi9QXEpAQE4t1DwbTjEmOZ7YyGPaRfC9dFzST4icjYpLn8ZRIJDee
+        Dg1FRnIy0vckISc1BfsSE6HcHEpFKBBOPdFNt9QpNcOEGGZS/2CXi7PzUsru3TiUlobXs7KQuXcvXtm/
+        H3vi4hD6xFNUhBRPUhEj6eKTv59Spdy0Cbnp6ShUq5GXmYlckk+MiUFkeDi2BQb+Jpcr4CoTnzzPBplM
+        9n1kWBiyU1JwJCNjNU6lQnxU1OKG9evh5+c3bGtrOyOXrxWlPCO5dS5OTvceVyqxMyRkKTgoCAG+vnMe
+        Li49NjY2rXRtRNJhqX8eLU4knu7uBQ4ODre9vbzO0Ha//Zo10bSMo/CvuEX4Z8O/QMPoZVqEUZSmHXT/
+        FJYWhfnfyVuxYuU/YOwPoERnqPtwt/AAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="toolStripButton3.Text" xml:space="preserve">
@@ -154,6 +151,9 @@
   </data>
   <data name="toolStripButton2.Text" xml:space="preserve">
     <value>Видалити групу</value>
+  </data>
+  <data name="toolStripButton4.Text" xml:space="preserve">
+    <value>Видалити все</value>
   </data>
   <data name="нормативыToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 22</value>
@@ -1536,8 +1536,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Групи</value>
-  </data>
-  <data name="DeleteGroup" xml:space="preserve">
-    <value>Видалити групу? Усі пов'язані с нею нормативи та записи будуть видалені!</value>
   </data>
 </root>

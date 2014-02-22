@@ -120,9 +120,6 @@
   <data name="NormTitle.HeaderText" xml:space="preserve">
     <value>Назва</value>
   </data>
-  <data name="titleDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Назва</value>
-  </data>
   <data name="minValueDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Мінімальне значення</value>
   </data>
@@ -145,36 +142,39 @@
   <data name="toolStripButton3.Text" xml:space="preserve">
     <value>Видалити норматив</value>
   </data>
+  <data name="toolStripButton4.Text" xml:space="preserve">
+    <value>Видалити все</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 32</value>
+    <value>49, 40</value>
   </data>
   <data name="toolStripLabel1.Text" xml:space="preserve">
     <value>Група</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>462, 35</value>
+    <value>526, 43</value>
   </data>
   <data name="добавитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
+    <value>138, 22</value>
   </data>
   <data name="добавитьToolStripMenuItem.Text" xml:space="preserve">
     <value>Додати</value>
   </data>
   <data name="изменитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
+    <value>138, 22</value>
   </data>
   <data name="изменитьToolStripMenuItem.Text" xml:space="preserve">
     <value>Редагувати</value>
   </data>
   <data name="удалитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 22</value>
+    <value>138, 22</value>
   </data>
   <data name="удалитьToolStripMenuItem.Text" xml:space="preserve">
     <value>Видалити</value>
   </data>
   <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 70</value>
+    <value>139, 70</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

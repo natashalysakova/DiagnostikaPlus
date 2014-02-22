@@ -145,8 +145,13 @@ namespace adovipavto
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            var id = Program.VipAvtoDataSet.GetGroupId(groupSelector.SelectedItem.ToString());
-            Program.VipAvtoDataSet.RemoveAllNormatives(id);
+            if (MessageBox.Show(_rm.GetString("deleteNorm"), _rm.GetString("warning"),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+
+                var id = Program.VipAvtoDataSet.GetGroupId(groupSelector.SelectedItem.ToString());
+                Program.VipAvtoDataSet.RemoveAllNormatives(id);
+            }
         }
     }
 }

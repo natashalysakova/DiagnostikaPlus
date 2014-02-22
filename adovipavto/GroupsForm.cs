@@ -118,7 +118,13 @@ namespace adovipavto
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            Program.VipAvtoDataSet.RemoveAllGroup();
+            if (MessageBox.Show(_rm.GetString("DeleteGroup"), _rm.GetString("warning"),
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
+                DialogResult.Yes)
+            {
+
+                Program.VipAvtoDataSet.RemoveAllGroup();
+            }
         }
     }
 }
