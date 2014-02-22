@@ -400,4 +400,7 @@
   <data name="dllIsMissing" xml:space="preserve">
     <value>Біблиотиеки відсутні. Зверніться до системного адміністратора</value>
   </data>
+  <data name="loginBisy" xml:space="preserve">
+    <value>Вибраний логін вже зайнят. Спробуйте інший</value>
+  </data>
 </root>

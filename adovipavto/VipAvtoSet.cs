@@ -339,8 +339,13 @@ namespace adovipavto
                 Constants.GetFullPath(Settings.Instance.Operators));
         }
 
-        internal void AddOperator(string name, string lastName, string login, string password, string rights)
+        internal bool AddOperator(string name, string lastName, string login, string password, string rights)
         {
+            var operators =
+                (from DataRow item in Operators.Rows where item[Operators.LoginColumn].ToString() == login select item).ToArray();
+            if (operators.Length != 0)
+                return false;
+
             DataRow row = Tables[Constants.OperatorsTableName].NewRow();
 
             row["Name"] = name;
@@ -354,6 +359,8 @@ namespace adovipavto
             Tables[Constants.OperatorsTableName].Rows.Add(row);
             Tables[Constants.OperatorsTableName].AcceptChanges();
             Tables[Constants.OperatorsTableName].WriteXml(Constants.GetFullPath(Settings.Instance.Operators));
+
+            return true;
         }
 
         public static string GetHash(string password)

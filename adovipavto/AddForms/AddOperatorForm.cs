@@ -39,9 +39,18 @@ namespace adovipavto.AddForms
             if (errorProvider1.GetError(nameTxtBx) == "" && errorProvider1.GetError(lnTxtBx) == "" &&
                 errorProvider1.GetError(loginTxtBx) == "" && errorProvider1.GetError(passTxtBx) == "")
             {
-                Program.VipAvtoDataSet.AddOperator(nameTxtBx.Text, lnTxtBx.Text, loginTxtBx.Text, passTxtBx.Text,
+                bool res = Program.VipAvtoDataSet.AddOperator(nameTxtBx.Text, lnTxtBx.Text, loginTxtBx.Text, passTxtBx.Text,
                     roleCmbBx.SelectedItem.ToString());
-                DialogResult = DialogResult.OK;
+                
+                if(res)
+                    DialogResult = DialogResult.OK;
+                else
+                {
+                    MessageBox.Show(_rm.GetString("loginBisy"), _rm.GetString("error"), MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    loginTxtBx.Clear();
+                    passTxtBx.Clear();
+                }
             }
             else
             {
