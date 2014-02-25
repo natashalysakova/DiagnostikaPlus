@@ -152,7 +152,7 @@ namespace adovipavto.AddForms
                     MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     GBO.Enabled = true;
-                    GBO.BackColor = Color.LightGoldenrodYellow;
+                    GBO.BackColor = Color.Gold;
 
                 }
                 else
@@ -233,11 +233,11 @@ namespace adovipavto.AddForms
 
                 _rows.Add(row);
 
-                visualCheck.BackColor = Color.LightGoldenrodYellow;
-                groupBox10.BackColor = Color.LightGoldenrodYellow;
+                visualCheck.BackColor = Color.Gold;
+                groupBox10.BackColor = Color.Gold;
 
 
-                panel2.BackColor = Color.LightGoldenrodYellow;
+                panel2.BackColor = Color.Gold;
 
             }
 
@@ -329,7 +329,7 @@ namespace adovipavto.AddForms
 
         private bool SaveProtocolToDb()
         {
-            if (panel2.BackColor == Color.LightGoldenrodYellow || panel2.BackColor == Color.DarkOrange)
+            if (panel2.BackColor == Color.Gold || panel2.BackColor == Color.DarkOrange)
                 return false;
 
 
@@ -422,7 +422,7 @@ namespace adovipavto.AddForms
             }
             else if (SomeRequred())
             {
-                panel2.BackColor = Color.LightGoldenrodYellow;
+                panel2.BackColor = Color.Gold;
                 label79.Text = _rm.GetString("notAllFields");
             }
             else if (AllValide())
@@ -452,15 +452,15 @@ namespace adovipavto.AddForms
             }
 
 
-            if (visualCheck.BackColor == Color.LightGoldenrodYellow)
+            if (visualCheck.BackColor == Color.Gold)
                 result = true;
 
-            if (groupBox10.BackColor == Color.LightGoldenrodYellow)
+            if (groupBox10.BackColor == Color.Gold)
                 result = true;
 
             if (GBO.Enabled)
             {
-                if (GBO.BackColor == Color.LightGoldenrodYellow)
+                if (GBO.BackColor == Color.Gold)
                     result = true;
             }
 
@@ -512,7 +512,7 @@ namespace adovipavto.AddForms
             }
             else
             {
-                maskedTextBox1.BackColor = Color.LightGoldenrodYellow;
+                maskedTextBox1.BackColor = Color.Gold;
                 panel1.Enabled = false;
             }
         }

@@ -129,7 +129,7 @@ namespace adovipavto.Classes
         private void SetYellow()
         {
             //picxtireBox.Image = Properties.Resources.yellow;
-            _textbox.BackColor = Color.LightGoldenrodYellow;
+            _textbox.BackColor = Color.Gold;
         }
 
         public bool IsValid()
@@ -141,7 +141,7 @@ namespace adovipavto.Classes
 
         public bool Requred()
         {
-            if (_textbox.BackColor == Color.LightGoldenrodYellow)
+            if (_textbox.BackColor == Color.Gold)
                 return true;
             return false;
         }

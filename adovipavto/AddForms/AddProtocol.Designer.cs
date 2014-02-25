@@ -199,7 +199,7 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.maskedTextBox1.BackColor = System.Drawing.Color.Gold;
             this.maskedTextBox1.BeepOnError = true;
             resources.ApplyResources(this.maskedTextBox1, "maskedTextBox1");
             this.maskedTextBox1.Name = "maskedTextBox1";
