@@ -49,32 +49,49 @@
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.errorProvider1.SetError(this.label1, resources.GetString("label1.Error"));
+            this.errorProvider1.SetIconAlignment(this.label1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label1.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label1, ((int)(resources.GetObject("label1.IconPadding"))));
             this.label1.Name = "label1";
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
+            this.errorProvider1.SetError(this.label2, resources.GetString("label2.Error"));
+            this.errorProvider1.SetIconAlignment(this.label2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label2.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label2, ((int)(resources.GetObject("label2.IconPadding"))));
             this.label2.Name = "label2";
             // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
+            this.errorProvider1.SetError(this.label3, resources.GetString("label3.Error"));
+            this.errorProvider1.SetIconAlignment(this.label3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label3.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label3, ((int)(resources.GetObject("label3.IconPadding"))));
             this.label3.Name = "label3";
             // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
+            this.errorProvider1.SetError(this.label4, resources.GetString("label4.Error"));
+            this.errorProvider1.SetIconAlignment(this.label4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label4.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label4, ((int)(resources.GetObject("label4.IconPadding"))));
             this.label4.Name = "label4";
             // 
             // label6
             // 
             resources.ApplyResources(this.label6, "label6");
+            this.errorProvider1.SetError(this.label6, resources.GetString("label6.Error"));
+            this.errorProvider1.SetIconAlignment(this.label6, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label6.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.label6, ((int)(resources.GetObject("label6.IconPadding"))));
             this.label6.Name = "label6";
             // 
             // nameTxtBx
             // 
-            this.errorProvider1.SetError(this.nameTxtBx, resources.GetString("nameTxtBx.Error"));
             resources.ApplyResources(this.nameTxtBx, "nameTxtBx");
+            this.errorProvider1.SetError(this.nameTxtBx, resources.GetString("nameTxtBx.Error"));
+            this.errorProvider1.SetIconAlignment(this.nameTxtBx, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("nameTxtBx.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.nameTxtBx, ((int)(resources.GetObject("nameTxtBx.IconPadding"))));
             this.nameTxtBx.Name = "nameTxtBx";
             this.nameTxtBx.TextChanged += new System.EventHandler(this.nameTxtBx_TextChanged);
             this.nameTxtBx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTxtBx_KeyPress);
@@ -82,8 +99,10 @@
             // 
             // lnTxtBx
             // 
-            this.errorProvider1.SetError(this.lnTxtBx, resources.GetString("lnTxtBx.Error"));
             resources.ApplyResources(this.lnTxtBx, "lnTxtBx");
+            this.errorProvider1.SetError(this.lnTxtBx, resources.GetString("lnTxtBx.Error"));
+            this.errorProvider1.SetIconAlignment(this.lnTxtBx, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lnTxtBx.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.lnTxtBx, ((int)(resources.GetObject("lnTxtBx.IconPadding"))));
             this.lnTxtBx.Name = "lnTxtBx";
             this.lnTxtBx.TextChanged += new System.EventHandler(this.nameTxtBx_TextChanged);
             this.lnTxtBx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTxtBx_KeyPress);
@@ -91,8 +110,10 @@
             // 
             // loginTxtBx
             // 
-            this.errorProvider1.SetError(this.loginTxtBx, resources.GetString("loginTxtBx.Error"));
             resources.ApplyResources(this.loginTxtBx, "loginTxtBx");
+            this.errorProvider1.SetError(this.loginTxtBx, resources.GetString("loginTxtBx.Error"));
+            this.errorProvider1.SetIconAlignment(this.loginTxtBx, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("loginTxtBx.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.loginTxtBx, ((int)(resources.GetObject("loginTxtBx.IconPadding"))));
             this.loginTxtBx.Name = "loginTxtBx";
             this.loginTxtBx.TextChanged += new System.EventHandler(this.nameTxtBx_TextChanged);
             this.loginTxtBx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginTxtBx_KeyPress);
@@ -100,30 +121,41 @@
             // 
             // roleCmbBx
             // 
-            this.roleCmbBx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.roleCmbBx.FormattingEnabled = true;
             resources.ApplyResources(this.roleCmbBx, "roleCmbBx");
+            this.roleCmbBx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.errorProvider1.SetError(this.roleCmbBx, resources.GetString("roleCmbBx.Error"));
+            this.roleCmbBx.FormattingEnabled = true;
+            this.errorProvider1.SetIconAlignment(this.roleCmbBx, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("roleCmbBx.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.roleCmbBx, ((int)(resources.GetObject("roleCmbBx.IconPadding"))));
             this.roleCmbBx.Name = "roleCmbBx";
             // 
             // button1
             // 
             resources.ApplyResources(this.button1, "button1");
+            this.errorProvider1.SetError(this.button1, resources.GetString("button1.Error"));
+            this.errorProvider1.SetIconAlignment(this.button1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("button1.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.button1, ((int)(resources.GetObject("button1.IconPadding"))));
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.button2, "button2");
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.errorProvider1.SetError(this.button2, resources.GetString("button2.Error"));
+            this.errorProvider1.SetIconAlignment(this.button2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("button2.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.button2, ((int)(resources.GetObject("button2.IconPadding"))));
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // passTxtBx
             // 
-            this.errorProvider1.SetError(this.passTxtBx, resources.GetString("passTxtBx.Error"));
             resources.ApplyResources(this.passTxtBx, "passTxtBx");
+            this.errorProvider1.SetError(this.passTxtBx, resources.GetString("passTxtBx.Error"));
+            this.errorProvider1.SetIconAlignment(this.passTxtBx, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("passTxtBx.IconAlignment"))));
+            this.errorProvider1.SetIconPadding(this.passTxtBx, ((int)(resources.GetObject("passTxtBx.IconPadding"))));
             this.passTxtBx.Name = "passTxtBx";
             this.passTxtBx.TextChanged += new System.EventHandler(this.nameTxtBx_TextChanged);
             this.passTxtBx.Validated += new System.EventHandler(this.nameTxtBx_Validated);
@@ -132,6 +164,7 @@
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
+            resources.ApplyResources(this.errorProvider1, "errorProvider1");
             // 
             // AddOperatorForm
             // 

@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 19</value>
+    <value>16, 48</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 17</value>
@@ -150,7 +150,7 @@
     <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 48</value>
+    <value>16, 19</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 17</value>
@@ -288,7 +288,7 @@
     <value>EmptyField</value>
   </data>
   <data name="lnTxtBx.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 45</value>
+    <value>117, 16</value>
   </data>
   <data name="lnTxtBx.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 23</value>
@@ -1663,7 +1663,7 @@
     <value>EmptyField</value>
   </data>
   <data name="nameTxtBx.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 16</value>
+    <value>117, 45</value>
   </data>
   <data name="nameTxtBx.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 23</value>
