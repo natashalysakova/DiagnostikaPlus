@@ -166,6 +166,8 @@
             this.CloseBtn = new System.Windows.Forms.Button();
             this.label80 = new System.Windows.Forms.Label();
             this.SaveBtn = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -190,6 +192,7 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.lightSystem.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -1243,6 +1246,32 @@
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.button3_Click);
             // 
+            // numericUpDown1
+            // 
+            resources.ApplyResources(this.numericUpDown1, "numericUpDown1");
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
@@ -1258,6 +1287,8 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseBtn;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label80);
@@ -1313,6 +1344,7 @@
             this.lightSystem.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1404,7 +1436,6 @@
         private System.Windows.Forms.Label MVSTS;
         private System.Windows.Forms.Label ORTS3;
         private System.Windows.Forms.Label ORTS2;
-        private System.Windows.Forms.Label ORTS1;
         private System.Windows.Forms.Label OUTSSTS;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label10;
@@ -1458,5 +1489,8 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.RadioButton radioButton7;
         private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.Label ORTS1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

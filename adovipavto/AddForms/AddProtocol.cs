@@ -15,6 +15,8 @@ namespace adovipavto.AddForms
 {
     public partial class AddProtocol : Form
     {
+        private GBOSTATE gbo;
+
         private readonly MainForm _mainForm;
 
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
@@ -31,7 +33,7 @@ namespace adovipavto.AddForms
 
             InitializeComponent();
 
-
+            gbo = GBOSTATE.None;
             _rows = new List<VisualRow>();
         }
 
@@ -42,7 +44,7 @@ namespace adovipavto.AddForms
 
             string[] groups = (
                 from DataRow item in Program.VipAvtoDataSet.Tables[Constants.GroupTableName].Rows
-                select Program.VipAvtoDataSet.CreateGroupTitle((int) item["GroupID"])).ToArray();
+                select Program.VipAvtoDataSet.CreateGroupTitle((int)item["GroupID"])).ToArray();
 
             if (groups.Length == 0)
             {
@@ -51,16 +53,16 @@ namespace adovipavto.AddForms
                 Close();
             }
 
-// ReSharper disable once CoVariantArrayConversion
+            // ReSharper disable once CoVariantArrayConversion
             comboBox1.Items.AddRange(groups);
 
             dateTimePicker1.Value = DateTime.Now;
 
             string[] mechanics = (
                 from DataRow item in Program.VipAvtoDataSet.Tables[Constants.MechanicsTableName].Rows
-                where (int) item["State"] != (int) State.Unemployed
+                where (int)item["State"] != (int)State.Unemployed
                 select
-                    Program.VipAvtoDataSet.GetShortMechanicName((int) item["MechanicID"])
+                    Program.VipAvtoDataSet.GetShortMechanicName((int)item["MechanicID"])
                 ).ToArray();
             if (mechanics.Length == 0)
             {
@@ -132,6 +134,7 @@ namespace adovipavto.AddForms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            gbo = GBOSTATE.None;
             UnlockFields();
         }
 
@@ -148,24 +151,38 @@ namespace adovipavto.AddForms
 
             if (Program.VipAvtoDataSet.GroupWithGasEngine(comboBox1.SelectedItem.ToString()))
             {
-                if (MessageBox.Show(_rm.GetString("IsGBOActive"), _rm.GetString("warning"), MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                switch (gbo)
                 {
-                    GBO.Enabled = true;
-                    GBO.BackColor = Color.Gold;
+                    case GBOSTATE.None:
+                        if (MessageBox.Show(_rm.GetString("IsGBOActive"), _rm.GetString("warning"),
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        {
+                            gbo = GBOSTATE.Active;
+                            GBO.Enabled = true;
+                            GBO.BackColor = Color.Gold;
 
-                }
-                else
-                {
-                    GBO.Enabled = false;
-                    GBO.BackColor = SystemColors.Control;
+                        }
+                        else
+                        {
+                            gbo = GBOSTATE.NonActive;
+                            GBO.Enabled = false;
+                            GBO.BackColor = SystemColors.Control;
+                        }
+                        break;
+                    case GBOSTATE.Active:
+                        gbo = GBOSTATE.Active;
+                        GBO.Enabled = true;
+                        GBO.BackColor = Color.Gold;
+                        break;
+                    default:
+                        gbo = GBOSTATE.NonActive;
+                        GBO.Enabled = false;
+                        GBO.BackColor = SystemColors.Control;
+                        break;
                 }
             }
-            else
-            {
-                GBO.Enabled = false;
-                GBO.BackColor = SystemColors.Control;
-            }
+
 
 
 
@@ -177,14 +194,7 @@ namespace adovipavto.AddForms
             _rows = new List<VisualRow>();
 
 
-
-            int id = Program.VipAvtoDataSet.GetGroupId(comboBox1.SelectedItem.ToString());
-
-            _normatives = (
-                from DataRow item in Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].Rows
-                where (int) item["IDGroup"] == id
-                select item
-                ).ToArray();
+            _normatives = Program.VipAvtoDataSet.GetNormativesFromGroup(comboBox1.SelectedItem.ToString());
 
 
             foreach (DataRow normative in _normatives)
@@ -204,9 +214,20 @@ namespace adovipavto.AddForms
 
                         foreach (Control control in control3.Controls)
                         {
+
+
                             if (control.Tag == null) continue;
 
-                            if (control.Tag.ToString() != row.Id.ToString()) continue;
+                            int tag = Convert.ToInt32(control.Tag);
+
+
+                            if (tag != row.Id) continue;
+
+                            if (tag == 3 && numericUpDown1.Value == 1)
+                                continue;
+                            if (tag == 4 && (numericUpDown1.Value == 2 || numericUpDown1.Value == 1))
+                                continue;
+
 
                             if (control is TextBox)
                             {
@@ -219,6 +240,10 @@ namespace adovipavto.AddForms
                         }
                     }
                 }
+
+                if (lables.Count == 0)
+                    continue;
+
 
                 if (lables[0].Location.X > lables[1].Location.X)
                 {
@@ -268,7 +293,7 @@ namespace adovipavto.AddForms
                     {
                         if (control2 is TableLayoutPanel)
                         {
-                            foreach (Control control3 in ((TableLayoutPanel) control2).Controls)
+                            foreach (Control control3 in ((TableLayoutPanel)control2).Controls)
                             {
                                 if (control3 is TextBox)
                                 {
@@ -294,7 +319,7 @@ namespace adovipavto.AddForms
             radioButton6.Checked = false;
             radioButton7.Checked = false;
 
-            
+
 
         }
 
@@ -364,15 +389,15 @@ namespace adovipavto.AddForms
 
             if (GBO.Enabled == false)
             {
-                gbo = (int) Gbo.NotChecked;
+                gbo = (int)Gbo.NotChecked;
             }
             else
             {
                 if (radioButton6.Checked)
-                    gbo = (int) Gbo.Germetical;
+                    gbo = (int)Gbo.Germetical;
                 else
                 {
-                    gbo = (int) Gbo.NotGermrtical;
+                    gbo = (int)Gbo.NotGermrtical;
                 }
             }
 
@@ -497,7 +522,7 @@ namespace adovipavto.AddForms
 
         private void maskedTextBox1_TextChanged(object sender, EventArgs e)
         {
-            if (maskedTextBox1.MaskCompleted )
+            if (maskedTextBox1.MaskCompleted)
             {
                 if (Program.VipAvtoDataSet.UniqProtocolNumber(label80.Text + maskedTextBox1.Text))
                 {
@@ -564,8 +589,8 @@ namespace adovipavto.AddForms
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                ((PictureBox) sender).Tag = openFileDialog1.FileName;
-                ((PictureBox) sender).Image = Image.FromFile(openFileDialog1.FileName);
+                ((PictureBox)sender).Tag = openFileDialog1.FileName;
+                ((PictureBox)sender).Image = Image.FromFile(openFileDialog1.FileName);
             }
         }
 
@@ -578,5 +603,17 @@ namespace adovipavto.AddForms
                 GBO.BackColor = Color.LightPink;
             }
         }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            UnlockFields();
+        }
+    }
+
+    enum GBOSTATE
+    {
+        None,
+        Active,
+        NonActive
     }
 }

@@ -477,20 +477,6 @@
     <IDGroup>5</IDGroup>
   </Normatives>
   <Normatives>
-    <NormativeID>70</NormativeID>
-    <Tag>4</Tag>
-    <MaxValue>30</MaxValue>
-    <MinValue>0</MinValue>
-    <IDGroup>6</IDGroup>
-  </Normatives>
-  <Normatives>
-    <NormativeID>71</NormativeID>
-    <Tag>4</Tag>
-    <MaxValue>30</MaxValue>
-    <MinValue>0</MinValue>
-    <IDGroup>7</IDGroup>
-  </Normatives>
-  <Normatives>
     <NormativeID>72</NormativeID>
     <Tag>4</Tag>
     <MaxValue>30</MaxValue>
@@ -545,20 +531,6 @@
     <MaxValue>30</MaxValue>
     <MinValue>0</MinValue>
     <IDGroup>17</IDGroup>
-  </Normatives>
-  <Normatives>
-    <NormativeID>82</NormativeID>
-    <Tag>4</Tag>
-    <MaxValue>30</MaxValue>
-    <MinValue>0</MinValue>
-    <IDGroup>18</IDGroup>
-  </Normatives>
-  <Normatives>
-    <NormativeID>83</NormativeID>
-    <Tag>4</Tag>
-    <MaxValue>30</MaxValue>
-    <MinValue>0</MinValue>
-    <IDGroup>19</IDGroup>
   </Normatives>
   <Normatives>
     <NormativeID>84</NormativeID>
