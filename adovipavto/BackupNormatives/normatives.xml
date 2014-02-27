@@ -2017,62 +2017,6 @@
     <IDGroup>23</IDGroup>
   </Normatives>
   <Normatives>
-    <NormativeID>314</NormativeID>
-    <Tag>19</Tag>
-    <MaxValue>50</MaxValue>
-    <MinValue>0</MinValue>
-    <IDGroup>24</IDGroup>
-  </Normatives>
-  <Normatives>
-    <NormativeID>315</NormativeID>
-    <Tag>19</Tag>
-    <MaxValue>50</MaxValue>
-    <MinValue>0</MinValue>
-    <IDGroup>25</IDGroup>
-  </Normatives>
-  <Normatives>
-    <NormativeID>316</NormativeID>
-    <Tag>19</Tag>
-    <MaxValue>50</MaxValue>
-    <MinValue>0</MinValue>
-    <IDGroup>26</IDGroup>
-  </Normatives>
-  <Normatives>
-    <NormativeID>317</NormativeID>
-    <Tag>19</Tag>
-    <MaxValue>50</MaxValue>
-    <MinValue>0</MinValue>
-    <IDGroup>27</IDGroup>
-  </Normatives>
-  <Normatives>
-    <NormativeID>318</NormativeID>
-    <Tag>19</Tag>
-    <MaxValue>50</MaxValue>
-    <MinValue>0</MinValue>
-    <IDGroup>28</IDGroup>
-  </Normatives>
-  <Normatives>
-    <NormativeID>319</NormativeID>
-    <Tag>19</Tag>
-    <MaxValue>50</MaxValue>
-    <MinValue>0</MinValue>
-    <IDGroup>29</IDGroup>
-  </Normatives>
-  <Normatives>
-    <NormativeID>320</NormativeID>
-    <Tag>19</Tag>
-    <MaxValue>50</MaxValue>
-    <MinValue>0</MinValue>
-    <IDGroup>30</IDGroup>
-  </Normatives>
-  <Normatives>
-    <NormativeID>321</NormativeID>
-    <Tag>19</Tag>
-    <MaxValue>50</MaxValue>
-    <MinValue>0</MinValue>
-    <IDGroup>31</IDGroup>
-  </Normatives>
-  <Normatives>
     <NormativeID>322</NormativeID>
     <Tag>17</Tag>
     <MaxValue>72.5</MaxValue>
