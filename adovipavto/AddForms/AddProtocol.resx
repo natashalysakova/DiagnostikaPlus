@@ -206,11 +206,14 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="comboBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
   <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>382, 11</value>
+    <value>384, 10</value>
   </data>
   <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 24</value>
+    <value>248, 28</value>
   </data>
   <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -316,7 +319,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>648, 9</value>
+    <value>648, 10</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 25</value>
@@ -346,10 +349,10 @@
     <value>Microsoft Sans Serif, 16pt</value>
   </data>
   <data name="numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>839, 6</value>
+    <value>839, 7</value>
   </data>
   <data name="numericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 32</value>
+    <value>37, 32</value>
   </data>
   <data name="numericUpDown1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>

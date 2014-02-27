@@ -10,6 +10,7 @@ using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
 using adovipavto.Enums;
+using DRandomLib;
 
 namespace adovipavto.AddForms
 {
@@ -25,6 +26,7 @@ namespace adovipavto.AddForms
         private int _newProtocolId;
         private DataRow[] _normatives;
         private List<VisualRow> _rows;
+        DRandom _random = new DRandom();
 
         public AddProtocol(MainForm mainForm)
         {
@@ -206,7 +208,7 @@ namespace adovipavto.AddForms
 
             foreach (DataRow normative in _normatives)
             {
-                var row = new VisualRow(normative);
+                var row = new VisualRow(normative, _random);
 
                 var lables = new List<Label>();
 
