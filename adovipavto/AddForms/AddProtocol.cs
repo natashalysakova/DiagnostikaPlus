@@ -182,6 +182,13 @@ namespace adovipavto.AddForms
                         break;
                 }
             }
+            else
+            {
+                        gbo = GBOSTATE.NonActive;
+                        GBO.Enabled = false;
+                        GBO.BackColor = SystemColors.Control;
+
+            }
 
 
 
