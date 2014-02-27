@@ -43,6 +43,7 @@ namespace adovipavto.Classes
                 /*20*/rm.GetString("PVS"),
                 /*21*/rm.GetString("PPBS"),
                 /*22*/rm.GetString("VSHA"),
+                /*23*/rm.GetString("ORTS4"),
             };
 
             _decimals = new List<int>
@@ -70,6 +71,7 @@ namespace adovipavto.Classes
                 /*20*/0,
                 /*21*/0,
                 /*22*/0,
+                /*23*/0
             };
         }
 

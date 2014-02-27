@@ -87,6 +87,8 @@ namespace adovipavto.AddForms
             ORTS1.Text = _rm.GetString("ORTS1");
             ORTS2.Text = _rm.GetString("ORTS2");
             ORTS3.Text = _rm.GetString("ORTS3");
+            ORTS4.Text = _rm.GetString("ORTS4");
+
             ORTSS.Text = _rm.GetString("ORTSSS");
             MVSTS.Text = _rm.GetString("MVSTS");
             KUNOU1.Text = _rm.GetString("KUNOU1");
@@ -186,9 +188,9 @@ namespace adovipavto.AddForms
             }
             else
             {
-                        gbo = GBOSTATE.NonActive;
-                        GBO.Enabled = false;
-                        GBO.BackColor = SystemColors.Control;
+                gbo = GBOSTATE.NonActive;
+                GBO.Enabled = false;
+                GBO.BackColor = SystemColors.Control;
 
             }
 
@@ -236,6 +238,9 @@ namespace adovipavto.AddForms
                                 continue;
                             if (tag == 4 && (numericUpDown1.Value == 2 || numericUpDown1.Value == 1))
                                 continue;
+                            if(tag == 23 && (numericUpDown1.Value == 1 || numericUpDown1.Value == 2 || numericUpDown1.Value == 3))
+                                continue;
+                            
 
 
                             if (control is TextBox)

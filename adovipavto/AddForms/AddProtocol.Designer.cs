@@ -170,6 +170,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.ORTS4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.brakesystem.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -236,18 +240,22 @@
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 11);
-            this.tableLayoutPanel1.Controls.Add(this.textBox20, 1, 11);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 11);
-            this.tableLayoutPanel1.Controls.Add(this.ORTSS, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.textBox7, 1, 15);
-            this.tableLayoutPanel1.Controls.Add(this.textBox6, 1, 13);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 2, 11);
+            this.tableLayoutPanel1.Controls.Add(this.textBox8, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.ORTS4, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 13);
+            this.tableLayoutPanel1.Controls.Add(this.textBox20, 1, 13);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 13);
+            this.tableLayoutPanel1.Controls.Add(this.ORTSS, 0, 12);
+            this.tableLayoutPanel1.Controls.Add(this.textBox7, 1, 17);
+            this.tableLayoutPanel1.Controls.Add(this.textBox6, 1, 15);
             this.tableLayoutPanel1.Controls.Add(this.textBox5, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.KUNOU1, 0, 14);
-            this.tableLayoutPanel1.Controls.Add(this.MVSTS, 0, 12);
+            this.tableLayoutPanel1.Controls.Add(this.KUNOU1, 0, 16);
+            this.tableLayoutPanel1.Controls.Add(this.MVSTS, 0, 14);
             this.tableLayoutPanel1.Controls.Add(this.ORTS3, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.ORTS2, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.ORTS1, 0, 4);
@@ -258,15 +266,15 @@
             this.tableLayoutPanel1.Controls.Add(this.label12, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.label13, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label14, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 13);
-            this.tableLayoutPanel1.Controls.Add(this.label16, 0, 15);
+            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 15);
+            this.tableLayoutPanel1.Controls.Add(this.label16, 0, 17);
             this.tableLayoutPanel1.Controls.Add(this.label17, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label18, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.label19, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.label20, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.label21, 2, 9);
-            this.tableLayoutPanel1.Controls.Add(this.label22, 2, 13);
-            this.tableLayoutPanel1.Controls.Add(this.label23, 2, 15);
+            this.tableLayoutPanel1.Controls.Add(this.label22, 2, 15);
+            this.tableLayoutPanel1.Controls.Add(this.label23, 2, 17);
             this.tableLayoutPanel1.Controls.Add(this.OUTSRTS, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
@@ -1250,7 +1258,7 @@
             // 
             resources.ApplyResources(this.numericUpDown1, "numericUpDown1");
             this.numericUpDown1.Maximum = new decimal(new int[] {
-            3,
+            4,
             0,
             0,
             0});
@@ -1280,6 +1288,34 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
+            // 
+            // ORTS4
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.ORTS4, 3);
+            resources.ApplyResources(this.ORTS4, "ORTS4");
+            this.ORTS4.Name = "ORTS4";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.BackColor = System.Drawing.SystemColors.Control;
+            this.label7.ForeColor = System.Drawing.Color.Silver;
+            this.label7.Name = "label7";
+            this.label7.Tag = "23";
+            // 
+            // textBox8
+            // 
+            resources.ApplyResources(this.textBox8, "textBox8");
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Tag = "23";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.BackColor = System.Drawing.SystemColors.Control;
+            this.label8.ForeColor = System.Drawing.Color.Silver;
+            this.label8.Name = "label8";
+            this.label8.Tag = "23";
             // 
             // AddProtocol
             // 
@@ -1493,5 +1529,9 @@
         private System.Windows.Forms.Label ORTS1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label ORTS4;
     }
 }

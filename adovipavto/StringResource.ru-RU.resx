@@ -406,4 +406,7 @@
   <data name="notUniqNumber" xml:space="preserve">
     <value>Номер не уникален</value>
   </data>
+  <data name="ORTS4" xml:space="preserve">
+    <value>Отн. разность тормозных сил 4-я ось(%)</value>
+  </data>
 </root>
