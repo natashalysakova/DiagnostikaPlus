@@ -82,7 +82,7 @@ namespace adovipavto.EditForms
             mesureTextBox.Text = new Normatives()[(int) _selected["Tag"]];
 
             groupTextBox.Text =
-                Program.VipAvtoDataSet.CreateGroupTitle((int) _selected["IDGroup"]);
+                Program.VipAvtoDataSet.GroupTitle((int) _selected["IDGroup"]);
         }
     }
 }

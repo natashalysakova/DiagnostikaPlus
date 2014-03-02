@@ -152,7 +152,7 @@ namespace adovipavto
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 row.Cells["Group"].Value =
-                    Program.VipAvtoDataSet.CreateGroupTitle((int) row.Cells["iDGroupDataGridViewTextBoxColumn"].Value);
+                    Program.VipAvtoDataSet.GroupTitle((int) row.Cells["iDGroupDataGridViewTextBoxColumn"].Value);
 
 
                 row.Cells["Mechanic"].Value =

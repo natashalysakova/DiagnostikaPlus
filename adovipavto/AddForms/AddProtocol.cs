@@ -46,7 +46,7 @@ namespace adovipavto.AddForms
 
             string[] groups = (
                 from DataRow item in Program.VipAvtoDataSet.Tables[Constants.GroupTableName].Rows
-                select Program.VipAvtoDataSet.CreateGroupTitle((int)item["GroupID"])).ToArray();
+                select Program.VipAvtoDataSet.GroupTitle((int)item["GroupID"])).ToArray();
 
             if (groups.Length == 0)
             {

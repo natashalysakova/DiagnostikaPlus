@@ -107,7 +107,7 @@ namespace adovipavto.Classes
                 g.DrawString(_rows[j]["BlankNumber"].ToString(), normalFont, Brushes.Black,
                     new PointF(65, lineHeight*(i + 3) + 3));
 
-                g.DrawString(Program.VipAvtoDataSet.CreateGroupTitle((int) _rows[j]["IDGroup"]), normalFont,
+                g.DrawString(Program.VipAvtoDataSet.GroupTitle((int) _rows[j]["IDGroup"]), normalFont,
                     Brushes.Black, new PointF(185, lineHeight*(i + 3) + 3));
 
                 g.DrawString(((DateTime) _rows[j]["Date"]).ToShortDateString(), normalFont, Brushes.Black,

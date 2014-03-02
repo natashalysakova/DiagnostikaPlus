@@ -33,12 +33,12 @@ namespace adovipavto
 // ReSharper disable once CoVariantArrayConversion
             object[] groups =
                 (from DataRow item in Program.VipAvtoDataSet.Tables[Constants.GroupTableName].Rows
-                    select Program.VipAvtoDataSet.CreateGroupTitle((int) item["GroupID"])).ToArray();
+                    select Program.VipAvtoDataSet.GroupTitle((int) item["GroupID"])).ToArray();
 
             groupSelector.Items.AddRange(groups);
 
-            if (Program.VipAvtoDataSet.CreateGroupTitle(selectedGroup) != "" || groupSelector.Items.Count == 0)
-                groupSelector.Text = Program.VipAvtoDataSet.CreateGroupTitle(selectedGroup);
+            if (Program.VipAvtoDataSet.GroupTitle(selectedGroup) != "" || groupSelector.Items.Count == 0)
+                groupSelector.Text = Program.VipAvtoDataSet.GroupTitle(selectedGroup);
             else
             {
                 groupSelector.SelectedIndex = 0;

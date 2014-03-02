@@ -32,7 +32,7 @@ namespace adovipavto.EditForms
 
         private void EditGroupForm_Load(object sender, EventArgs e)
         {
-            textBox1.Text = Program.VipAvtoDataSet.CreateGroupTitle((int) _selectedRow["GroupID"]);
+            textBox1.Text = Program.VipAvtoDataSet.GroupTitle((int) _selectedRow["GroupID"]);
 
 
             categoryComboBox.DataSource = Enum.GetValues(typeof (Category));

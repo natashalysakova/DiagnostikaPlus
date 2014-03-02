@@ -158,7 +158,7 @@
             // 
             // carGroupBindingSource
             // 
-            this.carGroupBindingSource.DataMember = "CarGroup";
+            this.carGroupBindingSource.DataMember = "Group";
             this.carGroupBindingSource.DataSource = this.vipAvtoSet;
             // 
             // vipAvtoSet
