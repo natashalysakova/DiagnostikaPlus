@@ -17,10 +17,12 @@ namespace adovipavto.AddForms
 {
     public partial class AddNormativeForm : Form
     {
+        private readonly VipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public AddNormativeForm()
+        public AddNormativeForm(VipAvtoSet set)
         {
+            _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
 
@@ -45,10 +47,10 @@ namespace adovipavto.AddForms
                     var groupsList = new List<string>();
                     foreach (object item in checkedListBox1.CheckedItems)
                     {
-                        if (!Program.VipAvtoDataSet.GroupContainsNormative(item.ToString(),
+                        if (!_set.GroupContainsNormative(item.ToString(),
                             comboBox2.SelectedItem.ToString()))
                         {
-                            Program.VipAvtoDataSet.AddNormative(item.ToString(), comboBox2.SelectedItem.ToString(), min,
+                            _set.AddNormative(item.ToString(), comboBox2.SelectedItem.ToString(), min,
                                 max);
                         }
                         else
@@ -117,8 +119,8 @@ namespace adovipavto.AddForms
         private void NewNormative_Load(object sender, EventArgs e)
         {
             checkedListBox1.DataSource =
-                (from DataRow item in Program.VipAvtoDataSet.Tables[Constants.GroupTableName].Rows
-                    select Program.VipAvtoDataSet.GroupTitle((int) item["GroupID"])).ToList();
+                (from DataRow item in _set.Tables[Constants.GroupTableName].Rows
+                    select _set.GroupTitle((int) item["GroupID"])).ToList();
 
 
             //comboBox2.DataSource = Program.NormasTitles.Select(item => item.Value).ToList();

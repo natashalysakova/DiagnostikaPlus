@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
@@ -10,10 +11,13 @@ namespace adovipavto.AddForms
 {
     public partial class AddMechanicForm : Form
     {
+        private readonly VipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public AddMechanicForm()
+
+        public AddMechanicForm(VipAvtoSet set)
         {
+            _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             InitializeComponent();
@@ -29,7 +33,7 @@ namespace adovipavto.AddForms
             if (errorProvider1.GetError(nameTxtBx) == "" && errorProvider1.GetError(lnTxtBx) == "" &&
                 errorProvider1.GetError(fnTxtBx) == "")
             {
-                Program.VipAvtoDataSet.AddMechanic(nameTxtBx.Text, lnTxtBx.Text, fnTxtBx.Text);
+                _set.AddMechanic(nameTxtBx.Text, lnTxtBx.Text, fnTxtBx.Text);
                 DialogResult = DialogResult.OK;
             }
             else

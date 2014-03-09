@@ -2,8 +2,20 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="adovipavto.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="sfdgs" Type="System.String" Scope="User">
+    <Setting Name="ServerIp" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3306</Value>
+    </Setting>
+    <Setting Name="DataBase" Type="System.String" Scope="User">
+      <Value Profile="(Default)">vipavto</Value>
+    </Setting>
+    <Setting Name="UserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">vipavto</Value>
+    </Setting>
+    <Setting Name="Passwod" Type="System.String" Scope="User">
+      <Value Profile="(Default)">04101968</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -13,10 +13,12 @@ namespace adovipavto.AddForms
 {
     public partial class AddGroupForm : Form
     {
+        private readonly VipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public AddGroupForm()
+        public AddGroupForm(VipAvtoSet set)
         {
+            _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
             InitializeComponent();
         }
@@ -47,11 +49,11 @@ namespace adovipavto.AddForms
                     {
                         foreach (object item2 in checkedListBox2.CheckedItems)
                         {
-                            if (!Program.VipAvtoDataSet.GroupExist(Convert.ToInt32(comboBox3.SelectedItem.ToString()),
+                            if (!_set.GroupExist(Convert.ToInt32(comboBox3.SelectedItem.ToString()),
                                 item.ToString(),
                                 new Engines().GetEngineIndex(item2.ToString()), radioButton1.Checked))
                             {
-                                Program.VipAvtoDataSet.AddGroup(Convert.ToInt32(comboBox3.SelectedItem.ToString()),
+                                _set.AddGroup(Convert.ToInt32(comboBox3.SelectedItem.ToString()),
                                     item.ToString(),
                                     new Engines().GetEngineIndex(item2.ToString()), radioButton1.Checked);
                             }

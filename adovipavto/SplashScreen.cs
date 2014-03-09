@@ -29,5 +29,10 @@ namespace adovipavto
                 Close();
             }
         }
+
+        private void SplashScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

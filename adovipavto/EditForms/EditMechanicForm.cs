@@ -12,32 +12,34 @@ namespace adovipavto.EditForms
 {
     public partial class EditMechanicForm : Form
     {
-        private readonly DataRow _selected;
+        private readonly VipAvtoSet.MechanicsRow _selected;
+        private readonly VipAvtoSet _set;
 
-        public EditMechanicForm(DataRow row)
+        public EditMechanicForm(VipAvtoSet.MechanicsRow row, VipAvtoSet set)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
 
             InitializeComponent();
             _selected = row;
+            _set = set;
         }
 
         private void EditMechanicForm_Load(object sender, EventArgs e)
         {
-            nameTxtBx.Text = _selected["Name"].ToString();
-            lnTxtBx.Text = _selected["LastName"].ToString();
-            fnTxtBx.Text = _selected["FatherName"].ToString();
+            nameTxtBx.Text = _selected.Name;
+            lnTxtBx.Text = _selected.LastName;
+            fnTxtBx.Text = _selected.FatherName;
 
             Text = lnTxtBx.Text + @" " + nameTxtBx.Text[0] + @"." + fnTxtBx.Text[0] + @". - " +
-                   Constants.GetEnumDescription((State) (int) _selected["State"]);
+                   Constants.GetEnumDescription((State) (int) _selected.State);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (ValidateChildren())
             {
-                Program.VipAvtoDataSet.EditMechanic((int) _selected["MechanicID"], nameTxtBx.Text, lnTxtBx.Text, fnTxtBx.Text);
+                _set.EditMechanic((int) _selected.MechanicID, nameTxtBx.Text, lnTxtBx.Text, fnTxtBx.Text);
                 DialogResult = DialogResult.OK;
             }
             else

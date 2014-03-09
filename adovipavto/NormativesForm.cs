@@ -17,28 +17,32 @@ namespace adovipavto
     {
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public NormativesForm() : this(0)
+        private VipAvtoSet _set;
+
+        public NormativesForm(VipAvtoSet set) : this(0, set)
         {
         }
 
-        public NormativesForm(int selectedGroup)
+        public NormativesForm(int selectedGroup, VipAvtoSet set)
         {
+
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
+            _set = set;
 
             InitializeComponent();
 
-            dataGridView1.DataSource = Program.VipAvtoDataSet.Tables[Constants.NormativesTableName];
+            dataGridView1.DataSource = set.Normatives;
 
 // ReSharper disable once CoVariantArrayConversion
             object[] groups =
-                (from DataRow item in Program.VipAvtoDataSet.Tables[Constants.GroupTableName].Rows
-                    select Program.VipAvtoDataSet.GroupTitle((int) item["GroupID"])).ToArray();
+                (from VipAvtoSet.GroupRow item in set.Group
+                    select set.GroupTitle((int) item.GroupID)).ToArray();
 
             groupSelector.Items.AddRange(groups);
 
-            if (Program.VipAvtoDataSet.GroupTitle(selectedGroup) != "" || groupSelector.Items.Count == 0)
-                groupSelector.Text = Program.VipAvtoDataSet.GroupTitle(selectedGroup);
+            if (set.GroupTitle(selectedGroup) != "" || groupSelector.Items.Count == 0)
+                groupSelector.Text = set.GroupTitle(selectedGroup);
             else
             {
                 groupSelector.SelectedIndex = 0;
@@ -47,7 +51,7 @@ namespace adovipavto
 
         private void NormativesForm_Load(object sender, EventArgs e)
         {
-            int id = Program.VipAvtoDataSet.GetGroupId(groupSelector.Text);
+            int id = _set.GetGroupId(groupSelector.Text);
             ((DataTable) dataGridView1.DataSource).DefaultView.RowFilter = string.Format("IDGroup = '{0}'", id);
             dataGridView1.Columns[0].Visible = false;
             UpdateRows();
@@ -56,14 +60,14 @@ namespace adovipavto
 
         private void groupSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id = Program.VipAvtoDataSet.GetGroupId(groupSelector.Text);
+            int id = _set.GetGroupId(groupSelector.Text);
             ((DataTable) dataGridView1.DataSource).DefaultView.RowFilter = string.Format("IDGroup = '{0}'", id);
             UpdateRows();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            if (new AddNormativeForm().ShowDialog() == DialogResult.OK)
+            if (new AddNormativeForm(_set).ShowDialog() == DialogResult.OK)
                 UpdateRows();
         }
 
@@ -81,7 +85,7 @@ namespace adovipavto
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
-                Program.VipAvtoDataSet.RemoveRowById(Constants.NormativesTableName, id);
+                _set.RemoveRowById(Constants.NormativesTableName, id);
                 UpdateRows();
             }
         }
@@ -90,8 +94,8 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            DataRow row = Program.VipAvtoDataSet.GetRowById(Constants.NormativesTableName, id);
-            if (new EditNormativeForm(row).ShowDialog() == DialogResult.OK)
+            VipAvtoSet.NormativesRow row = (VipAvtoSet.NormativesRow)_set.GetRowById(Constants.NormativesTableName, id);
+            if (new EditNormativeForm(row, _set).ShowDialog() == DialogResult.OK)
                 UpdateRows();
         }
 
@@ -101,14 +105,14 @@ namespace adovipavto
 
             var id = (int) dataGridView1.Rows[e.RowIndex].Cells[0].Value;
 
-            DataRow row = Program.VipAvtoDataSet.GetRowById(Constants.NormativesTableName, id);
-            if (new EditNormativeForm(row).ShowDialog() == DialogResult.OK)
+            VipAvtoSet.NormativesRow row = (VipAvtoSet.NormativesRow)_set.GetRowById(Constants.NormativesTableName, id);
+            if (new EditNormativeForm(row, _set).ShowDialog() == DialogResult.OK)
                 UpdateRows();
         }
 
         private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (new AddNormativeForm().ShowDialog() == DialogResult.OK)
+            if (new AddNormativeForm(_set).ShowDialog() == DialogResult.OK)
                 UpdateRows();
         }
 
@@ -127,8 +131,8 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            DataRow row = Program.VipAvtoDataSet.GetRowById(Constants.NormativesTableName, id);
-            if (new EditNormativeForm(row).ShowDialog() == DialogResult.OK)
+            VipAvtoSet.NormativesRow row = (VipAvtoSet.NormativesRow)_set.GetRowById(Constants.NormativesTableName, id);
+            if (new EditNormativeForm(row, _set).ShowDialog() == DialogResult.OK)
                 UpdateRows();
         }
 
@@ -138,7 +142,7 @@ namespace adovipavto
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
-                Program.VipAvtoDataSet.RemoveRowById(Constants.NormativesTableName, id);
+                _set.RemoveRowById(Constants.NormativesTableName, id);
                 UpdateRows();
             }
         }
@@ -149,8 +153,8 @@ namespace adovipavto
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
 
-                var id = Program.VipAvtoDataSet.GetGroupId(groupSelector.SelectedItem.ToString());
-                Program.VipAvtoDataSet.RemoveAllNormatives(id);
+                var id = _set.GetGroupId(groupSelector.SelectedItem.ToString());
+                _set.RemoveAllNormatives(id);
             }
         }
     }

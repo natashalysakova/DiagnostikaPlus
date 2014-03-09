@@ -14,15 +14,17 @@ namespace adovipavto
 {
     public partial class GroupsForm : Form
     {
-        private DataRow _selectedRow;
+        private readonly VipAvtoSet _set;
+        private VipAvtoSet.GroupRow _selectedRow;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public GroupsForm()
+        public GroupsForm(VipAvtoSet set)
         {
+            _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             InitializeComponent();
-            dataGridView1.DataSource = Program.VipAvtoDataSet.Tables[Constants.GroupTableName];
+            dataGridView1.DataSource = set.Group;
         }
 
         //readonly DataTable _table;
@@ -35,14 +37,14 @@ namespace adovipavto
                 dataGridView1.Rows[e.RowIndex].Selected = true;
                 Rectangle r = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
 
-                _selectedRow = Program.VipAvtoDataSet.GetRowByIndex(Constants.GroupTableName, e.RowIndex);
+                _selectedRow = (VipAvtoSet.GroupRow) _set.GetRowByIndex(Constants.GroupTableName, e.RowIndex);
                 contextMenuStrip1.Show((Control) sender, r.Left + e.X, r.Top + e.Y);
             }
         }
 
         private void нормативыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new NormativesForm((int) _selectedRow["GroupID"]).ShowDialog();
+            new NormativesForm((int) _selectedRow["GroupID"], _set).ShowDialog();
         }
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,9 +52,7 @@ namespace adovipavto
             if (MessageBox.Show(_rm.GetString("DeleteGroup"), _rm.GetString("warning"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                Program.VipAvtoDataSet.RemoveRow(Constants.GroupTableName, _selectedRow);
-                Program.VipAvtoDataSet.Tables[Constants.GroupTableName].WriteXml(
-                    Constants.GetFullPath(Settings.Instance.Groups));
+                _set.RemoveRow(Constants.GroupTableName, _selectedRow);
                 _selectedRow = null;
             }
         }
@@ -60,13 +60,13 @@ namespace adovipavto
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             dataGridView1.Rows[e.RowIndex].Selected = true;
-            _selectedRow = Program.VipAvtoDataSet.GetRowByIndex(Constants.GroupTableName, e.RowIndex);
-            new NormativesForm((int) _selectedRow["GroupID"]).ShowDialog();
+            _selectedRow = (VipAvtoSet.GroupRow) _set.GetRowByIndex(Constants.GroupTableName, e.RowIndex);
+            new NormativesForm(_selectedRow.GroupID, _set).ShowDialog();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            if (new AddGroupForm().ShowDialog() == DialogResult.OK)
+            if (new AddGroupForm(_set).ShowDialog() == DialogResult.OK)
                 UpdateRows();
         }
 
@@ -75,26 +75,26 @@ namespace adovipavto
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 row.Cells["Title"].Value =
-                    Program.VipAvtoDataSet.GroupTitle((int) row.Cells["groupIDDataGridViewTextBoxColumn"].Value);
+                    _set.GroupTitle((int) row.Cells["groupIDDataGridViewTextBoxColumn"].Value);
             }
         }
 
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            _selectedRow = Program.VipAvtoDataSet.GetRowByIndex(Constants.GroupTableName,
+            _selectedRow = (VipAvtoSet.GroupRow) _set.GetRowByIndex(Constants.GroupTableName,
                 dataGridView1.SelectedRows[0].Index);
 
             if (_selectedRow != null)
             {
-                if (new EditGroupForm(_selectedRow).ShowDialog() == DialogResult.OK)
+                if (new EditGroupForm(_selectedRow, _set).ShowDialog() == DialogResult.OK)
                     UpdateRows();
             }
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            _selectedRow = Program.VipAvtoDataSet.GetRowByIndex(Constants.GroupTableName,
+            _selectedRow = (VipAvtoSet.GroupRow) _set.GetRowByIndex(Constants.GroupTableName,
                 dataGridView1.SelectedRows[0].Index);
 
             if (_selectedRow != null)
@@ -103,7 +103,7 @@ namespace adovipavto
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {
-                    Program.VipAvtoDataSet.RemoveGroup(_selectedRow);
+                    _set.RemoveGroup(_selectedRow);
                     _selectedRow = null;
 
                     UpdateRows();
@@ -123,7 +123,7 @@ namespace adovipavto
                 DialogResult.Yes)
             {
 
-                Program.VipAvtoDataSet.RemoveAllGroup();
+                _set.RemoveAllGroup();
             }
         }
     }

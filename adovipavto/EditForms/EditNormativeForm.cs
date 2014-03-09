@@ -11,15 +11,17 @@ namespace adovipavto.EditForms
 {
     public partial class EditNormativeForm : Form
     {
-        private readonly DataRow _selected;
+        private readonly VipAvtoSet.NormativesRow _selected;
+        private readonly VipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public EditNormativeForm(DataRow selected)
+        public EditNormativeForm(VipAvtoSet.NormativesRow selected, VipAvtoSet set)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             InitializeComponent();
             _selected = selected;
+            _set = set;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -31,7 +33,7 @@ namespace adovipavto.EditForms
         {
             if (errorProvider1.GetError(minTextBox) == "" & errorProvider1.GetError(maxTextBox) == "")
             {
-                Program.VipAvtoDataSet.EditNormative((int) _selected["NormativeID"], groupTextBox.Text,
+                _set.EditNormative((int) _selected["NormativeID"], groupTextBox.Text,
                     mesureTextBox.Text, Convert.ToDouble(minTextBox.Text), Convert.ToDouble(maxTextBox.Text));
                 DialogResult = DialogResult.OK;
             }
@@ -70,7 +72,7 @@ namespace adovipavto.EditForms
         {
             var id = (int) _selected["NormativeID"];
 
-            foreach (DataRow item in Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].Rows)
+            foreach (DataRow item in _set.Tables[Constants.NormativesTableName].Rows)
             {
                 if (Convert.ToInt32(item["NormativeID"]) == id)
                 {
@@ -82,7 +84,7 @@ namespace adovipavto.EditForms
             mesureTextBox.Text = new Normatives()[(int) _selected["Tag"]];
 
             groupTextBox.Text =
-                Program.VipAvtoDataSet.GroupTitle((int) _selected["IDGroup"]);
+                _set.GroupTitle((int) _selected["IDGroup"]);
         }
     }
 }

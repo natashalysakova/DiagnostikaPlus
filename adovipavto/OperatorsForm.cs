@@ -15,14 +15,16 @@ namespace adovipavto
 {
     public partial class OperatorsForm : Form
     {
+        private readonly VipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public OperatorsForm()
+        public OperatorsForm(VipAvtoSet set)
         {
+            _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             InitializeComponent();
-            dataGridView1.DataSource = Program.VipAvtoDataSet.Tables[Constants.OperatorsTableName];
+            dataGridView1.DataSource = set.Operators;
         }
 
         private void OperatorsForm_Load(object sender, EventArgs e)
@@ -63,8 +65,8 @@ namespace adovipavto
                     }
                     else
                     {
-                        Program.VipAvtoDataSet.LockOperator(id);
-                        if (id == Program.VipAvtoDataSet.GetOperatorId())
+                        _set.LockOperator(id);
+                        if (id == _set.GetOperatorId())
                         {
                             MessageBox.Show(_rm.GetString("reboot"), _rm.GetString("warning"), MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
@@ -80,7 +82,7 @@ namespace adovipavto
         private int AdministratorsCount()
         {
             return
-                Program.VipAvtoDataSet.Tables[Constants.OperatorsTableName].Select(string.Format("Right = {0}",
+                _set.Tables[Constants.OperatorsTableName].Select(string.Format("Right = {0}",
                     (int) Rights.Administrator)).Length;
         }
 
@@ -91,7 +93,7 @@ namespace adovipavto
 
         private void Add()
         {
-            if (new AddOperatorForm().ShowDialog() == DialogResult.OK)
+            if (new AddOperatorForm(_set).ShowDialog() == DialogResult.OK)
                 UpdateRoles();
         }
 
@@ -104,10 +106,10 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            DataRow row = Program.VipAvtoDataSet.GetRowById(Constants.OperatorsTableName, id);
+            VipAvtoSet.OperatorsRow row = (VipAvtoSet.OperatorsRow) _set.GetRowById(Constants.OperatorsTableName, id);
 
 
-            if (new EditOperatorForm(row).ShowDialog() == DialogResult.OK)
+            if (new EditOperatorForm(row, _set).ShowDialog() == DialogResult.OK)
                 UpdateRoles();
         }
 

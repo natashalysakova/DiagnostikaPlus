@@ -1,6 +1,4 @@
-﻿#region
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
@@ -9,10 +7,11 @@ using System.Reflection;
 using System.Resources;
 using System.Security.Cryptography;
 using System.Text;
+using System.Timers;
+using System.Windows.Forms;
 using adovipavto.Classes;
 using adovipavto.Enums;
-
-#endregion
+using MySql.Data.MySqlClient;
 
 namespace adovipavto
 {
@@ -20,108 +19,124 @@ namespace adovipavto
     {
         private Operator _currentOperator;
         private ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+        private MySqlConnection _conection;
 
+
+
+
+        public string Update()
+        {        
+            StartConnection();
+
+            MySqlDataAdapter adapter;
+
+
+            List<MySqlCommand> commands = new List<MySqlCommand>()
+            {
+                
+    
+    new MySqlCommand("SELECT * FROM  `mesures` ",
+                _conection),new MySqlCommand("SELECT * FROM  `protocols` ",
+                _conection)
+            };
+
+            List<DataTable> tables = new List<DataTable>()
+            {
+               Mesures, Protocols
+            };
+
+            for (int i = 0; i < commands.Count; i++)
+            {
+                adapter = new MySqlDataAdapter(commands[i]);
+                var cb = new MySqlCommandBuilder(adapter);
+
+                adapter.UpdateCommand = cb.GetUpdateCommand().Clone();
+                adapter.Update(tables[i]);
+            }
+
+            for (int i = 0; i < tables.Count; i++)
+            {
+                tables[i].Clear();
+            }
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < commands.Count; i++)
+            {
+                try
+                {
+                    adapter = new MySqlDataAdapter(commands[i]);
+                    adapter.Fill(tables[i]);
+                }
+                catch (Exception e)
+                {
+                    sb.AppendLine(e.Message + " " + tables[i].TableName);
+                }
+            }
+
+
+
+            _conection.Close();
+
+            return sb.ToString();
+        }
+
+        private void StartConnection()
+        {
+            string _connectionString = GetConnectionString();
+
+            _conection = new MySqlConnection(_connectionString);
+            _conection.Open();
+        }
+
+        private static string GetConnectionString()
+        {
+            return "SERVER=" + Properties.Settings.Default.ServerIp + ";" +
+                   "PORT=" + Properties.Settings.Default.Port + ";" +
+                   "DATABASE=" + Properties.Settings.Default.DataBase + ";" +
+                   "UID=" + Properties.Settings.Default.UserName + ";" +
+                   "PASSWORD=" + Properties.Settings.Default.Passwod + ";";
+        }
 
         public void LoadData()
         {
-            string path = Constants.GetFullPath(Settings.Instance.Operators);
+            StartConnection();
 
-            if (File.Exists(path))
-                Tables[Constants.OperatorsTableName].ReadXml(path);
-            else
-                CreateAdministratorUser();
+            MySqlCommand operatorsCommand = new MySqlCommand("SELECT * FROM  `operators` ", _conection);
+            MySqlCommand mechanicsCommand = new MySqlCommand("SELECT * FROM  `mechanics` ", _conection);
+            MySqlCommand protocolsCommand = new MySqlCommand("SELECT * FROM  `protocols` ", _conection);
+            MySqlCommand mesuresCommand = new MySqlCommand("SELECT * FROM  `mesures` ", _conection);
+            MySqlCommand normativesCommand = new MySqlCommand("SELECT * FROM  `normatives` ", _conection);
+            MySqlCommand groupsCommand = new MySqlCommand("SELECT * FROM  `groups` ", _conection);
 
+            MySqlDataAdapter adapter = new MySqlDataAdapter(operatorsCommand);
+            adapter.Fill(Operators);
 
-            path = Constants.GetFullPath(Settings.Instance.Mechanics);
+            adapter = new MySqlDataAdapter(mechanicsCommand);
+            adapter.Fill(Mechanics);
 
-            if (File.Exists(path))
-                Tables[Constants.MechanicsTableName].ReadXml(path);
-            else
-                Tables[Constants.MechanicsTableName].WriteXml(path);
+            adapter = new MySqlDataAdapter(groupsCommand);
+            adapter.Fill(Group);
 
+            adapter = new MySqlDataAdapter(normativesCommand);
+            adapter.Fill(Normatives);
 
-            path = Constants.GetFullPath(Settings.Instance.Groups);
+            adapter = new MySqlDataAdapter(protocolsCommand);
+            adapter.Fill(Protocols);
 
-            if (File.Exists(path))
-                Tables[Constants.GroupTableName].ReadXml(path);
-            else
-            {
-                string tmp = @"BackupNormatives\" + Settings.Instance.Groups;
-                if (File.Exists(tmp))
-                {
-                    File.Copy(tmp, Settings.Instance.FilesDirectory + Settings.Instance.Groups);
-                    Tables[Constants.GroupTableName].ReadXml(path);
-                }
-                else
-                {
-                    Tables[Constants.GroupTableName].WriteXml(path);
-                }
-            }
+            adapter = new MySqlDataAdapter(mesuresCommand);
+            adapter.Fill(Mesures);
 
-
-            path = Constants.GetFullPath(Settings.Instance.Normatives);
-
-            if (File.Exists(path))
-                Tables[Constants.NormativesTableName].ReadXml(path);
-            else
-            {
-                string tmp = @"BackupNormatives\" + Settings.Instance.Normatives;
-                if (File.Exists(tmp))
-                {
-                    File.Copy(@"BackupNormatives\" + Settings.Instance.Normatives,
-                        Settings.Instance.FilesDirectory + Settings.Instance.Normatives);
-                    Tables[Constants.NormativesTableName].ReadXml(path);
-                }
-                else
-                {
-                    Tables[Constants.GroupTableName].WriteXml(path);
-                }
-            }
-
-
-            path = Constants.GetFullPath(Settings.Instance.Protocols);
-
-            if (File.Exists(path))
-                Tables[Constants.ProtocolsTableName].ReadXml(path);
-            else
-                Tables[Constants.ProtocolsTableName].WriteXml(path);
-
-
-            path = Constants.GetFullPath(Settings.Instance.Mesure);
-
-            if (File.Exists(path))
-                Tables[Constants.MesuresTableName].ReadXml(path);
-            else
-                Tables[Constants.MesuresTableName].WriteXml(path);
+            _conection.Close();
         }
 
-        private string GetFileNameByTableName(string tableName)
-        {
-            switch (tableName)
-            {
-                case Constants.GroupTableName:
-                    return Constants.GetFullPath(Settings.Instance.Groups);
-                case Constants.MechanicsTableName:
-                    return Constants.GetFullPath(Settings.Instance.Mechanics);
-                case Constants.NormativesTableName:
-                    return Constants.GetFullPath(Settings.Instance.Normatives);
-                case Constants.OperatorsTableName:
-                    return Constants.GetFullPath(Settings.Instance.Operators);
-                case Constants.ProtocolsTableName:
-                    return Constants.GetFullPath(Settings.Instance.Protocols);
-                case Constants.MesuresTableName:
-                    return Constants.GetFullPath(Settings.Instance.Mesure);
-            }
-            return "Error.txt";
-        }
+
 
         internal void LockOperator(int id)
         {
             var r = GetRowById(Constants.OperatorsTableName, id) as OperatorsRow;
-            r.Right = (int) Rights.Locked;
+            r.Right = (int)Rights.Locked;
 
-            Operators.AcceptChanges();
-            Operators.WriteXml(Constants.GetFullPath(Settings.Instance.Operators));
+            Update();
         }
 
         internal bool AddOperator(string name, string lastName, string login, string password, string rights)
@@ -139,12 +154,11 @@ namespace adovipavto
             row.Login = login;
             row.Password = GetHash(password);
 
-            row.Right = (int) GetRightByString(rights);
+            row.Right = (int)GetRightByString(rights);
 
 
             Operators.AddOperatorsRow(row);
-            Operators.AcceptChanges();
-            Operators.WriteXml(Constants.GetFullPath(Settings.Instance.Operators));
+            Update();
 
             return true;
         }
@@ -195,8 +209,7 @@ namespace adovipavto
                 r.Password = pass;
             }
 
-            Operators.AcceptChanges();
-            Operators.WriteXml(Constants.GetFullPath(Settings.Instance.Operators));
+            Update();
         }
 
         internal void AddMechanic(string name, string lastName, string fatherName)
@@ -207,11 +220,10 @@ namespace adovipavto
             r.LastName = lastName;
             r.FatherName = fatherName;
 
-            r.State = (int) State.Employed;
+            r.State = (int)State.Employed;
 
             Mechanics.AddMechanicsRow(r);
-            Mechanics.AcceptChanges();
-            Mechanics.WriteXml(Constants.GetFullPath(Settings.Instance.Mechanics));
+            Update();
         }
 
 
@@ -226,17 +238,15 @@ namespace adovipavto
                 r.FatherName = fatherName;
             }
 
-            Mechanics.AcceptChanges();
-            Mechanics.WriteXml(Constants.GetFullPath(Settings.Instance.Mechanics));
+            Update();
         }
 
         internal void LockMechanic(int id)
         {
             var r = GetRowById(Constants.MechanicsTableName, id) as MechanicsRow;
-            if (r != null) r.State = (int) State.Unemployed;
+            if (r != null) r.State = (int)State.Unemployed;
 
-            Mechanics.AcceptChanges();
-            Mechanics.WriteXml(Constants.GetFullPath(Settings.Instance.Mechanics));
+            Update();
         }
 
 
@@ -246,6 +256,7 @@ namespace adovipavto
         {
             ProtocolsRow r = Protocols.NewProtocolsRow();
 
+            r.ProtocolID = new Random().Next(int.MaxValue);
             r.BlankNumber = blankNumber;
             r.IDOperator = _currentOperator.Id;
             r.IDMechanic = GetMechanicIdByShortName(mechanicName);
@@ -261,18 +272,20 @@ namespace adovipavto
             r.GBO = gbo;
 
             Protocols.AddProtocolsRow(r);
+            int id = r.ProtocolID;
+            Update();
             Protocols.AcceptChanges();
-            Protocols.WriteXml(Constants.GetFullPath(Settings.Instance.Protocols));
+            //Protocols.WriteXml(Constants.GetFullPath(Settings.Instance.Protocols));
 
-            return r.ProtocolID;
+            return id;
         }
 
         private int GetMechanicIdByShortName(string mechanicShortName)
         {
             int[] rows = (from MechanicsRow item in Mechanics.Rows
-                where
-                    GetShortMechanicName(item.MechanicID) == mechanicShortName
-                select item.MechanicID).ToArray();
+                          where
+                              GetShortMechanicName(item.MechanicID) == mechanicShortName
+                          select item.MechanicID).ToArray();
             if (rows.Length != 0)
                 return rows[0];
 
@@ -283,15 +296,15 @@ namespace adovipavto
         {
             OperatorsRow r = GetUserByLogin(name);
 
-            _currentOperator = new Operator((Rights) r.Right, r.OperatorId, r.Name,
+            _currentOperator = new Operator((Rights)r.Right, r.OperatorId, r.Name,
                 r.LastName);
         }
 
         private OperatorsRow GetUserByLogin(string name)
         {
             OperatorsRow[] rows = (from OperatorsRow r in Operators.Rows
-                where r.Login == name
-                select r).ToArray();
+                                   where r.Login == name
+                                   select r).ToArray();
 
             if (rows.Length != 0)
                 return rows[0];
@@ -308,32 +321,27 @@ namespace adovipavto
             item.IDProtocol = newProtocolId;
 
             Mesures.AddMesuresRow(item);
-            Mesures.AcceptChanges();
-            Mesures.WriteXml(Constants.GetFullPath(Settings.Instance.Mesure));
+            Update();
         }
 
         internal string GetShortMechanicName(int mechanicId)
         {
             return (from MechanicsRow item in Mechanics.Rows
-                where item.MechanicID == mechanicId
-                select
-                    item.LastName + " " + item.Name[0] + ". " + item.FatherName[0] + ".")
+                    where item.MechanicID == mechanicId
+                    select
+                        item.LastName + " " + item.Name[0] + ". " + item.FatherName[0] + ".")
                 .ToArray()[0];
         }
 
         internal string GetShortOperatorName(int operatorId)
         {
             return (from OperatorsRow item in Operators.Rows
-                where item.OperatorId == operatorId
-                select
-                    item.LastName + " " + item.Name[0] + ".")
+                    where item.OperatorId == operatorId
+                    select
+                        item.LastName + " " + item.Name[0] + ".")
                 .ToArray()[0];
         }
 
-        internal DataRow[] GetMesuresFromProtocol(DataRow row)
-        {
-            return row.GetChildRows(relationFK_Protocols_Mesures);
-        }
 
 
         internal bool GroupContainsNormative(string groupname, string normativename)
@@ -343,8 +351,8 @@ namespace adovipavto
             int normtag = GetNormativeTag(normativename);
 
             List<NormativesRow> mesures = (from NormativesRow item in Normatives.Rows
-                where item.Tag == normtag && item.IDGroup == groupId
-                select item).ToList();
+                                           where item.Tag == normtag && item.IDGroup == groupId
+                                           select item).ToList();
 
             if (mesures.Count == 0)
                 return false;
@@ -383,11 +391,11 @@ namespace adovipavto
         internal bool GroupExist(int year, string category, int engine, bool before)
         {
             List<GroupRow> rows = (from GroupRow item in Group.Rows
-                where
-                    item.Year == year && item.Category == category &&
-                    item.EngineType == engine &&
-                    item.Before == before
-                select item).ToList();
+                                   where
+                                       item.Year == year && item.Category == category &&
+                                       item.EngineType == engine &&
+                                       item.Before == before
+                                   select item).ToList();
 
             if (rows.Count == 0)
                 return false;
@@ -411,23 +419,15 @@ namespace adovipavto
             {
                 selectedRow.Delete();
 
-                Group.AcceptChanges();
-                Normatives.AcceptChanges();
-                Protocols.AcceptChanges();
-                Mesures.AcceptChanges();
-
-                Group.WriteXml(Constants.GetFullPath(Settings.Instance.Groups));
-                Normatives.WriteXml(Constants.GetFullPath(Settings.Instance.Normatives));
-                Protocols.WriteXml(Constants.GetFullPath(Settings.Instance.Protocols));
-                Mesures.WriteXml(Constants.GetFullPath(Settings.Instance.Mesure));
+                Update();
             }
         }
 
         internal ProtocolsRow GetProtocolByBlankId(string blank)
         {
             ProtocolsRow[] rows = (from ProtocolsRow item in Protocols.Rows
-                where item.BlankNumber == blank
-                select item).ToArray();
+                                   where item.BlankNumber == blank
+                                   select item).ToArray();
 
             if (rows.Length == 0)
                 return null;
@@ -438,10 +438,10 @@ namespace adovipavto
         internal ProtocolsRow[] GetProtocolsBetweenDates(DateTime dateTime1, DateTime dateTime2)
         {
             return (from ProtocolsRow item in Protocols.Rows
-                where
-                    item.Date > dateTime1 &&
-                    item.Date <= dateTime2
-                select item).ToArray();
+                    where
+                        item.Date > dateTime1 &&
+                        item.Date <= dateTime2
+                    select item).ToArray();
         }
 
         internal bool GroupWithGasEngine(string groupTitle)
@@ -498,8 +498,7 @@ namespace adovipavto
             r.IDGroup = GetGroupId(group);
 
             Normatives.AddNormativesRow(r);
-            Normatives.AcceptChanges();
-            Normatives.WriteXml(Constants.GetFullPath(Settings.Instance.Normatives));
+            Update();
         }
 
         public void EditNormative(int id, string group, string title, double minValue, double maxValue)
@@ -513,8 +512,7 @@ namespace adovipavto
                 r.IDGroup = GetGroupId(@group);
             }
 
-            Normatives.AcceptChanges();
-            Normatives.WriteXml(Constants.GetFullPath(Settings.Instance.Normatives));
+            Update();
         }
 
         public NormativesRow[] GetNormativesFromGroup(string groupTitle)
@@ -522,7 +520,7 @@ namespace adovipavto
             int groupId = (
                 from NormativesRow items
                     in Normatives.Rows
-                where Program.VipAvtoDataSet.GroupTitle(items.IDGroup) == groupTitle
+                where GroupTitle(items.IDGroup) == groupTitle
                 select items.IDGroup).ToList()[0];
 
             List<GroupRow> group = (from GroupRow item in Group.Rows where item.GroupID == groupId select item).ToList();
@@ -564,8 +562,7 @@ namespace adovipavto
             r.Before = before;
 
             Group.AddGroupRow(r);
-            Group.AcceptChanges();
-            Group.WriteXml(Constants.GetFullPath(Settings.Instance.Groups));
+            Update();
         }
 
         public void EditGroup(int id, int year, string categoty, int engine, bool before)
@@ -579,13 +576,12 @@ namespace adovipavto
                 r.Before = before;
             }
 
-            Group.AcceptChanges();
-            Group.WriteXml(Constants.GetFullPath(Settings.Instance.Groups));
+            Update();
         }
 
         public int GetGroupId(string title)
         {
-            string[] splitTitle = title.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+            string[] splitTitle = title.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             foreach (GroupRow row in Group.Rows)
             {
@@ -633,32 +629,30 @@ namespace adovipavto
 
         internal DataRow GetRowById(string tableName, int rowId)
         {
-            string idheader = Program.VipAvtoDataSet.Tables[tableName].Columns[0].ColumnName;
+            string idheader = Tables[tableName].Columns[0].ColumnName;
             return
-                Program.VipAvtoDataSet.Tables[tableName].Rows.Cast<DataRow>()
+                Tables[tableName].Rows.Cast<DataRow>()
                     .FirstOrDefault(item => Convert.ToInt32(item[idheader]) == rowId);
         }
 
         internal void RemoveRow(string tableName, DataRow selectedRow)
         {
-            Tables[tableName].Rows.Remove(selectedRow);
-            Tables[tableName].AcceptChanges();
-            Tables[tableName].WriteXml(GetFileNameByTableName(tableName));
+            selectedRow.Delete();
+            Update();
         }
 
         internal void RemoveRowById(string tableName, int id)
         {
             for (int i = 0; i < Tables[tableName].Rows.Count; i++)
             {
-                if ((int) Tables[tableName].Rows[i][0] == id)
+                if ((int)Tables[tableName].Rows[i][0] == id)
                 {
-                    Tables[tableName].Rows.RemoveAt(i);
+                    Tables[tableName].Rows[i].Delete();
                     break;
                 }
             }
 
-            Tables[tableName].AcceptChanges();
-            Tables[tableName].WriteXml(GetFileNameByTableName(tableName));
+            Update();
         }
 
         #endregion
@@ -672,19 +666,18 @@ namespace adovipavto
             admin.LastName = "admin";
             admin.Login = "admin";
             admin.Password = GetHash("admin");
-            admin.Right = (int) Rights.Administrator;
+            admin.Right = (int)Rights.Administrator;
 
             Operators.AddOperatorsRow(admin);
-            AcceptChanges();
-            WriteXml(Constants.GetFullPath(Settings.Instance.Operators));
+            Update();
         }
 
         internal string GetUserPasswors(string username)
         {
             OperatorsRow[] operatorRow =
                 (from OperatorsRow item in Operators.Rows
-                    where item.Login == username
-                    select item).ToArray();
+                 where item.Login == username
+                 select item).ToArray();
 
             if (operatorRow.Length != 0)
             {
@@ -696,8 +689,5 @@ namespace adovipavto
 
         #endregion
 
-        partial class OperatorsDataTable
-        {
-        }
     }
 }

@@ -11,25 +11,27 @@ namespace adovipavto.EditForms
 {
     public partial class EditOperatorForm : Form
     {
-        private readonly DataRow _selected;
+        private readonly VipAvtoSet.OperatorsRow _selected;
+        private readonly VipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
 
-        public EditOperatorForm(DataRow selected)
+        public EditOperatorForm(VipAvtoSet.OperatorsRow selected, VipAvtoSet set)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             _selected = selected;
+            _set = set;
             InitializeComponent();
         }
 
         private void AddOperatorForm_Load(object sender, EventArgs e)
         {
-            nameTxtBx.Text = _selected["Name"].ToString();
-            lnTxtBx.Text = _selected["LastName"].ToString();
-            loginTxtBx.Text = _selected["Login"].ToString();
-            passTxtBx.Text = _selected["Password"].ToString();
+            nameTxtBx.Text = _selected.Name.ToString();
+            lnTxtBx.Text = _selected.LastName.ToString();
+            loginTxtBx.Text = _selected.Login.ToString();
+            passTxtBx.Text = _selected.Password.ToString();
 
             ValidateChildren();
         }
@@ -39,7 +41,7 @@ namespace adovipavto.EditForms
             if (errorProvider1.GetError(nameTxtBx) == "" && errorProvider1.GetError(lnTxtBx) == "" &&
                 errorProvider1.GetError(loginTxtBx) == "" && errorProvider1.GetError(passTxtBx) == "")
             {
-                Program.VipAvtoDataSet.EditOperator((int) _selected["OperatorId"], nameTxtBx.Text, lnTxtBx.Text,
+                _set.EditOperator((int) _selected.OperatorId, nameTxtBx.Text, lnTxtBx.Text,
                     loginTxtBx.Text, passTxtBx.Text);
                 DialogResult = DialogResult.OK;
             }

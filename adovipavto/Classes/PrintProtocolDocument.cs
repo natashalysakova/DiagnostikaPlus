@@ -16,24 +16,27 @@ namespace adovipavto.Classes
 {
     internal class PrintProtocolDocument : PrintDocument
     {
-        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
-
         private readonly DateTime _from;
-        private readonly DataRow[] _mesures;
-        private readonly DataRow _protocolRow;
-        private readonly DataRow[] _rows;
-        private readonly DateTime _to;
+        private readonly VipAvtoSet.MesuresRow[] _mesures;
+        private readonly VipAvtoSet.ProtocolsRow _protocolRow;
 
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
+        private readonly VipAvtoSet.ProtocolsRow[] _rows;
+        private readonly VipAvtoSet _set;
+        private readonly DateTime _to;
 
 
         private int _index;
 
-        public PrintProtocolDocument(DataRow protocol, DataRow[] mesures)
+        public PrintProtocolDocument(VipAvtoSet.ProtocolsRow protocol, VipAvtoSet.MesuresRow[] mesures, VipAvtoSet set)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             _protocolRow = protocol;
             _mesures = mesures;
+            _set = set;
             OriginAtMargins = true;
             DefaultPageSettings.Margins = new Margins(60, 30, 30, 30);
             DocumentName = _rm.GetString("protocol");
@@ -43,13 +46,14 @@ namespace adovipavto.Classes
             /*A4 - http://msdn.microsoft.com/en-us/library/system.drawing.printing.papersize.rawkind(v=vs.110).aspx */
         }
 
-        public PrintProtocolDocument(DataRow[] rows, DateTime from, DateTime to)
+        public PrintProtocolDocument(VipAvtoSet.ProtocolsRow[] rows, DateTime from, DateTime to, VipAvtoSet set)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             _rows = rows;
             _from = from;
             _to = to;
+            _set = set;
             OriginAtMargins = true;
             DefaultPageSettings.Margins = new Margins(40, 30, 30, 30);
             DocumentName = _rm.GetString("protocol");
@@ -104,17 +108,17 @@ namespace adovipavto.Classes
 
                 g.DrawString((j + 1).ToString(), normalFont, Brushes.Black,
                     new PointF(20, lineHeight*(i + 3) + 3));
-                g.DrawString(_rows[j]["BlankNumber"].ToString(), normalFont, Brushes.Black,
+                g.DrawString(_rows[j].BlankNumber, normalFont, Brushes.Black,
                     new PointF(65, lineHeight*(i + 3) + 3));
 
-                g.DrawString(Program.VipAvtoDataSet.GroupTitle((int) _rows[j]["IDGroup"]), normalFont,
+                g.DrawString(_set.GroupTitle(_rows[j].IDGroup), normalFont,
                     Brushes.Black, new PointF(185, lineHeight*(i + 3) + 3));
 
-                g.DrawString(((DateTime) _rows[j]["Date"]).ToShortDateString(), normalFont, Brushes.Black,
+                g.DrawString(_rows[j].Date.ToShortDateString(), normalFont, Brushes.Black,
                     new PointF(370, lineHeight*(i + 3) + 3));
-                string s = (bool) _rows[j]["Result"] ? _rm.GetString("check") : _rm.GetString("uncheck");
+                string s = _rows[j].Result ? _rm.GetString("check") : _rm.GetString("uncheck");
                 g.DrawString(s, normalFont, Brushes.Black, new PointF(450, lineHeight*(i + 3) + 3));
-                g.DrawString(Program.VipAvtoDataSet.GetShortMechanicName((int) _rows[j]["IDMechanic"]), normalFont,
+                g.DrawString(_set.GetShortMechanicName(_rows[j].IDMechanic), normalFont,
                     Brushes.Black, new PointF(575, lineHeight*(i + 3) + 3));
 
 
@@ -134,7 +138,7 @@ namespace adovipavto.Classes
             g.DrawLine(Pens.Black, 15, ((i + 4)*lineHeight), 750, ((i + 4)*lineHeight));
             //some statistics
             int check = (from dataRow in _rows
-                where (bool) dataRow["Result"]
+                where dataRow.Result
                 select dataRow).ToArray().Length;
             int uncheck = _rows.Length - check;
             g.DrawString(_rm.GetString("check") + ": " + check, normalFont, Brushes.Black,
@@ -172,7 +176,7 @@ namespace adovipavto.Classes
 
             //1 столбец - 450, 2 - 150, 3-200, 4 - 70
 
-            g.DrawString(_rm.GetString("results") + _protocolRow["BlankNumber"], titleFont, Brushes.Black,
+            g.DrawString(_rm.GetString("results") + _protocolRow.BlankNumber, titleFont, Brushes.Black,
                 new PointF(cenerPoint, LineHeight), sf);
 
             g.DrawString(_rm.GetString("brakeSystem"), boldFont, Brushes.Black, new PointF(40F, 2*LineHeight));
@@ -237,14 +241,6 @@ namespace adovipavto.Classes
             DrawPictorgam(18, g, 26*LineHeight, normalFont, 18, true);
 
 
-            //g.DrawString(rm.GetString("GBO"), boldFont, Brushes.Black, new PointF(40F, 27 * LineHeight));
-            //DrawHeader(g, normalFont, 27 * LineHeight);
-
-
-            //g.DrawString(norm.NormativesTitle[19], normalFont, Brushes.Black, new PointF(20F, 28 * LineHeight));
-            //DrawPictorgam(19, g, 28 * LineHeight, normalFont, 19);
-
-
             g.DrawString(_rm.GetString("glass"), boldFont, Brushes.Black, new PointF(40F, 27*LineHeight));
             DrawHeader(g, normalFont, 27*LineHeight);
 
@@ -263,7 +259,7 @@ namespace adovipavto.Classes
 
             g.DrawString(_rm.GetString("GGBS"), boldFont, Brushes.Black, new PointF(40F, 32*LineHeight));
 
-            var gbo = (int) _protocolRow["GBO"];
+            int gbo = _protocolRow.GBO;
             string stringGbo;
             switch (gbo)
             {
@@ -284,7 +280,7 @@ namespace adovipavto.Classes
 
             g.DrawString(_rm.GetString("visualCheck"), boldFont, Brushes.Black, new PointF(40F, 33*LineHeight));
 
-            string vslChk = (bool) _protocolRow["VisualCheck"] ? _rm.GetString("check") : _rm.GetString("uncheck");
+            string vslChk = _protocolRow.VisualCheck ? _rm.GetString("check") : _rm.GetString("uncheck");
             g.DrawString(vslChk, boldFont, Brushes.Black, new PointF(660F, 33.25f*LineHeight),
                 new StringFormat {Alignment = StringAlignment.Center});
             g.DrawString(_rm.GetString("visualCheck2"), smallFont, Brushes.Black, new PointF(40F, 33.8f*LineHeight));
@@ -302,7 +298,7 @@ namespace adovipavto.Classes
             g.DrawLine(Pens.Black, 15, (34.5f*LineHeight) - 3, 750, (34.5f*LineHeight) - 3);
 
 
-            string s = (bool) _protocolRow["Result"] ? _rm.GetString("check") : _rm.GetString("uncheck");
+            string s = _protocolRow.Result ? _rm.GetString("check") : _rm.GetString("uncheck");
 
             if (s != null)
             {
@@ -317,7 +313,7 @@ namespace adovipavto.Classes
             }
 
             g.DrawString(_rm.GetString("mechanic"), boldFont, Brushes.Black, new PointF(30, 40.5f*LineHeight));
-            g.DrawString(Program.VipAvtoDataSet.GetShortMechanicName((int) _protocolRow["IDMechanic"]), boldFont,
+            g.DrawString(_set.GetShortMechanicName(_protocolRow.IDMechanic), boldFont,
                 Brushes.Black, new PointF(165f, 42.5f*LineHeight), sf);
             g.DrawLine(Pens.Black, 20, 43*LineHeight, 350, 43*LineHeight);
             g.DrawString(_rm.GetString("FIO"), smallFont, Brushes.Black, new PointF(165, (44*LineHeight) - 5), sf);
@@ -326,7 +322,7 @@ namespace adovipavto.Classes
             g.DrawLine(Pens.Black, 20, 46*LineHeight, 350, 46*LineHeight);
             g.DrawString(_rm.GetString("signature"), smallFont, Brushes.Black, new PointF(165, (47*LineHeight) - 5), sf);
 
-            g.DrawString(((DateTime) _protocolRow["Date"]).ToShortDateString(), boldFont,
+            g.DrawString(_protocolRow.Date.ToShortDateString(), boldFont,
                 Brushes.Black, new PointF(165f, 48.5f*LineHeight), sf);
 
             g.DrawLine(Pens.Black, 20, 49*LineHeight, 350, 49*LineHeight);
@@ -336,9 +332,9 @@ namespace adovipavto.Classes
             var techrect = new Rectangle(420, (35*LineHeight), 320, LineHeight*15);
             g.DrawRectangle(Pens.Black, techrect);
             g.DrawString(_rm.GetString("techphoto"), smallFont, Brushes.Black, techrect, sf);
-            if (_protocolRow["TechPhoto"] != null)
+            if (_protocolRow.TechPhoto != null)
             {
-                string path = _protocolRow["TechPhoto"].ToString();
+                string path = _protocolRow.TechPhoto;
                 if (File.Exists(path))
                     g.DrawImage(new Bitmap(path), techrect);
             }
@@ -362,7 +358,7 @@ namespace adovipavto.Classes
             var sf = new StringFormat {Alignment = StringAlignment.Center};
 
             double[] value =
-                (from DataRow item in _mesures where (int) item["NormativeID"] == i select (double) item["Value"])
+                (from VipAvtoSet.MesuresRow item in _mesures where item.NormativeID == i select item.Value)
                     .ToArray();
             if (value.Length == 0)
             {
@@ -379,16 +375,16 @@ namespace adovipavto.Classes
                     graphics.DrawString(value[0].ToString(), normalFont, Brushes.Black, new PointF(610F, height), sf);
                 }
 
-                var minval =
-                    (double) (from DataRow item in Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].Rows
-                        where (int) item["IDGroup"] == (int) _protocolRow["IDGroup"] &&
-                              (int) item["Tag"] == i
-                        select item["MinValue"]).ToArray()[0];
-                var maxval =
-                    (double) (from DataRow item in Program.VipAvtoDataSet.Tables[Constants.NormativesTableName].Rows
-                        where (int) item["IDGroup"] == (int) _protocolRow["IDGroup"] &&
-                              (int) item["Tag"] == i
-                        select item["MaxValue"]).ToArray()[0];
+                double minval =
+                    (from VipAvtoSet.NormativesRow item in _set.Normatives.Rows
+                        where item.IDGroup == _protocolRow.IDGroup &&
+                              item.Tag == i
+                        select item.MinValue).ToArray()[0];
+                double maxval =
+                    (from VipAvtoSet.NormativesRow item in _set.Normatives.Rows
+                        where item.IDGroup == _protocolRow.IDGroup &&
+                              item.Tag == i
+                        select item.MaxValue).ToArray()[0];
 
                 if (mode)
                     graphics.DrawString(

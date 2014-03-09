@@ -12,11 +12,13 @@ namespace adovipavto.AddForms
 {
     public partial class AddOperatorForm : Form
     {
+        private readonly VipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
-        public AddOperatorForm()
+        public AddOperatorForm(VipAvtoSet set)
         {
+            _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
             InitializeComponent();
         }
@@ -39,7 +41,7 @@ namespace adovipavto.AddForms
             if (errorProvider1.GetError(nameTxtBx) == "" && errorProvider1.GetError(lnTxtBx) == "" &&
                 errorProvider1.GetError(loginTxtBx) == "" && errorProvider1.GetError(passTxtBx) == "")
             {
-                bool res = Program.VipAvtoDataSet.AddOperator(nameTxtBx.Text, lnTxtBx.Text, loginTxtBx.Text, passTxtBx.Text,
+                bool res = _set.AddOperator(nameTxtBx.Text, lnTxtBx.Text, loginTxtBx.Text, passTxtBx.Text,
                     roleCmbBx.SelectedItem.ToString());
                 
                 if(res)

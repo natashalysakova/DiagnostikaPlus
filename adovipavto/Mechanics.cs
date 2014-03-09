@@ -15,11 +15,13 @@ namespace adovipavto
 {
     public partial class Mechanics : Form
     {
+        private readonly VipAvtoSet _set;
 
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public Mechanics()
+        public Mechanics(VipAvtoSet set)
         {
+            _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             InitializeComponent();
@@ -27,7 +29,7 @@ namespace adovipavto
 
         private void Mechanics_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = Program.VipAvtoDataSet.Tables[Constants.MechanicsTableName];
+            dataGridView1.DataSource = _set.Mechanics;
             UpdateRoles();
         }
 
@@ -40,10 +42,10 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            DataRow row = Program.VipAvtoDataSet.GetRowById(Constants.MechanicsTableName, id);
+            VipAvtoSet.MechanicsRow row = (VipAvtoSet.MechanicsRow) _set.GetRowById(Constants.MechanicsTableName, id);
 
 
-            if (new EditMechanicForm(row).ShowDialog() == DialogResult.OK)
+            if (new EditMechanicForm(row, _set).ShowDialog() == DialogResult.OK)
                 UpdateRoles();
         }
 
@@ -80,7 +82,7 @@ namespace adovipavto
 
         private void Add()
         {
-            if (new AddMechanicForm().ShowDialog() == DialogResult.OK)
+            if (new AddMechanicForm(_set).ShowDialog() == DialogResult.OK)
                 UpdateRoles();
         }
 
@@ -99,7 +101,7 @@ namespace adovipavto
                 {
                     var id = (int) dataGridView1.SelectedRows[0].Cells["mechanicIDDataGridViewTextBoxColumn"].Value;
 
-                    Program.VipAvtoDataSet.LockMechanic(id);
+                    _set.LockMechanic(id);
                     UpdateRoles();
                 }
             }

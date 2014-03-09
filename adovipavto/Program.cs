@@ -5,6 +5,7 @@ using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
+using MySql.Data.MySqlClient;
 
 namespace adovipavto
 {
@@ -34,17 +35,33 @@ namespace adovipavto
 
             t.Start();
 
-            VipAvtoDataSet = new VipAvtoSet();
-            VipAvtoDataSet.LoadData();
-
-
-            //Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             t.Join();
-            t.Abort();
 
-            Application.Run(new MainForm());
+
+            VipAvtoDataSet = new VipAvtoSet();
+
+            try
+            {
+                VipAvtoDataSet.LoadData();
+
+                t.Abort();
+
+                Application.Run(new MainForm(VipAvtoDataSet));
+
+            }
+            catch (MySqlException)
+            {
+                if (new ServerSetting().ShowDialog() == DialogResult.OK)
+                {
+                    Application.Restart();
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
+
         }
 
         private static void SplashScreen()
