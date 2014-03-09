@@ -37,11 +37,17 @@ namespace adovipavto
 
         private void ProtocolReportForm_ResizeEnd(object sender, EventArgs e)
         {
-            double widthZoom = (double) printPreviewControl1.Width/
-                               printPreviewControl1.Document.DefaultPageSettings.PaperSize.Width;
-            double heightZoom = (double) printPreviewControl1.Height/
-                                printPreviewControl1.Document.DefaultPageSettings.PaperSize.Height;
-            printPreviewControl1.Zoom = widthZoom < heightZoom ? widthZoom : heightZoom;
+            try
+            {
+                double widthZoom = (double) printPreviewControl1.Width/
+                                   printPreviewControl1.Document.DefaultPageSettings.PaperSize.Width;
+                double heightZoom = (double) printPreviewControl1.Height/
+                                    printPreviewControl1.Document.DefaultPageSettings.PaperSize.Height;
+                printPreviewControl1.Zoom = widthZoom < heightZoom ? widthZoom : heightZoom;
+            }
+            catch
+            {
+            }
         }
 
         private void ProtocolReportForm_Load(object sender, EventArgs e)
@@ -62,21 +68,27 @@ namespace adovipavto
 
         private void printPreviewControl1_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (e.Delta > 0)
-                if (printPreviewControl1.Zoom < 2.85)
-                    printPreviewControl1.Zoom += 0.15;
-                else
-                {
-                    printPreviewControl1.Zoom = 3;
-                }
-            else
+            try
             {
-                if (printPreviewControl1.Zoom > 0.25)
-                    printPreviewControl1.Zoom -= 0.15;
+                if (e.Delta > 0)
+                    if (printPreviewControl1.Zoom < 2.85)
+                        printPreviewControl1.Zoom += 0.15;
+                    else
+                    {
+                        printPreviewControl1.Zoom = 3;
+                    }
                 else
                 {
-                    printPreviewControl1.Zoom = 0.1;
+                    if (printPreviewControl1.Zoom > 0.25)
+                        printPreviewControl1.Zoom -= 0.15;
+                    else
+                    {
+                        printPreviewControl1.Zoom = 0.1;
+                    }
                 }
+            }
+            catch
+            {
             }
         }
 
@@ -107,11 +119,17 @@ namespace adovipavto
 
         private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            double zoom =
-                Convert.ToDouble(
-                    toolStripComboBox1.SelectedItem.ToString().Split(new[] {'%'}, StringSplitOptions.RemoveEmptyEntries)
-                        [0]);
-            printPreviewControl1.Zoom = zoom/100;
+            try
+            {
+                double zoom =
+                    Convert.ToDouble(
+                        toolStripComboBox1.SelectedItem.ToString().Split(new[] {'%'}, StringSplitOptions.RemoveEmptyEntries)
+                            [0]);
+                printPreviewControl1.Zoom = zoom/100;
+            }
+            catch
+            {
+            }
         }
     }
 }
