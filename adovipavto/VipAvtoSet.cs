@@ -206,7 +206,7 @@ namespace adovipavto
                 r.Name = name;
                 r.LastName = lastName;
                 r.Login = login;
-                r.Password = pass;
+                r.Password = GetHash(pass);
             }
 
             Update();
