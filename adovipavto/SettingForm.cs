@@ -96,5 +96,10 @@ namespace adovipavto
 
             textBox2.Text = Settings.Instance.BackupDirectory;
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            new ServerSetting().ShowDialog();
+        }
     }
 }
