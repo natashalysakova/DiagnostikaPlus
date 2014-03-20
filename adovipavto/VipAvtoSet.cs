@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -12,6 +13,7 @@ using System.Windows.Forms;
 using adovipavto.Classes;
 using adovipavto.Enums;
 using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient.Authentication;
 
 namespace adovipavto
 {
@@ -25,18 +27,17 @@ namespace adovipavto
 
 
         public string Update()
-        {        
-            StartConnection();
+        {
+            StartConnection(true);
 
             MySqlDataAdapter adapter;
 
 
             List<MySqlCommand> commands = new List<MySqlCommand>()
             {
-                
-    
-    new MySqlCommand("SELECT * FROM  `mesures` ",
-                _conection),new MySqlCommand("SELECT * FROM  `protocols` ",
+                new MySqlCommand("SELECT * FROM  `mesures` ",
+                _conection),
+                new MySqlCommand("SELECT * FROM  `protocols` ",
                 _conection)
             };
 
@@ -80,26 +81,67 @@ namespace adovipavto
             return sb.ToString();
         }
 
-        private void StartConnection()
+        private void StartConnection(bool mode)
         {
-            string _connectionString = GetConnectionString();
+
+
+
+            string _connectionString = GetConnectionString(mode);
 
             _conection = new MySqlConnection(_connectionString);
             _conection.Open();
+
+            var t = new MySqlCommand("SHOW DATABASES;", _conection).ExecuteReader();
+            bool databaseNotExist = true;
+            while (t.Read())
+            {
+                if (t.GetValue(0).ToString() == Properties.Settings.Default.DataBase)
+                {
+                    databaseNotExist = false;
+                }
+            }
+            t.Close();
+
+            if (mode == false && databaseNotExist)
+            {
+                string s0 = "CREATE DATABASE IF NOT EXISTS `" + Properties.Settings.Default.DataBase + "`;";
+                var cmd = new MySqlCommand(s0, _conection);
+                cmd.ExecuteNonQuery();
+
+                _connectionString = GetConnectionString(true);
+                _conection = new MySqlConnection(_connectionString);
+                _conection.Open();
+
+
+                string s1 = Properties.Resources.defaultDatabase;
+
+                var cmd2 = new MySqlCommand(s1, _conection);
+                cmd2.ExecuteNonQuery();
+
+
+
+            }
         }
 
-        private static string GetConnectionString()
+        private static string GetConnectionString(bool withDataBase)
         {
-            return "SERVER=" + Properties.Settings.Default.ServerIp + ";" +
+            if (withDataBase)
+                return "SERVER=" + Properties.Settings.Default.ServerIp + ";" +
                    "PORT=" + Properties.Settings.Default.Port + ";" +
                    "DATABASE=" + Properties.Settings.Default.DataBase + ";" +
+                   "UID=" + Properties.Settings.Default.UserName + ";" +
+                   "PASSWORD=" + Properties.Settings.Default.Passwod + ";";
+
+
+            return "SERVER=" + Properties.Settings.Default.ServerIp + ";" +
+                   "PORT=" + Properties.Settings.Default.Port + ";" +
                    "UID=" + Properties.Settings.Default.UserName + ";" +
                    "PASSWORD=" + Properties.Settings.Default.Passwod + ";";
         }
 
         public void LoadData()
         {
-            StartConnection();
+            StartConnection(false);
 
             MySqlCommand operatorsCommand = new MySqlCommand("SELECT * FROM  `operators` ", _conection);
             MySqlCommand mechanicsCommand = new MySqlCommand("SELECT * FROM  `mechanics` ", _conection);
@@ -659,18 +701,7 @@ namespace adovipavto
 
         #region OperatorMethods
 
-        internal void CreateAdministratorUser()
-        {
-            OperatorsRow admin = Operators.NewOperatorsRow();
-            admin.Name = "admin";
-            admin.LastName = "admin";
-            admin.Login = "admin";
-            admin.Password = GetHash("admin");
-            admin.Right = (int)Rights.Administrator;
-
-            Operators.AddOperatorsRow(admin);
-            Update();
-        }
+        
 
         internal string GetUserPasswors(string username)
         {

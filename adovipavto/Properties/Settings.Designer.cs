@@ -49,7 +49,7 @@ namespace adovipavto.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("vipavto")]
+        [global::System.Configuration.DefaultSettingValueAttribute("vipavto2")]
         public string DataBase {
             get {
                 return ((string)(this["DataBase"]));

@@ -27,7 +27,7 @@
     <TargetCulture>ru-RU</TargetCulture>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>0.8.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -608,6 +608,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="icon.ico" />
+    <None Include="Resources\defaultDatabase.sql" />
     <None Include="Resources\removeAllGroup.png" />
     <None Include="Resources\removeAllNorm.png" />
     <None Include="Resources\switchUserBtn.png" />

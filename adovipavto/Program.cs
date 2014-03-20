@@ -23,6 +23,7 @@ namespace adovipavto
         [STAThread]
         private static void Main()
         {
+
             if (!File.Exists("DRandom.dll"))
             {
                 MessageBox.Show(_rm.GetString("dllIsMissing"));

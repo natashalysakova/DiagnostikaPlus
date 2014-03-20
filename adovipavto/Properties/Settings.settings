@@ -9,7 +9,7 @@
       <Value Profile="(Default)">3306</Value>
     </Setting>
     <Setting Name="DataBase" Type="System.String" Scope="User">
-      <Value Profile="(Default)">vipavto</Value>
+      <Value Profile="(Default)">vipavto2</Value>
     </Setting>
     <Setting Name="UserName" Type="System.String" Scope="User">
       <Value Profile="(Default)">vipavto</Value>
