@@ -117,9 +117,12 @@ namespace adovipavto
 
                 var cmd2 = new MySqlCommand(s1, _conection);
                 cmd2.ExecuteNonQuery();
-
-
-
+            }
+            else if (!databaseNotExist)
+            {
+                _connectionString = GetConnectionString(true);
+                _conection = new MySqlConnection(_connectionString);
+                _conection.Open();
             }
         }
 

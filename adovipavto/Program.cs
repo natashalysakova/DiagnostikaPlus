@@ -51,8 +51,9 @@ namespace adovipavto
                 Application.Run(new MainForm(VipAvtoDataSet));
 
             }
-            catch (MySqlException)
+            catch (MySqlException ex)
             {
+                MessageBox.Show(ex.Message);
                 if (new ServerSetting().ShowDialog() == DialogResult.OK)
                 {
                     Application.Restart();
