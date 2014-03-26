@@ -1,19 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Security.Cryptography;
 using System.Text;
-using System.Timers;
-using System.Windows.Forms;
 using adovipavto.Classes;
 using adovipavto.Enums;
 using MySql.Data.MySqlClient;
-using MySql.Data.MySqlClient.Authentication;
 
 namespace adovipavto
 {
@@ -26,14 +21,14 @@ namespace adovipavto
 
 
 
-        public string Update()
+        public string UpdateProtocolsAndMesures()
         {
             StartConnection(true);
 
             MySqlDataAdapter adapter;
 
 
-            List<MySqlCommand> commands = new List<MySqlCommand>()
+            var commands = new List<MySqlCommand>
             {
                 new MySqlCommand("SELECT * FROM  `mesures` ",
                 _conection),
@@ -41,7 +36,7 @@ namespace adovipavto
                 _conection)
             };
 
-            List<DataTable> tables = new List<DataTable>()
+            List<DataTable> tables = new List<DataTable>
             {
                Mesures, Protocols
             };
@@ -55,12 +50,12 @@ namespace adovipavto
                 adapter.Update(tables[i]);
             }
 
-            for (int i = 0; i < tables.Count; i++)
+            foreach (DataTable t in tables)
             {
-                tables[i].Clear();
+                t.Clear();
             }
 
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             for (int i = 0; i < commands.Count; i++)
             {
                 try
@@ -86,9 +81,9 @@ namespace adovipavto
 
 
 
-            string _connectionString = GetConnectionString(mode);
+            string connectionString = GetConnectionString(mode);
 
-            _conection = new MySqlConnection(_connectionString);
+            _conection = new MySqlConnection(connectionString);
             _conection.Open();
 
             var t = new MySqlCommand("SHOW DATABASES;", _conection).ExecuteReader();
@@ -108,8 +103,8 @@ namespace adovipavto
                 var cmd = new MySqlCommand(s0, _conection);
                 cmd.ExecuteNonQuery();
 
-                _connectionString = GetConnectionString(true);
-                _conection = new MySqlConnection(_connectionString);
+                connectionString = GetConnectionString(true);
+                _conection = new MySqlConnection(connectionString);
                 _conection.Open();
 
 
@@ -120,8 +115,8 @@ namespace adovipavto
             }
             else if (!databaseNotExist)
             {
-                _connectionString = GetConnectionString(true);
-                _conection = new MySqlConnection(_connectionString);
+                connectionString = GetConnectionString(true);
+                _conection = new MySqlConnection(connectionString);
                 _conection.Open();
             }
         }
@@ -159,11 +154,14 @@ namespace adovipavto
             adapter = new MySqlDataAdapter(mechanicsCommand);
             adapter.Fill(Mechanics);
 
+
+
             adapter = new MySqlDataAdapter(groupsCommand);
             adapter.Fill(Group);
 
             adapter = new MySqlDataAdapter(normativesCommand);
             adapter.Fill(Normatives);
+
 
             adapter = new MySqlDataAdapter(protocolsCommand);
             adapter.Fill(Protocols);
@@ -179,9 +177,10 @@ namespace adovipavto
         internal void LockOperator(int id)
         {
             var r = GetRowById(Constants.OperatorsTableName, id) as OperatorsRow;
-            r.Right = (int)Rights.Locked;
+            if (r != null) 
+                r.Right = (int)Rights.Locked;
 
-            Update();
+            UpdateOperatorsAndMechanics();
         }
 
         internal bool AddOperator(string name, string lastName, string login, string password, string rights)
@@ -203,9 +202,65 @@ namespace adovipavto
 
 
             Operators.AddOperatorsRow(row);
-            Update();
+            UpdateOperatorsAndMechanics();
 
             return true;
+        }
+
+        private string UpdateOperatorsAndMechanics()
+        {
+
+            StartConnection(true);
+
+            MySqlDataAdapter adapter;
+
+
+            var commands = new List<MySqlCommand>
+            {
+                new MySqlCommand("SELECT * FROM  `operators` ",
+                _conection),
+                new MySqlCommand("SELECT * FROM  `mechanics` ",
+                _conection)
+            };
+
+            List<DataTable> tables = new List<DataTable>
+            {
+               Operators, Mechanics
+            };
+
+            for (int i = 0; i < commands.Count; i++)
+            {
+                adapter = new MySqlDataAdapter(commands[i]);
+                var cb = new MySqlCommandBuilder(adapter);
+
+                adapter.UpdateCommand = cb.GetUpdateCommand().Clone();
+                adapter.Update(tables[i]);
+            }
+
+            for (int i = 0; i < tables.Count; i++)
+            {
+                tables[i].Clear();
+            }
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < commands.Count; i++)
+            {
+                try
+                {
+                    adapter = new MySqlDataAdapter(commands[i]);
+                    adapter.Fill(tables[i]);
+                }
+                catch (Exception e)
+                {
+                    sb.AppendLine(e.Message + " " + tables[i].TableName);
+                }
+            }
+
+
+
+            _conection.Close();
+
+            return sb.ToString();
         }
 
         public static string GetHash(string password)
@@ -254,7 +309,7 @@ namespace adovipavto
                 r.Password = GetHash(pass);
             }
 
-            Update();
+            UpdateOperatorsAndMechanics();
         }
 
         internal void AddMechanic(string name, string lastName, string fatherName)
@@ -268,7 +323,7 @@ namespace adovipavto
             r.State = (int)State.Employed;
 
             Mechanics.AddMechanicsRow(r);
-            Update();
+            UpdateOperatorsAndMechanics();
         }
 
 
@@ -283,7 +338,7 @@ namespace adovipavto
                 r.FatherName = fatherName;
             }
 
-            Update();
+            UpdateOperatorsAndMechanics();
         }
 
         internal void LockMechanic(int id)
@@ -291,7 +346,7 @@ namespace adovipavto
             var r = GetRowById(Constants.MechanicsTableName, id) as MechanicsRow;
             if (r != null) r.State = (int)State.Unemployed;
 
-            Update();
+            UpdateOperatorsAndMechanics();
         }
 
 
@@ -318,7 +373,7 @@ namespace adovipavto
 
             Protocols.AddProtocolsRow(r);
             int id = r.ProtocolID;
-            Update();
+            UpdateProtocolsAndMesures();
             Protocols.AcceptChanges();
             //Protocols.WriteXml(Constants.GetFullPath(Settings.Instance.Protocols));
 
@@ -366,7 +421,7 @@ namespace adovipavto
             item.IDProtocol = newProtocolId;
 
             Mesures.AddMesuresRow(item);
-            Update();
+            UpdateProtocolsAndMesures();
         }
 
         internal string GetShortMechanicName(int mechanicId)
@@ -464,7 +519,7 @@ namespace adovipavto
             {
                 selectedRow.Delete();
 
-                Update();
+                UpdateGroupAndNormatives();
             }
         }
 
@@ -543,7 +598,7 @@ namespace adovipavto
             r.IDGroup = GetGroupId(group);
 
             Normatives.AddNormativesRow(r);
-            Update();
+            UpdateGroupAndNormatives();
         }
 
         public void EditNormative(int id, string group, string title, double minValue, double maxValue)
@@ -557,7 +612,7 @@ namespace adovipavto
                 r.IDGroup = GetGroupId(@group);
             }
 
-            Update();
+            UpdateGroupAndNormatives();
         }
 
         public NormativesRow[] GetNormativesFromGroup(string groupTitle)
@@ -607,7 +662,7 @@ namespace adovipavto
             r.Before = before;
 
             Group.AddGroupRow(r);
-            Update();
+            UpdateGroupAndNormatives();
         }
 
         public void EditGroup(int id, int year, string categoty, int engine, bool before)
@@ -621,7 +676,7 @@ namespace adovipavto
                 r.Before = before;
             }
 
-            Update();
+            UpdateGroupAndNormatives();
         }
 
         public int GetGroupId(string title)
@@ -683,7 +738,63 @@ namespace adovipavto
         internal void RemoveRow(string tableName, DataRow selectedRow)
         {
             selectedRow.Delete();
-            Update();
+            Update(tableName);
+        }
+
+        private string UpdateGroupAndNormatives()
+        {
+            StartConnection(true);
+
+            MySqlDataAdapter adapter;
+
+
+            List<MySqlCommand> commands = new List<MySqlCommand>
+            {
+                new MySqlCommand("SELECT * FROM  `normatives` ",
+                _conection),
+                new MySqlCommand("SELECT * FROM  `groups` ",
+                _conection)
+            };
+
+            List<DataTable> tables = new List<DataTable>
+            {
+               Normatives, Group
+            };
+
+            for (int i = 0; i < commands.Count; i++)
+            {
+                adapter = new MySqlDataAdapter(commands[i]);
+                var cb = new MySqlCommandBuilder(adapter);
+
+                adapter.UpdateCommand = cb.GetUpdateCommand().Clone();
+                adapter.Update(tables[i]);
+            }
+
+            for (int i = 0; i < tables.Count; i++)
+            {
+                tables[i].Clear();
+            }
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < commands.Count; i++)
+            {
+                try
+                {
+                    adapter = new MySqlDataAdapter(commands[i]);
+                    adapter.Fill(tables[i]);
+                }
+                catch (Exception e)
+                {
+                    sb.AppendLine(e.Message + " " + tables[i].TableName);
+                }
+            }
+
+
+
+            _conection.Close();
+
+            return sb.ToString();
+
         }
 
         internal void RemoveRowById(string tableName, int id)
@@ -697,7 +808,32 @@ namespace adovipavto
                 }
             }
 
-            Update();
+            Update(tableName);
+        }
+
+        private void Update(string tableName)
+        {
+            switch (tableName)
+            {
+                case Constants.GroupTableName:
+                    UpdateGroupAndNormatives();
+                    break;
+                case Constants.NormativesTableName:
+                    UpdateGroupAndNormatives();
+                    break;
+                case Constants.MechanicsTableName:
+                    UpdateOperatorsAndMechanics();
+                    break;
+                case Constants.OperatorsTableName:
+                    UpdateOperatorsAndMechanics();
+                    break;
+                case Constants.ProtocolsTableName:
+                    UpdateProtocolsAndMesures();
+                    break;
+                case Constants.MesuresTableName:
+                    UpdateProtocolsAndMesures();
+                    break;
+            }
         }
 
         #endregion

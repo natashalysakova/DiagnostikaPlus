@@ -81,9 +81,9 @@ INSERT INTO `groups` (`GroupID`, `Year`, `Category`, `EngineType`, `Before`) VAL
 
 CREATE TABLE IF NOT EXISTS `mechanics` (
   `MechanicID` int(11) NOT NULL DEFAULT '0',
-  `Name` varchar(1) DEFAULT NULL,
-  `LastName` varchar(1) DEFAULT NULL,
-  `FatherName` varchar(1) DEFAULT NULL,
+  `Name` varchar(25) DEFAULT NULL,
+  `LastName` varchar(25) DEFAULT NULL,
+  `FatherName` varchar(25) DEFAULT NULL,
   `State` int(1) DEFAULT NULL,
   PRIMARY KEY (`MechanicID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
