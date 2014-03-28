@@ -294,7 +294,7 @@
     <value>207, 23</value>
   </data>
   <data name="lnTxtBx.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;lnTxtBx.Name" xml:space="preserve">
     <value>lnTxtBx</value>
@@ -1669,7 +1669,7 @@
     <value>207, 23</value>
   </data>
   <data name="nameTxtBx.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;nameTxtBx.Name" xml:space="preserve">
     <value>nameTxtBx</value>

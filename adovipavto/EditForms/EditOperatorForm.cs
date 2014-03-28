@@ -31,7 +31,7 @@ namespace adovipavto.EditForms
             nameTxtBx.Text = _selected.Name.ToString();
             lnTxtBx.Text = _selected.LastName.ToString();
             loginTxtBx.Text = _selected.Login.ToString();
-            passTxtBx.Text = _selected.Password.ToString();
+            passTxtBx.Text = @"********";
 
             ValidateChildren();
         }
