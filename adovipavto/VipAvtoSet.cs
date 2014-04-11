@@ -21,7 +21,7 @@ namespace adovipavto
 
 
 
-        public string UpdateProtocolsAndMesures()
+        private string UpdateProtocolsAndMesures()
         {
             StartConnection(true);
 
@@ -131,8 +131,8 @@ namespace adovipavto
                    "PASSWORD=" + Properties.Settings.Default.Passwod + ";";
 
 
-            return "SERVER=" + Properties.Settings.Default.ServerIp + ";" +
-                   "PORT=" + Properties.Settings.Default.Port + ";" +
+            return "SERVER=" + Properties.Settings.Default.ServerIp + ";" + 
+                    "PORT=" + Properties.Settings.Default.Port + ";" +
                    "UID=" + Properties.Settings.Default.UserName + ";" +
                    "PASSWORD=" + Properties.Settings.Default.Passwod + ";";
         }
@@ -306,7 +306,8 @@ namespace adovipavto
                 r.Name = name;
                 r.LastName = lastName;
                 r.Login = login;
-                r.Password = GetHash(pass);
+                if(pass != @"********")
+                    r.Password = GetHash(pass);
             }
 
             UpdateOperatorsAndMechanics();
@@ -513,15 +514,6 @@ namespace adovipavto
             return _currentOperator.Id;
         }
 
-        internal void RemoveGroup(DataRow selectedRow)
-        {
-            if (selectedRow != null)
-            {
-                selectedRow.Delete();
-
-                UpdateGroupAndNormatives();
-            }
-        }
 
         internal ProtocolsRow GetProtocolByBlankId(string blank)
         {
@@ -561,18 +553,27 @@ namespace adovipavto
             NormativesRow[] rows =
                 (from NormativesRow row in Normatives.Rows where row.IDGroup == id select row).ToArray();
 
-            foreach (NormativesRow dataRow in rows)
+            for (int i = 0; i < rows.Length; i++)
             {
-                RemoveRowById(Constants.NormativesTableName, dataRow.IDGroup);
+                NormativesRow dataRow = rows[i];
+                RemoveRowById(Constants.NormativesTableName, dataRow.NormativeID);
             }
+
+            UpdateNormatives();
         }
 
         internal void RemoveAllGroup()
         {
-            for (int i = 0; i < Group.Rows.Count; i++)
+            GroupRow[] rows =
+                (from GroupRow row in Group.Rows select row).ToArray();
+
+            for (int i = 0; i < rows.Length; i++)
             {
-                RemoveGroup(Group.Rows[i]);
+                GroupRow dataRow = rows[i];
+                RemoveRowById(Constants.NormativesTableName, dataRow.GroupID);
             }
+
+            UpdateGroup();
         }
 
         internal bool UniqProtocolNumber(string number)
@@ -598,7 +599,7 @@ namespace adovipavto
             r.IDGroup = GetGroupId(group);
 
             Normatives.AddNormativesRow(r);
-            UpdateGroupAndNormatives();
+            UpdateNormatives();
         }
 
         public void EditNormative(int id, string group, string title, double minValue, double maxValue)
@@ -612,7 +613,7 @@ namespace adovipavto
                 r.IDGroup = GetGroupId(@group);
             }
 
-            UpdateGroupAndNormatives();
+            UpdateNormatives();
         }
 
         public NormativesRow[] GetNormativesFromGroup(string groupTitle)
@@ -662,7 +663,7 @@ namespace adovipavto
             r.Before = before;
 
             Group.AddGroupRow(r);
-            UpdateGroupAndNormatives();
+            UpdateGroup();
         }
 
         public void EditGroup(int id, int year, string categoty, int engine, bool before)
@@ -676,7 +677,7 @@ namespace adovipavto
                 r.Before = before;
             }
 
-            UpdateGroupAndNormatives();
+            UpdateGroup();
         }
 
         public int GetGroupId(string title)
@@ -738,10 +739,9 @@ namespace adovipavto
         internal void RemoveRow(string tableName, DataRow selectedRow)
         {
             selectedRow.Delete();
-            Update(tableName);
         }
 
-        private string UpdateGroupAndNormatives()
+        private string UpdateNormatives()
         {
             StartConnection(true);
 
@@ -751,14 +751,12 @@ namespace adovipavto
             List<MySqlCommand> commands = new List<MySqlCommand>
             {
                 new MySqlCommand("SELECT * FROM  `normatives` ",
-                _conection),
-                new MySqlCommand("SELECT * FROM  `groups` ",
                 _conection)
             };
 
             List<DataTable> tables = new List<DataTable>
             {
-               Normatives, Group
+               Normatives
             };
 
             for (int i = 0; i < commands.Count; i++)
@@ -767,6 +765,7 @@ namespace adovipavto
                 var cb = new MySqlCommandBuilder(adapter);
 
                 adapter.UpdateCommand = cb.GetUpdateCommand().Clone();
+
                 adapter.Update(tables[i]);
             }
 
@@ -801,25 +800,28 @@ namespace adovipavto
         {
             for (int i = 0; i < Tables[tableName].Rows.Count; i++)
             {
-                if ((int)Tables[tableName].Rows[i][0] == id)
+                DataRow row = Tables[tableName].Rows[i];
+                if(row.RowState == DataRowState.Deleted)
+                    return;
+
+
+                if ((int)row[0] == id)
                 {
                     Tables[tableName].Rows[i].Delete();
                     break;
                 }
             }
-
-            Update(tableName);
         }
 
-        private void Update(string tableName)
+        public void Update(string tableName)
         {
             switch (tableName)
             {
                 case Constants.GroupTableName:
-                    UpdateGroupAndNormatives();
+                    UpdateGroup();
                     break;
                 case Constants.NormativesTableName:
-                    UpdateGroupAndNormatives();
+                    UpdateNormatives();
                     break;
                 case Constants.MechanicsTableName:
                     UpdateOperatorsAndMechanics();
@@ -834,6 +836,11 @@ namespace adovipavto
                     UpdateProtocolsAndMesures();
                     break;
             }
+        }
+
+        private void UpdateGroup()
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

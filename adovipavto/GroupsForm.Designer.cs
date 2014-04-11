@@ -44,7 +44,6 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.нормативыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,34 +61,20 @@
             // 
             // toolStripContainer1
             // 
-            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
-            // 
-            // toolStripContainer1.BottomToolStripPanel
-            // 
-            resources.ApplyResources(this.toolStripContainer1.BottomToolStripPanel, "toolStripContainer1.BottomToolStripPanel");
             // 
             // toolStripContainer1.ContentPanel
             // 
-            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
-            // 
-            // toolStripContainer1.LeftToolStripPanel
-            // 
-            resources.ApplyResources(this.toolStripContainer1.LeftToolStripPanel, "toolStripContainer1.LeftToolStripPanel");
+            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
+            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
             this.toolStripContainer1.Name = "toolStripContainer1";
-            // 
-            // toolStripContainer1.RightToolStripPanel
-            // 
-            resources.ApplyResources(this.toolStripContainer1.RightToolStripPanel, "toolStripContainer1.RightToolStripPanel");
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
-            resources.ApplyResources(this.toolStripContainer1.TopToolStripPanel, "toolStripContainer1.TopToolStripPanel");
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
             // 
             // dataGridView1
             // 
-            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
@@ -106,6 +91,7 @@
             this.Title});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView1.DataSource = this.carGroupBindingSource;
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -174,49 +160,40 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton3,
-            this.toolStripButton2,
-            this.toolStripButton4});
+            this.toolStripButton2});
             this.toolStrip1.Name = "toolStrip1";
             // 
             // toolStripButton1
             // 
-            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton1.Image = global::adovipavto.Properties.Resources.plus;
+            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton3
             // 
-            resources.ApplyResources(this.toolStripButton3, "toolStripButton3");
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton3, "toolStripButton3");
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton2
             // 
-            resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton2.Image = global::adovipavto.Properties.Resources.minus;
+            resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // toolStripButton4
-            // 
-            resources.ApplyResources(this.toolStripButton4, "toolStripButton4");
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::adovipavto.Properties.Resources.removeAllGroup;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
-            // 
             // contextMenuStrip1
             // 
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.нормативыToolStripMenuItem,
             this.редактироватьToolStripMenuItem,
             this.удалитьToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             // 
             // нормативыToolStripMenuItem
             // 
@@ -226,14 +203,14 @@
             // 
             // редактироватьToolStripMenuItem
             // 
-            resources.ApplyResources(this.редактироватьToolStripMenuItem, "редактироватьToolStripMenuItem");
             this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
+            resources.ApplyResources(this.редактироватьToolStripMenuItem, "редактироватьToolStripMenuItem");
             this.редактироватьToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // удалитьToolStripMenuItem
             // 
-            resources.ApplyResources(this.удалитьToolStripMenuItem, "удалитьToolStripMenuItem");
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
+            resources.ApplyResources(this.удалитьToolStripMenuItem, "удалитьToolStripMenuItem");
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
             // label1
@@ -288,6 +265,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn engineTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn beforeDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
     }
 }

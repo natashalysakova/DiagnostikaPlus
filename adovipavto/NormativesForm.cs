@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
@@ -86,6 +87,7 @@ namespace adovipavto
             {
                 var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
                 _set.RemoveRowById(Constants.NormativesTableName, id);
+                _set.Update(Constants.NormativesTableName);
                 UpdateRows();
             }
         }
@@ -143,6 +145,7 @@ namespace adovipavto
             {
                 var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
                 _set.RemoveRowById(Constants.NormativesTableName, id);
+                _set.Update(Constants.NormativesTableName);
                 UpdateRows();
             }
         }
@@ -152,10 +155,22 @@ namespace adovipavto
             if (MessageBox.Show(_rm.GetString("deleteNorm"), _rm.GetString("warning"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
+                Cursor = Cursors.WaitCursor;
 
-                var id = _set.GetGroupId(groupSelector.SelectedItem.ToString());
-                _set.RemoveAllNormatives(id);
+                BackgroundWorker worker = new BackgroundWorker();
+                worker.DoWork += worker_DoWork;
+                
+
+                
+
+                Cursor = Cursors.Arrow;
             }
+        }
+
+        void worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            var id = _set.GetGroupId(groupSelector.SelectedItem.ToString());
+            _set.RemoveAllNormatives(id);
         }
     }
 }

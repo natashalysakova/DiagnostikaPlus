@@ -303,15 +303,6 @@
   <data name="toolStripButton3.Text" xml:space="preserve">
     <value>Удалить норматив</value>
   </data>
-  <data name="toolStripButton4.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButton4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 40</value>
-  </data>
-  <data name="toolStripButton4.Text" xml:space="preserve">
-    <value>Удалить все</value>
-  </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 43</value>
   </data>
@@ -337,7 +328,7 @@
     <value>3, 0</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>576, 43</value>
+    <value>534, 43</value>
   </data>
   <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1988,12 +1979,6 @@
     <value>toolStripButton3</value>
   </data>
   <data name="&gt;&gt;toolStripButton3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton4.Name" xml:space="preserve">
-    <value>toolStripButton4</value>
-  </data>
-  <data name="&gt;&gt;toolStripButton4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">

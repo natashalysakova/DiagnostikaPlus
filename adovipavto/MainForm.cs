@@ -261,13 +261,13 @@ namespace adovipavto
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = _set.UpdateProtocolsAndMesures();
+            //toolStripStatusLabel1.Text = _set.UpdateProtocolsAndMesures();
             UpdateRows();
         }
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = _set.UpdateProtocolsAndMesures();
+            //toolStripStatusLabel1.Text = _set.UpdateProtocolsAndMesures();
             UpdateRows();
             //timer1.Start();
         }
