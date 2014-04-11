@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Resources;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows.Forms.VisualStyles;
 using adovipavto.Classes;
 using adovipavto.Enums;
 using MySql.Data.MySqlClient;
@@ -131,7 +132,7 @@ namespace adovipavto
                    "PASSWORD=" + Properties.Settings.Default.Passwod + ";";
 
 
-            return "SERVER=" + Properties.Settings.Default.ServerIp + ";" + 
+            return "SERVER=" + Properties.Settings.Default.ServerIp + ";" +
                     "PORT=" + Properties.Settings.Default.Port + ";" +
                    "UID=" + Properties.Settings.Default.UserName + ";" +
                    "PASSWORD=" + Properties.Settings.Default.Passwod + ";";
@@ -177,7 +178,7 @@ namespace adovipavto
         internal void LockOperator(int id)
         {
             var r = GetRowById(Constants.OperatorsTableName, id) as OperatorsRow;
-            if (r != null) 
+            if (r != null)
                 r.Right = (int)Rights.Locked;
 
             UpdateOperatorsAndMechanics();
@@ -306,7 +307,7 @@ namespace adovipavto
                 r.Name = name;
                 r.LastName = lastName;
                 r.Login = login;
-                if(pass != @"********")
+                if (pass != @"********")
                     r.Password = GetHash(pass);
             }
 
@@ -748,45 +749,31 @@ namespace adovipavto
             MySqlDataAdapter adapter;
 
 
-            List<MySqlCommand> commands = new List<MySqlCommand>
-            {
-                new MySqlCommand("SELECT * FROM  `normatives` ",
-                _conection)
-            };
+            MySqlCommand commands = new MySqlCommand("SELECT * FROM  `normatives` ",
+                _conection);
 
-            List<DataTable> tables = new List<DataTable>
-            {
-               Normatives
-            };
 
-            for (int i = 0; i < commands.Count; i++)
-            {
-                adapter = new MySqlDataAdapter(commands[i]);
-                var cb = new MySqlCommandBuilder(adapter);
+            adapter = new MySqlDataAdapter(commands);
+            var cb = new MySqlCommandBuilder(adapter);
 
-                adapter.UpdateCommand = cb.GetUpdateCommand().Clone();
+            adapter.UpdateCommand = cb.GetUpdateCommand().Clone();
 
-                adapter.Update(tables[i]);
-            }
+            adapter.Update(Normatives);
 
-            for (int i = 0; i < tables.Count; i++)
-            {
-                tables[i].Clear();
-            }
+            Normatives.Clear();
 
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < commands.Count; i++)
+
+            try
             {
-                try
-                {
-                    adapter = new MySqlDataAdapter(commands[i]);
-                    adapter.Fill(tables[i]);
-                }
-                catch (Exception e)
-                {
-                    sb.AppendLine(e.Message + " " + tables[i].TableName);
-                }
+                adapter = new MySqlDataAdapter(commands);
+                adapter.Fill(Normatives);
             }
+            catch (Exception e)
+            {
+                sb.AppendLine(e.Message + " " + Normatives.TableName);
+            }
+
 
 
 
@@ -801,7 +788,7 @@ namespace adovipavto
             for (int i = 0; i < Tables[tableName].Rows.Count; i++)
             {
                 DataRow row = Tables[tableName].Rows[i];
-                if(row.RowState == DataRowState.Deleted)
+                if (row.RowState == DataRowState.Deleted)
                     return;
 
 
@@ -840,14 +827,55 @@ namespace adovipavto
 
         private void UpdateGroup()
         {
-            throw new NotImplementedException();
+            StartConnection(true);
+
+
+            MySqlDataAdapter adapter;
+            MySqlCommand commands = new MySqlCommand("SELECT * FROM  `groups` ",
+                _conection);
+
+            adapter = new MySqlDataAdapter(commands);
+            var cb = new MySqlCommandBuilder(adapter);
+
+            adapter.UpdateCommand = cb.GetUpdateCommand().Clone();
+
+            adapter.Update(Group);
+
+
+            Protocols.Clear();
+            Mesures.Clear();
+            Normatives.Clear();
+            Group.Clear();
+
+
+            MySqlCommand protocolsCommand = new MySqlCommand("SELECT * FROM  `protocols` ", _conection);
+            MySqlCommand mesuresCommand = new MySqlCommand("SELECT * FROM  `mesures` ", _conection);
+            MySqlCommand groupsCommand = new MySqlCommand("SELECT * FROM  `groups` ", _conection);
+            MySqlCommand normativesCommand = new MySqlCommand("SELECT * FROM  `normatives` ", _conection);
+
+
+
+            adapter = new MySqlDataAdapter(groupsCommand);
+            adapter.Fill(Group);
+
+            adapter = new MySqlDataAdapter(normativesCommand);
+            adapter.Fill(Normatives);
+
+            adapter = new MySqlDataAdapter(protocolsCommand);
+            adapter.Fill(Protocols);
+
+            adapter = new MySqlDataAdapter(mesuresCommand);
+            adapter.Fill(Mesures);
+
+
+            _conection.Close();
         }
 
         #endregion
 
         #region OperatorMethods
 
-        
+
 
         internal string GetUserPasswors(string username)
         {
@@ -866,5 +894,21 @@ namespace adovipavto
 
         #endregion
 
+
+        internal void RemoveGroup(GroupRow selectedRow)
+        {
+            var t = (from NormativesRow row in Normatives.Rows where row.IDGroup == selectedRow.GroupID select row).ToArray();
+
+            for (int i = t.Length-1; i >= 0; i--)
+            {
+                NormativesRow normativesRow = t[i];
+                normativesRow.Delete();
+                
+            }
+                UpdateNormatives();
+
+            selectedRow.Delete();
+            ;
+        }
     }
 }

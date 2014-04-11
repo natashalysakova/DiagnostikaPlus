@@ -104,7 +104,7 @@ namespace adovipavto
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {
-                    _set.RemoveRow(Constants.GroupTableName, _selectedRow);
+                    _set.RemoveGroup(_selectedRow);
                     _selectedRow = null;
                     _set.Update(Constants.GroupTableName);
 
