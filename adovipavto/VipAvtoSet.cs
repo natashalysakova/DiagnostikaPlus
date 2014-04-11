@@ -414,13 +414,20 @@ namespace adovipavto
             return null;
         }
 
-        internal void AddMesure(int normativeId, double value, int newProtocolId)
+        internal void AddMesure(int normativeTag, double value, int newProtocolId, int groupId)
         {
             MesuresRow item = Mesures.NewMesuresRow();
 
-            item.NormativeID = normativeId;
+            item.NormativeID = normativeTag;
             item.Value = value;
             item.IDProtocol = newProtocolId;
+            item.MaxValue =
+                (from NormativesRow row in Normatives.Rows where row.Tag == normativeTag && row.IDGroup == groupId select row.MaxValue)
+                    .ToArray()[0];
+            item.MinValue =
+    (from NormativesRow row in Normatives.Rows where row.Tag == normativeTag && row.IDGroup == groupId select row.MinValue)
+        .ToArray()[0];
+
 
             Mesures.AddMesuresRow(item);
             UpdateProtocolsAndMesures();
@@ -605,9 +612,10 @@ namespace adovipavto
 
         public void EditNormative(int id, string group, string title, double minValue, double maxValue)
         {
-            var r = Normatives.Rows.Find(id) as NormativesRow;
-            if (r != null)
+            var tmp = (from NormativesRow row in Normatives.Rows where row.NormativeID == id select row).ToArray();
+            if (tmp.Length!= 0)
             {
+                NormativesRow r = tmp.First();
                 r.Tag = new Normatives().GetNormativeIndex(title);
                 r.MaxValue = maxValue;
                 r.MinValue = minValue;

@@ -357,8 +357,8 @@ namespace adovipavto.Classes
         {
             var sf = new StringFormat {Alignment = StringAlignment.Center};
 
-            double[] value =
-                (from VipAvtoSet.MesuresRow item in _mesures where item.NormativeID == i select item.Value)
+            VipAvtoSet.MesuresRow[] value =
+                (from VipAvtoSet.MesuresRow item in _mesures where item.NormativeID == i select item)
                     .ToArray();
             if (value.Length == 0)
             {
@@ -368,23 +368,15 @@ namespace adovipavto.Classes
             {
                 if (mode)
                     graphics.DrawString(
-                        value[0] + " (" + Math.Round(GetSmokeVal(value[0]), new Normatives().DecimalPoints[ind]) + ")",
+                        value[0].Value + " (" + Math.Round(GetSmokeVal(value[0].Value), new Normatives().DecimalPoints[ind]) + ")",
                         normalFont, Brushes.Black, new PointF(610F, height), sf);
                 else
                 {
-                    graphics.DrawString(value[0].ToString(), normalFont, Brushes.Black, new PointF(610F, height), sf);
+                    graphics.DrawString(value[0].Value.ToString(), normalFont, Brushes.Black, new PointF(610F, height), sf);
                 }
 
-                double minval =
-                    (from VipAvtoSet.NormativesRow item in _set.Normatives.Rows
-                        where item.IDGroup == _protocolRow.IDGroup &&
-                              item.Tag == i
-                        select item.MinValue).ToArray()[0];
-                double maxval =
-                    (from VipAvtoSet.NormativesRow item in _set.Normatives.Rows
-                        where item.IDGroup == _protocolRow.IDGroup &&
-                              item.Tag == i
-                        select item.MaxValue).ToArray()[0];
+                double minval = value[0].MinValue;
+                double maxval = value[0].MaxValue;
 
                 if (mode)
                     graphics.DrawString(
@@ -399,7 +391,7 @@ namespace adovipavto.Classes
                 }
 
 
-                if (minval <= value[0] && value[0] < maxval)
+                if (minval <= value[0].Value && value[0].Value < maxval)
                 {
                     graphics.DrawImage(Resources.pass, 690, height, 15, 15);
                 }

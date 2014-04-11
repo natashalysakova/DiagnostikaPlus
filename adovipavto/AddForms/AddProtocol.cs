@@ -424,7 +424,7 @@ namespace adovipavto.AddForms
 
             foreach (VisualRow row in _rows)
             {
-                _set.AddMesure(row.Id, row.Value, _newProtocolId);
+                _set.AddMesure(row.Id, row.Value, _newProtocolId, _set.GetGroupId(comboBox1.SelectedItem.ToString()));
             }
 
 

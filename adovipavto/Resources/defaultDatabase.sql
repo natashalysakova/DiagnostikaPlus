@@ -99,6 +99,8 @@ CREATE TABLE IF NOT EXISTS `mesures` (
   `NormativeID` int(11) DEFAULT NULL,
   `Value` double DEFAULT NULL,
   `IDProtocol` int(11) DEFAULT NULL,
+  `MaxValue` double DEFAULT NULL,
+  `MinValue` double DEFAULT NULL,
   PRIMARY KEY (`MesureID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
