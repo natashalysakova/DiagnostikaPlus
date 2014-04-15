@@ -247,7 +247,6 @@ namespace adovipavto
             {
                 if (new Auth(_set).ShowDialog() == DialogResult.Cancel)
                 {
-                    Close();
                     return;
                 }
             } while (!SetUserRights());
