@@ -240,9 +240,9 @@ namespace adovipavto.AddForms
                                 continue;
                             if (tag == 4 && (numericUpDown1.Value == 2 || numericUpDown1.Value == 1))
                                 continue;
-                            if(tag == 23 && (numericUpDown1.Value == 1 || numericUpDown1.Value == 2 || numericUpDown1.Value == 3))
+                            if (tag == 23 && (numericUpDown1.Value == 1 || numericUpDown1.Value == 2 || numericUpDown1.Value == 3))
                                 continue;
-                            
+
 
 
                             if (control is TextBox)
@@ -354,7 +354,7 @@ namespace adovipavto.AddForms
 
             if (_newProtocolId != -1)
             {
-                VipAvtoSet.ProtocolsRow protocol = (VipAvtoSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
+                VipAvtoSet.ProtocolsRow protocol = (VipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
                 VipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
                 new ProtocolReportForm(protocol, mesures, _set, true).ShowDialog();
@@ -424,9 +424,29 @@ namespace adovipavto.AddForms
 
             foreach (VisualRow row in _rows)
             {
-                _set.AddMesure(row.Id, row.Value, _newProtocolId, _set.GetGroupId(comboBox1.SelectedItem.ToString()));
-            }
+                int counter = 0;
+                do
+                {
+                    counter++;
+                    try
+                    {
+                        _set.AddMesure(row.Id, row.Value, _newProtocolId,
+                            _set.GetGroupId(comboBox1.SelectedItem.ToString()));
+                        break;
 
+                    }
+                    catch
+                    {
+                    }
+
+                } while (counter < 20);
+                if (counter > 20)
+                {
+                    MessageBox.Show("привет, приехали");
+                    return false;
+                    
+                }
+            }
 
             return true;
         }
@@ -576,10 +596,10 @@ namespace adovipavto.AddForms
 
             if (_newProtocolId != -1)
             {
-                VipAvtoSet.ProtocolsRow protocol = (VipAvtoSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName,_newProtocolId);
+                VipAvtoSet.ProtocolsRow protocol = (VipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
                 VipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
-                new ProtocolReportForm( protocol, mesures, _set).ShowDialog();
+                new ProtocolReportForm(protocol, mesures, _set).ShowDialog();
                 DialogResult = DialogResult.OK;
             }
             else

@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Threading;
@@ -62,6 +63,7 @@ namespace adovipavto
                 toolStripButton12.Enabled = true;
                 toolStripButton13.Enabled = true;
                 toolStripButton14.Enabled = true;
+                toolStripButton2.Enabled = false;
                 dataGridView1.Enabled = false;
 
                 toolStripButton10.Enabled = false;
@@ -77,6 +79,7 @@ namespace adovipavto
                 toolStripButton12.Enabled = false;
                 toolStripButton13.Enabled = false;
                 toolStripButton14.Enabled = false;
+                toolStripButton2.Enabled = true;
                 dataGridView1.Enabled = true;
 
                 toolStripButton10.Enabled = true;
@@ -258,22 +261,67 @@ namespace adovipavto
             new Search(_set).ShowDialog();
         }
 
+        private int selected_row = 0;
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //toolStripStatusLabel1.Text = _set.UpdateProtocolsAndMesures();
+            int saveRow = 0;
+            if (dataGridView1.Rows.Count > 0)
+                saveRow = dataGridView1.FirstDisplayedCell.RowIndex;
+
+            if(dataGridView1.SelectedRows.Count != 0)
+                selected_row = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
+            _set.Update(Constants.ProtocolsTableName);
             UpdateRows();
+            var t =
+                (from DataGridViewRow row in dataGridView1.Rows
+                    where (int) row.Cells[0].Value == selected_row
+                    select row.Index
+                    ).ToArray();
+            if(t.Length != 0)
+                dataGridView1.Rows[t[0]].Selected = true;
+
+
+
+
+            if (saveRow != 0 && saveRow < dataGridView1.Rows.Count)
+                dataGridView1.FirstDisplayedScrollingRowIndex = saveRow;
+
         }
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-            //toolStripStatusLabel1.Text = _set.UpdateProtocolsAndMesures();
-            UpdateRows();
-            //timer1.Start();
+            timer1.Start();
         }
 
         private void MainForm_Deactivate(object sender, EventArgs e)
         {
-            //timer1.Stop();
+            timer1.Stop();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            int saveRow = 0;
+            if (dataGridView1.Rows.Count > 0)
+                saveRow = dataGridView1.FirstDisplayedCell.RowIndex;
+
+
+            selected_row = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+            _set.Update(Constants.ProtocolsTableName);
+            UpdateRows();
+            var t =
+                (from DataGridViewRow row in dataGridView1.Rows
+                 where (int)row.Cells[0].Value == selected_row
+                 select row.Index
+                    ).ToArray();
+            dataGridView1.Rows[t[0]].Selected = true;
+
+
+
+
+            if (saveRow != 0 && saveRow < dataGridView1.Rows.Count)
+                dataGridView1.FirstDisplayedScrollingRowIndex = saveRow;
+
         }
     }
 }

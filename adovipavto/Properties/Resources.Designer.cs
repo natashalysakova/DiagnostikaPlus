@@ -206,7 +206,7 @@ namespace adovipavto.Properties {
         ///-- http://www.phpmyadmin.net
         ///--
         ///-- Хост: 127.0.0.1
-        ///-- Время создания: Мар 20 2014 г., 18:55
+        ///-- Время создания: Мар 20 2014 г., 19:42
         ///-- Версия сервера: 5.5.25
         ///-- Версия PHP: 5.3.13
         ///
@@ -220,10 +220,10 @@ namespace adovipavto.Properties {
         ////*!40101 SET NAMES utf8 */;
         ///
         ///--
-        ///-- База данных: `vipavto`
+        ///-- База данных: `vipavto2`
         ///--
         ///
-        ///--  [rest of string was truncated]&quot;;.
+        ///-- [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string defaultDatabase {
             get {
@@ -437,6 +437,16 @@ namespace adovipavto.Properties {
         internal static System.Drawing.Bitmap red {
             get {
                 object obj = ResourceManager.GetObject("red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh {
+            get {
+                object obj = ResourceManager.GetObject("refresh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

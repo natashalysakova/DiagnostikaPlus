@@ -416,6 +416,7 @@ namespace adovipavto
 
         internal void AddMesure(int normativeTag, double value, int newProtocolId, int groupId)
         {
+            //UpdateProtocolsAndMesures();
             MesuresRow item = Mesures.NewMesuresRow();
 
             item.NormativeID = normativeTag;
@@ -430,7 +431,7 @@ namespace adovipavto
 
 
             Mesures.AddMesuresRow(item);
-            UpdateProtocolsAndMesures();
+            //UpdateProtocolsAndMesures();
         }
 
         internal string GetShortMechanicName(int mechanicId)
