@@ -12,6 +12,7 @@ namespace adovipavto.Classes
     {
         private readonly List<int> _decimals;
         private readonly List<string> _normas;
+        private readonly List<double> _hardNorms;
 
         public Normatives()
         {
@@ -73,10 +74,20 @@ namespace adovipavto.Classes
                 /*22*/0,
                 /*23*/0
             };
+
+
         }
 
 
+
+
         public List<int> DecimalPoints
+        {
+            get { return _decimals; }
+        }
+
+
+        public List<int> HardNorms
         {
             get { return _decimals; }
         }

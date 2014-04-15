@@ -190,8 +190,8 @@ namespace adovipavto.Classes
                 DrawPictorgam(i, g, (i + 3)*LineHeight, normalFont, i);
             }
 
-            g.DrawString(norm[20], normalFont, Brushes.Black, new PointF(20F, 8*LineHeight));
-            DrawPictorgam(20, g, 8*LineHeight, normalFont, 20);
+            g.DrawString(norm[23], normalFont, Brushes.Black, new PointF(20F, 8*LineHeight));
+            DrawPictorgam(23, g, 8*LineHeight, normalFont, 20);
 
             for (int i = 5; i < 7; i++)
             {
