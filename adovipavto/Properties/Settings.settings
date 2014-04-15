@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="ServerIp" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">192.168.0.100</Value>
     </Setting>
     <Setting Name="Port" Type="System.String" Scope="User">
       <Value Profile="(Default)">3306</Value>
     </Setting>
     <Setting Name="DataBase" Type="System.String" Scope="User">
-      <Value Profile="(Default)">vipavto2</Value>
+      <Value Profile="(Default)">vipavto</Value>
     </Setting>
     <Setting Name="UserName" Type="System.String" Scope="User">
       <Value Profile="(Default)">vipavto</Value>

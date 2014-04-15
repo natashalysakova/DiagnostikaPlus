@@ -25,7 +25,7 @@ namespace adovipavto.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("192.168.0.100")]
         public string ServerIp {
             get {
                 return ((string)(this["ServerIp"]));
@@ -49,7 +49,7 @@ namespace adovipavto.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("vipavto2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("vipavto")]
         public string DataBase {
             get {
                 return ((string)(this["DataBase"]));

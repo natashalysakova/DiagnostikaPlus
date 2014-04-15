@@ -75,7 +75,33 @@ namespace adovipavto.Classes
                 /*23*/0
             };
 
-
+            _hardNorms = new List<double>
+            {
+                /*0*/1,
+                /*1*/1,
+                /*2*/30,
+                /*3*/30,
+                /*4*/30,
+                /*5*/5,
+                /*6*/686,
+                /*7*/25,
+                /*8*/800,
+                /*9*/950,
+                /*10*/625,
+                /*11*/120,
+                /*12*/10,
+                /*13*/4,
+                /*14*/2,
+                /*15*/2500,
+                /*16*/1000,
+                /*17*/72,
+                /*18*/72,
+                /*19*/50,
+                /*20*/100,
+                /*21*/100,
+                /*22*/94,
+                /*23*/30
+            };
         }
 
 
@@ -87,9 +113,9 @@ namespace adovipavto.Classes
         }
 
 
-        public List<int> HardNorms
+        public List<double> HardNorms
         {
-            get { return _decimals; }
+            get { return _hardNorms; }
         }
 
         public int GetNormativeIndex(string title)
