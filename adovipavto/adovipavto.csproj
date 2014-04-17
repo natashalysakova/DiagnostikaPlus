@@ -199,6 +199,11 @@
     <Compile Include="Mechanics.Designer.cs">
       <DependentUpon>Mechanics.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewVipAvtoSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewVipAvtoSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NormativesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -486,6 +491,17 @@
       <LastGenOutput>StringResource.uk-UA.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="adovipavto_TemporaryKey.pfx" />
+    <None Include="NewVipAvtoSet.xsc">
+      <DependentUpon>NewVipAvtoSet.xsd</DependentUpon>
+    </None>
+    <None Include="NewVipAvtoSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NewVipAvtoSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="NewVipAvtoSet.xss">
+      <DependentUpon>NewVipAvtoSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

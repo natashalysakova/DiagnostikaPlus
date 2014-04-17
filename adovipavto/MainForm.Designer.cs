@@ -36,17 +36,6 @@ namespace adovipavto
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.protocolIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.blankNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NextData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mechanic = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Operator = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Result = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.iDMechanicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.iDGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.iDOperatorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.protocolsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vipAvtoSet = new adovipavto.VipAvtoSet();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
@@ -70,6 +59,17 @@ namespace adovipavto
             this.просмотрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.печатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.protocolIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.blankNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NextData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mechanic = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Operator = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Result = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.iDMechanicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.iDGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.iDOperatorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -141,93 +141,6 @@ namespace adovipavto
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
-            // 
-            // protocolIDDataGridViewTextBoxColumn
-            // 
-            this.protocolIDDataGridViewTextBoxColumn.DataPropertyName = "ProtocolID";
-            resources.ApplyResources(this.protocolIDDataGridViewTextBoxColumn, "protocolIDDataGridViewTextBoxColumn");
-            this.protocolIDDataGridViewTextBoxColumn.Name = "protocolIDDataGridViewTextBoxColumn";
-            this.protocolIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.protocolIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // blankNumberDataGridViewTextBoxColumn
-            // 
-            this.blankNumberDataGridViewTextBoxColumn.DataPropertyName = "BlankNumber";
-            resources.ApplyResources(this.blankNumberDataGridViewTextBoxColumn, "blankNumberDataGridViewTextBoxColumn");
-            this.blankNumberDataGridViewTextBoxColumn.Name = "blankNumberDataGridViewTextBoxColumn";
-            this.blankNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.blankNumberDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Group
-            // 
-            resources.ApplyResources(this.Group, "Group");
-            this.Group.Name = "Group";
-            this.Group.ReadOnly = true;
-            this.Group.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "Date";
-            resources.ApplyResources(this.Date, "Date");
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // NextData
-            // 
-            this.NextData.DataPropertyName = "NextData";
-            resources.ApplyResources(this.NextData, "NextData");
-            this.NextData.Name = "NextData";
-            this.NextData.ReadOnly = true;
-            this.NextData.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Mechanic
-            // 
-            resources.ApplyResources(this.Mechanic, "Mechanic");
-            this.Mechanic.Name = "Mechanic";
-            this.Mechanic.ReadOnly = true;
-            this.Mechanic.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Operator
-            // 
-            resources.ApplyResources(this.Operator, "Operator");
-            this.Operator.Name = "Operator";
-            this.Operator.ReadOnly = true;
-            this.Operator.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Result
-            // 
-            this.Result.DataPropertyName = "Result";
-            resources.ApplyResources(this.Result, "Result");
-            this.Result.Name = "Result";
-            this.Result.ReadOnly = true;
-            // 
-            // iDMechanicDataGridViewTextBoxColumn
-            // 
-            this.iDMechanicDataGridViewTextBoxColumn.DataPropertyName = "IDMechanic";
-            resources.ApplyResources(this.iDMechanicDataGridViewTextBoxColumn, "iDMechanicDataGridViewTextBoxColumn");
-            this.iDMechanicDataGridViewTextBoxColumn.Name = "iDMechanicDataGridViewTextBoxColumn";
-            this.iDMechanicDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDMechanicDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.iDMechanicDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // iDGroupDataGridViewTextBoxColumn
-            // 
-            this.iDGroupDataGridViewTextBoxColumn.DataPropertyName = "IDGroup";
-            resources.ApplyResources(this.iDGroupDataGridViewTextBoxColumn, "iDGroupDataGridViewTextBoxColumn");
-            this.iDGroupDataGridViewTextBoxColumn.Name = "iDGroupDataGridViewTextBoxColumn";
-            this.iDGroupDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDGroupDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.iDGroupDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // iDOperatorDataGridViewTextBoxColumn
-            // 
-            this.iDOperatorDataGridViewTextBoxColumn.DataPropertyName = "IDOperator";
-            resources.ApplyResources(this.iDOperatorDataGridViewTextBoxColumn, "iDOperatorDataGridViewTextBoxColumn");
-            this.iDOperatorDataGridViewTextBoxColumn.Name = "iDOperatorDataGridViewTextBoxColumn";
-            this.iDOperatorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDOperatorDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.iDOperatorDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // protocolsBindingSource
             // 
@@ -409,6 +322,94 @@ namespace adovipavto
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // protocolIDDataGridViewTextBoxColumn
+            // 
+            this.protocolIDDataGridViewTextBoxColumn.DataPropertyName = "ProtocolID";
+            resources.ApplyResources(this.protocolIDDataGridViewTextBoxColumn, "protocolIDDataGridViewTextBoxColumn");
+            this.protocolIDDataGridViewTextBoxColumn.Name = "protocolIDDataGridViewTextBoxColumn";
+            this.protocolIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.protocolIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // blankNumberDataGridViewTextBoxColumn
+            // 
+            this.blankNumberDataGridViewTextBoxColumn.DataPropertyName = "BlankNumber";
+            resources.ApplyResources(this.blankNumberDataGridViewTextBoxColumn, "blankNumberDataGridViewTextBoxColumn");
+            this.blankNumberDataGridViewTextBoxColumn.Name = "blankNumberDataGridViewTextBoxColumn";
+            this.blankNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.blankNumberDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Group
+            // 
+            resources.ApplyResources(this.Group, "Group");
+            this.Group.Name = "Group";
+            this.Group.ReadOnly = true;
+            this.Group.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "Date";
+            resources.ApplyResources(this.Date, "Date");
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // NextData
+            // 
+            this.NextData.DataPropertyName = "NextData";
+            resources.ApplyResources(this.NextData, "NextData");
+            this.NextData.Name = "NextData";
+            this.NextData.ReadOnly = true;
+            this.NextData.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Mechanic
+            // 
+            this.Mechanic.DataPropertyName = "MechanicName";
+            resources.ApplyResources(this.Mechanic, "Mechanic");
+            this.Mechanic.Name = "Mechanic";
+            this.Mechanic.ReadOnly = true;
+            this.Mechanic.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Operator
+            // 
+            resources.ApplyResources(this.Operator, "Operator");
+            this.Operator.Name = "Operator";
+            this.Operator.ReadOnly = true;
+            this.Operator.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Result
+            // 
+            this.Result.DataPropertyName = "Result";
+            resources.ApplyResources(this.Result, "Result");
+            this.Result.Name = "Result";
+            this.Result.ReadOnly = true;
+            // 
+            // iDMechanicDataGridViewTextBoxColumn
+            // 
+            this.iDMechanicDataGridViewTextBoxColumn.DataPropertyName = "IDMechanic";
+            resources.ApplyResources(this.iDMechanicDataGridViewTextBoxColumn, "iDMechanicDataGridViewTextBoxColumn");
+            this.iDMechanicDataGridViewTextBoxColumn.Name = "iDMechanicDataGridViewTextBoxColumn";
+            this.iDMechanicDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDMechanicDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.iDMechanicDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // iDGroupDataGridViewTextBoxColumn
+            // 
+            this.iDGroupDataGridViewTextBoxColumn.DataPropertyName = "IDGroup";
+            resources.ApplyResources(this.iDGroupDataGridViewTextBoxColumn, "iDGroupDataGridViewTextBoxColumn");
+            this.iDGroupDataGridViewTextBoxColumn.Name = "iDGroupDataGridViewTextBoxColumn";
+            this.iDGroupDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDGroupDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.iDGroupDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // iDOperatorDataGridViewTextBoxColumn
+            // 
+            this.iDOperatorDataGridViewTextBoxColumn.DataPropertyName = "IDOperator";
+            resources.ApplyResources(this.iDOperatorDataGridViewTextBoxColumn, "iDOperatorDataGridViewTextBoxColumn");
+            this.iDOperatorDataGridViewTextBoxColumn.Name = "iDOperatorDataGridViewTextBoxColumn";
+            this.iDOperatorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDOperatorDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.iDOperatorDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -467,6 +468,8 @@ namespace adovipavto
         private ToolStripButton toolStripButton1;
         private Timer timer1;
         private DataGridView dataGridView1;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripButton toolStripButton2;
         private DataGridViewTextBoxColumn protocolIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn blankNumberDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn Group;
@@ -478,7 +481,5 @@ namespace adovipavto
         private DataGridViewComboBoxColumn iDMechanicDataGridViewTextBoxColumn;
         private DataGridViewComboBoxColumn iDGroupDataGridViewTextBoxColumn;
         private DataGridViewComboBoxColumn iDOperatorDataGridViewTextBoxColumn;
-        private ToolStripStatusLabel toolStripStatusLabel1;
-        private ToolStripButton toolStripButton2;
     }
 }
