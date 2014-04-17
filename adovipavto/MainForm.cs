@@ -19,9 +19,9 @@ namespace adovipavto
     {
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        private VipAvtoSet _set;
+        private NewVipAvtoSet _set;
 
-        public MainForm(VipAvtoSet set)
+        public MainForm(NewVipAvtoSet set)
         {
             _set = set;
             Application.EnableVisualStyles();
@@ -36,7 +36,7 @@ namespace adovipavto
         }
 
         private void MainForm_Load(object sender, EventArgs e)
-        {
+        {            
             do
             {
                 if (new Auth(_set).ShowDialog() == DialogResult.Cancel)
@@ -46,11 +46,12 @@ namespace adovipavto
                 }
             } while (!SetUserRights());
 
-            dataGridView1.DataSource = _set.Tables[Constants.ProtocolsTableName];
-            if (dataGridView1.Columns["Date"] != null)
-                dataGridView1.Sort(dataGridView1.Columns["Date"], ListSortDirection.Descending);
+            dataGridView1.DataSource = _set.Protocols;
+           
+            if (dateDataGridViewTextBoxColumn != null)
+                dataGridView1.Sort(dateDataGridViewTextBoxColumn, ListSortDirection.Descending);
 
-            UpdateRows();
+
         }
 
         private bool SetUserRights()
@@ -63,13 +64,12 @@ namespace adovipavto
                 toolStripButton12.Enabled = true;
                 toolStripButton13.Enabled = true;
                 toolStripButton14.Enabled = true;
-                toolStripButton2.Enabled = false;
                 dataGridView1.Enabled = false;
+                
 
                 toolStripButton10.Enabled = false;
                 cpyBtn.Enabled = false;
                 srchBtn.Enabled = false;
-
                 return true;
             }
             if (right == Rights.Operator)
@@ -79,7 +79,6 @@ namespace adovipavto
                 toolStripButton12.Enabled = false;
                 toolStripButton13.Enabled = false;
                 toolStripButton14.Enabled = false;
-                toolStripButton2.Enabled = true;
                 dataGridView1.Enabled = true;
 
                 toolStripButton10.Enabled = true;
@@ -97,14 +96,13 @@ namespace adovipavto
 
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
-            if (new AddProtocol(this, _set).ShowDialog() == DialogResult.OK)
-                UpdateRows();
+            new AddProtocol(this, _set).ShowDialog();
+            dataGridView1.Refresh();
         }
 
         private void toolStripButton11_Click(object sender, EventArgs e)
         {
-            if (new GroupsForm(_set).ShowDialog() == DialogResult.OK)
-                UpdateRows();
+            new GroupsForm(_set).ShowDialog();
         }
 
         private void toolStripButton12_Click(object sender, EventArgs e)
@@ -129,14 +127,13 @@ namespace adovipavto
 
         private void toolStripButton13_Click(object sender, EventArgs e)
         {
-            if (new OperatorsForm(_set).ShowDialog() == DialogResult.OK)
-                UpdateRows();
+            new OperatorsForm(_set).ShowDialog();
+
         }
 
         private void toolStripButton14_Click(object sender, EventArgs e)
         {
-            if (new Mechanics(_set).ShowDialog() == DialogResult.OK)
-                UpdateRows();
+            new Mechanics(_set).ShowDialog();
         }
 
         private void toolStripButton15_Click(object sender, EventArgs e)
@@ -154,43 +151,17 @@ namespace adovipavto
             }
         }
 
-        public void UpdateRows()
-        {
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                row.Cells["Group"].Value =
-                    _set.GroupTitle((int) row.Cells["iDGroupDataGridViewTextBoxColumn"].Value);
-
-
-                row.Cells["Mechanic"].Value =
-                    _set.GetShortMechanicName(
-                        (int) row.Cells["iDMechanicDataGridViewTextBoxColumn"].Value);
-
-
-                row.Cells["Operator"].Value =
-                    _set.GetShortOperatorName(
-                        (int) row.Cells["iDOperatorDataGridViewTextBoxColumn"].Value);
-
-                if ((bool) row.Cells["Result"].Value)
-                {
-                    row.DefaultCellStyle.BackColor = Color.LightGreen;
-                }
-                else
-                {
-                    row.DefaultCellStyle.BackColor = Color.LightPink;
-                }
-            }
-        }
 
         private void dataGridView1_Sorted(object sender, EventArgs e)
         {
-            UpdateRows();
         }
 
         private void cpyBtn_Click(object sender, EventArgs e)
         {
             new Report(_set).ShowDialog();
         }
+
+        
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -200,9 +171,9 @@ namespace adovipavto
 
 
                 var newProtocolId =
-                    (int) dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
-                VipAvtoSet.ProtocolsRow protocol = (VipAvtoSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
-                VipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+                    (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+                NewVipAvtoSet.ProtocolsRow protocol = (NewVipAvtoSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+                NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
                 new ProtocolReportForm(protocol, mesures, _set).ShowDialog();
             }
@@ -228,18 +199,18 @@ namespace adovipavto
 
         private void просмотрToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var newProtocolId = (int) dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
-            VipAvtoSet.ProtocolsRow protocol = (VipAvtoSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
-            VipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+            var newProtocolId = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
+            NewVipAvtoSet.ProtocolsRow protocol = (NewVipAvtoSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+            NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
             new ProtocolReportForm(protocol, mesures, _set).ShowDialog();
         }
 
         private void печатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var newProtocolId = (int) dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
-            VipAvtoSet.ProtocolsRow protocol = (VipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
-            VipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+            var newProtocolId = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
+            NewVipAvtoSet.ProtocolsRow protocol = (NewVipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+            NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
             new ProtocolReportForm(protocol, mesures,_set, true ).ShowDialog();
         }
@@ -253,7 +224,7 @@ namespace adovipavto
                     return;
                 }
             } while (!SetUserRights());
-            UpdateRows();
+
         }
 
         private void srchBtn_Click(object sender, EventArgs e)
@@ -261,67 +232,54 @@ namespace adovipavto
             new Search(_set).ShowDialog();
         }
 
-        private int selected_row = 0;
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            int saveRow = 0;
-            if (dataGridView1.Rows.Count > 0)
-                saveRow = dataGridView1.FirstDisplayedCell.RowIndex;
-
-            if(dataGridView1.SelectedRows.Count != 0)
-                selected_row = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
-            _set.Update(Constants.ProtocolsTableName);
-            UpdateRows();
-            var t =
-                (from DataGridViewRow row in dataGridView1.Rows
-                    where (int) row.Cells[0].Value == selected_row
-                    select row.Index
-                    ).ToArray();
-            if(t.Length != 0)
-                dataGridView1.Rows[t[0]].Selected = true;
-
-
-
-
-            if (saveRow != 0 && saveRow < dataGridView1.Rows.Count)
-                dataGridView1.FirstDisplayedScrollingRowIndex = saveRow;
-
+            if (dataGridView1.Columns[e.ColumnIndex] == groupIdDataGridViewTextBoxColumn)
+            {
+                if (e.Value != null)
+                {
+                    e.Value = _set.GetGroupTitle((int) e.Value);
+                }
+            }
+            else if (dataGridView1.Columns[e.ColumnIndex] == resultDataGridViewCheckBoxColumn)
+            {
+                if ((bool)e.Value)
+                {
+                    e.Value = _rm.GetString("check");
+                }
+                else
+                {
+                    e.Value = _rm.GetString("uncheck");
+                }
+            }
+            else if (dataGridView1.Columns[e.ColumnIndex] == operatorIdDataGridViewTextBoxColumn)
+            {
+                if (e.Value != null)
+                {
+                    e.Value = _set.GetShortOperatorName((int) e.Value);
+                }
+            }
+            else if (dataGridView1.Columns[e.ColumnIndex] == mechanicIdDataGridViewTextBoxColumn)
+            {
+                if (e.Value != null)
+                {
+                    e.Value = _set.GetShortMechanicName((int)e.Value);
+                }
+            }
         }
 
-        private void MainForm_Activated(object sender, EventArgs e)
+        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-            timer1.Start();
+            if ((bool)dataGridView1[resultDataGridViewCheckBoxColumn.Index , e.RowIndex].Value == true)
+            {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
+            }
+            else
+            {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightPink;
+            }
         }
 
-        private void MainForm_Deactivate(object sender, EventArgs e)
-        {
-            timer1.Stop();
-        }
-
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            int saveRow = 0;
-            if (dataGridView1.Rows.Count > 0)
-                saveRow = dataGridView1.FirstDisplayedCell.RowIndex;
-
-
-            selected_row = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
-            _set.Update(Constants.ProtocolsTableName);
-            UpdateRows();
-            var t =
-                (from DataGridViewRow row in dataGridView1.Rows
-                 where (int)row.Cells[0].Value == selected_row
-                 select row.Index
-                    ).ToArray();
-            dataGridView1.Rows[t[0]].Selected = true;
-
-
-
-
-            if (saveRow != 0 && saveRow < dataGridView1.Rows.Count)
-                dataGridView1.FirstDisplayedScrollingRowIndex = saveRow;
-
-        }
     }
 }

@@ -342,7 +342,7 @@
   <metadata name="protocolsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>127, 17</value>
   </metadata>
-  <metadata name="vipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="NewVipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
@@ -714,11 +714,11 @@
   <data name="&gt;&gt;protocolsBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;vipAvtoSet.Name" xml:space="preserve">
-    <value>vipAvtoSet</value>
+  <data name="&gt;&gt;NewVipAvtoSet.Name" xml:space="preserve">
+    <value>NewVipAvtoSet</value>
   </data>
-  <data name="&gt;&gt;vipAvtoSet.Type" xml:space="preserve">
-    <value>adovipavto.VipAvtoSet, VipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;NewVipAvtoSet.Type" xml:space="preserve">
+    <value>adovipavto.NewVipAvtoSet, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Search</value>

@@ -129,50 +129,41 @@
   <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="normativeIDDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>NormativeID</value>
+  <data name="idNormativeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>IdNormative</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="normativeIDDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+  <data name="idNormativeDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <metadata name="NormTitle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="NormTitle.HeaderText" xml:space="preserve">
-    <value>Название</value>
-  </data>
-  <data name="minValueDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Минимальное значение</value>
-  </data>
-  <data name="minValueDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>174</value>
-  </data>
-  <data name="maxValueDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Максимальное значение</value>
-  </data>
-  <data name="maxValueDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>179</value>
-  </data>
-  <data name="iDGroupDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>IDGroup</value>
-  </data>
-  <data name="iDGroupDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <metadata name="Tag.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Tag.HeaderText" xml:space="preserve">
+  <data name="tagDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Tag</value>
   </data>
-  <data name="Tag.Visible" type="System.Boolean, mscorlib">
+  <data name="tagDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="Title.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Title.HeaderText" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="minValueDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>MinValue</value>
+  </data>
+  <data name="maxValueDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>MaxValue</value>
+  </data>
+  <data name="groupIdDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>GroupId</value>
+  </data>
+  <data name="groupIdDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <metadata name="normativesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>232, 17</value>
+    <value>578, 17</value>
   </metadata>
-  <metadata name="vipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="NewVipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>122, 17</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
@@ -328,7 +319,7 @@
     <value>3, 0</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>534, 43</value>
+    <value>503, 43</value>
   </data>
   <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -405,6 +396,9 @@
   <data name="&gt;&gt;contextMenuStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <metadata name="normativesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>769, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1915,53 +1909,17 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Нормативы</value>
   </data>
-  <data name="&gt;&gt;normativeIDDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>normativeIDDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;normativeIDDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NormTitle.Name" xml:space="preserve">
-    <value>NormTitle</value>
-  </data>
-  <data name="&gt;&gt;NormTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;minValueDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>minValueDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;minValueDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;maxValueDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>maxValueDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;maxValueDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;iDGroupDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>iDGroupDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;iDGroupDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Tag.Name" xml:space="preserve">
-    <value>Tag</value>
-  </data>
-  <data name="&gt;&gt;Tag.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;normativesBindingSource.Name" xml:space="preserve">
     <value>normativesBindingSource</value>
   </data>
   <data name="&gt;&gt;normativesBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;vipAvtoSet.Name" xml:space="preserve">
-    <value>vipAvtoSet</value>
+  <data name="&gt;&gt;NewVipAvtoSet.Name" xml:space="preserve">
+    <value>NewVipAvtoSet</value>
   </data>
-  <data name="&gt;&gt;vipAvtoSet.Type" xml:space="preserve">
-    <value>adovipavto.VipAvtoSet, VipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;NewVipAvtoSet.Type" xml:space="preserve">
+    <value>adovipavto.NewVipAvtoSet, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
     <value>toolStripButton1</value>
@@ -2022,6 +1980,48 @@
   </data>
   <data name="&gt;&gt;удалитьToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;normativesTableAdapter.Name" xml:space="preserve">
+    <value>normativesTableAdapter</value>
+  </data>
+  <data name="&gt;&gt;normativesTableAdapter.Type" xml:space="preserve">
+    <value>adovipavto.NewVipAvtoSetTableAdapters.NormativesTableAdapter, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;idNormativeDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>idNormativeDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;idNormativeDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tagDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>tagDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;tagDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Title.Name" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="&gt;&gt;Title.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;minValueDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>minValueDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;minValueDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;maxValueDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>maxValueDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;maxValueDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupIdDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>groupIdDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;groupIdDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>NormativesForm</value>

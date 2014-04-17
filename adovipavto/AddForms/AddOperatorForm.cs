@@ -12,11 +12,11 @@ namespace adovipavto.AddForms
 {
     public partial class AddOperatorForm : Form
     {
-        private readonly VipAvtoSet _set;
+        private readonly NewVipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
-        public AddOperatorForm(VipAvtoSet set)
+        public AddOperatorForm(NewVipAvtoSet set)
         {
             _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);

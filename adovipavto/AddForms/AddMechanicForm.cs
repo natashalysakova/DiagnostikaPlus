@@ -11,11 +11,11 @@ namespace adovipavto.AddForms
 {
     public partial class AddMechanicForm : Form
     {
-        private readonly VipAvtoSet _set;
+        private readonly NewVipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
-        public AddMechanicForm(VipAvtoSet set)
+        public AddMechanicForm(NewVipAvtoSet set)
         {
             _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);

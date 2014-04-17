@@ -19,7 +19,7 @@ namespace adovipavto.AddForms
         private GBOSTATE gbo;
 
         private readonly MainForm _mainForm;
-        private readonly VipAvtoSet _set;
+        private readonly NewVipAvtoSet _set;
 
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
@@ -29,7 +29,7 @@ namespace adovipavto.AddForms
         private List<VisualRow> _rows;
         DRandom _random = new DRandom();
 
-        public AddProtocol(MainForm mainForm, VipAvtoSet set)
+        public AddProtocol(MainForm mainForm, NewVipAvtoSet set)
         {
             _mainForm = mainForm;
             _set = set;
@@ -47,8 +47,8 @@ namespace adovipavto.AddForms
             UpdateFormLables();
 
             string[] groups = (
-                from DataRow item in _set.Tables[Constants.GroupTableName].Rows
-                select _set.GroupTitle((int)item["GroupID"])).ToArray();
+                from NewVipAvtoSet.GroupsRow item in _set.Groups.Rows
+                select item.Title).ToArray();
 
             if (groups.Length == 0)
             {
@@ -63,10 +63,10 @@ namespace adovipavto.AddForms
             dateTimePicker1.Value = DateTime.Now;
 
             string[] mechanics = (
-                from DataRow item in _set.Tables[Constants.MechanicsTableName].Rows
-                where (int)item["State"] != (int)State.Unemployed
+                from NewVipAvtoSet.MechanicsRow item in _set.Tables[Constants.MechanicsTableName].Rows
+                where item.State != (int)State.Unemployed
                 select
-                    _set.GetShortMechanicName((int)item["MechanicID"])
+                    _set.GetShortMechanicName(item.IdMechanic)
                 ).ToArray();
             if (mechanics.Length == 0)
             {
@@ -210,7 +210,7 @@ namespace adovipavto.AddForms
             _normatives = _set.GetNormativesFromGroup(comboBox1.SelectedItem.ToString());
 
 
-            foreach (DataRow normative in _normatives)
+            foreach (NewVipAvtoSet.NormativesRow normative in _normatives)
             {
                 var row = new VisualRow(normative, _random);
 
@@ -354,8 +354,8 @@ namespace adovipavto.AddForms
 
             if (_newProtocolId != -1)
             {
-                VipAvtoSet.ProtocolsRow protocol = (VipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
-                VipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+                NewVipAvtoSet.ProtocolsRow protocol = (NewVipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
+                NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
                 new ProtocolReportForm(protocol, mesures, _set, true).ShowDialog();
 
@@ -422,31 +422,14 @@ namespace adovipavto.AddForms
                 comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, techpass, comboBox1.SelectedItem.ToString(),
                 result, nexDateTime, radioButton1.Checked, gbo);
 
+            int groupid = _set.GetGroupId(comboBox1.SelectedItem.ToString());
+
             foreach (VisualRow row in _rows)
             {
-                int counter = 0;
-                do
-                {
-                    counter++;
-                    try
-                    {
-                        _set.AddMesure(row.Id, row.Value, _newProtocolId,
-                            _set.GetGroupId(comboBox1.SelectedItem.ToString()));
-                        break;
-
-                    }
-                    catch
-                    {
-                    }
-
-                } while (counter < 20);
-                if (counter > 20)
-                {
-                    MessageBox.Show("привет, приехали");
-                    return false;
-                    
-                }
+                        _set.AddMesure(row.Id, row.Value, _newProtocolId, groupid);
             }
+            _set.Update(typeof(NewVipAvtoSet.MesuresRow));
+            _set.AcceptChanges();
 
             return true;
         }
@@ -592,12 +575,11 @@ namespace adovipavto.AddForms
             }
 
 
-            _mainForm.UpdateRows();
 
             if (_newProtocolId != -1)
             {
-                VipAvtoSet.ProtocolsRow protocol = (VipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
-                VipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+                NewVipAvtoSet.ProtocolsRow protocol = (NewVipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
+                NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
                 new ProtocolReportForm(protocol, mesures, _set).ShowDialog();
                 DialogResult = DialogResult.OK;

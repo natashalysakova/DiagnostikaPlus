@@ -8,8 +8,8 @@ namespace adovipavto
     public partial class Auth : Form
     {
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
-        private VipAvtoSet _set;
-        public Auth(VipAvtoSet set)
+        private NewVipAvtoSet _set;
+        public Auth(NewVipAvtoSet set)
         {
             InitializeComponent();
             _set = set;
@@ -27,7 +27,7 @@ namespace adovipavto
             if (password != "")
             {
 
-                if (VipAvtoSet.GetHash(maskedTextBox1.Text) == password)
+                if (NewVipAvtoSet.GetHash(maskedTextBox1.Text) == password)
                 {
                     _set.SetCurrentOperator(textBox1.Text);
 
@@ -51,6 +51,11 @@ namespace adovipavto
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void maskedTextBox1_Enter(object sender, EventArgs e)
+        {
+            maskedTextBox1.SelectAll();
         }
     }
 }

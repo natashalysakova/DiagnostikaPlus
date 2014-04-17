@@ -15,11 +15,11 @@ namespace adovipavto
 {
     public partial class Mechanics : Form
     {
-        private readonly VipAvtoSet _set;
+        private readonly NewVipAvtoSet _set;
 
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public Mechanics(VipAvtoSet set)
+        public Mechanics(NewVipAvtoSet set)
         {
             _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
@@ -42,7 +42,7 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            VipAvtoSet.MechanicsRow row = (VipAvtoSet.MechanicsRow) _set.GetRowById(Constants.MechanicsTableName, id);
+            NewVipAvtoSet.MechanicsRow row = (NewVipAvtoSet.MechanicsRow) _set.GetRowById(Constants.MechanicsTableName, id);
 
 
             if (new EditMechanicForm(row, _set).ShowDialog() == DialogResult.OK)
@@ -99,7 +99,7 @@ namespace adovipavto
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {
-                    var id = (int) dataGridView1.SelectedRows[0].Cells["mechanicIDDataGridViewTextBoxColumn"].Value;
+                    var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
                     _set.LockMechanic(id);
                     UpdateRoles();

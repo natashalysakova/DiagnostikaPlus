@@ -11,13 +11,13 @@ namespace adovipavto.EditForms
 {
     public partial class EditOperatorForm : Form
     {
-        private readonly VipAvtoSet.OperatorsRow _selected;
-        private readonly VipAvtoSet _set;
+        private readonly NewVipAvtoSet.OperatorsRow _selected;
+        private readonly NewVipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
 
-        public EditOperatorForm(VipAvtoSet.OperatorsRow selected, VipAvtoSet set)
+        public EditOperatorForm(NewVipAvtoSet.OperatorsRow selected, NewVipAvtoSet set)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
@@ -41,7 +41,7 @@ namespace adovipavto.EditForms
             if (errorProvider1.GetError(nameTxtBx) == "" && errorProvider1.GetError(lnTxtBx) == "" &&
                 errorProvider1.GetError(loginTxtBx) == "" && errorProvider1.GetError(passTxtBx) == "")
             {
-                _set.EditOperator((int) _selected.OperatorId, nameTxtBx.Text, lnTxtBx.Text,
+                _set.EditOperator(_selected.IdOperator, nameTxtBx.Text, lnTxtBx.Text,
                     loginTxtBx.Text, passTxtBx.Text);
                 DialogResult = DialogResult.OK;
             }

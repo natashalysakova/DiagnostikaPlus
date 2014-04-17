@@ -9,11 +9,11 @@ namespace adovipavto
 {
     public sealed partial class ProtocolReportForm : Form
     {
-        private readonly VipAvtoSet _set;
+        private readonly NewVipAvtoSet _set;
         private readonly bool _printNow;
         private readonly PrintProtocolDocument _document;
 
-        public ProtocolReportForm(VipAvtoSet.ProtocolsRow protocolRow, VipAvtoSet.MesuresRow[] mesures, VipAvtoSet set, bool printNow = false)
+        public ProtocolReportForm(NewVipAvtoSet.ProtocolsRow protocolRow, NewVipAvtoSet.MesuresRow[] mesures, NewVipAvtoSet set, bool printNow = false)
         {
             _set = set;
             _printNow = printNow;

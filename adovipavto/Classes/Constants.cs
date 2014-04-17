@@ -7,7 +7,7 @@ namespace adovipavto.Classes
 {
     public static class Constants
     {
-        public const string GroupTableName = "Group";
+        public const string GroupTableName = "Groups";
         public const string NormativesTableName = "Normatives";
         public const string ProtocolsTableName = "Protocols";
         public const string MechanicsTableName = "Mechanics";

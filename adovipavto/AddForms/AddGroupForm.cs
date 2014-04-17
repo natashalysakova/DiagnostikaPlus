@@ -13,10 +13,10 @@ namespace adovipavto.AddForms
 {
     public partial class AddGroupForm : Form
     {
-        private readonly VipAvtoSet _set;
+        private readonly NewVipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public AddGroupForm(VipAvtoSet set)
+        public AddGroupForm(NewVipAvtoSet set)
         {
             _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
@@ -95,17 +95,12 @@ namespace adovipavto.AddForms
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < checkedListBox1.Items.Count; i++)
             {
                 checkedListBox1.SetItemChecked(i, true);
-            }
+            }           
         }
 
         private void button4_Click(object sender, EventArgs e)

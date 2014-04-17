@@ -49,7 +49,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 20;
+            this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label1
@@ -79,7 +79,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SplashScreen";
             this.UseWaitCursor = true;
-            this.Load += new System.EventHandler(this.SplashScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -8,11 +8,11 @@ namespace adovipavto
 {
     public partial class Search : Form
     {
-        private readonly VipAvtoSet _set;
+        private readonly NewVipAvtoSet _set;
         private PrintProtocolDocument _document;
         private PrintProtocolDocument _document2;
 
-        public Search(VipAvtoSet set)
+        public Search(NewVipAvtoSet set)
         {
             _set = set;
             InitializeComponent();
@@ -25,11 +25,11 @@ namespace adovipavto
                 string blank = label80.Text + maskedTextBox1.Text;
 
 
-                VipAvtoSet.ProtocolsRow row = _set.GetProtocolByBlankId(blank);
+                NewVipAvtoSet.ProtocolsRow row = _set.GetProtocolByBlankId(blank);
 
                 if (row != null)
                 {
-                    VipAvtoSet.MesuresRow[] mesures = row.GetMesuresRows();
+                    NewVipAvtoSet.MesuresRow[] mesures = row.GetMesuresRows();
                     _document = new PrintProtocolDocument(row, mesures, _set);
                     printPreviewControl1.Document = _document;
 
@@ -151,8 +151,8 @@ namespace adovipavto
 
                 var newProtocolId =
                     (int) dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
-                VipAvtoSet.ProtocolsRow protocol = (VipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
-                VipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+                NewVipAvtoSet.ProtocolsRow protocol = (NewVipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+                NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
                 _document2 = new PrintProtocolDocument(protocol, mesures, _set);
                 printPreviewControl2.Document = _document2;
@@ -168,8 +168,8 @@ namespace adovipavto
 
                 var newProtocolId =
                     (int) dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
-                VipAvtoSet.ProtocolsRow protocol = (VipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
-                VipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+                NewVipAvtoSet.ProtocolsRow protocol = (NewVipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+                NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
                 new ProtocolReportForm(protocol, mesures, _set).ShowDialog();
             }
@@ -177,8 +177,8 @@ namespace adovipavto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            VipAvtoSet.ProtocolsRow protocol = _set.GetProtocolByBlankId(label80.Text + maskedTextBox1.Text);
-            VipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+            NewVipAvtoSet.ProtocolsRow protocol = _set.GetProtocolByBlankId(label80.Text + maskedTextBox1.Text);
+            NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
             new ProtocolReportForm(protocol, mesures, _set).ShowDialog();
         }

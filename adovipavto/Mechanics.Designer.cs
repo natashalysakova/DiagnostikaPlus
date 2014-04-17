@@ -32,14 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mechanics));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.mechanicIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fatherNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StateString = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mechanicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vipAvtoSet = new adovipavto.VipAvtoSet();
+            this.NewVipAvtoSet = new adovipavto.NewVipAvtoSet();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -49,12 +43,18 @@
             this.lockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.idMechanic = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fatherNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StateString = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mechanicsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vipAvtoSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewVipAvtoSet)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -82,12 +82,12 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.mechanicIDDataGridViewTextBoxColumn,
+            this.idMechanic,
             this.lastNameDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.fatherNameDataGridViewTextBoxColumn,
-            this.StateString,
-            this.State});
+            this.State,
+            this.StateString});
             this.dataGridView1.DataSource = this.mechanicsBindingSource;
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.MultiSelect = false;
@@ -99,56 +99,15 @@
             this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
-            // mechanicIDDataGridViewTextBoxColumn
-            // 
-            this.mechanicIDDataGridViewTextBoxColumn.DataPropertyName = "MechanicID";
-            resources.ApplyResources(this.mechanicIDDataGridViewTextBoxColumn, "mechanicIDDataGridViewTextBoxColumn");
-            this.mechanicIDDataGridViewTextBoxColumn.Name = "mechanicIDDataGridViewTextBoxColumn";
-            this.mechanicIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            resources.ApplyResources(this.lastNameDataGridViewTextBoxColumn, "lastNameDataGridViewTextBoxColumn");
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            resources.ApplyResources(this.nameDataGridViewTextBoxColumn, "nameDataGridViewTextBoxColumn");
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fatherNameDataGridViewTextBoxColumn
-            // 
-            this.fatherNameDataGridViewTextBoxColumn.DataPropertyName = "FatherName";
-            resources.ApplyResources(this.fatherNameDataGridViewTextBoxColumn, "fatherNameDataGridViewTextBoxColumn");
-            this.fatherNameDataGridViewTextBoxColumn.Name = "fatherNameDataGridViewTextBoxColumn";
-            this.fatherNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // StateString
-            // 
-            resources.ApplyResources(this.StateString, "StateString");
-            this.StateString.Name = "StateString";
-            this.StateString.ReadOnly = true;
-            // 
-            // State
-            // 
-            this.State.DataPropertyName = "State";
-            resources.ApplyResources(this.State, "State");
-            this.State.Name = "State";
-            this.State.ReadOnly = true;
-            // 
             // mechanicsBindingSource
             // 
             this.mechanicsBindingSource.DataMember = "Mechanics";
-            this.mechanicsBindingSource.DataSource = this.vipAvtoSet;
+            this.mechanicsBindingSource.DataSource = this.NewVipAvtoSet;
             // 
-            // vipAvtoSet
+            // NewVipAvtoSet
             // 
-            this.vipAvtoSet.DataSetName = "VipAvtoSet";
-            this.vipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.NewVipAvtoSet.DataSetName = "NewVipAvtoSet";
+            this.NewVipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStrip1
             // 
@@ -218,6 +177,47 @@
             resources.ApplyResources(this.addToolStripMenuItem, "addToolStripMenuItem");
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
+            // idMechanic
+            // 
+            this.idMechanic.DataPropertyName = "IdMechanic";
+            resources.ApplyResources(this.idMechanic, "idMechanic");
+            this.idMechanic.Name = "idMechanic";
+            this.idMechanic.ReadOnly = true;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            resources.ApplyResources(this.lastNameDataGridViewTextBoxColumn, "lastNameDataGridViewTextBoxColumn");
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            resources.ApplyResources(this.nameDataGridViewTextBoxColumn, "nameDataGridViewTextBoxColumn");
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fatherNameDataGridViewTextBoxColumn
+            // 
+            this.fatherNameDataGridViewTextBoxColumn.DataPropertyName = "FatherName";
+            resources.ApplyResources(this.fatherNameDataGridViewTextBoxColumn, "fatherNameDataGridViewTextBoxColumn");
+            this.fatherNameDataGridViewTextBoxColumn.Name = "fatherNameDataGridViewTextBoxColumn";
+            this.fatherNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // State
+            // 
+            this.State.DataPropertyName = "State";
+            resources.ApplyResources(this.State, "State");
+            this.State.Name = "State";
+            this.State.ReadOnly = true;
+            // 
+            // StateString
+            // 
+            resources.ApplyResources(this.StateString, "StateString");
+            this.StateString.Name = "StateString";
+            this.StateString.ReadOnly = true;
+            // 
             // Mechanics
             // 
             resources.ApplyResources(this, "$this");
@@ -232,7 +232,7 @@
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mechanicsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vipAvtoSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewVipAvtoSet)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -249,17 +249,17 @@
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource mechanicsBindingSource;
-        private VipAvtoSet vipAvtoSet;
+        private NewVipAvtoSet NewVipAvtoSet;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lockToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mechanicIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idMechanic;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fatherNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StateString;
         private System.Windows.Forms.DataGridViewTextBoxColumn State;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StateString;
     }
 }

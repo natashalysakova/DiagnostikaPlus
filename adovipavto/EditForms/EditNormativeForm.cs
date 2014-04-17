@@ -11,11 +11,11 @@ namespace adovipavto.EditForms
 {
     public partial class EditNormativeForm : Form
     {
-        private readonly VipAvtoSet.NormativesRow _selected;
-        private readonly VipAvtoSet _set;
+        private readonly NewVipAvtoSet.NormativesRow _selected;
+        private readonly NewVipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public EditNormativeForm(VipAvtoSet.NormativesRow selected, VipAvtoSet set)
+        public EditNormativeForm(NewVipAvtoSet.NormativesRow selected, NewVipAvtoSet set)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
@@ -33,9 +33,10 @@ namespace adovipavto.EditForms
         {
             if (errorProvider1.GetError(minTextBox) == "" & errorProvider1.GetError(maxTextBox) == "")
             {
-                _set.EditNormative((int) _selected["NormativeID"], groupTextBox.Text,
+                _set.EditNormative(_selected.IdNormative, groupTextBox.Text,
                     mesureTextBox.Text, Convert.ToDouble(minTextBox.Text), Convert.ToDouble(maxTextBox.Text));
                 DialogResult = DialogResult.OK;
+               
             }
         }
 
@@ -70,21 +71,20 @@ namespace adovipavto.EditForms
 
         private void EditNormativeForm_Load(object sender, EventArgs e)
         {
-            var id = (int) _selected["NormativeID"];
+            var id = _selected.IdNormative;
 
-            foreach (DataRow item in _set.Tables[Constants.NormativesTableName].Rows)
+            foreach (NewVipAvtoSet.NormativesRow item in _set.Normatives.Rows)
             {
-                if (Convert.ToInt32(item["NormativeID"]) == id)
+                if (item.IdNormative == id)
                 {
-                    minTextBox.Text = item["MinValue"].ToString();
-                    maxTextBox.Text = item["MaxValue"].ToString();
+                    minTextBox.Text = item.MinValue.ToString();
+                    maxTextBox.Text = item.MaxValue.ToString();
                 }
             }
 
-            mesureTextBox.Text = new Normatives()[(int) _selected["Tag"]];
+            mesureTextBox.Text = new Normatives()[_selected.Tag];
 
-            groupTextBox.Text =
-                _set.GroupTitle((int) _selected["IDGroup"]);
+            groupTextBox.Text = _set.GetGroupTitle(_selected.GroupId);
         }
     }
 }

@@ -50,7 +50,7 @@
             this.nextDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.visualCheckDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.protocolsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vipAvtoSet = new adovipavto.VipAvtoSet();
+            this.NewVipAvtoSet = new adovipavto.NewVipAvtoSet();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -64,7 +64,7 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.protocolsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vipAvtoSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewVipAvtoSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -233,12 +233,12 @@
             // protocolsBindingSource
             // 
             this.protocolsBindingSource.DataMember = "Protocols";
-            this.protocolsBindingSource.DataSource = this.vipAvtoSet;
+            this.protocolsBindingSource.DataSource = this.NewVipAvtoSet;
             // 
-            // vipAvtoSet
+            // NewVipAvtoSet
             // 
-            this.vipAvtoSet.DataSetName = "VipAvtoSet";
-            this.vipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.NewVipAvtoSet.DataSetName = "NewVipAvtoSet";
+            this.NewVipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // radioButton5
             // 
@@ -315,7 +315,7 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.protocolsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vipAvtoSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewVipAvtoSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,7 +330,7 @@
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource protocolsBindingSource;
-        private VipAvtoSet vipAvtoSet;
+        private NewVipAvtoSet NewVipAvtoSet;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;

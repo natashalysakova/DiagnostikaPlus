@@ -12,10 +12,10 @@ namespace adovipavto.EditForms
 {
     public partial class EditMechanicForm : Form
     {
-        private readonly VipAvtoSet.MechanicsRow _selected;
-        private readonly VipAvtoSet _set;
+        private readonly NewVipAvtoSet.MechanicsRow _selected;
+        private readonly NewVipAvtoSet _set;
 
-        public EditMechanicForm(VipAvtoSet.MechanicsRow row, VipAvtoSet set)
+        public EditMechanicForm(NewVipAvtoSet.MechanicsRow row, NewVipAvtoSet set)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
@@ -39,7 +39,7 @@ namespace adovipavto.EditForms
         {
             if (ValidateChildren())
             {
-                _set.EditMechanic((int) _selected.MechanicID, nameTxtBx.Text, lnTxtBx.Text, fnTxtBx.Text);
+                _set.EditMechanic((int) _selected.IdMechanic, nameTxtBx.Text, lnTxtBx.Text, fnTxtBx.Text);
                 DialogResult = DialogResult.OK;
             }
             else

@@ -17,10 +17,10 @@ namespace adovipavto.AddForms
 {
     public partial class AddNormativeForm : Form
     {
-        private readonly VipAvtoSet _set;
+        private readonly NewVipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public AddNormativeForm(VipAvtoSet set)
+        public AddNormativeForm(NewVipAvtoSet set)
         {
             _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
@@ -119,8 +119,8 @@ namespace adovipavto.AddForms
         private void NewNormative_Load(object sender, EventArgs e)
         {
             checkedListBox1.DataSource =
-                (from DataRow item in _set.Tables[Constants.GroupTableName].Rows
-                    select _set.GroupTitle((int) item["GroupID"])).ToList();
+                (from NewVipAvtoSet.GroupsRow item in _set.Groups.Rows
+                    select item.Title).ToList();
 
 
             //comboBox2.DataSource = Program.NormasTitles.Select(item => item.Value).ToList();

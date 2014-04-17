@@ -74,6 +74,7 @@
             resources.ApplyResources(this.maskedTextBox1, "maskedTextBox1");
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.PasswordChar = '*';
+            this.maskedTextBox1.Enter += new System.EventHandler(this.maskedTextBox1_Enter);
             // 
             // button2
             // 

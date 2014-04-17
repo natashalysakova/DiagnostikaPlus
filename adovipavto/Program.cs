@@ -14,7 +14,7 @@ namespace adovipavto
         static readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
-        public static VipAvtoSet VipAvtoDataSet;
+        public static NewVipAvtoSet VipAvtoDataSet;
         //public static Dictionary<Normatives, string> NormasTitles;
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace adovipavto
             t.Join();
 
 
-            VipAvtoDataSet = new VipAvtoSet();
+            VipAvtoDataSet = new NewVipAvtoSet();
 
             try
             {

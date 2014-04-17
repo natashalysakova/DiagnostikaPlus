@@ -13,11 +13,11 @@ namespace adovipavto.EditForms
     public partial class EditGroupForm : Form
     {
 
-        private readonly VipAvtoSet.GroupRow _selectedRow;
-        private readonly VipAvtoSet _set;
+        private readonly NewVipAvtoSet.GroupsRow _selectedRow;
+        private readonly NewVipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public EditGroupForm(VipAvtoSet.GroupRow select, VipAvtoSet set)
+        public EditGroupForm(NewVipAvtoSet.GroupsRow select, NewVipAvtoSet set)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
@@ -34,7 +34,7 @@ namespace adovipavto.EditForms
 
         private void EditGroupForm_Load(object sender, EventArgs e)
         {
-            textBox1.Text = _set.GroupTitle(_selectedRow.GroupID);
+            textBox1.Text = _selectedRow.Title;
 
 
             categoryComboBox.DataSource = Enum.GetValues(typeof (Category));
@@ -61,7 +61,7 @@ namespace adovipavto.EditForms
                 categoryComboBox.SelectedItem.ToString(),
                 new Engines().GetEngineIndex(engineComboBox.SelectedItem.ToString()), radioButton1.Checked))
             {
-                _set.EditGroup(Convert.ToInt32(_selectedRow.GroupID),
+                _set.EditGroup(Convert.ToInt32(_selectedRow.IdGroup),
                     Convert.ToInt32(yearComboBox.SelectedItem), categoryComboBox.SelectedItem.ToString(),
                     new Engines().GetEngineIndex(engineComboBox.SelectedItem.ToString()), radioButton1.Checked);
 

@@ -15,10 +15,10 @@ namespace adovipavto
 {
     public partial class OperatorsForm : Form
     {
-        private readonly VipAvtoSet _set;
+        private readonly NewVipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public OperatorsForm(VipAvtoSet set)
+        public OperatorsForm(NewVipAvtoSet set)
         {
             _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
@@ -54,7 +54,7 @@ namespace adovipavto
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {
-                    var id = (int) dataGridView1.SelectedRows[0].Cells["operatorIdDataGridViewTextBoxColumn"].Value;
+                    var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
                     if (AdministratorsCount() == 1 &&
                         (int) dataGridView1.SelectedRows[0].Cells["rightDataGridViewTextBoxColumn"].Value ==
@@ -106,7 +106,7 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            VipAvtoSet.OperatorsRow row = (VipAvtoSet.OperatorsRow) _set.GetRowById(Constants.OperatorsTableName, id);
+            NewVipAvtoSet.OperatorsRow row = (NewVipAvtoSet.OperatorsRow) _set.GetRowById(Constants.OperatorsTableName, id);
 
 
             if (new EditOperatorForm(row, _set).ShowDialog() == DialogResult.OK)

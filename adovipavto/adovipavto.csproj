@@ -199,6 +199,10 @@
     <Compile Include="Mechanics.Designer.cs">
       <DependentUpon>Mechanics.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewVipAvtoSet.cs">
+      <DependentUpon>NewVipAvtoSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="NewVipAvtoSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -279,15 +283,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StringResource.uk-UA.resx</DependentUpon>
-    </Compile>
-    <Compile Include="VipAvtoSet.cs">
-      <DependentUpon>VipAvtoSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="VipAvtoSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VipAvtoSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
@@ -512,17 +507,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="VipAvtoSet.xsc">
-      <DependentUpon>VipAvtoSet.xsd</DependentUpon>
-    </None>
-    <None Include="VipAvtoSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>VipAvtoSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="VipAvtoSet.xss">
-      <DependentUpon>VipAvtoSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

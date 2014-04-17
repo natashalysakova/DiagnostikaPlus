@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OperatorsForm));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.operatorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,7 +40,7 @@
             this.rightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RightsString = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.operatorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vipAvtoSet = new adovipavto.VipAvtoSet();
+            this.NewVipAvtoSet = new adovipavto.NewVipAvtoSet();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -55,7 +55,7 @@
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.operatorsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vipAvtoSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewVipAvtoSet)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -78,13 +78,12 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.operatorIdDataGridViewTextBoxColumn,
+            this.Column1,
             this.nameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
             this.loginDataGridViewTextBoxColumn,
@@ -102,12 +101,12 @@
             this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
-            // operatorIdDataGridViewTextBoxColumn
+            // Column1
             // 
-            this.operatorIdDataGridViewTextBoxColumn.DataPropertyName = "OperatorId";
-            resources.ApplyResources(this.operatorIdDataGridViewTextBoxColumn, "operatorIdDataGridViewTextBoxColumn");
-            this.operatorIdDataGridViewTextBoxColumn.Name = "operatorIdDataGridViewTextBoxColumn";
-            this.operatorIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Column1.DataPropertyName = "IdOperator";
+            resources.ApplyResources(this.Column1, "Column1");
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -153,12 +152,12 @@
             // operatorsBindingSource
             // 
             this.operatorsBindingSource.DataMember = "Operators";
-            this.operatorsBindingSource.DataSource = this.vipAvtoSet;
+            this.operatorsBindingSource.DataSource = this.NewVipAvtoSet;
             // 
-            // vipAvtoSet
+            // NewVipAvtoSet
             // 
-            this.vipAvtoSet.DataSetName = "VipAvtoSet";
-            this.vipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.NewVipAvtoSet.DataSetName = "NewVipAvtoSet";
+            this.NewVipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStrip1
             // 
@@ -242,7 +241,7 @@
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.operatorsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vipAvtoSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewVipAvtoSet)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -261,19 +260,19 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.BindingSource operatorsBindingSource;
-        private VipAvtoSet vipAvtoSet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn operatorIdDataGridViewTextBoxColumn;
+        private NewVipAvtoSet NewVipAvtoSet;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rightDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn RightsString;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
     }
 }
 

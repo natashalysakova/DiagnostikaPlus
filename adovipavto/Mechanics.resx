@@ -129,11 +129,14 @@
   <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="mechanicIDDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>MechanicID</value>
+  <metadata name="idMechanic.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="idMechanic.HeaderText" xml:space="preserve">
+    <value>idMechanic</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="mechanicIDDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+  <data name="idMechanic.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="lastNameDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
@@ -145,12 +148,6 @@
   <data name="fatherNameDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>FatherName</value>
   </data>
-  <metadata name="StateString.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="StateString.HeaderText" xml:space="preserve">
-    <value>Column1</value>
-  </data>
   <metadata name="State.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -160,10 +157,16 @@
   <data name="State.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <metadata name="StateString.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="StateString.HeaderText" xml:space="preserve">
+    <value>StateString</value>
+  </data>
   <metadata name="mechanicsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>232, 17</value>
   </metadata>
-  <metadata name="vipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="NewVipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>122, 17</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
@@ -1596,53 +1599,17 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Mechanics</value>
   </data>
-  <data name="&gt;&gt;mechanicIDDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>mechanicIDDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;mechanicIDDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lastNameDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>lastNameDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;lastNameDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nameDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>nameDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;nameDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fatherNameDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>fatherNameDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;fatherNameDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StateString.Name" xml:space="preserve">
-    <value>StateString</value>
-  </data>
-  <data name="&gt;&gt;StateString.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;State.Name" xml:space="preserve">
-    <value>State</value>
-  </data>
-  <data name="&gt;&gt;State.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;mechanicsBindingSource.Name" xml:space="preserve">
     <value>mechanicsBindingSource</value>
   </data>
   <data name="&gt;&gt;mechanicsBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;vipAvtoSet.Name" xml:space="preserve">
-    <value>vipAvtoSet</value>
+  <data name="&gt;&gt;NewVipAvtoSet.Name" xml:space="preserve">
+    <value>NewVipAvtoSet</value>
   </data>
-  <data name="&gt;&gt;vipAvtoSet.Type" xml:space="preserve">
-    <value>adovipavto.VipAvtoSet, VipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;NewVipAvtoSet.Type" xml:space="preserve">
+    <value>adovipavto.NewVipAvtoSet, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
     <value>toolStripButton1</value>
@@ -1685,6 +1652,42 @@
   </data>
   <data name="&gt;&gt;addToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;idMechanic.Name" xml:space="preserve">
+    <value>idMechanic</value>
+  </data>
+  <data name="&gt;&gt;idMechanic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lastNameDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>lastNameDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;lastNameDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nameDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>nameDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;nameDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fatherNameDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>fatherNameDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;fatherNameDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;State.Name" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="&gt;&gt;State.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StateString.Name" xml:space="preserve">
+    <value>StateString</value>
+  </data>
+  <data name="&gt;&gt;StateString.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Mechanics</value>

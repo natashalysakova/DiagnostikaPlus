@@ -11,6 +11,7 @@ namespace adovipavto
 {
     public sealed partial class SplashScreen : Form
     {
+
         public SplashScreen()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
@@ -21,18 +22,12 @@ namespace adovipavto
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            progressBar1.Increment(1);
-
-            if (progressBar1.Value == progressBar1.Maximum)
+            if (progressBar1.Value < progressBar1.Maximum)
+                progressBar1.Value++;
+            else
             {
-                timer1.Stop();
                 Close();
             }
-        }
-
-        private void SplashScreen_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
