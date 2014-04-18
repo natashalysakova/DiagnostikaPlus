@@ -2,6 +2,7 @@
 using System.Reflection;
 using System.Resources;
 using System.Windows.Forms;
+using adovipavto.NewVipAvtoSetTableAdapters;
 
 namespace adovipavto
 {
@@ -9,10 +10,12 @@ namespace adovipavto
     {
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
         private NewVipAvtoSet _set;
+        OperatorsTableAdapter adapter = new OperatorsTableAdapter();
         public Auth(NewVipAvtoSet set)
         {
             InitializeComponent();
             _set = set;
+            adapter.Fill(_set.Operators);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -56,6 +59,11 @@ namespace adovipavto
         private void maskedTextBox1_Enter(object sender, EventArgs e)
         {
             maskedTextBox1.SelectAll();
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            textBox1.SelectAll();
         }
     }
 }

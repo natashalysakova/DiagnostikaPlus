@@ -36,6 +36,19 @@ namespace adovipavto
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idProtocolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.blankNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nextDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mechanicIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.operatorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.techPhotoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.resultDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visualCheckDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.gBODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.protocolsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.newVipAvtoSet = new adovipavto.NewVipAvtoSet();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.cpyBtn = new System.Windows.Forms.ToolStripButton();
@@ -56,30 +69,17 @@ namespace adovipavto
             this.просмотрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.печатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.newVipAvtoSet = new adovipavto.NewVipAvtoSet();
-            this.protocolsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.protocolsTableAdapter = new adovipavto.NewVipAvtoSetTableAdapters.ProtocolsTableAdapter();
-            this.idProtocolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.blankNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nextDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resultDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.operatorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mechanicIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.techPhotoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.visualCheckDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.gBODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protocolsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.protocolsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -128,21 +128,111 @@ namespace adovipavto
             this.groupIdDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
             this.nextDataDataGridViewTextBoxColumn,
-            this.resultDataGridViewCheckBoxColumn,
-            this.operatorIdDataGridViewTextBoxColumn,
             this.mechanicIdDataGridViewTextBoxColumn,
+            this.operatorIdDataGridViewTextBoxColumn,
             this.techPhotoDataGridViewImageColumn,
+            this.resultDataGridViewCheckBoxColumn,
             this.visualCheckDataGridViewCheckBoxColumn,
             this.gBODataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.protocolsBindingSource;
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             this.dataGridView1.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView1_RowPrePaint);
             this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
+            // 
+            // idProtocolDataGridViewTextBoxColumn
+            // 
+            this.idProtocolDataGridViewTextBoxColumn.DataPropertyName = "IdProtocol";
+            resources.ApplyResources(this.idProtocolDataGridViewTextBoxColumn, "idProtocolDataGridViewTextBoxColumn");
+            this.idProtocolDataGridViewTextBoxColumn.Name = "idProtocolDataGridViewTextBoxColumn";
+            this.idProtocolDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // blankNumberDataGridViewTextBoxColumn
+            // 
+            this.blankNumberDataGridViewTextBoxColumn.DataPropertyName = "BlankNumber";
+            resources.ApplyResources(this.blankNumberDataGridViewTextBoxColumn, "blankNumberDataGridViewTextBoxColumn");
+            this.blankNumberDataGridViewTextBoxColumn.Name = "blankNumberDataGridViewTextBoxColumn";
+            this.blankNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // groupIdDataGridViewTextBoxColumn
+            // 
+            this.groupIdDataGridViewTextBoxColumn.DataPropertyName = "GroupId";
+            resources.ApplyResources(this.groupIdDataGridViewTextBoxColumn, "groupIdDataGridViewTextBoxColumn");
+            this.groupIdDataGridViewTextBoxColumn.Name = "groupIdDataGridViewTextBoxColumn";
+            this.groupIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            resources.ApplyResources(this.dateDataGridViewTextBoxColumn, "dateDataGridViewTextBoxColumn");
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nextDataDataGridViewTextBoxColumn
+            // 
+            this.nextDataDataGridViewTextBoxColumn.DataPropertyName = "NextData";
+            resources.ApplyResources(this.nextDataDataGridViewTextBoxColumn, "nextDataDataGridViewTextBoxColumn");
+            this.nextDataDataGridViewTextBoxColumn.Name = "nextDataDataGridViewTextBoxColumn";
+            this.nextDataDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mechanicIdDataGridViewTextBoxColumn
+            // 
+            this.mechanicIdDataGridViewTextBoxColumn.DataPropertyName = "MechanicId";
+            resources.ApplyResources(this.mechanicIdDataGridViewTextBoxColumn, "mechanicIdDataGridViewTextBoxColumn");
+            this.mechanicIdDataGridViewTextBoxColumn.Name = "mechanicIdDataGridViewTextBoxColumn";
+            this.mechanicIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // operatorIdDataGridViewTextBoxColumn
+            // 
+            this.operatorIdDataGridViewTextBoxColumn.DataPropertyName = "OperatorId";
+            resources.ApplyResources(this.operatorIdDataGridViewTextBoxColumn, "operatorIdDataGridViewTextBoxColumn");
+            this.operatorIdDataGridViewTextBoxColumn.Name = "operatorIdDataGridViewTextBoxColumn";
+            this.operatorIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // techPhotoDataGridViewImageColumn
+            // 
+            this.techPhotoDataGridViewImageColumn.DataPropertyName = "TechPhoto";
+            resources.ApplyResources(this.techPhotoDataGridViewImageColumn, "techPhotoDataGridViewImageColumn");
+            this.techPhotoDataGridViewImageColumn.Name = "techPhotoDataGridViewImageColumn";
+            this.techPhotoDataGridViewImageColumn.ReadOnly = true;
+            // 
+            // resultDataGridViewCheckBoxColumn
+            // 
+            this.resultDataGridViewCheckBoxColumn.DataPropertyName = "Result";
+            resources.ApplyResources(this.resultDataGridViewCheckBoxColumn, "resultDataGridViewCheckBoxColumn");
+            this.resultDataGridViewCheckBoxColumn.Name = "resultDataGridViewCheckBoxColumn";
+            this.resultDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.resultDataGridViewCheckBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.resultDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // visualCheckDataGridViewCheckBoxColumn
+            // 
+            this.visualCheckDataGridViewCheckBoxColumn.DataPropertyName = "VisualCheck";
+            resources.ApplyResources(this.visualCheckDataGridViewCheckBoxColumn, "visualCheckDataGridViewCheckBoxColumn");
+            this.visualCheckDataGridViewCheckBoxColumn.Name = "visualCheckDataGridViewCheckBoxColumn";
+            this.visualCheckDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // gBODataGridViewTextBoxColumn
+            // 
+            this.gBODataGridViewTextBoxColumn.DataPropertyName = "GBO";
+            resources.ApplyResources(this.gBODataGridViewTextBoxColumn, "gBODataGridViewTextBoxColumn");
+            this.gBODataGridViewTextBoxColumn.Name = "gBODataGridViewTextBoxColumn";
+            this.gBODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // protocolsBindingSource
+            // 
+            this.protocolsBindingSource.DataMember = "Protocols";
+            this.protocolsBindingSource.DataSource = this.newVipAvtoSet;
+            // 
+            // newVipAvtoSet
+            // 
+            this.newVipAvtoSet.DataSetName = "NewVipAvtoSet";
+            this.newVipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStrip2
             // 
@@ -299,88 +389,15 @@ namespace adovipavto
             resources.ApplyResources(this.печатьToolStripMenuItem, "печатьToolStripMenuItem");
             this.печатьToolStripMenuItem.Click += new System.EventHandler(this.печатьToolStripMenuItem_Click);
             // 
-            // newVipAvtoSet
+            // timer1
             // 
-            this.newVipAvtoSet.DataSetName = "NewVipAvtoSet";
-            this.newVipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // protocolsBindingSource
-            // 
-            this.protocolsBindingSource.DataMember = "Protocols";
-            this.protocolsBindingSource.DataSource = this.newVipAvtoSet;
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // protocolsTableAdapter
             // 
             this.protocolsTableAdapter.ClearBeforeFill = true;
-            // 
-            // idProtocolDataGridViewTextBoxColumn
-            // 
-            this.idProtocolDataGridViewTextBoxColumn.DataPropertyName = "IdProtocol";
-            resources.ApplyResources(this.idProtocolDataGridViewTextBoxColumn, "idProtocolDataGridViewTextBoxColumn");
-            this.idProtocolDataGridViewTextBoxColumn.Name = "idProtocolDataGridViewTextBoxColumn";
-            this.idProtocolDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // blankNumberDataGridViewTextBoxColumn
-            // 
-            this.blankNumberDataGridViewTextBoxColumn.DataPropertyName = "BlankNumber";
-            resources.ApplyResources(this.blankNumberDataGridViewTextBoxColumn, "blankNumberDataGridViewTextBoxColumn");
-            this.blankNumberDataGridViewTextBoxColumn.Name = "blankNumberDataGridViewTextBoxColumn";
-            // 
-            // groupIdDataGridViewTextBoxColumn
-            // 
-            this.groupIdDataGridViewTextBoxColumn.DataPropertyName = "GroupId";
-            resources.ApplyResources(this.groupIdDataGridViewTextBoxColumn, "groupIdDataGridViewTextBoxColumn");
-            this.groupIdDataGridViewTextBoxColumn.Name = "groupIdDataGridViewTextBoxColumn";
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            resources.ApplyResources(this.dateDataGridViewTextBoxColumn, "dateDataGridViewTextBoxColumn");
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            // 
-            // nextDataDataGridViewTextBoxColumn
-            // 
-            this.nextDataDataGridViewTextBoxColumn.DataPropertyName = "NextData";
-            resources.ApplyResources(this.nextDataDataGridViewTextBoxColumn, "nextDataDataGridViewTextBoxColumn");
-            this.nextDataDataGridViewTextBoxColumn.Name = "nextDataDataGridViewTextBoxColumn";
-            // 
-            // resultDataGridViewCheckBoxColumn
-            // 
-            this.resultDataGridViewCheckBoxColumn.DataPropertyName = "Result";
-            resources.ApplyResources(this.resultDataGridViewCheckBoxColumn, "resultDataGridViewCheckBoxColumn");
-            this.resultDataGridViewCheckBoxColumn.Name = "resultDataGridViewCheckBoxColumn";
-            this.resultDataGridViewCheckBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.resultDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // operatorIdDataGridViewTextBoxColumn
-            // 
-            this.operatorIdDataGridViewTextBoxColumn.DataPropertyName = "OperatorId";
-            resources.ApplyResources(this.operatorIdDataGridViewTextBoxColumn, "operatorIdDataGridViewTextBoxColumn");
-            this.operatorIdDataGridViewTextBoxColumn.Name = "operatorIdDataGridViewTextBoxColumn";
-            // 
-            // mechanicIdDataGridViewTextBoxColumn
-            // 
-            this.mechanicIdDataGridViewTextBoxColumn.DataPropertyName = "MechanicId";
-            resources.ApplyResources(this.mechanicIdDataGridViewTextBoxColumn, "mechanicIdDataGridViewTextBoxColumn");
-            this.mechanicIdDataGridViewTextBoxColumn.Name = "mechanicIdDataGridViewTextBoxColumn";
-            // 
-            // techPhotoDataGridViewImageColumn
-            // 
-            this.techPhotoDataGridViewImageColumn.DataPropertyName = "TechPhoto";
-            resources.ApplyResources(this.techPhotoDataGridViewImageColumn, "techPhotoDataGridViewImageColumn");
-            this.techPhotoDataGridViewImageColumn.Name = "techPhotoDataGridViewImageColumn";
-            // 
-            // visualCheckDataGridViewCheckBoxColumn
-            // 
-            this.visualCheckDataGridViewCheckBoxColumn.DataPropertyName = "VisualCheck";
-            resources.ApplyResources(this.visualCheckDataGridViewCheckBoxColumn, "visualCheckDataGridViewCheckBoxColumn");
-            this.visualCheckDataGridViewCheckBoxColumn.Name = "visualCheckDataGridViewCheckBoxColumn";
-            // 
-            // gBODataGridViewTextBoxColumn
-            // 
-            this.gBODataGridViewTextBoxColumn.DataPropertyName = "GBO";
-            resources.ApplyResources(this.gBODataGridViewTextBoxColumn, "gBODataGridViewTextBoxColumn");
-            this.gBODataGridViewTextBoxColumn.Name = "gBODataGridViewTextBoxColumn";
             // 
             // MainForm
             // 
@@ -402,11 +419,11 @@ namespace adovipavto
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.protocolsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.protocolsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -445,10 +462,10 @@ namespace adovipavto
         private DataGridViewTextBoxColumn groupIdDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nextDataDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn resultDataGridViewCheckBoxColumn;
-        private DataGridViewTextBoxColumn operatorIdDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn mechanicIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn operatorIdDataGridViewTextBoxColumn;
         private DataGridViewImageColumn techPhotoDataGridViewImageColumn;
+        private DataGridViewTextBoxColumn resultDataGridViewCheckBoxColumn;
         private DataGridViewCheckBoxColumn visualCheckDataGridViewCheckBoxColumn;
         private DataGridViewTextBoxColumn gBODataGridViewTextBoxColumn;
     }

@@ -260,7 +260,7 @@ namespace adovipavto.Classes
             DrawHeader(g, normalFont, 31 * LineHeight);
 
             g.DrawString(norm[22], normalFont, Brushes.Black, new PointF(20F, 32 * LineHeight));
-            DrawPictorgam(22, g, 32 * LineHeight, normalFont, 23);
+            DrawPictorgam(22, g, 32 * LineHeight, normalFont, 22);
 
 
             g.DrawString(_rm.GetString("GGBS"), boldFont, Brushes.Black, new PointF(40F, 33 * LineHeight));

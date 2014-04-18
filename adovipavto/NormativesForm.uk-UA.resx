@@ -117,21 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="NormTitle.HeaderText" xml:space="preserve">
+  <data name="tagDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Назва</value>
   </data>
   <data name="minValueDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Мінімальне значення</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="minValueDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>158</value>
-  </data>
   <data name="maxValueDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Максимальне значення</value>
-  </data>
-  <data name="maxValueDataGridViewTextBoxColumn.Width" type="System.Int32, mscorlib">
-    <value>172</value>
   </data>
   <data name="toolStripButton1.Text" xml:space="preserve">
     <value>Додати норматив</value>
@@ -142,9 +135,6 @@
   <data name="toolStripButton3.Text" xml:space="preserve">
     <value>Видалити норматив</value>
   </data>
-  <data name="toolStripButton4.Text" xml:space="preserve">
-    <value>Видалити все</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 40</value>
@@ -153,7 +143,7 @@
     <value>Група</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>526, 43</value>
+    <value>486, 43</value>
   </data>
   <data name="добавитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 22</value>

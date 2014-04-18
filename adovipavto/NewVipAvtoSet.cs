@@ -109,7 +109,6 @@ namespace adovipavto
             {
                 _mechanicsTableAdapter.Update(Mechanics);
             }
-
         }
 
         public ProtocolsRow GetProtocolByBlankId(string blank)

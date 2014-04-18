@@ -139,15 +139,6 @@
   <data name="tagDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Tag</value>
   </data>
-  <data name="tagDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <metadata name="Title.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Title.HeaderText" xml:space="preserve">
-    <value>Title</value>
-  </data>
   <data name="minValueDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>MinValue</value>
   </data>
@@ -161,10 +152,10 @@
     <value>False</value>
   </data>
   <metadata name="normativesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>578, 17</value>
+    <value>411, 17</value>
   </metadata>
-  <metadata name="NewVipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>122, 17</value>
+  <metadata name="newVipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>277, 17</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -364,7 +355,7 @@
     <value>1</value>
   </data>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>423, 17</value>
+    <value>122, 17</value>
   </metadata>
   <data name="добавитьToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 22</value>
@@ -397,7 +388,7 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="normativesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>769, 17</value>
+    <value>602, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1915,10 +1906,10 @@
   <data name="&gt;&gt;normativesBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;NewVipAvtoSet.Name" xml:space="preserve">
-    <value>NewVipAvtoSet</value>
+  <data name="&gt;&gt;newVipAvtoSet.Name" xml:space="preserve">
+    <value>newVipAvtoSet</value>
   </data>
-  <data name="&gt;&gt;NewVipAvtoSet.Type" xml:space="preserve">
+  <data name="&gt;&gt;newVipAvtoSet.Type" xml:space="preserve">
     <value>adovipavto.NewVipAvtoSet, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
@@ -1997,12 +1988,6 @@
     <value>tagDataGridViewTextBoxColumn</value>
   </data>
   <data name="&gt;&gt;tagDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Title.Name" xml:space="preserve">
-    <value>Title</value>
-  </data>
-  <data name="&gt;&gt;Title.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;minValueDataGridViewTextBoxColumn.Name" xml:space="preserve">

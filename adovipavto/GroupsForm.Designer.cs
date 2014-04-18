@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroupsForm));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.carGroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.NewVipAvtoSet = new adovipavto.NewVipAvtoSet();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -43,20 +41,23 @@
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.IdGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.newVipAvtoSet = new adovipavto.NewVipAvtoSet();
+            this.groupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupsTableAdapter = new adovipavto.NewVipAvtoSetTableAdapters.GroupsTableAdapter();
+            this.idGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.engineTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.beforeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carGroupBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NewVipAvtoSet)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -83,14 +84,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdGroup,
+            this.idGroupDataGridViewTextBoxColumn,
             this.yearDataGridViewTextBoxColumn,
             this.categoryDataGridViewTextBoxColumn,
             this.engineTypeDataGridViewTextBoxColumn,
             this.beforeDataGridViewCheckBoxColumn,
-            this.Title});
+            this.titleDataGridViewTextBoxColumn});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataGridView1.DataSource = this.carGroupBindingSource;
+            this.dataGridView1.DataSource = this.groupsBindingSource;
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -100,16 +101,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
-            // 
-            // carGroupBindingSource
-            // 
-            this.carGroupBindingSource.DataMember = "Groups";
-            this.carGroupBindingSource.DataSource = this.NewVipAvtoSet;
-            // 
-            // NewVipAvtoSet
-            // 
-            this.NewVipAvtoSet.DataSetName = "NewVipAvtoSet";
-            this.NewVipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStrip1
             // 
@@ -177,12 +168,26 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // IdGroup
+            // newVipAvtoSet
             // 
-            this.IdGroup.DataPropertyName = "IdGroup";
-            resources.ApplyResources(this.IdGroup, "IdGroup");
-            this.IdGroup.Name = "IdGroup";
-            this.IdGroup.ReadOnly = true;
+            this.newVipAvtoSet.DataSetName = "NewVipAvtoSet";
+            this.newVipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // groupsBindingSource
+            // 
+            this.groupsBindingSource.DataMember = "Groups";
+            this.groupsBindingSource.DataSource = this.newVipAvtoSet;
+            // 
+            // groupsTableAdapter
+            // 
+            this.groupsTableAdapter.ClearBeforeFill = true;
+            // 
+            // idGroupDataGridViewTextBoxColumn
+            // 
+            this.idGroupDataGridViewTextBoxColumn.DataPropertyName = "IdGroup";
+            resources.ApplyResources(this.idGroupDataGridViewTextBoxColumn, "idGroupDataGridViewTextBoxColumn");
+            this.idGroupDataGridViewTextBoxColumn.Name = "idGroupDataGridViewTextBoxColumn";
+            this.idGroupDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // yearDataGridViewTextBoxColumn
             // 
@@ -212,12 +217,12 @@
             this.beforeDataGridViewCheckBoxColumn.Name = "beforeDataGridViewCheckBoxColumn";
             this.beforeDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
-            // Title
+            // titleDataGridViewTextBoxColumn
             // 
-            this.Title.DataPropertyName = "Title";
-            resources.ApplyResources(this.Title, "Title");
-            this.Title.Name = "Title";
-            this.Title.ReadOnly = true;
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            resources.ApplyResources(this.titleDataGridViewTextBoxColumn, "titleDataGridViewTextBoxColumn");
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // GroupsForm
             // 
@@ -228,17 +233,18 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GroupsForm";
+            this.Load += new System.EventHandler(this.GroupsForm_Load);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carGroupBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NewVipAvtoSet)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,23 +253,24 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private NewVipAvtoSet NewVipAvtoSet;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem нормативыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
-        private System.Windows.Forms.BindingSource carGroupBindingSource;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdGroup;
+        private NewVipAvtoSet newVipAvtoSet;
+        private System.Windows.Forms.BindingSource groupsBindingSource;
+        private NewVipAvtoSetTableAdapters.GroupsTableAdapter groupsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idGroupDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn engineTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn beforeDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
     }
 }

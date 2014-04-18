@@ -51,6 +51,7 @@
             // 
             resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             // 
             // label2
             // 

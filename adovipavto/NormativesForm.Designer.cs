@@ -33,7 +33,7 @@
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.normativesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.NewVipAvtoSet = new adovipavto.NewVipAvtoSet();
+            this.newVipAvtoSet = new adovipavto.NewVipAvtoSet();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -49,7 +49,6 @@
             this.normativesTableAdapter = new adovipavto.NewVipAvtoSetTableAdapters.NormativesTableAdapter();
             this.idNormativeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.minValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maxValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +57,7 @@
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.normativesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NewVipAvtoSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +87,6 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idNormativeDataGridViewTextBoxColumn,
             this.tagDataGridViewTextBoxColumn,
-            this.Title,
             this.minValueDataGridViewTextBoxColumn,
             this.maxValueDataGridViewTextBoxColumn,
             this.groupIdDataGridViewTextBoxColumn});
@@ -101,18 +99,19 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // normativesBindingSource
             // 
             this.normativesBindingSource.DataMember = "Normatives";
-            this.normativesBindingSource.DataSource = this.NewVipAvtoSet;
+            this.normativesBindingSource.DataSource = this.newVipAvtoSet;
             // 
-            // NewVipAvtoSet
+            // newVipAvtoSet
             // 
-            this.NewVipAvtoSet.DataSetName = "NewVipAvtoSet";
-            this.NewVipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.newVipAvtoSet.DataSetName = "NewVipAvtoSet";
+            this.newVipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStrip1
             // 
@@ -216,19 +215,15 @@
             // tagDataGridViewTextBoxColumn
             // 
             this.tagDataGridViewTextBoxColumn.DataPropertyName = "Tag";
+            this.tagDataGridViewTextBoxColumn.FillWeight = 50F;
             resources.ApplyResources(this.tagDataGridViewTextBoxColumn, "tagDataGridViewTextBoxColumn");
             this.tagDataGridViewTextBoxColumn.Name = "tagDataGridViewTextBoxColumn";
             this.tagDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Title
-            // 
-            resources.ApplyResources(this.Title, "Title");
-            this.Title.Name = "Title";
-            this.Title.ReadOnly = true;
-            // 
             // minValueDataGridViewTextBoxColumn
             // 
             this.minValueDataGridViewTextBoxColumn.DataPropertyName = "MinValue";
+            this.minValueDataGridViewTextBoxColumn.FillWeight = 25F;
             resources.ApplyResources(this.minValueDataGridViewTextBoxColumn, "minValueDataGridViewTextBoxColumn");
             this.minValueDataGridViewTextBoxColumn.Name = "minValueDataGridViewTextBoxColumn";
             this.minValueDataGridViewTextBoxColumn.ReadOnly = true;
@@ -236,6 +231,7 @@
             // maxValueDataGridViewTextBoxColumn
             // 
             this.maxValueDataGridViewTextBoxColumn.DataPropertyName = "MaxValue";
+            this.maxValueDataGridViewTextBoxColumn.FillWeight = 25F;
             resources.ApplyResources(this.maxValueDataGridViewTextBoxColumn, "maxValueDataGridViewTextBoxColumn");
             this.maxValueDataGridViewTextBoxColumn.Name = "maxValueDataGridViewTextBoxColumn";
             this.maxValueDataGridViewTextBoxColumn.ReadOnly = true;
@@ -261,7 +257,7 @@
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.normativesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NewVipAvtoSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -278,7 +274,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripComboBox groupSelector;
-        private NewVipAvtoSet NewVipAvtoSet;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
@@ -286,11 +281,11 @@
         private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
+        private NewVipAvtoSet newVipAvtoSet;
         private System.Windows.Forms.BindingSource normativesBindingSource;
         private NewVipAvtoSetTableAdapters.NormativesTableAdapter normativesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idNormativeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tagDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn minValueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maxValueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn groupIdDataGridViewTextBoxColumn;

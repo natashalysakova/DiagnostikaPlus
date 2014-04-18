@@ -165,54 +165,12 @@
   <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <metadata name="protocolsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>614, 17</value>
+  </metadata>
   <data name="dataGridView1.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
-  <data name="idProtocolDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>IdProtocol</value>
-  </data>
-  <data name="idProtocolDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="blankNumberDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>BlankNumber</value>
-  </data>
-  <data name="groupIdDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>GroupId</value>
-  </data>
-  <data name="dateDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Date</value>
-  </data>
-  <data name="nextDataDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>NextData</value>
-  </data>
-  <data name="resultDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
-    <value>Result</value>
-  </data>
-  <data name="operatorIdDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>OperatorId</value>
-  </data>
-  <data name="mechanicIdDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>MechanicId</value>
-  </data>
-  <data name="techPhotoDataGridViewImageColumn.HeaderText" xml:space="preserve">
-    <value>TechPhoto</value>
-  </data>
-  <data name="visualCheckDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
-    <value>VisualCheck</value>
-  </data>
-  <data name="visualCheckDataGridViewCheckBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="gBODataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>GBO</value>
-  </data>
-  <data name="gBODataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <metadata name="protocolsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
   <data name="dataGridView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -301,7 +259,7 @@
     <value>toolStripContainer1</value>
   </data>
   <metadata name="toolStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>270, 17</value>
+    <value>133, 17</value>
   </metadata>
   <data name="toolStrip2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
@@ -354,6 +312,57 @@
   <data name="&gt;&gt;toolStripContainer1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="idProtocolDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>IdProtocol</value>
+  </data>
+  <data name="idProtocolDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="blankNumberDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>BlankNumber</value>
+  </data>
+  <data name="groupIdDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>GroupId</value>
+  </data>
+  <data name="dateDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="nextDataDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>NextData</value>
+  </data>
+  <data name="mechanicIdDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>MechanicId</value>
+  </data>
+  <data name="operatorIdDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>OperatorId</value>
+  </data>
+  <data name="techPhotoDataGridViewImageColumn.HeaderText" xml:space="preserve">
+    <value>TechPhoto</value>
+  </data>
+  <data name="resultDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="visualCheckDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
+    <value>VisualCheck</value>
+  </data>
+  <data name="visualCheckDataGridViewCheckBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="gBODataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>GBO</value>
+  </data>
+  <data name="gBODataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="protocolsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>614, 17</value>
+  </metadata>
+  <metadata name="newVipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>480, 17</value>
+  </metadata>
+  <metadata name="newVipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>480, 17</value>
+  </metadata>
   <data name="toolStripButton10.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -472,7 +481,7 @@
     <value>toolStripButton9</value>
   </data>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>375, 17</value>
+    <value>238, 17</value>
   </metadata>
   <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 48</value>
@@ -499,13 +508,10 @@
     <value>print</value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>530, 17</value>
-  </metadata>
-  <metadata name="newVipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>617, 17</value>
+    <value>393, 17</value>
   </metadata>
   <metadata name="protocolsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>199, 56</value>
+    <value>796, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2098,6 +2104,84 @@
   <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;idProtocolDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>idProtocolDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;idProtocolDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;blankNumberDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>blankNumberDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;blankNumberDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupIdDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>groupIdDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;groupIdDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dateDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>dateDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;dateDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nextDataDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>nextDataDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;nextDataDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mechanicIdDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>mechanicIdDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;mechanicIdDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;operatorIdDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>operatorIdDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;operatorIdDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;techPhotoDataGridViewImageColumn.Name" xml:space="preserve">
+    <value>techPhotoDataGridViewImageColumn</value>
+  </data>
+  <data name="&gt;&gt;techPhotoDataGridViewImageColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;resultDataGridViewCheckBoxColumn.Name" xml:space="preserve">
+    <value>resultDataGridViewCheckBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;resultDataGridViewCheckBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;visualCheckDataGridViewCheckBoxColumn.Name" xml:space="preserve">
+    <value>visualCheckDataGridViewCheckBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;visualCheckDataGridViewCheckBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gBODataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>gBODataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;gBODataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;protocolsBindingSource.Name" xml:space="preserve">
+    <value>protocolsBindingSource</value>
+  </data>
+  <data name="&gt;&gt;protocolsBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;newVipAvtoSet.Name" xml:space="preserve">
+    <value>newVipAvtoSet</value>
+  </data>
+  <data name="&gt;&gt;newVipAvtoSet.Type" xml:space="preserve">
+    <value>adovipavto.NewVipAvtoSet, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
   <data name="&gt;&gt;toolStripButton10.Name" xml:space="preserve">
     <value>toolStripButton10</value>
   </data>
@@ -2206,89 +2290,11 @@
   <data name="&gt;&gt;timer1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;newVipAvtoSet.Name" xml:space="preserve">
-    <value>newVipAvtoSet</value>
-  </data>
-  <data name="&gt;&gt;newVipAvtoSet.Type" xml:space="preserve">
-    <value>adovipavto.NewVipAvtoSet, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;protocolsBindingSource.Name" xml:space="preserve">
-    <value>protocolsBindingSource</value>
-  </data>
-  <data name="&gt;&gt;protocolsBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;protocolsTableAdapter.Name" xml:space="preserve">
     <value>protocolsTableAdapter</value>
   </data>
   <data name="&gt;&gt;protocolsTableAdapter.Type" xml:space="preserve">
     <value>adovipavto.NewVipAvtoSetTableAdapters.ProtocolsTableAdapter, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;idProtocolDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>idProtocolDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;idProtocolDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;blankNumberDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>blankNumberDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;blankNumberDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupIdDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>groupIdDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;groupIdDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dateDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>dateDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;dateDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nextDataDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>nextDataDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;nextDataDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;resultDataGridViewCheckBoxColumn.Name" xml:space="preserve">
-    <value>resultDataGridViewCheckBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;resultDataGridViewCheckBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;operatorIdDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>operatorIdDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;operatorIdDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mechanicIdDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>mechanicIdDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;mechanicIdDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;techPhotoDataGridViewImageColumn.Name" xml:space="preserve">
-    <value>techPhotoDataGridViewImageColumn</value>
-  </data>
-  <data name="&gt;&gt;techPhotoDataGridViewImageColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;visualCheckDataGridViewCheckBoxColumn.Name" xml:space="preserve">
-    <value>visualCheckDataGridViewCheckBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;visualCheckDataGridViewCheckBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gBODataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>gBODataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;gBODataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

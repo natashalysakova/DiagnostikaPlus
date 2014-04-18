@@ -117,15 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tagDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="minValueDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Минимальное значение</value>
+  </data>
+  <data name="maxValueDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Максимальное значение</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 32</value>
+    <value>58, 40</value>
   </data>
   <data name="toolStripLabel1.Text" xml:space="preserve">
     <value>Группа</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>471, 35</value>
+    <value>495, 43</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -15,31 +15,24 @@ namespace adovipavto
 {
     public partial class OperatorsForm : Form
     {
-        private readonly NewVipAvtoSet _set;
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public OperatorsForm(NewVipAvtoSet set)
+        public OperatorsForm()
         {
-            _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             InitializeComponent();
-            dataGridView1.DataSource = set.Operators;
+            dataGridView1.DataSource = newVipAvtoSet.Operators;
         }
 
         private void OperatorsForm_Load(object sender, EventArgs e)
         {
-            UpdateRoles();
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "newVipAvtoSet.Operators". При необходимости она может быть перемещена или удалена.
+            this.operatorsTableAdapter.Fill(this.newVipAvtoSet.Operators);
+
         }
 
-        private void UpdateRoles()
-        {
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                row.Cells["RightsString"].Value =
-                    Constants.GetEnumDescription((Rights) row.Cells["rightDataGridViewTextBoxColumn"].Value);
-            }
-        }
+
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
@@ -65,15 +58,14 @@ namespace adovipavto
                     }
                     else
                     {
-                        _set.LockOperator(id);
-                        if (id == _set.GetOperatorId())
+                        newVipAvtoSet.LockOperator(id);
+                        if (id == newVipAvtoSet.GetOperatorId())
                         {
                             MessageBox.Show(_rm.GetString("reboot"), _rm.GetString("warning"), MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
 
                             Application.Restart();
                         }
-                        UpdateRoles();
                     }
                 }
             }
@@ -82,7 +74,7 @@ namespace adovipavto
         private int AdministratorsCount()
         {
             return
-                _set.Tables[Constants.OperatorsTableName].Select(string.Format("Right = {0}",
+                newVipAvtoSet.Operators.Select(string.Format("Right = {0}",
                     (int) Rights.Administrator)).Length;
         }
 
@@ -93,8 +85,7 @@ namespace adovipavto
 
         private void Add()
         {
-            if (new AddOperatorForm(_set).ShowDialog() == DialogResult.OK)
-                UpdateRoles();
+            new AddOperatorForm(newVipAvtoSet).ShowDialog();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -106,11 +97,10 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            NewVipAvtoSet.OperatorsRow row = (NewVipAvtoSet.OperatorsRow) _set.GetRowById(Constants.OperatorsTableName, id);
+            NewVipAvtoSet.OperatorsRow row = (NewVipAvtoSet.OperatorsRow)newVipAvtoSet.GetRowById(Constants.OperatorsTableName, id);
 
 
-            if (new EditOperatorForm(row, _set).ShowDialog() == DialogResult.OK)
-                UpdateRoles();
+            new EditOperatorForm(row, newVipAvtoSet).ShowDialog();
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -121,8 +111,6 @@ namespace adovipavto
         private void dataGridView1_Sorted(object sender, EventArgs e)
         {
             dataGridView1.FirstDisplayedCell = dataGridView1.CurrentCell;
-
-            UpdateRoles();
         }
 
         private void изменитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -148,6 +136,17 @@ namespace adovipavto
                 Rectangle r = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
 
                 contextMenuStrip1.Show((Control) sender, r.Left + e.X, r.Top + e.Y);
+            }
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == rightDataGridViewTextBoxColumn.Index)
+            {
+                if (e.Value != null)
+                {
+                    e.Value = Constants.GetEnumDescription((Rights)e.Value);
+                }
             }
         }
     }

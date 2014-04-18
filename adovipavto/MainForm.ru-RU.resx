@@ -120,23 +120,26 @@
   <data name="blankNumberDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Номер бланка</value>
   </data>
-  <data name="Group.HeaderText" xml:space="preserve">
+  <data name="groupIdDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Группа</value>
   </data>
-  <data name="Date.HeaderText" xml:space="preserve">
-    <value>Дата проверки</value>
+  <data name="dateDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Дата прохождения</value>
   </data>
-  <data name="NextData.HeaderText" xml:space="preserve">
-    <value>Дата следущей проверки</value>
+  <data name="nextDataDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Дата следующего прохождения</value>
   </data>
-  <data name="Mechanic.HeaderText" xml:space="preserve">
+  <data name="resultDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="mechanicIdDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Механик</value>
   </data>
-  <data name="Operator.HeaderText" xml:space="preserve">
+  <data name="operatorIdDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Оператор</value>
   </data>
-  <data name="Result.HeaderText" xml:space="preserve">
-    <value>Результат</value>
+  <data name="techPhotoDataGridViewImageColumn.HeaderText" xml:space="preserve">
+    <value>Техпаспорт</value>
   </data>
   <data name="toolStripButton10.Text" xml:space="preserve">
     <value>Новый протокол</value>

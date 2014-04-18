@@ -15,13 +15,11 @@ namespace adovipavto
 {
     public partial class Mechanics : Form
     {
-        private readonly NewVipAvtoSet _set;
 
         readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
-        public Mechanics(NewVipAvtoSet set)
+        public Mechanics()
         {
-            _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             InitializeComponent();
@@ -29,8 +27,9 @@ namespace adovipavto
 
         private void Mechanics_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = _set.Mechanics;
-            UpdateRoles();
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "newVipAvtoSet.Mechanics". При необходимости она может быть перемещена или удалена.
+            this.mechanicsTableAdapter.Fill(this.newVipAvtoSet.Mechanics);
+            dataGridView1.DataSource = newVipAvtoSet.Mechanics;
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -42,11 +41,10 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            NewVipAvtoSet.MechanicsRow row = (NewVipAvtoSet.MechanicsRow) _set.GetRowById(Constants.MechanicsTableName, id);
+            NewVipAvtoSet.MechanicsRow row = (NewVipAvtoSet.MechanicsRow)newVipAvtoSet.GetRowById(Constants.MechanicsTableName, id);
 
 
-            if (new EditMechanicForm(row, _set).ShowDialog() == DialogResult.OK)
-                UpdateRoles();
+            new EditMechanicForm(row, newVipAvtoSet).ShowDialog();
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -82,8 +80,7 @@ namespace adovipavto
 
         private void Add()
         {
-            if (new AddMechanicForm(_set).ShowDialog() == DialogResult.OK)
-                UpdateRoles();
+            new AddMechanicForm(newVipAvtoSet).ShowDialog();
         }
 
         private void lockToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,29 +98,27 @@ namespace adovipavto
                 {
                     var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-                    _set.LockMechanic(id);
-                    UpdateRoles();
+                    newVipAvtoSet.LockMechanic(id);
                 }
             }
         }
 
-        private void dataGridView1_Sorted(object sender, EventArgs e)
-        {
-            UpdateRoles();
-        }
 
-
-        private void UpdateRoles()
-        {
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                row.Cells["StateString"].Value = Constants.GetEnumDescription((State) row.Cells["State"].Value);
-            }
-        }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             Delete();
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == stateDataGridViewTextBoxColumn.Index)
+            {
+                if (e.Value != null)
+                {
+                    e.Value = Constants.GetEnumDescription((State)e.Value);
+                }
+            }
         }
     }
 }

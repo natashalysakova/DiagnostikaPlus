@@ -129,21 +129,18 @@
   <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Column1.HeaderText" xml:space="preserve">
+  <data name="idOperatorDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>IdOperator</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Column1.Visible" type="System.Boolean, mscorlib">
+  <data name="idOperatorDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="nameDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Имя</value>
+    <value>Name</value>
   </data>
   <data name="lastNameDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Фамилия</value>
+    <value>LastName</value>
   </data>
   <data name="loginDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Login</value>
@@ -160,20 +157,11 @@
   <data name="rightDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Right</value>
   </data>
-  <data name="rightDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <metadata name="RightsString.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="RightsString.HeaderText" xml:space="preserve">
-    <value>Роль</value>
-  </data>
   <metadata name="operatorsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>232, 17</value>
+    <value>704, 17</value>
   </metadata>
-  <metadata name="NewVipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>122, 17</value>
+  <metadata name="newVipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>570, 17</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -378,6 +366,9 @@
   <data name="&gt;&gt;contextMenuStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <metadata name="operatorsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>887, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1428,10 +1419,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Операторы</value>
   </data>
-  <data name="&gt;&gt;Column1.Name" xml:space="preserve">
-    <value>Column1</value>
+  <data name="&gt;&gt;idOperatorDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>idOperatorDataGridViewTextBoxColumn</value>
   </data>
-  <data name="&gt;&gt;Column1.Type" xml:space="preserve">
+  <data name="&gt;&gt;idOperatorDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nameDataGridViewTextBoxColumn.Name" xml:space="preserve">
@@ -1464,22 +1455,16 @@
   <data name="&gt;&gt;rightDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;RightsString.Name" xml:space="preserve">
-    <value>RightsString</value>
-  </data>
-  <data name="&gt;&gt;RightsString.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;operatorsBindingSource.Name" xml:space="preserve">
     <value>operatorsBindingSource</value>
   </data>
   <data name="&gt;&gt;operatorsBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;NewVipAvtoSet.Name" xml:space="preserve">
-    <value>NewVipAvtoSet</value>
+  <data name="&gt;&gt;newVipAvtoSet.Name" xml:space="preserve">
+    <value>newVipAvtoSet</value>
   </data>
-  <data name="&gt;&gt;NewVipAvtoSet.Type" xml:space="preserve">
+  <data name="&gt;&gt;newVipAvtoSet.Type" xml:space="preserve">
     <value>adovipavto.NewVipAvtoSet, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
@@ -1523,6 +1508,12 @@
   </data>
   <data name="&gt;&gt;добавитьToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;operatorsTableAdapter.Name" xml:space="preserve">
+    <value>operatorsTableAdapter</value>
+  </data>
+  <data name="&gt;&gt;operatorsTableAdapter.Type" xml:space="preserve">
+    <value>adovipavto.NewVipAvtoSetTableAdapters.OperatorsTableAdapter, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>OperatorsForm</value>

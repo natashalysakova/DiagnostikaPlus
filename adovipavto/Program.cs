@@ -14,9 +14,6 @@ namespace adovipavto
         static readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
-        public static NewVipAvtoSet VipAvtoDataSet;
-        //public static Dictionary<Normatives, string> NormasTitles;
-
         /// <summary>
         ///     The main entry point for the application.
         /// </summary>
@@ -40,15 +37,11 @@ namespace adovipavto
             t.Join();
 
 
-            VipAvtoDataSet = new NewVipAvtoSet();
-
             try
             {
-                VipAvtoDataSet.LoadData();
-
                 t.Abort();
 
-                Application.Run(new MainForm(VipAvtoDataSet));
+                Application.Run(new MainForm());
 
             }
             catch (MySqlException ex)
