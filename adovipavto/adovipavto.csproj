@@ -523,49 +523,10 @@
     <None Include="Resources\plus.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mesures.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Buttons_0005_Mech.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Buttons_0005_PLUSMech.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Buttons_0006_FIREMech.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Buttons_0007_EDIT-copy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Buttons_0008_ADDOper.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Buttons_0009_FIREOper.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Buttons_0009_Oper.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Buttons_0010_EDITOper.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Russia-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Ukraine-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Buttons_0005_PLUSMech1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Buttons_0007_EDIT-copy1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Buttons_0007_EDIT.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Buttons_0006_FIREMech1.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -605,8 +566,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="icon.ico" />
-    <None Include="Resources\refresh.png" />
-    <None Include="Resources\defaultDatabase.sql" />
+    <None Include="Resources\operEdit.png" />
+    <None Include="Resources\operDel.png" />
+    <None Include="Resources\operAdd.png" />
+    <None Include="Resources\MechAdd1.png" />
+    <None Include="Resources\MechDel.png" />
+    <None Include="Resources\MechEdit.png" />
+    <None Include="Resources\MechAdd.png" />
+    <None Include="Resources\mech.png" />
+    <None Include="Resources\oper.png" />
     <None Include="Resources\removeAllGroup.png" />
     <None Include="Resources\removeAllNorm.png" />
     <None Include="Resources\switchUserBtn.png" />
@@ -624,16 +592,12 @@
     <None Include="Resources\print.png" />
     <None Include="Resources\printsetting.png" />
     <None Include="Resources\openfoto.png" />
-    <None Include="Resources\svet_0002_Ellipse-1.png" />
-    <None Include="Resources\svet_0001_Ellipse-1-copy.png" />
-    <None Include="Resources\svet_0000_Ellipse-1-copy-3.png" />
     <None Include="Resources\protocol1.png" />
     <None Include="Resources\search.png" />
     <None Include="Resources\exit.png" />
     <None Include="Resources\about.png" />
     <None Include="Resources\help1.png" />
     <None Include="Resources\help.png" />
-    <None Include="Resources\protocol.png" />
     <None Include="Resources\NORMARIVES.png" />
     <None Include="Resources\GROUP.png" />
   </ItemGroup>

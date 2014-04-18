@@ -306,7 +306,7 @@ namespace adovipavto
             // toolStripButton13
             // 
             this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton13.Image = global::adovipavto.Properties.Resources.Buttons_0009_Oper;
+            this.toolStripButton13.Image = global::adovipavto.Properties.Resources.oper;
             resources.ApplyResources(this.toolStripButton13, "toolStripButton13");
             this.toolStripButton13.Name = "toolStripButton13";
             this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
@@ -314,7 +314,7 @@ namespace adovipavto
             // toolStripButton14
             // 
             this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton14.Image = global::adovipavto.Properties.Resources.Buttons_0005_Mech;
+            this.toolStripButton14.Image = global::adovipavto.Properties.Resources.mech;
             resources.ApplyResources(this.toolStripButton14, "toolStripButton14");
             this.toolStripButton14.Name = "toolStripButton14";
             this.toolStripButton14.Click += new System.EventHandler(this.toolStripButton14_Click);

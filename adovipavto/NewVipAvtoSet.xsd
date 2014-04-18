@@ -5,7 +5,6 @@
       <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="VipAvtoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="VipAvtoDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.adovipavto.Properties.Settings.GlobalReference.Default.VipAvtoDBConnectionString" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="VipAvtoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="VipAvtoDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.adovipavto.Properties.Settings.GlobalReference.Default.VipAvtoDBConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GroupsTableAdapter" GeneratorDataComponentClassName="GroupsTableAdapter" Name="Groups" UserDataComponentName="GroupsTableAdapter">

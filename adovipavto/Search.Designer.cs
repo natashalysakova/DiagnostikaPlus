@@ -39,13 +39,9 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.protocolIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.blankNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDOperatorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDMechanicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.techPhotoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resultDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nextDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.visualCheckDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -141,13 +137,9 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.protocolIDDataGridViewTextBoxColumn,
             this.blankNumberDataGridViewTextBoxColumn,
-            this.iDOperatorDataGridViewTextBoxColumn,
-            this.iDMechanicDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
             this.techPhotoDataGridViewTextBoxColumn,
-            this.iDGroupDataGridViewTextBoxColumn,
             this.resultDataGridViewCheckBoxColumn,
             this.nextDataDataGridViewTextBoxColumn,
             this.visualCheckDataGridViewCheckBoxColumn});
@@ -160,33 +152,12 @@
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
-            // protocolIDDataGridViewTextBoxColumn
-            // 
-            this.protocolIDDataGridViewTextBoxColumn.DataPropertyName = "ProtocolID";
-            resources.ApplyResources(this.protocolIDDataGridViewTextBoxColumn, "protocolIDDataGridViewTextBoxColumn");
-            this.protocolIDDataGridViewTextBoxColumn.Name = "protocolIDDataGridViewTextBoxColumn";
-            this.protocolIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // blankNumberDataGridViewTextBoxColumn
             // 
             this.blankNumberDataGridViewTextBoxColumn.DataPropertyName = "BlankNumber";
             resources.ApplyResources(this.blankNumberDataGridViewTextBoxColumn, "blankNumberDataGridViewTextBoxColumn");
             this.blankNumberDataGridViewTextBoxColumn.Name = "blankNumberDataGridViewTextBoxColumn";
             this.blankNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDOperatorDataGridViewTextBoxColumn
-            // 
-            this.iDOperatorDataGridViewTextBoxColumn.DataPropertyName = "IDOperator";
-            resources.ApplyResources(this.iDOperatorDataGridViewTextBoxColumn, "iDOperatorDataGridViewTextBoxColumn");
-            this.iDOperatorDataGridViewTextBoxColumn.Name = "iDOperatorDataGridViewTextBoxColumn";
-            this.iDOperatorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDMechanicDataGridViewTextBoxColumn
-            // 
-            this.iDMechanicDataGridViewTextBoxColumn.DataPropertyName = "IDMechanic";
-            resources.ApplyResources(this.iDMechanicDataGridViewTextBoxColumn, "iDMechanicDataGridViewTextBoxColumn");
-            this.iDMechanicDataGridViewTextBoxColumn.Name = "iDMechanicDataGridViewTextBoxColumn";
-            this.iDMechanicDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dateDataGridViewTextBoxColumn
             // 
@@ -201,13 +172,6 @@
             resources.ApplyResources(this.techPhotoDataGridViewTextBoxColumn, "techPhotoDataGridViewTextBoxColumn");
             this.techPhotoDataGridViewTextBoxColumn.Name = "techPhotoDataGridViewTextBoxColumn";
             this.techPhotoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDGroupDataGridViewTextBoxColumn
-            // 
-            this.iDGroupDataGridViewTextBoxColumn.DataPropertyName = "IDGroup";
-            resources.ApplyResources(this.iDGroupDataGridViewTextBoxColumn, "iDGroupDataGridViewTextBoxColumn");
-            this.iDGroupDataGridViewTextBoxColumn.Name = "iDGroupDataGridViewTextBoxColumn";
-            this.iDGroupDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // resultDataGridViewCheckBoxColumn
             // 

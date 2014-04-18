@@ -37,6 +37,10 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.brakesystem = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ORTS4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -170,10 +174,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.ORTS4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.brakesystem.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -277,6 +277,34 @@
             this.tableLayoutPanel1.Controls.Add(this.label23, 2, 17);
             this.tableLayoutPanel1.Controls.Add(this.OUTSRTS, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.BackColor = System.Drawing.SystemColors.Control;
+            this.label8.ForeColor = System.Drawing.Color.Silver;
+            this.label8.Name = "label8";
+            this.label8.Tag = "23";
+            // 
+            // textBox8
+            // 
+            resources.ApplyResources(this.textBox8, "textBox8");
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Tag = "23";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.BackColor = System.Drawing.SystemColors.Control;
+            this.label7.ForeColor = System.Drawing.Color.Silver;
+            this.label7.Name = "label7";
+            this.label7.Tag = "23";
+            // 
+            // ORTS4
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.ORTS4, 3);
+            resources.ApplyResources(this.ORTS4, "ORTS4");
+            this.ORTS4.Name = "ORTS4";
             // 
             // label6
             // 
@@ -1288,34 +1316,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
-            // 
-            // ORTS4
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.ORTS4, 3);
-            resources.ApplyResources(this.ORTS4, "ORTS4");
-            this.ORTS4.Name = "ORTS4";
-            // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.BackColor = System.Drawing.SystemColors.Control;
-            this.label7.ForeColor = System.Drawing.Color.Silver;
-            this.label7.Name = "label7";
-            this.label7.Tag = "23";
-            // 
-            // textBox8
-            // 
-            resources.ApplyResources(this.textBox8, "textBox8");
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Tag = "23";
-            // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.BackColor = System.Drawing.SystemColors.Control;
-            this.label8.ForeColor = System.Drawing.Color.Silver;
-            this.label8.Name = "label8";
-            this.label8.Tag = "23";
             // 
             // AddProtocol
             // 
