@@ -346,41 +346,7 @@ namespace adovipavto.Classes
                 var b1 = (Bitmap)tc.ConvertFrom(_protocolRow.TechPhoto);
                 if (b1 != null)
                 {
-                    int width = b1.Width;
-                    int height = b1.Height;
-                    double ratio;
-                    int destWidth;
-                    int destHeight;
-                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-
-                    if (width > height)
-                    {
-                        ratio = (double)height / (double)width;
-                        destWidth = techrect.Width;
-                        destHeight = Convert.ToInt32(techrect.Height * ratio);
-                        g.DrawImage(b1,
-                            new Rectangle(
-                                techrect.X,
-                                techrect.Y + ((techrect.Height - destHeight) / 2),
-                                destWidth, destHeight),
-                            new Rectangle(0, 0, b1.Width, b1.Height),
-                            GraphicsUnit.Pixel);
-
-                    }
-                    else
-                    {
-                        ratio = (double)width / (double)height;
-                        destWidth = Convert.ToInt32(techrect.Width * ratio);
-                        destHeight = techrect.Height;
-                        g.DrawImage(b1,
-                            new Rectangle(
-        techrect.X + ((techrect.Width - destWidth) / 2),
-        techrect.Y,
-        destWidth, destHeight),
-    new Rectangle(0, 0, b1.Width, b1.Height),
-    GraphicsUnit.Pixel);
-
-                    }
+                    DrawScaledArImage(b1, g, techrect);
                 }
             }
 
@@ -399,43 +365,48 @@ namespace adovipavto.Classes
             g.DrawImage(Resources.none, 640, 52 * LineHeight - 2, 15, 15);
         }
 
-        public static PixelFormat GetNonIndexedPixelFormat(Image originalImage)
+        /// <summary>
+        /// Рисование изображения, вписанного в прямоугольник, с правильными пропорциями
+        /// </summary>
+        /// <param name="sourceImage">Изображение</param>
+        /// <param name="context">Графический контекст</param>
+        /// <param name="sourceRect">Прямоугольник, в который нужно вписать изображение</param>
+        private static void DrawScaledArImage(Image sourceImage, Graphics context, Rectangle sourceRect)
         {
-            /*
-             * These formats cause an error when creating a GDI Graphics Oblect, so must be converted to non Indexed
-             * Error is "A graphics object cannot be created from an image that has an indexed pixel format"
-             * 
-                PixelFormat.Undefined 
-                PixelFormat.DontCare 
-                PixelFormat.1bppIndexed
-                PixelFormat.4bppIndexed
-                PixelFormat.8bppIndexed
-                PixelFormat.16bppGrayScale
-                PixelFormat.16bppARGB1555
-             * 
-             * An attempt is made to use the closest (i.e. smallest fitting) format that will hold the palette.
-             */
+            int width = sourceImage.Width;
+            int height = sourceImage.Height;
+            double ratio;
+            int destWidth;
+            int destHeight;
+            context.InterpolationMode = InterpolationMode.HighQualityBicubic;
 
-            switch (originalImage.PixelFormat)
+            if (width > height)
             {
-                case PixelFormat.Undefined:
-                    //This is also the same Enumation as PixelFormat.DontCare:
-                    return PixelFormat.Format24bppRgb;
-                case PixelFormat.Format1bppIndexed:
-                    return PixelFormat.Format16bppRgb555;
-                case PixelFormat.Format4bppIndexed:
-                    return PixelFormat.Format16bppRgb555;
-                case PixelFormat.Format8bppIndexed:
-                    return PixelFormat.Format16bppRgb555;
-                case PixelFormat.Format16bppGrayScale:
-                    return PixelFormat.Format16bppArgb1555;
-                case PixelFormat.Format32bppArgb:
-                    return PixelFormat.Format24bppRgb;
-                default:
-                    return originalImage.PixelFormat;
+                ratio = (double) height/(double) width;
+                destWidth = sourceRect.Width;
+                destHeight = Convert.ToInt32(sourceRect.Height * ratio);
+                context.DrawImage(sourceImage,
+                    new Rectangle(
+                        sourceRect.X,
+                        sourceRect.Y + ((sourceRect.Height - destHeight) / 2),
+                        destWidth, destHeight),
+                    new Rectangle(0, 0, sourceImage.Width, sourceImage.Height),
+                    GraphicsUnit.Pixel);
+            }
+            else
+            {
+                ratio = (double) width/(double) height;
+                destWidth = Convert.ToInt32(sourceRect.Width * ratio);
+                destHeight = sourceRect.Height;
+                context.DrawImage(sourceImage,
+                    new Rectangle(
+                        sourceRect.X + ((sourceRect.Width - destWidth) / 2),
+                        sourceRect.Y,
+                        destWidth, destHeight),
+                    new Rectangle(0, 0, sourceImage.Width, sourceImage.Height),
+                    GraphicsUnit.Pixel);
             }
         }
-
 
         private void DrawPictorgam(int i, Graphics graphics, int height, Font normalFont, int ind, bool mode = false)
         {
