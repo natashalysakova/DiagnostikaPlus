@@ -112,5 +112,10 @@ namespace adovipavto.AddForms
                 checkedListBox1.SetItemChecked(i, false);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+        }
     }
 }
