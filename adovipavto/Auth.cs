@@ -8,9 +8,12 @@ namespace adovipavto
 {
     public partial class Auth : Form
     {
-        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
-        private NewVipAvtoSet _set;
-        OperatorsTableAdapter adapter = new OperatorsTableAdapter();
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
+        private readonly NewVipAvtoSet _set;
+        private readonly OperatorsTableAdapter adapter = new OperatorsTableAdapter();
+
         public Auth(NewVipAvtoSet set)
         {
             InitializeComponent();
@@ -29,7 +32,6 @@ namespace adovipavto
 
             if (password != "")
             {
-
                 if (NewVipAvtoSet.GetHash(maskedTextBox1.Text) == password)
                 {
                     _set.SetCurrentOperator(textBox1.Text);

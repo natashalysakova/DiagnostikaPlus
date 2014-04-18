@@ -12,8 +12,10 @@ namespace adovipavto.AddForms
 {
     public partial class AddOperatorForm : Form
     {
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
         private readonly NewVipAvtoSet _set;
-        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
         public AddOperatorForm(NewVipAvtoSet set)
@@ -43,8 +45,8 @@ namespace adovipavto.AddForms
             {
                 bool res = _set.AddOperator(nameTxtBx.Text, lnTxtBx.Text, loginTxtBx.Text, passTxtBx.Text,
                     roleCmbBx.SelectedItem.ToString());
-                
-                if(res)
+
+                if (res)
                     DialogResult = DialogResult.OK;
                 else
                 {

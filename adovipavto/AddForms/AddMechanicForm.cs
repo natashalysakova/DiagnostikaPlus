@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
@@ -11,8 +10,10 @@ namespace adovipavto.AddForms
 {
     public partial class AddMechanicForm : Form
     {
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
         private readonly NewVipAvtoSet _set;
-        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
         public AddMechanicForm(NewVipAvtoSet set)
@@ -45,7 +46,7 @@ namespace adovipavto.AddForms
         private void fnTxtBx_TextChanged(object sender, EventArgs e)
         {
             if (((TextBox) sender).Text == "")
-                errorProvider1.SetError((TextBox)sender, _rm.GetString("wrongData"));
+                errorProvider1.SetError((TextBox) sender, _rm.GetString("wrongData"));
             else
             {
                 errorProvider1.SetError((TextBox) sender, null);

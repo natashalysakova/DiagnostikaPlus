@@ -5,13 +5,13 @@ using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
-using MySql.Data.MySqlClient;
 
 namespace adovipavto
 {
     internal static class Program
     {
-        static readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+        private static readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
 
 
         /// <summary>
@@ -20,7 +20,6 @@ namespace adovipavto
         [STAThread]
         private static void Main()
         {
-
             if (!File.Exists("DRandom.dll"))
             {
                 MessageBox.Show(_rm.GetString("dllIsMissing"));
@@ -35,34 +34,14 @@ namespace adovipavto
 
             Application.SetCompatibleTextRenderingDefault(false);
             t.Join();
+            t.Abort();
 
-
-            try
-            {
-                t.Abort();
-
-                Application.Run(new MainForm());
-
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-                if (new ServerSetting().ShowDialog() == DialogResult.OK)
-                {
-                    Application.Restart();
-                }
-                else
-                {
-                    Application.Exit();
-                }
-            }
-
+            Application.Run(new MainForm());
         }
 
         private static void SplashScreen()
         {
             Application.Run(new SplashScreen());
         }
-
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
@@ -12,10 +11,11 @@ namespace adovipavto.EditForms
 {
     public partial class EditGroupForm : Form
     {
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
 
         private readonly NewVipAvtoSet.GroupsRow _selectedRow;
         private readonly NewVipAvtoSet _set;
-        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
         public EditGroupForm(NewVipAvtoSet.GroupsRow select, NewVipAvtoSet set)
         {
@@ -51,7 +51,7 @@ namespace adovipavto.EditForms
             }
             yearComboBox.Text = _selectedRow.Year.ToString();
 
-            if ((bool) _selectedRow.Before == false)
+            if (_selectedRow.Before == false)
                 radioButton2.Checked = true;
         }
 

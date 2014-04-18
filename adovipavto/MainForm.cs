@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -13,13 +12,14 @@ using adovipavto.Classes;
 using adovipavto.Enums;
 using adovipavto.NewVipAvtoSetTableAdapters;
 
-
 namespace adovipavto
 {
     public partial class MainForm : Form
     {
         private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
             Assembly.GetExecutingAssembly());
+
+        private int _selectedRow;
 
 
         public MainForm()
@@ -32,13 +32,22 @@ namespace adovipavto
             }
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
             InitializeComponent();
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            newVipAvtoSet.LoadData();
+            try
+            {
+                newVipAvtoSet.LoadData();
 
+            }
+            catch 
+            {
+                if (new ServerSetting().ShowDialog() == DialogResult.OK)
+                {
+                    Application.Restart();
+                }
+        }
             do
             {
                 if (new Auth(newVipAvtoSet).ShowDialog() == DialogResult.Cancel)
@@ -53,7 +62,7 @@ namespace adovipavto
             if (dateDataGridViewTextBoxColumn != null)
                 dataGridView1.Sort(dateDataGridViewTextBoxColumn, ListSortDirection.Descending);
 
-
+            timer1.Start();
         }
 
         private bool SetUserRights()
@@ -98,8 +107,7 @@ namespace adovipavto
 
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
-            new AddProtocol(this, newVipAvtoSet).ShowDialog();
-
+            new AddProtocol(newVipAvtoSet).ShowDialog();
         }
 
         private void toolStripButton11_Click(object sender, EventArgs e)
@@ -130,7 +138,6 @@ namespace adovipavto
         private void toolStripButton13_Click(object sender, EventArgs e)
         {
             new OperatorsForm().ShowDialog();
-
         }
 
         private void toolStripButton14_Click(object sender, EventArgs e)
@@ -164,7 +171,6 @@ namespace adovipavto
         }
 
 
-
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -174,8 +180,8 @@ namespace adovipavto
 
                 var newProtocolId =
                     (int) dataGridView1.SelectedRows[0].Cells[0].Value;
-                NewVipAvtoSet.ProtocolsRow protocol =
-                    (NewVipAvtoSet.ProtocolsRow)newVipAvtoSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+                var protocol =
+                    (NewVipAvtoSet.ProtocolsRow) newVipAvtoSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
                 NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
                 new ProtocolReportForm(protocol, mesures, newVipAvtoSet).ShowDialog();
@@ -203,8 +209,8 @@ namespace adovipavto
         private void просмотрToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var newProtocolId = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
-            NewVipAvtoSet.ProtocolsRow protocol =
-                (NewVipAvtoSet.ProtocolsRow)newVipAvtoSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+            var protocol =
+                (NewVipAvtoSet.ProtocolsRow) newVipAvtoSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
             NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
             new ProtocolReportForm(protocol, mesures, newVipAvtoSet).ShowDialog();
@@ -213,8 +219,8 @@ namespace adovipavto
         private void печатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var newProtocolId = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
-            NewVipAvtoSet.ProtocolsRow protocol =
-                (NewVipAvtoSet.ProtocolsRow)newVipAvtoSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+            var protocol =
+                (NewVipAvtoSet.ProtocolsRow) newVipAvtoSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
             NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
             new ProtocolReportForm(protocol, mesures, newVipAvtoSet, true).ShowDialog();
@@ -229,7 +235,6 @@ namespace adovipavto
                     return;
                 }
             } while (!SetUserRights());
-
         }
 
         private void srchBtn_Click(object sender, EventArgs e)
@@ -244,12 +249,12 @@ namespace adovipavto
             {
                 if (e.Value != null)
                 {
-                    e.Value = newVipAvtoSet.GetGroupTitle((int)e.Value);
+                    e.Value = newVipAvtoSet.GetGroupTitle((int) e.Value);
                 }
             }
             else if (dataGridView1.Columns[e.ColumnIndex] == resultDataGridViewCheckBoxColumn)
             {
-                if ((bool)e.Value)
+                if ((bool) e.Value)
                 {
                     e.Value = _rm.GetString("check");
                 }
@@ -262,21 +267,21 @@ namespace adovipavto
             {
                 if (e.Value != null)
                 {
-                    e.Value = newVipAvtoSet.GetShortOperatorName((int)e.Value);
+                    e.Value = newVipAvtoSet.GetShortOperatorName((int) e.Value);
                 }
             }
             else if (dataGridView1.Columns[e.ColumnIndex] == mechanicIdDataGridViewTextBoxColumn)
             {
                 if (e.Value != null)
                 {
-                    e.Value = newVipAvtoSet.GetShortMechanicName((int)e.Value);
+                    e.Value = newVipAvtoSet.GetShortMechanicName((int) e.Value);
                 }
             }
         }
 
         private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-            if ((bool)dataGridView1[resultDataGridViewCheckBoxColumn.Index, e.RowIndex].Value == true)
+            if ((bool) dataGridView1[resultDataGridViewCheckBoxColumn.Index, e.RowIndex].Value)
             {
                 dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
             }
@@ -287,47 +292,38 @@ namespace adovipavto
         }
 
 
-            private int selected_row = 0;
-
         private void timer1_Tick(object sender, EventArgs e)
         {
-
-
             int saveRow = 0;
             if (dataGridView1.Rows.Count > 0)
                 saveRow = dataGridView1.FirstDisplayedCell.RowIndex;
 
-            if(dataGridView1.SelectedRows.Count != 0)
-                selected_row = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
+            if (dataGridView1.SelectedRows.Count != 0)
+                _selectedRow = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
 
-
-            var newProtocols = protocolsTableAdapter.GetData();
+            NewVipAvtoSet.ProtocolsDataTable newProtocols = protocolsTableAdapter.GetData();
             if (newProtocols.Count != newVipAvtoSet.Protocols.Count)
             {
                 newVipAvtoSet.Mesures.Clear();
-                MesuresTableAdapter adapter = new MesuresTableAdapter();
+                var adapter = new MesuresTableAdapter();
                 protocolsTableAdapter.Fill(newVipAvtoSet.Protocols);
                 adapter.Fill(newVipAvtoSet.Mesures);
             }
 
 
-
-            var t =
+            int[] t =
                 (from DataGridViewRow row in dataGridView1.Rows
-                    where (int) row.Cells[0].Value == selected_row
+                    where (int) row.Cells[0].Value == _selectedRow
                     select row.Index
                     ).ToArray();
-            if(t.Length != 0)
+            if (t.Length != 0)
                 dataGridView1.Rows[t[0]].Selected = true;
-
-
 
 
             if (saveRow != 0 && saveRow < dataGridView1.Rows.Count)
                 dataGridView1.FirstDisplayedScrollingRowIndex = saveRow;
-
-
         }
+
     }
 }

@@ -104,7 +104,7 @@ namespace adovipavto
             ((DataTable) dataGridView1.DataSource).DefaultView.RowFilter =
                 String.Format("Date > '{0}' AND Date <= '{1}'", firstDate.Value, secondDate.Value);
 
-            var column = dataGridView1.Columns["protocolIDDataGridViewTextBoxColumn"];
+            DataGridViewColumn column = dataGridView1.Columns["protocolIDDataGridViewTextBoxColumn"];
             if (column != null)
                 column.Visible = false;
         }
@@ -151,7 +151,7 @@ namespace adovipavto
 
                 var newProtocolId =
                     (int) dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
-                NewVipAvtoSet.ProtocolsRow protocol = (NewVipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+                var protocol = (NewVipAvtoSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
                 NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
                 _document2 = new PrintProtocolDocument(protocol, mesures, _set);
@@ -168,7 +168,7 @@ namespace adovipavto
 
                 var newProtocolId =
                     (int) dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
-                NewVipAvtoSet.ProtocolsRow protocol = (NewVipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+                var protocol = (NewVipAvtoSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
                 NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
                 new ProtocolReportForm(protocol, mesures, _set).ShowDialog();

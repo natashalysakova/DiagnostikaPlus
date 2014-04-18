@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
@@ -11,10 +10,11 @@ namespace adovipavto.EditForms
 {
     public partial class EditOperatorForm : Form
     {
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
         private readonly NewVipAvtoSet.OperatorsRow _selected;
         private readonly NewVipAvtoSet _set;
-        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
-
 
 
         public EditOperatorForm(NewVipAvtoSet.OperatorsRow selected, NewVipAvtoSet set)
@@ -28,9 +28,9 @@ namespace adovipavto.EditForms
 
         private void AddOperatorForm_Load(object sender, EventArgs e)
         {
-            nameTxtBx.Text = _selected.Name.ToString();
-            lnTxtBx.Text = _selected.LastName.ToString();
-            loginTxtBx.Text = _selected.Login.ToString();
+            nameTxtBx.Text = _selected.Name;
+            lnTxtBx.Text = _selected.LastName;
+            loginTxtBx.Text = _selected.Login;
             passTxtBx.Text = @"********";
 
             ValidateChildren();
@@ -60,7 +60,7 @@ namespace adovipavto.EditForms
         private void nameTxtBx_Validated(object sender, EventArgs e)
         {
             if (((TextBox) sender).Text == "")
-                errorProvider1.SetError(((TextBox)sender), _rm.GetString("wrongData"));
+                errorProvider1.SetError(((TextBox) sender), _rm.GetString("wrongData"));
             else
                 errorProvider1.SetError(((TextBox) sender), null);
         }

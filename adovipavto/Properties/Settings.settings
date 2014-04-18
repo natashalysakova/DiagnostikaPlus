@@ -2,21 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="adovipavto.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="ServerIp" Type="System.String" Scope="User">
-      <Value Profile="(Default)">192.168.0.100</Value>
-    </Setting>
-    <Setting Name="Port" Type="System.String" Scope="User">
-      <Value Profile="(Default)">3306</Value>
-    </Setting>
-    <Setting Name="DataBase" Type="System.String" Scope="User">
-      <Value Profile="(Default)">vipavto</Value>
-    </Setting>
-    <Setting Name="UserName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">vipavto</Value>
-    </Setting>
-    <Setting Name="Passwod" Type="System.String" Scope="User">
-      <Value Profile="(Default)">04101968</Value>
-    </Setting>
     <Setting Name="VipAvtoDBConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;

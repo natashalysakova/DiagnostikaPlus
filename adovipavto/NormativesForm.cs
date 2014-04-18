@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
@@ -17,8 +16,10 @@ namespace adovipavto
 {
     public partial class NormativesForm : Form
     {
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
         private readonly int _selectedGroup;
-        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
         public NormativesForm() : this(0)
@@ -32,15 +33,14 @@ namespace adovipavto
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             InitializeComponent();
-
         }
 
         private void NormativesForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "newVipAvtoSet.Normatives". При необходимости она может быть перемещена или удалена.
-            this.normativesTableAdapter.Fill(this.newVipAvtoSet.Normatives);
-            
-            GroupsTableAdapter adapter = new GroupsTableAdapter();
+            normativesTableAdapter.Fill(newVipAvtoSet.Normatives);
+
+            var adapter = new GroupsTableAdapter();
             adapter.Fill(newVipAvtoSet.Groups);
             adapter.Dispose();
 
@@ -48,7 +48,7 @@ namespace adovipavto
 
             string[] groups =
                 (from NewVipAvtoSet.GroupsRow item in newVipAvtoSet.Groups
-                 select item.Title).ToArray();
+                    select item.Title).ToArray();
 
             groupSelector.Items.AddRange(groups);
 
@@ -63,15 +63,14 @@ namespace adovipavto
 
 
             int id = newVipAvtoSet.GetGroupId(groupSelector.Text);
-            ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = string.Format("GroupId = '{0}'", id);
+            ((DataTable) dataGridView1.DataSource).DefaultView.RowFilter = string.Format("GroupId = '{0}'", id);
         }
 
 
         private void groupSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id = newVipAvtoSet.GetGroupId(groupSelector.Text);
-            ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = string.Format("GroupId = '{0}'", id);
-
+            ((DataTable) dataGridView1.DataSource).DefaultView.RowFilter = string.Format("GroupId = '{0}'", id);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -87,8 +86,6 @@ namespace adovipavto
             {
                 var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
                 newVipAvtoSet.RemoveRowById(Constants.NormativesTableName, id);
-                
-
             }
         }
 
@@ -96,9 +93,8 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            NewVipAvtoSet.NormativesRow row = (NewVipAvtoSet.NormativesRow)newVipAvtoSet.GetRowById(Constants.NormativesTableName, id);
+            var row = (NewVipAvtoSet.NormativesRow) newVipAvtoSet.GetRowById(Constants.NormativesTableName, id);
             new EditNormativeForm(row, newVipAvtoSet).ShowDialog();
-
         }
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -107,15 +103,13 @@ namespace adovipavto
 
             var id = (int) dataGridView1.Rows[e.RowIndex].Cells[0].Value;
 
-            NewVipAvtoSet.NormativesRow row = (NewVipAvtoSet.NormativesRow)newVipAvtoSet.GetRowById(Constants.NormativesTableName, id);
+            var row = (NewVipAvtoSet.NormativesRow) newVipAvtoSet.GetRowById(Constants.NormativesTableName, id);
             new EditNormativeForm(row, newVipAvtoSet).ShowDialog();
-
         }
 
         private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AddNormativeForm(newVipAvtoSet).ShowDialog();
-
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -133,7 +127,7 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            NewVipAvtoSet.NormativesRow row = (NewVipAvtoSet.NormativesRow)newVipAvtoSet.GetRowById(Constants.NormativesTableName, id);
+            var row = (NewVipAvtoSet.NormativesRow) newVipAvtoSet.GetRowById(Constants.NormativesTableName, id);
             new EditNormativeForm(row, newVipAvtoSet).ShowDialog();
         }
 
@@ -144,7 +138,6 @@ namespace adovipavto
             {
                 var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
                 newVipAvtoSet.RemoveRowById(Constants.NormativesTableName, id);
-                
             }
         }
 
@@ -158,8 +151,5 @@ namespace adovipavto
                 }
             }
         }
-
-        
-
     }
 }

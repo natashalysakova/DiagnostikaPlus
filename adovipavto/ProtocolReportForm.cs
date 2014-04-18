@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
@@ -9,11 +8,12 @@ namespace adovipavto
 {
     public sealed partial class ProtocolReportForm : Form
     {
-        private readonly NewVipAvtoSet _set;
-        private readonly bool _printNow;
         private readonly PrintProtocolDocument _document;
+        private readonly bool _printNow;
+        private readonly NewVipAvtoSet _set;
 
-        public ProtocolReportForm(NewVipAvtoSet.ProtocolsRow protocolRow, NewVipAvtoSet.MesuresRow[] mesures, NewVipAvtoSet set, bool printNow = false)
+        public ProtocolReportForm(NewVipAvtoSet.ProtocolsRow protocolRow, NewVipAvtoSet.MesuresRow[] mesures,
+            NewVipAvtoSet set, bool printNow = false)
         {
             _set = set;
             _printNow = printNow;
@@ -123,7 +123,8 @@ namespace adovipavto
             {
                 double zoom =
                     Convert.ToDouble(
-                        toolStripComboBox1.SelectedItem.ToString().Split(new[] {'%'}, StringSplitOptions.RemoveEmptyEntries)
+                        toolStripComboBox1.SelectedItem.ToString()
+                            .Split(new[] {'%'}, StringSplitOptions.RemoveEmptyEntries)
                             [0]);
                 printPreviewControl1.Zoom = zoom/100;
             }

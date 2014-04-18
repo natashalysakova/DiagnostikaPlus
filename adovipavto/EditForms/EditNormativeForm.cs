@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
@@ -11,9 +10,11 @@ namespace adovipavto.EditForms
 {
     public partial class EditNormativeForm : Form
     {
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
         private readonly NewVipAvtoSet.NormativesRow _selected;
         private readonly NewVipAvtoSet _set;
-        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
         public EditNormativeForm(NewVipAvtoSet.NormativesRow selected, NewVipAvtoSet set)
         {
@@ -36,7 +37,6 @@ namespace adovipavto.EditForms
                 _set.EditNormative(_selected.IdNormative, groupTextBox.Text,
                     mesureTextBox.Text, Convert.ToDouble(minTextBox.Text), Convert.ToDouble(maxTextBox.Text));
                 DialogResult = DialogResult.OK;
-               
             }
         }
 
@@ -60,7 +60,7 @@ namespace adovipavto.EditForms
             }
             catch (Exception)
             {
-                errorProvider1.SetError(((TextBox)sender), _rm.GetString("wrongData"));
+                errorProvider1.SetError(((TextBox) sender), _rm.GetString("wrongData"));
             }
         }
 
@@ -71,7 +71,7 @@ namespace adovipavto.EditForms
 
         private void EditNormativeForm_Load(object sender, EventArgs e)
         {
-            var id = _selected.IdNormative;
+            int id = _selected.IdNormative;
 
             foreach (NewVipAvtoSet.NormativesRow item in _set.Normatives.Rows)
             {

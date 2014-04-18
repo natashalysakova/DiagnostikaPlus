@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Reflection;
@@ -15,7 +14,8 @@ namespace adovipavto
 {
     public partial class OperatorsForm : Form
     {
-        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
 
         public OperatorsForm()
         {
@@ -28,10 +28,8 @@ namespace adovipavto
         private void OperatorsForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "newVipAvtoSet.Operators". При необходимости она может быть перемещена или удалена.
-            this.operatorsTableAdapter.Fill(this.newVipAvtoSet.Operators);
-
+            operatorsTableAdapter.Fill(newVipAvtoSet.Operators);
         }
-
 
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -97,7 +95,7 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            NewVipAvtoSet.OperatorsRow row = (NewVipAvtoSet.OperatorsRow)newVipAvtoSet.GetRowById(Constants.OperatorsTableName, id);
+            var row = (NewVipAvtoSet.OperatorsRow) newVipAvtoSet.GetRowById(Constants.OperatorsTableName, id);
 
 
             new EditOperatorForm(row, newVipAvtoSet).ShowDialog();
@@ -145,7 +143,7 @@ namespace adovipavto
             {
                 if (e.Value != null)
                 {
-                    e.Value = Constants.GetEnumDescription((Rights)e.Value);
+                    e.Value = Constants.GetEnumDescription((Rights) e.Value);
                 }
             }
         }

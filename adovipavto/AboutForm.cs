@@ -12,7 +12,8 @@ namespace adovipavto
 {
     partial class AboutForm : Form
     {
-        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
 
         public AboutForm()
         {
@@ -24,7 +25,7 @@ namespace adovipavto
             labelVersion.Text = String.Format(_rm.GetString("version") + " {0}", AssemblyVersion);
             labelCopyright.Text = AssemblyCopyright;
             labelCompanyName.Text = AssemblyCompany;
-            logoPictureBox.Image = (Image)_rm.GetObject("splashScreen2");
+            logoPictureBox.Image = (Image) _rm.GetObject("splashScreen2");
         }
 
         #region Assembly Attribute Accessors

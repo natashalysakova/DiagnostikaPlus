@@ -17,7 +17,7 @@ namespace adovipavto
                 Settings.Instance.Language = "ru-RU";
             else
                 Settings.Instance.Language = "uk-UA";
-            
+
             Settings.Instance.Save();
 
             DialogResult = DialogResult.OK;

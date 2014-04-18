@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Drawing.Printing;
 using System.Windows.Forms;
 using adovipavto.Classes;

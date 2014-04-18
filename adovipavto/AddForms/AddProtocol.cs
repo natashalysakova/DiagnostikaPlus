@@ -16,28 +16,27 @@ namespace adovipavto.AddForms
 {
     public partial class AddProtocol : Form
     {
-        private GBOSTATE gbo;
+        private readonly DRandom _random = new DRandom();
 
-        private readonly MainForm _mainForm;
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
         private readonly NewVipAvtoSet _set;
-
-        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+        private GBOSTATE _gbo;
 
 
         private int _newProtocolId;
         private DataRow[] _normatives;
         private List<VisualRow> _rows;
-        DRandom _random = new DRandom();
 
-        public AddProtocol(MainForm mainForm, NewVipAvtoSet set)
+        public AddProtocol(NewVipAvtoSet set)
         {
-            _mainForm = mainForm;
             _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
 
             InitializeComponent();
 
-            gbo = GBOSTATE.None;
+            _gbo = GBOSTATE.None;
             _rows = new List<VisualRow>();
         }
 
@@ -64,7 +63,7 @@ namespace adovipavto.AddForms
 
             string[] mechanics = (
                 from NewVipAvtoSet.MechanicsRow item in _set.Tables[Constants.MechanicsTableName].Rows
-                where item.State != (int)State.Unemployed
+                where item.State != (int) State.Unemployed
                 select
                     _set.GetShortMechanicName(item.IdMechanic)
                 ).ToArray();
@@ -140,7 +139,7 @@ namespace adovipavto.AddForms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            gbo = GBOSTATE.None;
+            _gbo = GBOSTATE.None;
             UnlockFields();
         }
 
@@ -157,32 +156,31 @@ namespace adovipavto.AddForms
 
             if (_set.GroupWithGasEngine(comboBox1.SelectedItem.ToString()))
             {
-                switch (gbo)
+                switch (_gbo)
                 {
                     case GBOSTATE.None:
                         if (MessageBox.Show(_rm.GetString("IsGBOActive"), _rm.GetString("warning"),
                             MessageBoxButtons.YesNo,
                             MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                         {
-                            gbo = GBOSTATE.Active;
+                            _gbo = GBOSTATE.Active;
                             GBO.Enabled = true;
                             GBO.BackColor = Color.Gold;
-
                         }
                         else
                         {
-                            gbo = GBOSTATE.NonActive;
+                            _gbo = GBOSTATE.NonActive;
                             GBO.Enabled = false;
                             GBO.BackColor = SystemColors.Control;
                         }
                         break;
                     case GBOSTATE.Active:
-                        gbo = GBOSTATE.Active;
+                        _gbo = GBOSTATE.Active;
                         GBO.Enabled = true;
                         GBO.BackColor = Color.Gold;
                         break;
                     default:
-                        gbo = GBOSTATE.NonActive;
+                        _gbo = GBOSTATE.NonActive;
                         GBO.Enabled = false;
                         GBO.BackColor = SystemColors.Control;
                         break;
@@ -190,13 +188,10 @@ namespace adovipavto.AddForms
             }
             else
             {
-                gbo = GBOSTATE.NonActive;
+                _gbo = GBOSTATE.NonActive;
                 GBO.Enabled = false;
                 GBO.BackColor = SystemColors.Control;
-
             }
-
-
 
 
             PreviewBtn.Enabled = true;
@@ -227,8 +222,6 @@ namespace adovipavto.AddForms
 
                         foreach (Control control in control3.Controls)
                         {
-
-
                             if (control.Tag == null) continue;
 
                             int tag = Convert.ToInt32(control.Tag);
@@ -240,9 +233,9 @@ namespace adovipavto.AddForms
                                 continue;
                             if (tag == 4 && (numericUpDown1.Value == 2 || numericUpDown1.Value == 1))
                                 continue;
-                            if (tag == 23 && (numericUpDown1.Value == 1 || numericUpDown1.Value == 2 || numericUpDown1.Value == 3))
+                            if (tag == 23 &&
+                                (numericUpDown1.Value == 1 || numericUpDown1.Value == 2 || numericUpDown1.Value == 3))
                                 continue;
-
 
 
                             if (control is TextBox)
@@ -279,7 +272,6 @@ namespace adovipavto.AddForms
 
 
                 panel2.BackColor = Color.Gold;
-
             }
 
 
@@ -290,13 +282,10 @@ namespace adovipavto.AddForms
                 {
                     radioButton6.Checked = true;
                 }
-
             }
 
 
-
             timer1.Start();
-
         }
 
         private void CleanFields()
@@ -309,7 +298,7 @@ namespace adovipavto.AddForms
                     {
                         if (control2 is TableLayoutPanel)
                         {
-                            foreach (Control control3 in ((TableLayoutPanel)control2).Controls)
+                            foreach (Control control3 in ((TableLayoutPanel) control2).Controls)
                             {
                                 if (control3 is TextBox)
                                 {
@@ -334,9 +323,6 @@ namespace adovipavto.AddForms
             radioButton5.Checked = false;
             radioButton6.Checked = false;
             radioButton7.Checked = false;
-
-
-
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -354,7 +340,8 @@ namespace adovipavto.AddForms
 
             if (_newProtocolId != -1)
             {
-                NewVipAvtoSet.ProtocolsRow protocol = (NewVipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
+                var protocol =
+                    (NewVipAvtoSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
                 NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
                 new ProtocolReportForm(protocol, mesures, _set, true).ShowDialog();
@@ -405,15 +392,15 @@ namespace adovipavto.AddForms
 
             if (GBO.Enabled == false)
             {
-                gbo = (int)Gbo.NotChecked;
+                gbo = (int) Gbo.NotChecked;
             }
             else
             {
                 if (radioButton6.Checked)
-                    gbo = (int)Gbo.Germetical;
+                    gbo = (int) Gbo.Germetical;
                 else
                 {
-                    gbo = (int)Gbo.NotGermrtical;
+                    gbo = (int) Gbo.NotGermrtical;
                 }
             }
 
@@ -426,9 +413,9 @@ namespace adovipavto.AddForms
 
             foreach (VisualRow row in _rows)
             {
-                        _set.AddMesure(row.Id, row.Value, _newProtocolId, groupid);
+                _set.AddMesure(row.Id, row.Value, _newProtocolId, groupid);
             }
-            _set.Update(typeof(NewVipAvtoSet.MesuresRow));
+            _set.Update(typeof (NewVipAvtoSet.MesuresRow));
             _set.AcceptChanges();
 
             return true;
@@ -552,7 +539,6 @@ namespace adovipavto.AddForms
                 {
                     maskedTextBox1.BackColor = Color.DarkOrange;
                 }
-
             }
             else
             {
@@ -575,10 +561,10 @@ namespace adovipavto.AddForms
             }
 
 
-
             if (_newProtocolId != -1)
             {
-                NewVipAvtoSet.ProtocolsRow protocol = (NewVipAvtoSet.ProtocolsRow)_set.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
+                var protocol =
+                    (NewVipAvtoSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
                 NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
                 new ProtocolReportForm(protocol, mesures, _set).ShowDialog();
@@ -607,8 +593,8 @@ namespace adovipavto.AddForms
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                ((PictureBox)sender).Tag = openFileDialog1.FileName;
-                ((PictureBox)sender).Image = Image.FromFile(openFileDialog1.FileName);
+                ((PictureBox) sender).Tag = openFileDialog1.FileName;
+                ((PictureBox) sender).Image = Image.FromFile(openFileDialog1.FileName);
             }
         }
 
@@ -628,7 +614,7 @@ namespace adovipavto.AddForms
         }
     }
 
-    enum GBOSTATE
+    internal enum GBOSTATE
     {
         None,
         Active,

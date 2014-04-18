@@ -11,7 +11,6 @@ namespace adovipavto
 {
     public sealed partial class SplashScreen : Form
     {
-
         public SplashScreen()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);

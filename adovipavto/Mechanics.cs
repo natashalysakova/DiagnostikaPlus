@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Reflection;
@@ -15,8 +14,8 @@ namespace adovipavto
 {
     public partial class Mechanics : Form
     {
-
-        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
 
         public Mechanics()
         {
@@ -41,7 +40,7 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            NewVipAvtoSet.MechanicsRow row = (NewVipAvtoSet.MechanicsRow)newVipAvtoSet.GetRowById(Constants.MechanicsTableName, id);
+            var row = (NewVipAvtoSet.MechanicsRow) newVipAvtoSet.GetRowById(Constants.MechanicsTableName, id);
 
 
             new EditMechanicForm(row, newVipAvtoSet).ShowDialog();
@@ -104,7 +103,6 @@ namespace adovipavto
         }
 
 
-
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             Delete();
@@ -116,7 +114,7 @@ namespace adovipavto
             {
                 if (e.Value != null)
                 {
-                    e.Value = Constants.GetEnumDescription((State)e.Value);
+                    e.Value = Constants.GetEnumDescription((State) e.Value);
                 }
             }
         }

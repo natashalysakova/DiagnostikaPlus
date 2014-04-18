@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
@@ -32,14 +31,14 @@ namespace adovipavto.EditForms
             fnTxtBx.Text = _selected.FatherName;
 
             Text = lnTxtBx.Text + @" " + nameTxtBx.Text[0] + @"." + fnTxtBx.Text[0] + @". - " +
-                   Constants.GetEnumDescription((State) (int) _selected.State);
+                   Constants.GetEnumDescription((State) _selected.State);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (ValidateChildren())
             {
-                _set.EditMechanic((int) _selected.IdMechanic, nameTxtBx.Text, lnTxtBx.Text, fnTxtBx.Text);
+                _set.EditMechanic(_selected.IdMechanic, nameTxtBx.Text, lnTxtBx.Text, fnTxtBx.Text);
                 DialogResult = DialogResult.OK;
             }
             else

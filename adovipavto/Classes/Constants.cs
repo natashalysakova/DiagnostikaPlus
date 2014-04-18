@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Reflection;
-using adovipavto.Properties;
 
 namespace adovipavto.Classes
 {

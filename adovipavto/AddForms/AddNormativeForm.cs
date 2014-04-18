@@ -1,7 +1,5 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
@@ -11,14 +9,14 @@ using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
 
-
-
 namespace adovipavto.AddForms
 {
     public partial class AddNormativeForm : Form
     {
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
         private readonly NewVipAvtoSet _set;
-        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
         public AddNormativeForm(NewVipAvtoSet set)
         {

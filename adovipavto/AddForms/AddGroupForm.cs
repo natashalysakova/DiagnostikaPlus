@@ -13,8 +13,10 @@ namespace adovipavto.AddForms
 {
     public partial class AddGroupForm : Form
     {
+        private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
+            Assembly.GetExecutingAssembly());
+
         private readonly NewVipAvtoSet _set;
-        readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
         public AddGroupForm(NewVipAvtoSet set)
         {
@@ -100,7 +102,7 @@ namespace adovipavto.AddForms
             for (int i = 0; i < checkedListBox1.Items.Count; i++)
             {
                 checkedListBox1.SetItemChecked(i, true);
-            }           
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)

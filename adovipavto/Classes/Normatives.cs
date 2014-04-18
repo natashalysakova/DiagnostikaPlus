@@ -4,15 +4,14 @@ using System.Globalization;
 using System.Reflection;
 using System.Resources;
 using System.Threading;
-using adovipavto.Properties;
 
 namespace adovipavto.Classes
 {
     internal class Normatives : IEnumerable
     {
         private readonly List<int> _decimals;
-        private readonly List<string> _normas;
         private readonly List<double> _hardNorms;
+        private readonly List<string> _normas;
 
         public Normatives()
         {
@@ -105,8 +104,6 @@ namespace adovipavto.Classes
         }
 
 
-
-
         public List<int> DecimalPoints
         {
             get { return _decimals; }
@@ -118,6 +115,21 @@ namespace adovipavto.Classes
             get { return _hardNorms; }
         }
 
+        public string this[int i]
+        {
+            get { return _normas[i]; }
+        }
+
+        public int Count
+        {
+            get { return _normas.Count; }
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return _normas.GetEnumerator();
+        }
+
         public int GetNormativeIndex(string title)
         {
             for (int i = 0; i < _normas.Count; i++)
@@ -127,21 +139,6 @@ namespace adovipavto.Classes
             }
 
             return -1;
-        }
-
-        public string this[int i]
-        {
-            get { return _normas[i]; }
-        }
-
-        public IEnumerator GetEnumerator()
-        {
-            return _normas.GetEnumerator();
-        }
-
-        public int Count
-        {
-            get { return _normas.Count; }
         }
 
         internal int IndexOf(string p)
