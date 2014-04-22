@@ -302,6 +302,8 @@ namespace adovipavto
 
             QueriesTableAdapter q = new QueriesTableAdapter();
             int count = (int)q.ProtocolsCount();
+            toolStripStatusLabel2.Text = count.ToString();
+
             if (count != newVipAvtoSet.Protocols.Count)
             {
                 int saveRow = 0;

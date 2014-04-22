@@ -117,6 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 17</value>
+  </data>
+  <data name="toolStripStatusLabel1.Text" xml:space="preserve">
+    <value>Усього записів</value>
+  </data>
+  <data name="toolStripStatusLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 17</value>
+  </data>
+  <data name="toolStripStatusLabel2.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="blankNumberDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Номер бланку</value>
   </data>
@@ -129,17 +142,14 @@
   <data name="nextDataDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Дата наступного проходження</value>
   </data>
-  <data name="resultDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
-    <value>Результат</value>
+  <data name="mechanicIdDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Механік</value>
   </data>
   <data name="operatorIdDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Оператор</value>
   </data>
-  <data name="mechanicIdDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Механік</value>
-  </data>
-  <data name="techPhotoDataGridViewImageColumn.HeaderText" xml:space="preserve">
-    <value>Техпаспорт</value>
+  <data name="resultDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
+    <value>Результат</value>
   </data>
   <data name="toolStripButton10.Text" xml:space="preserve">
     <value>Створити протокол</value>
@@ -177,7 +187,6 @@
   <data name="toolStripButton18.Text" xml:space="preserve">
     <value>Вихід</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="просмотрToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 22</value>
   </data>

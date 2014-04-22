@@ -35,6 +35,7 @@ namespace adovipavto
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idProtocolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.blankNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,43 +84,58 @@ namespace adovipavto
             // 
             // toolStripContainer1
             // 
+            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
             // 
             // toolStripContainer1.BottomToolStripPanel
             // 
+            resources.ApplyResources(this.toolStripContainer1.BottomToolStripPanel, "toolStripContainer1.BottomToolStripPanel");
             this.toolStripContainer1.BottomToolStripPanel.Controls.Add(this.statusStrip1);
             // 
             // toolStripContainer1.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
             resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
-            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
+            // 
+            // toolStripContainer1.LeftToolStripPanel
+            // 
+            resources.ApplyResources(this.toolStripContainer1.LeftToolStripPanel, "toolStripContainer1.LeftToolStripPanel");
             this.toolStripContainer1.Name = "toolStripContainer1";
+            // 
+            // toolStripContainer1.RightToolStripPanel
+            // 
+            resources.ApplyResources(this.toolStripContainer1.RightToolStripPanel, "toolStripContainer1.RightToolStripPanel");
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip2);
             resources.ApplyResources(this.toolStripContainer1.TopToolStripPanel, "toolStripContainer1.TopToolStripPanel");
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip2);
             // 
             // statusStrip1
             // 
             resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2});
             this.statusStrip1.Name = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            // 
+            // toolStripStatusLabel2
+            // 
+            resources.ApplyResources(this.toolStripStatusLabel2, "toolStripStatusLabel2");
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             // 
             // dataGridView1
             // 
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProtocolDataGridViewTextBoxColumn,
@@ -251,122 +267,122 @@ namespace adovipavto
             // 
             // toolStripButton10
             // 
+            resources.ApplyResources(this.toolStripButton10, "toolStripButton10");
             this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton10.Image = global::adovipavto.Properties.Resources.protocol1;
-            resources.ApplyResources(this.toolStripButton10, "toolStripButton10");
             this.toolStripButton10.Name = "toolStripButton10";
             this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
             // 
             // cpyBtn
             // 
+            resources.ApplyResources(this.cpyBtn, "cpyBtn");
             this.cpyBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.cpyBtn.Image = global::adovipavto.Properties.Resources.copy;
-            resources.ApplyResources(this.cpyBtn, "cpyBtn");
             this.cpyBtn.Name = "cpyBtn";
             this.cpyBtn.Click += new System.EventHandler(this.cpyBtn_Click);
             // 
             // srchBtn
             // 
+            resources.ApplyResources(this.srchBtn, "srchBtn");
             this.srchBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.srchBtn.Image = global::adovipavto.Properties.Resources.search;
-            resources.ApplyResources(this.srchBtn, "srchBtn");
             this.srchBtn.Name = "srchBtn";
             this.srchBtn.Click += new System.EventHandler(this.srchBtn_Click);
             // 
             // toolStripSeparator3
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
             resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
             // 
             // toolStripButton11
             // 
+            resources.ApplyResources(this.toolStripButton11, "toolStripButton11");
             this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton11.Image = global::adovipavto.Properties.Resources.GROUP;
-            resources.ApplyResources(this.toolStripButton11, "toolStripButton11");
             this.toolStripButton11.Name = "toolStripButton11";
             this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
             // 
             // toolStripButton12
             // 
+            resources.ApplyResources(this.toolStripButton12, "toolStripButton12");
             this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton12.Image = global::adovipavto.Properties.Resources.NORMARIVES;
-            resources.ApplyResources(this.toolStripButton12, "toolStripButton12");
             this.toolStripButton12.Name = "toolStripButton12";
             this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
             // 
             // toolStripButton13
             // 
+            resources.ApplyResources(this.toolStripButton13, "toolStripButton13");
             this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton13.Image = global::adovipavto.Properties.Resources.oper;
-            resources.ApplyResources(this.toolStripButton13, "toolStripButton13");
             this.toolStripButton13.Name = "toolStripButton13";
             this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
             // 
             // toolStripButton14
             // 
+            resources.ApplyResources(this.toolStripButton14, "toolStripButton14");
             this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton14.Image = global::adovipavto.Properties.Resources.mech;
-            resources.ApplyResources(this.toolStripButton14, "toolStripButton14");
             this.toolStripButton14.Name = "toolStripButton14";
             this.toolStripButton14.Click += new System.EventHandler(this.toolStripButton14_Click);
             // 
             // toolStripSeparator4
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
             resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
             // 
             // toolStripButton15
             // 
+            resources.ApplyResources(this.toolStripButton15, "toolStripButton15");
             this.toolStripButton15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton15.Image = global::adovipavto.Properties.Resources.setting;
-            resources.ApplyResources(this.toolStripButton15, "toolStripButton15");
             this.toolStripButton15.Name = "toolStripButton15";
             this.toolStripButton15.Click += new System.EventHandler(this.toolStripButton15_Click);
             // 
             // toolStripButton16
             // 
+            resources.ApplyResources(this.toolStripButton16, "toolStripButton16");
             this.toolStripButton16.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton16.Image = global::adovipavto.Properties.Resources.help;
-            resources.ApplyResources(this.toolStripButton16, "toolStripButton16");
             this.toolStripButton16.Name = "toolStripButton16";
             this.toolStripButton16.Click += new System.EventHandler(this.toolStripButton16_Click);
             // 
             // toolStripButton17
             // 
+            resources.ApplyResources(this.toolStripButton17, "toolStripButton17");
             this.toolStripButton17.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton17.Image = global::adovipavto.Properties.Resources.about;
-            resources.ApplyResources(this.toolStripButton17, "toolStripButton17");
             this.toolStripButton17.Name = "toolStripButton17";
             this.toolStripButton17.Click += new System.EventHandler(this.toolStripButton17_Click);
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
             // 
             // toolStripButton1
             // 
+            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton1.Image = global::adovipavto.Properties.Resources.switchUserBtn;
-            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton18
             // 
+            resources.ApplyResources(this.toolStripButton18, "toolStripButton18");
             this.toolStripButton18.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton18.Image = global::adovipavto.Properties.Resources.exit;
-            resources.ApplyResources(this.toolStripButton18, "toolStripButton18");
             this.toolStripButton18.Name = "toolStripButton18";
             this.toolStripButton18.Click += new System.EventHandler(this.toolStripButton18_Click);
             // 
             // contextMenuStrip1
             // 
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.просмотрToolStripMenuItem,
             this.печатьToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             // 
             // просмотрToolStripMenuItem
             // 
@@ -376,8 +392,8 @@ namespace adovipavto
             // 
             // печатьToolStripMenuItem
             // 
-            this.печатьToolStripMenuItem.Name = "печатьToolStripMenuItem";
             resources.ApplyResources(this.печатьToolStripMenuItem, "печатьToolStripMenuItem");
+            this.печатьToolStripMenuItem.Name = "печатьToolStripMenuItem";
             this.печатьToolStripMenuItem.Click += new System.EventHandler(this.печатьToolStripMenuItem_Click);
             // 
             // timer1
@@ -457,5 +473,6 @@ namespace adovipavto
         private DataGridViewTextBoxColumn resultDataGridViewCheckBoxColumn;
         private DataGridViewCheckBoxColumn visualCheckDataGridViewCheckBoxColumn;
         private DataGridViewTextBoxColumn gBODataGridViewTextBoxColumn;
+        private ToolStripStatusLabel toolStripStatusLabel2;
     }
 }
