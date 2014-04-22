@@ -299,38 +299,40 @@ namespace adovipavto
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int saveRow = 0;
-            if (dataGridView1.Rows.Count > 0)
-                saveRow = dataGridView1.FirstDisplayedCell.RowIndex;
 
-            if (dataGridView1.SelectedRows.Count != 0)
-                _selectedRow = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
-
-
-            SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM Protocols;", protocolsTableAdapter.Connection);
-
-            SqlDataReader reader = comm.ExecuteReader();
-            int count = Convert.ToInt32(reader.GetValue(0));
+            QueriesTableAdapter q = new QueriesTableAdapter();
+            int count = (int)q.ProtocolsCount();
             if (count != newVipAvtoSet.Protocols.Count)
             {
+                int saveRow = 0;
+                if (dataGridView1.Rows.Count > 0)
+                    saveRow = dataGridView1.FirstDisplayedCell.RowIndex;
+
+                if (dataGridView1.SelectedRows.Count != 0)
+                    _selectedRow = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+
+
+
                 newVipAvtoSet.Mesures.Clear();
                 var adapter = new MesuresTableAdapter();
                 protocolsTableAdapter.Fill(newVipAvtoSet.Protocols);
                 adapter.Fill(newVipAvtoSet.Mesures);
+
+                int[] t =
+    (from DataGridViewRow row in dataGridView1.Rows
+     where (int)row.Cells[0].Value == _selectedRow
+     select row.Index
+        ).ToArray();
+                if (t.Length != 0)
+                    dataGridView1.Rows[t[0]].Selected = true;
+
+
+                if (saveRow != 0 && saveRow < dataGridView1.Rows.Count)
+                    dataGridView1.FirstDisplayedScrollingRowIndex = saveRow;
+
             }
 
 
-            int[] t =
-                (from DataGridViewRow row in dataGridView1.Rows
-                    where (int) row.Cells[0].Value == _selectedRow
-                    select row.Index
-                    ).ToArray();
-            if (t.Length != 0)
-                dataGridView1.Rows[t[0]].Selected = true;
-
-
-            if (saveRow != 0 && saveRow < dataGridView1.Rows.Count)
-                dataGridView1.FirstDisplayedScrollingRowIndex = saveRow;
         }
 
     }

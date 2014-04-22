@@ -26,7 +26,8 @@ namespace adovipavto.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HATASSSKA-PC;Initial Catalog=VipAvtoDB;User ID=vipavto;Password=9194")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HATASSSKA-PC;Initial Catalog=VipAvtoDB;Persist Security Info=True;Use" +
+            "r ID=vipavto;Password=9194")]
         public string VipAvtoDBConnectionString {
             get {
                 return ((string)(this["VipAvtoDBConnectionString"]));

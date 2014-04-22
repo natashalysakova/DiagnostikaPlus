@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
@@ -23,6 +25,7 @@ namespace adovipavto
         private NormativesTableAdapter _normativesTableAdapter = new NormativesTableAdapter();
         private OperatorsTableAdapter _operatorsTableAdapter = new OperatorsTableAdapter();
         private ProtocolsTableAdapter _protocolsTableAdapter = new ProtocolsTableAdapter();
+        PhotosTableAdapter _photosTableAdapter = new PhotosTableAdapter();
         private ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
@@ -30,8 +33,8 @@ namespace adovipavto
         {
             OperatorsRow[] operatorRow =
                 (from OperatorsRow item in Operators.Rows
-                    where item.Login == username
-                    select item).ToArray();
+                 where item.Login == username
+                 select item).ToArray();
 
             if (operatorRow.Length != 0)
             {
@@ -74,9 +77,9 @@ namespace adovipavto
 
         public void Update(Type type)
         {
-            if (typeof (GroupsRow) == type)
+            if (typeof(GroupsRow) == type)
                 _groupsTableAdapter.Update(Groups);
-            else if (typeof (NormativesRow) == type)
+            else if (typeof(NormativesRow) == type)
             {
                 try
                 {
@@ -87,29 +90,33 @@ namespace adovipavto
                     MessageBox.Show(ex.Message + ex.ParamName);
                 }
             }
-            else if (typeof (MesuresRow) == type)
+            else if (typeof(MesuresRow) == type)
             {
                 _mesuresTableAdapter.Update(Mesures);
             }
-            else if (typeof (ProtocolsRow) == type)
+            else if (typeof(ProtocolsRow) == type)
             {
                 _protocolsTableAdapter.Update(Protocols);
             }
-            else if (typeof (OperatorsRow) == type)
+            else if (typeof(OperatorsRow) == type)
             {
                 _operatorsTableAdapter.Update(Operators);
             }
-            else if (typeof (MechanicsRow) == type)
+            else if (typeof(MechanicsRow) == type)
             {
                 _mechanicsTableAdapter.Update(Mechanics);
+            }
+            else if (typeof (PhotosRow) == type)
+            {
+                _photosTableAdapter.Update(Photos);
             }
         }
 
         public ProtocolsRow GetProtocolByBlankId(string blank)
         {
             ProtocolsRow[] rows = (from ProtocolsRow item in Protocols.Rows
-                where item.BlankNumber == blank
-                select item).ToArray();
+                                   where item.BlankNumber == blank
+                                   select item).ToArray();
 
             if (rows.Length == 0)
                 return null;
@@ -136,15 +143,15 @@ namespace adovipavto
         {
             OperatorsRow r = GetUserByLogin(name);
 
-            _currentOperator = new Operator((Rights) r.Right, r.IdOperator, r.Name,
+            _currentOperator = new Operator((Rights)r.Right, r.IdOperator, r.Name,
                 r.LastName);
         }
 
         private OperatorsRow GetUserByLogin(string name)
         {
             OperatorsRow[] rows = (from OperatorsRow row in Operators.Rows
-                where row.Login == name
-                select row).ToArray();
+                                   where row.Login == name
+                                   select row).ToArray();
 
             if (rows.Length != 0)
                 return rows[0];
@@ -173,7 +180,7 @@ namespace adovipavto
             r.LastName = lastName;
             r.FatherName = fatherName;
 
-            r.State = (int) State.Employed;
+            r.State = (int)State.Employed;
 
             Mechanics.AddMechanicsRow(r);
             Update(r.GetType());
@@ -201,14 +208,14 @@ namespace adovipavto
             var r = GetRowById(Constants.MechanicsTableName, id) as MechanicsRow;
             if (r != null)
             {
-                r.State = (int) State.Unemployed;
+                r.State = (int)State.Unemployed;
                 Update(r.GetType());
                 AcceptChanges();
             }
         }
 
 
-        internal int AddProtocol(string blankNumber, string mechanicName, DateTime dateTime, string techpass,
+        internal int AddProtocol(string blankNumber, string mechanicName, DateTime dateTime, 
             string groupTitle, bool result,
             DateTime nexDateTime, bool visChck, int gbo)
         {
@@ -218,15 +225,6 @@ namespace adovipavto
             r.OperatorId = _currentOperator.Id;
             r.MechanicId = GetMechanicIdByShortName(mechanicName);
             r.Date = dateTime;
-
-            if (techpass != "")
-            {
-                var converter = new ImageConverter();
-                var b = new Bitmap(techpass);
-                r.TechPhoto = (byte[]) converter.ConvertTo(b, typeof (byte[]));
-            }
-
-
             r.GroupId = GetGroupId(groupTitle);
             r.Result = result;
             r.NextData = nexDateTime.Date;
@@ -237,18 +235,69 @@ namespace adovipavto
             Update(r.GetType());
             AcceptChanges();
 
-            int id = r.IdProtocol;
+            return r.IdProtocol;
+        }
+
+        internal void AddPhoto(Image image, int protocolId)
+        {
 
 
-            return id;
+            PhotosRow r = Photos.NewPhotosRow();
+            r.ProtocolId = protocolId;
+
+            var converter = new ImageConverter();
+
+            try
+            {
+                Int32 width, height;
+
+                double ratio;
+                if (image.Width > image.Height)
+                {
+
+                    ratio = image.Height / (double)image.Width;
+                    width = 640;
+
+                    height = Convert.ToInt32(width * ratio);
+                }
+                else
+                {
+                    ratio = image.Width / (double)image.Height;
+                    height = 640;
+                    width = Convert.ToInt32(height * ratio);
+                }
+
+                Bitmap bmp = new System.Drawing.Bitmap(width, height);
+                bmp.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                    g.SmoothingMode = SmoothingMode.HighQuality;
+
+                    Rectangle src = new Rectangle(0, 0, image.Width, image.Height);
+                    Rectangle dst = new Rectangle(0, 0, bmp.Width, bmp.Height);
+                    g.DrawImage(image, dst, src, GraphicsUnit.Pixel);
+                    r.Photo = (byte[])converter.ConvertTo(bmp, typeof(byte[]));
+
+                }
+
+                Photos.AddPhotosRow(r);
+                Update(r.GetType());
+                AcceptChanges();
+
+
+            }
+            catch
+            { }
         }
 
         private int GetMechanicIdByShortName(string mechanicShortName)
         {
             int[] rows = (from MechanicsRow item in Mechanics.Rows
-                where
-                    GetShortMechanicName(item.IdMechanic) == mechanicShortName
-                select item.IdMechanic).ToArray();
+                          where
+                              GetShortMechanicName(item.IdMechanic) == mechanicShortName
+                          select item.IdMechanic).ToArray();
             if (rows.Length != 0)
                 return rows[0];
 
@@ -258,24 +307,24 @@ namespace adovipavto
         internal string GetShortMechanicName(int mechanicId)
         {
             return (from MechanicsRow item in Mechanics.Rows
-                where item.IdMechanic == mechanicId
-                select
-                    item.LastName + " " + item.Name[0] + ". " + item.FatherName[0] + ".")
+                    where item.IdMechanic == mechanicId
+                    select
+                        item.LastName + " " + item.Name[0] + ". " + item.FatherName[0] + ".")
                 .ToArray()[0];
         }
 
         internal string GetShortOperatorName(int operatorId)
         {
             return (from OperatorsRow item in Operators.Rows
-                where item.IdOperator == operatorId
-                select
-                    item.LastName + " " + item.Name[0] + ".")
+                    where item.IdOperator == operatorId
+                    select
+                        item.LastName + " " + item.Name[0] + ".")
                 .ToArray()[0];
         }
 
         public int GetGroupId(string title)
         {
-            string[] splitTitle = title.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+            string[] splitTitle = title.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             foreach (GroupsRow row in Groups.Rows)
             {
@@ -392,7 +441,7 @@ namespace adovipavto
                     break;
             }
 
-            return (int) r;
+            return (int)r;
         }
 
         internal bool GroupContainsNormative(string groupname, string normativename)
@@ -402,8 +451,8 @@ namespace adovipavto
             int normtag = GetNormativeTag(normativename);
 
             List<NormativesRow> mesures = (from NormativesRow item in Normatives.Rows
-                where item.Tag == normtag && item.GroupId == groupId
-                select item).ToList();
+                                           where item.Tag == normtag && item.GroupId == groupId
+                                           select item).ToList();
 
             if (mesures.Count == 0)
                 return false;
@@ -463,11 +512,11 @@ namespace adovipavto
         internal bool GroupExist(int year, string category, int engine, bool before)
         {
             List<GroupsRow> rows = (from GroupsRow item in Groups.Rows
-                where
-                    item.Year == year && item.Category == category &&
-                    item.EngineType == engine &&
-                    item.Before == before
-                select item).ToList();
+                                    where
+                                        item.Year == year && item.Category == category &&
+                                        item.EngineType == engine &&
+                                        item.Before == before
+                                    select item).ToList();
 
             if (rows.Count == 0)
                 return false;
@@ -504,7 +553,7 @@ namespace adovipavto
         {
             var r = GetRowById(Constants.OperatorsTableName, id) as OperatorsRow;
             if (r != null)
-                r.Right = (int) Rights.Locked;
+                r.Right = (int)Rights.Locked;
 
             Update(r.GetType());
             AcceptChanges();
@@ -513,10 +562,10 @@ namespace adovipavto
         internal ProtocolsRow[] GetProtocolsBetweenDates(DateTime dateTime1, DateTime dateTime2)
         {
             return (from ProtocolsRow item in Protocols.Rows
-                where
-                    item.Date >= dateTime1 &&
-                    item.Date <= dateTime2
-                select item).ToArray();
+                    where
+                        item.Date >= dateTime1 &&
+                        item.Date <= dateTime2
+                    select item).ToArray();
         }
 
         internal bool GroupWithGasEngine(string groupTitle)
@@ -555,13 +604,13 @@ namespace adovipavto
             r.ProtocolId = newProtocolId;
             r.MaxValue =
                 (from NormativesRow row in Normatives.Rows
-                    where row.Tag == normativeTag && row.GroupId == groupId
-                    select row.MaxValue)
+                 where row.Tag == normativeTag && row.GroupId == groupId
+                 select row.MaxValue)
                     .ToArray()[0];
             r.MinValue =
                 (from NormativesRow row in Normatives.Rows
-                    where row.Tag == normativeTag && row.GroupId == groupId
-                    select row.MinValue)
+                 where row.Tag == normativeTag && row.GroupId == groupId
+                 select row.MinValue)
                     .ToArray()[0];
 
 
@@ -590,6 +639,7 @@ namespace adovipavto
             _normativesTableAdapter.Fill(Normatives);
             _protocolsTableAdapter.Fill(Protocols);
             _mesuresTableAdapter.Fill(Mesures);
+            _photosTableAdapter.Fill(Photos);
         }
 
 

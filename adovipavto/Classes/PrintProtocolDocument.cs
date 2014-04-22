@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Resources;
 using System.Threading;
 using adovipavto.Enums;
+using adovipavto.NewVipAvtoSetTableAdapters;
 using adovipavto.Properties;
 
 namespace adovipavto.Classes
@@ -338,11 +339,14 @@ namespace adovipavto.Classes
             g.DrawRectangle(Pens.Black, techrect);
             g.DrawString(_rm.GetString("techphoto"), smallFont, Brushes.Black, techrect, sf);
 
+            //TODO: draw imge
+            NewVipAvtoSet.PhotosRow[] row = _protocolRow.GetPhotosRows();
 
-            if (!_protocolRow.IsTechPhotoNull())
+            if (row.Length!=0)
             {
-                TypeConverter tc = TypeDescriptor.GetConverter(typeof (Bitmap));
-                var b1 = (Bitmap) tc.ConvertFrom(_protocolRow.TechPhoto);
+                TypeConverter tc = TypeDescriptor.GetConverter(typeof(Bitmap));
+                
+                var b1 = (Bitmap)tc.ConvertFrom(row[0].Photo);
                 if (b1 != null)
                 {
                     DrawScaledArImage(b1, g, techrect);

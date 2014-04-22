@@ -365,9 +365,6 @@ namespace adovipavto.AddForms
             Settings.Instance.Save();
 
 
-            string techpass = "";
-            if (pictureBox28.Tag != null)
-                techpass = pictureBox28.Tag.ToString();
 
             bool result;
             if (panel2.BackColor == Color.LightGreen)
@@ -406,8 +403,14 @@ namespace adovipavto.AddForms
 
 
             _newProtocolId = _set.AddProtocol(label80.Text + maskedTextBox1.Text,
-                comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, techpass, comboBox1.SelectedItem.ToString(),
+                comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, comboBox1.SelectedItem.ToString(),
                 result, nexDateTime, radioButton1.Checked, gbo);
+
+
+            if (pictureBox28.Image != Properties.Resources.openfoto)
+            {
+                _set.AddPhoto(pictureBox28.Image, _newProtocolId);
+            }
 
             int groupid = _set.GetGroupId(comboBox1.SelectedItem.ToString());
 
@@ -595,7 +598,6 @@ namespace adovipavto.AddForms
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                ((PictureBox) sender).Tag = openFileDialog1.FileName;
                 ((PictureBox) sender).Image = Image.FromFile(openFileDialog1.FileName);
             }
         }

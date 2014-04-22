@@ -2,12 +2,10 @@
 <xs:schema id="NewVipAvtoSet" targetNamespace="http://tempuri.org/NewVipAvtoSet.xsd" xmlns:mstns="http://tempuri.org/NewVipAvtoSet.xsd" xmlns="http://tempuri.org/NewVipAvtoSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="VipAvtoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="VipAvtoDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.adovipavto.Properties.Settings.GlobalReference.Default.VipAvtoDBConnectionString" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="VipAvtoDBConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="VipAvtoDBConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.adovipavto.Properties.Settings.GlobalReference.Default.VipAvtoDBConnectionString1" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="VipAvtoDBConnectionString2" IsAppSettingsProperty="true" Modifier="Assembly" Name="VipAvtoDBConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.adovipavto.Properties.Settings.GlobalReference.Default.VipAvtoDBConnectionString2" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="VipAvtoDBConnectionStringLocal" IsAppSettingsProperty="true" Modifier="Assembly" Name="VipAvtoDBConnectionStringLocal (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.adovipavto.Properties.Settings.GlobalReference.Default.VipAvtoDBConnectionString2" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="VipAvtoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="VipAvtoDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.adovipavto.Properties.Settings.GlobalReference.Default.VipAvtoDBConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GroupsTableAdapter" GeneratorDataComponentClassName="GroupsTableAdapter" Name="Groups" UserDataComponentName="GroupsTableAdapter">
@@ -84,114 +82,6 @@ SELECT IdGroup, Year, Category, EngineType, Before, Title FROM Groups WHERE (IdG
               <Mapping SourceColumn="EngineType" DataSetColumn="EngineType" />
               <Mapping SourceColumn="Before" DataSetColumn="Before" />
               <Mapping SourceColumn="Title" DataSetColumn="Title" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProtocolsTableAdapter" GeneratorDataComponentClassName="ProtocolsTableAdapter" Name="Protocols" UserDataComponentName="ProtocolsTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="VipAvtoDBConnectionString (Settings)" DbObjectName="VipAvtoDB.dbo.Protocols" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Protocols] WHERE (([IdProtocol] = @Original_IdProtocol) AND ((@IsNull_BlankNumber = 1 AND [BlankNumber] IS NULL) OR ([BlankNumber] = @Original_BlankNumber)) AND ((@IsNull_OperatorId = 1 AND [OperatorId] IS NULL) OR ([OperatorId] = @Original_OperatorId)) AND ((@IsNull_MechanicId = 1 AND [MechanicId] IS NULL) OR ([MechanicId] = @Original_MechanicId)) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_GroupId = 1 AND [GroupId] IS NULL) OR ([GroupId] = @Original_GroupId)) AND ((@IsNull_Result = 1 AND [Result] IS NULL) OR ([Result] = @Original_Result)) AND ((@IsNull_NextData = 1 AND [NextData] IS NULL) OR ([NextData] = @Original_NextData)) AND ((@IsNull_VisualCheck = 1 AND [VisualCheck] IS NULL) OR ([VisualCheck] = @Original_VisualCheck)) AND ((@IsNull_GBO = 1 AND [GBO] IS NULL) OR ([GBO] = @Original_GBO)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProtocol" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProtocol" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BlankNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BlankNumber" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_BlankNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="BlankNumber" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_OperatorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OperatorId" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_OperatorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OperatorId" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MechanicId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MechanicId" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_MechanicId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MechanicId" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Result" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Result" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NextData" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NextData" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_NextData" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NextData" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VisualCheck" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_VisualCheck" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[Protocols] ([BlankNumber], [OperatorId], [MechanicId], [Date], [TechPhoto], [GroupId], [Result], [NextData], [VisualCheck], [GBO]) VALUES (@BlankNumber, @OperatorId, @MechanicId, @Date, @TechPhoto, @GroupId, @Result, @NextData, @VisualCheck, @GBO);
-SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, TechPhoto, GroupId, Result, NextData, VisualCheck, GBO FROM Protocols WHERE (IdProtocol = SCOPE_IDENTITY())</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@BlankNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="BlankNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@OperatorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OperatorId" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@MechanicId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MechanicId" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Binary" Direction="Input" ParameterName="@TechPhoto" Precision="0" ProviderType="Image" Scale="0" Size="0" SourceColumn="TechPhoto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Result" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@NextData" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NextData" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@VisualCheck" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, TechPhoto, GroupId, Result, NextData, VisualCheck, GBO FROM dbo.Protocols</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Protocols] SET [BlankNumber] = @BlankNumber, [OperatorId] = @OperatorId, [MechanicId] = @MechanicId, [Date] = @Date, [TechPhoto] = @TechPhoto, [GroupId] = @GroupId, [Result] = @Result, [NextData] = @NextData, [VisualCheck] = @VisualCheck, [GBO] = @GBO WHERE (([IdProtocol] = @Original_IdProtocol) AND ((@IsNull_BlankNumber = 1 AND [BlankNumber] IS NULL) OR ([BlankNumber] = @Original_BlankNumber)) AND ((@IsNull_OperatorId = 1 AND [OperatorId] IS NULL) OR ([OperatorId] = @Original_OperatorId)) AND ((@IsNull_MechanicId = 1 AND [MechanicId] IS NULL) OR ([MechanicId] = @Original_MechanicId)) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_GroupId = 1 AND [GroupId] IS NULL) OR ([GroupId] = @Original_GroupId)) AND ((@IsNull_Result = 1 AND [Result] IS NULL) OR ([Result] = @Original_Result)) AND ((@IsNull_NextData = 1 AND [NextData] IS NULL) OR ([NextData] = @Original_NextData)) AND ((@IsNull_VisualCheck = 1 AND [VisualCheck] IS NULL) OR ([VisualCheck] = @Original_VisualCheck)) AND ((@IsNull_GBO = 1 AND [GBO] IS NULL) OR ([GBO] = @Original_GBO)));
-SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, TechPhoto, GroupId, Result, NextData, VisualCheck, GBO FROM Protocols WHERE (IdProtocol = @IdProtocol)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@BlankNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="BlankNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@OperatorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OperatorId" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@MechanicId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MechanicId" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Binary" Direction="Input" ParameterName="@TechPhoto" Precision="0" ProviderType="Image" Scale="0" Size="0" SourceColumn="TechPhoto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Result" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@NextData" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NextData" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@VisualCheck" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProtocol" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProtocol" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BlankNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BlankNumber" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_BlankNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="BlankNumber" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_OperatorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OperatorId" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_OperatorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OperatorId" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MechanicId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MechanicId" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_MechanicId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MechanicId" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Result" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Result" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NextData" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NextData" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_NextData" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NextData" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VisualCheck" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_VisualCheck" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="IdProtocol" ColumnName="IdProtocol" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdProtocol" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdProtocol" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="IdProtocol" DataSetColumn="IdProtocol" />
-              <Mapping SourceColumn="BlankNumber" DataSetColumn="BlankNumber" />
-              <Mapping SourceColumn="OperatorId" DataSetColumn="OperatorId" />
-              <Mapping SourceColumn="MechanicId" DataSetColumn="MechanicId" />
-              <Mapping SourceColumn="Date" DataSetColumn="Date" />
-              <Mapping SourceColumn="TechPhoto" DataSetColumn="TechPhoto" />
-              <Mapping SourceColumn="GroupId" DataSetColumn="GroupId" />
-              <Mapping SourceColumn="Result" DataSetColumn="Result" />
-              <Mapping SourceColumn="NextData" DataSetColumn="NextData" />
-              <Mapping SourceColumn="VisualCheck" DataSetColumn="VisualCheck" />
-              <Mapping SourceColumn="GBO" DataSetColumn="GBO" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -489,15 +379,183 @@ SELECT IdOperator, Name, LastName, Login, Password, [Right] FROM Operators WHERE
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PhotosTableAdapter" GeneratorDataComponentClassName="PhotosTableAdapter" Name="Photos" UserDataComponentName="PhotosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="VipAvtoDBConnectionString (Settings)" DbObjectName="VipAvtoDB.dbo.Photos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Photos] WHERE (([IdPhoto] = @Original_IdPhoto) AND ((@IsNull_ProtocolId = 1 AND [ProtocolId] IS NULL) OR ([ProtocolId] = @Original_ProtocolId)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdPhoto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdPhoto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ProtocolId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProtocolId" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ProtocolId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProtocolId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Photos] ([Photo], [ProtocolId]) VALUES (@Photo, @ProtocolId);
+SELECT IdPhoto, Photo, ProtocolId FROM Photos WHERE (IdPhoto = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Binary" Direction="Input" ParameterName="@Photo" Precision="0" ProviderType="Image" Scale="0" Size="0" SourceColumn="Photo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ProtocolId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProtocolId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdPhoto, Photo, ProtocolId FROM dbo.Photos</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Photos] SET [Photo] = @Photo, [ProtocolId] = @ProtocolId WHERE (([IdPhoto] = @Original_IdPhoto) AND ((@IsNull_ProtocolId = 1 AND [ProtocolId] IS NULL) OR ([ProtocolId] = @Original_ProtocolId)));
+SELECT IdPhoto, Photo, ProtocolId FROM Photos WHERE (IdPhoto = @IdPhoto)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Binary" Direction="Input" ParameterName="@Photo" Precision="0" ProviderType="Image" Scale="0" Size="0" SourceColumn="Photo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ProtocolId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProtocolId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdPhoto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdPhoto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ProtocolId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProtocolId" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ProtocolId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProtocolId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdPhoto" ColumnName="IdPhoto" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdPhoto" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdPhoto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdPhoto" DataSetColumn="IdPhoto" />
+              <Mapping SourceColumn="Photo" DataSetColumn="Photo" />
+              <Mapping SourceColumn="ProtocolId" DataSetColumn="ProtocolId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProtocolsTableAdapter" GeneratorDataComponentClassName="ProtocolsTableAdapter" Name="Protocols" UserDataComponentName="ProtocolsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="VipAvtoDBConnectionString (Settings)" DbObjectName="VipAvtoDB.dbo.Protocols" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Protocols] WHERE (([IdProtocol] = @Original_IdProtocol) AND ((@IsNull_BlankNumber = 1 AND [BlankNumber] IS NULL) OR ([BlankNumber] = @Original_BlankNumber)) AND ((@IsNull_OperatorId = 1 AND [OperatorId] IS NULL) OR ([OperatorId] = @Original_OperatorId)) AND ((@IsNull_MechanicId = 1 AND [MechanicId] IS NULL) OR ([MechanicId] = @Original_MechanicId)) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_GroupId = 1 AND [GroupId] IS NULL) OR ([GroupId] = @Original_GroupId)) AND ((@IsNull_Result = 1 AND [Result] IS NULL) OR ([Result] = @Original_Result)) AND ((@IsNull_NextData = 1 AND [NextData] IS NULL) OR ([NextData] = @Original_NextData)) AND ((@IsNull_VisualCheck = 1 AND [VisualCheck] IS NULL) OR ([VisualCheck] = @Original_VisualCheck)) AND ((@IsNull_GBO = 1 AND [GBO] IS NULL) OR ([GBO] = @Original_GBO)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProtocol" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProtocol" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BlankNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BlankNumber" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_BlankNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="BlankNumber" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_OperatorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OperatorId" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_OperatorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OperatorId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MechanicId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MechanicId" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_MechanicId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MechanicId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Result" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Result" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NextData" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NextData" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_NextData" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NextData" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VisualCheck" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_VisualCheck" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Protocols] ([BlankNumber], [OperatorId], [MechanicId], [Date], [GroupId], [Result], [NextData], [VisualCheck], [GBO]) VALUES (@BlankNumber, @OperatorId, @MechanicId, @Date, @GroupId, @Result, @NextData, @VisualCheck, @GBO);
+SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, NextData, VisualCheck, GBO FROM Protocols WHERE (IdProtocol = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@BlankNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="BlankNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@OperatorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OperatorId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@MechanicId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MechanicId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Result" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@NextData" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NextData" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@VisualCheck" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, NextData, VisualCheck, GBO FROM dbo.Protocols</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Protocols] SET [BlankNumber] = @BlankNumber, [OperatorId] = @OperatorId, [MechanicId] = @MechanicId, [Date] = @Date, [GroupId] = @GroupId, [Result] = @Result, [NextData] = @NextData, [VisualCheck] = @VisualCheck, [GBO] = @GBO WHERE (([IdProtocol] = @Original_IdProtocol) AND ((@IsNull_BlankNumber = 1 AND [BlankNumber] IS NULL) OR ([BlankNumber] = @Original_BlankNumber)) AND ((@IsNull_OperatorId = 1 AND [OperatorId] IS NULL) OR ([OperatorId] = @Original_OperatorId)) AND ((@IsNull_MechanicId = 1 AND [MechanicId] IS NULL) OR ([MechanicId] = @Original_MechanicId)) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_GroupId = 1 AND [GroupId] IS NULL) OR ([GroupId] = @Original_GroupId)) AND ((@IsNull_Result = 1 AND [Result] IS NULL) OR ([Result] = @Original_Result)) AND ((@IsNull_NextData = 1 AND [NextData] IS NULL) OR ([NextData] = @Original_NextData)) AND ((@IsNull_VisualCheck = 1 AND [VisualCheck] IS NULL) OR ([VisualCheck] = @Original_VisualCheck)) AND ((@IsNull_GBO = 1 AND [GBO] IS NULL) OR ([GBO] = @Original_GBO)));
+SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, NextData, VisualCheck, GBO FROM Protocols WHERE (IdProtocol = @IdProtocol)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@BlankNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="BlankNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@OperatorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OperatorId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@MechanicId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MechanicId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Result" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@NextData" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NextData" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@VisualCheck" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProtocol" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProtocol" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BlankNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BlankNumber" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_BlankNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="BlankNumber" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_OperatorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OperatorId" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_OperatorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OperatorId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MechanicId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MechanicId" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_MechanicId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MechanicId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Result" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Result" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NextData" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NextData" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_NextData" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NextData" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VisualCheck" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_VisualCheck" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdProtocol" ColumnName="IdProtocol" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdProtocol" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdProtocol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdProtocol" DataSetColumn="IdProtocol" />
+              <Mapping SourceColumn="BlankNumber" DataSetColumn="BlankNumber" />
+              <Mapping SourceColumn="OperatorId" DataSetColumn="OperatorId" />
+              <Mapping SourceColumn="MechanicId" DataSetColumn="MechanicId" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="GroupId" DataSetColumn="GroupId" />
+              <Mapping SourceColumn="Result" DataSetColumn="Result" />
+              <Mapping SourceColumn="NextData" DataSetColumn="NextData" />
+              <Mapping SourceColumn="VisualCheck" DataSetColumn="VisualCheck" />
+              <Mapping SourceColumn="GBO" DataSetColumn="GBO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
-        <Sources />
+        <Sources>
+          <DbSource ConnectionRef="VipAvtoDBConnectionString (Settings)" DbObjectName="VipAvtoDB.dbo.ProtocolsCount" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="ProtocolsCount" MethodsParameterType="CLR" Modifier="Public" Name="ProtocolsCount" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ProtocolsCount">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>dbo.ProtocolsCount</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Object" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="0" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+        </Sources>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
   <xs:element name="NewVipAvtoSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NewVipAvtoSet" msprop:Generator_UserDSName="NewVipAvtoSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Groups" msprop:Generator_TableClassName="GroupsDataTable" msprop:Generator_TableVarName="tableGroups" msprop:Generator_TablePropName="Groups" msprop:Generator_RowDeletingName="GroupsRowDeleting" msprop:Generator_RowChangingName="GroupsRowChanging" msprop:Generator_RowEvHandlerName="GroupsRowChangeEventHandler" msprop:Generator_RowDeletedName="GroupsRowDeleted" msprop:Generator_UserTableName="Groups" msprop:Generator_RowChangedName="GroupsRowChanged" msprop:Generator_RowEvArgName="GroupsRowChangeEvent" msprop:Generator_RowClassName="GroupsRow">
+        <xs:element name="Groups" msprop:Generator_TableClassName="GroupsDataTable" msprop:Generator_TableVarName="tableGroups" msprop:Generator_RowChangedName="GroupsRowChanged" msprop:Generator_TablePropName="Groups" msprop:Generator_RowDeletingName="GroupsRowDeleting" msprop:Generator_RowChangingName="GroupsRowChanging" msprop:Generator_RowEvHandlerName="GroupsRowChangeEventHandler" msprop:Generator_RowDeletedName="GroupsRowDeleted" msprop:Generator_RowClassName="GroupsRow" msprop:Generator_UserTableName="Groups" msprop:Generator_RowEvArgName="GroupsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdGroup" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdGroup" msprop:Generator_ColumnPropNameInRow="IdGroup" msprop:Generator_ColumnPropNameInTable="IdGroupColumn" msprop:Generator_UserColumnName="IdGroup" type="xs:int" />
@@ -521,30 +579,7 @@ SELECT IdOperator, Name, LastName, Login, Password, [Right] FROM Operators WHERE
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Protocols" msprop:Generator_TableClassName="ProtocolsDataTable" msprop:Generator_TableVarName="tableProtocols" msprop:Generator_TablePropName="Protocols" msprop:Generator_RowDeletingName="ProtocolsRowDeleting" msprop:Generator_RowChangingName="ProtocolsRowChanging" msprop:Generator_RowEvHandlerName="ProtocolsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProtocolsRowDeleted" msprop:Generator_UserTableName="Protocols" msprop:Generator_RowChangedName="ProtocolsRowChanged" msprop:Generator_RowEvArgName="ProtocolsRowChangeEvent" msprop:Generator_RowClassName="ProtocolsRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="IdProtocol" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdProtocol" msprop:Generator_ColumnPropNameInRow="IdProtocol" msprop:Generator_ColumnPropNameInTable="IdProtocolColumn" msprop:Generator_UserColumnName="IdProtocol" type="xs:int" />
-              <xs:element name="BlankNumber" msprop:Generator_ColumnVarNameInTable="columnBlankNumber" msprop:Generator_ColumnPropNameInRow="BlankNumber" msprop:Generator_ColumnPropNameInTable="BlankNumberColumn" msprop:Generator_UserColumnName="BlankNumber" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="32" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="OperatorId" msprop:Generator_ColumnVarNameInTable="columnOperatorId" msprop:Generator_ColumnPropNameInRow="OperatorId" msprop:Generator_ColumnPropNameInTable="OperatorIdColumn" msprop:Generator_UserColumnName="OperatorId" type="xs:int" minOccurs="0" />
-              <xs:element name="MechanicId" msprop:Generator_ColumnVarNameInTable="columnMechanicId" msprop:Generator_ColumnPropNameInRow="MechanicId" msprop:Generator_ColumnPropNameInTable="MechanicIdColumn" msprop:Generator_UserColumnName="MechanicId" type="xs:int" minOccurs="0" />
-              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="TechPhoto" msprop:Generator_ColumnVarNameInTable="columnTechPhoto" msprop:Generator_ColumnPropNameInRow="TechPhoto" msprop:Generator_ColumnPropNameInTable="TechPhotoColumn" msprop:Generator_UserColumnName="TechPhoto" type="xs:base64Binary" minOccurs="0" />
-              <xs:element name="GroupId" msprop:Generator_ColumnVarNameInTable="columnGroupId" msprop:Generator_ColumnPropNameInRow="GroupId" msprop:Generator_ColumnPropNameInTable="GroupIdColumn" msprop:Generator_UserColumnName="GroupId" type="xs:int" minOccurs="0" />
-              <xs:element name="Result" msprop:Generator_ColumnVarNameInTable="columnResult" msprop:Generator_ColumnPropNameInRow="Result" msprop:Generator_ColumnPropNameInTable="ResultColumn" msprop:Generator_UserColumnName="Result" type="xs:boolean" minOccurs="0" />
-              <xs:element name="NextData" msprop:Generator_ColumnVarNameInTable="columnNextData" msprop:Generator_ColumnPropNameInRow="NextData" msprop:Generator_ColumnPropNameInTable="NextDataColumn" msprop:Generator_UserColumnName="NextData" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="VisualCheck" msprop:Generator_ColumnVarNameInTable="columnVisualCheck" msprop:Generator_ColumnPropNameInRow="VisualCheck" msprop:Generator_ColumnPropNameInTable="VisualCheckColumn" msprop:Generator_UserColumnName="VisualCheck" type="xs:boolean" minOccurs="0" />
-              <xs:element name="GBO" msprop:Generator_ColumnVarNameInTable="columnGBO" msprop:Generator_ColumnPropNameInRow="GBO" msprop:Generator_ColumnPropNameInTable="GBOColumn" msprop:Generator_UserColumnName="GBO" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Mechanics" msprop:Generator_TableClassName="MechanicsDataTable" msprop:Generator_TableVarName="tableMechanics" msprop:Generator_TablePropName="Mechanics" msprop:Generator_RowDeletingName="MechanicsRowDeleting" msprop:Generator_RowChangingName="MechanicsRowChanging" msprop:Generator_RowEvHandlerName="MechanicsRowChangeEventHandler" msprop:Generator_RowDeletedName="MechanicsRowDeleted" msprop:Generator_UserTableName="Mechanics" msprop:Generator_RowChangedName="MechanicsRowChanged" msprop:Generator_RowEvArgName="MechanicsRowChangeEvent" msprop:Generator_RowClassName="MechanicsRow">
+        <xs:element name="Mechanics" msprop:Generator_TableClassName="MechanicsDataTable" msprop:Generator_TableVarName="tableMechanics" msprop:Generator_RowChangedName="MechanicsRowChanged" msprop:Generator_TablePropName="Mechanics" msprop:Generator_RowDeletingName="MechanicsRowDeleting" msprop:Generator_RowChangingName="MechanicsRowChanging" msprop:Generator_RowEvHandlerName="MechanicsRowChangeEventHandler" msprop:Generator_RowDeletedName="MechanicsRowDeleted" msprop:Generator_RowClassName="MechanicsRow" msprop:Generator_UserTableName="Mechanics" msprop:Generator_RowEvArgName="MechanicsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdMechanic" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdMechanic" msprop:Generator_ColumnPropNameInRow="IdMechanic" msprop:Generator_ColumnPropNameInTable="IdMechanicColumn" msprop:Generator_UserColumnName="IdMechanic" type="xs:int" />
@@ -573,7 +608,7 @@ SELECT IdOperator, Name, LastName, Login, Password, [Right] FROM Operators WHERE
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Mesures" msprop:Generator_TableClassName="MesuresDataTable" msprop:Generator_TableVarName="tableMesures" msprop:Generator_TablePropName="Mesures" msprop:Generator_RowDeletingName="MesuresRowDeleting" msprop:Generator_RowChangingName="MesuresRowChanging" msprop:Generator_RowEvHandlerName="MesuresRowChangeEventHandler" msprop:Generator_RowDeletedName="MesuresRowDeleted" msprop:Generator_UserTableName="Mesures" msprop:Generator_RowChangedName="MesuresRowChanged" msprop:Generator_RowEvArgName="MesuresRowChangeEvent" msprop:Generator_RowClassName="MesuresRow">
+        <xs:element name="Mesures" msprop:Generator_TableClassName="MesuresDataTable" msprop:Generator_TableVarName="tableMesures" msprop:Generator_RowChangedName="MesuresRowChanged" msprop:Generator_TablePropName="Mesures" msprop:Generator_RowDeletingName="MesuresRowDeleting" msprop:Generator_RowChangingName="MesuresRowChanging" msprop:Generator_RowEvHandlerName="MesuresRowChangeEventHandler" msprop:Generator_RowDeletedName="MesuresRowDeleted" msprop:Generator_RowClassName="MesuresRow" msprop:Generator_UserTableName="Mesures" msprop:Generator_RowEvArgName="MesuresRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdMesure" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdMesure" msprop:Generator_ColumnPropNameInRow="IdMesure" msprop:Generator_ColumnPropNameInTable="IdMesureColumn" msprop:Generator_UserColumnName="IdMesure" type="xs:int" />
@@ -585,7 +620,7 @@ SELECT IdOperator, Name, LastName, Login, Password, [Right] FROM Operators WHERE
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Normatives" msprop:Generator_TableClassName="NormativesDataTable" msprop:Generator_TableVarName="tableNormatives" msprop:Generator_TablePropName="Normatives" msprop:Generator_RowDeletingName="NormativesRowDeleting" msprop:Generator_RowChangingName="NormativesRowChanging" msprop:Generator_RowEvHandlerName="NormativesRowChangeEventHandler" msprop:Generator_RowDeletedName="NormativesRowDeleted" msprop:Generator_UserTableName="Normatives" msprop:Generator_RowChangedName="NormativesRowChanged" msprop:Generator_RowEvArgName="NormativesRowChangeEvent" msprop:Generator_RowClassName="NormativesRow">
+        <xs:element name="Normatives" msprop:Generator_TableClassName="NormativesDataTable" msprop:Generator_TableVarName="tableNormatives" msprop:Generator_RowChangedName="NormativesRowChanged" msprop:Generator_TablePropName="Normatives" msprop:Generator_RowDeletingName="NormativesRowDeleting" msprop:Generator_RowChangingName="NormativesRowChanging" msprop:Generator_RowEvHandlerName="NormativesRowChangeEventHandler" msprop:Generator_RowDeletedName="NormativesRowDeleted" msprop:Generator_RowClassName="NormativesRow" msprop:Generator_UserTableName="Normatives" msprop:Generator_RowEvArgName="NormativesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdNormative" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdNormative" msprop:Generator_ColumnPropNameInRow="IdNormative" msprop:Generator_ColumnPropNameInTable="IdNormativeColumn" msprop:Generator_UserColumnName="IdNormative" type="xs:int" />
@@ -596,7 +631,7 @@ SELECT IdOperator, Name, LastName, Login, Password, [Right] FROM Operators WHERE
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Operators" msprop:Generator_TableClassName="OperatorsDataTable" msprop:Generator_TableVarName="tableOperators" msprop:Generator_TablePropName="Operators" msprop:Generator_RowDeletingName="OperatorsRowDeleting" msprop:Generator_RowChangingName="OperatorsRowChanging" msprop:Generator_RowEvHandlerName="OperatorsRowChangeEventHandler" msprop:Generator_RowDeletedName="OperatorsRowDeleted" msprop:Generator_UserTableName="Operators" msprop:Generator_RowChangedName="OperatorsRowChanged" msprop:Generator_RowEvArgName="OperatorsRowChangeEvent" msprop:Generator_RowClassName="OperatorsRow">
+        <xs:element name="Operators" msprop:Generator_TableClassName="OperatorsDataTable" msprop:Generator_TableVarName="tableOperators" msprop:Generator_RowChangedName="OperatorsRowChanged" msprop:Generator_TablePropName="Operators" msprop:Generator_RowDeletingName="OperatorsRowDeleting" msprop:Generator_RowChangingName="OperatorsRowChanging" msprop:Generator_RowEvHandlerName="OperatorsRowChangeEventHandler" msprop:Generator_RowDeletedName="OperatorsRowDeleted" msprop:Generator_RowClassName="OperatorsRow" msprop:Generator_UserTableName="Operators" msprop:Generator_RowEvArgName="OperatorsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdOperator" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdOperator" msprop:Generator_ColumnPropNameInRow="IdOperator" msprop:Generator_ColumnPropNameInTable="IdOperatorColumn" msprop:Generator_UserColumnName="IdOperator" type="xs:int" />
@@ -632,15 +667,42 @@ SELECT IdOperator, Name, LastName, Login, Password, [Right] FROM Operators WHERE
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Photos" msprop:Generator_TableClassName="PhotosDataTable" msprop:Generator_TableVarName="tablePhotos" msprop:Generator_TablePropName="Photos" msprop:Generator_RowDeletingName="PhotosRowDeleting" msprop:Generator_RowChangingName="PhotosRowChanging" msprop:Generator_RowEvHandlerName="PhotosRowChangeEventHandler" msprop:Generator_RowDeletedName="PhotosRowDeleted" msprop:Generator_UserTableName="Photos" msprop:Generator_RowChangedName="PhotosRowChanged" msprop:Generator_RowEvArgName="PhotosRowChangeEvent" msprop:Generator_RowClassName="PhotosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPhoto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdPhoto" msprop:Generator_ColumnPropNameInRow="IdPhoto" msprop:Generator_ColumnPropNameInTable="IdPhotoColumn" msprop:Generator_UserColumnName="IdPhoto" type="xs:int" />
+              <xs:element name="Photo" msprop:Generator_ColumnVarNameInTable="columnPhoto" msprop:Generator_ColumnPropNameInRow="Photo" msprop:Generator_ColumnPropNameInTable="PhotoColumn" msprop:Generator_UserColumnName="Photo" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="ProtocolId" msprop:Generator_ColumnVarNameInTable="columnProtocolId" msprop:Generator_ColumnPropNameInRow="ProtocolId" msprop:Generator_ColumnPropNameInTable="ProtocolIdColumn" msprop:Generator_UserColumnName="ProtocolId" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Protocols" msprop:Generator_TableClassName="ProtocolsDataTable" msprop:Generator_TableVarName="tableProtocols" msprop:Generator_TablePropName="Protocols" msprop:Generator_RowDeletingName="ProtocolsRowDeleting" msprop:Generator_RowChangingName="ProtocolsRowChanging" msprop:Generator_RowEvHandlerName="ProtocolsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProtocolsRowDeleted" msprop:Generator_UserTableName="Protocols" msprop:Generator_RowChangedName="ProtocolsRowChanged" msprop:Generator_RowEvArgName="ProtocolsRowChangeEvent" msprop:Generator_RowClassName="ProtocolsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdProtocol" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdProtocol" msprop:Generator_ColumnPropNameInRow="IdProtocol" msprop:Generator_ColumnPropNameInTable="IdProtocolColumn" msprop:Generator_UserColumnName="IdProtocol" type="xs:int" />
+              <xs:element name="BlankNumber" msprop:Generator_ColumnVarNameInTable="columnBlankNumber" msprop:Generator_ColumnPropNameInRow="BlankNumber" msprop:Generator_ColumnPropNameInTable="BlankNumberColumn" msprop:Generator_UserColumnName="BlankNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OperatorId" msprop:Generator_ColumnVarNameInTable="columnOperatorId" msprop:Generator_ColumnPropNameInRow="OperatorId" msprop:Generator_ColumnPropNameInTable="OperatorIdColumn" msprop:Generator_UserColumnName="OperatorId" type="xs:int" minOccurs="0" />
+              <xs:element name="MechanicId" msprop:Generator_ColumnVarNameInTable="columnMechanicId" msprop:Generator_ColumnPropNameInRow="MechanicId" msprop:Generator_ColumnPropNameInTable="MechanicIdColumn" msprop:Generator_UserColumnName="MechanicId" type="xs:int" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="GroupId" msprop:Generator_ColumnVarNameInTable="columnGroupId" msprop:Generator_ColumnPropNameInRow="GroupId" msprop:Generator_ColumnPropNameInTable="GroupIdColumn" msprop:Generator_UserColumnName="GroupId" type="xs:int" minOccurs="0" />
+              <xs:element name="Result" msprop:Generator_ColumnVarNameInTable="columnResult" msprop:Generator_ColumnPropNameInRow="Result" msprop:Generator_ColumnPropNameInTable="ResultColumn" msprop:Generator_UserColumnName="Result" type="xs:boolean" minOccurs="0" />
+              <xs:element name="NextData" msprop:Generator_ColumnVarNameInTable="columnNextData" msprop:Generator_ColumnPropNameInRow="NextData" msprop:Generator_ColumnPropNameInTable="NextDataColumn" msprop:Generator_UserColumnName="NextData" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VisualCheck" msprop:Generator_ColumnVarNameInTable="columnVisualCheck" msprop:Generator_ColumnPropNameInRow="VisualCheck" msprop:Generator_ColumnPropNameInTable="VisualCheckColumn" msprop:Generator_UserColumnName="VisualCheck" type="xs:boolean" minOccurs="0" />
+              <xs:element name="GBO" msprop:Generator_ColumnVarNameInTable="columnGBO" msprop:Generator_ColumnPropNameInRow="GBO" msprop:Generator_ColumnPropNameInTable="GBOColumn" msprop:Generator_UserColumnName="GBO" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Groups" />
       <xs:field xpath="mstns:IdGroup" />
-    </xs:unique>
-    <xs:unique name="Protocols_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Protocols" />
-      <xs:field xpath="mstns:IdProtocol" />
     </xs:unique>
     <xs:unique name="Mechanics_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Mechanics" />
@@ -658,14 +720,23 @@ SELECT IdOperator, Name, LastName, Login, Password, [Right] FROM Operators WHERE
       <xs:selector xpath=".//mstns:Operators" />
       <xs:field xpath="mstns:IdOperator" />
     </xs:unique>
+    <xs:unique name="Photos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Photos" />
+      <xs:field xpath="mstns:IdPhoto" />
+    </xs:unique>
+    <xs:unique name="Protocols_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Protocols" />
+      <xs:field xpath="mstns:IdProtocol" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
+      <msdata:Relationship name="FK_Normatives_Groups" msdata:parent="Groups" msdata:child="Normatives" msdata:parentkey="IdGroup" msdata:childkey="GroupId" msprop:Generator_UserChildTable="Normatives" msprop:Generator_ChildPropName="GetNormativesRows" msprop:Generator_UserRelationName="FK_Normatives_Groups" msprop:Generator_RelationVarName="relationFK_Normatives_Groups" msprop:Generator_UserParentTable="Groups" msprop:Generator_ParentPropName="GroupsRow" />
+      <msdata:Relationship name="FK_Mesures_Protocols" msdata:parent="Protocols" msdata:child="Mesures" msdata:parentkey="IdProtocol" msdata:childkey="ProtocolId" msprop:Generator_UserChildTable="Mesures" msprop:Generator_ChildPropName="GetMesuresRows" msprop:Generator_UserRelationName="FK_Mesures_Protocols" msprop:Generator_RelationVarName="relationFK_Mesures_Protocols" msprop:Generator_UserParentTable="Protocols" msprop:Generator_ParentPropName="ProtocolsRow" />
+      <msdata:Relationship name="FK_Photos_Protocols" msdata:parent="Protocols" msdata:child="Photos" msdata:parentkey="IdProtocol" msdata:childkey="ProtocolId" msprop:Generator_UserChildTable="Photos" msprop:Generator_ChildPropName="GetPhotosRows" msprop:Generator_UserRelationName="FK_Photos_Protocols" msprop:Generator_RelationVarName="relationFK_Photos_Protocols" msprop:Generator_UserParentTable="Protocols" msprop:Generator_ParentPropName="ProtocolsRow" />
       <msdata:Relationship name="FK_Protocols_Groups" msdata:parent="Groups" msdata:child="Protocols" msdata:parentkey="IdGroup" msdata:childkey="GroupId" msprop:Generator_UserChildTable="Protocols" msprop:Generator_ChildPropName="GetProtocolsRows" msprop:Generator_UserRelationName="FK_Protocols_Groups" msprop:Generator_ParentPropName="GroupsRow" msprop:Generator_RelationVarName="relationFK_Protocols_Groups" msprop:Generator_UserParentTable="Groups" />
-      <msdata:Relationship name="FK_Protocols_Mechanics" msdata:parent="Mechanics" msdata:child="Protocols" msdata:parentkey="IdMechanic" msdata:childkey="MechanicId" msprop:Generator_UserChildTable="Protocols" msprop:Generator_ChildPropName="GetProtocolsRows" msprop:Generator_UserRelationName="FK_Protocols_Mechanics" msprop:Generator_RelationVarName="relationFK_Protocols_Mechanics" msprop:Generator_UserParentTable="Mechanics" msprop:Generator_ParentPropName="MechanicsRow" />
-      <msdata:Relationship name="FK_Protocols_Operators" msdata:parent="Operators" msdata:child="Protocols" msdata:parentkey="IdOperator" msdata:childkey="OperatorId" msprop:Generator_UserChildTable="Protocols" msprop:Generator_ChildPropName="GetProtocolsRows" msprop:Generator_UserRelationName="FK_Protocols_Operators" msprop:Generator_RelationVarName="relationFK_Protocols_Operators" msprop:Generator_UserParentTable="Operators" msprop:Generator_ParentPropName="OperatorsRow" />
-      <msdata:Relationship name="FK_Mesures_Protocols" msdata:parent="Protocols" msdata:child="Mesures" msdata:parentkey="IdProtocol" msdata:childkey="ProtocolId" msprop:Generator_UserChildTable="Mesures" msprop:Generator_ChildPropName="GetMesuresRows" msprop:Generator_UserRelationName="FK_Mesures_Protocols" msprop:Generator_ParentPropName="ProtocolsRow" msprop:Generator_RelationVarName="relationFK_Mesures_Protocols" msprop:Generator_UserParentTable="Protocols" />
-      <msdata:Relationship name="FK_Normatives_Groups" msdata:parent="Groups" msdata:child="Normatives" msdata:parentkey="IdGroup" msdata:childkey="GroupId" msprop:Generator_UserChildTable="Normatives" msprop:Generator_ChildPropName="GetNormativesRows" msprop:Generator_UserRelationName="FK_Normatives_Groups" msprop:Generator_ParentPropName="GroupsRow" msprop:Generator_RelationVarName="relationFK_Normatives_Groups" msprop:Generator_UserParentTable="Groups" />
+      <msdata:Relationship name="FK_Protocols_Mechanics" msdata:parent="Mechanics" msdata:child="Protocols" msdata:parentkey="IdMechanic" msdata:childkey="MechanicId" msprop:Generator_UserChildTable="Protocols" msprop:Generator_ChildPropName="GetProtocolsRows" msprop:Generator_UserRelationName="FK_Protocols_Mechanics" msprop:Generator_ParentPropName="MechanicsRow" msprop:Generator_RelationVarName="relationFK_Protocols_Mechanics" msprop:Generator_UserParentTable="Mechanics" />
+      <msdata:Relationship name="FK_Protocols_Operators" msdata:parent="Operators" msdata:child="Protocols" msdata:parentkey="IdOperator" msdata:childkey="OperatorId" msprop:Generator_UserChildTable="Protocols" msprop:Generator_ChildPropName="GetProtocolsRows" msprop:Generator_UserRelationName="FK_Protocols_Operators" msprop:Generator_ParentPropName="OperatorsRow" msprop:Generator_RelationVarName="relationFK_Protocols_Operators" msprop:Generator_UserParentTable="Operators" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
