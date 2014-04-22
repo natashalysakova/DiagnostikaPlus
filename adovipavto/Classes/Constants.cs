@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Reflection;
+using adovipavto.Properties;
 
 namespace adovipavto.Classes
 {
@@ -26,11 +27,6 @@ namespace adovipavto.Classes
             if (attributes.Length > 0)
                 return attributes[0].Description;
             return value.ToString();
-        }
-
-        public static string GetFullPath(string part)
-        {
-            return Settings.Instance.FilesDirectory + part;
         }
     }
 }

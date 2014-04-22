@@ -6,6 +6,7 @@ using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
 using adovipavto.Enums;
+using adovipavto.Properties;
 
 namespace adovipavto.EditForms
 {
@@ -19,7 +20,7 @@ namespace adovipavto.EditForms
 
         public EditGroupForm(NewVipAvtoSet.GroupsRow select, NewVipAvtoSet set)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
 
             InitializeComponent();

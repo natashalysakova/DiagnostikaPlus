@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
+using adovipavto.Properties;
 
 namespace adovipavto
 {
@@ -18,7 +19,7 @@ namespace adovipavto
             _set = set;
             _printNow = printNow;
 
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             InitializeComponent();
 

@@ -5,6 +5,7 @@ using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
+using adovipavto.Properties;
 
 namespace adovipavto.EditForms
 {
@@ -19,7 +20,7 @@ namespace adovipavto.EditForms
 
         public EditOperatorForm(NewVipAvtoSet.OperatorsRow selected, NewVipAvtoSet set)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             _selected = selected;
             _set = set;

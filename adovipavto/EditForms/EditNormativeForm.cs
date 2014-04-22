@@ -5,6 +5,7 @@ using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
+using adovipavto.Properties;
 
 namespace adovipavto.EditForms
 {
@@ -18,7 +19,7 @@ namespace adovipavto.EditForms
 
         public EditNormativeForm(NewVipAvtoSet.NormativesRow selected, NewVipAvtoSet set)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             InitializeComponent();
             _selected = selected;

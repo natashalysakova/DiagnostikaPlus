@@ -25,6 +25,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://hatassska.pp.ua/diagnostikaPlus/</InstallUrl>
     <TargetCulture>ru-RU</TargetCulture>
+    <ProductName>Диагностика Plus</ProductName>
+    <PublisherName>hatassska</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <ApplicationRevision>10</ApplicationRevision>
@@ -128,7 +130,6 @@
     <Compile Include="Classes\PrintProtocolDocument.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Classes\Settings.cs" />
     <Compile Include="Classes\VisualRow.cs" />
     <Compile Include="EditForms\EditMechanicForm.cs">
       <SubType>Form</SubType>
@@ -560,9 +561,6 @@
     <None Include="Resources\setting.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BackupNormatives\settings.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Help\index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -603,16 +601,6 @@
     <None Include="Resources\GROUP.png" />
   </ItemGroup>
   <ItemGroup>
-    <PublishFile Include="BackupNormatives\settings.xml">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>File</FileType>
-    </PublishFile>
     <PublishFile Include="uk-UA\DiagnostikaPlus.resources">
       <Visible>False</Visible>
       <Group>

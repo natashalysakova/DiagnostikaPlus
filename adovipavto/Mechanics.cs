@@ -9,6 +9,7 @@ using adovipavto.AddForms;
 using adovipavto.Classes;
 using adovipavto.EditForms;
 using adovipavto.Enums;
+using adovipavto.Properties;
 
 namespace adovipavto
 {
@@ -19,7 +20,7 @@ namespace adovipavto
 
         public Mechanics()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             InitializeComponent();
         }

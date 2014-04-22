@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using adovipavto.AddForms;
 using adovipavto.Classes;
 using adovipavto.EditForms;
+using adovipavto.Properties;
 
 namespace adovipavto
 {
@@ -20,7 +21,7 @@ namespace adovipavto
 
         public GroupsForm()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             InitializeComponent();
             dataGridView1.DataSource = newVipAvtoSet.Groups;

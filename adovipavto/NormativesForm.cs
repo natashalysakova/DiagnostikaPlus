@@ -11,6 +11,7 @@ using adovipavto.AddForms;
 using adovipavto.Classes;
 using adovipavto.EditForms;
 using adovipavto.NewVipAvtoSetTableAdapters;
+using adovipavto.Properties;
 
 namespace adovipavto
 {
@@ -30,7 +31,7 @@ namespace adovipavto
         {
             _selectedGroup = selectedGroup;
 
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             InitializeComponent();
         }

@@ -9,6 +9,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 using adovipavto.Classes;
+using adovipavto.Properties;
 
 namespace adovipavto
 {
@@ -21,7 +22,7 @@ namespace adovipavto
         public ServerSetting()
         {
             Application.EnableVisualStyles();
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
             InitializeComponent();
 
 

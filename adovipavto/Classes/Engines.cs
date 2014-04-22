@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Reflection;
 using System.Resources;
 using System.Threading;
+using adovipavto.Properties;
 
 namespace adovipavto.Classes
 {
@@ -12,7 +13,7 @@ namespace adovipavto.Classes
 
         public Engines()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
             var rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
             _engines = new[]

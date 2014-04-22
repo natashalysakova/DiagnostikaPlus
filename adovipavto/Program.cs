@@ -5,6 +5,7 @@ using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
+using adovipavto.Properties;
 
 namespace adovipavto
 {
@@ -25,8 +26,6 @@ namespace adovipavto
                 MessageBox.Show(_rm.GetString("dllIsMissing"));
                 Application.Exit();
             }
-
-            Settings.Instance.Load();
 
             var t = new Thread(SplashScreen);
 

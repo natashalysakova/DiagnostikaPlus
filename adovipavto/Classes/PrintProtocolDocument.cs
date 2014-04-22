@@ -34,7 +34,7 @@ namespace adovipavto.Classes
         public PrintProtocolDocument(NewVipAvtoSet.ProtocolsRow protocol, NewVipAvtoSet.MesuresRow[] mesures,
             NewVipAvtoSet set)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             _protocolRow = protocol;
             _mesures = mesures;
@@ -50,7 +50,7 @@ namespace adovipavto.Classes
 
         public PrintProtocolDocument(NewVipAvtoSet.ProtocolsRow[] rows, DateTime from, DateTime to, NewVipAvtoSet set)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             _rows = rows;
             _from = from;

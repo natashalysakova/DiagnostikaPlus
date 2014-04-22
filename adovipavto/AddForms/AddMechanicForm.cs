@@ -5,6 +5,7 @@ using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
 using adovipavto.Classes;
+using adovipavto.Properties;
 
 namespace adovipavto.AddForms
 {
@@ -19,7 +20,7 @@ namespace adovipavto.AddForms
         public AddMechanicForm(NewVipAvtoSet set)
         {
             _set = set;
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             InitializeComponent();
         }

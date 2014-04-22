@@ -12,6 +12,7 @@ using adovipavto.AddForms;
 using adovipavto.Classes;
 using adovipavto.Enums;
 using adovipavto.NewVipAvtoSetTableAdapters;
+using adovipavto.Properties;
 
 namespace adovipavto
 {
@@ -27,11 +28,11 @@ namespace adovipavto
         {
             Application.EnableVisualStyles();
 
-            if (Settings.Instance.Language == "")
+            if (Settings.Default.Language == "")
             {
                 new SelectLanguage().ShowDialog();
             }
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Instance.Language);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
             InitializeComponent();
         }
 
@@ -154,7 +155,7 @@ namespace adovipavto
         {
             if (new SettingForm().ShowDialog() == DialogResult.OK)
             {
-                if (Settings.Instance.TmpLanguage != Settings.Instance.Language)
+                if (Settings.Default.TmpLanguage != Settings.Default.Language)
                 {
                     if (MessageBox.Show(_rm.GetString("lng"), _rm.GetString("warning"), MessageBoxButtons.YesNo,
                         MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -195,8 +196,8 @@ namespace adovipavto
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Settings.Instance.Language = Settings.Instance.TmpLanguage;
-            Settings.Instance.Save();
+            Settings.Default.Language = Settings.Default.TmpLanguage;
+            Settings.Default.Save();
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
