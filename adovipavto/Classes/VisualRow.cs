@@ -20,6 +20,16 @@ namespace adovipavto.Classes
             _minval = norma.MinValue;
             _maxval = norma.MaxValue;
             _random = random;
+
+        }
+
+        void _textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            if (Char.IsDigit (e.KeyChar) || Char.IsPunctuation(e.KeyChar) || Char.IsControl(e.KeyChar)) return;
+
+
+            e.Handled=true;
         }
 
         public int Id { private set; get; }
@@ -73,6 +83,9 @@ namespace adovipavto.Classes
                         Math.Round(val, new Normatives().DecimalPoints[Id])
                             .ToString();
                 }
+
+                _textbox.KeyPress += _textbox_KeyPress;
+
             }
         }
 
