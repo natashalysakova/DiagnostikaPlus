@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -306,8 +307,11 @@ namespace adovipavto
                 _selectedRow = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
 
-            NewVipAvtoSet.ProtocolsDataTable newProtocols = protocolsTableAdapter.GetData();
-            if (newProtocols.Count != newVipAvtoSet.Protocols.Count)
+            SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM Protocols;", protocolsTableAdapter.Connection);
+
+            SqlDataReader reader = comm.ExecuteReader();
+            int count = Convert.ToInt32(reader.GetValue(0));
+            if (count != newVipAvtoSet.Protocols.Count)
             {
                 newVipAvtoSet.Mesures.Clear();
                 var adapter = new MesuresTableAdapter();

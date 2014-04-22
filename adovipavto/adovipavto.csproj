@@ -487,6 +487,7 @@
       <LastGenOutput>StringResource.uk-UA.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="adovipavto_TemporaryKey.pfx" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="NewVipAvtoSet.xsc">
       <DependentUpon>NewVipAvtoSet.xsd</DependentUpon>
     </None>

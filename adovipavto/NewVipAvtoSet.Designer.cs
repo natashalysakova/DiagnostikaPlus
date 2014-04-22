@@ -4122,7 +4122,7 @@ SELECT IdGroup, Year, Category, EngineType, Before, Title FROM Groups WHERE (IdG
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::adovipavto.Properties.Settings.Default.VipAvtoDBConnectionStringGlobal;
+            this._connection.ConnectionString = global::adovipavto.Properties.Settings.Default.VipAvtoDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4615,7 +4615,7 @@ SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, TechPhoto, GroupId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::adovipavto.Properties.Settings.Default.VipAvtoDBConnectionStringGlobal;
+            this._connection.ConnectionString = global::adovipavto.Properties.Settings.Default.VipAvtoDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5237,7 +5237,7 @@ SELECT IdMechanic, Name, LastName, FatherName, State FROM Mechanics WHERE (IdMec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::adovipavto.Properties.Settings.Default.VipAvtoDBConnectionStringGlobal;
+            this._connection.ConnectionString = global::adovipavto.Properties.Settings.Default.VipAvtoDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5671,7 +5671,7 @@ SELECT IdMesure, NormativeTag, Value, ProtocolId, MinValue, MaxValue FROM Mesure
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::adovipavto.Properties.Settings.Default.VipAvtoDBConnectionStringGlobal;
+            this._connection.ConnectionString = global::adovipavto.Properties.Settings.Default.VipAvtoDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6128,7 +6128,7 @@ SELECT IdNormative, Tag, MinValue, MaxValue, GroupId FROM Normatives WHERE (IdNo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::adovipavto.Properties.Settings.Default.VipAvtoDBConnectionStringGlobal;
+            this._connection.ConnectionString = global::adovipavto.Properties.Settings.Default.VipAvtoDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6564,7 +6564,7 @@ SELECT IdOperator, Name, LastName, Login, Password, [Right] FROM Operators WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::adovipavto.Properties.Settings.Default.VipAvtoDBConnectionStringGlobal;
+            this._connection.ConnectionString = global::adovipavto.Properties.Settings.Default.VipAvtoDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
