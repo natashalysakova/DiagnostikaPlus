@@ -12,13 +12,11 @@ namespace adovipavto
             Assembly.GetExecutingAssembly());
 
         private readonly NewVipAvtoSet _set;
-        private readonly OperatorsTableAdapter adapter = new OperatorsTableAdapter();
 
         public Auth(NewVipAvtoSet set)
         {
             InitializeComponent();
             _set = set;
-            adapter.Fill(_set.Operators);
         }
 
         private void timer1_Tick(object sender, EventArgs e)

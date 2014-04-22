@@ -579,12 +579,14 @@ namespace adovipavto.AddForms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (!SaveProtocolToDb())
-            {
-                MessageBox.Show(_rm.GetString("fillFields"), _rm.GetString("error"), MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                return;
-            }
+
+                if (!SaveProtocolToDb())
+                {
+                    MessageBox.Show(_rm.GetString("fillFields"), _rm.GetString("error"), MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
+                }
+
 
             DialogResult = DialogResult.OK;
         }
