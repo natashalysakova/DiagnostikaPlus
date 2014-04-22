@@ -407,7 +407,7 @@ namespace adovipavto.AddForms
                 result, nexDateTime, radioButton1.Checked, gbo);
 
 
-            if (pictureBox28.Image != Properties.Resources.openfoto)
+            if (pictureBox28.Tag != null)
             {
                 _set.AddPhoto(pictureBox28.Image, _newProtocolId);
             }
@@ -599,6 +599,7 @@ namespace adovipavto.AddForms
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 ((PictureBox) sender).Image = Image.FromFile(openFileDialog1.FileName);
+                ((PictureBox) sender).Tag = openFileDialog1.FileName;
             }
         }
 
@@ -615,6 +616,12 @@ namespace adovipavto.AddForms
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             UnlockFields();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            pictureBox28.Image = Properties.Resources.openfoto;
+            pictureBox28.Tag = null;
         }
     }
 

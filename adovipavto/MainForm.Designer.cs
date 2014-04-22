@@ -454,7 +454,6 @@ namespace adovipavto
         private DataGridViewTextBoxColumn nextDataDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn mechanicIdDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn operatorIdDataGridViewTextBoxColumn;
-        private DataGridViewImageColumn techPhotoDataGridViewImageColumn;
         private DataGridViewTextBoxColumn resultDataGridViewCheckBoxColumn;
         private DataGridViewCheckBoxColumn visualCheckDataGridViewCheckBoxColumn;
         private DataGridViewTextBoxColumn gBODataGridViewTextBoxColumn;

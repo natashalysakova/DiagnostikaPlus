@@ -86,6 +86,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label79 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.label76 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
@@ -631,6 +632,7 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.button1);
             this.groupBox11.Controls.Add(this.pictureBox28);
             this.groupBox11.Controls.Add(this.label76);
             this.groupBox11.Controls.Add(this.label70);
@@ -640,6 +642,13 @@
             resources.ApplyResources(this.groupBox11, "groupBox11");
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.TabStop = false;
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // pictureBox28
             // 
@@ -1533,5 +1542,6 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label ORTS4;
+        private System.Windows.Forms.Button button1;
     }
 }
