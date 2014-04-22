@@ -285,40 +285,22 @@
   <data name="dataGridView1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
+  <data name="idProtocolDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>IdProtocol</value>
+  </data>
+  <data name="idProtocolDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="blankNumberDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>BlankNumber</value>
   </data>
   <data name="dateDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Date</value>
   </data>
-  <data name="techPhotoDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>TechPhoto</value>
-  </data>
-  <data name="techPhotoDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="resultDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
-    <value>Result</value>
-  </data>
-  <data name="resultDataGridViewCheckBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="nextDataDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>NextData</value>
-  </data>
-  <data name="nextDataDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="visualCheckDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
-    <value>VisualCheck</value>
-  </data>
-  <data name="visualCheckDataGridViewCheckBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <metadata name="protocolsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>127, 17</value>
+    <value>151, 17</value>
   </metadata>
-  <metadata name="NewVipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="newVipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
@@ -600,6 +582,9 @@
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="protocolsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>333, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1021,6 +1006,12 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="&gt;&gt;idProtocolDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>idProtocolDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;idProtocolDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;blankNumberDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>blankNumberDataGridViewTextBoxColumn</value>
   </data>
@@ -1033,41 +1024,23 @@
   <data name="&gt;&gt;dateDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;techPhotoDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>techPhotoDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;techPhotoDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;resultDataGridViewCheckBoxColumn.Name" xml:space="preserve">
-    <value>resultDataGridViewCheckBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;resultDataGridViewCheckBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;nextDataDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>nextDataDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;nextDataDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;visualCheckDataGridViewCheckBoxColumn.Name" xml:space="preserve">
-    <value>visualCheckDataGridViewCheckBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;visualCheckDataGridViewCheckBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;protocolsBindingSource.Name" xml:space="preserve">
     <value>protocolsBindingSource</value>
   </data>
   <data name="&gt;&gt;protocolsBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;NewVipAvtoSet.Name" xml:space="preserve">
-    <value>NewVipAvtoSet</value>
+  <data name="&gt;&gt;newVipAvtoSet.Name" xml:space="preserve">
+    <value>newVipAvtoSet</value>
   </data>
-  <data name="&gt;&gt;NewVipAvtoSet.Type" xml:space="preserve">
+  <data name="&gt;&gt;newVipAvtoSet.Type" xml:space="preserve">
     <value>adovipavto.NewVipAvtoSet, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;protocolsTableAdapter.Name" xml:space="preserve">
+    <value>protocolsTableAdapter</value>
+  </data>
+  <data name="&gt;&gt;protocolsTableAdapter.Type" xml:space="preserve">
+    <value>adovipavto.NewVipAvtoSetTableAdapters.ProtocolsTableAdapter, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Search</value>

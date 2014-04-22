@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -77,7 +78,7 @@ namespace adovipavto
 
             if (v1 != null)
             {
-                string newstring = "Data Source="+ textBox1.Text + ";Initial Catalog=" + textBox5.Text + ";Integrated Security=True";
+                string newstring = "Data Source="+ textBox1.Text + ";Initial Catalog=" + textBox5.Text + ";User ID=vipavto;Password=9194";
                 v1.Attributes["connectionString"].InnerText = newstring;
             }
 

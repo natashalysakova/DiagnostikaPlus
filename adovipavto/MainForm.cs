@@ -47,6 +47,10 @@ namespace adovipavto
                 {
                     Application.Restart();
                 }
+                else
+                {
+                    Application.Exit();
+                }
         }
             do
             {

@@ -39,14 +39,11 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idProtocolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.blankNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.techPhotoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resultDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.nextDataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visualCheckDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.protocolsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.NewVipAvtoSet = new adovipavto.NewVipAvtoSet();
+            this.newVipAvtoSet = new adovipavto.NewVipAvtoSet();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -55,12 +52,13 @@
             this.secondDate = new System.Windows.Forms.DateTimePicker();
             this.firstDate = new System.Windows.Forms.DateTimePicker();
             this.printPreviewControl2 = new System.Windows.Forms.PrintPreviewControl();
+            this.protocolsTableAdapter = new adovipavto.NewVipAvtoSetTableAdapters.ProtocolsTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.protocolsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NewVipAvtoSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -132,17 +130,16 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idProtocolDataGridViewTextBoxColumn,
             this.blankNumberDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
-            this.techPhotoDataGridViewTextBoxColumn,
-            this.resultDataGridViewCheckBoxColumn,
-            this.nextDataDataGridViewTextBoxColumn,
-            this.visualCheckDataGridViewCheckBoxColumn});
+            this.dateDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.protocolsBindingSource;
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -151,6 +148,13 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
+            // 
+            // idProtocolDataGridViewTextBoxColumn
+            // 
+            this.idProtocolDataGridViewTextBoxColumn.DataPropertyName = "IdProtocol";
+            resources.ApplyResources(this.idProtocolDataGridViewTextBoxColumn, "idProtocolDataGridViewTextBoxColumn");
+            this.idProtocolDataGridViewTextBoxColumn.Name = "idProtocolDataGridViewTextBoxColumn";
+            this.idProtocolDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // blankNumberDataGridViewTextBoxColumn
             // 
@@ -166,43 +170,15 @@
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // techPhotoDataGridViewTextBoxColumn
-            // 
-            this.techPhotoDataGridViewTextBoxColumn.DataPropertyName = "TechPhoto";
-            resources.ApplyResources(this.techPhotoDataGridViewTextBoxColumn, "techPhotoDataGridViewTextBoxColumn");
-            this.techPhotoDataGridViewTextBoxColumn.Name = "techPhotoDataGridViewTextBoxColumn";
-            this.techPhotoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // resultDataGridViewCheckBoxColumn
-            // 
-            this.resultDataGridViewCheckBoxColumn.DataPropertyName = "Result";
-            resources.ApplyResources(this.resultDataGridViewCheckBoxColumn, "resultDataGridViewCheckBoxColumn");
-            this.resultDataGridViewCheckBoxColumn.Name = "resultDataGridViewCheckBoxColumn";
-            this.resultDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // nextDataDataGridViewTextBoxColumn
-            // 
-            this.nextDataDataGridViewTextBoxColumn.DataPropertyName = "NextData";
-            resources.ApplyResources(this.nextDataDataGridViewTextBoxColumn, "nextDataDataGridViewTextBoxColumn");
-            this.nextDataDataGridViewTextBoxColumn.Name = "nextDataDataGridViewTextBoxColumn";
-            this.nextDataDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // visualCheckDataGridViewCheckBoxColumn
-            // 
-            this.visualCheckDataGridViewCheckBoxColumn.DataPropertyName = "VisualCheck";
-            resources.ApplyResources(this.visualCheckDataGridViewCheckBoxColumn, "visualCheckDataGridViewCheckBoxColumn");
-            this.visualCheckDataGridViewCheckBoxColumn.Name = "visualCheckDataGridViewCheckBoxColumn";
-            this.visualCheckDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
             // protocolsBindingSource
             // 
             this.protocolsBindingSource.DataMember = "Protocols";
-            this.protocolsBindingSource.DataSource = this.NewVipAvtoSet;
+            this.protocolsBindingSource.DataSource = this.newVipAvtoSet;
             // 
-            // NewVipAvtoSet
+            // newVipAvtoSet
             // 
-            this.NewVipAvtoSet.DataSetName = "NewVipAvtoSet";
-            this.NewVipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.newVipAvtoSet.DataSetName = "NewVipAvtoSet";
+            this.newVipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // radioButton5
             // 
@@ -264,6 +240,10 @@
             this.printPreviewControl2.UseAntiAlias = true;
             this.printPreviewControl2.Click += new System.EventHandler(this.printPreviewControl1_Click);
             // 
+            // protocolsTableAdapter
+            // 
+            this.protocolsTableAdapter.ClearBeforeFill = true;
+            // 
             // Search
             // 
             resources.ApplyResources(this, "$this");
@@ -279,7 +259,7 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.protocolsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NewVipAvtoSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,8 +273,6 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource protocolsBindingSource;
-        private NewVipAvtoSet NewVipAvtoSet;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
@@ -304,16 +282,12 @@
         private System.Windows.Forms.DateTimePicker firstDate;
         private System.Windows.Forms.PrintPreviewControl printPreviewControl2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn protocolIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn blankNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDOperatorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDMechanicDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn techPhotoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDGroupDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn resultDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nextDataDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn visualCheckDataGridViewCheckBoxColumn;
         private System.Windows.Forms.Label label1;
+        private NewVipAvtoSet newVipAvtoSet;
+        private System.Windows.Forms.BindingSource protocolsBindingSource;
+        private NewVipAvtoSetTableAdapters.ProtocolsTableAdapter protocolsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProtocolDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn blankNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
     }
 }

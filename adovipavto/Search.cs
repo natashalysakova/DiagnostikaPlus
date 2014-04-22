@@ -8,14 +8,13 @@ namespace adovipavto
 {
     public partial class Search : Form
     {
-        private readonly NewVipAvtoSet _set;
         private PrintProtocolDocument _document;
         private PrintProtocolDocument _document2;
 
         public Search(NewVipAvtoSet set)
         {
-            _set = set;
             InitializeComponent();
+            newVipAvtoSet = set;
         }
 
         private void maskedTextBox1_TextChanged(object sender, EventArgs e)
@@ -25,12 +24,12 @@ namespace adovipavto
                 string blank = label80.Text + maskedTextBox1.Text;
 
 
-                NewVipAvtoSet.ProtocolsRow row = _set.GetProtocolByBlankId(blank);
+                NewVipAvtoSet.ProtocolsRow row = newVipAvtoSet.GetProtocolByBlankId(blank);
 
                 if (row != null)
                 {
                     NewVipAvtoSet.MesuresRow[] mesures = row.GetMesuresRows();
-                    _document = new PrintProtocolDocument(row, mesures, _set);
+                    _document = new PrintProtocolDocument(row, mesures, newVipAvtoSet);
                     printPreviewControl1.Document = _document;
 
                     maskedTextBox1.BackColor = Color.LightGreen;
@@ -56,11 +55,12 @@ namespace adovipavto
 
         private void Search_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "newVipAvtoSet.Protocols". При необходимости она может быть перемещена или удалена.
+            this.protocolsTableAdapter.Fill(this.newVipAvtoSet.Protocols);
             printPreviewControl1.MouseWheel += printPreviewControl1_MouseWheel;
             printPreviewControl2.MouseWheel += printPreviewControl1_MouseWheel;
 
-            dataGridView1.DataSource = _set.Tables[Constants.ProtocolsTableName].Copy();
-
+            dataGridView1.DataSource = newVipAvtoSet.Protocols;
 
             radioButton1.Checked = true;
             maskedTextBox1.Focus();
@@ -101,12 +101,12 @@ namespace adovipavto
 
         private void firstDate_ValueChanged(object sender, EventArgs e)
         {
-            ((DataTable) dataGridView1.DataSource).DefaultView.RowFilter =
-                String.Format("Date > '{0}' AND Date <= '{1}'", firstDate.Value, secondDate.Value);
+            //BindingSource bs = (BindingSource) dataGridView1.DataSource;
+            //DataTable dt = ((NewVipAvtoSet) bs.DataSource).Protocols;
+            //dt.DefaultView.RowFilter = String.Format("Date > '{0}' AND Date <= '{1}'", firstDate.Value, secondDate.Value);
+            ((DataTable) dataGridView1.DataSource).DefaultView.RowFilter = String.Format("Date > '{0}' AND Date <= '{1}'", firstDate.Value, secondDate.Value);
+            dataGridView1.Columns[0].Visible = false;
 
-            DataGridViewColumn column = dataGridView1.Columns["protocolIDDataGridViewTextBoxColumn"];
-            if (column != null)
-                column.Visible = false;
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -150,11 +150,11 @@ namespace adovipavto
 
 
                 var newProtocolId =
-                    (int) dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
-                var protocol = (NewVipAvtoSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+                    (int) dataGridView1.SelectedRows[0].Cells[0].Value;
+                var protocol = (NewVipAvtoSet.ProtocolsRow)newVipAvtoSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
                 NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
-                _document2 = new PrintProtocolDocument(protocol, mesures, _set);
+                _document2 = new PrintProtocolDocument(protocol, mesures, newVipAvtoSet);
                 printPreviewControl2.Document = _document2;
             }
         }
@@ -167,20 +167,20 @@ namespace adovipavto
 
 
                 var newProtocolId =
-                    (int) dataGridView1.SelectedRows[0].Cells["protocolIDDataGridViewTextBoxColumn"].Value;
-                var protocol = (NewVipAvtoSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+                    (int) dataGridView1.SelectedRows[0].Cells[0].Value;
+                var protocol = (NewVipAvtoSet.ProtocolsRow)newVipAvtoSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
                 NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
-                new ProtocolReportForm(protocol, mesures, _set).ShowDialog();
+                new ProtocolReportForm(protocol, mesures, newVipAvtoSet).ShowDialog();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            NewVipAvtoSet.ProtocolsRow protocol = _set.GetProtocolByBlankId(label80.Text + maskedTextBox1.Text);
+            NewVipAvtoSet.ProtocolsRow protocol = newVipAvtoSet.GetProtocolByBlankId(label80.Text + maskedTextBox1.Text);
             NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
-            new ProtocolReportForm(protocol, mesures, _set).ShowDialog();
+            new ProtocolReportForm(protocol, mesures, newVipAvtoSet).ShowDialog();
         }
     }
 }
