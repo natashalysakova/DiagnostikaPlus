@@ -90,5 +90,10 @@ namespace adovipavto
         {
             DialogResult = DialogResult.Cancel;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Process.Start(Application.StartupPath);
+        }
     }
 }

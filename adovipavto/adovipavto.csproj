@@ -79,7 +79,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DRandom">
-      <HintPath>..\..\..\..\..\Projects\raznoe\DRandom\DRandom\bin\Release\DRandom.dll</HintPath>
+      <HintPath>E:\Dropbox\Projects\raznoe\DRandom\DRandom\bin\Release\DRandom.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
       <Aliases>global</Aliases>
     </Reference>
