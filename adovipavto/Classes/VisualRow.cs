@@ -118,7 +118,7 @@ namespace adovipavto.Classes
             if (val)
             {
                 Value = value;
-                if (_minval <= Value && Value < _maxval)
+                if (_minval <= Value && Value <= _maxval)
                     SetGreen();
                 else
                     SetRed();

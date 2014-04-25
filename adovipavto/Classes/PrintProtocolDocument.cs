@@ -451,7 +451,7 @@ namespace adovipavto.Classes
                 }
 
 
-                if (minval <= value[0].Value && value[0].Value < maxval)
+                if (minval <= value[0].Value && value[0].Value <= maxval)
                 {
                     graphics.DrawImage(Resources.pass, 690, height, 15, 15);
                 }
