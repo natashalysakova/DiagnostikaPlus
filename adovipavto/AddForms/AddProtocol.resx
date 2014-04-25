@@ -355,7 +355,7 @@
     <value>38, 32</value>
   </data>
   <data name="numericUpDown1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>2</value>
   </data>
   <data name="numericUpDown1.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -821,7 +821,7 @@
     <value>143, 21</value>
   </data>
   <data name="radioButton7.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="radioButton7.Text" xml:space="preserve">
     <value>Не соответствует</value>
@@ -851,7 +851,7 @@
     <value>123, 21</value>
   </data>
   <data name="radioButton6.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="radioButton6.Text" xml:space="preserve">
     <value>Соответствует</value>
@@ -3461,7 +3461,7 @@
     <value>300, 23</value>
   </data>
   <data name="textBox8.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;textBox8.Name" xml:space="preserve">
     <value>textBox8</value>
@@ -3596,7 +3596,7 @@
     <value>300, 23</value>
   </data>
   <data name="textBox20.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;textBox20.Name" xml:space="preserve">
     <value>textBox20</value>
@@ -3695,7 +3695,7 @@
     <value>300, 23</value>
   </data>
   <data name="textBox7.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;textBox7.Name" xml:space="preserve">
     <value>textBox7</value>
@@ -3719,7 +3719,7 @@
     <value>300, 23</value>
   </data>
   <data name="textBox6.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;textBox6.Name" xml:space="preserve">
     <value>textBox6</value>
