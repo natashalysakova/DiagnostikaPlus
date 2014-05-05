@@ -8,7 +8,7 @@ using adovipavto.Properties;
 
 namespace adovipavto.Classes
 {
-    internal class Normatives : IEnumerable
+    public class Normatives : IEnumerable
     {
         private readonly List<int> _decimals;
         private readonly List<double> _hardNorms;

@@ -29,7 +29,7 @@ namespace adovipavto
         private ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
 
-        internal string GetUserPasswors(string username)
+        public string GetUserPasswors(string username)
         {
             OperatorsRow[] operatorRow =
                 (from OperatorsRow item in Operators.Rows
@@ -45,7 +45,7 @@ namespace adovipavto
         }
 
 
-        internal DataRow GetRowById(string tableName, int id)
+        public DataRow GetRowById(string tableName, int id)
         {
             switch (tableName)
             {
@@ -66,7 +66,7 @@ namespace adovipavto
             }
         }
 
-        internal void RemoveRow(DataRow selectedRow)
+        public void RemoveRow(DataRow selectedRow)
         {
             selectedRow.Delete();
 
@@ -139,7 +139,7 @@ namespace adovipavto
         }
 
 
-        internal void SetCurrentOperator(string name)
+        public void SetCurrentOperator(string name)
         {
             OperatorsRow r = GetUserByLogin(name);
 
@@ -159,7 +159,7 @@ namespace adovipavto
             return null;
         }
 
-        //internal string GroupTitle(int id)
+        //public string GroupTitle(int id)
         //{
         //    var groupRow = GetRowById(Constants.GroupTableName, id) as GroupsRow;
 
@@ -172,7 +172,7 @@ namespace adovipavto
         //           new Engines()[groupRow.EngineType];
         //}
 
-        internal void AddMechanic(string name, string lastName, string fatherName)
+        public void AddMechanic(string name, string lastName, string fatherName)
         {
             MechanicsRow r = Mechanics.NewMechanicsRow();
 
@@ -187,7 +187,7 @@ namespace adovipavto
             AcceptChanges();
         }
 
-        internal void EditMechanic(int id, string name, string lastName, string fatherName)
+        public void EditMechanic(int id, string name, string lastName, string fatherName)
         {
             var r = GetRowById(Constants.MechanicsTableName, id) as MechanicsRow;
 
@@ -203,7 +203,7 @@ namespace adovipavto
         }
 
 
-        internal void LockMechanic(int id)
+        public void LockMechanic(int id)
         {
             var r = GetRowById(Constants.MechanicsTableName, id) as MechanicsRow;
             if (r != null)
@@ -215,7 +215,7 @@ namespace adovipavto
         }
 
 
-        internal int AddProtocol(string blankNumber, string mechanicName, DateTime dateTime, 
+        public int AddProtocol(string blankNumber, string mechanicName, DateTime dateTime, 
             string groupTitle, bool result,
             DateTime nexDateTime, bool visChck, int gbo)
         {
@@ -238,7 +238,7 @@ namespace adovipavto
             return r.IdProtocol;
         }
 
-        internal void AddPhoto(Image image, int protocolId)
+        public void AddPhoto(Image image, int protocolId)
         {
 
 
@@ -304,7 +304,7 @@ namespace adovipavto
             return -1;
         }
 
-        internal string GetShortMechanicName(int mechanicId)
+        public string GetShortMechanicName(int mechanicId)
         {
             return (from MechanicsRow item in Mechanics.Rows
                     where item.IdMechanic == mechanicId
@@ -313,7 +313,7 @@ namespace adovipavto
                 .ToArray()[0];
         }
 
-        internal string GetShortOperatorName(int operatorId)
+        public string GetShortOperatorName(int operatorId)
         {
             return (from OperatorsRow item in Operators.Rows
                     where item.IdOperator == operatorId
@@ -366,7 +366,7 @@ namespace adovipavto
             }
         }
 
-        internal void RemoveRowById(string tableName, int id)
+        public void RemoveRowById(string tableName, int id)
         {
             DataRow row = GetRowById(tableName, id);
             if (row != null)
@@ -378,7 +378,7 @@ namespace adovipavto
             }
         }
 
-        internal void EditOperator(int id, string name, string lastName, string login, string pass)
+        public void EditOperator(int id, string name, string lastName, string login, string pass)
         {
             var r = GetRowById(Constants.OperatorsTableName, id) as OperatorsRow;
             if (r != null)
@@ -395,7 +395,7 @@ namespace adovipavto
         }
 
 
-        internal bool AddOperator(string name, string lastName, string login, string password, string rights)
+        public bool AddOperator(string name, string lastName, string login, string password, string rights)
         {
             OperatorsRow[] operators =
                 (from OperatorsRow item in Operators.Rows where item.Login == login select item).ToArray();
@@ -444,7 +444,7 @@ namespace adovipavto
             return (int)r;
         }
 
-        internal bool GroupContainsNormative(string groupname, string normativename)
+        public bool GroupContainsNormative(string groupname, string normativename)
         {
             int groupId = GetGroupId(groupname);
 
@@ -509,7 +509,7 @@ namespace adovipavto
             }
         }
 
-        internal bool GroupExist(int year, string category, int engine, bool before)
+        public bool GroupExist(int year, string category, int engine, bool before)
         {
             List<GroupsRow> rows = (from GroupsRow item in Groups.Rows
                                     where
@@ -538,18 +538,31 @@ namespace adovipavto
             AcceptChanges();
         }
 
-        internal Rights GetOperatorRight()
+        public void AddNormative(int group, double minValue, double maxValue)
+        {
+            NormativesRow r = Normatives.NewNormativesRow();
+            r.Tag = 1;
+            r.MaxValue = maxValue;
+            r.MinValue = minValue;
+            r.GroupId = group;
+
+            Normatives.AddNormativesRow(r);
+            Update(r.GetType());
+            AcceptChanges();
+        }
+
+        public Rights GetOperatorRight()
         {
             return _currentOperator.Rights;
         }
 
-        internal int GetOperatorId()
+        public int GetOperatorId()
         {
             return _currentOperator.Id;
         }
 
 
-        internal void LockOperator(int id)
+        public void LockOperator(int id)
         {
             var r = GetRowById(Constants.OperatorsTableName, id) as OperatorsRow;
             if (r != null)
@@ -559,7 +572,7 @@ namespace adovipavto
             AcceptChanges();
         }
 
-        internal ProtocolsRow[] GetProtocolsBetweenDates(DateTime dateTime1, DateTime dateTime2)
+        public ProtocolsRow[] GetProtocolsBetweenDates(DateTime dateTime1, DateTime dateTime2)
         {
             return (from ProtocolsRow item in Protocols.Rows
                     where
@@ -568,7 +581,7 @@ namespace adovipavto
                     select item).ToArray();
         }
 
-        internal bool GroupWithGasEngine(string groupTitle)
+        public bool GroupWithGasEngine(string groupTitle)
         {
             int id = GetGroupId(groupTitle);
 
@@ -595,7 +608,7 @@ namespace adovipavto
             return null;
         }
 
-        internal void AddMesure(int normativeTag, double value, int newProtocolId, int groupId)
+        public void AddMesure(int normativeTag, double value, int newProtocolId, int groupId)
         {
             MesuresRow r = Mesures.NewMesuresRow();
 
@@ -618,7 +631,7 @@ namespace adovipavto
         }
 
 
-        internal bool UniqProtocolNumber(string number)
+        public bool UniqProtocolNumber(string number)
         {
             ProtocolsRow[] prot =
                 (from ProtocolsRow rows in Protocols.Rows where rows.BlankNumber == number select rows)
@@ -631,7 +644,7 @@ namespace adovipavto
         }
 
 
-        internal void LoadData()
+        public void LoadData()
         {
             _operatorsTableAdapter.Fill(Operators);
             _mechanicsTableAdapter.Fill(Mechanics);
@@ -643,7 +656,7 @@ namespace adovipavto
         }
 
 
-        internal string GetGroupTitle(int id)
+        public string GetGroupTitle(int id)
         {
             GroupsRow r = Groups.FindByIdGroup(id);
             if (r != null)

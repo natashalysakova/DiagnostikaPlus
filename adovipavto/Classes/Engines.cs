@@ -7,7 +7,7 @@ using adovipavto.Properties;
 
 namespace adovipavto.Classes
 {
-    internal class Engines : IEnumerable
+    public class Engines : IEnumerable
     {
         private readonly string[] _engines;
 
