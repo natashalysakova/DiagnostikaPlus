@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using adovipavto.Classes;
 using adovipavto.Enums;
 using adovipavto.Properties;
-using DRandomLib;
+using  DRandomLib;
 
 namespace adovipavto.AddForms
 {

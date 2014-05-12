@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>adovipavto</RootNamespace>
     <AssemblyName>DiagnostikaPlus</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <TargetFrameworkProfile />
@@ -45,6 +45,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -54,6 +55,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>adovipavto.Program</StartupObject>
@@ -81,9 +83,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DRandom">
-      <HintPath>E:\Dropbox\Projects\raznoe\DRandom\DRandom\bin\Release\DRandom.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Aliases>global</Aliases>
+      <HintPath>..\..\..\..\Dropbox\Projects\raznoe\DRandom\DRandom\bin\Release\DRandom.dll</HintPath>
+    </Reference>
+    <Reference Include="Octokit, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Octokit.0.3.4\lib\net45\Octokit.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -247,6 +251,12 @@
     </Compile>
     <Compile Include="SelectLanguage.Designer.cs">
       <DependentUpon>SelectLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SendBugReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SendBugReportForm.Designer.cs">
+      <DependentUpon>SendBugReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ServerSetting.cs">
       <SubType>Form</SubType>
@@ -452,6 +462,9 @@
     <EmbeddedResource Include="SelectLanguage.resx">
       <DependentUpon>SelectLanguage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SendBugReportForm.resx">
+      <DependentUpon>SendBugReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ServerSetting.resx">
       <DependentUpon>ServerSetting.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -500,6 +513,7 @@
     <None Include="NewVipAvtoSet.xss">
       <DependentUpon>NewVipAvtoSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\adovipavto.NewVipAvtoSetTableAdapters.ProtocolsTableAdapter.datasource" />
     <None Include="Properties\Settings.settings">
@@ -565,6 +579,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="icon.ico" />
+    <None Include="Resources\Error_icon.png" />
     <None Include="Resources\operEdit.png" />
     <None Include="Resources\operDel.png" />
     <None Include="Resources\operAdd.png" />
@@ -611,17 +626,6 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="VBIDE">
-      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>5</VersionMajor>
-      <VersionMinor>3</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
