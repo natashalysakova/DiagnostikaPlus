@@ -147,7 +147,7 @@ namespace adovipavto.Classes
             return _normas.IndexOf(p);
         }
 
-        internal List<string> GetAllNormatives()
+        public List<string> GetAllNormatives()
         {
             return _normas;
         }

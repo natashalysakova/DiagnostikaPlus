@@ -81,14 +81,7 @@ namespace adovipavto
                 _groupsTableAdapter.Update(Groups);
             else if (typeof(NormativesRow) == type)
             {
-                try
-                {
                     _normativesTableAdapter.Update(Normatives);
-                }
-                catch (ArgumentException ex)
-                {
-                    MessageBox.Show(ex.Message + ex.ParamName);
-                }
             }
             else if (typeof(MesuresRow) == type)
             {
@@ -106,7 +99,7 @@ namespace adovipavto
             {
                 _mechanicsTableAdapter.Update(Mechanics);
             }
-            else if (typeof (PhotosRow) == type)
+            else if (typeof(PhotosRow) == type)
             {
                 _photosTableAdapter.Update(Photos);
             }
@@ -143,8 +136,9 @@ namespace adovipavto
         {
             OperatorsRow r = GetUserByLogin(name);
 
-            _currentOperator = new Operator((Rights)r.Right, r.IdOperator, r.Name,
-                r.LastName);
+            if (r != null)
+                _currentOperator = new Operator((Rights)r.Right, r.IdOperator, r.Name,
+                    r.LastName);
         }
 
         private OperatorsRow GetUserByLogin(string name)
@@ -215,8 +209,8 @@ namespace adovipavto
         }
 
 
-        public int AddProtocol(string blankNumber, string mechanicName, DateTime dateTime, 
-            string groupTitle, bool result,
+        public int AddProtocol(string blankNumber, string mechanicName, DateTime dateTime,
+            int groupid, bool result,
             DateTime nexDateTime, bool visChck, int gbo)
         {
             ProtocolsRow r = Protocols.NewProtocolsRow();
@@ -225,7 +219,7 @@ namespace adovipavto
             r.OperatorId = _currentOperator.Id;
             r.MechanicId = GetMechanicIdByShortName(mechanicName);
             r.Date = dateTime;
-            r.GroupId = GetGroupId(groupTitle);
+            r.GroupId = groupid;
             r.Result = result;
             r.NextData = nexDateTime.Date;
             r.VisualCheck = visChck;
@@ -292,7 +286,7 @@ namespace adovipavto
             { }
         }
 
-        private int GetMechanicIdByShortName(string mechanicShortName)
+        public int GetMechanicIdByShortName(string mechanicShortName)
         {
             int[] rows = (from MechanicsRow item in Mechanics.Rows
                           where
@@ -324,28 +318,8 @@ namespace adovipavto
 
         public int GetGroupId(string title)
         {
-            string[] splitTitle = title.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-            foreach (GroupsRow row in Groups.Rows)
-            {
-                string cat = row.Category;
-                string bef = row.Before ? _rm.GetString("before") : _rm.GetString("after");
-                string year = row.Year.ToString();
-                int engine = row.EngineType;
-                if (splitTitle.Length == 4)
-                {
-                    if (cat == splitTitle[0] && bef == splitTitle[1] && year == splitTitle[2] &&
-                        new Engines()[engine] == splitTitle[3])
-                        return Convert.ToInt32(row.IdGroup);
-                }
-                else
-                {
-                    if (cat == splitTitle[0] && bef == splitTitle[1] && year == splitTitle[2])
-                        return Convert.ToInt32(row.IdGroup);
-                }
-            }
-
-            return -1;
+            var t = (from GroupsRow row in Groups.Rows where row.Title == title select row.IdGroup);
+            return t.First();
         }
 
 
@@ -405,9 +379,15 @@ namespace adovipavto
 
             OperatorsRow r = Operators.NewOperatorsRow();
 
+            if (name == null || lastName == null || login == null || password == null)
+            {
+                return false;
+            }
             r.Name = name;
+ 
             r.LastName = lastName;
-            r.Login = login;
+
+                r.Login = login;
             r.Password = GetHash(password);
 
             r.Right = GetRightByString(rights);
@@ -615,19 +595,18 @@ namespace adovipavto
             r.NormativeTag = normativeTag;
             r.Value = value;
             r.ProtocolId = newProtocolId;
-            r.MaxValue =
-                (from NormativesRow row in Normatives.Rows
-                 where row.Tag == normativeTag && row.GroupId == groupId
-                 select row.MaxValue)
-                    .ToArray()[0];
-            r.MinValue =
-                (from NormativesRow row in Normatives.Rows
-                 where row.Tag == normativeTag && row.GroupId == groupId
-                 select row.MinValue)
-                    .ToArray()[0];
+            var t = (from NormativesRow row in Normatives.Rows
+                     where row.Tag == normativeTag && row.GroupId == groupId
+                     select row)
+                .ToArray();
+            if (t.Length != 0)
+            {
+                r.MaxValue = t[0].MaxValue;
+                r.MinValue = t[0].MinValue;
+                Mesures.AddMesuresRow(r);
+            }
 
 
-            Mesures.AddMesuresRow(r);
         }
 
 

@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
+using System.Text.RegularExpressions;
 using System.Threading;
 using adovipavto.Properties;
 
@@ -13,7 +14,12 @@ namespace adovipavto.Classes
 
         public Engines()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            if(Settings.Default.Language != "")
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
+            else
+            {
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("RU-ru");
+            }
             var rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
             _engines = new[]
@@ -46,7 +52,7 @@ namespace adovipavto.Classes
             return -1;
         }
 
-        internal string[] GetAllEngines()
+        public string[] GetAllEngines()
         {
             return _engines;
         }

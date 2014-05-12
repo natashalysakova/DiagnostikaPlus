@@ -15,7 +15,7 @@ using adovipavto.Properties;
 
 namespace adovipavto.Classes
 {
-    internal class PrintProtocolDocument : PrintDocument
+    public class PrintProtocolDocument : PrintDocument
     {
         private readonly DateTime _from;
         private readonly NewVipAvtoSet.MesuresRow[] _mesures;

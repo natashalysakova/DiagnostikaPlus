@@ -1,6 +1,6 @@
 ﻿namespace adovipavto.Enums
 {
-    internal enum Gbo
+    public enum Gbo
     {
         NotChecked,
         Germetical,

@@ -404,7 +404,7 @@ namespace adovipavto.AddForms
 
 
             _newProtocolId = _set.AddProtocol(label80.Text + maskedTextBox1.Text,
-                comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, comboBox1.SelectedItem.ToString(),
+                comboBox2.SelectedItem.ToString(), dateTimePicker1.Value, _set.GetGroupId(comboBox1.SelectedItem.ToString()),
                 result, nexDateTime, radioButton1.Checked, gbo);
 
 
