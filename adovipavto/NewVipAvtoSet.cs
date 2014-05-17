@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
+using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using adovipavto.Classes;
 using adovipavto.Enums;
 using adovipavto.NewVipAvtoSetTableAdapters;
+using adovipavto.Properties;
 
 namespace adovipavto
 {
@@ -625,6 +629,17 @@ namespace adovipavto
 
         public void LoadData()
         {
+            string connectionString = ReadConnectionStringFromFile();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            _operatorsTableAdapter.Connection = conn;
+            _mechanicsTableAdapter.Connection = conn;
+            _groupsTableAdapter.Connection = conn;
+            _normativesTableAdapter.Connection = conn;
+            _protocolsTableAdapter.Connection = conn;
+            _mesuresTableAdapter.Connection = conn;
+            _photosTableAdapter.Connection = conn;
+
             _operatorsTableAdapter.Fill(Operators);
             _mechanicsTableAdapter.Fill(Mechanics);
             _groupsTableAdapter.Fill(Groups);
@@ -632,6 +647,36 @@ namespace adovipavto
             _protocolsTableAdapter.Fill(Protocols);
             _mesuresTableAdapter.Fill(Mesures);
             _photosTableAdapter.Fill(Photos);
+        }
+
+        private string ReadConnectionStringFromFile()
+        {
+            string userDocFolder = System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string folderPath = userDocFolder + "\\" + "DiagnostikaPlus";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
+            string connectionString;
+            string filePath = folderPath + "\\" + "settings.ini";
+            if (!File.Exists(filePath))
+            {
+                using (StreamWriter sw = new StreamWriter(new FileStream(filePath, FileMode.Create, FileAccess.Write)))
+                {
+                   sw.WriteLine(Settings.Default.VipAvtoDBConnectionString);
+                    connectionString = Settings.Default.VipAvtoDBConnectionString;
+                }
+            }
+            else
+            {
+                using (StreamReader sr = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read)))
+                {
+                    connectionString = sr.ReadLine();
+                }
+            }
+
+            return connectionString;
         }
 
 

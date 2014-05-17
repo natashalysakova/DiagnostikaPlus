@@ -2,13 +2,10 @@
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
-using System.Xml;
-using adovipavto.Classes;
 using adovipavto.Properties;
 
 namespace adovipavto
@@ -17,30 +14,12 @@ namespace adovipavto
     {
         private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
             Assembly.GetExecutingAssembly());
-        FileInfo file = null;
 
         public ServerSetting()
         {
             Application.EnableVisualStyles();
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
             InitializeComponent();
-
-
-            foreach (string var in Directory.GetFiles(Application.StartupPath))
-            {
-                if (var.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries).Last() == "config")
-                {
-                    file = new FileInfo(var);
-                    break;
-                }
-            }
-
-            if (file == null)
-            {
-                MessageBox.Show("Файл конфигурации не найден. Обратитесь к системномму администратору!",
-                    _rm.GetString("error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
-            }
         }
 
         private void ServerSetting_Load(object sender, EventArgs e)
@@ -49,41 +28,39 @@ namespace adovipavto
             label3.Text = _rm.GetString("Database");
 
 
-            XmlDocument doc = new XmlDocument();
-            doc.Load(file.FullName);
-
-            XmlNode configuration = doc.ChildNodes[1]; // configuration
-            XmlNode connectionString = configuration.ChildNodes[1];
-
-            var v1 = connectionString.ChildNodes[0];
-
-            if (v1 != null)
+            string userDocFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string folderPath = userDocFolder + "\\" + "DiagnostikaPlus";
+            if (!Directory.Exists(folderPath))
             {
-                string connstr = v1.Attributes["connectionString"].InnerText;
-                var v2 = connstr.Split(new char[] { '=', ';' }, StringSplitOptions.RemoveEmptyEntries);
-                textBox1.Text = v2[1];
-                textBox5.Text = v2[3];
+                Directory.CreateDirectory(folderPath);
             }
 
+            string connectionString;
+            string filePath = folderPath + "\\" + "settings.ini";
+
+            using (var sr = new StreamReader(new FileStream(filePath, FileMode.Open, FileAccess.Read)))
+            {
+                connectionString = sr.ReadLine();
+            }
+
+
+            if (connectionString != null)
+            {
+                var splitString = connectionString.Split(new[] { ';', '=' });
+                textBox1.Text = splitString[1];
+                textBox5.Text = splitString[3];
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(file.FullName);
-
-            XmlNode configuration = doc.ChildNodes[1]; // configuration
-            XmlNode connectionString = configuration.ChildNodes[1];
-
-            var v1 = connectionString.ChildNodes[0];
-
-            if (v1 != null)
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\" +
+              "DiagnostikaPlus\\settings.ini";
+            using (var sw = new StreamWriter(new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write)))
             {
-                string newstring = "Data Source="+ textBox1.Text + ";Initial Catalog=" + textBox5.Text + ";User ID=vipavto;Password=9194";
-                v1.Attributes["connectionString"].InnerText = newstring;
-            }
 
-            doc.Save(file.FullName);
+                sw.WriteLine("Data Source=" + textBox1.Text + ";Initial Catalog=" + textBox5.Text + ";Persist Security Info=True;User ID=vipavto;Password=9194");
+            }
             Application.Restart();
         }
 
@@ -94,7 +71,10 @@ namespace adovipavto
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Process.Start(Application.StartupPath);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\" +
+                          "DiagnostikaPlus\\settings.ini";
+            if (File.Exists(path))
+                Process.Start(path);
         }
     }
 }
