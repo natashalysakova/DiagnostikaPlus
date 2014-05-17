@@ -20,7 +20,7 @@ namespace adovipavto
         private const string RepoName = "DiagnostikaPlus";
         GitHubClient github = new GitHubClient(new ProductHeaderValue("DiagnostikaPlus"))
         {
-            Credentials = new Credentials("f441afccab8a65378e8ee44af0a2df832beb1210")
+            Credentials = new Credentials("a1439974bf164d3aceb53c912365a786943b5ed5")
         };
 
 
