@@ -649,7 +649,7 @@ namespace adovipavto
             _photosTableAdapter.Fill(Photos);
         }
 
-        private string ReadConnectionStringFromFile()
+        public static string ReadConnectionStringFromFile()
         {
             string userDocFolder = System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string folderPath = userDocFolder + "\\" + "DiagnostikaPlus";
