@@ -300,7 +300,7 @@
   <metadata name="protocolsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>151, 17</value>
   </metadata>
-  <metadata name="newVipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="VipAvtoDBDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
@@ -1030,17 +1030,17 @@
   <data name="&gt;&gt;protocolsBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;newVipAvtoSet.Name" xml:space="preserve">
-    <value>newVipAvtoSet</value>
+  <data name="&gt;&gt;VipAvtoDBDataSet.Name" xml:space="preserve">
+    <value>VipAvtoDBDataSet</value>
   </data>
-  <data name="&gt;&gt;newVipAvtoSet.Type" xml:space="preserve">
-    <value>adovipavto.NewVipAvtoSet, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;VipAvtoDBDataSet.Type" xml:space="preserve">
+    <value>adovipavto.VipAvtoDBDataSet, VipAvtoDBDataSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;protocolsTableAdapter.Name" xml:space="preserve">
     <value>protocolsTableAdapter</value>
   </data>
   <data name="&gt;&gt;protocolsTableAdapter.Type" xml:space="preserve">
-    <value>adovipavto.NewVipAvtoSetTableAdapters.ProtocolsTableAdapter, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>adovipavto.VipAvtoDBDataSetTableAdapters.ProtocolsTableAdapter, VipAvtoDBDataSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Search</value>

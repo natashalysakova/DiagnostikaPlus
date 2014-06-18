@@ -154,7 +154,7 @@
   <metadata name="normativesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>411, 17</value>
   </metadata>
-  <metadata name="newVipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="VipAvtoDBDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>277, 17</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
@@ -1906,11 +1906,11 @@
   <data name="&gt;&gt;normativesBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;newVipAvtoSet.Name" xml:space="preserve">
-    <value>newVipAvtoSet</value>
+  <data name="&gt;&gt;VipAvtoDBDataSet.Name" xml:space="preserve">
+    <value>VipAvtoDBDataSet</value>
   </data>
-  <data name="&gt;&gt;newVipAvtoSet.Type" xml:space="preserve">
-    <value>adovipavto.NewVipAvtoSet, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;VipAvtoDBDataSet.Type" xml:space="preserve">
+    <value>adovipavto.VipAvtoDBDataSet, VipAvtoDBDataSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
     <value>toolStripButton1</value>
@@ -1976,7 +1976,7 @@
     <value>normativesTableAdapter</value>
   </data>
   <data name="&gt;&gt;normativesTableAdapter.Type" xml:space="preserve">
-    <value>adovipavto.NewVipAvtoSetTableAdapters.NormativesTableAdapter, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>adovipavto.VipAvtoDBDataSetTableAdapters.NormativesTableAdapter, VipAvtoDBDataSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;idNormativeDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>idNormativeDataGridViewTextBoxColumn</value>

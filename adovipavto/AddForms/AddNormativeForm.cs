@@ -17,9 +17,9 @@ namespace adovipavto.AddForms
         private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
             Assembly.GetExecutingAssembly());
 
-        private readonly NewVipAvtoSet _set;
+        private readonly VipAvtoDBDataSet _set;
 
-        public AddNormativeForm(NewVipAvtoSet set)
+        public AddNormativeForm(VipAvtoDBDataSet set)
         {
             _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
@@ -118,7 +118,7 @@ namespace adovipavto.AddForms
         private void NewNormative_Load(object sender, EventArgs e)
         {
             checkedListBox1.DataSource =
-                (from NewVipAvtoSet.GroupsRow item in _set.Groups.Rows
+                (from VipAvtoDBDataSet.GroupsRow item in _set.Groups.Rows
                     select item.Title).ToList();
 
 

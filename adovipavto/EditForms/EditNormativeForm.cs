@@ -14,10 +14,10 @@ namespace adovipavto.EditForms
         private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
             Assembly.GetExecutingAssembly());
 
-        private readonly NewVipAvtoSet.NormativesRow _selected;
-        private readonly NewVipAvtoSet _set;
+        private readonly VipAvtoDBDataSet.NormativesRow _selected;
+        private readonly VipAvtoDBDataSet _set;
 
-        public EditNormativeForm(NewVipAvtoSet.NormativesRow selected, NewVipAvtoSet set)
+        public EditNormativeForm(VipAvtoDBDataSet.NormativesRow selected, VipAvtoDBDataSet set)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
@@ -74,7 +74,7 @@ namespace adovipavto.EditForms
         {
             int id = _selected.IdNormative;
 
-            foreach (NewVipAvtoSet.NormativesRow item in _set.Normatives.Rows)
+            foreach (VipAvtoDBDataSet.NormativesRow item in _set.Normatives.Rows)
             {
                 if (item.IdNormative == id)
                 {

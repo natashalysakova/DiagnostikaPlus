@@ -41,9 +41,9 @@
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.newVipAvtoSet = new adovipavto.NewVipAvtoSet();
+            this.VipAvtoDBDataSet = new adovipavto.VipAvtoDBDataSet();
             this.groupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupsTableAdapter = new adovipavto.NewVipAvtoSetTableAdapters.GroupsTableAdapter();
+            this.groupsTableAdapter = new adovipavto.VipAvtoDBDataSetTableAdapters.GroupsTableAdapter();
             this.idGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VipAvtoDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,15 +168,15 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // newVipAvtoSet
+            // VipAvtoDBDataSet
             // 
-            this.newVipAvtoSet.DataSetName = "NewVipAvtoSet";
-            this.newVipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.VipAvtoDBDataSet.DataSetName = "VipAvtoDBDataSet";
+            this.VipAvtoDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupsBindingSource
             // 
             this.groupsBindingSource.DataMember = "Groups";
-            this.groupsBindingSource.DataSource = this.newVipAvtoSet;
+            this.groupsBindingSource.DataSource = this.VipAvtoDBDataSet;
             // 
             // groupsTableAdapter
             // 
@@ -243,7 +243,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VipAvtoDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -263,9 +263,9 @@
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private NewVipAvtoSet newVipAvtoSet;
+        private VipAvtoDBDataSet VipAvtoDBDataSet;
         private System.Windows.Forms.BindingSource groupsBindingSource;
-        private NewVipAvtoSetTableAdapters.GroupsTableAdapter groupsTableAdapter;
+        private VipAvtoDBDataSetTableAdapters.GroupsTableAdapter groupsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idGroupDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;

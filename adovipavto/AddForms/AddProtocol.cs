@@ -22,7 +22,7 @@ namespace adovipavto.AddForms
         private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
             Assembly.GetExecutingAssembly());
 
-        private readonly NewVipAvtoSet _set;
+        private readonly VipAvtoDBDataSet _set;
         private GBOSTATE _gbo;
 
 
@@ -30,7 +30,7 @@ namespace adovipavto.AddForms
         private DataRow[] _normatives;
         private List<VisualRow> _rows;
 
-        public AddProtocol(NewVipAvtoSet set)
+        public AddProtocol(VipAvtoDBDataSet set)
         {
             _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
@@ -47,7 +47,7 @@ namespace adovipavto.AddForms
             UpdateFormLables();
 
             string[] groups = (
-                from NewVipAvtoSet.GroupsRow item in _set.Groups.Rows
+                from VipAvtoDBDataSet.GroupsRow item in _set.Groups.Rows
                 select item.Title).ToArray();
 
             if (groups.Length == 0)
@@ -63,7 +63,7 @@ namespace adovipavto.AddForms
             dateTimePicker1.Value = DateTime.Now;
 
             string[] mechanics = (
-                from NewVipAvtoSet.MechanicsRow item in _set.Tables[Constants.MechanicsTableName].Rows
+                from VipAvtoDBDataSet.MechanicsRow item in _set.Tables[Constants.MechanicsTableName].Rows
                 where item.State != (int) State.Unemployed
                 select
                     _set.GetShortMechanicName(item.IdMechanic)
@@ -206,7 +206,7 @@ namespace adovipavto.AddForms
             _normatives = _set.GetNormativesFromGroup(comboBox1.SelectedItem.ToString());
 
 
-            foreach (NewVipAvtoSet.NormativesRow normative in _normatives)
+            foreach (VipAvtoDBDataSet.NormativesRow normative in _normatives)
             {
                 var row = new VisualRow(normative, _random);
 
@@ -342,8 +342,8 @@ namespace adovipavto.AddForms
             if (_newProtocolId != -1)
             {
                 var protocol =
-                    (NewVipAvtoSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
-                NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+                    (VipAvtoDBDataSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
+                VipAvtoDBDataSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
                 new ProtocolReportForm(protocol, mesures, _set, true).ShowDialog();
 
@@ -386,19 +386,19 @@ namespace adovipavto.AddForms
                 nexDateTime = dateTimePicker1.Value.AddYears(2);
             }
 
-            int gbo;
+            byte gbo;
 
             if (GBO.Enabled == false)
             {
-                gbo = (int) Gbo.NotChecked;
+                gbo = (byte)Gbo.NotChecked;
             }
             else
             {
                 if (radioButton6.Checked)
-                    gbo = (int) Gbo.Germetical;
+                    gbo = (byte) Gbo.Germetical;
                 else
                 {
-                    gbo = (int) Gbo.NotGermrtical;
+                    gbo = (byte)Gbo.NotGermrtical;
                 }
             }
 
@@ -419,7 +419,7 @@ namespace adovipavto.AddForms
             {
                 _set.AddMesure(row.Id, row.Value, _newProtocolId, groupid);
             }
-            _set.Update(typeof (NewVipAvtoSet.MesuresRow));
+            _set.Update(typeof (VipAvtoDBDataSet.MesuresRow));
             _set.AcceptChanges();
 
             return true;
@@ -568,8 +568,8 @@ namespace adovipavto.AddForms
             if (_newProtocolId != -1)
             {
                 var protocol =
-                    (NewVipAvtoSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
-                NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+                    (VipAvtoDBDataSet.ProtocolsRow) _set.GetRowById(Constants.ProtocolsTableName, _newProtocolId);
+                VipAvtoDBDataSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
                 new ProtocolReportForm(protocol, mesures, _set).ShowDialog();
                 DialogResult = DialogResult.OK;

@@ -7,10 +7,10 @@ namespace adovipavto
 {
     public partial class Report : Form
     {
-        private readonly NewVipAvtoSet _set;
+        private readonly VipAvtoDBDataSet _set;
         private PrintDocument _document;
 
-        public Report(NewVipAvtoSet set)
+        public Report(VipAvtoDBDataSet set)
         {
             _set = set;
             InitializeComponent();
@@ -102,7 +102,7 @@ namespace adovipavto
 
         private void firstDate_ValueChanged(object sender, EventArgs e)
         {
-            NewVipAvtoSet.ProtocolsRow[] rows = _set.GetProtocolsBetweenDates(firstDate.Value, secondDate.Value);
+            VipAvtoDBDataSet.ProtocolsRow[] rows = _set.GetProtocolsBetweenDates(firstDate.Value, secondDate.Value);
 
             _document = new PrintProtocolDocument(rows, firstDate.Value, secondDate.Value, _set);
             printPreviewControl1.Document = _document;

@@ -1,16 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="NewVipAvtoSet" targetNamespace="http://tempuri.org/NewVipAvtoSet.xsd" xmlns:mstns="http://tempuri.org/NewVipAvtoSet.xsd" xmlns="http://tempuri.org/NewVipAvtoSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="VipAvtoDBDataSet" targetNamespace="http://tempuri.org/VipAvtoDBDataSet.xsd" xmlns:mstns="http://tempuri.org/VipAvtoDBDataSet.xsd" xmlns="http://tempuri.org/VipAvtoDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="VipAvtoDBConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="VipAvtoDBConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.adovipavto.Properties.Settings.GlobalReference.Default.VipAvtoDBConnectionString1" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="VipAvtoDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="VipAvtoDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.adovipavto.Properties.Settings.GlobalReference.Default.VipAvtoDBConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="hatassskaPCConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="hatassskaPCConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.adovipavto.Properties.Settings.GlobalReference.Default.hatassskaPCConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GroupsTableAdapter" GeneratorDataComponentClassName="GroupsTableAdapter" Name="Groups" UserDataComponentName="GroupsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VipAvtoDBConnectionString1 (Settings)" DbObjectName="VipAvtoDB.dbo.Groups" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="hatassskaPCConnectionString (Settings)" DbObjectName="VipAvtoDB.dbo.Groups" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Groups] WHERE (([IdGroup] = @Original_IdGroup) AND ((@IsNull_Year = 1 AND [Year] IS NULL) OR ([Year] = @Original_Year)) AND ((@IsNull_Category = 1 AND [Category] IS NULL) OR ([Category] = @Original_Category)) AND ((@IsNull_EngineType = 1 AND [EngineType] IS NULL) OR ([EngineType] = @Original_EngineType)) AND ((@IsNull_Before = 1 AND [Before] IS NULL) OR ([Before] = @Original_Before)) AND ((@IsNull_Title = 1 AND [Title] IS NULL) OR ([Title] = @Original_Title)))</CommandText>
@@ -69,7 +68,7 @@ SELECT IdGroup, Year, Category, EngineType, Before, Title FROM Groups WHERE (IdG
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Before" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Before" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Title" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Title" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Title" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Title" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="IdGroup" ColumnName="IdGroup" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdGroup" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdGroup" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdGroup" ColumnName="IdGroup" DataSourceName="VipAvtoDB.dbo.Groups" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdGroup" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdGroup" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -87,7 +86,7 @@ SELECT IdGroup, Year, Category, EngineType, Before, Title FROM Groups WHERE (IdG
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MechanicsTableAdapter" GeneratorDataComponentClassName="MechanicsTableAdapter" Name="Mechanics" UserDataComponentName="MechanicsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VipAvtoDBConnectionString1 (Settings)" DbObjectName="VipAvtoDB.dbo.Mechanics" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="hatassskaPCConnectionString (Settings)" DbObjectName="VipAvtoDB.dbo.Mechanics" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Mechanics] WHERE (([IdMechanic] = @Original_IdMechanic) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_LastName = 1 AND [LastName] IS NULL) OR ([LastName] = @Original_LastName)) AND ((@IsNull_FatherName = 1 AND [FatherName] IS NULL) OR ([FatherName] = @Original_FatherName)) AND ((@IsNull_State = 1 AND [State] IS NULL) OR ([State] = @Original_State)))</CommandText>
@@ -140,7 +139,7 @@ SELECT IdMechanic, Name, LastName, FatherName, State FROM Mechanics WHERE (IdMec
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_FatherName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FatherName" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_State" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="State" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_State" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="State" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="IdMechanic" ColumnName="IdMechanic" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdMechanic" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdMechanic" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdMechanic" ColumnName="IdMechanic" DataSourceName="VipAvtoDB.dbo.Mechanics" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdMechanic" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdMechanic" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -157,7 +156,7 @@ SELECT IdMechanic, Name, LastName, FatherName, State FROM Mechanics WHERE (IdMec
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MesuresTableAdapter" GeneratorDataComponentClassName="MesuresTableAdapter" Name="Mesures" UserDataComponentName="MesuresTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VipAvtoDBConnectionString1 (Settings)" DbObjectName="VipAvtoDB.dbo.Mesures" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="hatassskaPCConnectionString (Settings)" DbObjectName="VipAvtoDB.dbo.Mesures" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Mesures] WHERE (([IdMesure] = @Original_IdMesure) AND ((@IsNull_NormativeTag = 1 AND [NormativeTag] IS NULL) OR ([NormativeTag] = @Original_NormativeTag)) AND ((@IsNull_Value = 1 AND [Value] IS NULL) OR ([Value] = @Original_Value)) AND ((@IsNull_ProtocolId = 1 AND [ProtocolId] IS NULL) OR ([ProtocolId] = @Original_ProtocolId)) AND ((@IsNull_MinValue = 1 AND [MinValue] IS NULL) OR ([MinValue] = @Original_MinValue)) AND ((@IsNull_MaxValue = 1 AND [MaxValue] IS NULL) OR ([MaxValue] = @Original_MaxValue)))</CommandText>
@@ -216,7 +215,7 @@ SELECT IdMesure, NormativeTag, Value, ProtocolId, MinValue, MaxValue FROM Mesure
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_MinValue" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="MinValue" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MaxValue" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MaxValue" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_MaxValue" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="MaxValue" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="IdMesure" ColumnName="IdMesure" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdMesure" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdMesure" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdMesure" ColumnName="IdMesure" DataSourceName="VipAvtoDB.dbo.Mesures" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdMesure" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdMesure" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -232,9 +231,75 @@ SELECT IdMesure, NormativeTag, Value, ProtocolId, MinValue, MaxValue FROM Mesure
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ModelTableAdapter" GeneratorDataComponentClassName="ModelTableAdapter" Name="Model" UserDataComponentName="ModelTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hatassskaPCConnectionString (Settings)" DbObjectName="VipAvtoDB.dbo.Model" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Model] WHERE (([IdModel] = @Original_IdModel) AND ((@IsNull_ModelName = 1 AND [ModelName] IS NULL) OR ([ModelName] = @Original_ModelName)) AND ((@IsNull_AxisCount = 1 AND [AxisCount] IS NULL) OR ([AxisCount] = @Original_AxisCount)) AND ([GroupId] = @Original_GroupId) AND ([VendorId] = @Original_VendorId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdModel" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdModel" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ModelName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModelName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_ModelName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ModelName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_AxisCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AxisCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@Original_AxisCount" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="AxisCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_VendorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VendorId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Model] ([ModelName], [AxisCount], [GroupId], [VendorId]) VALUES (@ModelName, @AxisCount, @GroupId, @VendorId);
+SELECT IdModel, ModelName, AxisCount, GroupId, VendorId FROM Model WHERE (IdModel = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@ModelName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ModelName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@AxisCount" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="AxisCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@VendorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VendorId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdModel, ModelName, AxisCount, GroupId, VendorId FROM dbo.Model</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Model] SET [ModelName] = @ModelName, [AxisCount] = @AxisCount, [GroupId] = @GroupId, [VendorId] = @VendorId WHERE (([IdModel] = @Original_IdModel) AND ((@IsNull_ModelName = 1 AND [ModelName] IS NULL) OR ([ModelName] = @Original_ModelName)) AND ((@IsNull_AxisCount = 1 AND [AxisCount] IS NULL) OR ([AxisCount] = @Original_AxisCount)) AND ([GroupId] = @Original_GroupId) AND ([VendorId] = @Original_VendorId));
+SELECT IdModel, ModelName, AxisCount, GroupId, VendorId FROM Model WHERE (IdModel = @IdModel)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@ModelName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ModelName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@AxisCount" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="AxisCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@VendorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VendorId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdModel" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdModel" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ModelName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ModelName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_ModelName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="ModelName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_AxisCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AxisCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@Original_AxisCount" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="AxisCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_VendorId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VendorId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdModel" ColumnName="IdModel" DataSourceName="VipAvtoDB.dbo.Model" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdModel" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdModel" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdModel" DataSetColumn="IdModel" />
+              <Mapping SourceColumn="ModelName" DataSetColumn="ModelName" />
+              <Mapping SourceColumn="AxisCount" DataSetColumn="AxisCount" />
+              <Mapping SourceColumn="GroupId" DataSetColumn="GroupId" />
+              <Mapping SourceColumn="VendorId" DataSetColumn="VendorId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NormativesTableAdapter" GeneratorDataComponentClassName="NormativesTableAdapter" Name="Normatives" UserDataComponentName="NormativesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VipAvtoDBConnectionString1 (Settings)" DbObjectName="VipAvtoDB.dbo.Normatives" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="hatassskaPCConnectionString (Settings)" DbObjectName="VipAvtoDB.dbo.Normatives" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Normatives] WHERE (([IdNormative] = @Original_IdNormative) AND ((@IsNull_Tag = 1 AND [Tag] IS NULL) OR ([Tag] = @Original_Tag)) AND ((@IsNull_MinValue = 1 AND [MinValue] IS NULL) OR ([MinValue] = @Original_MinValue)) AND ((@IsNull_MaxValue = 1 AND [MaxValue] IS NULL) OR ([MaxValue] = @Original_MaxValue)) AND ((@IsNull_GroupId = 1 AND [GroupId] IS NULL) OR ([GroupId] = @Original_GroupId)))</CommandText>
@@ -287,7 +352,7 @@ SELECT IdNormative, Tag, MinValue, MaxValue, GroupId FROM Normatives WHERE (IdNo
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_MaxValue" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="MaxValue" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GroupId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GroupId" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="IdNormative" ColumnName="IdNormative" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdNormative" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdNormative" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdNormative" ColumnName="IdNormative" DataSourceName="VipAvtoDB.dbo.Normatives" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdNormative" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdNormative" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -304,7 +369,7 @@ SELECT IdNormative, Tag, MinValue, MaxValue, GroupId FROM Normatives WHERE (IdNo
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OperatorsTableAdapter" GeneratorDataComponentClassName="OperatorsTableAdapter" Name="Operators" UserDataComponentName="OperatorsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VipAvtoDBConnectionString1 (Settings)" DbObjectName="VipAvtoDB.dbo.Operators" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="hatassskaPCConnectionString (Settings)" DbObjectName="VipAvtoDB.dbo.Operators" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Operators] WHERE (([IdOperator] = @Original_IdOperator) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_LastName = 1 AND [LastName] IS NULL) OR ([LastName] = @Original_LastName)) AND ((@IsNull_Login = 1 AND [Login] IS NULL) OR ([Login] = @Original_Login)) AND ((@IsNull_Password = 1 AND [Password] IS NULL) OR ([Password] = @Original_Password)) AND ((@IsNull_Right = 1 AND [Right] IS NULL) OR ([Right] = @Original_Right)))</CommandText>
@@ -363,7 +428,7 @@ SELECT IdOperator, Name, LastName, Login, Password, [Right] FROM Operators WHERE
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Password" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Password" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Right" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Right" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Right" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Right" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="IdOperator" ColumnName="IdOperator" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdOperator" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdOperator" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdOperator" ColumnName="IdOperator" DataSourceName="VipAvtoDB.dbo.Operators" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdOperator" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdOperator" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -381,7 +446,7 @@ SELECT IdOperator, Name, LastName, Login, Password, [Right] FROM Operators WHERE
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PhotosTableAdapter" GeneratorDataComponentClassName="PhotosTableAdapter" Name="Photos" UserDataComponentName="PhotosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VipAvtoDBConnectionString1 (Settings)" DbObjectName="VipAvtoDB.dbo.Photos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="hatassskaPCConnectionString (Settings)" DbObjectName="VipAvtoDB.dbo.Photos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Photos] WHERE (([IdPhoto] = @Original_IdPhoto) AND ((@IsNull_ProtocolId = 1 AND [ProtocolId] IS NULL) OR ([ProtocolId] = @Original_ProtocolId)))</CommandText>
@@ -418,7 +483,7 @@ SELECT IdPhoto, Photo, ProtocolId FROM Photos WHERE (IdPhoto = @IdPhoto)</Comman
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdPhoto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdPhoto" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ProtocolId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProtocolId" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ProtocolId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ProtocolId" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="IdPhoto" ColumnName="IdPhoto" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdPhoto" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdPhoto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdPhoto" ColumnName="IdPhoto" DataSourceName="VipAvtoDB.dbo.Photos" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdPhoto" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdPhoto" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -433,7 +498,7 @@ SELECT IdPhoto, Photo, ProtocolId FROM Photos WHERE (IdPhoto = @IdPhoto)</Comman
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProtocolsTableAdapter" GeneratorDataComponentClassName="ProtocolsTableAdapter" Name="Protocols" UserDataComponentName="ProtocolsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VipAvtoDBConnectionString1 (Settings)" DbObjectName="VipAvtoDB.dbo.Protocols" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="hatassskaPCConnectionString (Settings)" DbObjectName="VipAvtoDB.dbo.Protocols" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Protocols] WHERE (([IdProtocol] = @Original_IdProtocol) AND ((@IsNull_BlankNumber = 1 AND [BlankNumber] IS NULL) OR ([BlankNumber] = @Original_BlankNumber)) AND ((@IsNull_OperatorId = 1 AND [OperatorId] IS NULL) OR ([OperatorId] = @Original_OperatorId)) AND ((@IsNull_MechanicId = 1 AND [MechanicId] IS NULL) OR ([MechanicId] = @Original_MechanicId)) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_GroupId = 1 AND [GroupId] IS NULL) OR ([GroupId] = @Original_GroupId)) AND ((@IsNull_Result = 1 AND [Result] IS NULL) OR ([Result] = @Original_Result)) AND ((@IsNull_NextData = 1 AND [NextData] IS NULL) OR ([NextData] = @Original_NextData)) AND ((@IsNull_VisualCheck = 1 AND [VisualCheck] IS NULL) OR ([VisualCheck] = @Original_VisualCheck)) AND ((@IsNull_GBO = 1 AND [GBO] IS NULL) OR ([GBO] = @Original_GBO)))</CommandText>
@@ -456,7 +521,7 @@ SELECT IdPhoto, Photo, ProtocolId FROM Photos WHERE (IdPhoto = @IdPhoto)</Comman
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VisualCheck" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_VisualCheck" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@Original_GBO" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
@@ -473,7 +538,7 @@ SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, N
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Result" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@NextData" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NextData" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@VisualCheck" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@GBO" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
@@ -496,7 +561,7 @@ SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, N
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Result" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Result" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@NextData" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NextData" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@VisualCheck" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@GBO" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProtocol" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProtocol" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_BlankNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BlankNumber" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_BlankNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="BlankNumber" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -515,8 +580,8 @@ SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, N
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VisualCheck" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_VisualCheck" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="VisualCheck" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GBO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="IdProtocol" ColumnName="IdProtocol" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdProtocol" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdProtocol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Byte" Direction="Input" ParameterName="@Original_GBO" Precision="0" ProviderType="TinyInt" Scale="0" Size="0" SourceColumn="GBO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdProtocol" ColumnName="IdProtocol" DataSourceName="VipAvtoDB.dbo.Protocols" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdProtocol" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdProtocol" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -536,26 +601,102 @@ SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, N
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VendorTableAdapter" GeneratorDataComponentClassName="VendorTableAdapter" Name="Vendor" UserDataComponentName="VendorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hatassskaPCConnectionString (Settings)" DbObjectName="VipAvtoDB.dbo.Vendor" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Vendor] WHERE (([IdVendor] = @Original_IdVendor) AND ((@IsNull_VendorName = 1 AND [VendorName] IS NULL) OR ([VendorName] = @Original_VendorName)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdVendor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdVendor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VendorName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VendorName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_VendorName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="VendorName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Vendor] ([VendorName]) VALUES (@VendorName);
+SELECT IdVendor, VendorName FROM Vendor WHERE (IdVendor = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@VendorName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="VendorName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdVendor, VendorName FROM dbo.Vendor</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Vendor] SET [VendorName] = @VendorName WHERE (([IdVendor] = @Original_IdVendor) AND ((@IsNull_VendorName = 1 AND [VendorName] IS NULL) OR ([VendorName] = @Original_VendorName)));
+SELECT IdVendor, VendorName FROM Vendor WHERE (IdVendor = @IdVendor)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@VendorName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="VendorName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdVendor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdVendor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VendorName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VendorName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_VendorName" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="VendorName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdVendor" ColumnName="IdVendor" DataSourceName="VipAvtoDB.dbo.Vendor" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdVendor" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdVendor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdVendor" DataSetColumn="IdVendor" />
+              <Mapping SourceColumn="VendorName" DataSetColumn="VendorName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProtocolsCountTableAdapter" GeneratorDataComponentClassName="ProtocolsCountTableAdapter" Name="ProtocolsCount" UserDataComponentName="ProtocolsCountTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hatassskaPCConnectionString (Settings)" DbObjectName="VipAvtoDB.dbo.ProtocolsCount" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.ProtocolsCount</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Column1" DataSetColumn="Column1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SelectPhotoTableAdapter" GeneratorDataComponentClassName="SelectPhotoTableAdapter" Name="SelectPhoto" UserDataComponentName="SelectPhotoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hatassskaPCConnectionString (Settings)" DbObjectName="VipAvtoDB.dbo.SelectPhoto" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SelectPhoto</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdPhoto" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdPhoto" DataSetColumn="IdPhoto" />
+              <Mapping SourceColumn="Photo" DataSetColumn="Photo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
-        <Sources>
-          <DbSource ConnectionRef="VipAvtoDBConnectionString1 (Settings)" DbObjectName="VipAvtoDB.dbo.ProtocolsCount" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="ProtocolsCount" MethodsParameterType="CLR" Modifier="Public" Name="ProtocolsCount" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ProtocolsCount">
-            <SelectCommand>
-              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                <CommandText>dbo.ProtocolsCount</CommandText>
-                <Parameters>
-                  <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Object" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="0" Scale="0" Size="0" SourceColumnNullMapping="false" SourceVersion="Current" />
-                </Parameters>
-              </DbCommand>
-            </SelectCommand>
-          </DbSource>
-        </Sources>
+        <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="NewVipAvtoSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NewVipAvtoSet" msprop:Generator_UserDSName="NewVipAvtoSet">
+  <xs:element name="VipAvtoDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="VipAvtoDBDataSet" msprop:Generator_UserDSName="VipAvtoDBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Groups" msprop:Generator_TableClassName="GroupsDataTable" msprop:Generator_TableVarName="tableGroups" msprop:Generator_RowChangedName="GroupsRowChanged" msprop:Generator_TablePropName="Groups" msprop:Generator_RowDeletingName="GroupsRowDeleting" msprop:Generator_RowChangingName="GroupsRowChanging" msprop:Generator_RowEvHandlerName="GroupsRowChangeEventHandler" msprop:Generator_RowDeletedName="GroupsRowDeleted" msprop:Generator_RowClassName="GroupsRow" msprop:Generator_UserTableName="Groups" msprop:Generator_RowEvArgName="GroupsRowChangeEvent">
+        <xs:element name="Groups" msprop:Generator_TableClassName="GroupsDataTable" msprop:Generator_TableVarName="tableGroups" msprop:Generator_TablePropName="Groups" msprop:Generator_RowDeletingName="GroupsRowDeleting" msprop:Generator_RowChangingName="GroupsRowChanging" msprop:Generator_RowEvHandlerName="GroupsRowChangeEventHandler" msprop:Generator_RowDeletedName="GroupsRowDeleted" msprop:Generator_UserTableName="Groups" msprop:Generator_RowChangedName="GroupsRowChanged" msprop:Generator_RowEvArgName="GroupsRowChangeEvent" msprop:Generator_RowClassName="GroupsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdGroup" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdGroup" msprop:Generator_ColumnPropNameInRow="IdGroup" msprop:Generator_ColumnPropNameInTable="IdGroupColumn" msprop:Generator_UserColumnName="IdGroup" type="xs:int" />
@@ -563,7 +704,7 @@ SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, N
               <xs:element name="Category" msprop:Generator_ColumnVarNameInTable="columnCategory" msprop:Generator_ColumnPropNameInRow="Category" msprop:Generator_ColumnPropNameInTable="CategoryColumn" msprop:Generator_UserColumnName="Category" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="32" />
+                    <xs:maxLength value="2" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -579,7 +720,7 @@ SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, N
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Mechanics" msprop:Generator_TableClassName="MechanicsDataTable" msprop:Generator_TableVarName="tableMechanics" msprop:Generator_RowChangedName="MechanicsRowChanged" msprop:Generator_TablePropName="Mechanics" msprop:Generator_RowDeletingName="MechanicsRowDeleting" msprop:Generator_RowChangingName="MechanicsRowChanging" msprop:Generator_RowEvHandlerName="MechanicsRowChangeEventHandler" msprop:Generator_RowDeletedName="MechanicsRowDeleted" msprop:Generator_RowClassName="MechanicsRow" msprop:Generator_UserTableName="Mechanics" msprop:Generator_RowEvArgName="MechanicsRowChangeEvent">
+        <xs:element name="Mechanics" msprop:Generator_TableClassName="MechanicsDataTable" msprop:Generator_TableVarName="tableMechanics" msprop:Generator_TablePropName="Mechanics" msprop:Generator_RowDeletingName="MechanicsRowDeleting" msprop:Generator_RowChangingName="MechanicsRowChanging" msprop:Generator_RowEvHandlerName="MechanicsRowChangeEventHandler" msprop:Generator_RowDeletedName="MechanicsRowDeleted" msprop:Generator_UserTableName="Mechanics" msprop:Generator_RowChangedName="MechanicsRowChanged" msprop:Generator_RowEvArgName="MechanicsRowChangeEvent" msprop:Generator_RowClassName="MechanicsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdMechanic" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdMechanic" msprop:Generator_ColumnPropNameInRow="IdMechanic" msprop:Generator_ColumnPropNameInTable="IdMechanicColumn" msprop:Generator_UserColumnName="IdMechanic" type="xs:int" />
@@ -608,7 +749,7 @@ SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, N
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Mesures" msprop:Generator_TableClassName="MesuresDataTable" msprop:Generator_TableVarName="tableMesures" msprop:Generator_RowChangedName="MesuresRowChanged" msprop:Generator_TablePropName="Mesures" msprop:Generator_RowDeletingName="MesuresRowDeleting" msprop:Generator_RowChangingName="MesuresRowChanging" msprop:Generator_RowEvHandlerName="MesuresRowChangeEventHandler" msprop:Generator_RowDeletedName="MesuresRowDeleted" msprop:Generator_RowClassName="MesuresRow" msprop:Generator_UserTableName="Mesures" msprop:Generator_RowEvArgName="MesuresRowChangeEvent">
+        <xs:element name="Mesures" msprop:Generator_TableClassName="MesuresDataTable" msprop:Generator_TableVarName="tableMesures" msprop:Generator_TablePropName="Mesures" msprop:Generator_RowDeletingName="MesuresRowDeleting" msprop:Generator_RowChangingName="MesuresRowChanging" msprop:Generator_RowEvHandlerName="MesuresRowChangeEventHandler" msprop:Generator_RowDeletedName="MesuresRowDeleted" msprop:Generator_UserTableName="Mesures" msprop:Generator_RowChangedName="MesuresRowChanged" msprop:Generator_RowEvArgName="MesuresRowChangeEvent" msprop:Generator_RowClassName="MesuresRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdMesure" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdMesure" msprop:Generator_ColumnPropNameInRow="IdMesure" msprop:Generator_ColumnPropNameInTable="IdMesureColumn" msprop:Generator_UserColumnName="IdMesure" type="xs:int" />
@@ -620,7 +761,24 @@ SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, N
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Normatives" msprop:Generator_TableClassName="NormativesDataTable" msprop:Generator_TableVarName="tableNormatives" msprop:Generator_RowChangedName="NormativesRowChanged" msprop:Generator_TablePropName="Normatives" msprop:Generator_RowDeletingName="NormativesRowDeleting" msprop:Generator_RowChangingName="NormativesRowChanging" msprop:Generator_RowEvHandlerName="NormativesRowChangeEventHandler" msprop:Generator_RowDeletedName="NormativesRowDeleted" msprop:Generator_RowClassName="NormativesRow" msprop:Generator_UserTableName="Normatives" msprop:Generator_RowEvArgName="NormativesRowChangeEvent">
+        <xs:element name="Model" msprop:Generator_TableClassName="ModelDataTable" msprop:Generator_TableVarName="tableModel" msprop:Generator_TablePropName="Model" msprop:Generator_RowDeletingName="ModelRowDeleting" msprop:Generator_RowChangingName="ModelRowChanging" msprop:Generator_RowEvHandlerName="ModelRowChangeEventHandler" msprop:Generator_RowDeletedName="ModelRowDeleted" msprop:Generator_UserTableName="Model" msprop:Generator_RowChangedName="ModelRowChanged" msprop:Generator_RowEvArgName="ModelRowChangeEvent" msprop:Generator_RowClassName="ModelRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdModel" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdModel" msprop:Generator_ColumnPropNameInRow="IdModel" msprop:Generator_ColumnPropNameInTable="IdModelColumn" msprop:Generator_UserColumnName="IdModel" type="xs:int" />
+              <xs:element name="ModelName" msprop:Generator_ColumnVarNameInTable="columnModelName" msprop:Generator_ColumnPropNameInRow="ModelName" msprop:Generator_ColumnPropNameInTable="ModelNameColumn" msprop:Generator_UserColumnName="ModelName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AxisCount" msprop:Generator_ColumnVarNameInTable="columnAxisCount" msprop:Generator_ColumnPropNameInRow="AxisCount" msprop:Generator_ColumnPropNameInTable="AxisCountColumn" msprop:Generator_UserColumnName="AxisCount" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="GroupId" msprop:Generator_ColumnVarNameInTable="columnGroupId" msprop:Generator_ColumnPropNameInRow="GroupId" msprop:Generator_ColumnPropNameInTable="GroupIdColumn" msprop:Generator_UserColumnName="GroupId" type="xs:int" />
+              <xs:element name="VendorId" msprop:Generator_ColumnVarNameInTable="columnVendorId" msprop:Generator_ColumnPropNameInRow="VendorId" msprop:Generator_ColumnPropNameInTable="VendorIdColumn" msprop:Generator_UserColumnName="VendorId" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Normatives" msprop:Generator_TableClassName="NormativesDataTable" msprop:Generator_TableVarName="tableNormatives" msprop:Generator_TablePropName="Normatives" msprop:Generator_RowDeletingName="NormativesRowDeleting" msprop:Generator_RowChangingName="NormativesRowChanging" msprop:Generator_RowEvHandlerName="NormativesRowChangeEventHandler" msprop:Generator_RowDeletedName="NormativesRowDeleted" msprop:Generator_UserTableName="Normatives" msprop:Generator_RowChangedName="NormativesRowChanged" msprop:Generator_RowEvArgName="NormativesRowChangeEvent" msprop:Generator_RowClassName="NormativesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdNormative" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdNormative" msprop:Generator_ColumnPropNameInRow="IdNormative" msprop:Generator_ColumnPropNameInTable="IdNormativeColumn" msprop:Generator_UserColumnName="IdNormative" type="xs:int" />
@@ -631,7 +789,7 @@ SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, N
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Operators" msprop:Generator_TableClassName="OperatorsDataTable" msprop:Generator_TableVarName="tableOperators" msprop:Generator_RowChangedName="OperatorsRowChanged" msprop:Generator_TablePropName="Operators" msprop:Generator_RowDeletingName="OperatorsRowDeleting" msprop:Generator_RowChangingName="OperatorsRowChanging" msprop:Generator_RowEvHandlerName="OperatorsRowChangeEventHandler" msprop:Generator_RowDeletedName="OperatorsRowDeleted" msprop:Generator_RowClassName="OperatorsRow" msprop:Generator_UserTableName="Operators" msprop:Generator_RowEvArgName="OperatorsRowChangeEvent">
+        <xs:element name="Operators" msprop:Generator_TableClassName="OperatorsDataTable" msprop:Generator_TableVarName="tableOperators" msprop:Generator_TablePropName="Operators" msprop:Generator_RowDeletingName="OperatorsRowDeleting" msprop:Generator_RowChangingName="OperatorsRowChanging" msprop:Generator_RowEvHandlerName="OperatorsRowChangeEventHandler" msprop:Generator_RowDeletedName="OperatorsRowDeleted" msprop:Generator_UserTableName="Operators" msprop:Generator_RowChangedName="OperatorsRowChanged" msprop:Generator_RowEvArgName="OperatorsRowChangeEvent" msprop:Generator_RowClassName="OperatorsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdOperator" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdOperator" msprop:Generator_ColumnPropNameInRow="IdOperator" msprop:Generator_ColumnPropNameInTable="IdOperatorColumn" msprop:Generator_UserColumnName="IdOperator" type="xs:int" />
@@ -683,7 +841,7 @@ SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, N
               <xs:element name="BlankNumber" msprop:Generator_ColumnVarNameInTable="columnBlankNumber" msprop:Generator_ColumnPropNameInRow="BlankNumber" msprop:Generator_ColumnPropNameInTable="BlankNumberColumn" msprop:Generator_UserColumnName="BlankNumber" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="32" />
+                    <xs:maxLength value="14" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -694,7 +852,36 @@ SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, N
               <xs:element name="Result" msprop:Generator_ColumnVarNameInTable="columnResult" msprop:Generator_ColumnPropNameInRow="Result" msprop:Generator_ColumnPropNameInTable="ResultColumn" msprop:Generator_UserColumnName="Result" type="xs:boolean" minOccurs="0" />
               <xs:element name="NextData" msprop:Generator_ColumnVarNameInTable="columnNextData" msprop:Generator_ColumnPropNameInRow="NextData" msprop:Generator_ColumnPropNameInTable="NextDataColumn" msprop:Generator_UserColumnName="NextData" type="xs:dateTime" minOccurs="0" />
               <xs:element name="VisualCheck" msprop:Generator_ColumnVarNameInTable="columnVisualCheck" msprop:Generator_ColumnPropNameInRow="VisualCheck" msprop:Generator_ColumnPropNameInTable="VisualCheckColumn" msprop:Generator_UserColumnName="VisualCheck" type="xs:boolean" minOccurs="0" />
-              <xs:element name="GBO" msprop:Generator_ColumnVarNameInTable="columnGBO" msprop:Generator_ColumnPropNameInRow="GBO" msprop:Generator_ColumnPropNameInTable="GBOColumn" msprop:Generator_UserColumnName="GBO" type="xs:int" minOccurs="0" />
+              <xs:element name="GBO" msprop:Generator_ColumnVarNameInTable="columnGBO" msprop:Generator_ColumnPropNameInRow="GBO" msprop:Generator_ColumnPropNameInTable="GBOColumn" msprop:Generator_UserColumnName="GBO" type="xs:unsignedByte" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Vendor" msprop:Generator_TableClassName="VendorDataTable" msprop:Generator_TableVarName="tableVendor" msprop:Generator_TablePropName="Vendor" msprop:Generator_RowDeletingName="VendorRowDeleting" msprop:Generator_RowChangingName="VendorRowChanging" msprop:Generator_RowEvHandlerName="VendorRowChangeEventHandler" msprop:Generator_RowDeletedName="VendorRowDeleted" msprop:Generator_UserTableName="Vendor" msprop:Generator_RowChangedName="VendorRowChanged" msprop:Generator_RowEvArgName="VendorRowChangeEvent" msprop:Generator_RowClassName="VendorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdVendor" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdVendor" msprop:Generator_ColumnPropNameInRow="IdVendor" msprop:Generator_ColumnPropNameInTable="IdVendorColumn" msprop:Generator_UserColumnName="IdVendor" type="xs:int" />
+              <xs:element name="VendorName" msprop:Generator_ColumnVarNameInTable="columnVendorName" msprop:Generator_ColumnPropNameInRow="VendorName" msprop:Generator_ColumnPropNameInTable="VendorNameColumn" msprop:Generator_UserColumnName="VendorName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProtocolsCount" msprop:Generator_TableClassName="ProtocolsCountDataTable" msprop:Generator_TableVarName="tableProtocolsCount" msprop:Generator_TablePropName="ProtocolsCount" msprop:Generator_RowDeletingName="ProtocolsCountRowDeleting" msprop:Generator_RowChangingName="ProtocolsCountRowChanging" msprop:Generator_RowEvHandlerName="ProtocolsCountRowChangeEventHandler" msprop:Generator_RowDeletedName="ProtocolsCountRowDeleted" msprop:Generator_UserTableName="ProtocolsCount" msprop:Generator_RowChangedName="ProtocolsCountRowChanged" msprop:Generator_RowEvArgName="ProtocolsCountRowChangeEvent" msprop:Generator_RowClassName="ProtocolsCountRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Column1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnColumn1" msprop:Generator_ColumnPropNameInRow="Column1" msprop:Generator_ColumnPropNameInTable="Column1Column" msprop:Generator_UserColumnName="Column1" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SelectPhoto" msprop:Generator_TableClassName="SelectPhotoDataTable" msprop:Generator_TableVarName="tableSelectPhoto" msprop:Generator_TablePropName="SelectPhoto" msprop:Generator_RowDeletingName="SelectPhotoRowDeleting" msprop:Generator_RowChangingName="SelectPhotoRowChanging" msprop:Generator_RowEvHandlerName="SelectPhotoRowChangeEventHandler" msprop:Generator_RowDeletedName="SelectPhotoRowDeleted" msprop:Generator_UserTableName="SelectPhoto" msprop:Generator_RowChangedName="SelectPhotoRowChanged" msprop:Generator_RowEvArgName="SelectPhotoRowChangeEvent" msprop:Generator_RowClassName="SelectPhotoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPhoto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnIdPhoto" msprop:Generator_ColumnPropNameInRow="IdPhoto" msprop:Generator_ColumnPropNameInTable="IdPhotoColumn" msprop:Generator_UserColumnName="IdPhoto" type="xs:int" />
+              <xs:element name="Photo" msprop:Generator_ColumnVarNameInTable="columnPhoto" msprop:Generator_ColumnPropNameInRow="Photo" msprop:Generator_ColumnPropNameInTable="PhotoColumn" msprop:Generator_UserColumnName="Photo" type="xs:base64Binary" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -712,6 +899,10 @@ SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, N
       <xs:selector xpath=".//mstns:Mesures" />
       <xs:field xpath="mstns:IdMesure" />
     </xs:unique>
+    <xs:unique name="Model_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Model" />
+      <xs:field xpath="mstns:IdModel" />
+    </xs:unique>
     <xs:unique name="Normatives_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Normatives" />
       <xs:field xpath="mstns:IdNormative" />
@@ -728,11 +919,21 @@ SELECT IdProtocol, BlankNumber, OperatorId, MechanicId, Date, GroupId, Result, N
       <xs:selector xpath=".//mstns:Protocols" />
       <xs:field xpath="mstns:IdProtocol" />
     </xs:unique>
+    <xs:unique name="Vendor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Vendor" />
+      <xs:field xpath="mstns:IdVendor" />
+    </xs:unique>
+    <xs:unique name="SelectPhoto_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SelectPhoto" />
+      <xs:field xpath="mstns:IdPhoto" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Normatives_Groups" msdata:parent="Groups" msdata:child="Normatives" msdata:parentkey="IdGroup" msdata:childkey="GroupId" msprop:Generator_UserChildTable="Normatives" msprop:Generator_ChildPropName="GetNormativesRows" msprop:Generator_UserRelationName="FK_Normatives_Groups" msprop:Generator_RelationVarName="relationFK_Normatives_Groups" msprop:Generator_UserParentTable="Groups" msprop:Generator_ParentPropName="GroupsRow" />
       <msdata:Relationship name="FK_Mesures_Protocols" msdata:parent="Protocols" msdata:child="Mesures" msdata:parentkey="IdProtocol" msdata:childkey="ProtocolId" msprop:Generator_UserChildTable="Mesures" msprop:Generator_ChildPropName="GetMesuresRows" msprop:Generator_UserRelationName="FK_Mesures_Protocols" msprop:Generator_RelationVarName="relationFK_Mesures_Protocols" msprop:Generator_UserParentTable="Protocols" msprop:Generator_ParentPropName="ProtocolsRow" />
+      <msdata:Relationship name="FK_Model_Groups" msdata:parent="Groups" msdata:child="Model" msdata:parentkey="IdGroup" msdata:childkey="GroupId" msprop:Generator_UserChildTable="Model" msprop:Generator_ChildPropName="GetModelRows" msprop:Generator_UserRelationName="FK_Model_Groups" msprop:Generator_ParentPropName="GroupsRow" msprop:Generator_RelationVarName="relationFK_Model_Groups" msprop:Generator_UserParentTable="Groups" />
+      <msdata:Relationship name="FK_Model_Vendor" msdata:parent="Vendor" msdata:child="Model" msdata:parentkey="IdVendor" msdata:childkey="VendorId" msprop:Generator_UserChildTable="Model" msprop:Generator_ChildPropName="GetModelRows" msprop:Generator_UserRelationName="FK_Model_Vendor" msprop:Generator_RelationVarName="relationFK_Model_Vendor" msprop:Generator_UserParentTable="Vendor" msprop:Generator_ParentPropName="VendorRow" />
+      <msdata:Relationship name="FK_Normatives_Groups" msdata:parent="Groups" msdata:child="Normatives" msdata:parentkey="IdGroup" msdata:childkey="GroupId" msprop:Generator_UserChildTable="Normatives" msprop:Generator_ChildPropName="GetNormativesRows" msprop:Generator_UserRelationName="FK_Normatives_Groups" msprop:Generator_ParentPropName="GroupsRow" msprop:Generator_RelationVarName="relationFK_Normatives_Groups" msprop:Generator_UserParentTable="Groups" />
       <msdata:Relationship name="FK_Photos_Protocols" msdata:parent="Protocols" msdata:child="Photos" msdata:parentkey="IdProtocol" msdata:childkey="ProtocolId" msprop:Generator_UserChildTable="Photos" msprop:Generator_ChildPropName="GetPhotosRows" msprop:Generator_UserRelationName="FK_Photos_Protocols" msprop:Generator_RelationVarName="relationFK_Photos_Protocols" msprop:Generator_UserParentTable="Protocols" msprop:Generator_ParentPropName="ProtocolsRow" />
       <msdata:Relationship name="FK_Protocols_Groups" msdata:parent="Groups" msdata:child="Protocols" msdata:parentkey="IdGroup" msdata:childkey="GroupId" msprop:Generator_UserChildTable="Protocols" msprop:Generator_ChildPropName="GetProtocolsRows" msprop:Generator_UserRelationName="FK_Protocols_Groups" msprop:Generator_ParentPropName="GroupsRow" msprop:Generator_RelationVarName="relationFK_Protocols_Groups" msprop:Generator_UserParentTable="Groups" />
       <msdata:Relationship name="FK_Protocols_Mechanics" msdata:parent="Mechanics" msdata:child="Protocols" msdata:parentkey="IdMechanic" msdata:childkey="MechanicId" msprop:Generator_UserChildTable="Protocols" msprop:Generator_ChildPropName="GetProtocolsRows" msprop:Generator_UserRelationName="FK_Protocols_Mechanics" msprop:Generator_ParentPropName="MechanicsRow" msprop:Generator_RelationVarName="relationFK_Protocols_Mechanics" msprop:Generator_UserParentTable="Mechanics" />

@@ -11,10 +11,10 @@ namespace adovipavto
         private PrintProtocolDocument _document;
         private PrintProtocolDocument _document2;
 
-        public Search(NewVipAvtoSet set)
+        public Search(VipAvtoDBDataSet set)
         {
             InitializeComponent();
-            newVipAvtoSet = set;
+            VipAvtoDBDataSet = set;
         }
 
         private void maskedTextBox1_TextChanged(object sender, EventArgs e)
@@ -24,12 +24,12 @@ namespace adovipavto
                 string blank = label80.Text + maskedTextBox1.Text;
 
 
-                NewVipAvtoSet.ProtocolsRow row = newVipAvtoSet.GetProtocolByBlankId(blank);
+                VipAvtoDBDataSet.ProtocolsRow row = VipAvtoDBDataSet.GetProtocolByBlankId(blank);
 
                 if (row != null)
                 {
-                    NewVipAvtoSet.MesuresRow[] mesures = row.GetMesuresRows();
-                    _document = new PrintProtocolDocument(row, mesures, newVipAvtoSet);
+                    VipAvtoDBDataSet.MesuresRow[] mesures = row.GetMesuresRows();
+                    _document = new PrintProtocolDocument(row, mesures, VipAvtoDBDataSet);
                     printPreviewControl1.Document = _document;
 
                     maskedTextBox1.BackColor = Color.LightGreen;
@@ -55,12 +55,12 @@ namespace adovipavto
 
         private void Search_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "newVipAvtoSet.Protocols". При необходимости она может быть перемещена или удалена.
-            this.protocolsTableAdapter.Fill(this.newVipAvtoSet.Protocols);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "VipAvtoDBDataSet.Protocols". При необходимости она может быть перемещена или удалена.
+            this.protocolsTableAdapter.Fill(this.VipAvtoDBDataSet.Protocols);
             printPreviewControl1.MouseWheel += printPreviewControl1_MouseWheel;
             printPreviewControl2.MouseWheel += printPreviewControl1_MouseWheel;
 
-            dataGridView1.DataSource = newVipAvtoSet.Protocols;
+            dataGridView1.DataSource = VipAvtoDBDataSet.Protocols;
 
             radioButton1.Checked = true;
             maskedTextBox1.Focus();
@@ -102,7 +102,7 @@ namespace adovipavto
         private void firstDate_ValueChanged(object sender, EventArgs e)
         {
             //BindingSource bs = (BindingSource) dataGridView1.DataSource;
-            //DataTable dt = ((NewVipAvtoSet) bs.DataSource).Protocols;
+            //DataTable dt = ((VipAvtoDBDataSet) bs.DataSource).Protocols;
             //dt.DefaultView.RowFilter = String.Format("Date > '{0}' AND Date <= '{1}'", firstDate.Value, secondDate.Value);
             ((DataTable) dataGridView1.DataSource).DefaultView.RowFilter = String.Format("Date > '{0}' AND Date <= '{1}'", firstDate.Value, secondDate.Value);
             dataGridView1.Columns[0].Visible = false;
@@ -151,10 +151,10 @@ namespace adovipavto
 
                 var newProtocolId =
                     (int) dataGridView1.SelectedRows[0].Cells[0].Value;
-                var protocol = (NewVipAvtoSet.ProtocolsRow)newVipAvtoSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
-                NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+                var protocol = (VipAvtoDBDataSet.ProtocolsRow)VipAvtoDBDataSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+                VipAvtoDBDataSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
-                _document2 = new PrintProtocolDocument(protocol, mesures, newVipAvtoSet);
+                _document2 = new PrintProtocolDocument(protocol, mesures, VipAvtoDBDataSet);
                 printPreviewControl2.Document = _document2;
             }
         }
@@ -168,19 +168,19 @@ namespace adovipavto
 
                 var newProtocolId =
                     (int) dataGridView1.SelectedRows[0].Cells[0].Value;
-                var protocol = (NewVipAvtoSet.ProtocolsRow)newVipAvtoSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
-                NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+                var protocol = (VipAvtoDBDataSet.ProtocolsRow)VipAvtoDBDataSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+                VipAvtoDBDataSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
-                new ProtocolReportForm(protocol, mesures, newVipAvtoSet).ShowDialog();
+                new ProtocolReportForm(protocol, mesures, VipAvtoDBDataSet).ShowDialog();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            NewVipAvtoSet.ProtocolsRow protocol = newVipAvtoSet.GetProtocolByBlankId(label80.Text + maskedTextBox1.Text);
-            NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+            VipAvtoDBDataSet.ProtocolsRow protocol = VipAvtoDBDataSet.GetProtocolByBlankId(label80.Text + maskedTextBox1.Text);
+            VipAvtoDBDataSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
-            new ProtocolReportForm(protocol, mesures, newVipAvtoSet).ShowDialog();
+            new ProtocolReportForm(protocol, mesures, VipAvtoDBDataSet).ShowDialog();
         }
     }
 }

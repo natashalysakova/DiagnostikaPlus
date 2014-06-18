@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using adovipavto.AddForms;
 using adovipavto.Classes;
 using adovipavto.EditForms;
-using adovipavto.NewVipAvtoSetTableAdapters;
+using adovipavto.VipAvtoDBDataSetTableAdapters;
 using adovipavto.Properties;
 
 namespace adovipavto
@@ -38,24 +38,24 @@ namespace adovipavto
 
         private void NormativesForm_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "newVipAvtoSet.Normatives". При необходимости она может быть перемещена или удалена.
-            normativesTableAdapter.Fill(newVipAvtoSet.Normatives);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "VipAvtoDBDataSet.Normatives". При необходимости она может быть перемещена или удалена.
+            normativesTableAdapter.Fill(VipAvtoDBDataSet.Normatives);
 
             var adapter = new GroupsTableAdapter();
-            adapter.Fill(newVipAvtoSet.Groups);
+            adapter.Fill(VipAvtoDBDataSet.Groups);
             adapter.Dispose();
 
-            dataGridView1.DataSource = newVipAvtoSet.Normatives;
+            dataGridView1.DataSource = VipAvtoDBDataSet.Normatives;
 
             string[] groups =
-                (from NewVipAvtoSet.GroupsRow item in newVipAvtoSet.Groups
+                (from VipAvtoDBDataSet.GroupsRow item in VipAvtoDBDataSet.Groups
                     select item.Title).ToArray();
 
             groupSelector.Items.AddRange(groups);
 
-            if (newVipAvtoSet.GetGroupTitle(_selectedGroup) != null || groupSelector.Items.Count == 0)
+            if (VipAvtoDBDataSet.GetGroupTitle(_selectedGroup) != null || groupSelector.Items.Count == 0)
             {
-                groupSelector.Text = newVipAvtoSet.GetGroupTitle(_selectedGroup);
+                groupSelector.Text = VipAvtoDBDataSet.GetGroupTitle(_selectedGroup);
             }
             else
             {
@@ -63,20 +63,20 @@ namespace adovipavto
             }
 
 
-            int id = newVipAvtoSet.GetGroupId(groupSelector.Text);
+            int id = VipAvtoDBDataSet.GetGroupId(groupSelector.Text);
             ((DataTable) dataGridView1.DataSource).DefaultView.RowFilter = string.Format("GroupId = '{0}'", id);
         }
 
 
         private void groupSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id = newVipAvtoSet.GetGroupId(groupSelector.Text);
+            int id = VipAvtoDBDataSet.GetGroupId(groupSelector.Text);
             ((DataTable) dataGridView1.DataSource).DefaultView.RowFilter = string.Format("GroupId = '{0}'", id);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            new AddNormativeForm(newVipAvtoSet).ShowDialog();
+            new AddNormativeForm(VipAvtoDBDataSet).ShowDialog();
         }
 
 
@@ -86,7 +86,7 @@ namespace adovipavto
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
-                newVipAvtoSet.RemoveRowById(Constants.NormativesTableName, id);
+                VipAvtoDBDataSet.RemoveRowById(Constants.NormativesTableName, id);
             }
         }
 
@@ -94,8 +94,8 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            var row = (NewVipAvtoSet.NormativesRow) newVipAvtoSet.GetRowById(Constants.NormativesTableName, id);
-            new EditNormativeForm(row, newVipAvtoSet).ShowDialog();
+            var row = (VipAvtoDBDataSet.NormativesRow) VipAvtoDBDataSet.GetRowById(Constants.NormativesTableName, id);
+            new EditNormativeForm(row, VipAvtoDBDataSet).ShowDialog();
         }
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -104,13 +104,13 @@ namespace adovipavto
 
             var id = (int) dataGridView1.Rows[e.RowIndex].Cells[0].Value;
 
-            var row = (NewVipAvtoSet.NormativesRow) newVipAvtoSet.GetRowById(Constants.NormativesTableName, id);
-            new EditNormativeForm(row, newVipAvtoSet).ShowDialog();
+            var row = (VipAvtoDBDataSet.NormativesRow) VipAvtoDBDataSet.GetRowById(Constants.NormativesTableName, id);
+            new EditNormativeForm(row, VipAvtoDBDataSet).ShowDialog();
         }
 
         private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new AddNormativeForm(newVipAvtoSet).ShowDialog();
+            new AddNormativeForm(VipAvtoDBDataSet).ShowDialog();
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -128,8 +128,8 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            var row = (NewVipAvtoSet.NormativesRow) newVipAvtoSet.GetRowById(Constants.NormativesTableName, id);
-            new EditNormativeForm(row, newVipAvtoSet).ShowDialog();
+            var row = (VipAvtoDBDataSet.NormativesRow) VipAvtoDBDataSet.GetRowById(Constants.NormativesTableName, id);
+            new EditNormativeForm(row, VipAvtoDBDataSet).ShowDialog();
         }
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -138,7 +138,7 @@ namespace adovipavto
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
-                newVipAvtoSet.RemoveRowById(Constants.NormativesTableName, id);
+                VipAvtoDBDataSet.RemoveRowById(Constants.NormativesTableName, id);
             }
         }
 

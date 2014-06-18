@@ -17,14 +17,14 @@ namespace adovipavto
         private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
             Assembly.GetExecutingAssembly());
 
-        private NewVipAvtoSet.GroupsRow _selectedRow;
+        private VipAvtoDBDataSet.GroupsRow _selectedRow;
 
         public GroupsForm()
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             InitializeComponent();
-            dataGridView1.DataSource = newVipAvtoSet.Groups;
+            dataGridView1.DataSource = VipAvtoDBDataSet.Groups;
         }
 
         //readonly DataTable _table;
@@ -38,8 +38,8 @@ namespace adovipavto
                 Rectangle r = dataGridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
 
                 _selectedRow =
-                    (NewVipAvtoSet.GroupsRow)
-                        newVipAvtoSet.GetRowById(Constants.GroupTableName,
+                    (VipAvtoDBDataSet.GroupsRow)
+                        VipAvtoDBDataSet.GetRowById(Constants.GroupTableName,
                             (int) dataGridView1.Rows[e.RowIndex].Cells[0].Value);
                 contextMenuStrip1.Show((Control) sender, r.Left + e.X, r.Top + e.Y);
             }
@@ -47,8 +47,8 @@ namespace adovipavto
             {
                 dataGridView1.Rows[e.RowIndex].Selected = true;
                 _selectedRow =
-                    (NewVipAvtoSet.GroupsRow)
-                        newVipAvtoSet.GetRowById(Constants.GroupTableName,
+                    (VipAvtoDBDataSet.GroupsRow)
+                        VipAvtoDBDataSet.GetRowById(Constants.GroupTableName,
                             (int) dataGridView1.Rows[e.RowIndex].Cells[0].Value);
             }
         }
@@ -64,7 +64,7 @@ namespace adovipavto
             if (MessageBox.Show(_rm.GetString("DeleteGroup"), _rm.GetString("warning"),
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                newVipAvtoSet.RemoveRow(_selectedRow);
+                VipAvtoDBDataSet.RemoveRow(_selectedRow);
                 _selectedRow = null;
             }
         }
@@ -73,8 +73,8 @@ namespace adovipavto
         {
             dataGridView1.Rows[e.RowIndex].Selected = true;
             _selectedRow =
-                (NewVipAvtoSet.GroupsRow)
-                    newVipAvtoSet.GetRowById(Constants.GroupTableName,
+                (VipAvtoDBDataSet.GroupsRow)
+                    VipAvtoDBDataSet.GetRowById(Constants.GroupTableName,
                         (int) dataGridView1.SelectedRows[0].Cells[0].Value);
 
             if (_selectedRow != null)
@@ -83,23 +83,23 @@ namespace adovipavto
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            new AddGroupForm(newVipAvtoSet).ShowDialog();
+            new AddGroupForm(VipAvtoDBDataSet).ShowDialog();
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            _selectedRow = (NewVipAvtoSet.GroupsRow) newVipAvtoSet.GetRowById(Constants.GroupTableName,
+            _selectedRow = (VipAvtoDBDataSet.GroupsRow) VipAvtoDBDataSet.GetRowById(Constants.GroupTableName,
                 (int) dataGridView1.SelectedRows[0].Cells[0].Value);
 
             if (_selectedRow != null)
             {
-                new EditGroupForm(_selectedRow, newVipAvtoSet).ShowDialog();
+                new EditGroupForm(_selectedRow, VipAvtoDBDataSet).ShowDialog();
             }
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            _selectedRow = (NewVipAvtoSet.GroupsRow) newVipAvtoSet.GetRowById(Constants.GroupTableName,
+            _selectedRow = (VipAvtoDBDataSet.GroupsRow) VipAvtoDBDataSet.GetRowById(Constants.GroupTableName,
                 (int) dataGridView1.SelectedRows[0].Cells[0].Value);
 
             if (_selectedRow != null)
@@ -108,7 +108,7 @@ namespace adovipavto
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) ==
                     DialogResult.Yes)
                 {
-                    newVipAvtoSet.RemoveRow(_selectedRow);
+                    VipAvtoDBDataSet.RemoveRow(_selectedRow);
                     _selectedRow = null;
                 }
             }
@@ -116,8 +116,8 @@ namespace adovipavto
 
         private void GroupsForm_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "newVipAvtoSet.Groups". При необходимости она может быть перемещена или удалена.
-            this.groupsTableAdapter.Fill(this.newVipAvtoSet.Groups);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "VipAvtoDBDataSet.Groups". При необходимости она может быть перемещена или удалена.
+            this.groupsTableAdapter.Fill(this.VipAvtoDBDataSet.Groups);
         }
     }
 }

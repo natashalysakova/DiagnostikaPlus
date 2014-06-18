@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using adovipavto.AddForms;
 using adovipavto.Classes;
 using adovipavto.Enums;
-using adovipavto.NewVipAvtoSetTableAdapters;
+using adovipavto.VipAvtoDBDataSetTableAdapters;
 using adovipavto.Properties;
 
 namespace adovipavto
@@ -40,7 +40,7 @@ namespace adovipavto
         {
             try
             {
-                newVipAvtoSet.LoadData();
+                VipAvtoDBDataSet.LoadData();
 
             }
             catch
@@ -56,14 +56,14 @@ namespace adovipavto
             }
             do
             {
-                if (new Auth(newVipAvtoSet).ShowDialog() == DialogResult.Cancel)
+                if (new Auth(VipAvtoDBDataSet).ShowDialog() == DialogResult.Cancel)
                 {
                     Close();
                     return;
                 }
             } while (!SetUserRights());
 
-            dataGridView1.DataSource = newVipAvtoSet.Protocols;
+            dataGridView1.DataSource = VipAvtoDBDataSet.Protocols;
 
             if (dateDataGridViewTextBoxColumn != null)
                 dataGridView1.Sort(dateDataGridViewTextBoxColumn, ListSortDirection.Descending);
@@ -73,7 +73,7 @@ namespace adovipavto
 
         private bool SetUserRights()
         {
-            Rights right = newVipAvtoSet.GetOperatorRight();
+            Rights right = VipAvtoDBDataSet.GetOperatorRight();
             if (right == Rights.Administrator)
             {
                 toolStripSeparator3.Enabled = true;
@@ -113,7 +113,7 @@ namespace adovipavto
 
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
-            new AddProtocol(newVipAvtoSet).ShowDialog();
+            new AddProtocol(VipAvtoDBDataSet).ShowDialog();
         }
 
         private void toolStripButton11_Click(object sender, EventArgs e)
@@ -173,7 +173,7 @@ namespace adovipavto
 
         private void cpyBtn_Click(object sender, EventArgs e)
         {
-            new Report(newVipAvtoSet).ShowDialog();
+            new Report(VipAvtoDBDataSet).ShowDialog();
         }
 
 
@@ -187,10 +187,10 @@ namespace adovipavto
                 var newProtocolId =
                     (int)dataGridView1.SelectedRows[0].Cells[0].Value;
                 var protocol =
-                    (NewVipAvtoSet.ProtocolsRow)newVipAvtoSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
-                NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+                    (VipAvtoDBDataSet.ProtocolsRow)VipAvtoDBDataSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+                VipAvtoDBDataSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
-                new ProtocolReportForm(protocol, mesures, newVipAvtoSet).ShowDialog();
+                new ProtocolReportForm(protocol, mesures, VipAvtoDBDataSet).ShowDialog();
             }
         }
 
@@ -216,27 +216,27 @@ namespace adovipavto
         {
             var newProtocolId = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
             var protocol =
-                (NewVipAvtoSet.ProtocolsRow)newVipAvtoSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
-            NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+                (VipAvtoDBDataSet.ProtocolsRow)VipAvtoDBDataSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+            VipAvtoDBDataSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
-            new ProtocolReportForm(protocol, mesures, newVipAvtoSet).ShowDialog();
+            new ProtocolReportForm(protocol, mesures, VipAvtoDBDataSet).ShowDialog();
         }
 
         private void печатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var newProtocolId = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
             var protocol =
-                (NewVipAvtoSet.ProtocolsRow)newVipAvtoSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
-            NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
+                (VipAvtoDBDataSet.ProtocolsRow)VipAvtoDBDataSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
+            VipAvtoDBDataSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
-            new ProtocolReportForm(protocol, mesures, newVipAvtoSet, true).ShowDialog();
+            new ProtocolReportForm(protocol, mesures, VipAvtoDBDataSet, true).ShowDialog();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             do
             {
-                if (new Auth(newVipAvtoSet).ShowDialog() == DialogResult.Cancel)
+                if (new Auth(VipAvtoDBDataSet).ShowDialog() == DialogResult.Cancel)
                 {
                     return;
                 }
@@ -245,7 +245,7 @@ namespace adovipavto
 
         private void srchBtn_Click(object sender, EventArgs e)
         {
-            new Search(newVipAvtoSet).ShowDialog();
+            new Search(VipAvtoDBDataSet).ShowDialog();
         }
 
 
@@ -255,7 +255,7 @@ namespace adovipavto
             {
                 if (e.Value.ToString() != String.Empty)
                 {
-                    e.Value = newVipAvtoSet.GetGroupTitle((int)e.Value);
+                    e.Value = VipAvtoDBDataSet.GetGroupTitle((int)e.Value);
                 }
                 else
                 {
@@ -286,7 +286,7 @@ namespace adovipavto
             {
                 if (e.Value.ToString() != String.Empty)
                 {
-                    e.Value = newVipAvtoSet.GetShortOperatorName((int)e.Value);
+                    e.Value = VipAvtoDBDataSet.GetShortOperatorName((int)e.Value);
                 }
                 else
                 {
@@ -301,7 +301,7 @@ namespace adovipavto
                 {
                     try
                     {
-                        e.Value = newVipAvtoSet.GetShortMechanicName((int)e.Value);
+                        e.Value = VipAvtoDBDataSet.GetShortMechanicName((int)e.Value);
                     }
                     catch (Exception exception)
                     {
@@ -331,11 +331,11 @@ namespace adovipavto
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            QueriesTableAdapter q = new QueriesTableAdapter();
-            int count = (int)q.ProtocolsCount();
+            ProtocolsCountTableAdapter q = new ProtocolsCountTableAdapter();
+            int count = q.GetData()[0].Column1;
             toolStripStatusLabel2.Text = count.ToString();
 
-            if (count != newVipAvtoSet.Protocols.Count)
+            if (count != VipAvtoDBDataSet.Protocols.Count)
             {
                 int saveRow = 0;
                 if (dataGridView1.Rows.Count > 0)
@@ -346,10 +346,10 @@ namespace adovipavto
 
 
 
-                newVipAvtoSet.Mesures.Clear();
+                VipAvtoDBDataSet.Mesures.Clear();
                 var adapter = new MesuresTableAdapter();
-                protocolsTableAdapter.Fill(newVipAvtoSet.Protocols);
-                adapter.Fill(newVipAvtoSet.Mesures);
+                protocolsTableAdapter.Fill(VipAvtoDBDataSet.Protocols);
+                adapter.Fill(VipAvtoDBDataSet.Mesures);
 
                 int[] t =
     (from DataGridViewRow row in dataGridView1.Rows

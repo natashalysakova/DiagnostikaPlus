@@ -33,7 +33,7 @@
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.normativesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.newVipAvtoSet = new adovipavto.NewVipAvtoSet();
+            this.VipAvtoDBDataSet = new adovipavto.VipAvtoDBDataSet();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -46,7 +46,7 @@
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.normativesTableAdapter = new adovipavto.NewVipAvtoSetTableAdapters.NormativesTableAdapter();
+            this.normativesTableAdapter = new adovipavto.VipAvtoDBDataSetTableAdapters.NormativesTableAdapter();
             this.idNormativeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.minValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +57,7 @@
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.normativesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VipAvtoDBDataSet)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -106,12 +106,12 @@
             // normativesBindingSource
             // 
             this.normativesBindingSource.DataMember = "Normatives";
-            this.normativesBindingSource.DataSource = this.newVipAvtoSet;
+            this.normativesBindingSource.DataSource = this.VipAvtoDBDataSet;
             // 
-            // newVipAvtoSet
+            // VipAvtoDBDataSet
             // 
-            this.newVipAvtoSet.DataSetName = "NewVipAvtoSet";
-            this.newVipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.VipAvtoDBDataSet.DataSetName = "VipAvtoDBDataSet";
+            this.VipAvtoDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStrip1
             // 
@@ -257,7 +257,7 @@
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.normativesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VipAvtoDBDataSet)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -281,9 +281,9 @@
         private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
-        private NewVipAvtoSet newVipAvtoSet;
+        private VipAvtoDBDataSet VipAvtoDBDataSet;
         private System.Windows.Forms.BindingSource normativesBindingSource;
-        private NewVipAvtoSetTableAdapters.NormativesTableAdapter normativesTableAdapter;
+        private VipAvtoDBDataSetTableAdapters.NormativesTableAdapter normativesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idNormativeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tagDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn minValueDataGridViewTextBoxColumn;

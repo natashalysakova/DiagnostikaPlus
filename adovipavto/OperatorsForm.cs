@@ -23,13 +23,13 @@ namespace adovipavto
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
             InitializeComponent();
-            dataGridView1.DataSource = newVipAvtoSet.Operators;
+            dataGridView1.DataSource = VipAvtoDBDataSet.Operators;
         }
 
         private void OperatorsForm_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "newVipAvtoSet.Operators". При необходимости она может быть перемещена или удалена.
-            operatorsTableAdapter.Fill(newVipAvtoSet.Operators);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "VipAvtoDBDataSet.Operators". При необходимости она может быть перемещена или удалена.
+            operatorsTableAdapter.Fill(VipAvtoDBDataSet.Operators);
         }
 
 
@@ -57,8 +57,8 @@ namespace adovipavto
                     }
                     else
                     {
-                        newVipAvtoSet.LockOperator(id);
-                        if (id == newVipAvtoSet.GetOperatorId())
+                        VipAvtoDBDataSet.LockOperator(id);
+                        if (id == VipAvtoDBDataSet.GetOperatorId())
                         {
                             MessageBox.Show(_rm.GetString("reboot"), _rm.GetString("warning"), MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
@@ -73,7 +73,7 @@ namespace adovipavto
         private int AdministratorsCount()
         {
             return
-                newVipAvtoSet.Operators.Select(string.Format("Right = {0}",
+                VipAvtoDBDataSet.Operators.Select(string.Format("Right = {0}",
                     (int) Rights.Administrator)).Length;
         }
 
@@ -84,7 +84,7 @@ namespace adovipavto
 
         private void Add()
         {
-            new AddOperatorForm(newVipAvtoSet).ShowDialog();
+            new AddOperatorForm(VipAvtoDBDataSet).ShowDialog();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -96,10 +96,10 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            var row = (NewVipAvtoSet.OperatorsRow) newVipAvtoSet.GetRowById(Constants.OperatorsTableName, id);
+            var row = (VipAvtoDBDataSet.OperatorsRow) VipAvtoDBDataSet.GetRowById(Constants.OperatorsTableName, id);
 
 
-            new EditOperatorForm(row, newVipAvtoSet).ShowDialog();
+            new EditOperatorForm(row, VipAvtoDBDataSet).ShowDialog();
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)

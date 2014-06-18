@@ -14,11 +14,11 @@ namespace adovipavto.EditForms
         private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
             Assembly.GetExecutingAssembly());
 
-        private readonly NewVipAvtoSet.OperatorsRow _selected;
-        private readonly NewVipAvtoSet _set;
+        private readonly VipAvtoDBDataSet.OperatorsRow _selected;
+        private readonly VipAvtoDBDataSet _set;
 
 
-        public EditOperatorForm(NewVipAvtoSet.OperatorsRow selected, NewVipAvtoSet set)
+        public EditOperatorForm(VipAvtoDBDataSet.OperatorsRow selected, VipAvtoDBDataSet set)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 

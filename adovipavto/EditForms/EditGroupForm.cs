@@ -15,10 +15,10 @@ namespace adovipavto.EditForms
         private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
             Assembly.GetExecutingAssembly());
 
-        private readonly NewVipAvtoSet.GroupsRow _selectedRow;
-        private readonly NewVipAvtoSet _set;
+        private readonly VipAvtoDBDataSet.GroupsRow _selectedRow;
+        private readonly VipAvtoDBDataSet _set;
 
-        public EditGroupForm(NewVipAvtoSet.GroupsRow select, NewVipAvtoSet set)
+        public EditGroupForm(VipAvtoDBDataSet.GroupsRow select, VipAvtoDBDataSet set)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 

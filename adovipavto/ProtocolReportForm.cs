@@ -11,10 +11,10 @@ namespace adovipavto
     {
         private readonly PrintProtocolDocument _document;
         private readonly bool _printNow;
-        private readonly NewVipAvtoSet _set;
+        private readonly VipAvtoDBDataSet _set;
 
-        public ProtocolReportForm(NewVipAvtoSet.ProtocolsRow protocolRow, NewVipAvtoSet.MesuresRow[] mesures,
-            NewVipAvtoSet set, bool printNow = false)
+        public ProtocolReportForm(VipAvtoDBDataSet.ProtocolsRow protocolRow, VipAvtoDBDataSet.MesuresRow[] mesures,
+            VipAvtoDBDataSet set, bool printNow = false)
         {
             _set = set;
             _printNow = printNow;

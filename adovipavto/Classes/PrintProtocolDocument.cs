@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Resources;
 using System.Threading;
 using adovipavto.Enums;
-using adovipavto.NewVipAvtoSetTableAdapters;
+using adovipavto.VipAvtoDBDataSetTableAdapters;
 using adovipavto.Properties;
 
 namespace adovipavto.Classes
@@ -18,21 +18,21 @@ namespace adovipavto.Classes
     public class PrintProtocolDocument : PrintDocument
     {
         private readonly DateTime _from;
-        private readonly NewVipAvtoSet.MesuresRow[] _mesures;
-        private readonly NewVipAvtoSet.ProtocolsRow _protocolRow;
+        private readonly VipAvtoDBDataSet.MesuresRow[] _mesures;
+        private readonly VipAvtoDBDataSet.ProtocolsRow _protocolRow;
 
         private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
             Assembly.GetExecutingAssembly());
 
-        private readonly NewVipAvtoSet.ProtocolsRow[] _rows;
-        private readonly NewVipAvtoSet _set;
+        private readonly VipAvtoDBDataSet.ProtocolsRow[] _rows;
+        private readonly VipAvtoDBDataSet _set;
         private readonly DateTime _to;
 
 
         private int _index;
 
-        public PrintProtocolDocument(NewVipAvtoSet.ProtocolsRow protocol, NewVipAvtoSet.MesuresRow[] mesures,
-            NewVipAvtoSet set)
+        public PrintProtocolDocument(VipAvtoDBDataSet.ProtocolsRow protocol, VipAvtoDBDataSet.MesuresRow[] mesures,
+            VipAvtoDBDataSet set)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
@@ -48,7 +48,7 @@ namespace adovipavto.Classes
             /*A4 - http://msdn.microsoft.com/en-us/library/system.drawing.printing.papersize.rawkind(v=vs.110).aspx */
         }
 
-        public PrintProtocolDocument(NewVipAvtoSet.ProtocolsRow[] rows, DateTime from, DateTime to, NewVipAvtoSet set)
+        public PrintProtocolDocument(VipAvtoDBDataSet.ProtocolsRow[] rows, DateTime from, DateTime to, VipAvtoDBDataSet set)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
@@ -340,7 +340,7 @@ namespace adovipavto.Classes
             g.DrawString(_rm.GetString("techphoto"), smallFont, Brushes.Black, techrect, sf);
 
             //TODO: draw imge
-            NewVipAvtoSet.PhotosRow[] row = _protocolRow.GetPhotosRows();
+            VipAvtoDBDataSet.PhotosRow[] row = _protocolRow.GetPhotosRows();
 
             if (row.Length!=0)
             {
@@ -416,8 +416,8 @@ namespace adovipavto.Classes
             var norms = new Normatives();
 
 
-            NewVipAvtoSet.MesuresRow[] value =
-                (from NewVipAvtoSet.MesuresRow item in _mesures where item.NormativeTag == i select item)
+            VipAvtoDBDataSet.MesuresRow[] value =
+                (from VipAvtoDBDataSet.MesuresRow item in _mesures where item.NormativeTag == i select item)
                     .ToArray();
             if (value.Length == 0)
             {

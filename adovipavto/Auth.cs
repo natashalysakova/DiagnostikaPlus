@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Resources;
 using System.Windows.Forms;
-using adovipavto.NewVipAvtoSetTableAdapters;
+using adovipavto.VipAvtoDBDataSetTableAdapters;
 
 namespace adovipavto
 {
@@ -11,9 +11,9 @@ namespace adovipavto
         private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
             Assembly.GetExecutingAssembly());
 
-        private readonly NewVipAvtoSet _set;
+        private readonly VipAvtoDBDataSet _set;
 
-        public Auth(NewVipAvtoSet set)
+        public Auth(VipAvtoDBDataSet set)
         {
             InitializeComponent();
             _set = set;
@@ -30,7 +30,7 @@ namespace adovipavto
 
             if (password != "")
             {
-                if (NewVipAvtoSet.GetHash(maskedTextBox1.Text) == password)
+                if (VipAvtoDBDataSet.GetHash(maskedTextBox1.Text) == password)
                 {
                     _set.SetCurrentOperator(textBox1.Text);
 

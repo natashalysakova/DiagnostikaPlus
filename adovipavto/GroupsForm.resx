@@ -166,7 +166,7 @@
   <metadata name="groupsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>411, 17</value>
   </metadata>
-  <metadata name="newVipAvtoSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="VipAvtoDBDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>277, 17</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
@@ -1857,11 +1857,11 @@
   <data name="&gt;&gt;удалитьToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;newVipAvtoSet.Name" xml:space="preserve">
-    <value>newVipAvtoSet</value>
+  <data name="&gt;&gt;VipAvtoDBDataSet.Name" xml:space="preserve">
+    <value>VipAvtoDBDataSet</value>
   </data>
-  <data name="&gt;&gt;newVipAvtoSet.Type" xml:space="preserve">
-    <value>adovipavto.NewVipAvtoSet, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;VipAvtoDBDataSet.Type" xml:space="preserve">
+    <value>adovipavto.VipAvtoDBDataSet, VipAvtoDBDataSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;groupsBindingSource.Name" xml:space="preserve">
     <value>groupsBindingSource</value>
@@ -1873,7 +1873,7 @@
     <value>groupsTableAdapter</value>
   </data>
   <data name="&gt;&gt;groupsTableAdapter.Type" xml:space="preserve">
-    <value>adovipavto.NewVipAvtoSetTableAdapters.GroupsTableAdapter, NewVipAvtoSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>adovipavto.VipAvtoDBDataSetTableAdapters.GroupsTableAdapter, VipAvtoDBDataSet.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;idGroupDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>idGroupDataGridViewTextBoxColumn</value>

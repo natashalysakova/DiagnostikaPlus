@@ -12,10 +12,10 @@ namespace adovipavto.EditForms
 {
     public partial class EditMechanicForm : Form
     {
-        private readonly NewVipAvtoSet.MechanicsRow _selected;
-        private readonly NewVipAvtoSet _set;
+        private readonly VipAvtoDBDataSet.MechanicsRow _selected;
+        private readonly VipAvtoDBDataSet _set;
 
-        public EditMechanicForm(NewVipAvtoSet.MechanicsRow row, NewVipAvtoSet set)
+        public EditMechanicForm(VipAvtoDBDataSet.MechanicsRow row, VipAvtoDBDataSet set)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 

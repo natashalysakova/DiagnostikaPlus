@@ -27,9 +27,9 @@ namespace adovipavto
 
         private void Mechanics_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "newVipAvtoSet.Mechanics". При необходимости она может быть перемещена или удалена.
-            this.mechanicsTableAdapter.Fill(this.newVipAvtoSet.Mechanics);
-            dataGridView1.DataSource = newVipAvtoSet.Mechanics;
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "VipAvtoDBDataSet.Mechanics". При необходимости она может быть перемещена или удалена.
+            this.mechanicsTableAdapter.Fill(this.VipAvtoDBDataSet.Mechanics);
+            dataGridView1.DataSource = VipAvtoDBDataSet.Mechanics;
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -41,10 +41,10 @@ namespace adovipavto
         {
             var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-            var row = (NewVipAvtoSet.MechanicsRow) newVipAvtoSet.GetRowById(Constants.MechanicsTableName, id);
+            var row = (VipAvtoDBDataSet.MechanicsRow) VipAvtoDBDataSet.GetRowById(Constants.MechanicsTableName, id);
 
 
-            new EditMechanicForm(row, newVipAvtoSet).ShowDialog();
+            new EditMechanicForm(row, VipAvtoDBDataSet).ShowDialog();
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -80,7 +80,7 @@ namespace adovipavto
 
         private void Add()
         {
-            new AddMechanicForm(newVipAvtoSet).ShowDialog();
+            new AddMechanicForm(VipAvtoDBDataSet).ShowDialog();
         }
 
         private void lockToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,7 +98,7 @@ namespace adovipavto
                 {
                     var id = (int) dataGridView1.SelectedRows[0].Cells[0].Value;
 
-                    newVipAvtoSet.LockMechanic(id);
+                    VipAvtoDBDataSet.LockMechanic(id);
                 }
             }
         }

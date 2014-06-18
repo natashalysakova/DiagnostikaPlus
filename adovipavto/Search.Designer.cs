@@ -43,7 +43,7 @@
             this.blankNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.protocolsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.newVipAvtoSet = new adovipavto.NewVipAvtoSet();
+            this.VipAvtoDBDataSet = new adovipavto.VipAvtoDBDataSet();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -52,13 +52,13 @@
             this.secondDate = new System.Windows.Forms.DateTimePicker();
             this.firstDate = new System.Windows.Forms.DateTimePicker();
             this.printPreviewControl2 = new System.Windows.Forms.PrintPreviewControl();
-            this.protocolsTableAdapter = new adovipavto.NewVipAvtoSetTableAdapters.ProtocolsTableAdapter();
+            this.protocolsTableAdapter = new adovipavto.VipAvtoDBDataSetTableAdapters.ProtocolsTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.protocolsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VipAvtoDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -173,12 +173,12 @@
             // protocolsBindingSource
             // 
             this.protocolsBindingSource.DataMember = "Protocols";
-            this.protocolsBindingSource.DataSource = this.newVipAvtoSet;
+            this.protocolsBindingSource.DataSource = this.VipAvtoDBDataSet;
             // 
-            // newVipAvtoSet
+            // VipAvtoDBDataSet
             // 
-            this.newVipAvtoSet.DataSetName = "NewVipAvtoSet";
-            this.newVipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.VipAvtoDBDataSet.DataSetName = "VipAvtoDBDataSet";
+            this.VipAvtoDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // radioButton5
             // 
@@ -259,7 +259,7 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.protocolsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VipAvtoDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -283,9 +283,9 @@
         private System.Windows.Forms.PrintPreviewControl printPreviewControl2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private NewVipAvtoSet newVipAvtoSet;
+        private VipAvtoDBDataSet VipAvtoDBDataSet;
         private System.Windows.Forms.BindingSource protocolsBindingSource;
-        private NewVipAvtoSetTableAdapters.ProtocolsTableAdapter protocolsTableAdapter;
+        private VipAvtoDBDataSetTableAdapters.ProtocolsTableAdapter protocolsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProtocolDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn blankNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;

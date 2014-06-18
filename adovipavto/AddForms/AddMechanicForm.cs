@@ -14,10 +14,10 @@ namespace adovipavto.AddForms
         private readonly ResourceManager _rm = new ResourceManager("adovipavto.StringResource",
             Assembly.GetExecutingAssembly());
 
-        private readonly NewVipAvtoSet _set;
+        private readonly VipAvtoDBDataSet _set;
 
 
-        public AddMechanicForm(NewVipAvtoSet set)
+        public AddMechanicForm(VipAvtoDBDataSet set)
         {
             _set = set;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);

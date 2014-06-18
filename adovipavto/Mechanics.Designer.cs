@@ -38,7 +38,7 @@
             this.fatherNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mechanicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.newVipAvtoSet = new adovipavto.NewVipAvtoSet();
+            this.VipAvtoDBDataSet = new adovipavto.VipAvtoDBDataSet();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -48,13 +48,13 @@
             this.lockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mechanicsTableAdapter = new adovipavto.NewVipAvtoSetTableAdapters.MechanicsTableAdapter();
+            this.mechanicsTableAdapter = new adovipavto.VipAvtoDBDataSetTableAdapters.MechanicsTableAdapter();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mechanicsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VipAvtoDBDataSet)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -136,12 +136,12 @@
             // mechanicsBindingSource
             // 
             this.mechanicsBindingSource.DataMember = "Mechanics";
-            this.mechanicsBindingSource.DataSource = this.newVipAvtoSet;
+            this.mechanicsBindingSource.DataSource = this.VipAvtoDBDataSet;
             // 
-            // newVipAvtoSet
+            // VipAvtoDBDataSet
             // 
-            this.newVipAvtoSet.DataSetName = "NewVipAvtoSet";
-            this.newVipAvtoSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.VipAvtoDBDataSet.DataSetName = "VipAvtoDBDataSet";
+            this.VipAvtoDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStrip1
             // 
@@ -229,7 +229,7 @@
             this.toolStripContainer1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mechanicsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.newVipAvtoSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VipAvtoDBDataSet)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -250,9 +250,9 @@
         private System.Windows.Forms.ToolStripMenuItem lockToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private NewVipAvtoSet newVipAvtoSet;
+        private VipAvtoDBDataSet VipAvtoDBDataSet;
         private System.Windows.Forms.BindingSource mechanicsBindingSource;
-        private NewVipAvtoSetTableAdapters.MechanicsTableAdapter mechanicsTableAdapter;
+        private VipAvtoDBDataSetTableAdapters.MechanicsTableAdapter mechanicsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMechanicDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;

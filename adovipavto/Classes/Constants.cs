@@ -13,6 +13,8 @@ namespace adovipavto.Classes
         public const string MechanicsTableName = "Mechanics";
         public const string OperatorsTableName = "Operators";
         public const string MesuresTableName = "Mesures";
+        public const string VendorTableName = "Vendor";
+        public const string ModelTableName = "Model";
 
 
         public static string GetEnumDescription(Enum value)

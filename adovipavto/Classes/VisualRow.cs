@@ -15,7 +15,7 @@ namespace adovipavto.Classes
         private Label _minvallable;
         private TextBox _textbox;
 
-        public VisualRow(NewVipAvtoSet.NormativesRow norma, DRandom random)
+        public VisualRow(VipAvtoDBDataSet.NormativesRow norma, DRandom random)
         {
             Id = norma.Tag;
             _minval = norma.MinValue;

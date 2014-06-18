@@ -17,7 +17,7 @@ namespace vipavtoSetTestProject
         [TestMethod]
         public void GroupTest()
         {
-            var set = new NewVipAvtoSet();
+            var set = new VipAvtoDBDataSet();
 
             if (!set.GroupExist(2006, "M1", 1, true))
                 set.AddGroup(2006, "M1", 1, true);
@@ -39,7 +39,7 @@ namespace vipavtoSetTestProject
         [TestMethod]
         public void NormativesTest()
         {
-            var set = new NewVipAvtoSet();
+            var set = new VipAvtoDBDataSet();
 
             set.AddGroup(2004, "M1", 0, true);
             set.AddNormative(set.Groups[0].IdGroup, 0, 30);
@@ -49,7 +49,7 @@ namespace vipavtoSetTestProject
         [TestMethod]
         public void MechanicTest()
         {
-            var set = new NewVipAvtoSet();
+            var set = new VipAvtoDBDataSet();
 
             set.AddMechanic("ivan", "ivanov", "ivanovich");
             Assert.AreEqual("ivan", set.Mechanics[0].Name);
@@ -65,7 +65,7 @@ namespace vipavtoSetTestProject
         [TestMethod]
         public void OperatorTest()
         {
-            var set = new NewVipAvtoSet();
+            var set = new VipAvtoDBDataSet();
 
             set.AddOperator("ivan", "ivanov", "vanya", "password", "Администратор");
             set.SetCurrentOperator("vanya");
@@ -78,7 +78,7 @@ namespace vipavtoSetTestProject
             Assert.AreEqual("vanya", set.Operators[0].Login);
             Assert.AreEqual("ivan", set.Operators[0].Name);
             Assert.AreEqual("ivanov", set.Operators[0].LastName);
-            Assert.AreEqual(NewVipAvtoSet.GetHash("password"), set.Operators[0].Password);
+            Assert.AreEqual(VipAvtoDBDataSet.GetHash("password"), set.Operators[0].Password);
 
 
             Assert.AreEqual(Rights.Administrator, set.GetOperatorRight());
@@ -90,7 +90,7 @@ namespace vipavtoSetTestProject
         [TestMethod]
         public void ProtocolTest()
         {
-            var set = new NewVipAvtoSet();
+            var set = new VipAvtoDBDataSet();
             set.AddMechanic("ivan", "ivanov", "ivanovich");
             set.AddOperator("ivan", "ivanov", "valn", "dfdss", "Оператор");
             set.SetCurrentOperator("valn");
@@ -103,7 +103,7 @@ namespace vipavtoSetTestProject
             Assert.AreEqual(1, set.Protocols.Count);
 
 
-            NewVipAvtoSet.ProtocolsRow[] prot = set.GetProtocolsBetweenDates(DateTime.Now.AddDays(-2), DateTime.Now);
+            VipAvtoDBDataSet.ProtocolsRow[] prot = set.GetProtocolsBetweenDates(DateTime.Now.AddDays(-2), DateTime.Now);
             Assert.AreEqual(1, set.Protocols.Count);
 
             Assert.AreEqual(set.Protocols[0].IdProtocol, set.GetProtocolByBlankId("4324342").IdProtocol);
@@ -116,7 +116,7 @@ namespace vipavtoSetTestProject
         [TestMethod]
         public void MesureTest()
         {
-            var set = new NewVipAvtoSet();
+            var set = new VipAvtoDBDataSet();
             set.AddMechanic("ivan", "ivanov", "ivanovich");
             set.AddOperator("ivan", "ivanov", "valn", "dfdss", "Оператор");
             set.SetCurrentOperator("valn");
@@ -126,7 +126,7 @@ namespace vipavtoSetTestProject
                 set.Groups[0].IdGroup, true, DateTime.Now.AddDays(365), true, 0);
 
             set.AddMesure(1, 1, set.Protocols[0].IdProtocol, set.Groups[0].IdGroup);
-            set.Update(typeof (NewVipAvtoSet.MesuresRow));
+            set.Update(typeof (VipAvtoDBDataSet.MesuresRow));
             Assert.AreEqual(1, set.Mesures.Count);
 
 
@@ -165,7 +165,7 @@ namespace vipavtoSetTestProject
         [TestMethod]
         public void VisualRowTest()
         {
-            var set = new NewVipAvtoSet();
+            var set = new VipAvtoDBDataSet();
             set.AddGroup(2007, "M1", 0, true);
             set.AddNormative(set.Groups[0].IdGroup, 0, 30);
 
@@ -225,7 +225,7 @@ namespace vipavtoSetTestProject
             Assert.AreEqual(24, t.GetAllNormatives().Count);
 
 
-            var set = new NewVipAvtoSet();
+            var set = new VipAvtoDBDataSet();
             set.LoadData();
             set.AddGroup(2007, "M1", 0, true);
             set.AddNormative(set.Groups[0].IdGroup, 0, 30);
@@ -235,7 +235,7 @@ namespace vipavtoSetTestProject
             if (set.GetNormativesFromGroup(set.Groups[0].Title).Length == 0)
                 Assert.Fail();
 
-            Assert.AreEqual(NewVipAvtoSet.GetHash("admin"), set.GetUserPasswors("admin"));
+            Assert.AreEqual(VipAvtoDBDataSet.GetHash("admin"), set.GetUserPasswors("admin"));
             Assert.AreEqual("", set.GetUserPasswors("lolosha"));
 
 
