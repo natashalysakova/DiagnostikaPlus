@@ -43,8 +43,9 @@ namespace adovipavto
                 newVipAvtoSet.LoadData();
 
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 if (new ServerSetting().ShowDialog() == DialogResult.OK)
                 {
                     Application.Restart();

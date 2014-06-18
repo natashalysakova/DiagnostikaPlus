@@ -130,7 +130,7 @@ namespace vipavtoSetTestProject
             Assert.AreEqual(1, set.Mesures.Count);
 
 
-            var document = new PrintProtocolDocument(set.Protocols[0], set.Protocols[0].GetMesuresRows(), set);
+            var document = new PrintProtocolDocument(set.Protocols[0],  set);
             document.Print();
 
             var document2 = new PrintProtocolDocument(set.Protocols.ToArray(), DateTime.Now.AddDays(-25), DateTime.Now,
@@ -141,7 +141,7 @@ namespace vipavtoSetTestProject
                 set.Groups[0].IdGroup, false, DateTime.Now.AddDays(365), false, 1);
             set.AddPhoto(new Bitmap(400, 878), set.Protocols[1].IdProtocol);
 
-            document = new PrintProtocolDocument(set.Protocols[1], set.Protocols[1].GetMesuresRows(), set);
+            document = new PrintProtocolDocument(set.Protocols[1], set);
             document.Print();
 
 
@@ -151,7 +151,7 @@ namespace vipavtoSetTestProject
             set.AddProtocol("43243432", set.GetShortMechanicName(set.Mechanics[0].IdMechanic), DateTime.Now,
                 set.Groups[1].IdGroup, false, DateTime.Now.AddDays(365), false, 2);
             set.AddPhoto(new Bitmap(652, 400), set.Protocols[2].IdProtocol);
-            document = new PrintProtocolDocument(set.Protocols[2], set.Protocols[2].GetMesuresRows(), set);
+            document = new PrintProtocolDocument(set.Protocols[2], set);
             document.Print();
 
             Assert.AreEqual("4324342",
@@ -245,6 +245,21 @@ namespace vipavtoSetTestProject
 
 
 
+        }
+
+        [TestMethod]
+        public void SomeQueries()
+        {
+            NewVipAvtoSet set = new NewVipAvtoSet();
+            set.LoadData();
+
+
+            var t1 = set.GroupByTermin();
+
+            foreach (string s in t1)
+            {
+                Console.WriteLine(s);
+            }
         }
     }
 }

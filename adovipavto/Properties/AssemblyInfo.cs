@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ООО В.И.П.АВТО")]
 [assembly: AssemblyProduct("Диагностика PLUS")]
-[assembly: AssemblyCopyright("Copyright © Лысакова Наталья - 2013")]
+[assembly: AssemblyCopyright("Copyright © Лысакова Наталья - 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

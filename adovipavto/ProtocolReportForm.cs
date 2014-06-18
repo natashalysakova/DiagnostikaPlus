@@ -23,7 +23,7 @@ namespace adovipavto
 
             InitializeComponent();
 
-            _document = new PrintProtocolDocument(protocolRow, mesures, _set);
+            _document = new PrintProtocolDocument(protocolRow, _set);
             printPreviewControl1.Document = _document;
 
             if (_printNow)
