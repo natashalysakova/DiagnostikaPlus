@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CustomProtocolsPrint.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SPTO" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ТОВ "В.І.П.АВТО"					</Value>
+    </Setting>
+    <Setting Name="MPTO" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ВУЛ. БАУМАНА, 10, М. ДОНЕЦЬК, ДОНЕЦЬКА ОБЛ, УКРАЇНА, 83085</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
