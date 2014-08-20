@@ -1,6 +1,6 @@
 ﻿namespace adovipavto.Enums
 {
-    internal enum Category
+    public enum Category
     {
         M1,
         M2,
