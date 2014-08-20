@@ -104,7 +104,7 @@ namespace adovipavto
         {
             NewVipAvtoSet.ProtocolsRow[] rows = _set.GetProtocolsBetweenDates(firstDate.Value, secondDate.Value);
 
-            _document = new PrintProtocolDocument(rows, firstDate.Value, secondDate.Value, _set);
+            _document = new PrintJournalDocument(rows, firstDate.Value, secondDate.Value, _set);
             printPreviewControl1.Document = _document;
         }
 
