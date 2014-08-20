@@ -131,6 +131,9 @@
     <Compile Include="Classes\Constants.cs" />
     <Compile Include="Classes\Engines.cs" />
     <Compile Include="Classes\Normatives.cs" />
+    <Compile Include="Classes\PrintJournalDocument.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\PrintProtocolDocument.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -494,10 +497,12 @@
     <EmbeddedResource Include="StringResource.ru-RU.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StringResource.ru-RU.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="StringResource.uk-UA.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StringResource.uk-UA.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="adovipavto_TemporaryKey.pfx" />
     <None Include="ClassDiagram1.cd" />

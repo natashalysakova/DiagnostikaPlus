@@ -364,9 +364,6 @@ namespace adovipavto
                     dataGridView1.FirstDisplayedScrollingRowIndex = saveRow;
 
             }
-
-
         }
-
     }
 }
