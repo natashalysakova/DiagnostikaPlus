@@ -133,7 +133,7 @@ namespace vipavtoSetTestProject
             var document = new PrintProtocolDocument(set.Protocols[0], set.Protocols[0].GetMesuresRows(), set);
             document.Print();
 
-            var document2 = new PrintProtocolDocument(set.Protocols.ToArray(), DateTime.Now.AddDays(-25), DateTime.Now,
+            var document2 = new PrintJournalDocument(set.Protocols.ToArray(), DateTime.Now.AddDays(-25), DateTime.Now,
                 set);
             document2.Print();
 
