@@ -32,6 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NormativesForm));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idNormativeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.minValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maxValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.normativesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.newVipAvtoSet = new adovipavto.NewVipAvtoSet();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -47,11 +52,6 @@
             this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.normativesTableAdapter = new adovipavto.NewVipAvtoSetTableAdapters.NormativesTableAdapter();
-            this.idNormativeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.minValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maxValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -102,6 +102,44 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
+            // 
+            // idNormativeDataGridViewTextBoxColumn
+            // 
+            this.idNormativeDataGridViewTextBoxColumn.DataPropertyName = "IdNormative";
+            resources.ApplyResources(this.idNormativeDataGridViewTextBoxColumn, "idNormativeDataGridViewTextBoxColumn");
+            this.idNormativeDataGridViewTextBoxColumn.Name = "idNormativeDataGridViewTextBoxColumn";
+            this.idNormativeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tagDataGridViewTextBoxColumn
+            // 
+            this.tagDataGridViewTextBoxColumn.DataPropertyName = "Tag";
+            this.tagDataGridViewTextBoxColumn.FillWeight = 50F;
+            resources.ApplyResources(this.tagDataGridViewTextBoxColumn, "tagDataGridViewTextBoxColumn");
+            this.tagDataGridViewTextBoxColumn.Name = "tagDataGridViewTextBoxColumn";
+            this.tagDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // minValueDataGridViewTextBoxColumn
+            // 
+            this.minValueDataGridViewTextBoxColumn.DataPropertyName = "MinValue";
+            this.minValueDataGridViewTextBoxColumn.FillWeight = 25F;
+            resources.ApplyResources(this.minValueDataGridViewTextBoxColumn, "minValueDataGridViewTextBoxColumn");
+            this.minValueDataGridViewTextBoxColumn.Name = "minValueDataGridViewTextBoxColumn";
+            this.minValueDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maxValueDataGridViewTextBoxColumn
+            // 
+            this.maxValueDataGridViewTextBoxColumn.DataPropertyName = "MaxValue";
+            this.maxValueDataGridViewTextBoxColumn.FillWeight = 25F;
+            resources.ApplyResources(this.maxValueDataGridViewTextBoxColumn, "maxValueDataGridViewTextBoxColumn");
+            this.maxValueDataGridViewTextBoxColumn.Name = "maxValueDataGridViewTextBoxColumn";
+            this.maxValueDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // groupIdDataGridViewTextBoxColumn
+            // 
+            this.groupIdDataGridViewTextBoxColumn.DataPropertyName = "GroupId";
+            resources.ApplyResources(this.groupIdDataGridViewTextBoxColumn, "groupIdDataGridViewTextBoxColumn");
+            this.groupIdDataGridViewTextBoxColumn.Name = "groupIdDataGridViewTextBoxColumn";
+            this.groupIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // normativesBindingSource
             // 
@@ -204,44 +242,6 @@
             // normativesTableAdapter
             // 
             this.normativesTableAdapter.ClearBeforeFill = true;
-            // 
-            // idNormativeDataGridViewTextBoxColumn
-            // 
-            this.idNormativeDataGridViewTextBoxColumn.DataPropertyName = "IdNormative";
-            resources.ApplyResources(this.idNormativeDataGridViewTextBoxColumn, "idNormativeDataGridViewTextBoxColumn");
-            this.idNormativeDataGridViewTextBoxColumn.Name = "idNormativeDataGridViewTextBoxColumn";
-            this.idNormativeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tagDataGridViewTextBoxColumn
-            // 
-            this.tagDataGridViewTextBoxColumn.DataPropertyName = "Tag";
-            this.tagDataGridViewTextBoxColumn.FillWeight = 50F;
-            resources.ApplyResources(this.tagDataGridViewTextBoxColumn, "tagDataGridViewTextBoxColumn");
-            this.tagDataGridViewTextBoxColumn.Name = "tagDataGridViewTextBoxColumn";
-            this.tagDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // minValueDataGridViewTextBoxColumn
-            // 
-            this.minValueDataGridViewTextBoxColumn.DataPropertyName = "MinValue";
-            this.minValueDataGridViewTextBoxColumn.FillWeight = 25F;
-            resources.ApplyResources(this.minValueDataGridViewTextBoxColumn, "minValueDataGridViewTextBoxColumn");
-            this.minValueDataGridViewTextBoxColumn.Name = "minValueDataGridViewTextBoxColumn";
-            this.minValueDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // maxValueDataGridViewTextBoxColumn
-            // 
-            this.maxValueDataGridViewTextBoxColumn.DataPropertyName = "MaxValue";
-            this.maxValueDataGridViewTextBoxColumn.FillWeight = 25F;
-            resources.ApplyResources(this.maxValueDataGridViewTextBoxColumn, "maxValueDataGridViewTextBoxColumn");
-            this.maxValueDataGridViewTextBoxColumn.Name = "maxValueDataGridViewTextBoxColumn";
-            this.maxValueDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // groupIdDataGridViewTextBoxColumn
-            // 
-            this.groupIdDataGridViewTextBoxColumn.DataPropertyName = "GroupId";
-            resources.ApplyResources(this.groupIdDataGridViewTextBoxColumn, "groupIdDataGridViewTextBoxColumn");
-            this.groupIdDataGridViewTextBoxColumn.Name = "groupIdDataGridViewTextBoxColumn";
-            this.groupIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // NormativesForm
             // 

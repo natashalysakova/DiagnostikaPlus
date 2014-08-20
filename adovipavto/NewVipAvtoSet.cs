@@ -157,19 +157,6 @@ namespace adovipavto
             return null;
         }
 
-        //public string GroupTitle(int id)
-        //{
-        //    var groupRow = GetRowById(Constants.GroupTableName, id) as GroupsRow;
-
-        //    if (groupRow == null)
-        //        return "";
-
-
-        //    string s = groupRow.Before ? _rm.GetString("before") : _rm.GetString("after");
-        //    return groupRow.Category + " " + s + " " + groupRow.Year + " " +
-        //           new Engines()[groupRow.EngineType];
-        //}
-
         public void AddMechanic(string name, string lastName, string fatherName)
         {
             MechanicsRow r = Mechanics.NewMechanicsRow();
@@ -310,6 +297,7 @@ namespace adovipavto
                         item.LastName + " " + item.Name[0] + ". " + item.FatherName[0] + ".")
                 .ToArray()[0];
         }
+
 
         public string GetShortOperatorName(int operatorId)
         {
@@ -629,17 +617,6 @@ namespace adovipavto
 
         public void LoadData()
         {
-            string connectionString = ReadConnectionStringFromFile();
-
-            SqlConnection conn = new SqlConnection(connectionString);
-            _operatorsTableAdapter.Connection = conn;
-            _mechanicsTableAdapter.Connection = conn;
-            _groupsTableAdapter.Connection = conn;
-            _normativesTableAdapter.Connection = conn;
-            _protocolsTableAdapter.Connection = conn;
-            _mesuresTableAdapter.Connection = conn;
-            _photosTableAdapter.Connection = conn;
-
             _operatorsTableAdapter.Fill(Operators);
             _mechanicsTableAdapter.Fill(Mechanics);
             _groupsTableAdapter.Fill(Groups);
@@ -688,5 +665,51 @@ namespace adovipavto
 
             return null;
         }
+
+        public List<string> ShowMechanicsCount()
+        {
+            return (from @group in (from item in Protocols where item.Date > DateTime.Now.AddDays(-31) group item by item.MechanicId)
+                select GetShortMechanicName(@group.Key) + ": " + @group.Count() + " протоколов").ToList();
+        }
+
+
+        public List<string> GroupsCount()
+        {
+            List<string> s = new List<string>();
+            var t = (from item in Protocols group item by item.GroupId);
+            foreach (var group in t)
+            {
+                s.Add(Groups.FindByIdGroup(group.Key).Title + ": " + @group.Count() + " протоколов");
+            }
+            return s;
+        }
+
+        public List<string> OperatorsCount()
+        {
+            return (from @group in
+                        (from item in Protocols where item.Date > DateTime.Now.AddDays(-31) group item by item.OperatorId)
+                    select GetShortOperatorName(@group.Key) + ": " + @group.Count() + " протоколов").ToList();
+        }
+
+        public List<string> CarsThatNotPass()
+        {
+            return (from item in Protocols
+                where Groups.FindByIdGroup(item.GroupId).Before && Groups.FindByIdGroup(item.GroupId).Year == 2006 && item.Result == false
+                select item.BlankNumber).ToList();
+        }
+
+        public List<string> GroupByTermin()
+        {
+            var s = new List<string>();
+            var groups = (from item in Protocols group item by item.NextData.Year - item.Date.Year);
+
+            foreach (var @group in groups)
+            {
+                s.Add(@group.Key == 0 ? "6 месяцев" : @group.Key + " год");
+                s.AddRange(@group.Select(protocolsRow => "\t" + protocolsRow.BlankNumber));
+            }
+            return s;
+        }
+
     }
 }

@@ -29,7 +29,7 @@ namespace adovipavto
                 if (row != null)
                 {
                     NewVipAvtoSet.MesuresRow[] mesures = row.GetMesuresRows();
-                    _document = new PrintProtocolDocument(row, mesures, newVipAvtoSet);
+                    _document = new PrintProtocolDocument(row, newVipAvtoSet);
                     printPreviewControl1.Document = _document;
 
                     maskedTextBox1.BackColor = Color.LightGreen;
@@ -154,7 +154,7 @@ namespace adovipavto
                 var protocol = (NewVipAvtoSet.ProtocolsRow)newVipAvtoSet.GetRowById(Constants.ProtocolsTableName, newProtocolId);
                 NewVipAvtoSet.MesuresRow[] mesures = protocol.GetMesuresRows();
 
-                _document2 = new PrintProtocolDocument(protocol, mesures, newVipAvtoSet);
+                _document2 = new PrintProtocolDocument(protocol,  newVipAvtoSet);
                 printPreviewControl2.Document = _document2;
             }
         }
