@@ -32,6 +32,7 @@ namespace adovipavto
         PhotosTableAdapter _photosTableAdapter = new PhotosTableAdapter();
         private ResourceManager _rm = new ResourceManager("adovipavto.StringResource", Assembly.GetExecutingAssembly());
 
+        
 
         public string GetUserPasswors(string username)
         {
@@ -68,6 +69,8 @@ namespace adovipavto
                 default:
                     return null;
             }
+
+            
         }
 
         public void RemoveRow(DataRow selectedRow)

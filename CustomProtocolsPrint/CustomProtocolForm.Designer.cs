@@ -32,7 +32,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.printPreviewControl1 = new System.Windows.Forms.PrintPreviewControl();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,12 +42,12 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -56,20 +55,22 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -93,11 +94,14 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Location = new System.Drawing.Point(169, 6);
+            this.textBox1.MaxLength = 5;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(41, 23);
             this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "00000";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -107,19 +111,6 @@
             this.label3.Size = new System.Drawing.Size(13, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "-";
-            // 
-            // printPreviewControl1
-            // 
-            this.printPreviewControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.printPreviewControl1.AutoZoom = false;
-            this.printPreviewControl1.Location = new System.Drawing.Point(277, 0);
-            this.printPreviewControl1.Name = "printPreviewControl1";
-            this.printPreviewControl1.Size = new System.Drawing.Size(224, 530);
-            this.printPreviewControl1.TabIndex = 4;
-            this.printPreviewControl1.UseAntiAlias = true;
-            this.printPreviewControl1.Zoom = 1D;
             // 
             // label4
             // 
@@ -156,11 +147,15 @@
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel1.SetColumnSpan(this.textBox3, 4);
             this.textBox3.Location = new System.Drawing.Point(3, 133);
+            this.textBox3.MaxLength = 20;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(253, 23);
             this.textBox3.TabIndex = 10;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -219,6 +214,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(253, 24);
             this.comboBox1.TabIndex = 14;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -235,22 +231,29 @@
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel1.SetColumnSpan(this.textBox4, 4);
             this.textBox4.Location = new System.Drawing.Point(3, 226);
+            this.textBox4.MaxLength = 50;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(253, 23);
             this.textBox4.TabIndex = 16;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox5
             // 
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel1.SetColumnSpan(this.textBox5, 2);
             this.textBox5.Location = new System.Drawing.Point(3, 272);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(106, 23);
             this.textBox5.TabIndex = 17;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label9
             // 
@@ -300,10 +303,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.richTextBox2, 3);
             this.richTextBox2.Location = new System.Drawing.Point(3, 354);
+            this.richTextBox2.MaxLength = 100;
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(220, 27);
+            this.richTextBox2.Size = new System.Drawing.Size(220, 23);
             this.richTextBox2.TabIndex = 22;
             this.richTextBox2.Text = "не вказано";
+            this.richTextBox2.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label12
             // 
@@ -322,10 +327,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.textBox6, 3);
             this.textBox6.Location = new System.Drawing.Point(3, 404);
+            this.textBox6.MaxLength = 72;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(220, 23);
             this.textBox6.TabIndex = 24;
             this.textBox6.Text = "не вказано";
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label13
             // 
@@ -380,22 +387,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.textBox7, 3);
             this.textBox7.Location = new System.Drawing.Point(3, 454);
+            this.textBox7.MaxLength = 35;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(220, 23);
             this.textBox7.TabIndex = 28;
             this.textBox7.Text = "не вказано";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.textBox8, 4);
-            this.textBox8.Location = new System.Drawing.Point(3, 504);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(253, 23);
-            this.textBox8.TabIndex = 31;
-            this.textBox8.Text = "не вказано";
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label14
             // 
@@ -409,18 +406,18 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(12, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(259, 530);
+            this.panel1.Size = new System.Drawing.Size(263, 533);
             this.panel1.TabIndex = 33;
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.ColumnCount = 4;
@@ -430,7 +427,6 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox8, 0, 19);
             this.tableLayoutPanel1.Controls.Add(this.richTextBox1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label14, 0, 18);
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 0, 3);
@@ -455,10 +451,10 @@
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 2, 11);
             this.tableLayoutPanel1.Controls.Add(this.button2, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.comboBox1, 3, 7);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker2, 0, 20);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 20;
+            this.tableLayoutPanel1.RowCount = 21;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -483,29 +479,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(259, 530);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
-            // textBox9
-            // 
-            this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(221, 6);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(22, 23);
-            this.textBox9.TabIndex = 34;
-            this.textBox9.Text = "00";
-            // 
-            // button6
-            // 
-            this.button6.AutoSize = true;
-            this.button6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(247, 6);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(24, 23);
-            this.button6.TabIndex = 35;
-            this.button6.Text = "Р";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
             // richTextBox1
             // 
             this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -520,6 +493,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(220, 40);
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.Text = global::CustomProtocolsPrint.Properties.Settings.Default.MPTO;
+            this.richTextBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -530,19 +504,53 @@
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::CustomProtocolsPrint.Properties.Settings.Default, "SPTO", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(3, 83);
+            this.textBox2.MaxLength = 72;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(220, 23);
             this.textBox2.TabIndex = 8;
             this.textBox2.Text = global::CustomProtocolsPrint.Properties.Settings.Default.SPTO;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // dateTimePicker2
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.dateTimePicker2, 4);
+            this.dateTimePicker2.Location = new System.Drawing.Point(3, 504);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(253, 23);
+            this.dateTimePicker2.TabIndex = 31;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Enabled = false;
+            this.textBox9.Location = new System.Drawing.Point(221, 6);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(22, 23);
+            this.textBox9.TabIndex = 34;
+            this.textBox9.Text = "00";
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button6
+            // 
+            this.button6.AutoSize = true;
+            this.button6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.Location = new System.Drawing.Point(247, 6);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(24, 23);
+            this.button6.TabIndex = 35;
+            this.button6.Text = "Р";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Location = new System.Drawing.Point(394, 536);
+            this.button7.Location = new System.Drawing.Point(394, 575);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(89, 26);
+            this.button7.Size = new System.Drawing.Size(271, 26);
             this.button7.TabIndex = 36;
             this.button7.Text = "Печать";
             this.button7.UseVisualStyleBackColor = true;
@@ -551,7 +559,7 @@
             // 
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(286, 541);
+            this.label15.Location = new System.Drawing.Point(286, 580);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(49, 17);
             this.label15.TabIndex = 37;
@@ -560,7 +568,7 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.numericUpDown1.Location = new System.Drawing.Point(338, 539);
+            this.numericUpDown1.Location = new System.Drawing.Point(338, 578);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(50, 23);
             this.numericUpDown1.TabIndex = 38;
@@ -570,34 +578,49 @@
             0,
             0});
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::CustomProtocolsPrint.Properties.Resources.OBSZ;
+            this.pictureBox1.Location = new System.Drawing.Point(281, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(393, 560);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 39;
+            this.pictureBox1.TabStop = false;
+            // 
             // CustomProtocolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 576);
+            this.ClientSize = new System.Drawing.Size(686, 615);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.printPreviewControl1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(520, 615);
             this.Name = "CustomProtocolForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Протокол";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.CustomProtocolForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -609,7 +632,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PrintPreviewControl printPreviewControl1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label5;
@@ -622,17 +644,16 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.MaskedTextBox textBox5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.TextBox richTextBox2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox7;
@@ -644,5 +665,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
