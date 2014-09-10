@@ -550,7 +550,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button7.Location = new System.Drawing.Point(394, 575);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(271, 26);
+            this.button7.Size = new System.Drawing.Size(262, 26);
             this.button7.TabIndex = 36;
             this.button7.Text = "Печать";
             this.button7.UseVisualStyleBackColor = true;
@@ -586,7 +586,7 @@
             this.pictureBox1.Image = global::CustomProtocolsPrint.Properties.Resources.OBSZ;
             this.pictureBox1.Location = new System.Drawing.Point(281, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(393, 560);
+            this.pictureBox1.Size = new System.Drawing.Size(384, 560);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 39;
             this.pictureBox1.TabStop = false;
@@ -595,7 +595,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 615);
+            this.ClientSize = new System.Drawing.Size(677, 615);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label15);

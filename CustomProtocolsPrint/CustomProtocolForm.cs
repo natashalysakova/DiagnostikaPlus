@@ -114,23 +114,23 @@ namespace CustomProtocolsPrint
 
             Bitmap b = new Bitmap(808, 1152);
             Graphics g = Graphics.FromImage(b);
-            g.DrawImage(Properties.Resources.prot, 0, 0, 808, 1152);
+            g.DrawImage(Properties.Resources.OBSZ, 0, 0, 808, 1152);
 
             int l = 10;
 
             Font font = new Font(FontFamily.GenericMonospace, 15, FontStyle.Regular);
 
 
-            g.DrawString(_protocol.BlankNumber, font, Brushes.Black, 330, 190);
-            DrawMultilineString(_protocol.DocNumber, 270, 67.5f * l, g, font);
-            g.DrawString(_protocol.EcoLevel, font, Brushes.Black, 270, 86.5f * l);
+            g.DrawString(_protocol.BlankNumber, font, Brushes.Black, 335, 192);
+            DrawMultilineString(_protocol.DocNumber, 270, 67 * l, g, font);
+            g.DrawString(_protocol.EcoLevel, font, Brushes.Black, 270, 85.5f * l);
             g.DrawString(_protocol.GosNumber, font, Brushes.Black, 270, 58 * l);
             DrawMultilineString(_protocol.Category.ToString() + ", " + _protocol.Model, 270, 49 * l, g, font);
-            DrawMultilineString(_protocol.Pereoborudovanie, 270, 78.5f * l, g, font);
+            DrawMultilineString(_protocol.Pereoborudovanie, 270, 78 * l, g, font);
 
             g.DrawString(_protocol.VIN, font, Brushes.Black, 270, 44 * l);
             g.DrawString(_protocol.DateTime.ToShortDateString(), font, Brushes.Black, 270, 62 * l);
-            g.DrawString(_protocol.NextDate.ToShortDateString(), font, Brushes.Black, 605, 94 * l);
+            g.DrawString(_protocol.NextDate.ToShortDateString(), font, Brushes.Black, 605, 92 * l);
 
             g.DrawString(DateTime.Now.ToShortDateString(), font, Brushes.Black, 270, 24 * l);
             DrawMultilineString(richTextBox1.Text, 270, 28 * l, g, font);
@@ -139,7 +139,7 @@ namespace CustomProtocolsPrint
             //g.DrawString(richTextBox1.Text, font, Brushes.Black, new RectangleF(270,28*l,500, 60), new StringFormat(){ LineAlignment = StringAlignment.Near });
             //g.DrawString(textBox2.Text, font, Brushes.Black, 270, 36*l);
 
-            g.DrawString("Лисаков В.А.", font, Brushes.Black, 550, 107 * l);
+            g.DrawString("Лисаков В.А.", font, Brushes.Black, 550, 105 * l);
 
 
 

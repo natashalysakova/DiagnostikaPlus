@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DRandom">
-      <HintPath>..\..\..\..\Dropbox\Projects\Important libs\DRandom.dll</HintPath>
+      <HintPath>D:\Dropbox\Projects\Important libs\DRandom.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
